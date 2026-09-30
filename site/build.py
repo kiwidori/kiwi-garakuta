@@ -68,8 +68,8 @@ def tool_page(item: dict, site_name: str, contact: str) -> str:
 <section><h2>制限と注意点</h2><p>{esc(item['limitations'])}</p></section>
 <section class="origin"><h2>元になったソフト</h2><p><a href="{esc(item['upstream_url'])}" rel="noopener noreferrer">上流プロジェクト ↗</a>
 （ライセンス: {esc(item['upstream_license'])}）</p><p>本ソフトは上流プロジェクトの公式製品ではありません。</p></section>
-<section class="support"><h2>開発を支援する</h2><p>ソフトは無料で使えます。役に立った場合は、開発支援リンクから応援できます。</p>
-<p class="muted">支援リンクと関連商品の紹介は、各サービスの設定が完了した後に掲載します。</p></section>"""
+<section class="support"><h2>開発を支援する</h2><p>ソフトは無料で使えます。開発支援リンクは準備中です。</p>
+<p class="muted">関連商品の紹介は、各サービスの設定が完了した後に掲載します。</p></section>"""
     return page(item["name"], item["summary"], body, site_name, contact)
 
 
