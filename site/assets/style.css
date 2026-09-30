@@ -12,5 +12,6 @@ h1{font-size:clamp(40px,6vw,76px);line-height:1.18;letter-spacing:-.075em;margin
 .actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:34px}.button{display:inline-block;background:#377d4b;color:white;text-decoration:none;padding:15px 26px;border-radius:10px;font-weight:700}.button:hover{background:#285f39}.textlink{font-weight:700;text-decoration:none}
 .shot{margin:0 0 55px}.shot img{max-width:100%;display:block;border:1px solid #d5decf;border-radius:12px;box-shadow:0 14px 35px #335d3a15}.shot figcaption{font-size:12px;color:#77847a;margin-top:10px}
 main section:not(.homehero):not(.listing):not(.hero){margin-bottom:55px}main section p,main li{line-height:1.85}main li{margin-bottom:8px}.origin,.support{border-top:1px solid #d5decf;padding-top:28px}.muted{color:#849086;font-size:13px}
+.support-qr{width:190px;max-width:100%;height:auto;border:1px solid #d5decf;border-radius:10px;background:white}
 footer{background:#273a2e;color:#d0decf;padding:36px 0;font-size:13px;line-height:1.7}footer a{color:#d3efc6}
 @media(max-width:600px){.wrap{padding:0 18px}.homehero{padding:70px 0}.top{height:64px}.brand{font-size:17px}}

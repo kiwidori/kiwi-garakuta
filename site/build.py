@@ -58,7 +58,7 @@ def require_tool(item: dict) -> None:
             raise ValueError(f"Invalid Amazon link: {item['slug']}")
 
 
-def tool_page(item: dict, site_name: str, contact: str, paypal_url: str) -> str:
+def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_qr: str) -> str:
     features = "".join(f"<li>{esc(value)}</li>" for value in item["features"])
     steps = "".join(f"<li>{esc(value)}</li>" for value in item["steps"])
     body = f"""<nav class="crumb"><a href="/">一覧</a> / {esc(item['name'])}</nav>
@@ -76,7 +76,11 @@ def tool_page(item: dict, site_name: str, contact: str, paypal_url: str) -> str:
 """
     if paypal_url:
         body += (f'<section class="support"><h2>開発を支援する</h2><p>ソフトは無料です。役に立った場合は開発を応援できます。</p>'
-                 f'<a href="{esc(paypal_url)}" rel="noopener noreferrer">PayPalで支援する ↗</a></section>')
+                 f'<a href="{esc(paypal_url)}" rel="noopener noreferrer">PayPalで支援する ↗</a>')
+        if paypal_qr:
+            body += (f'<p><a href="{esc(paypal_url)}" rel="noopener noreferrer">'
+                     f'<img class="support-qr" src="{esc(paypal_qr)}" alt="PayPal支援ページのQRコード" loading="lazy"></a></p>')
+        body += '</section>'
     else:
         body += '<section class="support"><h2>開発を支援する</h2><p>ソフトは無料で使えます。開発支援リンクは準備中です。</p></section>'
     amazon_links = item.get("amazon_links", [])
@@ -92,8 +96,12 @@ def main() -> None:
     settings = json.loads((ROOT / "factory.json").read_text(encoding="utf-8"))
     support = json.loads((ROOT / "support.json").read_text(encoding="utf-8"))
     paypal_url = support.get("paypal_url", "")
+    paypal_qr = support.get("paypal_qr", "")
     if paypal_url and (urlparse(paypal_url).scheme != "https" or urlparse(paypal_url).hostname not in ("paypal.me", "www.paypal.com", "paypal.com")):
         raise ValueError("PayPal URL must use an approved host")
+    if paypal_qr and (not paypal_url or paypal_qr != "/assets/paypal-qr.png" or
+                      not (ROOT / "site" / paypal_qr.lstrip("/")).is_file()):
+        raise ValueError("PayPal QR must be a local asset with a payment URL")
     catalog = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
     if not isinstance(catalog, list):
         raise ValueError("catalog.json must be a list")
@@ -124,7 +132,7 @@ def main() -> None:
     for item in catalog:
         directory = DIST / "tools" / item["slug"]
         directory.mkdir(parents=True, exist_ok=True)
-        (directory / "index.html").write_text(tool_page(item, settings["site_name"], settings["contact_url"], paypal_url), encoding="utf-8")
+        (directory / "index.html").write_text(tool_page(item, settings["site_name"], settings["contact_url"], paypal_url, paypal_qr), encoding="utf-8")
     print(f"Built {len(catalog)} tool pages in {DIST}")
 
 
