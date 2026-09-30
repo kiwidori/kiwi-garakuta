@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import ctypes
+import argparse
 import os
 import subprocess
 import tempfile
@@ -32,9 +33,12 @@ def find_window(title: str) -> int:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--zip", type=Path, default=ZIP)
+    args = parser.parse_args()
     if os.name != "nt":
         raise SystemExit("ZIP smoke test requires Windows.")
-    with zipfile.ZipFile(ZIP) as archive:
+    with zipfile.ZipFile(args.zip) as archive:
         expected = {"KiwiSearch.exe", "README.txt", "LICENSE", "ripgrep-COPYING",
                     "ripgrep-LICENSE-MIT", "ripgrep-UNLICENSE"}
         assert expected <= set(archive.namelist()), "ZIP is missing required files"
