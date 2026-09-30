@@ -8,6 +8,7 @@ import json
 import re
 import shutil
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
@@ -51,9 +52,13 @@ def require_tool(item: dict) -> None:
         raise ValueError(f"Features and steps must be lists: {item['slug']}")
     if not item.get("windows_test_passed"):
         raise ValueError(f"Windows test not passed: {item['slug']}")
+    for link in item.get("amazon_links", []):
+        parsed = urlparse(link.get("url", ""))
+        if not link.get("label") or parsed.scheme != "https" or parsed.hostname not in ("www.amazon.co.jp", "amazon.co.jp", "amzn.to"):
+            raise ValueError(f"Invalid Amazon link: {item['slug']}")
 
 
-def tool_page(item: dict, site_name: str, contact: str) -> str:
+def tool_page(item: dict, site_name: str, contact: str, paypal_url: str) -> str:
     features = "".join(f"<li>{esc(value)}</li>" for value in item["features"])
     steps = "".join(f"<li>{esc(value)}</li>" for value in item["steps"])
     body = f"""<nav class="crumb"><a href="/">一覧</a> / {esc(item['name'])}</nav>
@@ -68,13 +73,27 @@ def tool_page(item: dict, site_name: str, contact: str) -> str:
 <section><h2>制限と注意点</h2><p>{esc(item['limitations'])}</p></section>
 <section class="origin"><h2>元になったソフト</h2><p><a href="{esc(item['upstream_url'])}" rel="noopener noreferrer">上流プロジェクト ↗</a>
 （ライセンス: {esc(item['upstream_license'])}）</p><p>本ソフトは上流プロジェクトの公式製品ではありません。</p></section>
-<section class="support"><h2>開発を支援する</h2><p>ソフトは無料で使えます。開発支援リンクは準備中です。</p>
-<p class="muted">関連商品の紹介は、各サービスの設定が完了した後に掲載します。</p></section>"""
+"""
+    if paypal_url:
+        body += (f'<section class="support"><h2>開発を支援する</h2><p>ソフトは無料です。役に立った場合は開発を応援できます。</p>'
+                 f'<a href="{esc(paypal_url)}" rel="noopener noreferrer">PayPalで支援する ↗</a></section>')
+    else:
+        body += '<section class="support"><h2>開発を支援する</h2><p>ソフトは無料で使えます。開発支援リンクは準備中です。</p></section>'
+    amazon_links = item.get("amazon_links", [])
+    if amazon_links:
+        links = "".join(f'<li><a href="{esc(link["url"])}" rel="sponsored noopener noreferrer">{esc(link["label"])} ↗</a></li>'
+                        for link in amazon_links)
+        body += (f'<section class="support"><h2>関連商品</h2><p>広告：ツールの利用に関連する商品を紹介しています。</p><ul>{links}</ul>'
+                 f'<p class="muted">Amazon のアソシエイトとして、{esc(site_name)}は適格販売により収入を得ています。</p></section>')
     return page(item["name"], item["summary"], body, site_name, contact)
 
 
 def main() -> None:
     settings = json.loads((ROOT / "factory.json").read_text(encoding="utf-8"))
+    support = json.loads((ROOT / "support.json").read_text(encoding="utf-8"))
+    paypal_url = support.get("paypal_url", "")
+    if paypal_url and (urlparse(paypal_url).scheme != "https" or urlparse(paypal_url).hostname not in ("paypal.me", "www.paypal.com", "paypal.com")):
+        raise ValueError("PayPal URL must use an approved host")
     catalog = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
     if not isinstance(catalog, list):
         raise ValueError("catalog.json must be a list")
@@ -105,7 +124,7 @@ def main() -> None:
     for item in catalog:
         directory = DIST / "tools" / item["slug"]
         directory.mkdir(parents=True, exist_ok=True)
-        (directory / "index.html").write_text(tool_page(item, settings["site_name"], settings["contact_url"]), encoding="utf-8")
+        (directory / "index.html").write_text(tool_page(item, settings["site_name"], settings["contact_url"], paypal_url), encoding="utf-8")
     print(f"Built {len(catalog)} tool pages in {DIST}")
 
 

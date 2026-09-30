@@ -19,6 +19,7 @@
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-search",
     "upstream_url": "https://github.com/BurntSushi/ripgrep",
     "upstream_license": "MIT または Unlicense",
+    "amazon_links": [],
     "windows_test_passed": true
   }
 ]
