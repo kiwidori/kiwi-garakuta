@@ -21,5 +21,29 @@
     "upstream_license": "MIT または Unlicense",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-find",
+    "name": "きういファイル探し",
+    "summary": "ファイル名の一部から、フォルダー内のファイルを素早く探せる無料ツールです。",
+    "features": [
+      "ファイル名に含まれる文字と拡張子を指定して探せます。",
+      "日本語のファイル名に対応しています。",
+      "隠しファイルや除外設定を含めるか選べます。",
+      "結果をダブルクリックしてファイルを開けます。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiFind.exeを起動します。",
+      "探すフォルダー、名前に含む文字、必要なら拡張子を入力します。",
+      "検索を押して結果を確認します。"
+    ],
+    "limitations": "ファイルの中身は検索しません。通常は隠しファイルと.gitignoreなどで除外されたファイルを探しません。表示上限は1000件です。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-find.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-find-v0.1.0/KiwiFind-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-find",
+    "upstream_url": "https://github.com/sharkdp/fd",
+    "upstream_license": "MIT または Apache License 2.0",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
