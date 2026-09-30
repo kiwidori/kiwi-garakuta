@@ -10,6 +10,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | --- | --- | --- |
 | [きうい検索](https://kiwi-garakuta.pages.dev/tools/kiwi-search/) | フォルダー内の文章を検索し、該当する行を表示 | [ripgrep](https://github.com/BurntSushi/ripgrep) |
 | [きういファイル探し](https://kiwi-garakuta.pages.dev/tools/kiwi-find/) | 名前や拡張子からファイルを探す | [fd](https://github.com/sharkdp/fd) |
+| [きうい容量ビュー](https://kiwi-garakuta.pages.dev/tools/kiwi-disk/) | 容量の大きいファイルやフォルダーを確認する | [dust](https://github.com/bootandy/dust) |
 
 各ソフトの詳細ページに、使い方、実際の画面、制限事項、ZIPのダウンロード先を掲載しています。ZIPには元ツールのライセンス文書を同梱しています。
 
@@ -17,9 +18,9 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 1. 上の一覧からソフトの詳細ページを開き、ZIPをダウンロードします。
 2. ZIPを任意のフォルダーへ展開します。
-3. 中の `KiwiSearch.exe` または `KiwiFind.exe` を起動します。
+3. 中の `KiwiSearch.exe`、`KiwiFind.exe`、または `KiwiDisk.exe` を起動します。
 
-どちらもWindows 11 x64で動作確認しています。現時点の実行ファイルにはコード署名がありません。配布元とZIPの内容を確認してから使用してください。
+各ソフトはWindows 11 x64で動作確認しています。現時点の実行ファイルにはコード署名がありません。配布元とZIPの内容を確認してから使用してください。
 
 ## ソースコードとライセンス
 

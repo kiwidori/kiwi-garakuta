@@ -45,5 +45,29 @@
     "upstream_license": "MIT または Apache License 2.0",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-disk",
+    "name": "きうい容量ビュー",
+    "summary": "フォルダーの容量を調べ、大きなファイルや場所をツリーで確認できる無料ツールです。",
+    "features": [
+      "容量と全体に占める割合をツリーで表示します。",
+      "表示する階層を1〜6の範囲で選べます。",
+      "解析を途中で停止でき、選択した場所をエクスプローラーで開けます。",
+      "読み取り専用で、ファイルの削除や変更は行いません。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiDisk.exeを起動します。",
+      "調べるフォルダーを選び、必要なら表示する階層を変えます。",
+      "解析を押し、容量の大きい項目を確認します。"
+    ],
+    "limitations": "容量の大きい項目を中心に最大60件ほど表示します。大きなフォルダーの解析には時間がかかり、5分を超えると停止します。アクセスできない項目は結果に含まれない場合があります。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-disk.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-disk-v0.1.0/KiwiDisk-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-disk",
+    "upstream_url": "https://github.com/bootandy/dust",
+    "upstream_license": "Apache License 2.0",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
