@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import importlib.util
+import ctypes
 import os
 import shutil
 import tempfile
@@ -12,7 +13,8 @@ from pathlib import Path
 from PIL import ImageGrab
 
 HERE = Path(__file__).resolve().parent
-SCREENSHOT = HERE.parents[1] / "site" / "assets" / "screenshots" / "kiwi-search.png"
+SCREENSHOT = HERE.parents[1] / "site" / "assets" / "screenshots" / "kiwi-search-public.png"
+DEMO_ROOT = Path("C:/Users/Public/Documents")
 
 
 def main() -> None:
@@ -25,7 +27,9 @@ def main() -> None:
     assert spec and spec.loader
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    with tempfile.TemporaryDirectory(prefix="kiwi-verify-") as temp:
+    if not DEMO_ROOT.is_dir():
+        raise SystemExit("Public Documents folder is required for a privacy-safe screenshot.")
+    with tempfile.TemporaryDirectory(prefix="KiwiDemo-", dir=DEMO_ROOT) as temp:
         base = Path(temp)
         shutil.copy2(rg, base / "rg.exe")
         sample = base / "サンプル文書"
@@ -47,11 +51,13 @@ def main() -> None:
             assert len(app.tree.get_children()) == 2
             assert all("コーヒー" in app.tree.item(item, "values")[2] for item in app.tree.get_children())
             app.geometry("950x650+120+100")
+            app.attributes("-topmost", True)
             app.update()
             app.lift()
             app.focus_force()
+            ctypes.windll.user32.SetForegroundWindow(app.winfo_id())
             app.update()
-            time.sleep(0.3)
+            time.sleep(0.6)
             x, y = app.winfo_rootx(), app.winfo_rooty()
             width, height = app.winfo_width(), app.winfo_height()
             SCREENSHOT.parent.mkdir(parents=True, exist_ok=True)

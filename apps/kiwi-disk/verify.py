@@ -14,7 +14,8 @@ from pathlib import Path
 from PIL import ImageGrab
 
 HERE = Path(__file__).resolve().parent
-SCREENSHOT = HERE.parents[1] / "site" / "assets" / "screenshots" / "kiwi-disk.png"
+SCREENSHOT = HERE.parents[1] / "site" / "assets" / "screenshots" / "kiwi-disk-public.png"
+DEMO_ROOT = Path("C:/Users/Public/Documents")
 
 
 def main() -> None:
@@ -27,7 +28,9 @@ def main() -> None:
     assert spec and spec.loader
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    with tempfile.TemporaryDirectory(prefix="kiwi-disk-verify-") as temp:
+    if not DEMO_ROOT.is_dir():
+        raise SystemExit("Public Documents folder is required for a privacy-safe screenshot.")
+    with tempfile.TemporaryDirectory(prefix="KiwiDemo-", dir=DEMO_ROOT) as temp:
         base = Path(temp)
         shutil.copy2(dust, base / "dust.exe")
         sample = base / "サンプル文書"

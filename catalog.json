@@ -14,7 +14,7 @@
       "検索を押し、結果を確認します。"
     ],
     "limitations": "固定文字列を検索します。隠しファイルと.gitignoreで除外されたファイルはripgrepの標準設定に従い検索しません。表示上限は1000件です。現時点の実行ファイルにはコード署名がありません。",
-    "screenshot": "/assets/screenshots/kiwi-search.png",
+    "screenshot": "/assets/screenshots/kiwi-search-public.png",
     "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-search-v0.1.0/KiwiSearch-0.1.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-search",
     "upstream_url": "https://github.com/BurntSushi/ripgrep",
@@ -38,7 +38,7 @@
       "検索を押して結果を確認します。"
     ],
     "limitations": "ファイルの中身は検索しません。通常は隠しファイルと.gitignoreなどで除外されたファイルを探しません。表示上限は1000件です。現時点の実行ファイルにはコード署名がありません。",
-    "screenshot": "/assets/screenshots/kiwi-find.png",
+    "screenshot": "/assets/screenshots/kiwi-find-public.png",
     "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-find-v0.1.0/KiwiFind-0.1.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-find",
     "upstream_url": "https://github.com/sharkdp/fd",
@@ -62,7 +62,7 @@
       "解析を押し、容量の大きい項目を確認します。"
     ],
     "limitations": "容量の大きい項目を中心に最大60件ほど表示します。大きなフォルダーの解析には時間がかかり、5分を超えると停止します。アクセスできない項目は結果に含まれない場合があります。現時点の実行ファイルにはコード署名がありません。",
-    "screenshot": "/assets/screenshots/kiwi-disk.png",
+    "screenshot": "/assets/screenshots/kiwi-disk-public.png",
     "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-disk-v0.1.0/KiwiDisk-0.1.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-disk",
     "upstream_url": "https://github.com/bootandy/dust",
