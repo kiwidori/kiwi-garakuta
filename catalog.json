@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "kiwi-search",
+    "name": "きうい検索",
+    "summary": "フォルダー内の文章を、画面から素早く検索できる無料ツールです。",
+    "features": [
+      "検索するフォルダーと文字列を指定するだけで、該当行を一覧表示します。",
+      "日本語のファイル名と内容に対応しています。",
+      "結果をダブルクリックしてファイルを開けます。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiSearch.exeを起動します。",
+      "フォルダーを選択して探す文字列を入力します。",
+      "検索を押し、結果を確認します。"
+    ],
+    "limitations": "固定文字列を検索します。隠しファイルと.gitignoreで除外されたファイルはripgrepの標準設定に従い検索しません。表示上限は1000件です。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-search.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-search-v0.1.0/KiwiSearch-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-search",
+    "upstream_url": "https://github.com/BurntSushi/ripgrep",
+    "upstream_license": "MIT または Unlicense",
+    "windows_test_passed": true
+  }
+]

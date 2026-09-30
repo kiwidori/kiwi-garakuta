@@ -1,0 +1,42 @@
+name: Release Kiwi Search
+
+on:
+  push:
+    tags:
+      - kiwi-search-v*
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows-build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install build dependency
+        run: python -m pip install pyinstaller==6.22.2
+      - name: Build portable ZIP from verified upstream archive
+        run: python apps/kiwi-search/build.py
+      - name: Check ZIP contents
+        shell: pwsh
+        run: |
+          @'
+          from pathlib import Path
+          from zipfile import ZipFile
+          package = Path('apps/kiwi-search/KiwiSearch-0.1.0-win11-x64.zip')
+          with ZipFile(package) as archive:
+              needed = {'KiwiSearch.exe', 'README.txt', 'LICENSE', 'ripgrep-COPYING', 'ripgrep-LICENSE-MIT', 'ripgrep-UNLICENSE'}
+              assert needed <= set(archive.namelist())
+          print('ZIP contents OK')
+          '@ | python -
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/kiwi-search-v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          gh release create "${{ github.ref_name }}" "apps/kiwi-search/KiwiSearch-0.1.0-win11-x64.zip" --title "きうい検索 0.1.0" --notes "Windows 11 x64向けの無料ZIP版。ripgrepの検索GUIです。ライセンス文書を同梱しています。"

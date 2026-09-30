@@ -1,0 +1,8 @@
+dist/
+__pycache__/
+.env
+*.log
+data/
+.tools/
+apps/*/release/
+apps/*/*.zip
