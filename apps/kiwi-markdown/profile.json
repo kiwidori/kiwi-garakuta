@@ -1,0 +1,75 @@
+{
+  "slug": "kiwi-markdown",
+  "title": "きういMarkdown",
+  "tool": "glow.exe",
+  "upstream_url": "https://github.com/charmbracelet/glow",
+  "fields": [
+    {
+      "flag": "--style",
+      "label": "スタイル名またはJSONファイル",
+      "type": "text",
+      "default": "light",
+      "group": "表示設定"
+    },
+    {
+      "flag": "--width",
+      "label": "折り返し幅（0で無効）",
+      "type": "text",
+      "default": "100",
+      "group": "表示設定"
+    },
+    {
+      "flag": "--preserve-new-lines",
+      "label": "元の改行を保持",
+      "type": "bool",
+      "default": false,
+      "group": "表示設定"
+    }
+  ],
+  "delimiter": true,
+  "mandatory_args": [],
+  "blocked_flags": [
+    "--pager",
+    "-p",
+    "--tui",
+    "-t",
+    "--config",
+    "config",
+    "--all",
+    "-a",
+    "--line-numbers",
+    "-l",
+    "--mouse",
+    "-m"
+  ],
+  "modes": [
+    {
+      "label": "貼り付けたMarkdownを表示",
+      "args": [],
+      "stdin": true,
+      "files": false
+    },
+    {
+      "label": "ファイルを表示",
+      "args": [],
+      "stdin": false,
+      "files": true,
+      "allow_dirs": false
+    },
+    {
+      "label": "URL・リポジトリREADMEを表示",
+      "args": [],
+      "stdin": true,
+      "files": false,
+      "url": true
+    },
+    {
+      "label": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": false,
+      "files": false
+    }
+  ]
+}

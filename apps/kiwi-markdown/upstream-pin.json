@@ -1,0 +1,17 @@
+{
+  "slug": "kiwi-markdown",
+  "name": "きういMarkdown",
+  "repo": "charmbracelet/glow",
+  "tag": "v3.0.0",
+  "exe": "glow.exe",
+  "asset": "glow_3.0.0_Windows_x86_64.zip",
+  "archive_member": "glow_3.0.0_Windows_x86_64/glow.exe",
+  "sha": "d8907e07436ecbb6738bc0e3bbf8aa6159e351f95082e9db3c3fc4200086f809",
+  "binary_sha": "0bebd662eb9da86b32b6abeaef10fe448a36d2a2a6aa629098ccd17b13f6cb9c",
+  "license": "MIT",
+  "url": "https://github.com/charmbracelet/glow/releases/download/v3.0.0/glow_3.0.0_Windows_x86_64.zip",
+  "license_url": "https://raw.githubusercontent.com/charmbracelet/glow/v3.0.0/LICENSE",
+  "license_sha": "4e48affb643d6a920b82562a7bcb390ce19e04ee63fbeef22f3234bd0c410ef1",
+  "app_exe": "KiwiMarkdown",
+  "version": "0.1.0"
+}

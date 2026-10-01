@@ -61,20 +61,40 @@ def execute(exe, args, stdin_data=b'', cwd=None, cancel_event=None, timeout=300,
         raise ValueError('同梱の実行ファイルが見つかりません。')
     if cwd is not None and not Path(cwd).is_dir():
         raise ValueError('作業フォルダーが見つかりません。')
-    if not isinstance(stdin_data,bytes) or len(stdin_data)>2*1024*1024:
+    if stdin_data is not None and (not isinstance(stdin_data,bytes) or len(stdin_data)>2*1024*1024):
         raise ValueError('標準入力は2 MiBまでです。')
     if cancel_event and cancel_event.is_set(): raise InterruptedError('処理を停止しました。')
     env=os.environ.copy()
+    glow=Path(exe).name.casefold()=='glow.exe'
+    if glow and stdin_data in (None,b''):
+        positional=[];skip=False;information=False
+        for arg in args:
+            if skip:
+                skip=False;continue
+            if arg in ('--style','-s','--width','-w'):
+                skip=True;continue
+            if arg in ('--help','-h','--version','-v'):information=True
+            if arg=='--':continue
+            if not arg.startswith('-') or arg=='-':positional.append(arg)
+        information=information or bool(positional and positional[0] in ('completion','help','man'))
+        if not information and (len(positional)!=1 or Path(positional[0]).is_dir()):
+            raise ValueError('Markdownデータ、1つのファイル、またはURLを指定してください。端末UIは使用できません。')
+        stdin_data=None
     for key in list(env):
         if key in ('RIPGREP_CONFIG_PATH','BAT_OPTS','BAT_PAGER','PAGER') or key.startswith(('DFT_','GITLEAKS_','XH_')):
+            env.pop(key,None)
+        if glow and key.startswith(('GLOW_','GLAMOUR_')):
             env.pop(key,None)
     with tempfile.TemporaryDirectory(prefix='kiwi-advanced-') as directory:
         folder=Path(directory)
         source,out,err=folder/'stdin.bin',folder/'stdout.bin',folder/'stderr.bin'
-        source.write_bytes(stdin_data)
+        source.write_bytes(stdin_data or b'')
         config=folder/'config'; config.mkdir()
         env['XH_CONFIG_DIR']=str(config)
-        with source.open('rb') as input_handle,out.open('wb') as output_handle,err.open('wb') as error_handle:
+        if glow:
+            (config/'glow.yml').write_text('pager: false\ntui: false\nstyle: light\nwidth: 100\n',encoding='utf8')
+            env['GLOW_CONFIG_HOME']=str(config)
+        with (open(os.devnull,'rb') if stdin_data is None else source.open('rb')) as input_handle,out.open('wb') as output_handle,err.open('wb') as error_handle:
             proc=subprocess.Popen(cmd,stdin=input_handle,stdout=output_handle,stderr=error_handle,
                 cwd=cwd,env=env,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
             try:

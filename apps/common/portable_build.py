@@ -37,7 +37,7 @@ def build(root):
     license_data = fetch(pin['license_url'], pin['license_sha'])
     with tempfile.TemporaryDirectory(prefix=pin['slug'] + '-') as folder:
         temp = Path(folder)
-        binary = zipfile.ZipFile(io.BytesIO(data)).read(pin['exe']) if pin['asset'].endswith('.zip') else data
+        binary = zipfile.ZipFile(io.BytesIO(data)).read(pin.get('archive_member',pin['exe'])) if pin['asset'].endswith('.zip') else data
         (temp / pin['exe']).write_bytes(binary)
         command = [sys.executable, '-m', 'PyInstaller', '--noconfirm', '--clean', '--onefile', '--noconsole',
                    '--paths', str(root.parent / 'common'), '--name', pin['app_exe'],

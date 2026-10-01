@@ -1,0 +1,171 @@
+{
+  "slug": "kiwi-markdown",
+  "tool": "glow.exe",
+  "upstream_url": "https://github.com/charmbracelet/glow",
+  "options": [
+    {
+      "flag": "--style",
+      "aliases": [
+        "--style"
+      ],
+      "takes_value": true,
+      "description": "スタイル名またはJSONファイル",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--width",
+      "aliases": [
+        "--width"
+      ],
+      "takes_value": true,
+      "description": "折り返し幅（0で無効）",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--preserve-new-lines",
+      "aliases": [
+        "--preserve-new-lines"
+      ],
+      "takes_value": false,
+      "description": "元の改行を保持",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--pager",
+      "aliases": [
+        "--pager"
+      ],
+      "takes_value": false,
+      "description": "外部ページャーの起動",
+      "blocked": true,
+      "coverage": "対象外: 外部ページャーの起動"
+    },
+    {
+      "flag": "--tui",
+      "aliases": [
+        "--tui"
+      ],
+      "takes_value": false,
+      "description": "端末UI",
+      "blocked": true,
+      "coverage": "対象外: 端末UI"
+    },
+    {
+      "flag": "--all",
+      "aliases": [
+        "--all"
+      ],
+      "takes_value": false,
+      "description": "端末UIの隠し項目",
+      "blocked": true,
+      "coverage": "対象外: 端末UIの隠し項目"
+    },
+    {
+      "flag": "--line-numbers",
+      "aliases": [
+        "--line-numbers"
+      ],
+      "takes_value": false,
+      "description": "端末UIの行番号",
+      "blocked": true,
+      "coverage": "対象外: 端末UIの行番号"
+    },
+    {
+      "flag": "--config",
+      "aliases": [
+        "--config"
+      ],
+      "takes_value": true,
+      "description": "外部エディタ・ページャー設定を読み込む",
+      "blocked": true,
+      "coverage": "対象外: 外部エディタ・ページャー設定を読み込む"
+    },
+    {
+      "flag": "--mouse",
+      "aliases": [
+        "--mouse"
+      ],
+      "takes_value": false,
+      "description": "端末UIのマウス",
+      "blocked": true,
+      "coverage": "対象外: 端末UIのマウス"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "--help"
+      ],
+      "takes_value": false,
+      "description": "ヘルプ",
+      "blocked": false,
+      "coverage": "詳細機能から対応"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "--version"
+      ],
+      "takes_value": false,
+      "description": "版表示",
+      "blocked": false,
+      "coverage": "詳細機能から対応"
+    }
+  ],
+  "mandatory_args": [],
+  "blocked_flags": [
+    "--pager",
+    "-p",
+    "--tui",
+    "-t",
+    "--config",
+    "config",
+    "--all",
+    "-a",
+    "--line-numbers",
+    "-l",
+    "--mouse",
+    "-m"
+  ],
+  "subcommands": [
+    "completion",
+    "help",
+    "man"
+  ],
+  "examples": [
+    {
+      "name": "貼り付け文書の表示",
+      "args": [
+        "--style",
+        "light",
+        "--width",
+        "80"
+      ],
+      "stdin": "# きういMarkdown\n\n**太字**と*斜体*\n"
+    },
+    {
+      "name": "PowerShell補完を生成（実行しない）",
+      "args": [
+        "completion",
+        "powershell"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "マニュアル",
+      "args": [
+        "man"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": ""
+    }
+  ]
+}
