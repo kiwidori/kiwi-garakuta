@@ -162,5 +162,29 @@
     "upstream_license": "MIT",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-regex",
+    "name": "きうい正規表現",
+    "summary": "文字列の例を1行ずつ入力して、正規表現を作れる無料ツールです。",
+    "features": [
+      "grexで複数の文字列の例をまとめた正規表現を生成します。",
+      "数字の一般化・大小文字の区別・繰り返しのまとめ方を選べます。",
+      "日本語の入力に対応し、生成結果をコピーできます。",
+      "生成を途中で停止できます。入力を外部へ送信しません。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiRegex.exeを起動します。",
+      "一致させたい文字列の例を1行ずつ入力します。",
+      "必要なオプションを選んで「生成」を押し、結果をコピーします。"
+    ],
+    "limitations": "入力はUTF-8で16 KiB、100行、1行256文字までです。空の行は無視し、行の前後の空白は保持します。結果は64 KiB、処理は15秒までです。オプションで一致範囲が広がるため、実際に使う正規表現エンジンで結果を確認してください。正規表現の実行・判定機能はありません。環境によってはMicrosoft Visual C++ Redistributableが必要です。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-regex-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-regex-v0.1.0/KiwiRegex-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-regex",
+    "upstream_url": "https://github.com/pemistahl/grex",
+    "upstream_license": "Apache License 2.0",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
