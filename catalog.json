@@ -256,5 +256,29 @@
     "upstream_license": "MIT",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-hash",
+    "name": "きういハッシュ",
+    "summary": "ファイルのBLAKE3ハッシュを計算し、照合値との一致を確認できる無料ツールです。",
+    "features": [
+      "公式b3sumでファイルのBLAKE3ハッシュを計算します。",
+      "照合値を入力すると、一致・不一致を確認できます。",
+      "計算結果をコピーでき、処理を途中で停止できます。",
+      "ファイルは変更せず、外部へ送信しません。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiHash.exeを起動します。",
+      "対象ファイルを選び、必要なら照合するBLAKE3ハッシュを入力します。",
+      "「計算」を押して結果を確認し、必要なら「コピー」を押します。"
+    ],
+    "limitations": "BLAKE3専用で、SHA-256など他の方式の値とは比較できません。ハッシュ一致は配布元やファイルの安全性を保証しません。入力は8 GiB、処理は120秒までです。計算中にサイズや更新日時などが変わると結果を破棄しますが、更新の完全な検知は保証しません。更新中のファイルは対象にしないでください。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-hash-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-hash-v0.1.0/KiwiHash-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-hash",
+    "upstream_url": "https://github.com/BLAKE3-team/BLAKE3",
+    "upstream_license": "Apache License 2.0 または CC0（上流ライセンス文書を同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
