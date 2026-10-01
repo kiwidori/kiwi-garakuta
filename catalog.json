@@ -186,5 +186,28 @@
     "upstream_license": "Apache License 2.0",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-http",
+    "name": "きういHTTPビュー",
+    "summary": "URLを指定して、HTTPの応答ヘッダーと本文を確認できる無料ツールです。",
+    "features": [
+      "xhを使い、GETまたはHEADの応答をテキストで表示します。",
+      "ステータス・応答ヘッダー・本文を確認し、表示内容をコピーできます。",
+      "送信を途中で停止できます。HTMLやスクリプトは実行しません。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiHTTP.exeを起動します。",
+      "http:// または https:// で始まるURLを入力し、GETかHEADを選びます。",
+      "「送信」を押して応答を確認し、必要ならコピーします。"
+    ],
+    "limitations": "入力したURLへ通信します。URLや応答に個人情報が含まれる場合があります。GET/HEADでも接続先の仕様によっては操作が発生します。リダイレクトは追跡せず、認証・送信本文・カスタムヘッダーは指定できません。URLは2048文字、応答は512 KiB、処理は15秒までです。UTF-8以外の本文は文字化けする場合があります。環境のプロキシ設定が適用されます。環境によってはMicrosoft Visual C++ Redistributableが必要です。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-http-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-http-v0.1.0/KiwiHTTP-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-http",
+    "upstream_url": "https://github.com/ducaale/xh",
+    "upstream_license": "MIT",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
