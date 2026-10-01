@@ -1,0 +1,45 @@
+name: Release Kiwi System
+
+on:
+  push:
+    tags:
+      - kiwi-system-v*
+
+permissions:
+  contents: write
+
+jobs:
+  windows-build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install build dependency
+        run: python -m pip install pyinstaller==6.22.2
+      - name: Build portable ZIP from verified upstream archive
+        run: python apps/kiwi-system/build.py
+      - name: Check bundled fastfetch on Windows
+        shell: pwsh
+        run: |
+          & "apps/kiwi-system/release/KiwiSystem.exe" --self-test
+          if ($LASTEXITCODE -ne 0) { throw "Packaged fastfetch check failed" }
+      - name: Check ZIP contents
+        shell: pwsh
+        run: |
+          @'
+          from pathlib import Path
+          from zipfile import ZipFile
+          package = Path('apps/kiwi-system/KiwiSystem-0.1.0-win11-x64.zip')
+          with ZipFile(package) as archive:
+              needed = {'KiwiSystem.exe', 'README.txt', 'LICENSE', 'fastfetch-LICENSE'}
+              assert needed <= set(archive.namelist())
+          print('ZIP contents OK')
+          '@ | python -
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          gh release create "${{ github.ref_name }}" "apps/kiwi-system/KiwiSystem-0.1.0-win11-x64.zip" --title "きういPC情報 0.1.0" --notes "Windows 11 x64向けの無料ZIP版。fastfetchを使ってPCの概要を表示します。上流ライセンス文書を同梱しています。"
