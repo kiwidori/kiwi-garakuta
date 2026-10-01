@@ -1,0 +1,130 @@
+{
+  "slug": "kiwi-data",
+  "title": "きういデータ変換",
+  "tool": "dasel.exe",
+  "upstream_url": "https://github.com/TomWright/dasel",
+  "fields": [
+    {
+      "flag": "--in",
+      "label": "入力形式",
+      "type": "choice",
+      "default": "json",
+      "group": "入出力",
+      "choices": [
+        "json",
+        "yaml",
+        "toml",
+        "xml",
+        "csv",
+        "hcl",
+        "ini",
+        "kdl",
+        "dasel"
+      ]
+    },
+    {
+      "flag": "--out",
+      "label": "出力形式",
+      "type": "choice",
+      "default": "json",
+      "group": "入出力",
+      "choices": [
+        "json",
+        "yaml",
+        "toml",
+        "xml",
+        "csv",
+        "hcl",
+        "ini",
+        "kdl"
+      ]
+    },
+    {
+      "flag": "--root",
+      "label": "編集後の文書全体を返す",
+      "type": "bool",
+      "default": false,
+      "group": "入出力"
+    },
+    {
+      "flag": "--compact",
+      "label": "コンパクトな出力",
+      "type": "bool",
+      "default": false,
+      "group": "入出力"
+    },
+    {
+      "flag": "--unstable",
+      "label": "上流の実験的機能を有効にする",
+      "type": "bool",
+      "default": false,
+      "group": "詳細設定"
+    },
+    {
+      "flag": "--config",
+      "label": "設定ファイル（NULで個人設定を読まない）",
+      "type": "text",
+      "default": "NUL",
+      "group": "詳細設定"
+    },
+    {
+      "flag": "--var",
+      "label": "変数（1行ごとに name=value）",
+      "type": "text",
+      "default": "",
+      "group": "詳細設定",
+      "repeat": true
+    },
+    {
+      "flag": "--read-flag",
+      "label": "読込設定（1行ごとに key=value）",
+      "type": "text",
+      "default": "",
+      "group": "詳細設定",
+      "repeat": true
+    },
+    {
+      "flag": "--write-flag",
+      "label": "出力設定（1行ごとに key=value）",
+      "type": "text",
+      "default": "",
+      "group": "詳細設定",
+      "repeat": true
+    },
+    {
+      "flag": "--rw-flag",
+      "label": "読込・出力共通設定（1行ごとに key=value）",
+      "type": "text",
+      "default": "",
+      "group": "詳細設定",
+      "repeat": true
+    }
+  ],
+  "modes": [
+    {
+      "label": "変換・クエリ・編集",
+      "args": [],
+      "stdin": true,
+      "files": false,
+      "success_codes": [
+        0
+      ]
+    },
+    {
+      "label": "バージョン",
+      "args": [
+        "version"
+      ],
+      "stdin": false,
+      "files": false,
+      "success_codes": [
+        0
+      ]
+    }
+  ],
+  "mandatory_args": [],
+  "blocked_flags": [
+    "--it",
+    "interactive"
+  ]
+}

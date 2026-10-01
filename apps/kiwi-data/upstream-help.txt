@@ -1,0 +1,46 @@
+Usage: dasel <command>
+
+Query and modify data structures from the command line.
+
+Flags:
+  -h, --help    Show context-sensitive help.
+
+Commands:
+  query          [default] Execute a query
+  version        Print the version
+  interactive    Start an interactive session (alpha)
+  completion     Generate shell completion script
+  man            Generate man page
+
+Run "dasel <command> --help" for more information on a command.
+
+Usage: dasel query [<query>] [flags]
+
+[default] Execute a query
+
+Arguments:
+  [<query>]    The query to execute.
+
+Flags:
+  -h, --help                     Show context-sensitive help.
+
+      --var=VARIABLES            Variables to pass to the query. E.g. --var
+                                 foo="bar" --var baz=json:file:./some/file.json
+      --rw-flag=EXT-READ-WRITE-FLAGS
+                                 Read/Write flag to customise parsing/output.
+                                 Applies to read + write E.g. --rw-flag
+                                 csv-delimiter=;
+      --read-flag=EXT-READ-WRITE-FLAGS
+                                 Reader flag to customise parsing. E.g.
+                                 --read-flag xml-mode=structured
+      --write-flag=EXT-READ-WRITE-FLAGS
+                                 Writer flag to customise output. E.g.
+                                 --write-flag csv-delimiter=;
+  -i, --in=STRING                The format of the input data.
+  -o, --out=STRING               The format of the output data.
+      --root                     Return the root value.
+      --compact                  Output in compact mode (no
+                                 indentation/newlines).
+      --unstable                 Allow access to potentially unstable features.
+      --it                       Run in interactive mode (alpha).
+  -c, --config="~/dasel.yaml"    Path to config file

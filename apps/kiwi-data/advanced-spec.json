@@ -1,0 +1,211 @@
+{
+  "slug": "kiwi-data",
+  "tool": "dasel.exe",
+  "upstream_url": "https://github.com/TomWright/dasel",
+  "mandatory_args": [],
+  "blocked_flags": [
+    "--it",
+    "interactive"
+  ],
+  "options": [
+    {
+      "flag": "--in",
+      "aliases": [
+        "--in"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "入力形式",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--out",
+      "aliases": [
+        "--out"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "出力形式",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--root",
+      "aliases": [
+        "--root"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "編集後の文書全体を返す",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--compact",
+      "aliases": [
+        "--compact"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "コンパクトな出力",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--unstable",
+      "aliases": [
+        "--unstable"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "上流の実験的機能を有効にする",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--config",
+      "aliases": [
+        "--config"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "設定ファイル（NULで個人設定を読まない）",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--var",
+      "aliases": [
+        "--var"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "変数（1行ごとに name=value）",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--read-flag",
+      "aliases": [
+        "--read-flag"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "読込設定（1行ごとに key=value）",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--write-flag",
+      "aliases": [
+        "--write-flag"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "出力設定（1行ごとに key=value）",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--rw-flag",
+      "aliases": [
+        "--rw-flag"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "読込・出力共通設定（1行ごとに key=value）",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--it",
+      "aliases": [
+        "--it"
+      ],
+      "takes_value": false,
+      "description": "端末用対話モード",
+      "blocked": true,
+      "coverage": "対象外: TTYが必要"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "--help",
+        "-h"
+      ],
+      "takes_value": false,
+      "description": "同梱版ヘルプ",
+      "blocked": false,
+      "coverage": "詳細機能から対応"
+    }
+  ],
+  "subcommands": [
+    "query",
+    "version",
+    "completion",
+    "man"
+  ],
+  "examples": [
+    {
+      "name": "JSONからYAMLへ",
+      "args": [
+        "query",
+        "--in",
+        "json",
+        "--out",
+        "yaml",
+        "--config",
+        "NUL"
+      ],
+      "stdin": "{\"name\":\"きうい\",\"count\":3}"
+    },
+    {
+      "name": "配列を抽出",
+      "args": [
+        "query",
+        "--in",
+        "json",
+        "--out",
+        "json",
+        "--config",
+        "NUL",
+        "--",
+        "items.map(name)"
+      ],
+      "stdin": "{\"items\":[{\"name\":\"A\"},{\"name\":\"B\"}]}"
+    },
+    {
+      "name": "PowerShell補完を生成（実行しない）",
+      "args": [
+        "completion",
+        "powershell"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "マニュアル",
+      "args": [
+        "man"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "バージョン",
+      "args": [
+        "version"
+      ],
+      "stdin": ""
+    }
+  ]
+}

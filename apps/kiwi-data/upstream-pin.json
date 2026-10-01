@@ -1,0 +1,16 @@
+{
+  "slug": "kiwi-data",
+  "name": "きういデータ変換",
+  "repo": "TomWright/dasel",
+  "tag": "v3.11.2",
+  "exe": "dasel.exe",
+  "asset": "dasel_windows_amd64.exe",
+  "sha": "7f37a5aba88c702884edca3bcf2ad0a67b3f2533cbfbf1f6bc414e25e2fe1d24",
+  "binary_sha": "7f37a5aba88c702884edca3bcf2ad0a67b3f2533cbfbf1f6bc414e25e2fe1d24",
+  "license": "MIT",
+  "url": "https://github.com/TomWright/dasel/releases/download/v3.11.2/dasel_windows_amd64.exe",
+  "license_url": "https://raw.githubusercontent.com/TomWright/dasel/v3.11.2/LICENSE",
+  "license_sha": "9ef843c5508932baa0632243d2bbda06e85d192e7af3bd36aa7c8be24732e67d",
+  "app_exe": "KiwiData",
+  "version": "0.1.0"
+}
