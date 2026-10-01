@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 PASTEL_VERSION = "0.12.0"
 PASTEL_SHA256 = "51e914b0308b089f032c481e786d67a9f11d8857f4ffe99405f3452e77582393"
 PASTEL_URL = (f"https://github.com/sharkdp/pastel/releases/download/v{PASTEL_VERSION}/"
@@ -38,7 +38,9 @@ def main() -> None:
                 (temp_path / name).write_bytes(archive.read(f"pastel-v{PASTEL_VERSION}-x86_64-pc-windows-msvc/{name}"))
         subprocess.run([
             sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean", "--onefile",
-            "--noconsole", "--name", "KiwiColor", "--distpath", str(temp_path / "dist"),
+            "--noconsole", "--paths", str(ROOT.parents[0] / "common"),
+            "--add-data", f"{ROOT / 'advanced-spec.json'}{os.pathsep}.",
+            "--add-data", f"{ROOT / 'upstream-help.txt'}{os.pathsep}.", "--name", "KiwiColor", "--distpath", str(temp_path / "dist"),
             "--workpath", str(temp_path / "build"), "--specpath", str(temp_path),
             "--add-binary", f"{temp_path / 'pastel.exe'}{os.pathsep}.", str(ROOT / "main.py"),
         ], check=True)

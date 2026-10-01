@@ -1,0 +1,349 @@
+{
+  "slug": "kiwi-ascii",
+  "tool": "ascii-image-converter.exe",
+  "upstream_url": "https://github.com/TheZoraiz/ascii-image-converter",
+  "options": [
+    {
+      "flag": "--braille",
+      "aliases": [
+        "-b",
+        "--braille"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use braille characters instead of ascii Terminal must support braille patterns properly (Overrides --complex and --map flags)",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--color",
+      "aliases": [
+        "-C",
+        "--color"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Display ascii art with original colors If 24-bit colors aren't supported, uses 8-bit (Inverts with --negative flag) (Overrides --grayscale and --font-color flags)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--color-bg",
+      "aliases": [
+        "--color-bg"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "If some color flag is passed, use that color on character background instead of foreground (Inverts with --negative flag) (Only applicable for terminal display)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--complex",
+      "aliases": [
+        "-c",
+        "--complex"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Display ascii characters in a larger range May result in higher quality",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--dimensions",
+      "aliases": [
+        "-d",
+        "--dimensions"
+      ],
+      "takes_value": true,
+      "value_hint": "ints",
+      "description": "Set width and height for ascii art in CHARACTER length e.g. -d 60,30 (defaults to terminal height) (Overrides --width and --height flags)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--dither",
+      "aliases": [
+        "--dither"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Apply dithering on image for braille art conversion (Only applicable with --braille flag) (Negates --threshold flag)",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--flipX",
+      "aliases": [
+        "-x",
+        "--flipX"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Flip ascii art horizontally",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--flipY",
+      "aliases": [
+        "-y",
+        "--flipY"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Flip ascii art vertically",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--font",
+      "aliases": [
+        "--font"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "Set font for --save-img and --save-gif flags Pass file path to font .ttf file e.g. --font ./RobotoMono-Regular.ttf (Defaults to Hack-Regular for ascii and DejaVuSans-Oblique for braille)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--font-color",
+      "aliases": [
+        "--font-color"
+      ],
+      "takes_value": true,
+      "value_hint": "ints",
+      "description": "Set font color for terminal as well as",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--formats",
+      "aliases": [
+        "--formats"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Display supported input formats",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--full",
+      "aliases": [
+        "-f",
+        "--full"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use largest dimensions for ascii art that fill the terminal width (Overrides --dimensions, --width and --height flags)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--grayscale",
+      "aliases": [
+        "-g",
+        "--grayscale"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Display grayscale ascii art (Inverts with --negative flag) (Overrides --font-color flag)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--height",
+      "aliases": [
+        "-H",
+        "--height"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "Set height for ascii art in CHARACTER length Width is kept to aspect ratio e.g. -H 60",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Help for ascii-image-converter",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--map",
+      "aliases": [
+        "-m",
+        "--map"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "Give custom ascii characters to map against Ordered from darkest to lightest e.g. -m \" .-+#@\" (Quotation marks excluded from map) (Overrides --complex flag)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--negative",
+      "aliases": [
+        "-n",
+        "--negative"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Display ascii art in negative colors",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--only-save",
+      "aliases": [
+        "--only-save"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't print ascii art on terminal if some saving flag is passed",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--save-bg",
+      "aliases": [
+        "--save-bg"
+      ],
+      "takes_value": true,
+      "value_hint": "ints",
+      "description": "Set background color for --save-img and --save-gif flags Pass an RGBA value e.g. --save-bg 255,255,255,100 (Defaults to 0,0,0,100)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--save-gif",
+      "aliases": [
+        "--save-gif"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "If input is a gif, save it as a .gif file Format: <gif-name>-ascii-art.gif Gif will be saved in passed path (pass . for current directory)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--save-img",
+      "aliases": [
+        "-s",
+        "--save-img"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "Save ascii art as a .png file Format: <image-name>-ascii-art.png Image will be saved in passed path (pass . for current directory)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--save-txt",
+      "aliases": [
+        "--save-txt"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "Save ascii art as a .txt file Format: <image-name>-ascii-art.txt File will be saved in passed path (pass . for current directory)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--threshold",
+      "aliases": [
+        "--threshold"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "Threshold for braille art Value between 0-255 is accepted e.g. --threshold 170 (Defaults to 128)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-v",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Version for ascii-image-converter",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--width",
+      "aliases": [
+        "-W",
+        "--width"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "Set width for ascii art in CHARACTER length Height is kept to aspect ratio e.g. -W 60",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [],
+  "mandatory_args": [],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "対応機能のヘルプ",
+      "args": [
+        "--help"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "31e1dce67640606a91bb24d1b3a3dd158b9f97bd8ad701cba14062296fef114e"
+}

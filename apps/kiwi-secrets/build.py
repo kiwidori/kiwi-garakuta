@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 GITLEAKS_VERSION = "8.30.1"
 GITLEAKS_SHA256 = "d29144deff3a68aa93ced33dddf84b7fdc26070add4aa0f4513094c8332afc4e"
 GITLEAKS_URL = (f"https://github.com/gitleaks/gitleaks/releases/download/v{GITLEAKS_VERSION}/"
@@ -38,7 +38,9 @@ def main() -> None:
                 (temp_path / name).write_bytes(archive.read(name))
         subprocess.run([
             sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean", "--onefile",
-            "--noconsole", "--name", "KiwiSecrets", "--distpath", str(temp_path / "dist"),
+            "--noconsole", "--paths", str(ROOT.parents[0] / "common"),
+            "--add-data", f"{ROOT / 'advanced-spec.json'}{os.pathsep}.",
+            "--add-data", f"{ROOT / 'upstream-help.txt'}{os.pathsep}.", "--name", "KiwiSecrets", "--distpath", str(temp_path / "dist"),
             "--workpath", str(temp_path / "build"), "--specpath", str(temp_path),
             "--add-binary", f"{temp_path / 'gitleaks.exe'}{os.pathsep}.", str(ROOT / "main.py"),
         ], check=True)

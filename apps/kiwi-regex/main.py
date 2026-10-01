@@ -1,3 +1,8 @@
+import sys as _advanced_sys
+from pathlib import Path as _AdvancedPath
+if not getattr(_advanced_sys, "frozen", False):
+    _advanced_sys.path.insert(0, str(_AdvancedPath(__file__).resolve().parents[1] / "common"))
+from advanced import attach
 import os
 import time
 import sys
@@ -170,6 +175,8 @@ class App(tk.Tk):
 
         self._build_ui()
         self.protocol("WM_DELETE_WINDOW", self.close)
+        # Additional upstream operations run in a separate structured window.
+        self.advanced = attach(self, source_dir=Path(__file__).resolve().parent)
 
     def _build_ui(self) -> None:
         main = ttk.Frame(self, padding=10)

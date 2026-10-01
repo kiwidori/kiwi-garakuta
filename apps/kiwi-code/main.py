@@ -1,6 +1,11 @@
 """Kiwi Code: a read-only, unofficial GUI for bat."""
 
 from __future__ import annotations
+import sys as _advanced_sys
+from pathlib import Path as _AdvancedPath
+if not getattr(_advanced_sys, "frozen", False):
+    _advanced_sys.path.insert(0, str(_AdvancedPath(__file__).resolve().parents[1] / "common"))
+from advanced import attach
 
 import os
 import queue
@@ -166,6 +171,8 @@ class App(tk.Tk):
         body.columnconfigure(0, weight=1)
         ttk.Label(self, textvariable=self.status, padding=(14, 8)).pack(fill="x")
         self.protocol("WM_DELETE_WINDOW", self.close)
+        # Additional upstream operations run in a separate structured window.
+        self.advanced = attach(self, source_dir=Path(__file__).resolve().parent)
 
     def choose(self) -> None:
         selected = filedialog.askopenfilename(filetypes=[("テキスト・コード", "*.txt *.py *.js *.json *.md *.html *.css *.rs *.go"), ("すべてのファイル", "*.*")])

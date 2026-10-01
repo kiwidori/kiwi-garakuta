@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 OXIPNG_VERSION = "10.2.1"
 OXIPNG_SHA256 = "7e940f83ee46874b73f53031f96a15834cb70b220af27391fb06fe7b4dd798e1"
 OXIPNG_URL = (f"https://github.com/oxipng/oxipng/releases/download/v{OXIPNG_VERSION}/"
@@ -38,7 +38,9 @@ def main() -> None:
                 (temp_path / name).write_bytes(archive.read(f"oxipng-{OXIPNG_VERSION}-x86_64-pc-windows-msvc/{'LICENSE.txt' if name == 'LICENSE' else name}"))
         subprocess.run([
             sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean", "--onefile",
-            "--noconsole", "--name", "KiwiPNG", "--distpath", str(temp_path / "dist"),
+            "--noconsole", "--paths", str(ROOT.parents[0] / "common"),
+            "--add-data", f"{ROOT / 'advanced-spec.json'}{os.pathsep}.",
+            "--add-data", f"{ROOT / 'upstream-help.txt'}{os.pathsep}.", "--name", "KiwiPNG", "--distpath", str(temp_path / "dist"),
             "--workpath", str(temp_path / "build"), "--specpath", str(temp_path),
             "--add-binary", f"{temp_path / 'oxipng.exe'}{os.pathsep}.", str(ROOT / "main.py"),
         ], check=True)

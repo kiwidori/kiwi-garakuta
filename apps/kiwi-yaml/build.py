@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 YQ_VERSION = "4.54.1"
 YQ_SHA256 = "b645f47ebb3a0d2fbab52998550bbd0a1706f23b5ca5f5b48e638c580bb70928"
 YQ_URL = (f"https://github.com/mikefarah/yq/releases/download/v{YQ_VERSION}/"
@@ -42,7 +42,9 @@ def main() -> None:
         (temp_path / "LICENSE").write_bytes(license_data)
         subprocess.run([
             sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean", "--onefile",
-            "--noconsole", "--name", "KiwiYAML", "--distpath", str(temp_path / "dist"),
+            "--noconsole", "--paths", str(ROOT.parents[0] / "common"),
+            "--add-data", f"{ROOT / 'advanced-spec.json'}{os.pathsep}.",
+            "--add-data", f"{ROOT / 'upstream-help.txt'}{os.pathsep}.", "--name", "KiwiYAML", "--distpath", str(temp_path / "dist"),
             "--workpath", str(temp_path / "build"), "--specpath", str(temp_path),
             "--add-binary", f"{temp_path / 'yq.exe'}{os.pathsep}.", str(ROOT / "main.py"),
         ], check=True)

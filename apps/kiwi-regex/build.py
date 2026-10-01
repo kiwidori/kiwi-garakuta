@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 GREX_VERSION = "1.4.6"
 GREX_SHA256 = "7691dbb8e46339a15d8362b79b2456f508266cf00a55fe685ed69a6259577485"
 GREX_URL = (f"https://github.com/pemistahl/grex/releases/download/v{GREX_VERSION}/"
@@ -44,7 +44,9 @@ def main() -> None:
         (temp_path / "LICENSE").write_bytes(license_data)
         subprocess.run([
             sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean", "--onefile",
-            "--noconsole", "--name", "KiwiRegex", "--distpath", str(temp_path / "dist"),
+            "--noconsole", "--paths", str(ROOT.parents[0] / "common"),
+            "--add-data", f"{ROOT / 'advanced-spec.json'}{os.pathsep}.",
+            "--add-data", f"{ROOT / 'upstream-help.txt'}{os.pathsep}.", "--name", "KiwiRegex", "--distpath", str(temp_path / "dist"),
             "--workpath", str(temp_path / "build"), "--specpath", str(temp_path),
             "--add-binary", f"{temp_path / 'grex.exe'}{os.pathsep}.", str(ROOT / "main.py"),
         ], check=True)

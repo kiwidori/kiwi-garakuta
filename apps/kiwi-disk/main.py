@@ -1,6 +1,11 @@
 """Kiwi Disk: a read-only Windows GUI for dust."""
 
 from __future__ import annotations
+import sys as _advanced_sys
+from pathlib import Path as _AdvancedPath
+if not getattr(_advanced_sys, "frozen", False):
+    _advanced_sys.path.insert(0, str(_AdvancedPath(__file__).resolve().parents[1] / "common"))
+from advanced import attach
 
 import json
 import os
@@ -108,6 +113,8 @@ class App(tk.Tk):
         ttk.Label(self, textvariable=self.status, padding=(14, 0, 14, 12)).pack(fill="x")
         self.after(80, self.drain_events)
         self.protocol("WM_DELETE_WINDOW", self.close)
+        # Additional upstream operations run in a separate structured window.
+        self.advanced = attach(self, source_dir=Path(__file__).resolve().parent)
 
     def choose_folder(self) -> None:
         chosen = filedialog.askdirectory(initialdir=self.folder.get())

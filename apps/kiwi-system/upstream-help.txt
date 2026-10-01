@@ -1,0 +1,250 @@
+Fastfetch is a neofetch-like tool for fetching system information and displaying them in a pretty way
+
+
+
+Usage: fastfetch <?options>
+
+
+
+Informative options:
+
+  -h, --help <?command>: Show this help message or help for a specific command
+
+  -v, --version: Show the full Fastfetch version
+
+      --version-raw: Show the raw version string (major.minor.patch)
+
+      --list-config-paths: List search paths for config files
+
+      --list-data-paths: List search paths for presets and logos
+
+      --list-logos: List available logos
+
+      --list-modules: List available modules
+
+      --list-presets: List available presets
+
+      --list-features: List the supported features that fastfetch was compiled with
+
+      --print-logos: Show available logos
+
+      --print-structure: Show the default structure
+
+      --format <enum>: Set the output format
+
+  -j, --json <?bool>: Enable or disable JSON output
+
+      --dynamic-interval <num>: Keep Fastfetch running and refresh the output every <num> milliseconds
+
+  -w, --watch <?num>: Alias of dynamic-interval, but the value is in seconds instead of milliseconds. If no value is provided, it defaults to 1 second
+
+
+
+Config options:
+
+  -c, --config <config>: Specify the config file or preset to load
+
+      --gen-config <?path>: Interactively generate a config file at the specified path
+
+
+
+General options:
+
+      --thread <?bool>: Use separate threads for HTTP requests
+
+      --wmi-timeout <num>: Set the timeout (ms) for WMI queries
+
+      --processing-timeout <num>: Set the timeout (ms) when waiting for child processes
+
+      --ds-force-drm <?enum>: Specify whether display detection should use DRM only
+
+      --detect-version <?bool>: Specify whether to detect and display versions for terminal, shell, editor, and others
+
+
+
+Logo options:
+
+  -l, --logo <logo>: Set the logo source. Use "none" to disable logo output
+
+      --logo-type <enum>: Set the type of logo specified by "--logo"
+
+      --logo-width <num>: Set the width of the logo (in characters) if it is an image
+
+      --logo-height <num>: Set the height of the logo (in characters) if it is an image
+
+      --logo-preserve-aspect-ratio <?bool>: Specify whether the logo should fill the specified width and height as much as possible without stretching
+
+      --logo-color-[1-9] <color>: Override a color in the logo
+
+      --logo-padding <num>: Set the padding on the left and right sides of the logo
+
+      --logo-padding-left <num>: Set the padding on the left side of the logo
+
+      --logo-padding-right <num>: Set the padding on the right side of the logo
+
+      --logo-padding-top <num>: Set the padding at the top of the logo
+
+      --logo-padding-bottom <num>: Set the padding at the bottom of the logo
+
+      --logo-print-remaining <?bool>: Specify whether to print remaining logo lines when the logo is taller than the module list
+
+      --logo-position <enum>: Set the display position of the logo
+
+      --logo-cache <?enum>: Specify how the image logo cache is used
+
+      --logo-animation-frame <?num>: Select which frame of an animated image logo to render
+
+      --file <path>: Short for --logo-type file --logo <path>
+
+      --file-raw <path>: Short for --logo-type file-raw --logo <path>
+
+      --data <data>: Short for --logo-type data --logo <data>
+
+      --data-raw <data>: Short for --logo-type data-raw --logo <data>
+
+      --raw <path>: Short for --logo-type raw --logo <path>
+
+      --sixel <path>: Short for --logo-type sixel --logo <path>
+
+      --kitty <path>: Short for --logo-type kitty --logo <path>
+
+      --kitty-direct <path>: Short for --logo-type kitty-direct --logo <path>
+
+      --kitty-icat <path>: Short for --logo-type kitty-icat --logo <path>
+
+      --iterm <path>: Short for --logo-type iterm --logo <path>
+
+      --chafa <path>: Short for --logo-type chafa --logo <path>
+
+      --chafa-fg-only <?bool>: Produce character-cell output using foreground colors only
+
+      --chafa-symbols <str>: Specify character symbols to employ in final output
+
+      --chafa-canvas-mode <enum>: Determine how colors are used in the output
+
+      --chafa-color-space <enum>: Set the color space used for quantization
+
+      --chafa-dither-mode <enum>: Set the output dithering mode (no effect with 24-bit color)
+
+
+
+Display options:
+
+  -s, --structure <structure>: Set the structure of the fetch
+
+      --structure-disabled <structure>: Disable specific modules in the structure
+
+      --stat <?bool>: Show execution time (ms) for individual modules
+
+      --pipe <?bool>: Disable colors
+
+      --color <color>: Set the color of both keys and title
+
+      --color-keys <color>: Set the color of the keys
+
+      --color-title <color>: Set the color of the title
+
+      --color-output <color>: Set the color of module output
+
+      --color-separator <color>: Set the color of the key-value separator
+
+      --duration-abbreviation <?bool>: Specify whether to abbreviate duration values
+
+      --duration-space-before-unit <enum>: Specify whether to put a space before the unit in duration values
+
+      --key-width <num>: Align the width of keys to <num> characters
+
+      --key-padding-left <num>: Set the left padding of keys to <num> characters
+
+      --key-type <enum>: Specify whether to show an icon before string keys
+
+      --key-language <?enum>: Specify the language used for module keys
+
+      --bright-color <?bool>: Specify whether keys, title, and ASCII logo should be printed in bright color
+
+      --separator <str>: Set the separator between key and value
+
+      --show-errors <?bool>: Print errors when they occur
+
+      --disable-linewrap <?bool>: Specify whether to disable line wrap during execution
+
+      --hide-cursor <?bool>: Specify whether to hide the cursor during execution
+
+      --percent-type <num>: Set the percentage output style
+
+      --percent-ndigits <num>: Set the number of decimal places to use when formatting percentages
+
+      --percent-color-green <color>: Set color used for the green state of percentage bars and numbers
+
+      --percent-color-yellow <color>: Set color used for the yellow state of percentage bars and numbers
+
+      --percent-color-red <color>: Set color used for the red state of percentage bars and numbers
+
+      --percent-space-before-unit <enum>: Specify whether to put a space before the percentage symbol
+
+      --percent-width <num>: Specify the width of the percentage number, in characters
+
+      --bar-char-elapsed <str>: Set the character used for the elapsed part of percentage bars
+
+      --bar-char-total <str>: Set the character used for the total part of percentage bars
+
+      --bar-border-left <string>: Set the string to use at the left border of percentage bars
+
+      --bar-border-right <string>: Set the string to use at the right border of percentage bars
+
+      --bar-border-left-elapsed <string>: If both bar-border-left-elapsed and bar-border-right-elapsed are set, the border is used as part of the bar content
+
+      --bar-border-right-elapsed <string>: If both bar-border-left-elapsed and bar-border-right-elapsed are set, the border is used as part of the bar content
+
+      --bar-color-elapsed <color>: Set the color used for the elapsed part of percentage bars
+
+      --bar-color-total <color>: Set the color used for the total part of percentage bars
+
+      --bar-color-border <color>: Set the color used for percentage bar borders
+
+      --bar-width <num>: Set the width of percentage bars in characters
+
+      --no-buffer <?bool>: Specify whether stdout buffering should be disabled
+
+      --size-ndigits <num>: Set the number of decimal places to use when formatting sizes
+
+      --size-binary-prefix <enum>: Set the binary prefix to use when formatting sizes
+
+      --size-max-prefix <enum>: Set the largest binary prefix to use when formatting sizes
+
+      --size-space-before-unit <enum>: Specify whether to put a space before the unit
+
+      --freq-ndigits <num>: Set the number of decimal places to use when printing CPU/GPU frequency in GHz
+
+      --freq-space-before-unit <enum>: Specify whether to put a space before the unit
+
+      --fraction-ndigits <num>: Set the number of decimal places to use when printing fractional values
+
+      --fraction-trailing-zeros <enum>: Set when to keep trailing zeros
+
+      --temp-unit <enum>: Set the temperature unit
+
+      --temp-ndigits <num>: Set the number of decimal places to use when printing temperatures
+
+      --temp-color-green <color>: Set color used for the green state of temperature values
+
+      --temp-color-yellow <color>: Set color used for the yellow state of temperature values
+
+      --temp-color-red <color>: Set color used for the red state of temperature values
+
+      --temp-space-before-unit <enum>: Specify whether to put a space before the unit
+
+
+
+
+
+Command flags are not case sensitive. E.g. `--print-logos` is equal to `--Print-Logos`
+
+If a value starts with a ?, it is optional. An optional boolean value defaults to true if not specified.
+
+More detailed help messages for each options can be printed with `-h <option_without_dash_prefix>`
+
+For detailed information on logo options, module configuration, and formatting, visit:
+
+      https://github.com/fastfetch-cli/fastfetch/wiki/Configuration
+

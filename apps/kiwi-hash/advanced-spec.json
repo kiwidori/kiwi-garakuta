@@ -1,0 +1,198 @@
+{
+  "slug": "kiwi-hash",
+  "tool": "b3sum.exe",
+  "upstream_url": "https://github.com/BLAKE3-team/BLAKE3",
+  "options": [
+    {
+      "flag": "--check",
+      "aliases": [
+        "-c",
+        "--check"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Read BLAKE3 sums from the [FILE]s and check them",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--derive-key",
+      "aliases": [
+        "--derive-key"
+      ],
+      "takes_value": true,
+      "value_hint": "<CONTEXT>",
+      "description": "Use the key derivation mode, with the given context string",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print help (see a summary with '-h')",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--keyed",
+      "aliases": [
+        "--keyed"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use the keyed mode, reading the 32-byte key from stdin",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--length",
+      "aliases": [
+        "-l",
+        "--length"
+      ],
+      "takes_value": true,
+      "value_hint": "<LEN>",
+      "description": "The number of output bytes, before hex encoding",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-mmap",
+      "aliases": [
+        "--no-mmap"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Disable memory mapping",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--no-names",
+      "aliases": [
+        "--no-names"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Omit filenames in the output",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--num-threads",
+      "aliases": [
+        "--num-threads"
+      ],
+      "takes_value": true,
+      "value_hint": "<NUM>",
+      "description": "The maximum number of threads to use",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--quiet",
+      "aliases": [
+        "--quiet"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Skip printing OK for each checked file",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--raw",
+      "aliases": [
+        "--raw"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Write raw output bytes to stdout, rather than hex",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--seek",
+      "aliases": [
+        "--seek"
+      ],
+      "takes_value": true,
+      "value_hint": "<SEEK>",
+      "description": "The starting output byte offset, before hex encoding",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--tag",
+      "aliases": [
+        "--tag"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Output BSD-style checksums: BLAKE3 ([FILE]) = [HASH]",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-V",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print version",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [],
+  "mandatory_args": [],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "長さ64バイトのハッシュ",
+      "args": [
+        "--length",
+        "64",
+        "--no-names"
+      ],
+      "stdin": "kiwi\n"
+    },
+    {
+      "name": "鍵導出モード",
+      "args": [
+        "--derive-key",
+        "kiwi-garakuta demo 2026",
+        "--no-names"
+      ],
+      "stdin": "kiwi\n"
+    }
+  ],
+  "help_sha256": "08055df61671ed37aff231075741317a6683d058d5448b48f31b3c8028bce540"
+}

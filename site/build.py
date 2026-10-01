@@ -48,6 +48,10 @@ def require_tool(item: dict) -> None:
         raise ValueError(f"Screenshot must be local: {item['slug']}")
     if not (ROOT / "site" / item["screenshot"].lstrip("/")).is_file():
         raise ValueError(f"Screenshot not found: {item['screenshot']}")
+    advanced_shot = item.get("advanced_screenshot")
+    if advanced_shot and (not advanced_shot.startswith("/assets/screenshots/") or
+                          not (ROOT / "site" / advanced_shot.lstrip("/")).is_file()):
+        raise ValueError(f"Advanced screenshot not found: {item['slug']}")
     if not isinstance(item["features"], list) or not isinstance(item["steps"], list):
         raise ValueError(f"Features and steps must be lists: {item['slug']}")
     if not item.get("windows_test_passed"):
@@ -61,6 +65,14 @@ def require_tool(item: dict) -> None:
 def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_qr: str) -> str:
     features = "".join(f"<li>{esc(value)}</li>" for value in item["features"])
     steps = "".join(f"<li>{esc(value)}</li>" for value in item["steps"])
+    advanced = ""
+    if item.get("advanced_screenshot"):
+        advanced = (f'<section><h2>詳細機能</h2><p>メニュー「詳細機能」→「開く」で、元ツールの追加オプションを選択できます。'
+                    '値・ファイル・フォルダー・標準入力を指定して実行し、標準出力を保存できます。'
+                    '完全なCLI互換ではありません。'
+                    '<a href="https://github.com/kiwidori/kiwi-garakuta/blob/main/docs/upstream-feature-audit.md" rel="noopener noreferrer">対応する機能と制限の一覧 ↗</a></p>'
+                    f'<figure class="shot"><img src="{esc(item["advanced_screenshot"])}" alt="{esc(item["name"])}の詳細機能画面" loading="lazy">'
+                    '<figcaption>詳細機能で追加オプションを実行した画面</figcaption></figure></section>')
     body = f"""<nav class="crumb"><a href="/">一覧</a> / {esc(item['name'])}</nav>
 <section class="hero"><div class="eyebrow">Windows 11 · 無料 · ZIP版</div><h1>{esc(item['name'])}</h1>
 <p class="lead">{esc(item['summary'])}</p>
@@ -70,6 +82,7 @@ def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_
 <figcaption>実際の動作画面</figcaption></figure>
 <section><h2>できること</h2><ul>{features}</ul></section>
 <section><h2>使い方</h2><ol>{steps}</ol></section>
+{advanced}
 <section><h2>制限と注意点</h2><p>{esc(item['limitations'])}</p></section>
 <section class="origin"><h2>元になったソフト</h2><p><a href="{esc(item['upstream_url'])}" rel="noopener noreferrer">上流プロジェクト ↗</a>
 （ライセンス: {esc(item['upstream_license'])}）</p><p>本ソフトは上流プロジェクトの公式製品ではありません。</p></section>

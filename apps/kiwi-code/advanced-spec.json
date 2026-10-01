@@ -1,0 +1,540 @@
+{
+  "slug": "kiwi-code",
+  "tool": "bat.exe",
+  "upstream_url": "https://github.com/sharkdp/bat",
+  "options": [
+    {
+      "flag": "--acknowledgements",
+      "aliases": [
+        "--acknowledgements"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show acknowledgements.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--binary",
+      "aliases": [
+        "--binary"
+      ],
+      "takes_value": true,
+      "value_hint": "<behavior>",
+      "description": "How to treat binary content. (default: no-printing)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--chop-long-lines",
+      "aliases": [
+        "-S",
+        "--chop-long-lines"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Truncate all lines longer than screen width. Alias for '--wrap=never'.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--color",
+      "aliases": [
+        "--color"
+      ],
+      "takes_value": true,
+      "value_hint": "<when>",
+      "description": "Specify when to use colored output. The automatic mode only enables colors if an interactive terminal is detected - colors are automatically disabled if the output goes to a pipe. Possible values: *auto*, never, always.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--completion",
+      "aliases": [
+        "--completion"
+      ],
+      "takes_value": true,
+      "value_hint": "<SHELL>",
+      "description": "Show shell completion for a certain shell. [possible values: bash, fish, zsh, ps1]",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--decorations",
+      "aliases": [
+        "--decorations"
+      ],
+      "takes_value": true,
+      "value_hint": "<when>",
+      "description": "Specify when to use the decorations that have been specified via '--style'. The automatic mode only enables decorations if an interactive terminal is detected. The always mode will show decorations even when piping output. Possible values: *auto*, never, always.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--diagnostic",
+      "aliases": [
+        "--diagnostic"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show diagnostic information for bug reports.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--diff",
+      "aliases": [
+        "-d",
+        "--diff"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Only show lines that have been added/removed/modified with respect to the Git index. Use",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--diff-context",
+      "aliases": [
+        "--diff-context"
+      ],
+      "takes_value": true,
+      "value_hint": "<N>",
+      "description": "Include N lines of context around added/removed/modified lines when using '--diff'.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--file-name",
+      "aliases": [
+        "--file-name"
+      ],
+      "takes_value": true,
+      "value_hint": "<name>",
+      "description": "Specify the name to display for a file. Useful when piping data to bat from STDIN when bat does not otherwise know the filename. Note that the provided file name is also used for syntax detection.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--force-colorization",
+      "aliases": [
+        "-f",
+        "--force-colorization"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Alias for '--decorations=always --color=always'. This is useful if the output of bat is piped to another program, but you want to keep the colorization/decorations.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print help (see a summary with '-h')",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--highlight-line",
+      "aliases": [
+        "-H",
+        "--highlight-line"
+      ],
+      "takes_value": true,
+      "value_hint": "<N:M>",
+      "description": "Highlight the specified line ranges with a different background color For example: '--highlight-line 40' highlights line 40 '--highlight-line 30:40' highlights lines 30 to 40 '--highlight-line :40' highlights lines 1 to 40 '--highlight-line 40:' highlights lines 40 to the end of the file '--highlight-line 30:+10' highlights lines 30 to 40",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignored-suffix",
+      "aliases": [
+        "--ignored-suffix"
+      ],
+      "takes_value": true,
+      "value_hint": "<ignored-suffix>",
+      "description": "Ignore extension. For example: 'bat --ignored-suffix \".dev\" my_file.json.dev' will use JSON syntax, and ignore '.dev'",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--italic-text",
+      "aliases": [
+        "--italic-text"
+      ],
+      "takes_value": true,
+      "value_hint": "<when>",
+      "description": "Specify when to use ANSI sequences for italic text in the output. Possible values: always, *never*.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--language",
+      "aliases": [
+        "-l",
+        "--language"
+      ],
+      "takes_value": true,
+      "value_hint": "<language>",
+      "description": "Explicitly set the language for syntax highlighting. The language can be specified as a name (like 'C++' or 'LaTeX') or possible file extension (like 'cpp', 'hpp' or 'md'). Use '--list-languages' to show all supported language names and file extensions.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--line-range",
+      "aliases": [
+        "-r",
+        "--line-range"
+      ],
+      "takes_value": true,
+      "value_hint": "<N:M>",
+      "description": "Only print the specified range of lines for each file. For example: '--line-range 30:40' prints lines 30 to 40 '--line-range :40' prints lines 1 to 40 '--line-range 40:' prints lines 40 to the end of the file '--line-range 40' only prints line 40 '--line-range -10:' prints the last 10 lines '--line-range 30:+10' prints lines 30 to 40 '--line-range 35::5' prints lines 30 to 40 (line 35 with 5 lines of context) '--line-range 30:40:2' prints lines 28 to 42 (range 30-40 with 2 lines of context)",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--list-languages",
+      "aliases": [
+        "-L",
+        "--list-languages"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Display a list of supported languages for syntax highlighting.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--list-themes",
+      "aliases": [
+        "--list-themes"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Display a list of supported themes for syntax highlighting.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--map-syntax",
+      "aliases": [
+        "-m",
+        "--map-syntax"
+      ],
+      "takes_value": true,
+      "value_hint": "<glob:syntax>",
+      "description": "Map a glob pattern to an existing syntax name. The glob pattern is matched on the full path and the filename. For example, to highlight *.build files with the Python syntax, use",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--nonprintable-notation",
+      "aliases": [
+        "--nonprintable-notation"
+      ],
+      "takes_value": true,
+      "value_hint": "<notation>",
+      "description": "Set notation for non-printable characters.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--number",
+      "aliases": [
+        "-n",
+        "--number"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Only show line numbers, no other decorations. This is an alias for '--style=numbers'",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--pager",
+      "aliases": [
+        "--pager"
+      ],
+      "takes_value": true,
+      "value_hint": "<command>",
+      "description": "Determine which pager is used. This option will override the PAGER and BAT_PAGER environment variables. The default pager is 'less'. If you provide '--pager=builtin', use the built-in 'minus' pager. To control when the pager is used, see the '--paging' option. Example: '--pager \"less -RF\"'.",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--paging",
+      "aliases": [
+        "--paging"
+      ],
+      "takes_value": true,
+      "value_hint": "<when>",
+      "description": "Specify when to use the pager. To disable the pager, use '--paging=never' or its alias,'-P'. To disable the pager permanently, set BAT_PAGING to 'never'. To control which pager is used, see the '--pager' option. Possible values: *auto*, never, always.",
+      "blocked": true,
+      "baseline_cli_use": true,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--plain",
+      "aliases": [
+        "-p",
+        "--plain"
+      ],
+      "takes_value": false,
+      "value_hint": "...",
+      "description": "Only show plain style, no decorations. This is an alias for '--style=plain'. When '-p' is used twice ('-pp'), it also disables automatic paging (alias for '--style=plain",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--set-terminal-title",
+      "aliases": [
+        "--set-terminal-title"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Sets terminal title to filenames when using a pager.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--show-all",
+      "aliases": [
+        "-A",
+        "--show-all"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show non-printable characters like space, tab or newline. This option can also be used to print binary files. Use '--tabs' to control the width of the tab-placeholders.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--squeeze-blank",
+      "aliases": [
+        "-s",
+        "--squeeze-blank"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Squeeze consecutive empty lines into a single empty line.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--squeeze-limit",
+      "aliases": [
+        "--squeeze-limit"
+      ],
+      "takes_value": true,
+      "value_hint": "<squeeze-limit>",
+      "description": "Set the maximum number of consecutive empty lines to be printed.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--strip-ansi",
+      "aliases": [
+        "--strip-ansi"
+      ],
+      "takes_value": true,
+      "value_hint": "<when>",
+      "description": "Specify when to strip ANSI escape sequences from the input. The automatic mode will remove escape sequences unless the syntax highlighting language is plain text. Possible values: auto, always, *never*.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--style",
+      "aliases": [
+        "--style"
+      ],
+      "takes_value": true,
+      "value_hint": "<components>",
+      "description": "Configure which elements (line numbers, file headers, grid borders, Git modifications, ..) to display in addition to the file contents. The argument is a comma-separated list of components to display (e.g. 'numbers,changes,grid') or a pre-defined style ('full'). To set a default style, add the '--style=\"..\"' option to the configuration file or export the BAT_STYLE environment variable (e.g.: export BAT_STYLE=\"..\").",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--tabs",
+      "aliases": [
+        "--tabs"
+      ],
+      "takes_value": true,
+      "value_hint": "<T>",
+      "description": "Set the tab width to T spaces. Use a width of 0 to pass tabs through directly",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--terminal-width",
+      "aliases": [
+        "--terminal-width"
+      ],
+      "takes_value": true,
+      "value_hint": "<width>",
+      "description": "Explicitly set the width of the terminal instead of determining it automatically. If prefixed with '+' or '-', the value will be treated as an offset to the actual terminal width. See also: '--wrap'.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--theme",
+      "aliases": [
+        "--theme"
+      ],
+      "takes_value": true,
+      "value_hint": "<theme>",
+      "description": "Set the theme for syntax highlighting. Use '--list-themes' to see all available themes. To set a default theme, add the '--theme=\"...\"' option to the configuration file or export the BAT_THEME environment variable (e.g.: export BAT_THEME=\"...\").",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--theme-dark",
+      "aliases": [
+        "--theme-dark"
+      ],
+      "takes_value": true,
+      "value_hint": "<theme>",
+      "description": "Sets the theme name for syntax highlighting used when the terminal uses a dark background. Use '--list-themes' to see all available themes. To set a default theme, add the '--theme-dark=\"...\" option to the configuration file or export the BAT_THEME_DARK environment variable (e.g. export BAT_THEME_DARK=\"...\").",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--theme-light",
+      "aliases": [
+        "--theme-light"
+      ],
+      "takes_value": true,
+      "value_hint": "<theme>",
+      "description": "Sets the theme name for syntax highlighting used when the terminal uses a light background. Use '--list-themes' to see all available themes. To set a default theme, add the '--theme-light=\"...\" option to the configuration file or export the BAT_THEME_LIGHT environment variable (e.g. export BAT_THEME_LIGHT=\"...\").",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--unbuffered",
+      "aliases": [
+        "-u",
+        "--unbuffered"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This option exists for POSIX-compliance reasons ('u' is for 'unbuffered'). The output is always unbuffered - this option is simply ignored.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-V",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print version",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--wrap",
+      "aliases": [
+        "--wrap"
+      ],
+      "takes_value": true,
+      "value_hint": "<mode>",
+      "description": "Specify the text-wrapping mode (*auto*, never, character). The '--terminal-width' option can be used in addition to control the output width.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "-m",
+      "aliases": [
+        "-m"
+      ],
+      "takes_value": true,
+      "value_hint": "'.myignore:Git Ignore'. Note that the right-hand side is the *name* of the syntax, not",
+      "description": "a file extension.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [
+    "--pager",
+    "--paging",
+    "--config-file"
+  ],
+  "mandatory_args": [
+    "--paging=never"
+  ],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "対応言語の一覧",
+      "args": [
+        "--list-languages"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "JSON・タブ幅4",
+      "args": [
+        "--language",
+        "json",
+        "--tabs",
+        "4",
+        "--color",
+        "never"
+      ],
+      "stdin": "{\"message\":\"kiwi\"}\n"
+    }
+  ],
+  "help_sha256": "a08085dd55a0e52d2f732751ff955deb6df96fb9a998d4b399d3d76c67fe3098"
+}

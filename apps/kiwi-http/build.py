@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 XH_VERSION = "0.26.2"
 XH_SHA256 = "7907c1ef225382fb5955c8274aa23e31b70622c4d39dbc76cf945dc8ce15a78d"
 XH_URL = (f"https://github.com/ducaale/xh/releases/download/v{XH_VERSION}/"
@@ -38,7 +38,9 @@ def main() -> None:
                 (temp_path / name).write_bytes(archive.read(f"xh-v{XH_VERSION}-x86_64-pc-windows-msvc/{name}"))
         subprocess.run([
             sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean", "--onefile",
-            "--noconsole", "--name", "KiwiHTTP", "--distpath", str(temp_path / "dist"),
+            "--noconsole", "--paths", str(ROOT.parents[0] / "common"),
+            "--add-data", f"{ROOT / 'advanced-spec.json'}{os.pathsep}.",
+            "--add-data", f"{ROOT / 'upstream-help.txt'}{os.pathsep}.", "--name", "KiwiHTTP", "--distpath", str(temp_path / "dist"),
             "--workpath", str(temp_path / "build"), "--specpath", str(temp_path),
             "--add-binary", f"{temp_path / 'xh.exe'}{os.pathsep}.", str(ROOT / "main.py"),
         ], check=True)

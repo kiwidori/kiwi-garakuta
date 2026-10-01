@@ -1,0 +1,149 @@
+grex 1.4.6
+© 2019-today Peter M. Stahl <pemistahl@gmail.com>
+Licensed under the Apache License, Version 2.0
+Downloadable from https://crates.io/crates/grex
+Source code at https://github.com/pemistahl/grex
+
+grex generates regular expressions from user-provided test cases.
+
+Usage: grex [OPTIONS] {INPUT...|--file <FILE>}
+
+Input:
+  [INPUT]...
+          One or more test cases separated by blank space
+          
+          Use a hyphen `-` to read test cases from standard input.
+          
+          Conflicts with --file.
+
+  -f, --file <FILE>
+          Reads test cases on separate lines from a file.
+          
+          Lines may be ended with either a newline `\n` or a carriage return with a line feed
+          `\r\n`. The final line ending is optional.
+          
+          Use a hyphen `-` to read the filename from standard input.
+          
+          Conflicts with INPUT...
+
+Digit Options:
+  -d, --digits
+          Converts any Unicode decimal digit to \d.
+          
+          Takes precedence over --words if both are set. Decimal digits are converted to \d,
+          remaining word characters to \w.
+          
+          Takes precedence over --non-spaces if both are set. Decimal digits are converted to \d,
+          remaining non-space characters to \S.
+
+  -D, --non-digits
+          Converts any character which is not a Unicode decimal digit to \D.
+          
+          Takes precedence over --non-words if both are set. Non-digits which are also non-word
+          characters are converted to \D.
+          
+          Takes precedence over --non-spaces if both are set. Non-digits which are also non-space
+          characters are converted to \D.
+
+Whitespace Options:
+  -s, --spaces
+          Converts any Unicode whitespace character to \s.
+          
+          Takes precedence over --non-digits if both are set. Whitespace is converted to \s,
+          remaining non-digits to \D.
+          
+          Takes precedence over --non-words if both are set. Whitespace is converted to \s,
+          remaining non-word characters to \W.
+
+  -S, --non-spaces
+          Converts any character which is not a Unicode whitespace character to \S
+
+Word Options:
+  -w, --words
+          Converts any Unicode word character to \w.
+          
+          Takes precedence over --non-digits if both are set. Word characters are converted to \w,
+          remaining non-digits to \D.
+          
+          Takes precedence over --non-spaces if both are set. Word characters are converted to \w,
+          remaining non-whitespace to \S.
+
+  -W, --non-words
+          Converts any character which is not a Unicode word character to \W.
+          
+          Takes precedence over --non-spaces if both are set. Non-word characters which are also
+          non-whitespace are converted to \W.
+
+Escaping Options:
+  -e, --escape
+          Replaces all non-ASCII characters with unicode escape sequences
+
+      --with-surrogates
+          Converts astral code points to surrogate pairs if --escape is set
+
+Repetition Options:
+  -r, --repetitions
+          Detects repeated non-overlapping substrings and converts them to {min,max} quantifier
+          notation
+
+      --min-repetitions <QUANTITY>
+          Specifies the minimum quantity of substring repetitions to be converted if --repetitions
+          is set
+          
+          [default: 1]
+
+      --min-substring-length <LENGTH>
+          Specifies the minimum length a repeated substring must have in order to be converted if
+          --repetitions is set
+          
+          [default: 1]
+
+Anchor Options:
+      --no-start-anchor
+          Removes the caret anchor `^` from the resulting regular expression.
+          
+          By default, the caret anchor is added to every generated regular expression which
+          guarantees that the expression matches the test cases given as input only at the start of
+          a string.
+          
+          This flag removes the anchor, thereby allowing to match the test cases also when they do
+          not occur at the start of a string.
+
+      --no-end-anchor
+          Removes the dollar sign anchor `$` from the resulting regular expression.
+          
+          By default, the dollar sign anchor is added to every generated regular expression which
+          guarantees that the expression matches the test cases given as input only at the end of a
+          string.
+          
+          This flag removes the anchor, thereby allowing to match the test cases also when they do
+          not occur at the end of a string.
+
+      --no-anchors
+          Removes the caret and dollar sign anchors from the resulting regular expression.
+          
+          By default, anchors are added to every generated regular expression which guarantees that
+          the expression exactly matches only the test cases given as input and nothing else.
+          
+          This flag removes the anchors, thereby allowing to match the test cases also when they
+          occur within a larger string that contains other content as well.
+
+Display Options:
+  -x, --verbose
+          Produces a nicer-looking regular expression in verbose mode
+
+  -c, --colorize
+          Provides syntax highlighting for the resulting regular expression
+
+Miscellaneous Options:
+  -i, --ignore-case
+          Performs case-insensitive matching, letters match both upper and lower case
+
+  -g, --capture-groups
+          Replaces non-capturing groups with capturing ones
+
+  -h, --help
+          Prints help information
+
+  -v, --version
+          Prints version information

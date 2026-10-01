@@ -1,0 +1,318 @@
+{
+  "slug": "kiwi-color",
+  "tool": "pastel.exe",
+  "upstream_url": "https://github.com/sharkdp/pastel",
+  "options": [
+    {
+      "flag": "--bold",
+      "aliases": [
+        "-b",
+        "--bold"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print the text in bold face",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--color-mode",
+      "aliases": [
+        "-m",
+        "--color-mode"
+      ],
+      "takes_value": true,
+      "value_hint": "<mode>",
+      "description": "Specify the terminal color mode: 24bit, 8bit, off, *auto*",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--color-picker",
+      "aliases": [
+        "--color-picker"
+      ],
+      "takes_value": true,
+      "value_hint": "<color-picker>",
+      "description": "Use a specific tool to pick the colors [possible values: gpick, xcolor, wcolor, grabc, colorpicker, chameleon, kcolorchooser, zenity, yad, hyprpicker]",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--colorspace",
+      "aliases": [
+        "-s",
+        "--colorspace"
+      ],
+      "takes_value": true,
+      "value_hint": "<name>",
+      "description": "The colorspace in which to interpolate",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--force-color",
+      "aliases": [
+        "-f",
+        "--force-color"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Alias for --mode=24bit",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--fraction",
+      "aliases": [
+        "-f",
+        "--fraction"
+      ],
+      "takes_value": true,
+      "value_hint": "<fraction>",
+      "description": "The number between 0.0 and 1.0 determining how much to mix in from the base color.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print help (see a summary with '-h')",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--italic",
+      "aliases": [
+        "-i",
+        "--italic"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print the text in italic font",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--metric",
+      "aliases": [
+        "-m",
+        "--metric"
+      ],
+      "takes_value": true,
+      "value_hint": "<name>",
+      "description": "Distance metric to compute mutual color distances. The CIEDE2000 is more accurate, but also much slower.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-newline",
+      "aliases": [
+        "-n",
+        "--no-newline"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not print a trailing newline character",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--number",
+      "aliases": [
+        "-n",
+        "--number"
+      ],
+      "takes_value": true,
+      "value_hint": "<count>",
+      "description": "Number of colors to generate",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--on",
+      "aliases": [
+        "-o",
+        "--on"
+      ],
+      "takes_value": true,
+      "value_hint": "<bg-color>",
+      "description": "Use the specified background color",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--reverse",
+      "aliases": [
+        "-r",
+        "--reverse"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Reverse the sort order",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--sort",
+      "aliases": [
+        "-s",
+        "--sort"
+      ],
+      "takes_value": true,
+      "value_hint": "<sort-order>",
+      "description": "Sort order [default: hue] [possible values: brightness, luminance, hue, chroma, random]",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--strategy",
+      "aliases": [
+        "-s",
+        "--strategy"
+      ],
+      "takes_value": true,
+      "value_hint": "<strategy>",
+      "description": "Randomization strategy: vivid:    random hue, limited saturation and lightness values rgb:      samples uniformly in RGB space gray:     random gray tone (uniform) lch_hue:  random hue, fixed lightness and chroma",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--underline",
+      "aliases": [
+        "-u",
+        "--underline"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Draw a line below the text",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--unique",
+      "aliases": [
+        "-u",
+        "--unique"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Remove duplicate colors (equality is determined via RGB values)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--verbose",
+      "aliases": [
+        "-v",
+        "--verbose"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print simulation output to STDERR",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-V",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print version",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [
+    "color",
+    "colorblind",
+    "complement",
+    "darken",
+    "desaturate",
+    "distinct",
+    "format",
+    "gradient",
+    "gray",
+    "lighten",
+    "list",
+    "mix",
+    "paint",
+    "random",
+    "rotate",
+    "saturate",
+    "set",
+    "sort-by",
+    "textcolor",
+    "to-gray",
+    "help"
+  ],
+  "blocked_flags": [
+    "--color-picker"
+  ],
+  "mandatory_args": [],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "補色",
+      "args": [
+        "complement",
+        "#336699"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "グラデーション",
+      "args": [
+        "gradient",
+        "--number",
+        "5",
+        "#336699",
+        "#ff9900"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "色の形式変換",
+      "args": [
+        "format",
+        "oklch",
+        "#336699"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "cc12e066fca21a9dd8638bb5719fa73d1e8ed0b223a30e6d4e1933ea9ebc547a"
+}

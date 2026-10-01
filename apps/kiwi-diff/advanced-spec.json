@@ -1,0 +1,325 @@
+{
+  "slug": "kiwi-diff",
+  "tool": "difft.exe",
+  "upstream_url": "https://github.com/Wilfred/difftastic",
+  "options": [
+    {
+      "flag": "--background",
+      "aliases": [
+        "--background"
+      ],
+      "takes_value": true,
+      "value_hint": "<BACKGROUND>",
+      "description": "Set the background brightness. Difftastic will prefer brighter colours on dark backgrounds.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--byte-limit",
+      "aliases": [
+        "--byte-limit"
+      ],
+      "takes_value": true,
+      "value_hint": "<LIMIT>",
+      "description": "Use a line-oriented diff if either input file exceeds this size.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--check-only",
+      "aliases": [
+        "--check-only"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Report whether there are any changes, but don't calculate them. Much faster.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--color",
+      "aliases": [
+        "--color"
+      ],
+      "takes_value": true,
+      "value_hint": "<WHEN>",
+      "description": "When to use color output.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--context",
+      "aliases": [
+        "-c",
+        "--context"
+      ],
+      "takes_value": true,
+      "value_hint": "<LINES>",
+      "description": "The number of contextual lines to show around changed lines.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--display",
+      "aliases": [
+        "--display"
+      ],
+      "takes_value": true,
+      "value_hint": "<MODE>",
+      "description": "Display mode for showing results.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--dump-syntax",
+      "aliases": [
+        "--dump-syntax"
+      ],
+      "takes_value": true,
+      "value_hint": "<PATH>",
+      "description": "Parse a single file with tree-sitter and display the difftastic syntax tree.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--dump-syntax-dot",
+      "aliases": [
+        "--dump-syntax-dot"
+      ],
+      "takes_value": true,
+      "value_hint": "<PATH>",
+      "description": "Parse a single file with tree-sitter and display the difftastic syntax tree, as a DOT graph.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--dump-ts",
+      "aliases": [
+        "--dump-ts"
+      ],
+      "takes_value": true,
+      "value_hint": "<PATH>",
+      "description": "Parse a single file with tree-sitter and display the tree-sitter parse tree.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--exit-code",
+      "aliases": [
+        "--exit-code"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Set the exit code to 1 if there are syntactic changes in any files. For files where there is no detected language (e.g. unsupported language or binary files), sets the exit code if there are any byte changes.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--graph-limit",
+      "aliases": [
+        "--graph-limit"
+      ],
+      "takes_value": true,
+      "value_hint": "<LIMIT>",
+      "description": "Use a line-oriented diff if the internal graph exceeds this number of vertices. This limit controls the worst case runtime and memory usage for difftastic.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print help (see a summary with '-h')",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-comments",
+      "aliases": [
+        "--ignore-comments"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't consider comments when diffing.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--list-languages",
+      "aliases": [
+        "--list-languages"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print all the languages supported by difftastic, along with their recognised extensions.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--override",
+      "aliases": [
+        "--override"
+      ],
+      "takes_value": true,
+      "value_hint": "<GLOB:NAME>",
+      "description": "Associate this glob pattern with this language, overriding normal language detection. For example:",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--override-binary",
+      "aliases": [
+        "--override-binary"
+      ],
+      "takes_value": true,
+      "value_hint": "<GLOB>",
+      "description": "Always treat file names matching this glob as binary files, ignoring the default heuristics for binary detection. For example:",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--parse-error-limit",
+      "aliases": [
+        "--parse-error-limit"
+      ],
+      "takes_value": true,
+      "value_hint": "<LIMIT>",
+      "description": "Use a line-oriented diff if the number of parse errors exceeds this value.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--skip-unchanged",
+      "aliases": [
+        "--skip-unchanged"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't display anything if a file is unchanged. This is useful when comparing directories of files.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--sort-paths",
+      "aliases": [
+        "--sort-paths"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When diffing a directory, output the results sorted by path. This is slower.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--strip-cr",
+      "aliases": [
+        "--strip-cr"
+      ],
+      "takes_value": true,
+      "value_hint": "<on/off>",
+      "description": "Remove any carriage return characters before diffing. This can be helpful when dealing with files on Windows that contain CRLF, i.e. `\\r\\n`.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--syntax-highlight",
+      "aliases": [
+        "--syntax-highlight"
+      ],
+      "takes_value": true,
+      "value_hint": "<on/off>",
+      "description": "Enable or disable syntax highlighting.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--tab-width",
+      "aliases": [
+        "--tab-width"
+      ],
+      "takes_value": true,
+      "value_hint": "<NUM_SPACES>",
+      "description": "Treat a tab as this many spaces.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-V",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print version",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--width",
+      "aliases": [
+        "--width"
+      ],
+      "takes_value": true,
+      "value_hint": "<COLUMNS>",
+      "description": "Use this many columns when calculating line wrapping. If not specified, difftastic will detect the terminal width.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [],
+  "mandatory_args": [],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "対応言語の一覧",
+      "args": [
+        "--list-languages"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "ヘルプ",
+      "args": [
+        "--help"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "58fc6c5f9e1db1902d06995f1c5f21c3f876b72fd1dc47202a44324379fdb325"
+}

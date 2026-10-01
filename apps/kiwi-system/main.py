@@ -1,6 +1,11 @@
 """Kiwi System: a privacy-conscious, unofficial GUI for fastfetch."""
 
 from __future__ import annotations
+import sys as _advanced_sys
+from pathlib import Path as _AdvancedPath
+if not getattr(_advanced_sys, "frozen", False):
+    _advanced_sys.path.insert(0, str(_AdvancedPath(__file__).resolve().parents[1] / "common"))
+from advanced import attach
 
 import json
 import os
@@ -175,6 +180,8 @@ class App(tk.Tk):
         scrollbar.pack(side="right", fill="y")
         ttk.Label(self, textvariable=self.status, padding=(16, 10)).pack(fill="x")
         self.protocol("WM_DELETE_WINDOW", self.close)
+        # Additional upstream operations run in a separate structured window.
+        self.advanced = attach(self, source_dir=Path(__file__).resolve().parent)
 
     def start(self) -> None:
         if self.running:

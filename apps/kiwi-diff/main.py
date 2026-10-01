@@ -1,4 +1,9 @@
 """UTF-8 file comparison GUI."""
+import sys as _advanced_sys
+from pathlib import Path as _AdvancedPath
+if not getattr(_advanced_sys, "frozen", False):
+    _advanced_sys.path.insert(0, str(_AdvancedPath(__file__).resolve().parents[1] / "common"))
+from advanced import attach
 import os
 import queue
 import threading
@@ -39,6 +44,8 @@ class App(tk.Tk):
             variable.trace_add("write",self._changed)
         self._poll()
         self.protocol("WM_DELETE_WINDOW", self.close)
+        # Additional upstream operations run in a separate structured window.
+        self.advanced = attach(self, source_dir=Path(__file__).resolve().parent)
 
     def _build_ui(self):
         top = tk.Frame(self)

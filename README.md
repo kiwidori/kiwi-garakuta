@@ -43,6 +43,8 @@ GUIのソースコードは [`apps/`](apps/) にあります。このリポジ�
 
 ## 開発について
 
+各ソフトの「詳細機能」画面では、同梱CLIの追加オプションを選択し、値・ファイル・標準入力を指定して実行できます。通常画面との違いと制限は [上流ツールとの機能差分](docs/upstream-feature-audit.md) を参照してください。共通画面のコードは [`apps/common/`](apps/common/) にあります。
+
 サイトは `catalog.json` をもとに `python site/build.py` で生成します。ソフトは `apps/` 内の各フォルダーにあり、`verify.py` で主要機能、`smoke_zip.py` で完成ZIPの起動と同梱物を確認できます。配布ビルドは `build.py` を参照してください。
 
 不具合や質問は [@kiwi_dori のDM](https://x.com/kiwi_dori) へお寄せください。開発を支援したい場合は、各ソフトの詳細ページにPayPalリンクがあります。

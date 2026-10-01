@@ -1,0 +1,416 @@
+{
+  "slug": "kiwi-json",
+  "tool": "jq.exe",
+  "upstream_url": "https://github.com/jqlang/jq",
+  "options": [
+    {
+      "flag": "--arg",
+      "aliases": [
+        "--arg"
+      ],
+      "takes_value": true,
+      "value_hint": "name value",
+      "description": "set $name to the string value;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--argjson",
+      "aliases": [
+        "--argjson"
+      ],
+      "takes_value": true,
+      "value_hint": "name value",
+      "description": "set $name to the JSON value;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--args",
+      "aliases": [
+        "--args"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "consume remaining arguments as positional",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ascii-output",
+      "aliases": [
+        "-a",
+        "--ascii-output"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "output strings by only ASCII characters",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--binary",
+      "aliases": [
+        "-b",
+        "--binary"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "open input/output streams in binary mode;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--build-configuration",
+      "aliases": [
+        "--build-configuration"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "show jq's build configuration;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--color-output",
+      "aliases": [
+        "-C",
+        "--color-output"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "colorize JSON output;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--compact-output",
+      "aliases": [
+        "-c",
+        "--compact-output"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "compact instead of pretty-printed output;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--exit-status",
+      "aliases": [
+        "-e",
+        "--exit-status"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "set exit status code based on the output;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--from-file",
+      "aliases": [
+        "-f",
+        "--from-file"
+      ],
+      "takes_value": true,
+      "value_hint": "",
+      "description": "load the filter from a file;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "show the help;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--indent",
+      "aliases": [
+        "--indent"
+      ],
+      "takes_value": true,
+      "value_hint": "n",
+      "description": "use n spaces for indentation (max 7 spaces);",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--join-output",
+      "aliases": [
+        "-j",
+        "--join-output"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "implies -r and output without newline after",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--jsonargs",
+      "aliases": [
+        "--jsonargs"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "consume remaining arguments as positional",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--library-path",
+      "aliases": [
+        "-L",
+        "--library-path"
+      ],
+      "takes_value": true,
+      "value_hint": "dir",
+      "description": "search modules from the directory;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--monochrome-output",
+      "aliases": [
+        "-M",
+        "--monochrome-output"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "disable colored output;",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--null-input",
+      "aliases": [
+        "-n",
+        "--null-input"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "use `null` as the single input value;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--raw-input",
+      "aliases": [
+        "-R",
+        "--raw-input"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "read each line as string instead of JSON;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--raw-output",
+      "aliases": [
+        "-r",
+        "--raw-output"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "output strings without escapes and quotes;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--raw-output0",
+      "aliases": [
+        "--raw-output0"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "implies -r and output NUL after each output;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--rawfile",
+      "aliases": [
+        "--rawfile"
+      ],
+      "takes_value": true,
+      "value_hint": "name file",
+      "description": "set $name to string contents of file;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--seq",
+      "aliases": [
+        "--seq"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "parse input/output as application/json-seq;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--slurp",
+      "aliases": [
+        "-s",
+        "--slurp"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "read all inputs into an array and use it as",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--slurpfile",
+      "aliases": [
+        "--slurpfile"
+      ],
+      "takes_value": true,
+      "value_hint": "name file set $name to an array of JSON values read",
+      "description": "from the file;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--sort-keys",
+      "aliases": [
+        "-S",
+        "--sort-keys"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "sort keys of each object on output;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--stream",
+      "aliases": [
+        "--stream"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "parse the input value in streaming fashion;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--stream-errors",
+      "aliases": [
+        "--stream-errors"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "implies --stream and report parse error as",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--tab",
+      "aliases": [
+        "--tab"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "use tabs for indentation;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--unbuffered",
+      "aliases": [
+        "--unbuffered"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "flush output stream after each output;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-V",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "show the version;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [],
+  "mandatory_args": [],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "複数JSONを配列へまとめる",
+      "args": [
+        "--slurp",
+        "--compact-output",
+        "."
+      ],
+      "stdin": "{\"n\":1}\n{\"n\":2}\n"
+    },
+    {
+      "name": "変数を渡す",
+      "args": [
+        "--null-input",
+        "--arg",
+        "name",
+        "kiwi",
+        "{name:$name}"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "5eae4e94f94b5cbbb3188c2dc0451b059a81085c4726582176e3568577f12274"
+}

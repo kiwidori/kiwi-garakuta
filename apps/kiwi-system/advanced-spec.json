@@ -1,0 +1,1337 @@
+{
+  "slug": "kiwi-system",
+  "tool": "fastfetch.exe",
+  "upstream_url": "https://github.com/fastfetch-cli/fastfetch",
+  "options": [
+    {
+      "flag": "--bar-border-left",
+      "aliases": [
+        "--bar-border-left"
+      ],
+      "takes_value": true,
+      "value_hint": "<string>: Set the string to use at the left border of percentage bars",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--bar-border-left-elapsed",
+      "aliases": [
+        "--bar-border-left-elapsed"
+      ],
+      "takes_value": true,
+      "value_hint": "<string>: If both bar-border-left-elapsed and bar-border-right-elapsed are set, the border is used as part of the bar content",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--bar-border-right",
+      "aliases": [
+        "--bar-border-right"
+      ],
+      "takes_value": true,
+      "value_hint": "<string>: Set the string to use at the right border of percentage bars",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--bar-border-right-elapsed",
+      "aliases": [
+        "--bar-border-right-elapsed"
+      ],
+      "takes_value": true,
+      "value_hint": "<string>: If both bar-border-left-elapsed and bar-border-right-elapsed are set, the border is used as part of the bar content",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--bar-char-elapsed",
+      "aliases": [
+        "--bar-char-elapsed"
+      ],
+      "takes_value": true,
+      "value_hint": "<str>: Set the character used for the elapsed part of percentage bars",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--bar-char-total",
+      "aliases": [
+        "--bar-char-total"
+      ],
+      "takes_value": true,
+      "value_hint": "<str>: Set the character used for the total part of percentage bars",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--bar-color-border",
+      "aliases": [
+        "--bar-color-border"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set the color used for percentage bar borders",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--bar-color-elapsed",
+      "aliases": [
+        "--bar-color-elapsed"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set the color used for the elapsed part of percentage bars",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--bar-color-total",
+      "aliases": [
+        "--bar-color-total"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set the color used for the total part of percentage bars",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--bar-width",
+      "aliases": [
+        "--bar-width"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the width of percentage bars in characters",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--bright-color",
+      "aliases": [
+        "--bright-color"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Specify whether keys, title, and ASCII logo should be printed in bright color",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--chafa",
+      "aliases": [
+        "--chafa",
+        "--logo-type",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<path>: Short for --logo-type chafa --logo <path>",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--chafa-canvas-mode",
+      "aliases": [
+        "--chafa-canvas-mode"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Determine how colors are used in the output",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--chafa-color-space",
+      "aliases": [
+        "--chafa-color-space"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Set the color space used for quantization",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--chafa-dither-mode",
+      "aliases": [
+        "--chafa-dither-mode"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Set the output dithering mode (no effect with 24-bit color)",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--chafa-fg-only",
+      "aliases": [
+        "--chafa-fg-only"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Produce character-cell output using foreground colors only",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--chafa-symbols",
+      "aliases": [
+        "--chafa-symbols"
+      ],
+      "takes_value": true,
+      "value_hint": "<str>: Specify character symbols to employ in final output",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--color",
+      "aliases": [
+        "--color"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set the color of both keys and title",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--color-keys",
+      "aliases": [
+        "--color-keys"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set the color of the keys",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--color-output",
+      "aliases": [
+        "--color-output"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set the color of module output",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--color-separator",
+      "aliases": [
+        "--color-separator"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set the color of the key-value separator",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--color-title",
+      "aliases": [
+        "--color-title"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set the color of the title",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--config",
+      "aliases": [
+        "-c",
+        "--config"
+      ],
+      "takes_value": true,
+      "value_hint": "<config>: Specify the config file or preset to load",
+      "description": "",
+      "blocked": true,
+      "baseline_cli_use": true,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--data",
+      "aliases": [
+        "--data",
+        "--logo-type",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<data>: Short for --logo-type data --logo <data>",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--data-raw",
+      "aliases": [
+        "--data-raw",
+        "--logo-type",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<data>: Short for --logo-type data-raw --logo <data>",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--detect-version",
+      "aliases": [
+        "--detect-version"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Specify whether to detect and display versions for terminal, shell, editor, and others",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--disable-linewrap",
+      "aliases": [
+        "--disable-linewrap"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Specify whether to disable line wrap during execution",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ds-force-drm",
+      "aliases": [
+        "--ds-force-drm"
+      ],
+      "takes_value": true,
+      "value_hint": "<?enum>: Specify whether display detection should use DRM only",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--duration-abbreviation",
+      "aliases": [
+        "--duration-abbreviation"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Specify whether to abbreviate duration values",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--duration-space-before-unit",
+      "aliases": [
+        "--duration-space-before-unit"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Specify whether to put a space before the unit in duration values",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--dynamic-interval",
+      "aliases": [
+        "--dynamic-interval"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Keep Fastfetch running and refresh the output every <num> milliseconds",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--file",
+      "aliases": [
+        "--file",
+        "--logo-type",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<path>: Short for --logo-type file --logo <path>",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--file-raw",
+      "aliases": [
+        "--file-raw",
+        "--logo-type",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<path>: Short for --logo-type file-raw --logo <path>",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--format",
+      "aliases": [
+        "--format"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Set the output format",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--fraction-ndigits",
+      "aliases": [
+        "--fraction-ndigits"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the number of decimal places to use when printing fractional values",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--fraction-trailing-zeros",
+      "aliases": [
+        "--fraction-trailing-zeros"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Set when to keep trailing zeros",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--freq-ndigits",
+      "aliases": [
+        "--freq-ndigits"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the number of decimal places to use when printing CPU/GPU frequency in GHz",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--freq-space-before-unit",
+      "aliases": [
+        "--freq-space-before-unit"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Specify whether to put a space before the unit",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--gen-config",
+      "aliases": [
+        "--gen-config"
+      ],
+      "takes_value": true,
+      "value_hint": "<?path>: Interactively generate a config file at the specified path",
+      "description": "",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": true,
+      "value_hint": "<?command>: Show this help message or help for a specific command",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--hide-cursor",
+      "aliases": [
+        "--hide-cursor"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Specify whether to hide the cursor during execution",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--iterm",
+      "aliases": [
+        "--iterm",
+        "--logo-type",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<path>: Short for --logo-type iterm --logo <path>",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--json",
+      "aliases": [
+        "-j",
+        "--json"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Enable or disable JSON output",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--key-language",
+      "aliases": [
+        "--key-language"
+      ],
+      "takes_value": true,
+      "value_hint": "<?enum>: Specify the language used for module keys",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--key-padding-left",
+      "aliases": [
+        "--key-padding-left"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the left padding of keys to <num> characters",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--key-type",
+      "aliases": [
+        "--key-type"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Specify whether to show an icon before string keys",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--key-width",
+      "aliases": [
+        "--key-width"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Align the width of keys to <num> characters",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--kitty",
+      "aliases": [
+        "--kitty",
+        "--logo-type",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<path>: Short for --logo-type kitty --logo <path>",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--kitty-direct",
+      "aliases": [
+        "--kitty-direct",
+        "--logo-type",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<path>: Short for --logo-type kitty-direct --logo <path>",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--kitty-icat",
+      "aliases": [
+        "--kitty-icat",
+        "--logo-type",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<path>: Short for --logo-type kitty-icat --logo <path>",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--list-config-paths",
+      "aliases": [
+        "--list-config-paths"
+      ],
+      "takes_value": false,
+      "value_hint": ": List search paths for config files",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--list-data-paths",
+      "aliases": [
+        "--list-data-paths"
+      ],
+      "takes_value": false,
+      "value_hint": ": List search paths for presets and logos",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--list-features",
+      "aliases": [
+        "--list-features"
+      ],
+      "takes_value": false,
+      "value_hint": ": List the supported features that fastfetch was compiled with",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--list-logos",
+      "aliases": [
+        "--list-logos"
+      ],
+      "takes_value": false,
+      "value_hint": ": List available logos",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--list-modules",
+      "aliases": [
+        "--list-modules"
+      ],
+      "takes_value": false,
+      "value_hint": ": List available modules",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--list-presets",
+      "aliases": [
+        "--list-presets"
+      ],
+      "takes_value": false,
+      "value_hint": ": List available presets",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo",
+      "aliases": [
+        "-l",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<logo>: Set the logo source. Use \"none\" to disable logo output",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-animation-frame",
+      "aliases": [
+        "--logo-animation-frame"
+      ],
+      "takes_value": true,
+      "value_hint": "<?num>: Select which frame of an animated image logo to render",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-cache",
+      "aliases": [
+        "--logo-cache"
+      ],
+      "takes_value": true,
+      "value_hint": "<?enum>: Specify how the image logo cache is used",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-color-",
+      "aliases": [
+        "--logo-color-"
+      ],
+      "takes_value": true,
+      "value_hint": "[1-9] <color>: Override a color in the logo",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-height",
+      "aliases": [
+        "--logo-height"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the height of the logo (in characters) if it is an image",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-padding",
+      "aliases": [
+        "--logo-padding"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the padding on the left and right sides of the logo",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-padding-bottom",
+      "aliases": [
+        "--logo-padding-bottom"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the padding at the bottom of the logo",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-padding-left",
+      "aliases": [
+        "--logo-padding-left"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the padding on the left side of the logo",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-padding-right",
+      "aliases": [
+        "--logo-padding-right"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the padding on the right side of the logo",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-padding-top",
+      "aliases": [
+        "--logo-padding-top"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the padding at the top of the logo",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-position",
+      "aliases": [
+        "--logo-position"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Set the display position of the logo",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-preserve-aspect-ratio",
+      "aliases": [
+        "--logo-preserve-aspect-ratio"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Specify whether the logo should fill the specified width and height as much as possible without stretching",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-print-remaining",
+      "aliases": [
+        "--logo-print-remaining"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Specify whether to print remaining logo lines when the logo is taller than the module list",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-type",
+      "aliases": [
+        "--logo-type",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Set the type of logo specified by \"--logo\"",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--logo-width",
+      "aliases": [
+        "--logo-width"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the width of the logo (in characters) if it is an image",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-buffer",
+      "aliases": [
+        "--no-buffer"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Specify whether stdout buffering should be disabled",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--percent-color-green",
+      "aliases": [
+        "--percent-color-green"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set color used for the green state of percentage bars and numbers",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--percent-color-red",
+      "aliases": [
+        "--percent-color-red"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set color used for the red state of percentage bars and numbers",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--percent-color-yellow",
+      "aliases": [
+        "--percent-color-yellow"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set color used for the yellow state of percentage bars and numbers",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--percent-ndigits",
+      "aliases": [
+        "--percent-ndigits"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the number of decimal places to use when formatting percentages",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--percent-space-before-unit",
+      "aliases": [
+        "--percent-space-before-unit"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Specify whether to put a space before the percentage symbol",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--percent-type",
+      "aliases": [
+        "--percent-type"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the percentage output style",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--percent-width",
+      "aliases": [
+        "--percent-width"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Specify the width of the percentage number, in characters",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--pipe",
+      "aliases": [
+        "--pipe"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Disable colors",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--print-logos",
+      "aliases": [
+        "--print-logos"
+      ],
+      "takes_value": false,
+      "value_hint": ": Show available logos",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--print-structure",
+      "aliases": [
+        "--print-structure"
+      ],
+      "takes_value": false,
+      "value_hint": ": Show the default structure",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--processing-timeout",
+      "aliases": [
+        "--processing-timeout"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the timeout (ms) when waiting for child processes",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--raw",
+      "aliases": [
+        "--raw",
+        "--logo-type",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<path>: Short for --logo-type raw --logo <path>",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--separator",
+      "aliases": [
+        "--separator"
+      ],
+      "takes_value": true,
+      "value_hint": "<str>: Set the separator between key and value",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--show-errors",
+      "aliases": [
+        "--show-errors"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Print errors when they occur",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--sixel",
+      "aliases": [
+        "--sixel",
+        "--logo-type",
+        "--logo"
+      ],
+      "takes_value": true,
+      "value_hint": "<path>: Short for --logo-type sixel --logo <path>",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--size-binary-prefix",
+      "aliases": [
+        "--size-binary-prefix"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Set the binary prefix to use when formatting sizes",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--size-max-prefix",
+      "aliases": [
+        "--size-max-prefix"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Set the largest binary prefix to use when formatting sizes",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--size-ndigits",
+      "aliases": [
+        "--size-ndigits"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the number of decimal places to use when formatting sizes",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--size-space-before-unit",
+      "aliases": [
+        "--size-space-before-unit"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Specify whether to put a space before the unit",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--stat",
+      "aliases": [
+        "--stat"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Show execution time (ms) for individual modules",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--structure",
+      "aliases": [
+        "-s",
+        "--structure"
+      ],
+      "takes_value": true,
+      "value_hint": "<structure>: Set the structure of the fetch",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--structure-disabled",
+      "aliases": [
+        "--structure-disabled"
+      ],
+      "takes_value": true,
+      "value_hint": "<structure>: Disable specific modules in the structure",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--temp-color-green",
+      "aliases": [
+        "--temp-color-green"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set color used for the green state of temperature values",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--temp-color-red",
+      "aliases": [
+        "--temp-color-red"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set color used for the red state of temperature values",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--temp-color-yellow",
+      "aliases": [
+        "--temp-color-yellow"
+      ],
+      "takes_value": true,
+      "value_hint": "<color>: Set color used for the yellow state of temperature values",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--temp-ndigits",
+      "aliases": [
+        "--temp-ndigits"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the number of decimal places to use when printing temperatures",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--temp-space-before-unit",
+      "aliases": [
+        "--temp-space-before-unit"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Specify whether to put a space before the unit",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--temp-unit",
+      "aliases": [
+        "--temp-unit"
+      ],
+      "takes_value": true,
+      "value_hint": "<enum>: Set the temperature unit",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--thread",
+      "aliases": [
+        "--thread"
+      ],
+      "takes_value": true,
+      "value_hint": "<?bool>: Use separate threads for HTTP requests",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-v",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": ": Show the full Fastfetch version",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version-raw",
+      "aliases": [
+        "--version-raw"
+      ],
+      "takes_value": true,
+      "value_hint": ": Show the raw version string (major.minor.patch)",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--watch",
+      "aliases": [
+        "-w",
+        "--watch"
+      ],
+      "takes_value": true,
+      "value_hint": "<?num>: Alias of dynamic-interval, but the value is in seconds instead of milliseconds. If no value is provided, it defaults to 1 second",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--wmi-timeout",
+      "aliases": [
+        "--wmi-timeout"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>: Set the timeout (ms) for WMI queries",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [
+    "--config",
+    "-c",
+    "--gen-config",
+    "--gen-config-force",
+    "--command-text",
+    "--command-key"
+  ],
+  "mandatory_args": [
+    "--config",
+    "none"
+  ],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "対応モジュールの一覧",
+      "args": [
+        "--list-modules"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "追加モジュールをJSONで取得",
+      "args": [
+        "--format",
+        "json",
+        "--structure",
+        "OS:CPU:Memory:Uptime:Battery"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "a1f5302d9223a9974cf93bda4edbbb26f66ee317f42508097beadc783f9a5601"
+}

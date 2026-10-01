@@ -15,7 +15,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 ASCII_VERSION = "1.13.1"
 ASCII_SHA256 = "f1695fe93fafaf44b23ccc8470a4cdd4f60dba4ec8d04be5c17bffc7c8324e9b"
 ASCII_URL = (f"https://github.com/TheZoraiz/ascii-image-converter/releases/download/v{ASCII_VERSION}/"
@@ -39,7 +39,9 @@ def main() -> None:
                 (temp_path / name).write_bytes(archive.read(f"ascii-image-converter_Windows_amd64_64bit/{name}"))
         subprocess.run([
             sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean", "--onefile",
-            "--noconsole", "--name", "KiwiASCII", "--distpath", str(temp_path / "dist"),
+            "--noconsole", "--paths", str(ROOT.parents[0] / "common"),
+            "--add-data", f"{ROOT / 'advanced-spec.json'}{os.pathsep}.",
+            "--add-data", f"{ROOT / 'upstream-help.txt'}{os.pathsep}.", "--name", "KiwiASCII", "--distpath", str(temp_path / "dist"),
             "--exclude-module", "numpy", "--exclude-module", "matplotlib",
             "--exclude-module", "IPython", "--exclude-module", "olefile",
             "--workpath", str(temp_path / "build"), "--specpath", str(temp_path),

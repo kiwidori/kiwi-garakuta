@@ -12,7 +12,7 @@ import zipfile
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ZIP = HERE / "KiwiDisk-0.1.0-win11-x64.zip"
+ZIP = HERE / "KiwiDisk-0.2.0-win11-x64.zip"
 
 
 def find_window(title: str) -> int:

@@ -26,7 +26,7 @@ jobs:
           @'
           from pathlib import Path
           from zipfile import ZipFile
-          package = Path('apps/kiwi-png/KiwiPNG-0.1.0-win11-x64.zip')
+          package = Path('apps/kiwi-png/KiwiPNG-0.2.0-win11-x64.zip')
           with ZipFile(package) as archive:
               needed = {'KiwiPNG.exe', 'README.txt', 'LICENSE', 'oxipng-LICENSE', 'oxipng-README.md'}
               assert needed <= set(archive.namelist())
@@ -37,4 +37,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: pwsh
         run: |
-          gh release create "${{ github.ref_name }}" "apps/kiwi-png/KiwiPNG-0.1.0-win11-x64.zip" --title "きういPNG圧縮 0.1.0" --notes "Windows 11 x64向けの無料ZIP版。oxipngを使ってPNGを圧縮し、新しいファイルとして保存します。上流ライセンス文書を同梱しています。"
+          gh release create "${{ github.ref_name }}" "apps/kiwi-png/KiwiPNG-0.2.0-win11-x64.zip" --title "きういPNG圧縮 0.2.0" --notes "Windows 11 x64向けの無料ZIP版。oxipngを使ってPNGを圧縮し、新しいファイルとして保存します。上流ライセンス文書を同梱しています。"

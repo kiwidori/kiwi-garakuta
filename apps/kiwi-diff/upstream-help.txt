@@ -1,0 +1,210 @@
+A structural diff that understands syntax.
+
+Usage: difft [OPTIONS] OLD-PATH NEW-PATH
+
+Options:
+      --background <BACKGROUND>
+          Set the background brightness. Difftastic will prefer brighter colours on dark
+          backgrounds.
+          
+          [env: DFT_BACKGROUND=]
+          [default: dark]
+          [possible values: dark, light]
+
+      --byte-limit <LIMIT>
+          Use a line-oriented diff if either input file exceeds this size.
+          
+          [env: DFT_BYTE_LIMIT=]
+          [default: 1000000]
+
+  -c, --context <LINES>
+          The number of contextual lines to show around changed lines.
+          
+          [env: DFT_CONTEXT=]
+          [default: 3]
+
+      --check-only
+          Report whether there are any changes, but don't calculate them. Much faster.
+          
+          [env: DFT_CHECK_ONLY=]
+
+      --color <WHEN>
+          When to use color output.
+          
+          [env: DFT_COLOR=]
+          [default: auto]
+          [possible values: always, auto, never]
+
+      --display <MODE>
+          Display mode for showing results.
+          
+          side-by-side: Display the before file and the after file in two separate columns, with
+          line numbers aligned according to unchanged content. If a change is exclusively additions
+          or exclusively removals, use a single column.
+          
+          side-by-side-show-both: The same as side-by-side, but always uses two columns.
+          
+          inline: A single column display, closer to traditional diff display.
+          
+          json: Output the results as a machine-readable JSON array with an element per file.
+          
+          [env: DFT_DISPLAY=]
+          [default: side-by-side]
+          [possible values: side-by-side, side-by-side-show-both, inline, json]
+
+      --exit-code
+          Set the exit code to 1 if there are syntactic changes in any files. For files where there
+          is no detected language (e.g. unsupported language or binary files), sets the exit code if
+          there are any byte changes.
+          
+          [env: DFT_EXIT_CODE=]
+
+      --graph-limit <LIMIT>
+          Use a line-oriented diff if the internal graph exceeds this number of vertices. This limit
+          controls the worst case runtime and memory usage for difftastic.
+          
+          Higher values will allow difftastic to perform a structural diff in more cases. Higher
+          values will also increase the time before difftastic gives up on structural diffing, and
+          increase peak memory usage.
+          
+          [env: DFT_GRAPH_LIMIT=]
+          [default: 3000000]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+      --ignore-comments
+          Don't consider comments when diffing.
+          
+          [env: DFT_IGNORE_COMMENTS=]
+
+      --list-languages
+          Print all the languages supported by difftastic, along with their recognised extensions.
+
+      --override <GLOB:NAME>
+          Associate this glob pattern with this language, overriding normal language detection. For
+          example:
+          
+          $ difft --override='*.c:C++' old.c new.c
+          
+          See --list-languages for the list of language names. Language names are matched case
+          insensitively. Overrides may also specify the language "text" to treat a file as plain
+          text.
+          
+          This argument may be given more than once. For example:
+          
+          $ difft --override='CustomFile:json' --override='*.c:text' old.c new.c
+          
+          To configure multiple overrides using environment variables, difftastic also accepts
+          DFT_OVERRIDE_1 up to DFT_OVERRIDE_9.
+          
+          $ export DFT_OVERRIDE='CustomFile:json'
+          $ export DFT_OVERRIDE_1='*.c:text'
+          $ export DFT_OVERRIDE_2='*.js:javascript jsx'
+          
+          When multiple overrides are specified, the first matching override wins.
+          
+          [env: DFT_OVERRIDE=]
+
+      --override-binary <GLOB>
+          Always treat file names matching this glob as binary files, ignoring the default
+          heuristics for binary detection. For example:
+          
+          $ difft --override-binary='*.gz' old.gz new.gz
+          
+          This argument may be given more than once. For example:
+          
+          $ difft --override-binary='*.gz' --override-binary='foo.pickle' old.gz new.gz
+          
+          To configure multiple overrides using environment variables, difftastic also accepts
+          DFT_OVERRIDE_BINARY_1 up to DFT_OVERRIDE_BINARY_9.
+          
+          $ export DFT_OVERRIDE_BINARY='*.gz'
+          $ export DFT_OVERRIDE_BINARY_1='*.bz2'
+          $ export DFT_OVERRIDE_BINARY_2='foo.pickle'
+          
+          [env: DFT_OVERRIDE_BINARY=]
+
+      --parse-error-limit <LIMIT>
+          Use a line-oriented diff if the number of parse errors exceeds this value.
+          
+          A value of 0 means that any parse error will make difftastic use a line-oriented diff.
+          
+          [env: DFT_PARSE_ERROR_LIMIT=]
+          [default: 0]
+
+      --skip-unchanged
+          Don't display anything if a file is unchanged. This is useful when comparing directories
+          of files.
+          
+          [env: DFT_SKIP_UNCHANGED=]
+
+      --sort-paths
+          When diffing a directory, output the results sorted by path. This is slower.
+          
+          [env: DFT_SORT_PATHS=]
+
+      --strip-cr <on/off>
+          Remove any carriage return characters before diffing. This can be helpful when dealing
+          with files on Windows that contain CRLF, i.e. `\r\n`.
+          
+          When disabled, difftastic will consider multiline string literals (in code) or multiline
+          text (e.g. in HTML) to differ if the two input files have different line endings.
+          
+          [env: DFT_STRIP_CR=]
+          [default: on]
+          [possible values: on, off]
+
+      --syntax-highlight <on/off>
+          Enable or disable syntax highlighting.
+          
+          [env: DFT_SYNTAX_HIGHLIGHT=]
+          [default: on]
+          [possible values: on, off]
+
+      --tab-width <NUM_SPACES>
+          Treat a tab as this many spaces.
+          
+          [env: DFT_TAB_WIDTH=]
+          [default: 4]
+
+  -V, --version
+          Print version
+
+      --width <COLUMNS>
+          Use this many columns when calculating line wrapping. If not specified, difftastic will
+          detect the terminal width.
+          
+          [env: DFT_WIDTH=]
+
+DEBUG OPTIONS:
+      --dump-syntax <PATH>
+          Parse a single file with tree-sitter and display the difftastic syntax tree.
+
+      --dump-syntax-dot <PATH>
+          Parse a single file with tree-sitter and display the difftastic syntax tree, as a DOT
+          graph.
+
+      --dump-ts <PATH>
+          Parse a single file with tree-sitter and display the tree-sitter parse tree.
+
+You can compare two files with difftastic by specifying them as arguments.
+
+$ difft old.js new.js
+
+You can also use directories as arguments. Difftastic will walk both directories and compare files
+with matching names.
+
+$ difft old/ new/
+
+If you have a file with conflict markers, you can pass it as a single argument. Difftastic will diff
+the two conflicting file states.
+
+$ difft file_with_conflicts.js
+
+Difftastic can also be invoked with 7 or 9 arguments in the format that GIT_EXTERNAL_DIFF expects.
+
+$ difft DISPLAY-PATH OLD-FILE OLD-HEX OLD-MODE NEW-FILE NEW-HEX NEW-MODE
+$ difft OLD-NAME OLD-FILE OLD-HEX OLD-MODE NEW-FILE NEW-HEX NEW-MODE NEW-NAME METADATA
+
+See the full manual at https://difftastic.wilfred.me.uk/.

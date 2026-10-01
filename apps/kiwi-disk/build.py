@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 DUST_VERSION = "1.2.6"
 DUST_SHA256 = "d26ad8dab783653ab6a6c0ddf4671fae150be005834f2e3a36a3ac87fb60b7c1"
 DUST_URL = (f"https://github.com/bootandy/dust/releases/download/v{DUST_VERSION}/"
@@ -38,7 +38,9 @@ def main() -> None:
             for name in ("dust.exe", "LICENSE", "README.md"):
                 (temp_path / name).write_bytes(source.read(prefix + name))
         subprocess.run([sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean",
-                        "--onefile", "--noconsole", "--name", "KiwiDisk",
+                        "--onefile", "--noconsole", "--paths", str(ROOT.parents[0] / "common"),
+            "--add-data", f"{ROOT / 'advanced-spec.json'}{os.pathsep}.",
+            "--add-data", f"{ROOT / 'upstream-help.txt'}{os.pathsep}.", "--name", "KiwiDisk",
                         "--distpath", str(temp_path / "dist"),
                         "--workpath", str(temp_path / "build"),
                         "--specpath", str(temp_path),

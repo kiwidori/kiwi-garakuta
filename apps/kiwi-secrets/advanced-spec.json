@@ -1,0 +1,395 @@
+{
+  "slug": "kiwi-secrets",
+  "tool": "gitleaks.exe",
+  "upstream_url": "https://github.com/gitleaks/gitleaks",
+  "options": [
+    {
+      "flag": "--baseline-path",
+      "aliases": [
+        "-b",
+        "--baseline-path"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "path to baseline with issues that can be ignored",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--config",
+      "aliases": [
+        "-c",
+        "--config"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "config file path order of precedence: 1. --config/-c 2. env var GITLEAKS_CONFIG 3. env var GITLEAKS_CONFIG_TOML with the file content 4. (target path)/.gitleaks.toml If none of the four options are used, then gitleaks will use the default config",
+      "blocked": true,
+      "baseline_cli_use": true,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--diagnostics",
+      "aliases": [
+        "--diagnostics"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "enable diagnostics (http OR comma-separated list: cpu,mem,trace). cpu=CPU prof, mem=memory prof, trace=exec tracing, http=serve via net/http/pprof",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--diagnostics-dir",
+      "aliases": [
+        "--diagnostics-dir"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "directory to store diagnostics output files when not using http mode (defaults to current directory)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--enable-rule",
+      "aliases": [
+        "--enable-rule"
+      ],
+      "takes_value": true,
+      "value_hint": "strings",
+      "description": "only enable specific rules by id",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--exit-code",
+      "aliases": [
+        "--exit-code"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "exit code when leaks have been encountered (default 1)",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--follow-symlinks",
+      "aliases": [
+        "--follow-symlinks"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "scan files that are symlinks to other files",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--gitleaks-ignore-path",
+      "aliases": [
+        "-i",
+        "--gitleaks-ignore-path"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "path to .gitleaksignore file or folder containing one (default \".\")",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "help for gitleaks",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-gitleaks-allow",
+      "aliases": [
+        "--ignore-gitleaks-allow"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "ignore gitleaks:allow comments",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--log-level",
+      "aliases": [
+        "-l",
+        "--log-level"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "log level (trace, debug, info, warn, error, fatal) (default \"info\")",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--log-opts",
+      "aliases": [
+        "--log-opts"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "git log options",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--max-archive-depth",
+      "aliases": [
+        "--max-archive-depth"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "allow scanning into nested archives up to this depth (default \"0\", no archive traversal is done)",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--max-decode-depth",
+      "aliases": [
+        "--max-decode-depth"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "allow recursive decoding up to this depth (default 5)",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--max-target-megabytes",
+      "aliases": [
+        "--max-target-megabytes"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "files larger than this will be skipped",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--no-banner",
+      "aliases": [
+        "--no-banner"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "suppress banner",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--no-color",
+      "aliases": [
+        "--no-color"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "turn off color for verbose output",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--platform",
+      "aliases": [
+        "--platform"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "the target platform used to generate links (github, gitlab)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--pre-commit",
+      "aliases": [
+        "--pre-commit"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "scan using git diff",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--redact",
+      "aliases": [
+        "--redact"
+      ],
+      "takes_value": true,
+      "value_hint": "uint[=100]",
+      "description": "redact secrets from logs and stdout. To redact only parts of the secret just apply a percent value from 0..100. For example --redact=20 (default 100%)",
+      "blocked": true,
+      "baseline_cli_use": true,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--report-format",
+      "aliases": [
+        "-f",
+        "--report-format"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "output format (json, csv, junit, sarif, template)",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--report-path",
+      "aliases": [
+        "-r",
+        "--report-path"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "report file (use \"-\" for stdout)",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--report-template",
+      "aliases": [
+        "--report-template"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "template file used to generate the report (implies --report-format=template)",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--staged",
+      "aliases": [
+        "--staged"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "scan staged commits (good for pre-commit)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--timeout",
+      "aliases": [
+        "--timeout"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "set a timeout for gitleaks commands in seconds (default \"0\", no timeout is set)",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--verbose",
+      "aliases": [
+        "-v",
+        "--verbose"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "show verbose output from scan",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "version for gitleaks",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [
+    "dir",
+    "git",
+    "stdin",
+    "help",
+    "version"
+  ],
+  "blocked_flags": [
+    "--redact",
+    "--log-opts",
+    "--diagnostics",
+    "--report-template",
+    "--config",
+    "-c",
+    "--log-level",
+    "-l"
+  ],
+  "mandatory_args": [
+    "--redact=100",
+    "--no-banner",
+    "--no-color",
+    "--log-level=error"
+  ],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "標準入力を検査",
+      "args": [
+        "stdin",
+        "--report-format",
+        "json",
+        "--report-path",
+        "-"
+      ],
+      "stdin": "ordinary text without secrets\n"
+    },
+    {
+      "name": "フォルダーを検査",
+      "args": [
+        "dir",
+        "C:/Users/Public/Documents",
+        "--report-format",
+        "json",
+        "--report-path",
+        "-"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "e4c06ab31cf99440da068603cace70fef7a7171820f74624aab7279097af205e"
+}

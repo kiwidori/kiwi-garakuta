@@ -1,6 +1,11 @@
 """Kiwi Find: a small, unofficial Windows GUI for fd."""
 
 from __future__ import annotations
+import sys as _advanced_sys
+from pathlib import Path as _AdvancedPath
+if not getattr(_advanced_sys, "frozen", False):
+    _advanced_sys.path.insert(0, str(_AdvancedPath(__file__).resolve().parents[1] / "common"))
+from advanced import attach
 
 import os
 import queue
@@ -84,6 +89,8 @@ class App(tk.Tk):
         self.after(80, self.drain_events)
         self.protocol("WM_DELETE_WINDOW", self.close)
         entry.focus_set()
+        # Additional upstream operations run in a separate structured window.
+        self.advanced = attach(self, source_dir=Path(__file__).resolve().parent)
 
     def choose_folder(self) -> None:
         chosen = filedialog.askdirectory(initialdir=self.folder.get())

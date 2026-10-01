@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 B3SUM_VERSION = "1.8.7"
 B3SUM_SHA256 = "fce0c2406a1e92b49fedd02a48a67dc5ba71c3a85eb80a2f950ed985f90e76e2"
 B3SUM_URL = (f"https://github.com/BLAKE3-team/BLAKE3/releases/download/{B3SUM_VERSION}/"
@@ -48,7 +48,9 @@ def main() -> None:
             (temp_path / name).write_bytes(license_data)
         subprocess.run([
             sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean", "--onefile",
-            "--noconsole", "--name", "KiwiHash", "--distpath", str(temp_path / "dist"),
+            "--noconsole", "--paths", str(ROOT.parents[0] / "common"),
+            "--add-data", f"{ROOT / 'advanced-spec.json'}{os.pathsep}.",
+            "--add-data", f"{ROOT / 'upstream-help.txt'}{os.pathsep}.", "--name", "KiwiHash", "--distpath", str(temp_path / "dist"),
             "--workpath", str(temp_path / "build"), "--specpath", str(temp_path),
             "--add-binary", f"{temp_path / 'b3sum.exe'}{os.pathsep}.", str(ROOT / "main.py"),
         ], check=True)

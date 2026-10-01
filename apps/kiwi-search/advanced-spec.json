@@ -1,0 +1,1335 @@
+{
+  "slug": "kiwi-search",
+  "tool": "rg.exe",
+  "upstream_url": "https://github.com/BurntSushi/ripgrep",
+  "options": [
+    {
+      "flag": "--after-context",
+      "aliases": [
+        "-A",
+        "--after-context",
+        "-B",
+        "--before-context",
+        "-C",
+        "--context"
+      ],
+      "takes_value": false,
+      "value_hint": ", -B/--before-context or -C/--context). Escape",
+      "description": "sequences like \\x7F or \\t may be used. The default value is --.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--auto-hybrid-regex",
+      "aliases": [
+        "--auto-hybrid-regex"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "DEPRECATED. Use --engine instead.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--before-context",
+      "aliases": [
+        "-B",
+        "--before-context"
+      ],
+      "takes_value": false,
+      "value_hint": "flags both partially override this flag, regardless",
+      "description": "of the order. For example, -A2 -C1 is equivalent to -A2 -B1.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--binary",
+      "aliases": [
+        "--binary"
+      ],
+      "takes_value": false,
+      "value_hint": ".",
+      "description": "The only filtering ripgrep still does when -uuu is given is to skip symbolic links and to avoid printing matches from binary files. Symbolic links can be followed via the -L/--follow flag, and binary files can be treated as text files via the -a/--text flag.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--block-buffered",
+      "aliases": [
+        "--block-buffered"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When enabled, ripgrep will use block buffering. That is, whenever a matching line is found, it will be written to an in-memory buffer and will not be written to stdout until the buffer reaches a certain size. This is the default when ripgrep's stdout is redirected to a pipeline or a file. When ripgrep's stdout is connected to a tty, line buffering will be used by default. Forcing block buffering can be useful when dumping a large amount of contents to a tty.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--byte-offset",
+      "aliases": [
+        "-b",
+        "--byte-offset"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print the 0-based byte offset within the input file before each line of output. If -o/--only-matching is specified, print the offset of the matched text itself.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--case-sensitive",
+      "aliases": [
+        "-s",
+        "--case-sensitive"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Execute the search case sensitively. This is the default mode.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--color",
+      "aliases": [
+        "--color"
+      ],
+      "takes_value": true,
+      "value_hint": "=WHEN",
+      "description": "This flag controls when to use colors. The default setting is auto, which means ripgrep will try to guess when to use colors. For example, if ripgrep is printing to a tty, then it will use colors, but if it is redirected to a file or a pipe, then it will suppress color output.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--colors",
+      "aliases": [
+        "--colors"
+      ],
+      "takes_value": false,
+      "value_hint": "'match:none'",
+      "description": "ripgrep works this way because it treats the --color flag as a proxy for whether ANSI escape codes should be used at all. This means that environment variables like NO_COLOR=1 and TERM=dumb not only disable colors, but hyperlinks as well. Similarly, colors and hyperlinks are disabled when ripgrep is not writing to a tty. (Unless one forces the issue by setting --color=always.)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--column",
+      "aliases": [
+        "--column"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show column numbers (1-based). This only shows the column numbers for the first match on each line. This does not try to account for Unicode. One byte is equal to one column. This implies -n/--line-number.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--context",
+      "aliases": [
+        "-C",
+        "--context"
+      ],
+      "takes_value": true,
+      "value_hint": "=NUM",
+      "description": "Show NUM lines before and after each match. This is equivalent to providing both the -B/--before-context and -A/--after-context flags with the same value.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--context-separator",
+      "aliases": [
+        "--context-separator"
+      ],
+      "takes_value": true,
+      "value_hint": "=SEPARATOR",
+      "description": "The string used to separate non-contiguous context lines in the output. This is only used when one of the context flags is used (that is,",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--count",
+      "aliases": [
+        "-c",
+        "--count"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag suppresses normal output and shows the number of lines that match the given patterns for each file searched. Each file containing a match has its path and count printed on each line. Note that unless",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--count-matches",
+      "aliases": [
+        "--count-matches"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag suppresses normal output and shows the number of individual matches of the given patterns for each file searched. Each file containing matches has its path and match count printed on each line. Note that this reports the total number of individual matches and not the number of lines that match.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--crlf",
+      "aliases": [
+        "--crlf"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When enabled, ripgrep will treat CRLF (\\r\\n) as a line terminator instead of just \\n.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--debug",
+      "aliases": [
+        "--debug"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show debug messages. Please use this when filing a bug report.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--dfa-size-limit",
+      "aliases": [
+        "--dfa-size-limit"
+      ],
+      "takes_value": true,
+      "value_hint": "=NUM+SUFFIX?",
+      "description": "The upper size limit of the regex DFA. The default limit is something generous for any single pattern or for many smallish patterns. This should only be changed on very large regex inputs where the (slower) fallback regex engine may otherwise be used if the limit is reached.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--encoding",
+      "aliases": [
+        "-E",
+        "--encoding"
+      ],
+      "takes_value": true,
+      "value_hint": "=ENCODING",
+      "description": "Specify the text encoding that ripgrep will use on all files searched. The default value is auto, which will cause ripgrep to do a best effort automatic detection of encoding on a per-file basis. Automatic detection in this case only applies to files that begin with a UTF-8 or UTF-16 byte-order mark (BOM). No other automatic detection is performed. One can also specify none which will then completely disable BOM sniffing and always result in searching the raw bytes, including a BOM if it's present, regardless of its encoding.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--engine",
+      "aliases": [
+        "--engine"
+      ],
+      "takes_value": true,
+      "value_hint": "=ENGINE",
+      "description": "Specify which regular expression engine to use. When you choose a regex engine, it applies that choice for every regex provided to ripgrep (e.g., via multiple -e/--regexp or -f/--file flags).",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--field-context-separator",
+      "aliases": [
+        "--field-context-separator"
+      ],
+      "takes_value": true,
+      "value_hint": "=SEPARATOR",
+      "description": "Set the field context separator. This separator is only used when printing contextual lines. It is used to delimit file paths, line numbers, columns and the contextual line itself. The separator may be any number of bytes, including zero. Escape sequences like \\x7F or \\t may be used.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--field-match-separator",
+      "aliases": [
+        "--field-match-separator"
+      ],
+      "takes_value": true,
+      "value_hint": "=SEPARATOR",
+      "description": "Set the field match separator. This separator is only used when printing matching lines. It is used to delimit file paths, line numbers, columns and the matching line itself. The separator may be any number of bytes, including zero. Escape sequences like \\x7F or \\t may be used.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--file",
+      "aliases": [
+        "-f",
+        "--file"
+      ],
+      "takes_value": true,
+      "value_hint": "=PATTERNFILE",
+      "description": "Search for patterns from the given file, with one pattern per line. When this flag is used multiple times or in combination with the",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--files",
+      "aliases": [
+        "--files"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print each file that would be searched without actually performing the search. This is useful to determine whether a particular file is being searched or not.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--files-with-matches",
+      "aliases": [
+        "-l",
+        "--files-with-matches"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print only the paths with at least one match and suppress match contents.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--files-without-match",
+      "aliases": [
+        "--files-without-match"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print the paths that contain zero matches and suppress match contents.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--fixed-strings",
+      "aliases": [
+        "-F",
+        "--fixed-strings"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Treat all patterns as literals instead of as regular expressions. When this flag is used, special regular expression meta characters such as .(){}*+ should not need be escaped.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--follow",
+      "aliases": [
+        "-L",
+        "--follow"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag instructs ripgrep to follow symbolic links while traversing directories. This behavior is disabled by default. Note that ripgrep will check for symbolic link loops and report errors if it finds one. ripgrep will also report errors for broken links. To suppress error messages, use the --no-messages flag.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--generate",
+      "aliases": [
+        "--generate"
+      ],
+      "takes_value": true,
+      "value_hint": "=KIND",
+      "description": "This flag instructs ripgrep to generate some special kind of output identified by KIND and then quit without searching. KIND can be one of the following values:",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--glob",
+      "aliases": [
+        "-g",
+        "--glob"
+      ],
+      "takes_value": true,
+      "value_hint": "=GLOB",
+      "description": "Include or exclude files and directories for searching that match the given glob. This always overrides any other ignore logic. Multiple glob flags may be used. Globbing rules match .gitignore globs. Precede a glob with a ! to exclude it. If multiple globs match a file or directory, the glob given later in the command line takes precedence.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--glob-case-insensitive",
+      "aliases": [
+        "--glob-case-insensitive"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Process all glob patterns given with the -g/--glob flag case insensitively. This effectively treats -g/--glob as --iglob.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--heading",
+      "aliases": [
+        "--heading"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag prints the file path above clusters of matches from each file instead of printing the file path as a prefix for each matched line.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag prints the help output for ripgrep.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--hostname-bin",
+      "aliases": [
+        "--hostname-bin"
+      ],
+      "takes_value": true,
+      "value_hint": "=COMMAND",
+      "description": "This flag controls how ripgrep determines this system's hostname. The flag's value should correspond to an executable (either a path or something that can be found via your system's PATH environment variable). When set, ripgrep will run this executable, with no arguments, and treat its output (with leading and trailing whitespace stripped) as your system's hostname.",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--hyperlink-format",
+      "aliases": [
+        "--hyperlink-format"
+      ],
+      "takes_value": true,
+      "value_hint": "=FORMAT",
+      "description": "Set the format of hyperlinks to use when printing results. Hyperlinks make certain elements of ripgrep's output, such as file paths, clickable. This generally only works in terminal emulators that support OSC-8 hyperlinks. For example, the format file://{host}{path} will emit an RFC 8089 hyperlink. To see the format that ripgrep is using, pass the --debug flag.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--iglob",
+      "aliases": [
+        "--iglob"
+      ],
+      "takes_value": true,
+      "value_hint": "=GLOB",
+      "description": "Include or exclude files and directories for searching that match the given glob. This always overrides any other ignore logic. Multiple glob flags may be used. Globbing rules match .gitignore globs. Precede a glob with a ! to exclude it. If multiple globs match a file or directory, the glob given later in the command line takes precedence. Globs used via this flag are matched case insensitively.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-case",
+      "aliases": [
+        "-i",
+        "--ignore-case"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When this flag is provided, all patterns will be searched case insensitively. The case insensitivity rules used by ripgrep's default regex engine conform to Unicode's \"simple\" case folding rules.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-file",
+      "aliases": [
+        "--ignore-file"
+      ],
+      "takes_value": true,
+      "value_hint": "=PATH",
+      "description": "Specifies a path to one or more gitignore formatted rules files. These patterns are applied after the patterns found in .gitignore, .rgignore and .ignore are applied and are matched relative to the current working directory. That is, files specified via this flag have lower precedence than files automatically found in the directory tree. Multiple additional ignore files can be specified by using this flag repeatedly. When specifying multiple ignore files, earlier files have lower precedence than later files.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-file-case-insensitive",
+      "aliases": [
+        "--ignore-file-case-insensitive"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Process ignore files (.gitignore, .ignore, etc.) case insensitively. Note that this comes with a performance penalty and is most useful on case insensitive file systems (such as Windows).",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--include-zero",
+      "aliases": [
+        "--include-zero"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When used with -c/--count or --count-matches, this causes ripgrep to print the number of matches for each file even if there were zero matches. This is disabled by default but can be enabled to make ripgrep behave more like grep.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--invert-match",
+      "aliases": [
+        "-v",
+        "--invert-match"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag inverts matching. That is, instead of printing lines that match, ripgrep will print lines that don't match.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--json",
+      "aliases": [
+        "--json"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Enable printing results in a JSON Lines format.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--line-buffered",
+      "aliases": [
+        "--line-buffered"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When enabled, ripgrep will always use line buffering. That is, whenever a matching line is found, it will be flushed to stdout immediately. This is the default when ripgrep's stdout is connected to a tty, but otherwise, ripgrep will use block buffering, which is typically faster. This flag forces ripgrep to use line buffering even if it would otherwise use block buffering. This is typically useful in shell pipelines, for example:",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--line-number",
+      "aliases": [
+        "-n",
+        "--line-number"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show line numbers (1-based).",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--line-regexp",
+      "aliases": [
+        "-x",
+        "--line-regexp"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When enabled, ripgrep will only show matches surrounded by line boundaries. This is equivalent to surrounding every pattern with ^ and $. In other words, this only prints lines where the entire line participates in a match.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--max-columns",
+      "aliases": [
+        "-M",
+        "--max-columns"
+      ],
+      "takes_value": true,
+      "value_hint": "=NUM",
+      "description": "When given, ripgrep will omit lines longer than this limit in bytes. Instead of printing long lines, only the number of matches in that line is printed.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--max-columns-preview",
+      "aliases": [
+        "--max-columns-preview"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Prints a preview for lines exceeding the configured max column limit.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--max-count",
+      "aliases": [
+        "-m",
+        "--max-count"
+      ],
+      "takes_value": true,
+      "value_hint": "=NUM",
+      "description": "Limit the number of matching lines per file searched to NUM.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--max-depth",
+      "aliases": [
+        "-d",
+        "--max-depth"
+      ],
+      "takes_value": true,
+      "value_hint": "=NUM",
+      "description": "This flag limits the depth of directory traversal to NUM levels beyond the paths given. A value of 0 only searches the explicitly given paths themselves.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--max-filesize",
+      "aliases": [
+        "--max-filesize"
+      ],
+      "takes_value": true,
+      "value_hint": "=NUM+SUFFIX?",
+      "description": "Ignore files larger than NUM in size. This does not apply to directories.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--mmap",
+      "aliases": [
+        "--mmap"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When enabled, ripgrep will search using memory maps when possible. This is enabled by default when ripgrep thinks it will be faster.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--multiline",
+      "aliases": [
+        "-U",
+        "--multiline"
+      ],
+      "takes_value": false,
+      "value_hint": "flag.",
+      "description": "Normally, a . will match any character except line terminators. While this behavior typically isn't relevant for line-oriented matching (since matches can span at most one line), this can be useful when searching with the -U/--multiline flag. By default, multiline mode runs without \"dot all\" mode enabled.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--multiline-dotall",
+      "aliases": [
+        "--multiline-dotall"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag enables \"dot all\" mode in all regex patterns. This causes . to match line terminators when multiline searching is enabled. This flag has no effect if multiline searching isn't enabled with the",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-config",
+      "aliases": [
+        "--no-config"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When set, ripgrep will never read configuration files. When this flag is present, ripgrep will not respect the RIPGREP_CONFIG_PATH environment variable.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-context-separator",
+      "aliases": [
+        "--no-context-separator"
+      ],
+      "takes_value": false,
+      "value_hint": "flag.",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-filename",
+      "aliases": [
+        "-I",
+        "--no-filename"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag instructs ripgrep to never print the file path with each matching line. This is the default when ripgrep is explicitly instructed to search one file or stdin.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-ignore",
+      "aliases": [
+        "--no-ignore"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When set, ignore files such as .gitignore, .ignore and .rgignore will not be respected. This implies --no-ignore-dot, --no-ignore-exclude,",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-ignore-dot",
+      "aliases": [
+        "--no-ignore-dot"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't respect filter rules from .ignore or .rgignore files.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-ignore-exclude",
+      "aliases": [
+        "--no-ignore-exclude"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't respect filter rules from files that are manually configured for the repository. For example, this includes git's .git/info/exclude.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-ignore-files",
+      "aliases": [
+        "--no-ignore-files"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When set, any --ignore-file flags, even ones that come after this flag, are ignored.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-ignore-global",
+      "aliases": [
+        "--no-ignore-global"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't respect filter rules from ignore files that come from \"global\" sources such as git's core.excludesFile configuration option (which defaults to $HOME/.config/git/ignore).",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-ignore-messages",
+      "aliases": [
+        "--no-ignore-messages"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When this flag is enabled, all error messages related to parsing ignore files are suppressed. By default, error messages are printed to stderr. In cases where these errors are expected, this flag can be used to avoid seeing the noise produced by the messages.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-ignore-parent",
+      "aliases": [
+        "--no-ignore-parent"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When this flag is set, filter rules from ignore files found in parent directories are not respected. By default, ripgrep will ascend the parent directories of the current working directory to look for any applicable ignore files that should be applied. In some cases this may not be desirable.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-ignore-vcs",
+      "aliases": [
+        "--no-ignore-vcs"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When given, filter rules from source control ignore files (e.g., .gitignore) are not respected. By default, ripgrep respects git's ignore rules for automatic filtering. In some cases, it may not be desirable to respect the source control's ignore rules and instead only respect rules in .ignore or .rgignore.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-line-number",
+      "aliases": [
+        "-N",
+        "--no-line-number"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Suppress line numbers.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-messages",
+      "aliases": [
+        "--no-messages"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag suppresses some error messages. Specifically, messages related to the failed opening and reading of files. Error messages related to the syntax of the pattern are still shown.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-pcre2-unicode",
+      "aliases": [
+        "--no-pcre2-unicode"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "DEPRECATED. Use --no-unicode instead.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-require-git",
+      "aliases": [
+        "--no-require-git"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When this flag is given, source control ignore files such as .gitignore are respected even if no git repository is present.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-unicode",
+      "aliases": [
+        "--no-unicode"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag disables Unicode mode for all patterns given to ripgrep.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--null",
+      "aliases": [
+        "-0",
+        "--null"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Whenever a file path is printed, follow it with a NUL byte. This includes printing file paths before matches, and when printing a list of matching files such as with -c/--count, -l/--files-with-matches and",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--null-data",
+      "aliases": [
+        "--null-data"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Enabling this flag causes ripgrep to use NUL as a line terminator instead of the default of \\n.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--one-file-system",
+      "aliases": [
+        "--one-file-system"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When enabled, ripgrep will not cross file system boundaries relative to where the search started from.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--only-matching",
+      "aliases": [
+        "-o",
+        "--only-matching",
+        "--heading",
+        "-r",
+        "--replace",
+        "-M",
+        "--max-columns"
+      ],
+      "takes_value": false,
+      "value_hint": ", --heading, -r/--replace, -M/--max-columns, etc.,",
+      "description": "have no effect when --json is set. However, enabling JSON output will always implicitly and unconditionally enable --stats.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--passthru",
+      "aliases": [
+        "--passthru"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print both matching and non-matching lines.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--path-separator",
+      "aliases": [
+        "--path-separator"
+      ],
+      "takes_value": true,
+      "value_hint": "=SEPARATOR",
+      "description": "Set the path separator to use when printing file paths. This defaults to your platform's path separator, which is / on Unix and \\ on Windows. This flag is intended for overriding the default when the environment demands it (e.g., cygwin). A path separator is limited to a single byte.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--pcre2",
+      "aliases": [
+        "-P",
+        "--pcre2"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When this flag is present, ripgrep will use the PCRE2 regex engine instead of its default regex engine.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--pcre2-version",
+      "aliases": [
+        "--pcre2-version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When this flag is present, ripgrep will print the version of PCRE2 in use, along with other information, and then exit. If PCRE2 is not available, then ripgrep will print an error message and exit with an error code.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--pre",
+      "aliases": [
+        "--pre"
+      ],
+      "takes_value": true,
+      "value_hint": "=COMMAND",
+      "description": "For each input PATH, this flag causes ripgrep to search the standard output of COMMAND PATH instead of the contents of PATH. This option expects the COMMAND program to either be a path or to be available in your PATH. Either an empty string COMMAND or the --no-pre flag will disable this behavior.",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--pre-glob",
+      "aliases": [
+        "--pre-glob"
+      ],
+      "takes_value": true,
+      "value_hint": "=GLOB",
+      "description": "This flag works in conjunction with the --pre flag. Namely, when one or more --pre-glob flags are given, then only files that match the given set of globs will be handed to the command specified by the --pre flag. Any non-matching files will be searched without using the preprocessor command.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--pretty",
+      "aliases": [
+        "-p",
+        "--pretty"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This is a convenience alias for --color=always --heading --line-number. This flag is useful when you still want pretty output even if you're piping ripgrep to another program or file. For example: rg -p foo | less -R.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--quiet",
+      "aliases": [
+        "-q",
+        "--quiet"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not print anything to stdout. If a match is found in a file, then ripgrep will stop searching. This is useful when ripgrep is used only for its exit code (which will be an error code if no matches are found).",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--regex-size-limit",
+      "aliases": [
+        "--regex-size-limit"
+      ],
+      "takes_value": true,
+      "value_hint": "=NUM+SUFFIX?",
+      "description": "The size limit of the compiled regex, where the compiled regex generally corresponds to a single object in memory that can match all of the patterns provided to ripgrep. The default limit is generous enough that most reasonable patterns (or even a small number of them) should fit.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--regexp",
+      "aliases": [
+        "-e",
+        "--regexp"
+      ],
+      "takes_value": true,
+      "value_hint": "=PATTERN",
+      "description": "A pattern to search for. This option can be provided multiple times, where all patterns given are searched, in addition to any patterns provided by -f/--file. Lines matching at least one of the provided patterns are printed. This flag can also be used when searching for patterns that start with a dash.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--replace",
+      "aliases": [
+        "-r",
+        "--replace"
+      ],
+      "takes_value": true,
+      "value_hint": "=REPLACEMENT",
+      "description": "Replaces every match with the text given when printing results. Neither this flag nor any other ripgrep flag will modify your files.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--search-zip",
+      "aliases": [
+        "-z",
+        "--search-zip"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag instructs ripgrep to search in compressed files. Currently gzip, bzip2, xz, LZ4, LZMA, Brotli and Zstd files are supported. This option expects the decompression binaries (such as gzip) to be available in your PATH. If the required binaries are not found, then ripgrep will not emit an error messages by default. Use the --debug flag to see more information.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--smart-case",
+      "aliases": [
+        "-S",
+        "--smart-case"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag instructs ripgrep to searches case insensitively if the pattern is all lowercase. Otherwise, ripgrep will search case sensitively.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--sort",
+      "aliases": [
+        "--sort"
+      ],
+      "takes_value": true,
+      "value_hint": "=SORTBY",
+      "description": "This flag enables sorting of results in ascending order. The possible values for this flag are:",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--sort-files",
+      "aliases": [
+        "--sort-files"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "DEPRECATED. Use --sort=path instead.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--sortr",
+      "aliases": [
+        "--sortr"
+      ],
+      "takes_value": true,
+      "value_hint": "=SORTBY",
+      "description": "This flag enables sorting of results in descending order. The possible values for this flag are:",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--stats",
+      "aliases": [
+        "--stats"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When enabled, ripgrep will print aggregate statistics about the search. When this flag is present, ripgrep will print at least the following stats to stdout at the end of the search: number of matched lines, number of files with matches, number of files searched, and the time taken for the entire search to complete.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--stop-on-nonmatch",
+      "aliases": [
+        "--stop-on-nonmatch"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Enabling this option will cause ripgrep to stop reading a file once it encounters a non-matching line after it has encountered a matching line. This is useful if it is expected that all matches in a given file will be on sequential lines, for example due to the lines being sorted.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--text",
+      "aliases": [
+        "-a",
+        "--text"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag instructs ripgrep to search binary files as if they were text. When this flag is present, ripgrep's binary file detection is disabled. This means that when a binary file is searched, its contents may be printed if there is a match. This may cause escape codes to be printed that alter the behavior of your terminal.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--threads",
+      "aliases": [
+        "-j",
+        "--threads"
+      ],
+      "takes_value": true,
+      "value_hint": "=NUM",
+      "description": "This flag sets the approximate number of threads to use. A value of 0 (which is the default) causes ripgrep to choose the thread count using heuristics.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--trace",
+      "aliases": [
+        "--trace"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show trace messages. This shows even more detail than the --debug flag. Generally, one should only use this if --debug doesn't emit the information you're looking for.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--trim",
+      "aliases": [
+        "--trim"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When set, all ASCII whitespace at the beginning of each line printed will be removed.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--type",
+      "aliases": [
+        "-t",
+        "--type"
+      ],
+      "takes_value": true,
+      "value_hint": "was provided for every file type supported by ripgrep",
+      "description": "(including any custom file types). The end result is that --type=all causes ripgrep to search in \"whitelist\" mode, where it will only search files it recognizes via its type definitions.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--type-add",
+      "aliases": [
+        "--type-add"
+      ],
+      "takes_value": true,
+      "value_hint": "=TYPESPEC",
+      "description": "This flag adds a new glob for a particular file type. Only one glob can be added at a time. Multiple --type-add flags can be provided. Unless",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--type-clear",
+      "aliases": [
+        "--type-clear"
+      ],
+      "takes_value": true,
+      "value_hint": "=TYPE",
+      "description": "Clear the file type globs previously defined for TYPE. This clears any previously defined globs for the TYPE, but globs can be added after this flag.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--type-list",
+      "aliases": [
+        "--type-list"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show all supported file types and their corresponding globs. This takes any --type-add and --type-clear flags given into account. Each type is printed on its own line, followed by a : and then a comma-delimited list of globs for that type on the same line.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--type-not",
+      "aliases": [
+        "-T",
+        "--type-not"
+      ],
+      "takes_value": true,
+      "value_hint": "=TYPE",
+      "description": "Do not search files matching TYPE. Multiple -T/--type-not flags may be provided. Use the --type-list flag to list all available types.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--unrestricted",
+      "aliases": [
+        "-u",
+        "--unrestricted"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag reduces the level of \"smart\" filtering. Repeated uses (up to 3) reduces the filtering even more. When repeated three times, ripgrep will search every file in a directory tree.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-V",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag prints ripgrep's version. This also may print other relevant information, such as the presence of target specific optimizations and the git revision that this build of ripgrep was compiled from.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--vimgrep",
+      "aliases": [
+        "--vimgrep"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag instructs ripgrep to print results with every match on its own line, including line numbers and column numbers.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--with-filename",
+      "aliases": [
+        "-H",
+        "--with-filename"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "This flag instructs ripgrep to print the file path for each matching line. This is the default when more than one file is searched. If",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--word-regexp",
+      "aliases": [
+        "-w",
+        "--word-regexp"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When enabled, ripgrep will only show matches surrounded by word boundaries. This is equivalent to surrounding every pattern with \\b{start-half} and \\b{end-half}. These are a custom syntax from ripgrep's default regex engine that, unlike \\b, doesn't require matching a word character on one side. That is, \\b{start-half} corresponds to matching \\W|\\A on the left and \\b{end-half} corresponds to matching \\W|\\z on the right.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [
+    "--pre",
+    "--hostname-bin"
+  ],
+  "mandatory_args": [],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "正規表現・大小文字を無視（標準入力）",
+      "args": [
+        "--ignore-case",
+        "[a-z]+"
+      ],
+      "stdin": "Hello 123\nWORLD\n"
+    },
+    {
+      "name": "ファイル種類の一覧",
+      "args": [
+        "--type-list"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "6e2c6d51cd934d55d9a650864e861562285623f7752a7d75becb291533004fed"
+}

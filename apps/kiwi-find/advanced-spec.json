@@ -1,0 +1,706 @@
+{
+  "slug": "kiwi-find",
+  "tool": "fd.exe",
+  "upstream_url": "https://github.com/sharkdp/fd",
+  "options": [
+    {
+      "flag": "--absolute-path",
+      "aliases": [
+        "-a",
+        "--absolute-path"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Shows the full path starting from the root as opposed to relative paths. The flag can be overridden with --relative-path.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--and",
+      "aliases": [
+        "--and"
+      ],
+      "takes_value": true,
+      "value_hint": "<pattern>",
+      "description": "Add additional required search patterns, all of which must be matched. Multiple additional patterns can be specified. The patterns are regular expressions, unless '--glob' or '--fixed-strings' is used.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--base-directory",
+      "aliases": [
+        "-C",
+        "--base-directory"
+      ],
+      "takes_value": true,
+      "value_hint": "<path>",
+      "description": "Change the current working directory of fd to the provided path. This means that search results will be shown with respect to the given base path. Note that relative paths which are passed to fd via the positional <path> argument or the '--search-path' option will also be resolved relative to this directory.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--batch-size",
+      "aliases": [
+        "--batch-size"
+      ],
+      "takes_value": true,
+      "value_hint": "<size>",
+      "description": "Maximum number of arguments to pass to the command given with -X. If the number of results is greater than the given size, the command given with -X is run again with remaining arguments. A batch size of zero means there is no limit (default), but note that batching might still happen due to OS restrictions on the maximum length of command lines.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--case-sensitive",
+      "aliases": [
+        "-s",
+        "--case-sensitive"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Perform a case-sensitive search. By default, fd uses case-insensitive searches, unless the pattern contains an uppercase character (smart case).",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--change-newer-than",
+      "aliases": [
+        "--change-newer-than"
+      ],
+      "takes_value": false,
+      "value_hint": "'2018-10-27 10:00:00'",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--change-older-than",
+      "aliases": [
+        "--change-older-than"
+      ],
+      "takes_value": false,
+      "value_hint": "2weeks",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--changed-after",
+      "aliases": [
+        "--changed-after"
+      ],
+      "takes_value": false,
+      "value_hint": "1day",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--changed-before",
+      "aliases": [
+        "--changed-before"
+      ],
+      "takes_value": true,
+      "value_hint": "<date|dur>",
+      "description": "Filter results based on the file modification time. Files with modification times less than the argument are returned. The argument can be provided as a specific point in time (YYYY-MM-DD HH:MM:SS or @timestamp) or as a duration (10h, 1d, 35min). '--change-older-than' or '--older' can be used as aliases.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--changed-within",
+      "aliases": [
+        "--changed-within"
+      ],
+      "takes_value": true,
+      "value_hint": "<date|dur>",
+      "description": "Filter results based on the file modification time. Files with modification times greater than the argument are returned. The argument can be provided as a specific point in time (YYYY-MM-DD HH:MM:SS or @timestamp) or as a duration (10h, 1d, 35min). If the time is not specified, it defaults to 00:00:00. '--change-newer-than', '--newer', or '--changed-after' can be used as aliases.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--color",
+      "aliases": [
+        "-c",
+        "--color"
+      ],
+      "takes_value": true,
+      "value_hint": "<when>",
+      "description": "Declare when to use color for the pattern match output",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--exact",
+      "aliases": [
+        "--exact"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Perform an exact match. This is equivalent to '--fixed-strings' but requires the pattern to match the entire filename (or path if '--full-path' is used), rather than a substring. Special regex characters in the pattern are treated as literal characters.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--exact-depth",
+      "aliases": [
+        "--exact-depth"
+      ],
+      "takes_value": true,
+      "value_hint": "<depth>",
+      "description": "Only show search results at the exact given depth. This is an alias for '--min-depth <depth> --max-depth <depth>'.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--exclude",
+      "aliases": [
+        "-E",
+        "--exclude"
+      ],
+      "takes_value": true,
+      "value_hint": "<glob>",
+      "description": "Exclude files/directories that match the given glob pattern. This overrides any other ignore logic. Multiple exclude patterns can be specified.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--exec",
+      "aliases": [
+        "-x",
+        "--exec"
+      ],
+      "takes_value": true,
+      "value_hint": "<cmd>...",
+      "description": "Execute a command for each search result in parallel (use --threads=1 for sequential command execution). There is no guarantee of the order commands are executed in, and the order should not be depended upon. All positional arguments following --exec are considered to be arguments to the command - not to fd. It is therefore recommended to place the '-x'/'--exec' option last. Use '\\;' to terminate the command template if you need to continue passing fd arguments afterwards. The following placeholders are substituted before the command is executed: '{}':   path (of the current search result) '{/}':  basename",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--exec-batch",
+      "aliases": [
+        "-X",
+        "--exec-batch"
+      ],
+      "takes_value": true,
+      "value_hint": "<cmd>...",
+      "description": "Execute the given command once, with all search results as arguments. The order of the arguments is non-deterministic, and should not be relied upon. One of the following placeholders is substituted before the command is executed: '{}':   path (of all search results) '{/}':  basename '{//}': parent directory '{.}':  path without file extension '{/.}': basename without file extension '{{':   literal '{' (for escaping) '}}':   literal '}' (for escaping)",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--extension",
+      "aliases": [
+        "-e",
+        "--extension"
+      ],
+      "takes_value": true,
+      "value_hint": "<ext>",
+      "description": "Filter results by extension. By default, this matches all entry types (including directories whose names end with the extension). Use `--type` to restrict the search to specific types. Multiple extensions can be specified.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--fixed-strings",
+      "aliases": [
+        "-F",
+        "--fixed-strings"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Treat the pattern as a literal string instead of a regular expression. Note that this also performs substring comparison. If you want to match on an exact filename, consider using '--glob' or '--exact' instead.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--follow",
+      "aliases": [
+        "-L",
+        "--follow"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "By default, fd does not descend into symlinked directories. Using this flag, symbolic links are also traversed. Flag can be overridden with --no-follow.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--format",
+      "aliases": [
+        "--format"
+      ],
+      "takes_value": true,
+      "value_hint": "<fmt>",
+      "description": "Print results according to template",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--full-path",
+      "aliases": [
+        "-p",
+        "--full-path"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "By default, the search pattern is only matched against the filename (or directory name). Using this flag, the pattern is matched against the full (absolute) path. Example: fd --glob -p '**/.git/config'",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--glob",
+      "aliases": [
+        "--glob"
+      ],
+      "takes_value": false,
+      "value_hint": "is used). If no pattern has been specified, every entry is considered a match. If",
+      "description": "your pattern starts with a dash (-), make sure to pass '--' first, or it will be considered as a flag (fd -- '-foo').",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print help (see a summary with '-h')",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--hidden",
+      "aliases": [
+        "-H",
+        "--hidden"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Include hidden directories and files in the search results (default: hidden files and directories are skipped). Files and directories are considered to be hidden if their name starts with a `.` sign (dot). Any files or directories that are ignored due to the rules described by --no-ignore are still ignored unless otherwise specified. The flag can be overridden with --no-hidden.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--hyperlink",
+      "aliases": [
+        "--hyperlink"
+      ],
+      "takes_value": true,
+      "value_hint": "[=<when>]",
+      "description": "Add a terminal hyperlink to a file:// url for each path in the output.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-case",
+      "aliases": [
+        "-i",
+        "--ignore-case"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Perform a case-insensitive search. By default, fd uses case-insensitive searches, unless the pattern contains an uppercase character (smart case).",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-contain",
+      "aliases": [
+        "--ignore-contain"
+      ],
+      "takes_value": true,
+      "value_hint": "<name>",
+      "description": "Ignore directories containing the named entry",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-file",
+      "aliases": [
+        "--ignore-file"
+      ],
+      "takes_value": true,
+      "value_hint": "<path>",
+      "description": "Add a custom ignore-file in '.gitignore' format. These files have a low precedence.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--list-details",
+      "aliases": [
+        "-l",
+        "--list-details"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use a detailed listing format like 'ls -l'. This is basically an alias for '--exec-batch ls -l' with some additional 'ls' options. This can be used to see more metadata, to show symlink targets and to achieve a deterministic sort order.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--max-depth",
+      "aliases": [
+        "-d",
+        "--max-depth"
+      ],
+      "takes_value": true,
+      "value_hint": "<depth>",
+      "description": "Limit the directory traversal to a given depth. By default, there is no limit on the search depth.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--max-results",
+      "aliases": [
+        "--max-results"
+      ],
+      "takes_value": true,
+      "value_hint": "<count>",
+      "description": "Limit the number of search results to 'count' and quit immediately.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--min-depth",
+      "aliases": [
+        "--min-depth"
+      ],
+      "takes_value": true,
+      "value_hint": "<depth>",
+      "description": "Only show search results starting at the given depth. See also: '--max-depth' and '--exact-depth'",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--newer",
+      "aliases": [
+        "--newer"
+      ],
+      "takes_value": false,
+      "value_hint": "2018-10-27",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-ignore",
+      "aliases": [
+        "-I",
+        "--no-ignore"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show search results from files and directories that would otherwise be ignored by '.gitignore', '.ignore', '.fdignore', or the global ignore file, The flag can be overridden with --ignore.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--no-ignore-parent",
+      "aliases": [
+        "--no-ignore-parent"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show search results from files and directories that would otherwise be ignored by '.gitignore', '.ignore', or '.fdignore' files in parent directories. The flag can be overridden with --ignore-parent.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-ignore-vcs",
+      "aliases": [
+        "--no-ignore-vcs"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show search results from files and directories that would otherwise be ignored by '.gitignore' files. The flag can be overridden with --ignore-vcs.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-require-git",
+      "aliases": [
+        "--no-require-git"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not require a git repository to respect gitignores. By default, fd will only respect global gitignore rules, .gitignore rules, and local exclude rules if fd detects that you are searching inside a git repository. This flag allows you to relax this restriction such that fd will respect all git related ignore rules regardless of whether you're searching in a git repository or not.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--older",
+      "aliases": [
+        "--older"
+      ],
+      "takes_value": false,
+      "value_hint": "2018-10-27",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--one-file-system",
+      "aliases": [
+        "--one-file-system"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "By default, fd will traverse the file system tree as far as other options dictate. With this flag, fd ensures that it does not descend into a different file system than the one it started in. Comparable to the -mount or -xdev filters of find(1).",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--path-separator",
+      "aliases": [
+        "--path-separator"
+      ],
+      "takes_value": true,
+      "value_hint": "<separator>",
+      "description": "Set the path separator to use when printing file paths. The default is the OS-specific separator ('/' on Unix, '\\' on Windows).",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--print0",
+      "aliases": [
+        "-0",
+        "--print0"
+      ],
+      "takes_value": false,
+      "value_hint": "are given, to reduce the risk of a path starting with '-' being treated as a",
+      "description": "command line option. Use this flag to change this behavior. If this flag is used without a value, it is equivalent to passing \"always\".",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--prune",
+      "aliases": [
+        "--prune"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not traverse into directories that match the search criteria. If you want to exclude specific directories, use the '--exclude=…' option.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--quiet",
+      "aliases": [
+        "-q",
+        "--quiet"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When the flag is present, the program does not print anything and will return with an exit code of 0 if there is at least one match. Otherwise, the exit code will be 1. '--has-results' can be used as an alias.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--regex",
+      "aliases": [
+        "--regex"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Perform a regular-expression based search (default). This can be used to override",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--search-path",
+      "aliases": [
+        "--search-path"
+      ],
+      "takes_value": true,
+      "value_hint": "<search-path>",
+      "description": "Provide paths to search as an alternative to the positional <path> argument. Changes the usage to `fd [OPTIONS] --search-path <path> --search-path <path2> [<pattern>]`",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--show-errors",
+      "aliases": [
+        "--show-errors"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Enable the display of filesystem errors for situations such as insufficient permissions or dead symlinks.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--size",
+      "aliases": [
+        "-S",
+        "--size"
+      ],
+      "takes_value": true,
+      "value_hint": "<size>",
+      "description": "Limit results based on the size of files using the format <+-><NUM><UNIT>. '+': file size must be greater than or equal to this '-': file size must be less than or equal to this",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--strip-cwd-prefix",
+      "aliases": [
+        "--strip-cwd-prefix"
+      ],
+      "takes_value": true,
+      "value_hint": "[=<when>]",
+      "description": "By default, relative paths are prefixed with './' when -x/--exec, -X/--exec-batch, or",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--threads",
+      "aliases": [
+        "-j",
+        "--threads"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>",
+      "description": "Set number of threads to use for searching & executing (default: number of available CPU cores)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--type",
+      "aliases": [
+        "-t",
+        "--type"
+      ],
+      "takes_value": true,
+      "value_hint": "<filetype>",
+      "description": "Filter the search by type: 'f' or 'file':         regular files 'd' or 'dir' or 'directory':    directories 'l' or 'symlink':      symbolic links 's' or 'socket':       socket 'p' or 'pipe':         named pipe (FIFO) 'b' or 'block-device': block device 'c' or 'char-device':  character device",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--unrestricted",
+      "aliases": [
+        "-u",
+        "--unrestricted"
+      ],
+      "takes_value": false,
+      "value_hint": "...",
+      "description": "Perform an unrestricted search, including ignored and hidden files. This is an alias for '--no-ignore --hidden'.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-V",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print version",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-1",
+      "aliases": [
+        "-1"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Limit the search to a single result and quit immediately. This is an alias for '--max-results=1'.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [
+    "--exec",
+    "--exec-batch",
+    "-x",
+    "-X"
+  ],
+  "mandatory_args": [],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "フォルダーも含めて探す",
+      "args": [
+        "--type",
+        "directory",
+        ".",
+        "C:/Users/Public/Documents"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "深さ2まで・隠しファイルも含める",
+      "args": [
+        "--max-depth",
+        "2",
+        "--hidden",
+        ".",
+        "C:/Users/Public/Documents"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "507ce783bff19e56f6b45b94614253d4c3fda8e011cbdc24d517f5e47188f66e"
+}

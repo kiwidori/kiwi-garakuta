@@ -1,0 +1,691 @@
+{
+  "slug": "kiwi-http",
+  "tool": "xh.exe",
+  "upstream_url": "https://github.com/ducaale/xh",
+  "options": [
+    {
+      "flag": "--all",
+      "aliases": [
+        "--all"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show any intermediary requests/responses while following redirects with --follow",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--auth",
+      "aliases": [
+        "-a",
+        "--auth"
+      ],
+      "takes_value": true,
+      "value_hint": "<USER[:PASS] | TOKEN>",
+      "description": "Authenticate as USER with PASS (-A basic|digest) or with TOKEN (-A bearer)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--auth-type",
+      "aliases": [
+        "-A",
+        "--auth-type"
+      ],
+      "takes_value": true,
+      "value_hint": "<AUTH_TYPE>",
+      "description": "Specify the auth mechanism [possible values: basic, bearer, digest]",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--body",
+      "aliases": [
+        "-b",
+        "--body"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print only the response body. Shortcut for --print=b",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--cert",
+      "aliases": [
+        "--cert"
+      ],
+      "takes_value": true,
+      "value_hint": "<FILE>",
+      "description": "Use a client side certificate for SSL",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--cert-key",
+      "aliases": [
+        "--cert-key"
+      ],
+      "takes_value": true,
+      "value_hint": "<FILE>",
+      "description": "A private key file to use with --cert",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--check-status",
+      "aliases": [
+        "--check-status"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "(default) Exit with an error status code if the server replies with an error",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--compress",
+      "aliases": [
+        "-x",
+        "--compress"
+      ],
+      "takes_value": false,
+      "value_hint": "...",
+      "description": "Content compressed (encoded) with Deflate algorithm",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--continue",
+      "aliases": [
+        "-c",
+        "--continue"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Resume an interrupted download. Requires --download and --output",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--curl",
+      "aliases": [
+        "--curl"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print a translation to a curl command",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--curl-long",
+      "aliases": [
+        "--curl-long"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use the long versions of curl's flags",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--debug",
+      "aliases": [
+        "--debug"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print full error stack traces and debug log messages",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--download",
+      "aliases": [
+        "-d",
+        "--download"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Download the body to a file instead of printing it",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--follow",
+      "aliases": [
+        "-F",
+        "--follow"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do follow redirects",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--form",
+      "aliases": [
+        "-f",
+        "--form"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Serialize data items from the command line as form fields",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--format-options",
+      "aliases": [
+        "--format-options"
+      ],
+      "takes_value": true,
+      "value_hint": "<FORMAT_OPTIONS>",
+      "description": "Set output formatting options",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--generate",
+      "aliases": [
+        "--generate"
+      ],
+      "takes_value": true,
+      "value_hint": "<KIND>",
+      "description": "Generate shell completions or man pages",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--headers",
+      "aliases": [
+        "-h",
+        "--headers"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print only the response headers. Shortcut for --print=h",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print help",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--history-print",
+      "aliases": [
+        "-P",
+        "--history-print"
+      ],
+      "takes_value": true,
+      "value_hint": "<FORMAT>",
+      "description": "The same as --print but applies only to intermediary requests/responses",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--http-version",
+      "aliases": [
+        "--http-version"
+      ],
+      "takes_value": true,
+      "value_hint": "<VERSION>",
+      "description": "HTTP version to use [possible values: 1.0, 1.1, 2, 2-prior-knowledge, 3-prior-knowledge]",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--https",
+      "aliases": [
+        "--https"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Make HTTPS requests if not specified in the URL",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-netrc",
+      "aliases": [
+        "--ignore-netrc"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not use credentials from .netrc",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--ignore-stdin",
+      "aliases": [
+        "-I",
+        "--ignore-stdin"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not attempt to read stdin",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--interface",
+      "aliases": [
+        "--interface"
+      ],
+      "takes_value": true,
+      "value_hint": "<NAME>",
+      "description": "Bind to a network interface or local IP address",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ipv4",
+      "aliases": [
+        "-4",
+        "--ipv4"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Resolve hostname to ipv4 addresses only",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ipv6",
+      "aliases": [
+        "-6",
+        "--ipv6"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Resolve hostname to ipv6 addresses only",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--json",
+      "aliases": [
+        "-j",
+        "--json"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "(default) Serialize data items from the command line as a JSON object",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--max-redirects",
+      "aliases": [
+        "--max-redirects"
+      ],
+      "takes_value": true,
+      "value_hint": "<NUM>",
+      "description": "Number of redirects to follow. Only respected if --follow is used",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--meta",
+      "aliases": [
+        "-m",
+        "--meta"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print only the response metadata. Shortcut for --print=m",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--multipart",
+      "aliases": [
+        "--multipart"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Like --form, but force a multipart/form-data request even without files",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--native-tls",
+      "aliases": [
+        "--native-tls"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use the system TLS library instead of rustls (if enabled at compile time)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--offline",
+      "aliases": [
+        "--offline"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Construct HTTP requests without sending them anywhere",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--output",
+      "aliases": [
+        "-o",
+        "--output"
+      ],
+      "takes_value": true,
+      "value_hint": "<FILE>",
+      "description": "Save output to FILE instead of stdout",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--pretty",
+      "aliases": [
+        "--pretty"
+      ],
+      "takes_value": true,
+      "value_hint": "<STYLE>",
+      "description": "Controls output processing [possible values: all, colors, format, none]",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--print",
+      "aliases": [
+        "-p",
+        "--print"
+      ],
+      "takes_value": true,
+      "value_hint": "<FORMAT>",
+      "description": "String specifying what the output should contain",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--proxy",
+      "aliases": [
+        "--proxy"
+      ],
+      "takes_value": true,
+      "value_hint": "<PROTOCOL:URL>",
+      "description": "Use a proxy for a protocol. For example: --proxy https:http://proxy.host:8080",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--quiet",
+      "aliases": [
+        "-q",
+        "--quiet"
+      ],
+      "takes_value": false,
+      "value_hint": "...",
+      "description": "Do not print to stdout or stderr",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--raw",
+      "aliases": [
+        "--raw"
+      ],
+      "takes_value": true,
+      "value_hint": "<RAW>",
+      "description": "Pass raw request data without extra processing",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--resolve",
+      "aliases": [
+        "--resolve"
+      ],
+      "takes_value": true,
+      "value_hint": "<HOST:ADDRESS>",
+      "description": "Override DNS resolution for specific domain to a custom IP",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--response-charset",
+      "aliases": [
+        "--response-charset"
+      ],
+      "takes_value": true,
+      "value_hint": "<ENCODING>",
+      "description": "Override the response encoding for terminal display purposes",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--response-mime",
+      "aliases": [
+        "--response-mime"
+      ],
+      "takes_value": true,
+      "value_hint": "<MIME_TYPE>",
+      "description": "Override the response mime type for coloring and formatting for the terminal",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--session",
+      "aliases": [
+        "--session"
+      ],
+      "takes_value": true,
+      "value_hint": "<FILE>",
+      "description": "Create, or reuse and update a session",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--session-read-only",
+      "aliases": [
+        "--session-read-only"
+      ],
+      "takes_value": true,
+      "value_hint": "<FILE>",
+      "description": "Create or read a session without updating it from the request/response exchange",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--ssl",
+      "aliases": [
+        "--ssl"
+      ],
+      "takes_value": true,
+      "value_hint": "<VERSION>",
+      "description": "Force a particular TLS version [possible values: auto, tls1, tls1.1, tls1.2, tls1.3]",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--stream",
+      "aliases": [
+        "-S",
+        "--stream"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Always stream the response body",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--style",
+      "aliases": [
+        "-s",
+        "--style"
+      ],
+      "takes_value": true,
+      "value_hint": "<THEME>",
+      "description": "Output coloring style [possible values: auto, solarized, monokai, fruity]",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--timeout",
+      "aliases": [
+        "--timeout"
+      ],
+      "takes_value": true,
+      "value_hint": "<SEC>",
+      "description": "Connection timeout of the request",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--unix-socket",
+      "aliases": [
+        "--unix-socket"
+      ],
+      "takes_value": true,
+      "value_hint": "<FILE>",
+      "description": "Connect using a Unix domain socket",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--verbose",
+      "aliases": [
+        "-v",
+        "--verbose"
+      ],
+      "takes_value": false,
+      "value_hint": "...",
+      "description": "Print the whole request as well as the response",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--verify",
+      "aliases": [
+        "--verify"
+      ],
+      "takes_value": true,
+      "value_hint": "<VERIFY>",
+      "description": "If \"no\", skip SSL verification. If a file path, use it as a CA bundle",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-V",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print version",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [
+    "--session",
+    "--session-read-only"
+  ],
+  "mandatory_args": [
+    "--ignore-netrc"
+  ],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "POSTの構成をオフライン確認",
+      "args": [
+        "--offline",
+        "--ignore-stdin",
+        "--pretty=none",
+        "POST",
+        "https://example.com/api",
+        "name=kiwi",
+        "X-Demo:example"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "HTTPの追加ヘルプ",
+      "args": [
+        "--help"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "afbec0d942edc912eb742f5e19526eb1b3b709a427006f211c0d14500d6c9851"
+}

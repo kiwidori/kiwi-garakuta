@@ -1,0 +1,701 @@
+global
+A command-line tool to generate, analyze, convert and manipulate colors
+
+Usage: pastel.exe [OPTIONS] <COMMAND>
+
+Commands:
+  color       Display information about the given color
+  colorblind  Simulate a color under a certain colorblindness profile
+  colorcheck  Check if your terminal emulator supports 24-bit colors.
+  complement  Get the complementary color (hue rotated by 180°)
+  darken      Darken color by a specified amount
+  desaturate  Decrease color saturation by a specified amount
+  distinct    Generate a set of visually distinct colors
+  format      Convert a color to the given format
+  gradient    Generate an interpolating sequence of colors
+  gray        Create a gray tone from a given lightness
+  help        Print this message or the help of the given subcommand(s)
+  lighten     Lighten color by a specified amount
+  list        Show a list of available color names
+  mix         Mix two colors in the given colorspace
+  paint       Print colored text using ANSI escape sequences
+  pick        Interactively pick a color from the screen (pipette)
+  random      Generate a list of random colors
+  rotate      Rotate the hue channel by the specified angle
+  saturate    Increase color saturation by a specified amount
+  set         Set a color property to a specific value
+  sort-by     Sort colors by the given property
+  textcolor   Get a readable text color for the given background color
+  to-gray     Completely desaturate a color (preserving luminance)
+
+Options:
+      --color-picker <color-picker>  Use a specific tool to pick the colors [possible values: gpick,
+                                     xcolor, wcolor, grabc, colorpicker, chameleon, kcolorchooser,
+                                     zenity, yad, hyprpicker]
+  -f, --force-color                  Alias for --mode=24bit
+  -h, --help                         Print help
+  -m, --color-mode <mode>            Specify the terminal color mode: 24bit, 8bit, off, *auto*
+  -V, --version                      Print version
+
+
+color
+Show and display some information about the given color(s).
+
+Example:
+  pastel color 556270 4ecdc4 c7f484 ff6b6b c44d58
+
+Usage: pastel.exe color [color]...
+
+Arguments:
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+colorblind
+Convert the given color to how it would look to a person with protanopia, deuteranopia, or
+tritanopia 
+
+Example:
+  pastel distinct 3 | pastel colorblind deuter
+
+Usage: pastel.exe colorblind <type> [color]...
+
+Arguments:
+  <type>
+          The type of colorblindness that should be simulated (protanopia, deuteranopia, tritanopia)
+          
+          [possible values: prot, deuter, trit]
+
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+complement
+Compute the complementary color by rotating the HSL hue channel by 180°.
+
+Usage: pastel.exe complement [color]...
+
+Arguments:
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+darken
+Darken a color by subtracting a certain amount from the lightness channel. If the amount is
+negative, the color will be lightened.
+
+Usage: pastel.exe darken <amount> [color]...
+
+Arguments:
+  <amount>
+          Amount of lightness to subtract (number between 0.0 and 1.0)
+
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+desaturate
+Decrease the saturation of a color by subtracting a certain amount from the HSL saturation channel.
+If the amount is negative, the color will be saturated instead.
+
+Usage: pastel.exe desaturate <amount> [color]...
+
+Arguments:
+  <amount>
+          Amount of saturation to subtract (number between 0.0 and 1.0)
+
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+distinct
+Generate a set of visually distinct colors by maximizing the perceived color difference between
+pairs of colors.
+
+The default parameters for the optimization procedure (simulated annealing) should work fine for up
+to 10-20 colors.
+
+Usage: pastel.exe distinct [OPTIONS] [count] [color]...
+
+Arguments:
+  [count]
+          Number of distinct colors in the set
+          
+          [default: 10]
+
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -m, --metric <name>
+          Distance metric to compute mutual color distances. The CIEDE2000 is more accurate, but
+          also much slower.
+          
+          [default: CIE76]
+          [possible values: CIEDE2000, CIE76]
+
+  -v, --verbose
+          Print simulation output to STDERR
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+format
+Convert the given color(s) to a specific format.
+
+Example:
+  pastel random -n 20 | pastel format rgb
+
+Usage: pastel.exe format [type] [color]...
+
+Arguments:
+  [type]
+          Output format type. Note that the 'ansi-*-escapecode' formats print ansi escape sequences
+          to the terminal that will not be visible unless something else is printed in addition.
+          
+          [default: hex]
+          [possible values: rgb, rgb-float, rgb-r, rgb-g, rgb-b, hex, hsl, hsl-hue, hsl-saturation,
+          hsl-lightness, hsv, hsv-hue, hsv-saturation, hsv-value, lch, lch-lightness, lch-chroma,
+          lch-hue, oklch, oklch-lightness, oklch-chroma, oklch-hue, lab, lab-a, lab-b, oklab,
+          oklab-l, oklab-a, oklab-b, luminance, brightness, ansi-8bit, ansi-24bit, ansi-8bit-value,
+          ansi-8bit-escapecode, ansi-24bit-escapecode, cmyk, name]
+
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+gradient
+Generate a sequence of colors that interpolates between the specified colors.
+The interpolation is performed in the specified color space.
+
+Example:
+  pastel gradient --colorspace=HSL ffffcc fd8d3c
+  pastel gradient 555ee4 white d84341 -n 15
+
+Usage: pastel.exe gradient [OPTIONS] <color>...
+
+Arguments:
+  <color>...
+          Color stops in the color gradient
+
+Options:
+  -n, --number <count>
+          Number of colors to generate
+          
+          [default: 10]
+
+  -s, --colorspace <name>
+          The colorspace in which to interpolate
+          
+          [default: Lab]
+          [possible values: Lab, LCh, RGB, HSL, OkLab]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+gray
+Create a gray tone from a given lightness value.
+
+Usage: pastel.exe gray <lightness>
+
+Arguments:
+  <lightness>
+          Lightness of the created gray tone (number between 0.0 and 1.0)
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+lighten
+Lighten a color by adding a certain amount to the HSL lightness channel. If the amount is negative,
+the color will be darkened.
+
+Usage: pastel.exe lighten <amount> [color]...
+
+Arguments:
+  <amount>
+          Amount of lightness to add (number between 0.0 and 1.0)
+
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+list
+Show a list of available color names
+
+Usage: pastel.exe list [OPTIONS]
+
+Options:
+  -s, --sort <sort-order>  Sort order [default: hue] [possible values: brightness, luminance, hue,
+                           chroma, random]
+  -h, --help               Print help
+
+
+mix
+Create new colors by interpolating between two colors in the given colorspace.
+
+Example:
+  pastel mix --colorspace=RGB red blue
+
+Usage: pastel.exe mix [OPTIONS] <color> [color]...
+
+Arguments:
+  <color>
+          The base color which will be mixed with the other colors
+
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -s, --colorspace <name>
+          The colorspace in which to interpolate
+          
+          [default: Lab]
+          [possible values: Lab, LCh, RGB, HSL, OkLab]
+
+  -f, --fraction <fraction>
+          The number between 0.0 and 1.0 determining how much to mix in from the base color.
+          
+          [default: 0.5]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+paint
+Print colored text using ANSI escape sequences
+
+Usage: pastel.exe paint [OPTIONS] <color> [text]...
+
+Arguments:
+  <color>    The foreground color. Use '-' to read the color from STDIN.
+  [text]...  The text to be printed in color. If no argument is given, the input is read from STDIN.
+
+Options:
+  -o, --on <bg-color>  Use the specified background color
+  -b, --bold           Print the text in bold face
+  -i, --italic         Print the text in italic font
+  -u, --underline      Draw a line below the text
+  -n, --no-newline     Do not print a trailing newline character
+  -h, --help           Print help
+
+
+random
+Generate a list of random colors.
+
+Example:
+  pastel random -n 20 --strategy lch_hue
+
+Usage: pastel.exe random [OPTIONS]
+
+Options:
+  -s, --strategy <strategy>
+          Randomization strategy:
+             vivid:    random hue, limited saturation and lightness values
+             rgb:      samples uniformly in RGB space
+             gray:     random gray tone (uniform)
+             lch_hue:  random hue, fixed lightness and chroma
+          
+          Default strategy: 'vivid'
+
+  -n, --number <count>
+          Number of colors to generate
+          
+          [default: 10]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+rotate
+Rotate the HSL hue channel of a color by the specified angle (in degrees). A rotation by 180°
+returns the complementary color. A rotation by 360° returns to the original color.
+
+Usage: pastel.exe rotate <degrees> [color]...
+
+Arguments:
+  <degrees>
+          angle by which to rotate (in degrees, can be negative)
+
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+saturate
+Increase the saturation of a color by adding a certain amount to the HSL saturation channel. If the
+amount is negative, the color will be desaturated instead.
+
+Usage: pastel.exe saturate <amount> [color]...
+
+Arguments:
+  <amount>
+          Amount of saturation to add (number between 0.0 and 1.0)
+
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+set
+Set the given property to a specific value
+Example:
+  pastel random | pastel set luminance 0.9
+
+Usage: pastel.exe set <property> <value> [color]...
+
+Arguments:
+  <property>
+          The property that should be changed
+          
+          [possible values: lightness, hue, chroma, lab-a, lab-b, oklab-l, oklab-a, oklab-b, red,
+          green, blue, hsl-hue, hsl-saturation, hsl-lightness, alpha]
+
+  <value>
+          The new numerical value of the property
+
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+sort-by
+Sort a list of colors by the given property.
+
+Example:
+  pastel random -n 20 | pastel sort-by hue | pastel format hex
+
+Usage: pastel.exe sort-by [OPTIONS] [sort-order] [color]...
+
+Arguments:
+  [sort-order]
+          Sort order
+          
+          [default: hue]
+          [possible values: brightness, luminance, hue, chroma, random]
+
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -r, --reverse
+          Reverse the sort order
+
+  -u, --unique
+          Remove duplicate colors (equality is determined via RGB values)
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+textcolor
+Return a readable foreground text color (either black or white) for a given background color. This
+can also be used in the opposite way, i.e. to create a background color for a given text color.
+
+Usage: pastel.exe textcolor [color]...
+
+Arguments:
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+
+to-gray
+Completely desaturate the given color while preserving the luminance.
+
+For a definition of 'luminance', see:
+
+  https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+
+Usage: pastel.exe to-gray [color]...
+
+Arguments:
+  [color]...
+          Colors can be specified in many different formats, such as #RRGGBB, RRGGBB, #RGB, 'rgb(…,
+          …, …)', 'hsl(…, …, …)', 'gray(…)' or simply by the name of the color. The identifier '-'
+          can be used to read a single color from standard input. Also, the special identifier
+          'pick' can be used to run an external color picker to choose a color. If no color argument
+          is specified, colors will be read from standard input.
+          Examples (all of these specify the same color):
+            - lightslategray
+            - '#778899'
+            - 778899
+            - 789
+            - 'rgb(119, 136, 153)'
+            - '119,136,153'
+            - 'hsl(210, 14.3%, 53.3%)'
+          Alpha transparency is also supported:
+            - '#77889980'
+            - 'rgba(119, 136, 153, 0.5)'
+            - 'hsla(210, 14.3%, 53.3%, 50%)'
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')

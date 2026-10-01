@@ -1,4 +1,9 @@
 """Offline Windows GUI for ascii-image-converter."""
+import sys as _advanced_sys
+from pathlib import Path as _AdvancedPath
+if not getattr(_advanced_sys, "frozen", False):
+    _advanced_sys.path.insert(0, str(_AdvancedPath(__file__).resolve().parents[1] / "common"))
+from advanced import attach
 import os
 import queue
 import threading
@@ -33,6 +38,8 @@ class App(tk.Tk):
         self._setup_ui()
         self._bind_events()
         self._poll_queue()
+        # Additional upstream operations run in a separate structured window.
+        self.advanced = attach(self, source_dir=Path(__file__).resolve().parent)
 
     def _setup_ui(self):
         main_frame = ttk.Frame(self.root, padding="10")

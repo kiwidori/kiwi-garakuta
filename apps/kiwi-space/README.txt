@@ -1,4 +1,4 @@
-きうい空き容量 0.1.0
+きうい空き容量 0.2.0
 Windows 11 x64向け・インストーラーなしの無料ZIP版
 
 dufの非公式GUIです。元ツールの開発者とは関係ありません。
@@ -23,3 +23,17 @@ duf-LICENSE、duf-README.md、THIRD-PARTY-NOTICES.txt、Runtime-LICENSES.txtを�
 GUIのライセンス: LICENSE （MIT）
 ソース: https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-space
 問い合わせ: https://x.com/kiwi_dori
+
+
+詳細機能（0.2.0）
+メニュー「詳細機能」→「開く」で、元ツールの追加オプションを組み立てられます。
+候補を選び、値・ファイル・フォルダー・標準入力を指定して実行してください。
+引数は1項目につき1個です。スペースを含むパスを引用符で囲む必要はありません。
+順番は上下ボタンで変更できます。複数の値を取るオプションは値を別項目として追加してください。
+同梱ヘルプ・プリセット・終了コード・出力保存に対応しています。
+結果はテキスト表示です。標準出力を保存すると元のバイト列を保持します。
+シェルのパイプやリダイレクト、対話式の端末機能は使いません。
+出力合計16 MiB、標準入力2 MiB、1回300秒、引数256個までです。
+詳細機能の制限: https://github.com/kiwidori/kiwi-garakuta/blob/main/docs/upstream-feature-audit.md
+書き込み先・入力ファイル・通信先を確認してから実行してください。
+通常画面の機能・表示上限は従来どおりです。

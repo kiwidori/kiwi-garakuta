@@ -1,4 +1,9 @@
 """Kiwi Hash: file BLAKE3 calculation and comparison."""
+import sys as _advanced_sys
+from pathlib import Path as _AdvancedPath
+if not getattr(_advanced_sys, "frozen", False):
+    _advanced_sys.path.insert(0, str(_AdvancedPath(__file__).resolve().parents[1] / "common"))
+from advanced import attach
 import tkinter as tk
 from tkinter import ttk,filedialog
 import threading
@@ -28,6 +33,8 @@ class App(tk.Tk):
         self.expected.trace_add('write', lambda *args: self._on_input_change())
         self.protocol("WM_DELETE_WINDOW", self.close)
         self.after(100, self._poll_queue)
+        # Additional upstream operations run in a separate structured window.
+        self.advanced = attach(self, source_dir=Path(__file__).resolve().parent)
 
     def _build_ui(self):
         pad = {"padx": 8, "pady": 4}

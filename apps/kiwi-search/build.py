@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 RG_VERSION = "15.2.0"
 RG_SHA256 = "71b2fef860abe467217a538ff31de02f5258807c0129f771846f87bd029aafc5"
 RG_URL = ("https://github.com/BurntSushi/ripgrep/releases/download/"
@@ -38,7 +38,9 @@ def main() -> None:
             for name in ("rg.exe", "COPYING", "LICENSE-MIT", "UNLICENSE"):
                 (temp_path / name).write_bytes(source.read(prefix + name))
         subprocess.run([sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean",
-                        "--onefile", "--noconsole", "--name", "KiwiSearch",
+                        "--onefile", "--noconsole", "--paths", str(ROOT.parents[0] / "common"),
+            "--add-data", f"{ROOT / 'advanced-spec.json'}{os.pathsep}.",
+            "--add-data", f"{ROOT / 'upstream-help.txt'}{os.pathsep}.", "--name", "KiwiSearch",
                         "--distpath", str(temp_path / "dist"),
                         "--workpath", str(temp_path / "build"),
                         "--specpath", str(temp_path),

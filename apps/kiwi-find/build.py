@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 FD_VERSION = "10.5.0"
 FD_SHA256 = "a227701b8551c35a9931d9f6da75503cf86d88e182d71fb849a70864c5d57cd7"
 FD_URL = (f"https://github.com/sharkdp/fd/releases/download/v{FD_VERSION}/"
@@ -38,7 +38,9 @@ def main() -> None:
             for name in ("fd.exe", "LICENSE-MIT", "LICENSE-APACHE"):
                 (temp_path / name).write_bytes(source.read(prefix + name))
         subprocess.run([sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean",
-                        "--onefile", "--noconsole", "--name", "KiwiFind",
+                        "--onefile", "--noconsole", "--paths", str(ROOT.parents[0] / "common"),
+            "--add-data", f"{ROOT / 'advanced-spec.json'}{os.pathsep}.",
+            "--add-data", f"{ROOT / 'upstream-help.txt'}{os.pathsep}.", "--name", "KiwiFind",
                         "--distpath", str(temp_path / "dist"),
                         "--workpath", str(temp_path / "build"),
                         "--specpath", str(temp_path),

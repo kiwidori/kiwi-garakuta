@@ -1,6 +1,11 @@
 """Kiwi JSON: a small, unofficial Windows GUI for jq."""
 
 from __future__ import annotations
+import sys as _advanced_sys
+from pathlib import Path as _AdvancedPath
+if not getattr(_advanced_sys, "frozen", False):
+    _advanced_sys.path.insert(0, str(_AdvancedPath(__file__).resolve().parents[1] / "common"))
+from advanced import attach
 
 import os
 import queue
@@ -111,6 +116,8 @@ class App(tk.Tk):
         body.rowconfigure(0, weight=1)
         body.columnconfigure(0, weight=1)
         ttk.Label(self, textvariable=self.status, padding=(14, 8)).pack(fill="x")
+        # Additional upstream operations run in a separate structured window.
+        self.advanced = attach(self, source_dir=Path(__file__).resolve().parent)
 
     def choose(self) -> None:
         file = filedialog.askopenfilename(filetypes=[("JSONファイル", "*.json"), ("すべてのファイル", "*.*")])
