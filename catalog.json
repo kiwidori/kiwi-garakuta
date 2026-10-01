@@ -92,5 +92,28 @@
     "upstream_license": "MIT（同梱COPYINGに第三者通知）",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-code",
+    "name": "きういコードビュー",
+    "summary": "コードやテキストを色付き・行番号付きで閲覧できる無料ツールです。",
+    "features": [
+      "batの色分け表示でコードやテキストを見やすく確認できます。",
+      "開始行を指定して、500行ずつ前後に移動できます。",
+      "3種類のテーマを選べます。ファイルは読み取り専用です。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiCode.exeを起動します。",
+      "表示するテキストまたはコードのファイルを選びます。",
+      "必要に応じて開始行やテーマを変え、表示します。"
+    ],
+    "limitations": "対象ファイルは10 MiBまで、表示結果は2 MiBまで、処理時間は15秒までです。1回に最大500行を表示します。ファイルの文字コードによっては正しく表示されない場合があります。環境によってはMicrosoft Visual C++ Redistributableが必要です。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-code-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-code-v0.1.0/KiwiCode-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-code",
+    "upstream_url": "https://github.com/sharkdp/bat",
+    "upstream_license": "MIT または Apache License 2.0",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
