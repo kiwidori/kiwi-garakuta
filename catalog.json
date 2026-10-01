@@ -280,5 +280,29 @@
     "upstream_license": "Apache License 2.0 または CC0（上流ライセンス文書を同梱）",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-color",
+    "name": "きうい色変換",
+    "summary": "色コードや色名をHEX・RGB・HSLへ変換し、色見本を確認できる無料ツールです。",
+    "features": [
+      "pastelでHEX・RGB・HSLの表記を変換します。",
+      "英語の色名や、色選択ダイアログからの入力にも対応します。",
+      "色見本を表示し、各表記を個別にコピーできます。",
+      "入力を変えると古い結果を消し、処理を途中で停止できます。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiColor.exeを起動します。",
+      "色コードや色名を入力するか、「色を選ぶ」で色を選択します。",
+      "「変換」を押して色見本と各表記を確認し、必要な表記をコピーします。"
+    ],
+    "limitations": "不透明な色のみ対応し、RGBA・HSLA・8桁HEX・transparentは対象外です。RGB・HSLは6桁HEXにそろえた色から算出するため、丸めで表記が変わる場合があります。入力は128文字、処理は15秒までです。色見本の見え方はディスプレイ設定などに依存します。画像や画面から色を読み取る機能はありません。ファイル操作や外部への送信は行いません。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-color-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-color-v0.1.0/KiwiColor-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-color",
+    "upstream_url": "https://github.com/sharkdp/pastel",
+    "upstream_license": "MIT または Apache License 2.0",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
