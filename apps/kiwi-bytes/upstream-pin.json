@@ -1,0 +1,17 @@
+{
+  "slug": "kiwi-bytes",
+  "name": "きういバイト表示",
+  "repo": "sharkdp/hexyl",
+  "tag": "v0.17.0",
+  "exe": "hexyl.exe",
+  "asset": "hexyl-v0.17.0-x86_64-pc-windows-msvc.zip",
+  "archive_member": "hexyl-v0.17.0-x86_64-pc-windows-msvc/hexyl.exe",
+  "sha": "ab5c3442cff63f585553d4fce330eaa1ef1bd2584643f1a0e29ab7c13fc9566d",
+  "binary_sha": "9fa04c965ba6b670580e30f9395c87391fd83bb719d930fa503f92357f40a44a",
+  "license": "MIT OR Apache-2.0",
+  "url": "https://github.com/sharkdp/hexyl/releases/download/v0.17.0/hexyl-v0.17.0-x86_64-pc-windows-msvc.zip",
+  "license_url": "https://raw.githubusercontent.com/sharkdp/hexyl/v0.17.0/LICENSE-MIT",
+  "license_sha": "f9c4c77baa3828004ee54b8a4f2db2e88ed44a6237a493965bf551fac0fcb62d",
+  "app_exe": "KiwiBytes",
+  "version": "0.1.0"
+}

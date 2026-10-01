@@ -28,9 +28,28 @@ def resource_path(relative: str, source_dir: Path | None = None) -> str:
     return str(base / relative)
 
 
+def normalize_hexyl_arguments(args):
+    out = []
+    i = 0
+    while i < len(args):
+        t = args[i]
+        if t == '--':
+            out.extend(args[i:])
+            break
+        if t in ('--skip', '-s', '--display-offset', '-o') and i + 1 < len(args) and args[i + 1].startswith('-') and args[i + 1] != '--':
+            out.append(t + '=' + args[i + 1])
+            i += 2
+        else:
+            out.append(t)
+            i += 1
+    return out
+
+
 def build_command(exe, args, mandatory_args=(), blocked_flags=()):
     if not isinstance(args, list) or any(not isinstance(a, str) or '\x00' in a for a in args):
         raise ValueError('引数はNULを含まない文字列で指定してください。')
+    if Path(exe).name.casefold() == 'hexyl.exe':
+        args = normalize_hexyl_arguments(args)
     if len(args) + len(mandatory_args) > 256:
         raise ValueError('引数は256個までです。')
     if sum(len(a.encode('utf-8')) for a in [*args,*mandatory_args]) > 64*1024:

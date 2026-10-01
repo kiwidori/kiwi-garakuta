@@ -1,0 +1,293 @@
+{
+  "slug": "kiwi-bytes",
+  "tool": "hexyl.exe",
+  "upstream_url": "https://github.com/sharkdp/hexyl",
+  "options": [
+    {
+      "flag": "--length",
+      "aliases": [
+        "--length",
+        "-n",
+        "-l",
+        "-c",
+        "--bytes"
+      ],
+      "takes_value": true,
+      "description": "表示するバイト数（空欄は全体、例256/4KiB/0xff）",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--skip",
+      "aliases": [
+        "--skip",
+        "-s"
+      ],
+      "takes_value": true,
+      "description": "読み飛ばす量（負数は末尾から）",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--block-size",
+      "aliases": [
+        "--block-size"
+      ],
+      "takes_value": true,
+      "description": "block単位の大きさ",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--display-offset",
+      "aliases": [
+        "--display-offset",
+        "-o"
+      ],
+      "takes_value": true,
+      "description": "表示オフセット",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--no-squeezing",
+      "aliases": [
+        "--no-squeezing",
+        "-v"
+      ],
+      "takes_value": false,
+      "description": "同じ行の省略を無効にする",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--color",
+      "aliases": [
+        "--color"
+      ],
+      "takes_value": true,
+      "description": "色の使用",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--border",
+      "aliases": [
+        "--border"
+      ],
+      "takes_value": true,
+      "description": "枠線",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--panels",
+      "aliases": [
+        "--panels"
+      ],
+      "takes_value": true,
+      "description": "データパネル数（autoまたは数値）",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--group-size",
+      "aliases": [
+        "--group-size",
+        "-g",
+        "--groupsize"
+      ],
+      "takes_value": true,
+      "description": "グループのバイト数",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--endianness",
+      "aliases": [
+        "--endianness"
+      ],
+      "takes_value": true,
+      "description": "グループのバイト順",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--base",
+      "aliases": [
+        "--base",
+        "-b"
+      ],
+      "takes_value": true,
+      "description": "数値の基数",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--terminal-width",
+      "aliases": [
+        "--terminal-width"
+      ],
+      "takes_value": true,
+      "description": "端末幅（使う場合はパネル数を空欄に）",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--plain",
+      "aliases": [
+        "--plain",
+        "-p"
+      ],
+      "takes_value": false,
+      "description": "枠・文字・位置・色を省くplain形式",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--include",
+      "aliases": [
+        "--include",
+        "-i"
+      ],
+      "takes_value": false,
+      "description": "C include形式で出力",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--character-table",
+      "aliases": [
+        "--character-table"
+      ],
+      "takes_value": true,
+      "description": "文字表",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--color-scheme",
+      "aliases": [
+        "--color-scheme"
+      ],
+      "takes_value": true,
+      "description": "配色",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--no-characters",
+      "aliases": [
+        "--no-characters"
+      ],
+      "takes_value": false,
+      "description": "文字パネルを非表示",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--characters",
+      "aliases": [
+        "--characters",
+        "-C"
+      ],
+      "takes_value": false,
+      "description": "文字パネルを明示表示（plainの後で上書き）",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--no-position",
+      "aliases": [
+        "--no-position",
+        "-P"
+      ],
+      "takes_value": false,
+      "description": "位置パネルを非表示",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--print-color-table",
+      "aliases": [
+        "--print-color-table"
+      ],
+      "takes_value": false,
+      "description": "色の凡例",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--completion",
+      "aliases": [
+        "--completion"
+      ],
+      "takes_value": true,
+      "description": "補完生成",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "--help"
+      ],
+      "takes_value": false,
+      "description": "ヘルプ",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "--version"
+      ],
+      "takes_value": false,
+      "description": "版表示",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "-e",
+      "aliases": [
+        "-e"
+      ],
+      "takes_value": false,
+      "description": "little endianの別名",
+      "blocked": false,
+      "coverage": "専用GUIはendianness選択"
+    }
+  ],
+  "mandatory_args": [],
+  "blocked_flags": [],
+  "subcommands": [],
+  "examples": [
+    {
+      "name": "テキストのバイトを表示",
+      "args": [
+        "--color",
+        "never",
+        "--border",
+        "ascii",
+        "--length",
+        "64"
+      ],
+      "stdin": "Kiwi\n"
+    },
+    {
+      "name": "C include出力",
+      "args": [
+        "--include"
+      ],
+      "stdin": "Kiwi"
+    },
+    {
+      "name": "PowerShell補完",
+      "args": [
+        "--completion",
+        "powershell"
+      ],
+      "stdin": ""
+    }
+  ]
+}

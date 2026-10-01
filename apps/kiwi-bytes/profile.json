@@ -1,0 +1,274 @@
+{
+  "slug": "kiwi-bytes",
+  "title": "きういバイト表示",
+  "tool": "hexyl.exe",
+  "upstream_url": "https://github.com/sharkdp/hexyl",
+  "fields": [
+    {
+      "flag": "--length",
+      "label": "表示するバイト数（空欄は全体、例256/4KiB/0xff）",
+      "type": "text",
+      "default": "256",
+      "group": "読取範囲"
+    },
+    {
+      "flag": "--skip",
+      "label": "読み飛ばす量（負数は末尾から）",
+      "type": "text",
+      "default": "0",
+      "group": "読取範囲"
+    },
+    {
+      "flag": "--block-size",
+      "label": "block単位の大きさ",
+      "type": "text",
+      "default": "512",
+      "group": "読取範囲"
+    },
+    {
+      "flag": "--display-offset",
+      "label": "表示オフセット",
+      "type": "text",
+      "default": "0",
+      "group": "読取範囲"
+    },
+    {
+      "flag": "--no-squeezing",
+      "label": "同じ行の省略を無効にする",
+      "type": "bool",
+      "default": false,
+      "group": "読取範囲"
+    },
+    {
+      "flag": "--color",
+      "label": "色の使用",
+      "type": "choice",
+      "default": "force",
+      "group": "表示形式",
+      "choices": [
+        "always",
+        "auto",
+        "never",
+        "force"
+      ]
+    },
+    {
+      "flag": "--border",
+      "label": "枠線",
+      "type": "choice",
+      "default": "ascii",
+      "group": "表示形式",
+      "choices": [
+        "unicode",
+        "ascii",
+        "none"
+      ]
+    },
+    {
+      "flag": "--panels",
+      "label": "パネル数（空欄は通常2、数値またはauto）",
+      "type": "text",
+      "default": "",
+      "group": "表示形式"
+    },
+    {
+      "flag": "--group-size",
+      "label": "グループのバイト数",
+      "type": "choice",
+      "default": "1",
+      "group": "表示形式",
+      "choices": [
+        "1",
+        "2",
+        "4",
+        "8"
+      ]
+    },
+    {
+      "flag": "--endianness",
+      "label": "バイト順（空欄はbig、C includeでは空欄にする）",
+      "type": "choice",
+      "default": "",
+      "group": "表示形式",
+      "choices": [
+        "little",
+        "big"
+      ]
+    },
+    {
+      "flag": "--base",
+      "label": "数値の基数",
+      "type": "choice",
+      "default": "hexadecimal",
+      "group": "表示形式",
+      "choices": [
+        "binary",
+        "octal",
+        "decimal",
+        "hexadecimal"
+      ]
+    },
+    {
+      "flag": "--terminal-width",
+      "label": "端末幅（使う場合はパネル数を空欄に）",
+      "type": "text",
+      "default": "",
+      "group": "表示形式"
+    },
+    {
+      "flag": "--plain",
+      "label": "枠・文字・位置・色を省くplain形式",
+      "type": "bool",
+      "default": false,
+      "group": "表示形式"
+    },
+    {
+      "flag": "--include",
+      "label": "C include形式で出力",
+      "type": "bool",
+      "default": false,
+      "group": "表示形式"
+    },
+    {
+      "flag": "--character-table",
+      "label": "文字表",
+      "type": "choice",
+      "default": "default",
+      "group": "文字・色",
+      "choices": [
+        "default",
+        "ascii",
+        "codepage-1047",
+        "codepage-437",
+        "braille"
+      ]
+    },
+    {
+      "flag": "--color-scheme",
+      "label": "配色",
+      "type": "choice",
+      "default": "default",
+      "group": "文字・色",
+      "choices": [
+        "default",
+        "gradient"
+      ]
+    },
+    {
+      "flag": "--no-characters",
+      "label": "文字パネルを非表示",
+      "type": "bool",
+      "default": false,
+      "group": "文字・色"
+    },
+    {
+      "flag": "--characters",
+      "label": "文字パネルを明示表示（plainの後で上書き）",
+      "type": "bool",
+      "default": false,
+      "group": "文字・色"
+    },
+    {
+      "flag": "--no-position",
+      "label": "位置パネルを非表示",
+      "type": "bool",
+      "default": false,
+      "group": "文字・色"
+    }
+  ],
+  "modes": [
+    {
+      "label": "ファイルを表示",
+      "args": [],
+      "stdin": false,
+      "files": true,
+      "allow_dirs": false
+    },
+    {
+      "label": "UTF-8テキストを表示",
+      "args": [],
+      "stdin": true,
+      "files": false
+    },
+    {
+      "label": "16進数入力を表示",
+      "args": [],
+      "stdin": true,
+      "files": false,
+      "hex_input": true
+    },
+    {
+      "label": "色の凡例",
+      "args": [
+        "--color",
+        "force",
+        "--print-color-table"
+      ],
+      "stdin": false,
+      "files": false
+    },
+    {
+      "label": "ヘルプ",
+      "args": [
+        "--help"
+      ],
+      "stdin": false,
+      "files": false
+    },
+    {
+      "label": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": false,
+      "files": false
+    },
+    {
+      "label": "bash補完スクリプト",
+      "args": [
+        "--completion",
+        "bash"
+      ],
+      "stdin": false,
+      "files": false
+    },
+    {
+      "label": "elvish補完スクリプト",
+      "args": [
+        "--completion",
+        "elvish"
+      ],
+      "stdin": false,
+      "files": false
+    },
+    {
+      "label": "fish補完スクリプト",
+      "args": [
+        "--completion",
+        "fish"
+      ],
+      "stdin": false,
+      "files": false
+    },
+    {
+      "label": "powershell補完スクリプト",
+      "args": [
+        "--completion",
+        "powershell"
+      ],
+      "stdin": false,
+      "files": false
+    },
+    {
+      "label": "zsh補完スクリプト",
+      "args": [
+        "--completion",
+        "zsh"
+      ],
+      "stdin": false,
+      "files": false
+    }
+  ],
+  "delimiter": true,
+  "blocked_flags": []
+}
