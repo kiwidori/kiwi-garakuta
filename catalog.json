@@ -304,5 +304,29 @@
     "upstream_license": "MIT または Apache License 2.0",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-ascii",
+    "name": "きうい文字絵",
+    "summary": "静止画像をASCIIや点字文字の文字絵に変換し、コピー・テキスト保存できる無料ツールです。",
+    "features": [
+      "PNG・JPEG・BMP・WEBP・TIFFの静止画像を文字絵に変換します。",
+      "横幅を20〜160文字で指定できます。",
+      "白黒反転と、点字文字による表現を選べます。",
+      "結果をコピーし、UTF-8のテキストとして保存できます。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiASCII.exeを起動します。",
+      "ローカル画像を選び、横幅や白黒反転・点字文字を指定します。",
+      "「変換」を押し、結果を確認してコピーまたはテキスト保存します。"
+    ],
+    "limitations": "画像は20MiB・2,000万画素以下、想定高さ400行以下の単一フレームが対象です。GIF・動画・アニメーション・複数ページ画像・URLの取得には対応しません。処理は30秒、出力は1MiBまでです。元画像は変更せず、外部へ送信しません。透明な部分や色の表現は元エンジンの仕様に依存します。等幅フォントで表示してください。点字文字は表示先のフォントによって見え方が変わります。画像として保存する機能はありません。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-ascii-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-ascii-v0.1.0/KiwiASCII-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-ascii",
+    "upstream_url": "https://github.com/TheZoraiz/ascii-image-converter",
+    "upstream_license": "Apache License 2.0",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
