@@ -502,5 +502,32 @@
     "upstream_license": "MIT",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-data",
+    "name": "きういデータ変換",
+    "summary": "JSON・YAML・CSVなどを変換し、式で抽出・並べ替え・集計できる無料ツールです。",
+    "features": [
+      "JSON・YAML・TOML・XML・CSV・HCL・INI・KDLの読込と出力に対応します。",
+      "クエリ欄で抽出、絞込み、再帰検索、並べ替え、グループ化、集計、編集の式を指定できます。",
+      "デモ入力と実行可能な式の例を用意しています。",
+      "変数、文書全体の出力、コンパクト表示、CSV区切りなどの入出力設定、設定ファイルを指定できます。",
+      "UTF-8ファイルを読み込み、結果は明示的に保存します。入力を自動で書き換えません。",
+      "詳細機能では追加引数、同梱ヘルプ、補完スクリプトやマニュアルの出力を利用できます。"
+    ],
+    "steps": [
+      "ZIPを展開して KiwiData.exe を起動します。",
+      "「UTF8読込」でファイルを開くか、入力データ欄へ貼り付けます。試す場合は「サンプル入力」を押します。",
+      "「入出力」で形式を選び、クエリ欄へ式を入力します。空欄または$thisは形式変換のみです。",
+      "「実行」で結果を確認し、「結果を保存」で保存します。編集後の全体が必要なら「編集後の文書全体を返す」を選びます。"
+    ],
+    "limitations": "各形式に変換できる構造はdaselの仕様に従います。式の例はサンプル入力向けです。日本語の値は入力データやJSON型変数で渡せますが、同梱版では式へ直接書く日本語リテラルの解析が失敗する場合があります。端末用対話モードとGoライブラリAPIは対象外です。標準入力2 MiB、出力合計16 MiB、1回300秒、引数256個/64 KiB。readFileやファイル変数は上流が別途読み込むため、読込欄の容量制限とは異なります。全ての式やオプションの組合せを検証したものではありません。実行ファイルは未署名です。実行時のLLMやクラウドAPIは不要です。",
+    "screenshot": "/assets/screenshots/kiwi-data-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-data-v0.1.0/KiwiData-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-data",
+    "upstream_url": "https://github.com/TomWright/dasel",
+    "upstream_license": "MIT（依存物の通知もZIPに同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]

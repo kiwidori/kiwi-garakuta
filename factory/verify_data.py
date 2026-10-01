@@ -121,4 +121,3 @@ def portable():
     print('PASS portable ZIP extraction, licenses, pinned binary, frozen GUI and advanced, close')
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('stage',choices=['cli','gui','portable']);globals()[p.parse_args().stage]()
-

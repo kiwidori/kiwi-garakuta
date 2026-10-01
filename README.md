@@ -27,6 +27,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | [きういコード集計](https://kiwi-garakuta.pages.dev/tools/kiwi-count/) | コードの行数・複雑度・Git履歴を集計し、HTMLレポートを保存する | [scc](https://github.com/boyter/scc) |
 | [きういシェル整形](https://kiwi-garakuta.pages.dev/tools/kiwi-shell/) | シェルの整形・差分・AST変換と一括整形を行う | [shfmt](https://github.com/mvdan/sh) |
 | [きういWeb圧縮](https://kiwi-garakuta.pages.dev/tools/kiwi-minify/) | Webファイルの圧縮・連結・フォルダー処理を行う | [minify](https://github.com/tdewolff/minify) |
+| [きういデータ変換](https://kiwi-garakuta.pages.dev/tools/kiwi-data/) | 8形式のデータ変換、式による抽出・並べ替え・集計を行う | [dasel](https://github.com/TomWright/dasel) |
 
 各ソフトの詳細ページに、使い方、実際の画面、制限事項、ZIPのダウンロード先を掲載しています。ZIPには元ツールのライセンス文書を同梱しています。
 
