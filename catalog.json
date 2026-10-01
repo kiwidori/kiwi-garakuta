@@ -138,5 +138,29 @@
     "upstream_license": "MIT",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-secrets",
+    "name": "きうい秘密チェック",
+    "summary": "公開前のフォルダーから、APIキーなどの機密情報の候補を探せる無料ツールです。",
+    "features": [
+      "Gitleaksの標準ルールで、フォルダー内の現在のファイルをチェックします。",
+      "結果には相対パス・行番号・ルールを表示し、検出した秘密の値や本文は表示しません。",
+      "対象ファイルは変更せず、外部サービスへの送信や値の有効性確認は行いません。",
+      "チェックを途中で停止でき、結果のダブルクリックで該当フォルダーを開けます。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiSecrets.exeを起動します。",
+      "チェックするフォルダーを選び、「チェック」を押します。",
+      "検出されたファイルと行番号を確認します。誤検出や見逃しもあります。"
+    ],
+    "limitations": "Git履歴、圧縮ファイルの中身、エンコードされた値の復号は対象外です。5 MBを超えるファイルはスキップし、Gitleaks標準ルールの除外設定が適用されます。表示は最大1000件、結果データは4 MiB、処理は120秒までです。検出なしでも機密情報が存在しないことは保証できません。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-secrets-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-secrets-v0.1.0/KiwiSecrets-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-secrets",
+    "upstream_url": "https://github.com/gitleaks/gitleaks",
+    "upstream_license": "MIT",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
