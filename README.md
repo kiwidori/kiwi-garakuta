@@ -13,6 +13,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | [きうい容量ビュー](https://kiwi-garakuta.pages.dev/tools/kiwi-disk/) | 容量の大きいファイルやフォルダーを確認する | [dust](https://github.com/bootandy/dust) |
 | [きういJSON](https://kiwi-garakuta.pages.dev/tools/kiwi-json/) | JSONから必要なデータを取り出し、結果を保存する | [jq](https://github.com/jqlang/jq) |
 | [きういコードビュー](https://kiwi-garakuta.pages.dev/tools/kiwi-code/) | コードやテキストを色付き・行番号付きで閲覧する | [bat](https://github.com/sharkdp/bat) |
+| [きういPC情報](https://kiwi-garakuta.pages.dev/tools/kiwi-system/) | OS・CPU・GPU・メモリなどPCの概要を確認する | [fastfetch](https://github.com/fastfetch-cli/fastfetch) |
 
 各ソフトの詳細ページに、使い方、実際の画面、制限事項、ZIPのダウンロード先を掲載しています。ZIPには元ツールのライセンス文書を同梱しています。
 
@@ -20,7 +21,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 1. 上の一覧からソフトの詳細ページを開き、ZIPをダウンロードします。
 2. ZIPを任意のフォルダーへ展開します。
-3. 中の `KiwiSearch.exe`、`KiwiFind.exe`、`KiwiDisk.exe`、`KiwiJSON.exe`、または `KiwiCode.exe` を起動します。
+3. 中の `KiwiSearch.exe`、`KiwiFind.exe`、`KiwiDisk.exe`、`KiwiJSON.exe`、`KiwiCode.exe`、または `KiwiSystem.exe` を起動します。
 
 各ソフトはWindows 11 x64で動作確認しています。現時点の実行ファイルにはコード署名がありません。配布元とZIPの内容を確認してから使用してください。
 

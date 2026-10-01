@@ -115,5 +115,28 @@
     "upstream_license": "MIT または Apache License 2.0",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-system",
+    "name": "きういPC情報",
+    "summary": "Windows PCのOS・CPU・GPU・メモリなどを一覧で確認できる無料ツールです。",
+    "features": [
+      "OS、CPU、GPU、メモリ、ドライブ容量、画面解像度を一覧表示します。",
+      "表示中の概要をクリップボードにコピーできます。",
+      "ユーザー名・端末名・シリアル番号を表示しません。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiSystem.exeを起動します。",
+      "「情報を取得」を押してPCの概要を確認します。",
+      "必要なら「概要をコピー」で表示内容をコピーします。"
+    ],
+    "limitations": "fastfetchで検出できない項目は表示しません。取得した結果から表示項目を限定し、ファイルの変更やネットワーク通信は行いません。掲載画像は個人情報を含まないデモデータです。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-system-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-system-v0.1.0/KiwiSystem-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-system",
+    "upstream_url": "https://github.com/fastfetch-cli/fastfetch",
+    "upstream_license": "MIT",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]

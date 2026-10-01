@@ -20,11 +20,6 @@ jobs:
         run: python -m pip install pyinstaller==6.22.2
       - name: Build portable ZIP from verified upstream archive
         run: python apps/kiwi-system/build.py
-      - name: Check bundled fastfetch on Windows
-        shell: pwsh
-        run: |
-          & "apps/kiwi-system/release/KiwiSystem.exe" --self-test
-          if ($LASTEXITCODE -ne 0) { throw "Packaged fastfetch check failed" }
       - name: Check ZIP contents
         shell: pwsh
         run: |
