@@ -1,0 +1,40 @@
+name: Release Kiwi Regex
+
+on:
+  push:
+    tags:
+      - kiwi-regex-v*
+
+permissions:
+  contents: write
+
+jobs:
+  windows-build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install build dependency
+        run: python -m pip install pyinstaller==6.22.2
+      - name: Build portable ZIP from verified upstream binary
+        run: python apps/kiwi-regex/build.py
+      - name: Check ZIP contents
+        shell: pwsh
+        run: |
+          @'
+          from pathlib import Path
+          from zipfile import ZipFile
+          package = Path('apps/kiwi-regex/KiwiRegex-0.1.0-win11-x64.zip')
+          with ZipFile(package) as archive:
+              needed = {'KiwiRegex.exe', 'README.txt', 'LICENSE', 'grex-LICENSE'}
+              assert needed <= set(archive.namelist())
+          print('ZIP contents OK')
+          '@ | python -
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          gh release create "${{ github.ref_name }}" "apps/kiwi-regex/KiwiRegex-0.1.0-win11-x64.zip" --title "きうい正規表現 0.1.0" --notes "Windows 11 x64向けの無料ZIP版。grexを使って文字列の例から正規表現を作れます。上流ライセンス文書を同梱しています。"
