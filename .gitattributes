@@ -1,0 +1,2 @@
+# Preserve verbatim CLI help snapshots, including the upstream trailing spaces.
+apps/kiwi-*/upstream-help.txt -whitespace

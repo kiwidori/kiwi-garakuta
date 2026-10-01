@@ -6,21 +6,24 @@
     "features": [
       "検索するフォルダーと文字列を指定するだけで、該当行を一覧表示します。",
       "日本語のファイル名と内容に対応しています。",
-      "結果をダブルクリックしてファイルを開けます。"
+      "結果をダブルクリックしてファイルを開けます。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiSearch.exeを起動します。",
       "フォルダーを選択して探す文字列を入力します。",
-      "検索を押し、結果を確認します。"
+      "検索を押し、結果を確認します。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "固定文字列を検索します。隠しファイルと.gitignoreで除外されたファイルはripgrepの標準設定に従い検索しません。表示上限は1000件です。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: 固定文字列を検索します。隠しファイルと.gitignoreで除外されたファイルはripgrepの標準設定に従い検索しません。表示上限は1000件です。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-search-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-search-v0.1.0/KiwiSearch-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-search-v0.2.0/KiwiSearch-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-search",
     "upstream_url": "https://github.com/BurntSushi/ripgrep",
     "upstream_license": "MIT または Unlicense",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-search-advanced-public.png"
   },
   {
     "slug": "kiwi-find",
@@ -30,21 +33,24 @@
       "ファイル名に含まれる文字と拡張子を指定して探せます。",
       "日本語のファイル名に対応しています。",
       "隠しファイルや除外設定を含めるか選べます。",
-      "結果をダブルクリックしてファイルを開けます。"
+      "結果をダブルクリックしてファイルを開けます。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiFind.exeを起動します。",
       "探すフォルダー、名前に含む文字、必要なら拡張子を入力します。",
-      "検索を押して結果を確認します。"
+      "検索を押して結果を確認します。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "ファイルの中身は検索しません。通常は隠しファイルと.gitignoreなどで除外されたファイルを探しません。表示上限は1000件です。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: ファイルの中身は検索しません。通常は隠しファイルと.gitignoreなどで除外されたファイルを探しません。表示上限は1000件です。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-find-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-find-v0.1.0/KiwiFind-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-find-v0.2.0/KiwiFind-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-find",
     "upstream_url": "https://github.com/sharkdp/fd",
     "upstream_license": "MIT または Apache License 2.0",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-find-advanced-public.png"
   },
   {
     "slug": "kiwi-disk",
@@ -54,21 +60,24 @@
       "容量と全体に占める割合をツリーで表示します。",
       "表示する階層を1〜6の範囲で選べます。",
       "解析を途中で停止でき、選択した場所をエクスプローラーで開けます。",
-      "読み取り専用で、ファイルの削除や変更は行いません。"
+      "読み取り専用で、ファイルの削除や変更は行いません。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiDisk.exeを起動します。",
       "調べるフォルダーを選び、必要なら表示する階層を変えます。",
-      "解析を押し、容量の大きい項目を確認します。"
+      "解析を押し、容量の大きい項目を確認します。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "容量の大きい項目を中心に最大60件ほど表示します。大きなフォルダーの解析には時間がかかり、5分を超えると停止します。アクセスできない項目は結果に含まれない場合があります。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: 容量の大きい項目を中心に最大60件ほど表示します。大きなフォルダーの解析には時間がかかり、5分を超えると停止します。アクセスできない項目は結果に含まれない場合があります。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-disk-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-disk-v0.1.0/KiwiDisk-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-disk-v0.2.0/KiwiDisk-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-disk",
     "upstream_url": "https://github.com/bootandy/dust",
     "upstream_license": "Apache License 2.0",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-disk-advanced-public.png"
   },
   {
     "slug": "kiwi-json",
@@ -77,21 +86,24 @@
     "features": [
       "JSONファイルを選び、jqの抽出式で必要なデータを取り出せます。",
       "日本語を含む結果を画面で確認し、別ファイルに保存できます。",
-      "元のファイルは変更せず、処理を途中で停止できます。"
+      "元のファイルは変更せず、処理を途中で停止できます。",
+      "詳細機能で、元ツールの追加オプション・式・複数ファイルなどを指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiJSON.exeを起動します。",
       "JSONファイルを選び、jqの抽出式を入力します。",
-      "実行して結果を確認し、必要なら保存します。"
+      "実行して結果を確認し、必要なら保存します。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "入力は20 MiB、結果は2 MiB、処理時間は20秒までです。プレビューは先頭120,000文字まで表示します。式によっては複数のJSON値が出力されるため、保存先の拡張子を選んでください。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: 入力は20 MiB、結果は2 MiB、処理時間は20秒までです。プレビューは先頭120,000文字まで表示します。式によっては複数のJSON値が出力されるため、保存先の拡張子を選んでください。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-json-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-json-v0.1.0/KiwiJSON-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-json-v0.2.0/KiwiJSON-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-json",
     "upstream_url": "https://github.com/jqlang/jq",
     "upstream_license": "MIT（同梱COPYINGに第三者通知）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-json-advanced-public.png"
   },
   {
     "slug": "kiwi-code",
@@ -100,21 +112,24 @@
     "features": [
       "batの色分け表示でコードやテキストを見やすく確認できます。",
       "開始行を指定して、500行ずつ前後に移動できます。",
-      "3種類のテーマを選べます。ファイルは読み取り専用です。"
+      "3種類のテーマを選べます。ファイルは読み取り専用です。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiCode.exeを起動します。",
       "表示するテキストまたはコードのファイルを選びます。",
-      "必要に応じて開始行やテーマを変え、表示します。"
+      "必要に応じて開始行やテーマを変え、表示します。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "対象ファイルは10 MiBまで、表示結果は2 MiBまで、処理時間は15秒までです。1回に最大500行を表示します。ファイルの文字コードによっては正しく表示されない場合があります。環境によってはMicrosoft Visual C++ Redistributableが必要です。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: 対象ファイルは10 MiBまで、表示結果は2 MiBまで、処理時間は15秒までです。1回に最大500行を表示します。ファイルの文字コードによっては正しく表示されない場合があります。環境によってはMicrosoft Visual C++ Redistributableが必要です。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-code-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-code-v0.1.0/KiwiCode-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-code-v0.2.0/KiwiCode-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-code",
     "upstream_url": "https://github.com/sharkdp/bat",
     "upstream_license": "MIT または Apache License 2.0",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-code-advanced-public.png"
   },
   {
     "slug": "kiwi-system",
@@ -123,21 +138,24 @@
     "features": [
       "OS、CPU、GPU、メモリ、ドライブ容量、画面解像度を一覧表示します。",
       "表示中の概要をクリップボードにコピーできます。",
-      "ユーザー名・端末名・シリアル番号を表示しません。"
+      "ユーザー名・端末名・シリアル番号を表示しません。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiSystem.exeを起動します。",
       "「情報を取得」を押してPCの概要を確認します。",
-      "必要なら「概要をコピー」で表示内容をコピーします。"
+      "必要なら「概要をコピー」で表示内容をコピーします。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "fastfetchで検出できない項目は表示しません。取得した結果から表示項目を限定し、ファイルの変更やネットワーク通信は行いません。掲載画像は個人情報を含まないデモデータです。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: fastfetchで検出できない項目は表示しません。取得した結果から表示項目を限定し、ファイルの変更やネットワーク通信は行いません。掲載画像は個人情報を含まないデモデータです。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-system-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-system-v0.1.0/KiwiSystem-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-system-v0.2.0/KiwiSystem-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-system",
     "upstream_url": "https://github.com/fastfetch-cli/fastfetch",
     "upstream_license": "MIT",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-system-advanced-public.png"
   },
   {
     "slug": "kiwi-secrets",
@@ -147,21 +165,24 @@
       "Gitleaksの標準ルールで、フォルダー内の現在のファイルをチェックします。",
       "結果には相対パス・行番号・ルールを表示し、検出した秘密の値や本文は表示しません。",
       "対象ファイルは変更せず、外部サービスへの送信や値の有効性確認は行いません。",
-      "チェックを途中で停止でき、結果のダブルクリックで該当フォルダーを開けます。"
+      "チェックを途中で停止でき、結果のダブルクリックで該当フォルダーを開けます。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiSecrets.exeを起動します。",
       "チェックするフォルダーを選び、「チェック」を押します。",
-      "検出されたファイルと行番号を確認します。誤検出や見逃しもあります。"
+      "検出されたファイルと行番号を確認します。誤検出や見逃しもあります。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "Git履歴、圧縮ファイルの中身、エンコードされた値の復号は対象外です。5 MBを超えるファイルはスキップし、Gitleaks標準ルールの除外設定が適用されます。表示は最大1000件、結果データは4 MiB、処理は120秒までです。検出なしでも機密情報が存在しないことは保証できません。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: Git履歴、圧縮ファイルの中身、エンコードされた値の復号は対象外です。5 MBを超えるファイルはスキップし、Gitleaks標準ルールの除外設定が適用されます。表示は最大1000件、結果データは4 MiB、処理は120秒までです。検出なしでも機密情報が存在しないことは保証できません。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-secrets-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-secrets-v0.1.0/KiwiSecrets-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-secrets-v0.2.0/KiwiSecrets-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-secrets",
     "upstream_url": "https://github.com/gitleaks/gitleaks",
     "upstream_license": "MIT",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-secrets-advanced-public.png"
   },
   {
     "slug": "kiwi-regex",
@@ -171,21 +192,24 @@
       "grexで複数の文字列の例をまとめた正規表現を生成します。",
       "数字の一般化・大小文字の区別・繰り返しのまとめ方を選べます。",
       "日本語の入力に対応し、生成結果をコピーできます。",
-      "生成を途中で停止できます。入力を外部へ送信しません。"
+      "生成を途中で停止できます。入力を外部へ送信しません。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiRegex.exeを起動します。",
       "一致させたい文字列の例を1行ずつ入力します。",
-      "必要なオプションを選んで「生成」を押し、結果をコピーします。"
+      "必要なオプションを選んで「生成」を押し、結果をコピーします。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "入力はUTF-8で16 KiB、100行、1行256文字までです。空の行は無視し、行の前後の空白は保持します。結果は64 KiB、処理は15秒までです。オプションで一致範囲が広がるため、実際に使う正規表現エンジンで結果を確認してください。正規表現の実行・判定機能はありません。環境によってはMicrosoft Visual C++ Redistributableが必要です。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: 入力はUTF-8で16 KiB、100行、1行256文字までです。空の行は無視し、行の前後の空白は保持します。結果は64 KiB、処理は15秒までです。オプションで一致範囲が広がるため、実際に使う正規表現エンジンで結果を確認してください。正規表現の実行・判定機能はありません。環境によってはMicrosoft Visual C++ Redistributableが必要です。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-regex-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-regex-v0.1.0/KiwiRegex-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-regex-v0.2.0/KiwiRegex-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-regex",
     "upstream_url": "https://github.com/pemistahl/grex",
     "upstream_license": "Apache License 2.0",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-regex-advanced-public.png"
   },
   {
     "slug": "kiwi-http",
@@ -194,21 +218,24 @@
     "features": [
       "xhを使い、GETまたはHEADの応答をテキストで表示します。",
       "ステータス・応答ヘッダー・本文を確認し、表示内容をコピーできます。",
-      "送信を途中で停止できます。HTMLやスクリプトは実行しません。"
+      "送信を途中で停止できます。HTMLやスクリプトは実行しません。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiHTTP.exeを起動します。",
       "http:// または https:// で始まるURLを入力し、GETかHEADを選びます。",
-      "「送信」を押して応答を確認し、必要ならコピーします。"
+      "「送信」を押して応答を確認し、必要ならコピーします。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "入力したURLへ通信します。URLや応答に個人情報が含まれる場合があります。GET/HEADでも接続先の仕様によっては操作が発生します。リダイレクトは追跡せず、認証・送信本文・カスタムヘッダーは指定できません。URLは2048文字、応答は512 KiB、処理は15秒までです。UTF-8以外の本文は文字化けする場合があります。環境のプロキシ設定が適用されます。環境によってはMicrosoft Visual C++ Redistributableが必要です。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: 入力したURLへ通信します。URLや応答に個人情報が含まれる場合があります。GET/HEADでも接続先の仕様によっては操作が発生します。リダイレクトは追跡せず、認証・送信本文・カスタムヘッダーは指定できません。URLは2048文字、応答は512 KiB、処理は15秒までです。UTF-8以外の本文は文字化けする場合があります。環境のプロキシ設定が適用されます。環境によってはMicrosoft Visual C++ Redistributableが必要です。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-http-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-http-v0.1.0/KiwiHTTP-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-http-v0.2.0/KiwiHTTP-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-http",
     "upstream_url": "https://github.com/ducaale/xh",
     "upstream_license": "MIT",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-http-advanced-public.png"
   },
   {
     "slug": "kiwi-png",
@@ -218,21 +245,24 @@
       "oxipngで画素を変えずに静止PNGを圧縮します。",
       "圧縮前後の容量と削減率を表示します。",
       "圧縮レベル0〜4を選べ、処理を途中で停止できます。",
-      "新しい保存先だけに出力し、元ファイルや既存ファイルを上書きしません。"
+      "新しい保存先だけに出力し、元ファイルや既存ファイルを上書きしません。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiPNG.exeを起動します。",
       "入力PNGと新しい保存先を選び、圧縮レベルを指定します。",
-      "「圧縮」を押し、保存結果と容量を確認します。"
+      "「圧縮」を押し、保存結果と容量を確認します。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "静止PNGのみ対象で、アニメーションPNGは使えません。入力は20 MiB、1600万画素、処理は120秒までです。容量が減らない場合は元と同じデータを保存します。メタデータの削除指定はしませんが、最適化で無効になる付加情報が変更・削除される場合があります。画像は外部へ送信しません。環境によってはMicrosoft Visual C++ Redistributableが必要です。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: 静止PNGのみ対象で、アニメーションPNGは使えません。入力は20 MiB、1600万画素、処理は120秒までです。容量が減らない場合は元と同じデータを保存します。メタデータの削除指定はしませんが、最適化で無効になる付加情報が変更・削除される場合があります。画像は外部へ送信しません。環境によってはMicrosoft Visual C++ Redistributableが必要です。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-png-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-png-v0.1.0/KiwiPNG-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-png-v0.2.0/KiwiPNG-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-png",
     "upstream_url": "https://github.com/oxipng/oxipng",
     "upstream_license": "MIT",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-png-advanced-public.png"
   },
   {
     "slug": "kiwi-yaml",
@@ -241,21 +271,24 @@
     "features": [
       "yqでYAMLの整形とJSON変換を行います。",
       "日本語を含む設定ファイルの結果を確認し、新しいファイルに保存できます。",
-      "元ファイルと既存ファイルを上書きせず、処理を途中で停止できます。"
+      "元ファイルと既存ファイルを上書きせず、処理を途中で停止できます。",
+      "詳細機能で、元ツールの追加オプション・式・複数ファイルなどを指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiYAML.exeを起動します。",
       "UTF-8の.yaml/.ymlファイルを選び、整形かJSON変換を指定します。",
-      "「実行」を押して結果を確認し、必要なら「保存」で新しいファイルへ保存します。"
+      "「実行」を押して結果を確認し、必要なら「保存」で新しいファイルへ保存します。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "入力は2 MiB、結果は4 MiB、処理は15秒までです。画面表示は先頭120,000文字までで、保存は結果全体です。JSON変換ではコメント・アンカー・タグなどの表現が変わったり失われたりします。複数のYAML文書は複数のJSON値となり、単一の配列にはなりません。変換後は利用先で内容を確認してください。ファイルは外部へ送信しません。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: 入力は2 MiB、結果は4 MiB、処理は15秒までです。画面表示は先頭120,000文字までで、保存は結果全体です。JSON変換ではコメント・アンカー・タグなどの表現が変わったり失われたりします。複数のYAML文書は複数のJSON値となり、単一の配列にはなりません。変換後は利用先で内容を確認してください。ファイルは外部へ送信しません。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-yaml-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-yaml-v0.1.0/KiwiYAML-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-yaml-v0.2.0/KiwiYAML-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-yaml",
     "upstream_url": "https://github.com/mikefarah/yq",
     "upstream_license": "MIT",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-yaml-advanced-public.png"
   },
   {
     "slug": "kiwi-hash",
@@ -265,21 +298,24 @@
       "公式b3sumでファイルのBLAKE3ハッシュを計算します。",
       "照合値を入力すると、一致・不一致を確認できます。",
       "計算結果をコピーでき、処理を途中で停止できます。",
-      "ファイルは変更せず、外部へ送信しません。"
+      "ファイルは変更せず、外部へ送信しません。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiHash.exeを起動します。",
       "対象ファイルを選び、必要なら照合するBLAKE3ハッシュを入力します。",
-      "「計算」を押して結果を確認し、必要なら「コピー」を押します。"
+      "「計算」を押して結果を確認し、必要なら「コピー」を押します。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "BLAKE3専用で、SHA-256など他の方式の値とは比較できません。ハッシュ一致は配布元やファイルの安全性を保証しません。入力は8 GiB、処理は120秒までです。計算中にサイズや更新日時などが変わると結果を破棄しますが、更新の完全な検知は保証しません。更新中のファイルは対象にしないでください。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: BLAKE3専用で、SHA-256など他の方式の値とは比較できません。ハッシュ一致は配布元やファイルの安全性を保証しません。入力は8 GiB、処理は120秒までです。計算中にサイズや更新日時などが変わると結果を破棄しますが、更新の完全な検知は保証しません。更新中のファイルは対象にしないでください。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-hash-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-hash-v0.1.0/KiwiHash-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-hash-v0.2.0/KiwiHash-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-hash",
     "upstream_url": "https://github.com/BLAKE3-team/BLAKE3",
     "upstream_license": "Apache License 2.0 または CC0（上流ライセンス文書を同梱）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-hash-advanced-public.png"
   },
   {
     "slug": "kiwi-color",
@@ -289,21 +325,24 @@
       "pastelでHEX・RGB・HSLの表記を変換します。",
       "英語の色名や、色選択ダイアログからの入力にも対応します。",
       "色見本を表示し、各表記を個別にコピーできます。",
-      "入力を変えると古い結果を消し、処理を途中で停止できます。"
+      "入力を変えると古い結果を消し、処理を途中で停止できます。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiColor.exeを起動します。",
       "色コードや色名を入力するか、「色を選ぶ」で色を選択します。",
-      "「変換」を押して色見本と各表記を確認し、必要な表記をコピーします。"
+      "「変換」を押して色見本と各表記を確認し、必要な表記をコピーします。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "不透明な色のみ対応し、RGBA・HSLA・8桁HEX・transparentは対象外です。RGB・HSLは6桁HEXにそろえた色から算出するため、丸めで表記が変わる場合があります。入力は128文字、処理は15秒までです。色見本の見え方はディスプレイ設定などに依存します。画像や画面から色を読み取る機能はありません。ファイル操作や外部への送信は行いません。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: 不透明な色のみ対応し、RGBA・HSLA・8桁HEX・transparentは対象外です。RGB・HSLは6桁HEXにそろえた色から算出するため、丸めで表記が変わる場合があります。入力は128文字、処理は15秒までです。色見本の見え方はディスプレイ設定などに依存します。画像や画面から色を読み取る機能はありません。ファイル操作や外部への送信は行いません。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-color-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-color-v0.1.0/KiwiColor-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-color-v0.2.0/KiwiColor-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-color",
     "upstream_url": "https://github.com/sharkdp/pastel",
     "upstream_license": "MIT または Apache License 2.0",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-color-advanced-public.png"
   },
   {
     "slug": "kiwi-ascii",
@@ -313,21 +352,24 @@
       "PNG・JPEG・BMP・WEBP・TIFFの静止画像を文字絵に変換します。",
       "横幅を20〜160文字で指定できます。",
       "白黒反転と、点字文字による表現を選べます。",
-      "結果をコピーし、UTF-8のテキストとして保存できます。"
+      "結果をコピーし、UTF-8のテキストとして保存できます。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiASCII.exeを起動します。",
       "ローカル画像を選び、横幅や白黒反転・点字文字を指定します。",
-      "「変換」を押し、結果を確認してコピーまたはテキスト保存します。"
+      "「変換」を押し、結果を確認してコピーまたはテキスト保存します。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "画像は20MiB・2,000万画素以下、想定高さ400行以下の単一フレームが対象です。GIF・動画・アニメーション・複数ページ画像・URLの取得には対応しません。処理は30秒、出力は1MiBまでです。元画像は変更せず、外部へ送信しません。透明な部分や色の表現は元エンジンの仕様に依存します。等幅フォントで表示してください。点字文字は表示先のフォントによって見え方が変わります。画像として保存する機能はありません。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: 画像は20MiB・2,000万画素以下、想定高さ400行以下の単一フレームが対象です。GIF・動画・アニメーション・複数ページ画像・URLの取得には対応しません。処理は30秒、出力は1MiBまでです。元画像は変更せず、外部へ送信しません。透明な部分や色の表現は元エンジンの仕様に依存します。等幅フォントで表示してください。点字文字は表示先のフォントによって見え方が変わります。画像として保存する機能はありません。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-ascii-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-ascii-v0.1.0/KiwiASCII-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-ascii-v0.2.0/KiwiASCII-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-ascii",
     "upstream_url": "https://github.com/TheZoraiz/ascii-image-converter",
     "upstream_license": "Apache License 2.0",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-ascii-advanced-public.png"
   },
   {
     "slug": "kiwi-space",
@@ -337,21 +379,24 @@
       "dufでドライブの総容量・使用量・空き容量・使用率を取得します。",
       "列見出しをクリックして数値順・ドライブ順に並べ替えできます。",
       "選択行をコピーし、一覧をUTF-8 BOM付きCSVとして保存できます。",
-      "ボリューム名を表示せず、ドライブ文字とファイルシステムだけを使います。"
+      "ボリューム名を表示せず、ドライブ文字とファイルシステムだけを使います。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiSpace.exeを起動します。",
       "「更新」を押してドライブの容量を取得します。",
-      "列見出しで並べ替え、選択行をコピーするか一覧をCSV保存します。"
+      "列見出しで並べ替え、選択行をコピーするか一覧をCSV保存します。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "dufがローカルと分類した、ドライブ文字付きのWindowsドライブが対象です。仮想ドライブが含まれる場合があります。フォルダーにマウントされたボリュームや、ネットワークと分類されたドライブは表示しません。ドライブの応答状態によって取得できない場合があります。表示は取得時点の値で、更新は手動です。GiB/TiBは1024基準、CSVの容量はバイト単位です。ドライバーの集計方法によって見え方が異なる場合があります。取得は15秒、出力は1MiBまでです。ファイルの走査・削除・クリーンアップは行いません。CSVの保存先だけに書き込みます。自動更新・履歴・通知機能はありません。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: dufがローカルと分類した、ドライブ文字付きのWindowsドライブが対象です。仮想ドライブが含まれる場合があります。フォルダーにマウントされたボリュームや、ネットワークと分類されたドライブは表示しません。ドライブの応答状態によって取得できない場合があります。表示は取得時点の値で、更新は手動です。GiB/TiBは1024基準、CSVの容量はバイト単位です。ドライバーの集計方法によって見え方が異なる場合があります。取得は15秒、出力は1MiBまでです。ファイルの走査・削除・クリーンアップは行いません。CSVの保存先だけに書き込みます。自動更新・履歴・通知機能はありません。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-space-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-space-v0.1.0/KiwiSpace-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-space-v0.2.0/KiwiSpace-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-space",
     "upstream_url": "https://github.com/muesli/duf",
     "upstream_license": "MIT",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-space-advanced-public.png"
   },
   {
     "slug": "kiwi-diff",
@@ -361,20 +406,23 @@
       "difftasticでUTF-8のテキスト・コードを比較します。",
       "構文を考慮する比較と、プレーンテキスト比較を選べます。",
       "左ファイルの変更前を赤、右ファイルの変更後を緑で表示します。",
-      "結果をコピー・UTF-8保存できます。入力ファイルを変更・実行しません。"
+      "結果をコピー・UTF-8保存できます。入力ファイルを変更・実行しません。",
+      "詳細機能で元ツールの追加オプション・値・ファイル・標準入力を指定し、標準出力を保存できます。"
     ],
     "steps": [
       "ZIPを展開し、KiwiDiff.exeを起動します。",
       "左右のローカルファイルを選び、必要なら「プレーンテキスト」を選択します。",
-      "「比較」を押し、差分を確認してコピーまたはテキスト保存します。"
+      "「比較」を押し、差分を確認してコピーまたはテキスト保存します。",
+      "追加オプションを使う場合は、メニュー「詳細機能」→「開く」でプリセットや同梱ヘルプを確認します。"
     ],
-    "limitations": "各2MiB以下のUTF-8・UTF-8 BOM付きテキストが対象です。バイナリ・Shift-JISなどの文字コード・フォルダー比較・URL取得には対応しません。構文比較は拡張子で言語を判定し、空白などの変更を無視する場合があります。「差分なし」はバイト列の完全一致を意味しません。プレーンテキスト比較でもCRLFとLFの違い・UTF-8 BOMの有無は無視します。未対応言語や大きなファイル、複雑な構文は行単位の比較へ切り替わる場合があります。処理は20秒、出力は2MiBまでです。表示は差分周辺の内容です。コピー・保存結果は色の付かない閲覧用テキストで、適用可能なパッチではありません。編集・マージ機能はありません。入力ファイルを外部へ送信しません。現時点の実行ファイルにはコード署名がありません。",
+    "limitations": "通常画面: 各2MiB以下のUTF-8・UTF-8 BOM付きテキストが対象です。バイナリ・Shift-JISなどの文字コード・フォルダー比較・URL取得には対応しません。構文比較は拡張子で言語を判定し、空白などの変更を無視する場合があります。「差分なし」はバイト列の完全一致を意味しません。プレーンテキスト比較でもCRLFとLFの違い・UTF-8 BOMの有無は無視します。未対応言語や大きなファイル、複雑な構文は行単位の比較へ切り替わる場合があります。処理は20秒、出力は2MiBまでです。表示は差分周辺の内容です。コピー・保存結果は色の付かない閲覧用テキストで、適用可能なパッチではありません。編集・マージ機能はありません。入力ファイルを外部へ送信しません。現時点の実行ファイルにはコード署名がありません。 詳細機能: 1回300秒、標準入力2 MiB、出力合計16 MiB、引数256個まで。シェルのパイプ・対話式端末・外部コマンド実行など一部機能は対象外です。全オプションの組合せを検証したものではありません。",
     "screenshot": "/assets/screenshots/kiwi-diff-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-diff-v0.1.0/KiwiDiff-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-diff-v0.2.0/KiwiDiff-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-diff",
     "upstream_url": "https://github.com/Wilfred/difftastic",
     "upstream_license": "MIT",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "advanced_screenshot": "/assets/screenshots/kiwi-diff-advanced-public.png"
   }
 ]
