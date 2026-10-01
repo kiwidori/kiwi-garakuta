@@ -31,6 +31,8 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | [きういMarkdown](https://kiwi-garakuta.pages.dev/tools/kiwi-markdown/) | Markdown・URL・READMEを装飾付きで表示し、テキストを保存する | [Glow](https://github.com/charmbracelet/glow) |
 
+| [きうい置換](https://kiwi-garakuta.pages.dev/tools/kiwi-replace/) | 文字列・正規表現でテキストと複数ファイルを置換して保存する | [sd](https://github.com/chmln/sd) |
+
 各ソフトの詳細ページに、使い方、実際の画面、制限事項、ZIPのダウンロード先を掲載しています。ZIPには元ツールのライセンス文書を同梱しています。
 
 ## 使い方

@@ -555,5 +555,31 @@
     "upstream_license": "MIT（依存物の通知もZIPに同梱）",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-replace",
+    "name": "きうい置換",
+    "summary": "文字列や正規表現でテキスト・複数ファイルを置換し、結果を別途保存できる無料ツールです。",
+    "features": [
+      "テキスト入力と複数ファイルに対応し、キャプチャを使った正規表現・固定文字列の置換を指定できます。",
+      "置換回数、大小文字・単語・複数行のフラグ、行をまたぐ全体処理を選べます。",
+      "置換後のテキストをプレビューできます。元ファイルを自動で変更しません。",
+      "単一の結果はテキスト、複数ファイルの結果は番号付きファイル名のZIPに保存できます。",
+      "デモ、ヘルプ、版表示と詳細機能を備えています。詳細機能は常にpreviewを付けます。"
+    ],
+    "steps": [
+      "ZIPを展開して KiwiReplace.exe を起動します。",
+      "操作を選び、テキストを入力するか、入力欄を空にしてファイルを追加します。「デモ」でも試せます。",
+      "検索と置換の文字列、必要な設定を指定し「実行」を押します。空の置換文字列は削除になります。",
+      "結果を確認し「結果を保存」でテキストまたはZIPを保存します。"
+    ],
+    "limitations": "元ファイルの自動一括上書きは行いません。UTF-8ファイルを扱い、リンク・ジャンクション・フォルダーは拒否します。previewは置換後テキストで、差分の色付けではありません。回数上限は通常は行ごと、全体処理時は文書ごとです。標準入力/各ファイル2 MiB、入力・出力合計64 MiB、2000ファイル、保存ZIP16 MiB、1回300秒。詳細機能のファイルはsd側で読むため通常画面の読込制限とは異なります。全ての正規表現やオプションの組合せを保証するものではありません。公式release v1.1.0の内部版表示はv1.0.0です。実行ファイルは未署名です。実行時のLLMやクラウドAPIは不要です。",
+    "screenshot": "/assets/screenshots/kiwi-replace-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-replace-v0.1.0/KiwiReplace-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-replace",
+    "upstream_url": "https://github.com/chmln/sd",
+    "upstream_license": "MIT（依存物の通知もZIPに同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
