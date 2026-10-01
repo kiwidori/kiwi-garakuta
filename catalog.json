@@ -328,5 +328,29 @@
     "upstream_license": "Apache License 2.0",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-space",
+    "name": "きうい空き容量",
+    "summary": "ドライブの総容量・使用量・空き容量を一覧表示し、並べ替えやCSV保存ができる無料ツールです。",
+    "features": [
+      "dufでドライブの総容量・使用量・空き容量・使用率を取得します。",
+      "列見出しをクリックして数値順・ドライブ順に並べ替えできます。",
+      "選択行をコピーし、一覧をUTF-8 BOM付きCSVとして保存できます。",
+      "ボリューム名を表示せず、ドライブ文字とファイルシステムだけを使います。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiSpace.exeを起動します。",
+      "「更新」を押してドライブの容量を取得します。",
+      "列見出しで並べ替え、選択行をコピーするか一覧をCSV保存します。"
+    ],
+    "limitations": "dufがローカルと分類した、ドライブ文字付きのWindowsドライブが対象です。仮想ドライブが含まれる場合があります。フォルダーにマウントされたボリュームや、ネットワークと分類されたドライブは表示しません。ドライブの応答状態によって取得できない場合があります。表示は取得時点の値で、更新は手動です。GiB/TiBは1024基準、CSVの容量はバイト単位です。ドライバーの集計方法によって見え方が異なる場合があります。取得は15秒、出力は1MiBまでです。ファイルの走査・削除・クリーンアップは行いません。CSVの保存先だけに書き込みます。自動更新・履歴・通知機能はありません。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-space-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-space-v0.1.0/KiwiSpace-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-space",
+    "upstream_url": "https://github.com/muesli/duf",
+    "upstream_license": "MIT",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
