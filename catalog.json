@@ -424,5 +424,83 @@
     "amazon_links": [],
     "windows_test_passed": true,
     "advanced_screenshot": "/assets/screenshots/kiwi-diff-advanced-public.png"
+  },
+  {
+    "slug": "kiwi-count",
+    "summary": "コードの行数・言語・複雑度を集計し、Git履歴やHTMLレポートも確認できる無料ツールです。",
+    "features": [
+      "言語別・ファイル別に、行数・複雑度・文字数・ユニーク行を集計します。",
+      "除外・拡張子・生成ファイルの設定をタブで指定できます。",
+      "COCOMO・LOCOMOによる開発費の推計と、Git履歴の変更頻度・同時変更・作成者・時系列を確認できます。",
+      "表・JSON・CSV等とHTMLレポートを生成し、結果を保存できます。",
+      "追加のオプションはメニュー「詳細機能」から同梱ヘルプを確認して指定できます。"
+    ],
+    "steps": [
+      "ZIPを展開して KiwiCount.exe を起動します。",
+      "操作を選び、対象ファイル・フォルダーを追加します。",
+      "必要な設定をタブで指定して「実行」を押します。",
+      "結果を確認し「結果を保存」でファイルまたはZIPに保存します。"
+    ],
+    "limitations": "開発費は上流モデルの推計です。Git履歴はローカルのGitリポジトリが対象です。外部設定ファイルの読込とMCPを使いません。 1ジョブ300秒、標準入力2 MiB、標準出力とエラー合計16 MiBまで。一括処理は入力・出力2000ファイル/64 MiB、フォルダー走査2000個まで、保存ZIP16 MiBまでです。全オプションの組合せを検証したものではありません。実行ファイルは未署名です。実行時のLLM・クラウドAPIは不要です。",
+    "name": "きういコード集計",
+    "screenshot": "/assets/screenshots/kiwi-count-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-count-v0.1.0/KiwiCount-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-count",
+    "upstream_url": "https://github.com/boyter/scc",
+    "upstream_license": "MIT",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-shell",
+    "summary": "シェルスクリプトの整形・差分・AST変換を、実行せずに画面から行える無料ツールです。",
+    "features": [
+      "bash・posix・mksh・bats・zshの方言と、字下げ・整形ルールを指定できます。",
+      "簡略化・最小化、差分・変更対象一覧、フォルダー内のシェルファイル検出に対応します。",
+      "AST JSONとの双方向変換、EditorConfigの仮想ファイル名とignoreを指定できます。",
+      "フォルダー内のファイルを個別に整形し、結果をZIPで保存できます。",
+      "追加のオプションはメニュー「詳細機能」から同梱ヘルプを確認して指定できます。"
+    ],
+    "steps": [
+      "ZIPを展開して KiwiShell.exe を起動します。",
+      "操作を選び、対象ファイル・フォルダーを追加するか標準入力にテキストを入力します。",
+      "必要な設定をタブで指定して「実行」を押します。",
+      "結果を確認し「結果を保存」でファイルまたはZIPに保存します。"
+    ],
+    "limitations": "上流が整形できる構文だけを扱います。入力への直接書込は行いません。スクリプトを実行しません。 1ジョブ300秒、標準入力2 MiB、標準出力とエラー合計16 MiBまで。一括処理は入力・出力2000ファイル/64 MiB、フォルダー走査2000個まで、保存ZIP16 MiBまでです。全オプションの組合せを検証したものではありません。実行ファイルは未署名です。実行時のLLM・クラウドAPIは不要です。",
+    "name": "きういシェル整形",
+    "screenshot": "/assets/screenshots/kiwi-shell-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-shell-v0.1.0/KiwiShell-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-shell",
+    "upstream_url": "https://github.com/mvdan/sh",
+    "upstream_license": "BSD-3-Clause",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-minify",
+    "summary": "Webファイルを圧縮し、複数ファイルの連結やフォルダーの一括処理もできる無料ツールです。",
+    "features": [
+      "CSS・JavaScript・HTML・JSON・SVG・XMLを圧縮し、形式別の設定を指定できます。",
+      "複数ファイルの連結、再帰・隠し項目・include/exclude/match、拡張子対応と基準URLを指定できます。",
+      "対象外のファイルをコピーするsyncと、フォルダーの一括処理に対応します。",
+      "圧縮結果はファイルまたはZIPに保存できます。HTMLやスクリプトは実行しません。",
+      "追加のオプションはメニュー「詳細機能」から同梱ヘルプを確認して指定できます。"
+    ],
+    "steps": [
+      "ZIPを展開して KiwiMinify.exe を起動します。",
+      "操作を選び、対象ファイル・フォルダーを追加するか標準入力にテキストを入力します。",
+      "標準入力の場合は入力形式を選び、必要な設定を指定して「実行」を押します。",
+      "結果を確認し「結果を保存」でファイルまたはZIPに保存します。"
+    ],
+    "limitations": "フォルダー処理は専用のZIP操作を使います。リンク・ジャンクションを含む入力とownership・links・allの属性保持を拒否します。属性はWindows版とZIP形式で保持できる範囲に限られます。watchと入力への直接書込は使いません。 1ジョブ300秒、標準入力2 MiB、標準出力とエラー合計16 MiBまで。一括処理は入力・出力2000ファイル/64 MiB、フォルダー走査2000個まで、保存ZIP16 MiBまでです。全オプションの組合せを検証したものではありません。実行ファイルは未署名です。実行時のLLM・クラウドAPIは不要です。",
+    "name": "きういWeb圧縮",
+    "screenshot": "/assets/screenshots/kiwi-minify-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-minify-v0.1.0/KiwiMinify-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-minify",
+    "upstream_url": "https://github.com/tdewolff/minify",
+    "upstream_license": "MIT",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]

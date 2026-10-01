@@ -24,6 +24,9 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | [きうい文字絵](https://kiwi-garakuta.pages.dev/tools/kiwi-ascii/) | 静止画像をASCII・点字文字の文字絵に変換する | [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter) |
 | [きうい空き容量](https://kiwi-garakuta.pages.dev/tools/kiwi-space/) | ドライブの容量を一覧表示・CSV保存する | [duf](https://github.com/muesli/duf) |
 | [きうい比較](https://kiwi-garakuta.pages.dev/tools/kiwi-diff/) | テキスト・コードの差分を表示・保存する | [difftastic](https://github.com/Wilfred/difftastic) |
+| [きういコード集計](https://kiwi-garakuta.pages.dev/tools/kiwi-count/) | コードの行数・複雑度・Git履歴を集計し、HTMLレポートを保存する | [scc](https://github.com/boyter/scc) |
+| [きういシェル整形](https://kiwi-garakuta.pages.dev/tools/kiwi-shell/) | シェルの整形・差分・AST変換と一括整形を行う | [shfmt](https://github.com/mvdan/sh) |
+| [きういWeb圧縮](https://kiwi-garakuta.pages.dev/tools/kiwi-minify/) | Webファイルの圧縮・連結・フォルダー処理を行う | [minify](https://github.com/tdewolff/minify) |
 
 各ソフトの詳細ページに、使い方、実際の画面、制限事項、ZIPのダウンロード先を掲載しています。ZIPには元ツールのライセンス文書を同梱しています。
 
@@ -31,7 +34,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 1. 上の一覧からソフトの詳細ページを開き、ZIPをダウンロードします。
 2. ZIPを任意のフォルダーへ展開します。
-3. 中の `KiwiSearch.exe`、`KiwiFind.exe`、`KiwiDisk.exe`、`KiwiJSON.exe`、`KiwiCode.exe`、`KiwiSystem.exe`、`KiwiSecrets.exe`、`KiwiRegex.exe`、`KiwiHTTP.exe`、`KiwiPNG.exe`、`KiwiYAML.exe`、`KiwiHash.exe`、`KiwiColor.exe`、`KiwiASCII.exe`、`KiwiSpace.exe`、または `KiwiDiff.exe` を起動します。
+3. 中の `KiwiSearch.exe`、`KiwiFind.exe`、`KiwiDisk.exe` など、選んだソフトの実行ファイルを起動します。ファイル名と機能は各ソフトの詳細ページとZIP内のREADMEに記載しています。
 
 各ソフトはWindows 11 x64で動作確認しています。現時点の実行ファイルにはコード署名がありません。配布元とZIPの内容を確認してから使用してください。
 
