@@ -1,0 +1,16 @@
+{
+  "slug": "kiwi-count",
+  "name": "きういコード集計",
+  "repo": "boyter/scc",
+  "tag": "v4.1.0",
+  "exe": "scc.exe",
+  "asset": "scc_Windows_x86_64.zip",
+  "sha": "4a433984f45ff29c94eeb3af6db5b511c58f5bf74063dccedafcbf473cb8ff31",
+  "license": "MIT",
+  "url": "https://github.com/boyter/scc/releases/download/v4.1.0/scc_Windows_x86_64.zip",
+  "license_url": "https://raw.githubusercontent.com/boyter/scc/v4.1.0/LICENSE",
+  "license_sha": "394715fd981d15253bdc4677286abfce01da356040381a0d9de7701bd7c8069c",
+  "app_exe": "KiwiCount",
+  "version": "0.1.0",
+  "binary_sha": "b22c38e5bd888d98cdc3987cd125b0041fa1154ed4ef59238052d156461324e8"
+}

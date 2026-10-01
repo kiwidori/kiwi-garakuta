@@ -1,0 +1,16 @@
+{
+  "slug": "kiwi-minify",
+  "name": "きういWeb圧縮",
+  "repo": "tdewolff/minify",
+  "tag": "v2.24.17",
+  "exe": "minify.exe",
+  "asset": "minify_windows_amd64.zip",
+  "sha": "a854e283026752c34cf0c69fe574854526adda50721244285c53cf0c195f23b0",
+  "license": "MIT",
+  "url": "https://github.com/tdewolff/minify/releases/download/v2.24.17/minify_windows_amd64.zip",
+  "license_url": "https://raw.githubusercontent.com/tdewolff/minify/v2.24.17/LICENSE",
+  "license_sha": "2af9fd60950a663c718cc1c9f298b4b1ca976ed54a54d1c4ab1f6c0efc4524eb",
+  "app_exe": "KiwiMinify",
+  "version": "0.1.0",
+  "binary_sha": "0d113e0fe535606cef46e9f007cbb6a237293e9d3133491d0ccb4d71a86c0cc3"
+}

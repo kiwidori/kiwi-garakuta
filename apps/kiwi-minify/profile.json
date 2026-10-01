@@ -1,0 +1,317 @@
+{
+  "slug": "kiwi-minify",
+  "title": "きういWeb圧縮",
+  "tool": "minify.exe",
+  "upstream_url": "https://github.com/tdewolff/minify",
+  "fields": [
+    {
+      "group": "入力と処理",
+      "label": "入力形式",
+      "flag": "--type",
+      "type": "choice",
+      "default": "",
+      "choices": [
+        "",
+        "css",
+        "js",
+        "html",
+        "json",
+        "svg",
+        "xml",
+        "text/css",
+        "application/javascript",
+        "text/html",
+        "application/json",
+        "image/svg+xml",
+        "text/xml"
+      ]
+    },
+    {
+      "group": "入力と処理",
+      "label": "隠しファイルも対象",
+      "flag": "--all",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "入力と処理",
+      "label": "サブフォルダーも対象",
+      "flag": "--recursive",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "入力と処理",
+      "label": "複数ファイルを連結",
+      "flag": "--bundle",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "入力と処理",
+      "label": "対象外のファイルもコピー",
+      "flag": "--sync",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "入力と処理",
+      "label": "除外パターン（1行1値）",
+      "flag": "--exclude",
+      "type": "text",
+      "default": "",
+      "repeat": true,
+      "split": "lines"
+    },
+    {
+      "group": "入力と処理",
+      "label": "再包含パターン（1行1値）",
+      "flag": "--include",
+      "type": "text",
+      "default": "",
+      "repeat": true,
+      "split": "lines"
+    },
+    {
+      "group": "入力と処理",
+      "label": "対象ファイル名パターン（1行1値）",
+      "flag": "--match",
+      "type": "text",
+      "default": "",
+      "repeat": true,
+      "split": "lines"
+    },
+    {
+      "group": "入力と処理",
+      "label": "拡張子と形式の対応",
+      "flag": "--ext",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "入力と処理",
+      "label": "保持する属性（カンマ区切り）",
+      "flag": "--preserve",
+      "type": "text",
+      "default": "",
+      "split": "comma"
+    },
+    {
+      "group": "入力と処理",
+      "label": "URL短縮の基準URL",
+      "flag": "--url",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "入力と処理",
+      "label": "メッセージを省く",
+      "flag": "--quiet",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "入力と処理",
+      "label": "詳細表示レベル",
+      "flag": "--verbose",
+      "type": "choice",
+      "default": "",
+      "choices": [
+        "",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "group": "CSS・JavaScript・JSON",
+      "label": "CSSの有効桁数",
+      "flag": "--css-precision",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "CSS・JavaScript・JSON",
+      "label": "CSSバージョン",
+      "flag": "--css-version",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "CSS・JavaScript・JSON",
+      "label": "JavaScript変数名を保持",
+      "flag": "--js-keep-var-names",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "CSS・JavaScript・JSON",
+      "label": "JavaScriptの有効桁数",
+      "flag": "--js-precision",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "CSS・JavaScript・JSON",
+      "label": "ECMAScriptバージョン",
+      "flag": "--js-version",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "CSS・JavaScript・JSON",
+      "label": "JSONの数値を保持",
+      "flag": "--json-keep-numbers",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "CSS・JavaScript・JSON",
+      "label": "JSONの有効桁数",
+      "flag": "--json-precision",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "HTML",
+      "label": "全コメントを保持",
+      "flag": "--html-keep-comments",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "HTML",
+      "label": "IE条件コメントを保持（非推奨）",
+      "flag": "--html-keep-conditional-comments",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "HTML",
+      "label": "既定の属性値を保持",
+      "flag": "--html-keep-default-attrvals",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "HTML",
+      "label": "html・head・bodyタグを保持",
+      "flag": "--html-keep-document-tags",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "HTML",
+      "label": "終了タグを保持",
+      "flag": "--html-keep-end-tags",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "HTML",
+      "label": "属性の引用符を保持",
+      "flag": "--html-keep-quotes",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "HTML",
+      "label": "条件・SSIコメントを保持",
+      "flag": "--html-keep-special-comments",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "HTML",
+      "label": "空白を保持",
+      "flag": "--html-keep-whitespace",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "SVG・XML",
+      "label": "SVGコメントを保持",
+      "flag": "--svg-keep-comments",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "SVG・XML",
+      "label": "保持する名前空間（カンマ区切り）",
+      "flag": "--svg-keep-namespaces",
+      "type": "text",
+      "default": "",
+      "split": "comma"
+    },
+    {
+      "group": "SVG・XML",
+      "label": "SVGの有効桁数",
+      "flag": "--svg-precision",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "SVG・XML",
+      "label": "XML空白を保持",
+      "flag": "--xml-keep-whitespace",
+      "type": "bool",
+      "default": false
+    }
+  ],
+  "modes": [
+    {
+      "label": "圧縮",
+      "args": [],
+      "stdin": true,
+      "files": true,
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": false
+    },
+    {
+      "label": "フォルダー圧縮ZIP",
+      "args": [],
+      "stdin": false,
+      "files": true,
+      "job": "minify_zip",
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": true
+    },
+    {
+      "label": "対応形式一覧",
+      "args": [
+        "--list"
+      ],
+      "stdin": false,
+      "files": false,
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": false
+    },
+    {
+      "label": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": false,
+      "files": false,
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": false
+    }
+  ],
+  "mandatory_args": [],
+  "blocked_flags": [
+    "--inplace",
+    "-i",
+    "--watch",
+    "-w",
+    "--output",
+    "-o"
+  ],
+  "delimiter": true
+}

@@ -1,0 +1,506 @@
+{
+  "slug": "kiwi-minify",
+  "tool": "minify.exe",
+  "upstream_url": "https://github.com/tdewolff/minify",
+  "mandatory_args": [],
+  "blocked_flags": [
+    "--inplace",
+    "-i",
+    "--watch",
+    "-w",
+    "--output",
+    "-o"
+  ],
+  "options": [
+    {
+      "flag": "--all",
+      "aliases": [
+        "-a",
+        "--all"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Minify all files, including hidden files and files in hidden directories",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--bundle",
+      "aliases": [
+        "-b",
+        "--bundle"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Bundle files by concatenation into a single file",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--css-precision",
+      "aliases": [
+        "--css-precision"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "int     Number of significant digits to preserve in numbers, 0 is all",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--css-version",
+      "aliases": [
+        "--css-version"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "int       CSS version to toggle supported optimizations (e.g. 2), by default 0 is the latest version",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--exclude",
+      "aliases": [
+        "--exclude"
+      ],
+      "takes_value": true,
+      "value_hint": "[]string",
+      "description": "[]string      Path exclusion pattern, excludes paths from being processed",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--ext",
+      "aliases": [
+        "--ext"
+      ],
+      "takes_value": true,
+      "value_hint": "map[string]string",
+      "description": "map[string]string Filename extension mapping to filetype (eg. css or text/css)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Help",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能から対応"
+    },
+    {
+      "flag": "--html-keep-comments",
+      "aliases": [
+        "--html-keep-comments"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Preserve all comments",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--html-keep-conditional-comments",
+      "aliases": [
+        "--html-keep-conditional-comments"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--html-keep-default-attrvals",
+      "aliases": [
+        "--html-keep-default-attrvals"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--html-keep-document-tags",
+      "aliases": [
+        "--html-keep-document-tags"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--html-keep-end-tags",
+      "aliases": [
+        "--html-keep-end-tags"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Preserve all end tags",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--html-keep-quotes",
+      "aliases": [
+        "--html-keep-quotes"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Preserve quotes around attribute values",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--html-keep-special-comments",
+      "aliases": [
+        "--html-keep-special-comments"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--html-keep-whitespace",
+      "aliases": [
+        "--html-keep-whitespace"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Preserve whitespace characters but still collapse multiple into one",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--inplace",
+      "aliases": [
+        "-i",
+        "--inplace"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Minify input files in-place instead of setting output",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "CLI直接書込・設定・長時間サーバーは対象外（結果は保存ボタン）"
+    },
+    {
+      "flag": "--include",
+      "aliases": [
+        "--include"
+      ],
+      "takes_value": true,
+      "value_hint": "[]string",
+      "description": "[]string      Path inclusion pattern, includes paths previously excluded",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--js-keep-var-names",
+      "aliases": [
+        "--js-keep-var-names"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Preserve original variable names",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--js-precision",
+      "aliases": [
+        "--js-precision"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "int      Number of significant digits to preserve in numbers, 0 is all",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--js-version",
+      "aliases": [
+        "--js-version"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "int        ECMAScript version to toggle supported optimizations (e.g. 2019, 2020), by default 0 is the latest version",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--json-keep-numbers",
+      "aliases": [
+        "--json-keep-numbers"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Preserve original numbers instead of minifying them",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--json-precision",
+      "aliases": [
+        "--json-precision"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "int    Number of significant digits to preserve in numbers, 0 is all",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--list",
+      "aliases": [
+        "-l",
+        "--list"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "List all accepted filetypes",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能から対応"
+    },
+    {
+      "flag": "--match",
+      "aliases": [
+        "--match"
+      ],
+      "takes_value": true,
+      "value_hint": "[]string",
+      "description": "[]string        Filename matching pattern, only matching filenames are processed",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--mime",
+      "aliases": [
+        "--mime"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "string           Mimetype (eg. text/css), optional for input filenames (DEPRECATED, use --type)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能から対応"
+    },
+    {
+      "flag": "--output",
+      "aliases": [
+        "-o",
+        "--output"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "string         Output file or directory, leave blank to use stdout",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "CLI直接書込・設定・長時間サーバーは対象外（結果は保存ボタン）"
+    },
+    {
+      "flag": "--preserve",
+      "aliases": [
+        "-p",
+        "--preserve"
+      ],
+      "takes_value": true,
+      "value_hint": "[]string",
+      "description": "='[mode timestamps]' []string",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--quiet",
+      "aliases": [
+        "-q",
+        "--quiet"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Quiet mode to suppress all output",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--recursive",
+      "aliases": [
+        "-r",
+        "--recursive"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Recursively minify directories",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--sync",
+      "aliases": [
+        "-s",
+        "--sync"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Copy all files to destination directory and minify when filetype matches",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--svg-keep-comments",
+      "aliases": [
+        "--svg-keep-comments"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Preserve all comments",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--svg-keep-namespaces",
+      "aliases": [
+        "--svg-keep-namespaces"
+      ],
+      "takes_value": true,
+      "value_hint": "[]string",
+      "description": "[]string",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--svg-precision",
+      "aliases": [
+        "--svg-precision"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "int     Number of significant digits to preserve in numbers, 0 is all",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--type",
+      "aliases": [
+        "--type"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "string           Filetype (eg. css or text/css), optional when specifying inputs",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--url",
+      "aliases": [
+        "--url"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "string            URL of file to enable URL minification",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--verbose",
+      "aliases": [
+        "-v",
+        "--verbose"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "int           Verbose mode, set twice for more verbosity",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Version",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能から対応"
+    },
+    {
+      "flag": "--watch",
+      "aliases": [
+        "-w",
+        "--watch"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Watch files and minify upon changes",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "CLI直接書込・設定・長時間サーバーは対象外（結果は保存ボタン）"
+    },
+    {
+      "flag": "--xml-keep-whitespace",
+      "aliases": [
+        "--xml-keep-whitespace"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Preserve whitespace characters but still collapse multiple into one",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    }
+  ],
+  "subcommands": [],
+  "examples": [
+    {
+      "name": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": ""
+    }
+  ]
+}

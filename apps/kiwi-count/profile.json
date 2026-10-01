@@ -1,0 +1,630 @@
+{
+  "slug": "kiwi-count",
+  "title": "きういコード集計",
+  "tool": "scc.exe",
+  "upstream_url": "https://github.com/boyter/scc",
+  "fields": [
+    {
+      "group": "集計表示",
+      "label": "ファイル別",
+      "flag": "--by-file",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "集計表示",
+      "label": "行の文字数",
+      "flag": "--character",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "集計表示",
+      "label": "割合",
+      "flag": "--percent",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "集計表示",
+      "label": "ユニーク行",
+      "flag": "--uloc",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "集計表示",
+      "label": "重複度",
+      "flag": "--dryness",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "集計表示",
+      "label": "認知複雑度",
+      "flag": "--cognitive",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "集計表示",
+      "label": "複雑度計算を省く",
+      "flag": "--no-complexity",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "集計表示",
+      "label": "ワイド表示",
+      "flag": "--wide",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "集計表示",
+      "label": "罫線を省く",
+      "flag": "--no-hborder",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "集計表示",
+      "label": "ASCII表示",
+      "flag": "--ci",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "集計表示",
+      "label": "容量を省く",
+      "flag": "--no-size",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "集計表示",
+      "label": "出力形式",
+      "flag": "--format",
+      "type": "choice",
+      "default": "tabular",
+      "choices": [
+        "tabular",
+        "wide",
+        "json",
+        "json2",
+        "csv",
+        "csv-stream",
+        "cloc-yaml",
+        "html",
+        "html-table",
+        "sql",
+        "sql-insert",
+        "openmetrics"
+      ]
+    },
+    {
+      "group": "集計表示",
+      "label": "並べ替え",
+      "flag": "--sort",
+      "type": "choice",
+      "default": "files",
+      "choices": [
+        "files",
+        "name",
+        "lines",
+        "blanks",
+        "code",
+        "comments",
+        "complexity"
+      ]
+    },
+    {
+      "group": "集計表示",
+      "label": "容量単位",
+      "flag": "--size-unit",
+      "type": "choice",
+      "default": "si",
+      "choices": [
+        "si",
+        "binary",
+        "mixed",
+        "xkcd-kb",
+        "xkcd-kelly",
+        "xkcd-imaginary",
+        "xkcd-intel",
+        "xkcd-drive",
+        "xkcd-bakers"
+      ]
+    },
+    {
+      "group": "対象と除外",
+      "label": "対象拡張子（カンマ区切り）",
+      "flag": "--include-ext",
+      "type": "text",
+      "default": "",
+      "split": "comma"
+    },
+    {
+      "group": "対象と除外",
+      "label": "除外拡張子（カンマ区切り）",
+      "flag": "--exclude-ext",
+      "type": "text",
+      "default": "",
+      "split": "comma"
+    },
+    {
+      "group": "対象と除外",
+      "label": "除外ディレクトリ（カンマ区切り）",
+      "flag": "--exclude-dir",
+      "type": "text",
+      "default": "",
+      "split": "comma"
+    },
+    {
+      "group": "対象と除外",
+      "label": "除外ファイル（カンマ区切り）",
+      "flag": "--exclude-file",
+      "type": "text",
+      "default": "",
+      "split": "comma"
+    },
+    {
+      "group": "対象と除外",
+      "label": "除外正規表現（1行1値）",
+      "flag": "--not-match",
+      "type": "text",
+      "default": "",
+      "repeat": true,
+      "split": "lines"
+    },
+    {
+      "group": "対象と除外",
+      "label": "追加ignoreファイル（1行1値）",
+      "flag": "--ignore-file",
+      "type": "text",
+      "default": "",
+      "repeat": true,
+      "split": "lines"
+    },
+    {
+      "group": "対象と除外",
+      "label": "拡張子と言語対応",
+      "flag": "--count-as",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "対象と除外",
+      "label": "パターンと言語対応（1行1値）",
+      "flag": "--count-as-pattern",
+      "type": "text",
+      "default": "",
+      "repeat": true,
+      "split": "lines"
+    },
+    {
+      "group": "対象と除外",
+      "label": "文字列による言語再判定",
+      "flag": "--remap-all",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "対象と除外",
+      "label": "未知言語の再判定",
+      "flag": "--remap-unknown",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "対象と除外",
+      "label": "未知拡張子も集計",
+      "flag": "--count-unsupported",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "対象と除外",
+      "label": "リンクファイルも集計",
+      "flag": "--include-symlinks",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "対象と除外",
+      "label": "バイナリ判定を省く",
+      "flag": "--binary",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "対象と除外",
+      "label": "ignoreファイルも集計",
+      "flag": "--count-ignore",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "対象と除外",
+      "label": "gitignoreを無効",
+      "flag": "--no-gitignore",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "対象と除外",
+      "label": "ignoreを無効",
+      "flag": "--no-ignore",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "対象と除外",
+      "label": "sccignoreを無効",
+      "flag": "--no-scc-ignore",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "対象と除外",
+      "label": "gitmodulesを無効",
+      "flag": "--no-gitmodule",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "生成物とサイズ",
+      "label": "生成ファイルを識別",
+      "flag": "--gen",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "生成物とサイズ",
+      "label": "圧縮ファイルを識別",
+      "flag": "--min",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "生成物とサイズ",
+      "label": "圧縮・生成を識別",
+      "flag": "--min-gen",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "生成物とサイズ",
+      "label": "生成ファイルを除外",
+      "flag": "--no-gen",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "生成物とサイズ",
+      "label": "圧縮ファイルを除外",
+      "flag": "--no-min",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "生成物とサイズ",
+      "label": "圧縮・生成を除外",
+      "flag": "--no-min-gen",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "生成物とサイズ",
+      "label": "生成判定文字列（カンマ区切り）",
+      "flag": "--generated-markers",
+      "type": "text",
+      "default": "",
+      "split": "comma"
+    },
+    {
+      "group": "生成物とサイズ",
+      "label": "生成判定の平均行バイト",
+      "flag": "--min-gen-line-length",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "生成物とサイズ",
+      "label": "重複ファイルを除外",
+      "flag": "--no-duplicates",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "生成物とサイズ",
+      "label": "大きいファイルを除外",
+      "flag": "--no-large",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "生成物とサイズ",
+      "label": "除外バイト数",
+      "flag": "--large-byte-count",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "生成物とサイズ",
+      "label": "除外行数",
+      "flag": "--large-line-count",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "開発費推計",
+      "label": "平均年収",
+      "flag": "--avg-wage",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "開発費推計",
+      "label": "COCOMOプロジェクト種別",
+      "flag": "--cocomo-project-type",
+      "type": "choice",
+      "default": "",
+      "choices": [
+        "",
+        "organic",
+        "semi-detached",
+        "embedded"
+      ]
+    },
+    {
+      "group": "開発費推計",
+      "label": "労力調整係数",
+      "flag": "--eaf",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "開発費推計",
+      "label": "間接費倍率",
+      "flag": "--overhead",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "開発費推計",
+      "label": "通貨記号",
+      "flag": "--currency-symbol",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "開発費推計",
+      "label": "COCOMOを省く",
+      "flag": "--no-cocomo",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "開発費推計",
+      "label": "SLOCCount形式",
+      "flag": "--sloccount-format",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "開発費推計",
+      "label": "LOCOMO推計",
+      "flag": "--locomo",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "開発費推計",
+      "label": "推計比較",
+      "flag": "--cost-comparison",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "開発費推計",
+      "label": "LOCOMOモデル",
+      "flag": "--locomo-preset",
+      "type": "choice",
+      "default": "",
+      "choices": [
+        "",
+        "large",
+        "medium",
+        "small",
+        "local"
+      ]
+    },
+    {
+      "group": "開発費推計",
+      "label": "毎秒出力トークン",
+      "flag": "--locomo-tps",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "開発費推計",
+      "label": "反復回数",
+      "flag": "--locomo-cycles",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "開発費推計",
+      "label": "入力百万トークン単価",
+      "flag": "--locomo-input-price",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "開発費推計",
+      "label": "出力百万トークン単価",
+      "flag": "--locomo-output-price",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "開発費推計",
+      "label": "一行あたりレビュー分",
+      "flag": "--locomo-review",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "開発費推計",
+      "label": "LOCOMO詳細パラメータ",
+      "flag": "--locomo-config",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "Git履歴",
+      "label": "変更頻度と複雑度",
+      "flag": "--hotspots",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "Git履歴",
+      "label": "同時変更ファイル",
+      "flag": "--coupling",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "Git履歴",
+      "label": "関連変更の対象パス",
+      "flag": "--coupling-for",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "Git履歴",
+      "label": "複雑度で重み付け",
+      "flag": "--coupling-weighted",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "Git履歴",
+      "label": "作成者別",
+      "flag": "--by-author",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "Git履歴",
+      "label": "時系列",
+      "flag": "--timeline",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "Git履歴",
+      "label": "履歴コミット数",
+      "flag": "--depth",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "Git履歴",
+      "label": "時系列の区間数",
+      "flag": "--buckets",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "Git履歴",
+      "label": "作成者の推定統合を省く",
+      "flag": "--no-fold-authors",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "レポート",
+      "label": "SQLプロジェクト名",
+      "flag": "--sql-project",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "レポート",
+      "label": "HTMLレポートのタイトル",
+      "flag": "--report-title",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "レポート",
+      "label": "HTMLで省くセクション",
+      "flag": "--report-skip",
+      "type": "text",
+      "default": ""
+    }
+  ],
+  "modes": [
+    {
+      "label": "コード集計",
+      "args": [],
+      "stdin": false,
+      "files": true,
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": true
+    },
+    {
+      "label": "HTMLレポート",
+      "args": [],
+      "stdin": false,
+      "files": true,
+      "job": "report",
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": true
+    },
+    {
+      "label": "対応言語一覧",
+      "args": [
+        "--languages"
+      ],
+      "stdin": false,
+      "files": false,
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": true
+    },
+    {
+      "label": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": false,
+      "files": false,
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": true
+    }
+  ],
+  "mandatory_args": [
+    "--no-config"
+  ],
+  "blocked_flags": [
+    "--mcp",
+    "--report",
+    "--format-multi",
+    "--config",
+    "--find-root-config",
+    "--output",
+    "-o"
+  ],
+  "delimiter": true
+}
