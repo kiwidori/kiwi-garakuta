@@ -69,5 +69,28 @@
     "upstream_license": "Apache License 2.0",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-json",
+    "name": "きういJSON",
+    "summary": "JSONファイルを選び、jqの抽出式を画面から実行できる無料ツールです。",
+    "features": [
+      "JSONファイルを選び、jqの抽出式で必要なデータを取り出せます。",
+      "日本語を含む結果を画面で確認し、別ファイルに保存できます。",
+      "元のファイルは変更せず、処理を途中で停止できます。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiJSON.exeを起動します。",
+      "JSONファイルを選び、jqの抽出式を入力します。",
+      "実行して結果を確認し、必要なら保存します。"
+    ],
+    "limitations": "入力は20 MiB、結果は2 MiB、処理時間は20秒までです。プレビューは先頭120,000文字まで表示します。式によっては複数のJSON値が出力されるため、保存先の拡張子を選んでください。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-json-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-json-v0.1.0/KiwiJSON-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-json",
+    "upstream_url": "https://github.com/jqlang/jq",
+    "upstream_license": "MIT（同梱COPYINGに第三者通知）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
