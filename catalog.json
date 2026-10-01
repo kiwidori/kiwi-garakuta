@@ -233,5 +233,28 @@
     "upstream_license": "MIT",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-yaml",
+    "name": "きういYAML",
+    "summary": "YAMLを見やすく整形し、JSONへ変換できる無料ツールです。",
+    "features": [
+      "yqでYAMLの整形とJSON変換を行います。",
+      "日本語を含む設定ファイルの結果を確認し、新しいファイルに保存できます。",
+      "元ファイルと既存ファイルを上書きせず、処理を途中で停止できます。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiYAML.exeを起動します。",
+      "UTF-8の.yaml/.ymlファイルを選び、整形かJSON変換を指定します。",
+      "「実行」を押して結果を確認し、必要なら「保存」で新しいファイルへ保存します。"
+    ],
+    "limitations": "入力は2 MiB、結果は4 MiB、処理は15秒までです。画面表示は先頭120,000文字までで、保存は結果全体です。JSON変換ではコメント・アンカー・タグなどの表現が変わったり失われたりします。複数のYAML文書は複数のJSON値となり、単一の配列にはなりません。変換後は利用先で内容を確認してください。ファイルは外部へ送信しません。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-yaml-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-yaml-v0.1.0/KiwiYAML-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-yaml",
+    "upstream_url": "https://github.com/mikefarah/yq",
+    "upstream_license": "MIT",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
