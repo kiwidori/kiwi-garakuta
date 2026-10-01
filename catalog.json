@@ -209,5 +209,29 @@
     "upstream_license": "MIT",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-png",
+    "name": "きういPNG圧縮",
+    "summary": "PNGの容量を減らし、元画像を残して別ファイルへ保存できる無料ツールです。",
+    "features": [
+      "oxipngで画素を変えずに静止PNGを圧縮します。",
+      "圧縮前後の容量と削減率を表示します。",
+      "圧縮レベル0〜4を選べ、処理を途中で停止できます。",
+      "新しい保存先だけに出力し、元ファイルや既存ファイルを上書きしません。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiPNG.exeを起動します。",
+      "入力PNGと新しい保存先を選び、圧縮レベルを指定します。",
+      "「圧縮」を押し、保存結果と容量を確認します。"
+    ],
+    "limitations": "静止PNGのみ対象で、アニメーションPNGは使えません。入力は20 MiB、1600万画素、処理は120秒までです。容量が減らない場合は元と同じデータを保存します。メタデータの削除指定はしませんが、最適化で無効になる付加情報が変更・削除される場合があります。画像は外部へ送信しません。環境によってはMicrosoft Visual C++ Redistributableが必要です。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-png-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-png-v0.1.0/KiwiPNG-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-png",
+    "upstream_url": "https://github.com/oxipng/oxipng",
+    "upstream_license": "MIT",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
