@@ -352,5 +352,29 @@
     "upstream_license": "MIT",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-diff",
+    "name": "きうい比較",
+    "summary": "2つのテキスト・コードファイルを比較し、差分を色分けして表示・コピー・保存できる無料ツールです。",
+    "features": [
+      "difftasticでUTF-8のテキスト・コードを比較します。",
+      "構文を考慮する比較と、プレーンテキスト比較を選べます。",
+      "左ファイルの変更前を赤、右ファイルの変更後を緑で表示します。",
+      "結果をコピー・UTF-8保存できます。入力ファイルを変更・実行しません。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiDiff.exeを起動します。",
+      "左右のローカルファイルを選び、必要なら「プレーンテキスト」を選択します。",
+      "「比較」を押し、差分を確認してコピーまたはテキスト保存します。"
+    ],
+    "limitations": "各2MiB以下のUTF-8・UTF-8 BOM付きテキストが対象です。バイナリ・Shift-JISなどの文字コード・フォルダー比較・URL取得には対応しません。構文比較は拡張子で言語を判定し、空白などの変更を無視する場合があります。「差分なし」はバイト列の完全一致を意味しません。プレーンテキスト比較でもCRLFとLFの違い・UTF-8 BOMの有無は無視します。未対応言語や大きなファイル、複雑な構文は行単位の比較へ切り替わる場合があります。処理は20秒、出力は2MiBまでです。表示は差分周辺の内容です。コピー・保存結果は色の付かない閲覧用テキストで、適用可能なパッチではありません。編集・マージ機能はありません。入力ファイルを外部へ送信しません。現時点の実行ファイルにはコード署名がありません。",
+    "screenshot": "/assets/screenshots/kiwi-diff-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-diff-v0.1.0/KiwiDiff-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-diff",
+    "upstream_url": "https://github.com/Wilfred/difftastic",
+    "upstream_license": "MIT",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
