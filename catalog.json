@@ -529,5 +529,31 @@
     "upstream_license": "MIT（依存物の通知もZIPに同梱）",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-markdown",
+    "name": "きういMarkdown",
+    "summary": "Markdown文書・URL・リポジトリのREADMEを装飾付きで表示し、テキストを保存できる無料ツールです。",
+    "features": [
+      "Markdownの貼付け、1つのファイル、HTTP/HTTPS URL、GitHub/GitLabのREADMEに対応します。",
+      "表示テーマ、独自JSONスタイル、折り返し幅、改行保持を指定できます。",
+      "見出し・表・コードなどを表示し、色・太字・斜体・下線・打ち消し線を画面へ反映します。",
+      "装飾を除いたテキストとANSI原文を別々に保存できます。入力ファイルは自動で変更しません。",
+      "詳細機能では同梱ヘルプ、版表示、補完スクリプト、マニュアルの出力を利用できます。"
+    ],
+    "steps": [
+      "ZIPを展開して KiwiMarkdown.exe を起動します。",
+      "操作を選び、Markdownを貼り付けるか、1つのファイルまたはURLを指定します。「デモ」でサンプルを試せます。",
+      "必要なテーマ・折り返し幅を指定して「実行」を押します。",
+      "表示結果を確認し、「プレーン保存」または「ANSIテキストを保存」で保存します。"
+    ],
+    "limitations": "端末用TUI・ページャー・ディレクトリ閲覧・外部設定ファイルは対象外です。HTMLやJavaScriptは実行しません。全ての文書やスタイルの完全再現を保証するものではありません。プレビューは先頭128 KiB・装飾256種類まで。通常画面の標準入力・ファイルは2 MiB、取得出力は合計16 MiB、1回300秒、引数256個/64 KiBまでです。URLや詳細機能のファイルは上流が読み込むため、通常画面の入力容量制限とは異なります。実行ファイルは未署名です。実行時のLLMやクラウドAPIは不要です。",
+    "screenshot": "/assets/screenshots/kiwi-markdown-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-markdown-v0.1.0/KiwiMarkdown-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-markdown",
+    "upstream_url": "https://github.com/charmbracelet/glow",
+    "upstream_license": "MIT（依存物の通知もZIPに同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
