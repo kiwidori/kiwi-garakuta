@@ -1,0 +1,124 @@
+{
+  "slug": "kiwi-replace",
+  "title": "きうい置換",
+  "tool": "sd.exe",
+  "upstream_url": "https://github.com/chmln/sd",
+  "fields": [
+    {
+      "flag": "find",
+      "label": "検索（正規表現または文字列）",
+      "type": "text",
+      "default": "cat",
+      "group": "置換"
+    },
+    {
+      "flag": "replace",
+      "label": "置換文字列（空欄で削除、正規表現では$1や\\nも利用可）",
+      "type": "text",
+      "default": "dog",
+      "group": "置換"
+    },
+    {
+      "flag": "--fixed-strings",
+      "label": "固定文字列として扱う",
+      "type": "bool",
+      "group": "置換"
+    },
+    {
+      "flag": "--max-replacements",
+      "label": "置換上限（0は無制限、通常は行ごと、全体処理時は文書ごと）",
+      "type": "text",
+      "default": "0",
+      "group": "置換"
+    },
+    {
+      "flag": "--across",
+      "label": "入力全体を処理（行をまたぐ検索）",
+      "type": "bool",
+      "group": "置換"
+    },
+    {
+      "flag": "flag-c",
+      "label": "大文字小文字を区別",
+      "type": "bool",
+      "group": "正規表現フラグ"
+    },
+    {
+      "flag": "flag-i",
+      "label": "大文字小文字を無視",
+      "type": "bool",
+      "group": "正規表現フラグ"
+    },
+    {
+      "flag": "flag-e",
+      "label": "複数行モードを無効",
+      "type": "bool",
+      "group": "正規表現フラグ"
+    },
+    {
+      "flag": "flag-m",
+      "label": "複数行モード",
+      "type": "bool",
+      "group": "正規表現フラグ"
+    },
+    {
+      "flag": "flag-s",
+      "label": "ドットが改行にも一致",
+      "type": "bool",
+      "group": "正規表現フラグ"
+    },
+    {
+      "flag": "flag-w",
+      "label": "単語全体に一致",
+      "type": "bool",
+      "group": "正規表現フラグ"
+    }
+  ],
+  "modes": [
+    {
+      "label": "テキストを置換",
+      "args": [],
+      "stdin": true,
+      "files": false,
+      "allow_dirs": false
+    },
+    {
+      "label": "ファイルを置換",
+      "args": [],
+      "stdin": false,
+      "files": true,
+      "allow_dirs": false
+    },
+    {
+      "label": "テキストをプレビュー",
+      "args": [],
+      "stdin": true,
+      "files": false,
+      "allow_dirs": false
+    },
+    {
+      "label": "ファイルをプレビュー",
+      "args": [],
+      "stdin": false,
+      "files": true,
+      "allow_dirs": false
+    },
+    {
+      "label": "ヘルプ",
+      "args": [
+        "--help"
+      ],
+      "stdin": false,
+      "files": false
+    },
+    {
+      "label": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": false,
+      "files": false
+    }
+  ],
+  "blocked_flags": []
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "kiwi-replace",
+  "tool": "sd.exe",
+  "upstream_url": "https://github.com/chmln/sd",
+  "options": [
+    {
+      "flag": "--preview",
+      "aliases": [
+        "--preview",
+        "-p"
+      ],
+      "takes_value": false,
+      "description": "変更プレビュー（詳細機能では常に有効）",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--fixed-strings",
+      "aliases": [
+        "--fixed-strings",
+        "-F"
+      ],
+      "takes_value": false,
+      "description": "固定文字列",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--max-replacements",
+      "aliases": [
+        "--max-replacements",
+        "-n"
+      ],
+      "takes_value": true,
+      "description": "置換回数上限",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--flags",
+      "aliases": [
+        "--flags",
+        "-f"
+      ],
+      "takes_value": true,
+      "description": "c/e/i/m/s/w 正規表現フラグ",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--across",
+      "aliases": [
+        "--across",
+        "-A"
+      ],
+      "takes_value": false,
+      "description": "入力全体の処理",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "--help",
+        "-h"
+      ],
+      "takes_value": false,
+      "description": "ヘルプ",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "--version",
+        "-V"
+      ],
+      "takes_value": false,
+      "description": "版表示",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    }
+  ],
+  "mandatory_args": [
+    "--preview"
+  ],
+  "blocked_flags": [],
+  "subcommands": [],
+  "examples": [
+    {
+      "name": "キャプチャ置換のプレビュー",
+      "args": [
+        "--",
+        "(cat)",
+        "[$1]"
+      ],
+      "stdin": "cat cat\n"
+    },
+    {
+      "name": "ヘルプ",
+      "args": [
+        "--help"
+      ],
+      "stdin": ""
+    }
+  ]
+}

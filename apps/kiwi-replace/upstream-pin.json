@@ -1,0 +1,17 @@
+{
+  "slug": "kiwi-replace",
+  "name": "きうい置換",
+  "repo": "chmln/sd",
+  "tag": "v1.1.0",
+  "exe": "sd.exe",
+  "asset": "sd-v1.1.0-x86_64-pc-windows-msvc.zip",
+  "archive_member": "sd-v1.1.0-x86_64-pc-windows-msvc/sd.exe",
+  "sha": "59837c2e7c911099aca1cc46b663bcdc5a949fd3e9fbbaf34fc73e5d5d71007c",
+  "binary_sha": "68a3be6e02d688ff8ecaf80ef6473cf2516442f01070a4d1a5eb69daa3db5234",
+  "license": "MIT",
+  "url": "https://github.com/chmln/sd/releases/download/v1.1.0/sd-v1.1.0-x86_64-pc-windows-msvc.zip",
+  "license_url": "https://raw.githubusercontent.com/chmln/sd/v1.1.0/LICENSE",
+  "license_sha": "531a4a325368974524d09db46e9f48c37c6c7f10357176cb2a727540c80f313e",
+  "app_exe": "KiwiReplace",
+  "version": "0.1.0"
+}
