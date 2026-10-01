@@ -581,5 +581,31 @@
     "upstream_license": "MIT（依存物の通知もZIPに同梱）",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-bytes",
+    "name": "きういバイト表示",
+    "summary": "ファイルや入力データを16進数・文字表で読み取り専用表示し、テキストやC配列として保存できる無料ツールです。",
+    "features": [
+      "ファイル1つ、UTF-8テキスト、16進数列の入力に対応します。元ファイルは変更しません。",
+      "表示量、読み飛ばす位置、block単位、表示オフセットを指定できます。末尾からの読み取りもできます。",
+      "基数、バイトのグループと順序、枠線・パネル、ASCII/EBCDIC/コードページ/brailleの文字表を選べます。",
+      "色付き表示、default/gradient配色、plain出力、C include出力、原文とプレーンの保存に対応します。",
+      "デモ、色の凡例、ヘルプ、版表示、5種類のシェル補完生成と詳細機能を備えています。"
+    ],
+    "steps": [
+      "ZIPを展開して KiwiBytes.exe を起動します。",
+      "操作を選び、ファイルを1つ追加するか、入力欄にテキストまたは16進数列を入力します。「デモ」で試せます。",
+      "表示量や読み取り位置、必要な表示設定を指定して「実行」を押します。",
+      "結果を確認し「結果を保存」で原文、「プレーン保存」で装飾のないテキストを保存します。"
+    ],
+    "limitations": "入力欄2 MiB、出力合計16 MiB、1回300秒、引数256個/64 KiB。ファイルはCLIが直接読み、入力欄の容量制限とは異なります。画面は先頭128 KiB・256スタイルまでで、原文は全量保存できます。端末幅とパネル数、C includeとバイト順の明示指定は同時使用できません。同梱版はヘルプ記載と異なり負数の表示オフセットを拒否しますが、末尾からのskipは使用できます。独自色は起動前のHEXYL_COLOR_*環境変数を継承し、専用設定欄はありません。全ての設定の組合せと完全な色再現を保証しません。実行ファイルは未署名です。LLMやクラウドAPIは実行時不要です。",
+    "screenshot": "/assets/screenshots/kiwi-bytes-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-bytes-v0.1.0/KiwiBytes-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-bytes",
+    "upstream_url": "https://github.com/sharkdp/hexyl",
+    "upstream_license": "MIT OR Apache-2.0（依存物通知も同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]

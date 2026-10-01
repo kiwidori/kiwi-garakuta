@@ -33,6 +33,8 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | [きうい置換](https://kiwi-garakuta.pages.dev/tools/kiwi-replace/) | 文字列・正規表現でテキストと複数ファイルを置換して保存する | [sd](https://github.com/chmln/sd) |
 
+| [きういバイト表示](https://kiwi-garakuta.pages.dev/tools/kiwi-bytes/) | バイナリを16進数・文字表で表示し、テキストやC配列に保存する | [hexyl](https://github.com/sharkdp/hexyl) |
+
 各ソフトの詳細ページに、使い方、実際の画面、制限事項、ZIPのダウンロード先を掲載しています。ZIPには元ツールのライセンス文書を同梱しています。
 
 ## 使い方
