@@ -32,6 +32,7 @@
 | [きういYAML整形](https://kiwi-garakuta.pages.dev/tools/kiwi-yamlfmt/) | YAMLの整形・差分・整形チェックと一括ZIP保存 |
 | [きういJSONパス](https://kiwi-garakuta.pages.dev/tools/kiwi-json-paths/) | JSONのパス一覧化・復元・トークン抽出 |
 | [きういActions点検](https://kiwi-garakuta.pages.dev/tools/kiwi-actions-check/) | GitHub Actionsの点検・JSONレポート・設定YAML |
+| [きういJSON式](https://kiwi-garakuta.pages.dev/tools/kiwi-json-expr/) | JSON・YAMLの式処理・変数・大きな整数計算 |
 
 ## 詳細機能の使い方
 

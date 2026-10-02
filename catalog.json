@@ -737,5 +737,31 @@
     "upstream_license": "MIT（依存物通知も同梱）",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-json-expr",
+    "name": "きういJSON式",
+    "summary": "JSON・YAMLを式で検索、集計、変換し、大きな整数も扱える無料ツールです。",
+    "features": [
+      "JSON・YAML・生テキスト・ストリーム入力を、テキスト欄や複数ファイルから処理できます。",
+      "式で項目の抽出、条件付き検索、集計、並べ替え、更新ができます。よく使う式はボタンから選べます。",
+      "JSON・YAML・文字列・NUL区切りの出力、字下げ、色、入力の配列化に対応します。",
+      "文字列・JSON・ファイルの名前付き変数、文字列・JSONの位置引数を設定できます。",
+      "式ファイルとモジュールを読み込めます。処理結果を保存でき、元ファイルを書き換えません。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiJsonExpr.exeを起動します。",
+      "データを入力欄へ貼り付けるか、ファイルを追加して入力形式を選びます。テキストとファイルは同時に指定できません。",
+      "式を入力して実行します。「.」は整形、「length」は件数です。必要に応じて変数や式ファイルを設定します。",
+      "結果を確認して保存します。出力形式からYAMLや生文字列も選べます。"
+    ],
+    "limitations": "gojqの式はjqと完全互換ではなく、オブジェクトのキー順は保持しません。大きな整数の加減乗算などでは精度を保ちますが、浮動小数点を使う関数は例外です。元ファイルを書き換えず、ネット送信やOSコマンドの実行を行いません。式から環境変数・モジュール・変数ファイルを読むことはできます。終了状態の判定を有効にするとfalse/nullはコード1、出力なしは4になります。式で終了コードを明示した場合も元のコードを保持します。位置引数と入力ファイルは元CLIの引数処理上併用できないため、位置引数を使う場合はデータを入力欄に貼り付けてください。入力テキスト2 MiB、1ファイル20 MiB・合計64 MiB・200件、式と変数ファイル各2 MiB、変数設定各128 KiB、名前付き変数・位置引数各100件、モジュール先32件、1回300秒、出力16 MiB、引数256個・64 KiBまでです。通常画面ではリンク・ジャンクションを入力に使えません。画面は先頭約13万文字を表示し、保存は出力全体です。色付きとNUL区切りは原文のバイト列を保存します。全式・全オプションの組合せを検証したものではありません。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-json-expr-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-json-expr-v0.1.0/KiwiJsonExpr-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-json-expr",
+    "upstream_url": "https://github.com/itchyny/gojq",
+    "upstream_license": "MIT（依存物通知も同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
