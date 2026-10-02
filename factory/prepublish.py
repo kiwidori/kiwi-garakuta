@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -15,13 +16,19 @@ def available(url: str) -> bool:
         "User-Agent": "kiwi-garakuta-publish/0.1",
         "Accept": "application/octet-stream",
     })
-    try:
-        with urllib.request.urlopen(request, timeout=20) as response:
-            return response.status == 200
-    except urllib.error.HTTPError as error:
-        if error.code in (403, 404):
-            return False
-        raise
+    retryable_codes = (429, 500, 502, 503, 504)
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=20) as response:
+                return response.status == 200
+        except urllib.error.HTTPError as error:
+            if error.code not in retryable_codes:
+                return False
+        except (urllib.error.URLError, TimeoutError):
+            pass
+        if attempt < 2:
+            time.sleep(1 + attempt)
+    return False
 
 
 def main() -> None:
