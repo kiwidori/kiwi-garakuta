@@ -607,5 +607,31 @@
     "upstream_license": "MIT OR Apache-2.0（依存物通知も同梱）",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-calc",
+    "name": "きうい単位計算",
+    "summary": "距離・速度・温度などの単位変換と、単位付きの科学計算を画面から実行できる無料ツールです。",
+    "features": [
+      "数値・元の単位・変換先を入力して、単位や温度、情報量を変換します。",
+      "複数行の式エディターと.nbtファイル実行に対応。変数・関数・数学・統計・日時・数値解析などはNumbatコードで指定します。",
+      "計算例、追加の式、スクリプト引数、list/infoなどの連続入力と計算後REPLを使えます。",
+      "設定の読込、Prelude、表示色・整形・起動表示を選べます。設定テンプレートは任意先へ保存できます。",
+      "入力式・標準出力の保存、停止、ヘルプ、版表示、詳細機能を備えています。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiCalc.exeを起動します。",
+      "「単位変換」で数値・元の単位・変換先を指定し、「実行」を押します。",
+      "式を使う場合は「プログラム」を選び、入力欄へコードを記入します。「計算例」→「例を入力」で試せます。",
+      "「結果を保存」で標準出力を保存します。スクリプトと連続入力の使い方は同梱READMEも参照してください。"
+    ],
+    "limitations": "各実行で計算状態をリセットします。標準ライブラリの全関数に専用画面があるわけではありません。入力欄・連続入力2 MiB、追加式12,000バイト/120行、引数256個/64 KiB、Windowsコマンド行30,000文字未満、300秒、出力合計16 MiB。画面表示は先頭128 KiB・256スタイルまで。args()はCLIの全引数を返します。初期設定はconfig/initを読みませんが、外部モジュール探索は上流の規則に従います。設定テンプレートの配置は手動で、固定先へのgenerate-config書込みはブロックします。REPLは一括入力で、Tab補完・キー履歴・実行途中の入力はありません。REPLは履歴保存や通信を行い、エラーでも終了コード0の場合があります。通貨は上流がレートを取得し、通信成功や最新性を保証しません。plot/showは外部ブラウザ表示で、GUI内グラフはありません。同梱Windows版debugはPreludeありで異常終了するためPrelude無効が必要です。実行ファイルは未署名。通常の計算にはAI・クラウドAPIは不要です。",
+    "screenshot": "/assets/screenshots/kiwi-calc-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-calc-v0.1.0/KiwiCalc-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-calc",
+    "upstream_url": "https://github.com/sharkdp/numbat",
+    "upstream_license": "MIT OR Apache-2.0（依存物通知も同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
