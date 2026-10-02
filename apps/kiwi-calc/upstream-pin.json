@@ -1,0 +1,17 @@
+{
+  "slug": "kiwi-calc",
+  "name": "きうい単位計算",
+  "repo": "sharkdp/numbat",
+  "tag": "v1.24.0",
+  "exe": "numbat.exe",
+  "asset": "numbat-v1.24.0-x86_64-pc-windows-msvc.zip",
+  "archive_member": "numbat-v1.24.0-x86_64-pc-windows-msvc/numbat.exe",
+  "sha": "450027111a5df0dd3ee4ce97a557c4847fc76b05851fccb9e26e875433084049",
+  "binary_sha": "9d84ce83cedc3835bf17fd1b9c25596cebf1de2ddfe4b41764f87e5abc0deaea",
+  "license": "MIT OR Apache-2.0",
+  "url": "https://github.com/sharkdp/numbat/releases/download/v1.24.0/numbat-v1.24.0-x86_64-pc-windows-msvc.zip",
+  "license_url": "https://raw.githubusercontent.com/sharkdp/numbat/v1.24.0/LICENSE-MIT",
+  "license_sha": "f04d095cceb682af8b8132fe77f9fd9cf3b09266983713d8e034490eca837d46",
+  "app_exe": "KiwiCalc",
+  "version": "0.1.0"
+}

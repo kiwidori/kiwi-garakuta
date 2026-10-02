@@ -1,0 +1,54 @@
+A statically typed programming language for scientific computations with first class
+support for physical dimensions and units.
+
+Usage: numbat.exe [OPTIONS] [FILE] [SCRIPT_ARGS]...
+
+Arguments:
+  [FILE]
+          Path to source file with Numbat code. If none is given, an interactive session
+          is started
+
+  [SCRIPT_ARGS]...
+          Command-line arguments passed to the Numbat program
+
+Options:
+  -e, --expression <CODE>
+          Evaluate a single expression. Can be specified multiple times to evaluate
+          several expressions in sequence
+
+  -i, --inspect-interactively
+          Enter interactive session after running a numbat script or expression
+
+      --no-config
+          Do not load the user configuration file
+
+  -N, --no-prelude
+          Do not load the prelude with predefined physical dimensions and units. This
+          implies --no-init
+
+      --no-init
+          Do not load the user init file
+
+      --pretty-print <WHEN>
+          Whether or not to pretty-print every input expression
+          
+          [possible values: always, never, auto]
+
+      --color <WHEN>
+          Whether or not coloring should occur
+          
+          [possible values: always, never, auto]
+
+      --intro-banner <MODE>
+          What kind of intro banner to show (if any)
+          
+          [possible values: long, short, off]
+
+      --generate-config
+          Generate a default configuration file
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+  -V, --version
+          Print version

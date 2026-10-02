@@ -1,0 +1,165 @@
+{
+  "slug": "kiwi-calc",
+  "tool": "numbat.exe",
+  "upstream_url": "https://github.com/sharkdp/numbat",
+  "options": [
+    {
+      "flag": "--no-config",
+      "aliases": [
+        "--no-config"
+      ],
+      "takes_value": false,
+      "description": "ユーザーconfig.tomlを読まない",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--no-init",
+      "aliases": [
+        "--no-init"
+      ],
+      "takes_value": false,
+      "description": "ユーザーinit.nbtを読まない",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--no-prelude",
+      "aliases": [
+        "--no-prelude",
+        "-N"
+      ],
+      "takes_value": false,
+      "description": "標準の単位・物理量を読み込まない",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--debug",
+      "aliases": [
+        "--debug",
+        "-d"
+      ],
+      "takes_value": false,
+      "description": "デバッグは通常画面でPrelude無効を指定して利用",
+      "blocked": true,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--inspect-interactively",
+      "aliases": [
+        "--inspect-interactively",
+        "-i"
+      ],
+      "takes_value": false,
+      "description": "計算後に連続入力を処理する",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--pretty-print",
+      "aliases": [
+        "--pretty-print"
+      ],
+      "takes_value": true,
+      "description": "式の整形表示",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--color",
+      "aliases": [
+        "--color"
+      ],
+      "takes_value": true,
+      "description": "ANSI色",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--intro-banner",
+      "aliases": [
+        "--intro-banner"
+      ],
+      "takes_value": true,
+      "description": "REPL起動表示",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--expression",
+      "aliases": [
+        "--expression",
+        "-e"
+      ],
+      "takes_value": true,
+      "description": "式（複数指定可）",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--generate-config",
+      "aliases": [
+        "--generate-config"
+      ],
+      "takes_value": false,
+      "description": "元の固定先への自動書込みはブロック。GUIではテンプレート保存。",
+      "blocked": true,
+      "coverage": "対象外：既存ユーザー設定を避け任意先へ保存"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "--help",
+        "-h"
+      ],
+      "takes_value": false,
+      "description": "ヘルプ",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "--version",
+        "-V"
+      ],
+      "takes_value": false,
+      "description": "バージョン",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    }
+  ],
+  "mandatory_args": [
+    "--no-config",
+    "--no-init"
+  ],
+  "blocked_flags": [
+    "--generate-config",
+    "--debug",
+    "-d"
+  ],
+  "subcommands": [],
+  "examples": [
+    {
+      "name": "単位変換",
+      "args": [
+        "--color",
+        "never",
+        "-e",
+        "1 km -> m"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "単位一覧（REPL）",
+      "args": [
+        "--color",
+        "never",
+        "--intro-banner",
+        "off"
+      ],
+      "stdin": "list units\nquit\n"
+    }
+  ]
+}

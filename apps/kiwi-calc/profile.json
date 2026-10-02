@@ -1,0 +1,171 @@
+{
+  "slug": "kiwi-calc",
+  "title": "きうい単位計算",
+  "tool": "numbat.exe",
+  "upstream_url": "https://github.com/sharkdp/numbat",
+  "fields": [
+    {
+      "flag": "number",
+      "label": "数値",
+      "type": "text",
+      "default": "1",
+      "group": "単位変換"
+    },
+    {
+      "flag": "source",
+      "label": "元の単位（例 km、m/s）",
+      "type": "text",
+      "default": "km",
+      "group": "単位変換"
+    },
+    {
+      "flag": "target",
+      "label": "変換先（例 m、km/h）",
+      "type": "text",
+      "default": "m",
+      "group": "単位変換"
+    },
+    {
+      "flag": "--no-config",
+      "label": "ユーザーconfig.tomlを読まない",
+      "type": "bool",
+      "default": true,
+      "group": "実行設定"
+    },
+    {
+      "flag": "--no-init",
+      "label": "ユーザーinit.nbtを読まない",
+      "type": "bool",
+      "default": true,
+      "group": "実行設定"
+    },
+    {
+      "flag": "--no-prelude",
+      "label": "標準の単位・物理量を読み込まない",
+      "type": "bool",
+      "default": false,
+      "group": "実行設定"
+    },
+    {
+      "flag": "--debug",
+      "label": "デバッグ出力",
+      "type": "bool",
+      "default": false,
+      "group": "実行設定"
+    },
+    {
+      "flag": "--inspect-interactively",
+      "label": "計算後に連続入力を処理する",
+      "type": "bool",
+      "default": false,
+      "group": "実行設定"
+    },
+    {
+      "flag": "--pretty-print",
+      "label": "式の整形表示",
+      "type": "choice",
+      "default": "never",
+      "group": "実行設定",
+      "choices": [
+        "always",
+        "never",
+        "auto"
+      ]
+    },
+    {
+      "flag": "--color",
+      "label": "ANSI色",
+      "type": "choice",
+      "default": "never",
+      "group": "実行設定",
+      "choices": [
+        "always",
+        "never",
+        "auto"
+      ]
+    },
+    {
+      "flag": "--intro-banner",
+      "label": "REPL起動表示",
+      "type": "choice",
+      "default": "off",
+      "group": "実行設定",
+      "choices": [
+        "long",
+        "short",
+        "off"
+      ]
+    },
+    {
+      "flag": "expressions",
+      "label": "追加の-e式（1行1式、計算ファイルの後に実行）",
+      "type": "text",
+      "default": "",
+      "group": "追加式・引数",
+      "repeat": true
+    },
+    {
+      "flag": "script_args",
+      "label": "スクリプト引数（1行1引数、空行は省略）",
+      "type": "text",
+      "default": "",
+      "group": "追加式・引数",
+      "repeat": true
+    },
+    {
+      "flag": "repl_commands",
+      "label": "計算後の連続入力（上の設定を有効にした時）",
+      "type": "text",
+      "default": "",
+      "group": "追加式・引数",
+      "repeat": true
+    }
+  ],
+  "modes": [
+    {
+      "label": "単位変換",
+      "args": [],
+      "stdin": true,
+      "files": false
+    },
+    {
+      "label": "プログラム",
+      "args": [],
+      "stdin": true,
+      "files": false
+    },
+    {
+      "label": "連続入力・REPLコマンド",
+      "args": [],
+      "stdin": true,
+      "files": false
+    },
+    {
+      "label": "スクリプト",
+      "args": [],
+      "stdin": false,
+      "files": true,
+      "allow_dirs": false
+    },
+    {
+      "label": "ヘルプ",
+      "args": [
+        "--help"
+      ],
+      "stdin": false,
+      "files": false
+    },
+    {
+      "label": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": false,
+      "files": false
+    }
+  ],
+  "delimiter": false,
+  "blocked_flags": [
+    "--generate-config"
+  ]
+}
