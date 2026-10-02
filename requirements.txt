@@ -1,4 +1,4 @@
 # Windowsでの配布ビルド・画像処理・検証に使用する依存物。
-pyinstaller==6.22.2
+pyinstaller==6.22.3
 pillow==12.3.0
 PyYAML==6.0.3
