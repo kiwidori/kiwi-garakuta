@@ -1,0 +1,3 @@
+# Original default templates from code2prompt v4.2.0; MIT, see UPSTREAM-LICENSE.
+MARKDOWN='Project Path: {{ absolute_code_path }}\n\nSource Tree:\n\n```txt\n{{ source_tree }}\n```\n\n{{#each files}}\n{{#if code}}\n`{{path}}`:\n\n{{code}}\n\n{{/if}}\n{{/each}}\n\n{{#if git_diff}}\nGit Diff:\n{{ git_diff }}\n{{/if}}'
+XML='<directory>{{absolute_code_path}}</directory>\n\n<source-tree>\n  {{source_tree}}\n</source-tree>\n\n<files>\n  {{#each files}}\n    {{#if code}}\n      <file path="{{path}}">\n        {{code}}\n      </file>\n    {{/if}}\n  {{/each}}\n</files>\n\n{{#if git_diff}}\n  <git-diff>\n    {{git_diff}}\n  </git-diff>\n{{/if}}'

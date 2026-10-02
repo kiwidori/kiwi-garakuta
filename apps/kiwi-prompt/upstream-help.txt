@@ -1,0 +1,58 @@
+Usage: code2prompt-x86_64-pc-windows-msvc.exe [OPTIONS] [PATH_TO_ANALYZE]
+
+Arguments:
+  [PATH_TO_ANALYZE]  Path to the codebase directory [default: .]
+
+Options:
+  -O, --output-file <FILE>
+          Optional output file (use "-" for stdout)
+      --tui
+          Launch the Terminal User Interface
+  -i, --include <INCLUDE>
+          Patterns to include
+  -e, --exclude <EXCLUDE>
+          Patterns to exclude
+  -F, --output-format <markdown, json, xml>
+          Output format
+  -t, --template <TEMPLATE>
+          Optional Path to a custom Handlebars template
+      --full-directory-tree
+          List the full directory tree
+      --encoding <cl100k, p50k, p50k_edit, r50k>
+          Token encoding to use for token count
+      --token-format <raw,format>
+          Display the token count of the generated prompt. Accepts a format: "raw" (machine parsable) or "format" (human readable)
+  -d, --diff
+          Include git diff
+      --git-diff-branch <BRANCHES> <BRANCHES>
+          Generate git diff between two branches
+      --git-log-branch <BRANCHES> <BRANCHES>
+          Retrieve git log between two branches
+  -l, --line-numbers
+          Add line numbers to the source code
+      --absolute-paths
+          If true, paths in the output will be absolute instead of relative
+  -L, --follow-symlinks
+          Follow symlinks
+      --hidden
+          Include hidden directories and files
+      --no-codeblock
+          Disable wrapping code inside markdown code blocks
+  -c, --clipboard
+          Copy output to clipboard
+      --no-ignore
+          Skip .gitignore rules
+      --sort <name_asc, name_desc, date_asc, date_desc>
+          Sort order for files
+  -q, --quiet
+          Suppress progress and success messages
+      --token-map
+          Display a visual token map of files (similar to disk usage tools)
+      --token-map-lines <NUMBER>
+          Maximum number of lines to display in token map (default: terminal height - 10)
+      --token-map-min-percent <PERCENT>
+          Minimum percentage of tokens to display in token map (default: 0.1%)
+  -h, --help
+          Print help
+  -V, --version
+          Print version

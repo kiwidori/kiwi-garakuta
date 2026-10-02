@@ -1,0 +1,233 @@
+{
+  "slug": "kiwi-prompt",
+  "title": "きういコード資料",
+  "tool": "code2prompt.exe",
+  "upstream_url": "https://github.com/mufeedvh/code2prompt",
+  "fields": [
+    {
+      "flag": "--include",
+      "label": "含めるglob（1行1パターン）",
+      "type": "text",
+      "default": "",
+      "group": "対象と表示",
+      "repeat": true
+    },
+    {
+      "flag": "--exclude",
+      "label": "除くglob（1行1パターン）",
+      "type": "text",
+      "default": "",
+      "group": "対象と表示",
+      "repeat": true
+    },
+    {
+      "flag": "--full-directory-tree",
+      "label": "除外ファイルも含む全体ツリー",
+      "type": "bool",
+      "default": false,
+      "group": "対象と表示"
+    },
+    {
+      "flag": "--line-numbers",
+      "label": "行番号",
+      "type": "bool",
+      "default": false,
+      "group": "対象と表示"
+    },
+    {
+      "flag": "--absolute-paths",
+      "label": "絶対パス",
+      "type": "bool",
+      "default": false,
+      "group": "対象と表示"
+    },
+    {
+      "flag": "--follow-symlinks",
+      "label": "リンク先もたどる",
+      "type": "bool",
+      "default": false,
+      "group": "対象と表示"
+    },
+    {
+      "flag": "--hidden",
+      "label": "隠しファイルも含む",
+      "type": "bool",
+      "default": false,
+      "group": "対象と表示"
+    },
+    {
+      "flag": "--no-codeblock",
+      "label": "コードブロックを使わない",
+      "type": "bool",
+      "default": false,
+      "group": "対象と表示"
+    },
+    {
+      "flag": "--no-ignore",
+      "label": ".gitignore等を無視",
+      "type": "bool",
+      "default": false,
+      "group": "対象と表示"
+    },
+    {
+      "flag": "--output-format",
+      "label": "出力形式",
+      "type": "choice",
+      "default": "markdown",
+      "group": "出力・トークン",
+      "choices": [
+        "markdown",
+        "json",
+        "xml"
+      ]
+    },
+    {
+      "flag": "--template",
+      "label": "Handlebarsテンプレートファイル",
+      "type": "text",
+      "default": "",
+      "group": "出力・トークン"
+    },
+    {
+      "flag": "--encoding",
+      "label": "トークン計数のエンコード",
+      "type": "choice",
+      "default": "cl100k",
+      "group": "出力・トークン",
+      "choices": [
+        "cl100k",
+        "p50k",
+        "p50k_edit",
+        "r50k"
+      ]
+    },
+    {
+      "flag": "--token-format",
+      "label": "トークン数の表示",
+      "type": "choice",
+      "default": "raw",
+      "group": "出力・トークン",
+      "choices": [
+        "raw",
+        "format"
+      ]
+    },
+    {
+      "flag": "--sort",
+      "label": "ファイル順",
+      "type": "choice",
+      "default": "name_asc",
+      "group": "出力・トークン",
+      "choices": [
+        "name_asc",
+        "name_desc",
+        "date_asc",
+        "date_desc"
+      ]
+    },
+    {
+      "flag": "--quiet",
+      "label": "進捗・トークン数等のメッセージを省く",
+      "type": "bool",
+      "default": false,
+      "group": "出力・トークン"
+    },
+    {
+      "flag": "--token-map",
+      "label": "ファイルごとのトークン分布を表示",
+      "type": "bool",
+      "default": false,
+      "group": "出力・トークン"
+    },
+    {
+      "flag": "--token-map-lines",
+      "label": "分布の最大表示行数",
+      "type": "text",
+      "default": "20",
+      "group": "出力・トークン"
+    },
+    {
+      "flag": "--token-map-min-percent",
+      "label": "分布の最低比率（%）",
+      "type": "text",
+      "default": "0.1",
+      "group": "出力・トークン"
+    },
+    {
+      "flag": "--diff",
+      "label": "作業ツリーのGit差分を含める",
+      "type": "bool",
+      "default": false,
+      "group": "Git差分・履歴"
+    },
+    {
+      "flag": "--diff-from",
+      "label": "差分：元のブランチ",
+      "type": "text",
+      "default": "",
+      "group": "Git差分・履歴"
+    },
+    {
+      "flag": "--diff-to",
+      "label": "差分：比較先",
+      "type": "text",
+      "default": "",
+      "group": "Git差分・履歴"
+    },
+    {
+      "flag": "--log-from",
+      "label": "履歴：元のブランチ",
+      "type": "text",
+      "default": "",
+      "group": "Git差分・履歴"
+    },
+    {
+      "flag": "--log-to",
+      "label": "履歴：比較先",
+      "type": "text",
+      "default": "",
+      "group": "Git差分・履歴"
+    },
+    {
+      "flag": "--template-vars",
+      "label": "テンプレート変数（JSON、例 {\"task\":\"コードを確認\"}）",
+      "type": "text",
+      "default": "{}",
+      "group": "出力・トークン"
+    }
+  ],
+  "modes": [
+    {
+      "label": "コード資料を生成",
+      "args": [],
+      "stdin": false,
+      "files": true,
+      "allow_dirs": true
+    },
+    {
+      "label": "ヘルプ",
+      "args": [
+        "--help"
+      ],
+      "stdin": false,
+      "files": false
+    },
+    {
+      "label": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": false,
+      "files": false
+    }
+  ],
+  "delimiter": true,
+  "blocked_flags": [
+    "--tui",
+    "--clipboard-daemon",
+    "--clipboard",
+    "-c",
+    "--output-file",
+    "-O"
+  ]
+}

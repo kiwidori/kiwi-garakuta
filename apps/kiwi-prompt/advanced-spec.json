@@ -1,0 +1,313 @@
+{
+  "slug": "kiwi-prompt",
+  "tool": "code2prompt.exe",
+  "upstream_url": "https://github.com/mufeedvh/code2prompt",
+  "options": [
+    {
+      "flag": "--include",
+      "aliases": [
+        "--include",
+        "-i"
+      ],
+      "takes_value": true,
+      "description": "含めるglob（1行1パターン）",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--exclude",
+      "aliases": [
+        "--exclude",
+        "-e"
+      ],
+      "takes_value": true,
+      "description": "除くglob（1行1パターン）",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--full-directory-tree",
+      "aliases": [
+        "--full-directory-tree"
+      ],
+      "takes_value": false,
+      "description": "除外ファイルも含む全体ツリー",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--line-numbers",
+      "aliases": [
+        "--line-numbers",
+        "-l"
+      ],
+      "takes_value": false,
+      "description": "行番号",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--absolute-paths",
+      "aliases": [
+        "--absolute-paths"
+      ],
+      "takes_value": false,
+      "description": "絶対パス",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--follow-symlinks",
+      "aliases": [
+        "--follow-symlinks",
+        "-L"
+      ],
+      "takes_value": false,
+      "description": "リンク先もたどる",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--hidden",
+      "aliases": [
+        "--hidden"
+      ],
+      "takes_value": false,
+      "description": "隠しファイルも含む",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--no-codeblock",
+      "aliases": [
+        "--no-codeblock"
+      ],
+      "takes_value": false,
+      "description": "コードブロックを使わない",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--no-ignore",
+      "aliases": [
+        "--no-ignore"
+      ],
+      "takes_value": false,
+      "description": ".gitignore等を無視",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--output-format",
+      "aliases": [
+        "--output-format",
+        "-F"
+      ],
+      "takes_value": true,
+      "description": "出力形式",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--template",
+      "aliases": [
+        "--template",
+        "-t"
+      ],
+      "takes_value": true,
+      "description": "Handlebarsテンプレートファイル",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--encoding",
+      "aliases": [
+        "--encoding"
+      ],
+      "takes_value": true,
+      "description": "トークン計数のエンコード",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--token-format",
+      "aliases": [
+        "--token-format"
+      ],
+      "takes_value": true,
+      "description": "トークン数の表示",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--sort",
+      "aliases": [
+        "--sort"
+      ],
+      "takes_value": true,
+      "description": "ファイル順",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--quiet",
+      "aliases": [
+        "--quiet",
+        "-q"
+      ],
+      "takes_value": false,
+      "description": "進捗・トークン数等のメッセージを省く",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--token-map",
+      "aliases": [
+        "--token-map"
+      ],
+      "takes_value": false,
+      "description": "ファイルごとのトークン分布を表示",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--token-map-lines",
+      "aliases": [
+        "--token-map-lines"
+      ],
+      "takes_value": true,
+      "description": "分布の最大表示行数",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--token-map-min-percent",
+      "aliases": [
+        "--token-map-min-percent"
+      ],
+      "takes_value": true,
+      "description": "分布の最低比率（%）",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--diff",
+      "aliases": [
+        "--diff",
+        "-d"
+      ],
+      "takes_value": false,
+      "description": "作業ツリーのGit差分を含める",
+      "blocked": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--git-diff-branch",
+      "aliases": [
+        "--git-diff-branch"
+      ],
+      "takes_value": true,
+      "description": "差分の2ブランチ（詳細はfrom,to形式）",
+      "blocked": false,
+      "coverage": "専用GUIで対応 / 詳細機能"
+    },
+    {
+      "flag": "--git-log-branch",
+      "aliases": [
+        "--git-log-branch"
+      ],
+      "takes_value": true,
+      "description": "履歴の2ブランチ（詳細はfrom,to形式）",
+      "blocked": false,
+      "coverage": "専用GUIで対応 / 詳細機能"
+    },
+    {
+      "flag": "--clipboard",
+      "aliases": [
+        "--clipboard",
+        "-c"
+      ],
+      "takes_value": false,
+      "description": "コピーは通常画面のコピー操作を使用",
+      "blocked": true,
+      "coverage": "専用GUI代替"
+    },
+    {
+      "flag": "--output-file",
+      "aliases": [
+        "--output-file",
+        "-O"
+      ],
+      "takes_value": true,
+      "description": "保存は通常画面の結果保存を使用",
+      "blocked": true,
+      "coverage": "専用GUI代替"
+    },
+    {
+      "flag": "--tui",
+      "aliases": [
+        "--tui"
+      ],
+      "takes_value": false,
+      "description": "端末UIの代わりにデスクトップGUIを提供",
+      "blocked": true,
+      "coverage": "専用GUI代替"
+    },
+    {
+      "flag": "--clipboard-daemon",
+      "aliases": [
+        "--clipboard-daemon"
+      ],
+      "takes_value": false,
+      "description": "Linux内部用",
+      "blocked": true,
+      "coverage": "専用GUI代替"
+    },
+    {
+      "flag": "--no-clipboard",
+      "aliases": [
+        "--no-clipboard"
+      ],
+      "takes_value": false,
+      "description": "上流の廃止予定の互換フラグ",
+      "blocked": false,
+      "coverage": "専用GUIで対応 / 詳細機能"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "--help",
+        "-h"
+      ],
+      "takes_value": false,
+      "description": "ヘルプ",
+      "blocked": false,
+      "coverage": "専用GUIで対応 / 詳細機能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "--version",
+        "-V"
+      ],
+      "takes_value": false,
+      "description": "バージョン",
+      "blocked": false,
+      "coverage": "専用GUIで対応 / 詳細機能"
+    }
+  ],
+  "mandatory_args": [
+    "--output-file",
+    "-"
+  ],
+  "blocked_flags": [
+    "--tui",
+    "--clipboard-daemon",
+    "--clipboard",
+    "-c",
+    "--output-file",
+    "-O"
+  ],
+  "subcommands": [],
+  "examples": []
+}

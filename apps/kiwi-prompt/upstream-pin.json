@@ -1,0 +1,16 @@
+{
+  "slug": "kiwi-prompt",
+  "name": "きういコード資料",
+  "repo": "mufeedvh/code2prompt",
+  "tag": "v4.2.0",
+  "exe": "code2prompt.exe",
+  "asset": "code2prompt-x86_64-pc-windows-msvc.exe",
+  "sha": "e3285c8b7319659c9e6fda4b63a1cb5d83e07b1688df83ed224fdb801d9da7d1",
+  "binary_sha": "e3285c8b7319659c9e6fda4b63a1cb5d83e07b1688df83ed224fdb801d9da7d1",
+  "license": "MIT",
+  "url": "https://github.com/mufeedvh/code2prompt/releases/download/v4.2.0/code2prompt-x86_64-pc-windows-msvc.exe",
+  "license_url": "https://raw.githubusercontent.com/mufeedvh/code2prompt/v4.2.0/LICENSE",
+  "license_sha": "9d90fff5a2c2de4272d9bc1a30c185b11e0312d9fe229ebc23a923a4c495f78d",
+  "app_exe": "KiwiPrompt",
+  "version": "0.1.0"
+}
