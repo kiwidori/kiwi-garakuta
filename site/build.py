@@ -106,7 +106,7 @@ def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_
 
 
 def main() -> None:
-    settings = json.loads((ROOT / "factory.json").read_text(encoding="utf-8"))
+    settings = json.loads((ROOT / "site-settings.json").read_text(encoding="utf-8"))
     support = json.loads((ROOT / "support.json").read_text(encoding="utf-8"))
     paypal_url = support.get("paypal_url", "")
     paypal_qr = support.get("paypal_qr", "")
