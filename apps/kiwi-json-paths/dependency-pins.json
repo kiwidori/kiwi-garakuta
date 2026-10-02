@@ -1,0 +1,32 @@
+[
+  {
+    "module": "github.com/fatih/color",
+    "version": "v1.7.0",
+    "h1": "h1:DkWD4oS2D8LGGgTQ6IvwJJXSL5Vp2ffcQg58nFV38Ys=",
+    "archive_sha256": "6036f0b31167280b696b5efb43603e71bce31420fb3428afdf74a68bb3a3ebef"
+  },
+  {
+    "module": "github.com/mattn/go-colorable",
+    "version": "v0.0.9",
+    "h1": "h1:UVL0vNpWh04HeJXV0KLcaT7r06gOH2l4OW6ddYRUIY4=",
+    "archive_sha256": "0917044b442f35c980a2128975d15f1f4e5f9c7b5aae0fc29c2937ea093eb242"
+  },
+  {
+    "module": "github.com/mattn/go-isatty",
+    "version": "v0.0.4",
+    "h1": "h1:bnP0vzxcAdeI1zdubAl5PjU6zsERjGZb7raWodagDYs=",
+    "archive_sha256": "867a0f2496147b51a633de2ccda78fe1de790c1a6d00b9eb6d70bcc392426201"
+  },
+  {
+    "module": "github.com/nwidger/jsoncolor",
+    "version": "v0.0.0-20170215171346-75a6de4340e5",
+    "h1": "h1:d+C3xJdxZT7wNlxqEwbXn3R355CwAhYBL9raVNfSnK0=",
+    "archive_sha256": "a5550c1ce2244ca4e7ac2b7f7b9bc09c6224d5a076b8f5e3db5e8508d0174a9b"
+  },
+  {
+    "module": "github.com/pkg/errors",
+    "version": "v0.8.0",
+    "h1": "h1:WdK/asTD0HN+q6hsWO3/vpuAkAr+tw6aNJNDFFf0+qw=",
+    "archive_sha256": "e4fa69ba057356614edbc1da881a7d3ebb688505be49f65965686bcb859e2fae"
+  }
+]
