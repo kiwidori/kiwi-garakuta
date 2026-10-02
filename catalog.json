@@ -659,5 +659,31 @@
     "upstream_license": "MIT（依存物通知も同梱）",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-yamlfmt",
+    "name": "きういYAML整形",
+    "summary": "YAMLの整形ルールを揃え、差分や整形が必要な箇所を画面で確認できる無料ツールです。",
+    "features": [
+      "YAMLテキスト、複数ファイル、フォルダーの整形・差分表示・整形チェックに対応します。",
+      "インデント、改行コード、空行、アンカー、引用符、配列表記を指定でき、KYAMLにも変換できます。",
+      "対象・除外パターン、追加拡張子、gitignore方式で処理対象を絞れます。",
+      "設定ファイルを読み込み・編集・保存できます。グローバル設定も明示的に読み込めます。",
+      "元ファイルを書き換えず、内容が変わったファイルだけZIPで保存します。差分・チェック結果はレポートとして保存できます。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiYamlfmt.exeを起動します。",
+      "入力欄へYAMLを貼り付けるか、ファイル・フォルダーを追加します。両方の入力は同時に使えません。",
+      "操作から「整形（ファイルはZIP）」「差分を表示」「整形チェック」を選び、必要な設定を指定して実行します。",
+      "結果を確認して「結果を保存」を押します。設定は「設定ファイル」タブから読み込み・保存できます。"
+    ],
+    "limitations": "ファイルの整形は一時コピーで行い、内容が変わったファイルだけZIPに入れます。変更がなければZIPは空になります。整形チェックは差分があると終了コード1になり、構文エラーとは別に表示します。エラー継続を選ぶと一部の結果だけになる場合があるため診断内容を確認してください。設定の自動検索はしません。設定内のincludeは画面の対象指定で上書きし、gitignore_pathは対象内の専用欄で指定します。パターンは対象フォルダー、複数対象では共通の親からの相対パスです。絶対パス・対象外への参照・リンク・ジャンクションは扱えません。KYAMLではBasic用の設定を空欄にしてください。YAML指示行の復元や最大行幅には元ツールの制限があります。1回300秒、テキスト2 MiB、設定128 KiB、コピー対象2000ファイル/2000フォルダー・合計64 MiB、出力とZIPは合計16 MiBまでです。選択フォルダーはYAML以外もコピー上限に含まれます。一時コピーと結果は処理後に削除します。ネット送信は行いません。詳細機能は差分モードを強制し、元ファイルへ直接書き込みません。全設定の組合せを検証したものではありません。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-yamlfmt-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-yamlfmt-v0.1.0/KiwiYamlfmt-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-yamlfmt",
+    "upstream_url": "https://github.com/google/yamlfmt",
+    "upstream_license": "Apache License 2.0（同梱のYAMLライブラリにはMIT・Apacheの表示あり）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]

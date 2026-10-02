@@ -29,6 +29,7 @@
 | [きういバイト表示](https://kiwi-garakuta.pages.dev/tools/kiwi-bytes/) | バイナリを16進数・文字表で表示し、テキストやC配列に保存する |
 | [きうい単位計算](https://kiwi-garakuta.pages.dev/tools/kiwi-calc/) | 単位変換と単位付きの科学計算、プログラム・スクリプト実行 |
 | [きういコード資料](https://kiwi-garakuta.pages.dev/tools/kiwi-prompt/) | コード・Git情報をLLM向け資料にまとめ、トークン分布を確認する |
+| [きういYAML整形](https://kiwi-garakuta.pages.dev/tools/kiwi-yamlfmt/) | YAMLの整形・差分・整形チェックと一括ZIP保存 |
 
 ## 詳細機能の使い方
 
