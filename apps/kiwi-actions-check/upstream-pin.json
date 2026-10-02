@@ -1,0 +1,15 @@
+{
+  "slug": "kiwi-actions-check",
+  "repo": "rhysd/actionlint",
+  "tag": "v1.7.12",
+  "asset": "actionlint_1.7.12_windows_amd64.zip",
+  "exe": "actionlint.exe",
+  "app_exe": "KiwiActionsCheck",
+  "version": "0.1.0",
+  "license": "MIT",
+  "license_url": "https://raw.githubusercontent.com/rhysd/actionlint/v1.7.12/LICENSE.txt",
+  "url": "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_windows_amd64.zip",
+  "sha": "6e7241b51e6817ea6a047693d8e6fed13b31819c9a0dd6c5a726e1592d22f6e9",
+  "binary_sha": "54ca21be3de4c7cfa26914aa8b61bd76bf573ef3caac5f80d110558cdf241718",
+  "license_sha": "03a26b06d224380a02bf100e05fff3b2dfc71b14d4e2fa685ec9963a87563c22"
+}

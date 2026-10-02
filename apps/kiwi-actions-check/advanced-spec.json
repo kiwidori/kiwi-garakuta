@@ -1,0 +1,155 @@
+{
+  "slug": "kiwi-actions-check",
+  "tool": "actionlint.exe",
+  "upstream_url": "https://github.com/rhysd/actionlint",
+  "mandatory_args": [
+    "-shellcheck",
+    "",
+    "-pyflakes",
+    ""
+  ],
+  "blocked_flags": [
+    "-init-config",
+    "--init-config",
+    "-shellcheck",
+    "--shellcheck",
+    "-pyflakes",
+    "--pyflakes"
+  ],
+  "options": [
+    {
+      "flag": "-color",
+      "aliases": [
+        "-color"
+      ],
+      "takes_value": false,
+      "description": "出力にANSI色を付ける",
+      "blocked": false
+    },
+    {
+      "flag": "-no-color",
+      "aliases": [
+        "-no-color"
+      ],
+      "takes_value": false,
+      "description": "出力のANSI色を省く",
+      "blocked": false
+    },
+    {
+      "flag": "-config-file",
+      "aliases": [
+        "-config-file"
+      ],
+      "takes_value": true,
+      "description": "使用する設定YAMLのパス",
+      "blocked": false
+    },
+    {
+      "flag": "-debug",
+      "aliases": [
+        "-debug"
+      ],
+      "takes_value": false,
+      "description": "内部の診断情報を表示",
+      "blocked": false
+    },
+    {
+      "flag": "-format",
+      "aliases": [
+        "-format"
+      ],
+      "takes_value": true,
+      "description": "指摘のGoテンプレート書式",
+      "blocked": false
+    },
+    {
+      "flag": "-ignore",
+      "aliases": [
+        "-ignore"
+      ],
+      "takes_value": true,
+      "description": "無視するメッセージの正規表現（繰り返し可）",
+      "blocked": false
+    },
+    {
+      "flag": "-init-config",
+      "aliases": [
+        "-init-config"
+      ],
+      "takes_value": false,
+      "description": "通常画面の設定生成を使用",
+      "blocked": true
+    },
+    {
+      "flag": "-oneline",
+      "aliases": [
+        "-oneline"
+      ],
+      "takes_value": false,
+      "description": "指摘を1行ずつ表示",
+      "blocked": false
+    },
+    {
+      "flag": "-pyflakes",
+      "aliases": [
+        "-pyflakes"
+      ],
+      "takes_value": true,
+      "description": "通常画面で外部チェッカーを指定",
+      "blocked": true
+    },
+    {
+      "flag": "-shellcheck",
+      "aliases": [
+        "-shellcheck"
+      ],
+      "takes_value": true,
+      "description": "通常画面で外部チェッカーを指定",
+      "blocked": true
+    },
+    {
+      "flag": "-stdin-filename",
+      "aliases": [
+        "-stdin-filename"
+      ],
+      "takes_value": true,
+      "description": "標準入力の表示名",
+      "blocked": false
+    },
+    {
+      "flag": "-verbose",
+      "aliases": [
+        "-verbose"
+      ],
+      "takes_value": false,
+      "description": "詳しい処理情報を表示",
+      "blocked": false
+    },
+    {
+      "flag": "-version",
+      "aliases": [
+        "-version"
+      ],
+      "takes_value": false,
+      "description": "版とビルド情報を表示",
+      "blocked": false
+    },
+    {
+      "flag": "-help",
+      "aliases": [
+        "-help"
+      ],
+      "takes_value": false,
+      "description": "CLIヘルプを表示",
+      "blocked": false
+    }
+  ],
+  "examples": [
+    {
+      "name": "バージョン",
+      "args": [
+        "-version"
+      ]
+    }
+  ]
+}
