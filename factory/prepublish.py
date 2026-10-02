@@ -40,13 +40,15 @@ def available(url: str) -> bool:
 
 
 def main() -> None:
+    from concurrent.futures import ThreadPoolExecutor
     catalog = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
-    for item in catalog:
-        for field in ("download_url", "source_url", "upstream_url"):
-            url = item[field]
-            if not available(url):
-                raise SystemExit(f"Cannot publish {item['slug']}: {field} is unavailable: {url}")
-            print(f"OK: {item['slug']} {field}")
+    tasks = [(item["slug"], field, item[field]) for item in catalog for field in ("download_url", "source_url", "upstream_url")]
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        results = list(executor.map(available, (url for _, _, url in tasks)))
+    for (slug, field, url), ok in zip(tasks, results):
+        if not ok:
+            raise SystemExit(f"Cannot publish {slug}: {field} is unavailable: {url}")
+        print(f"OK: {slug} {field}", flush=True)
 
 
 if __name__ == "__main__":
