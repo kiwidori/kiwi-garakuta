@@ -81,7 +81,7 @@ def main():
     with tempfile.TemporaryDirectory() as td:
         cp=Path(td)/'cert.pem';kp=Path(td)/'key.pem';cp.write_bytes(cert.public_bytes(serialization.Encoding.PEM));kp.write_bytes(key.private_bytes(serialization.Encoding.PEM,serialization.PrivateFormat.TraditionalOpenSSL,serialization.NoEncryption()))
         with http.server.ThreadingHTTPServer(('127.0.0.1',0),Handler) as server:
-            ctx=ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER);ctx.load_cert_chain(cp,kp);server.socket=ctx.wrap_socket(server.socket,server_side=True)
+            ctx=ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER);ctx.minimum_version=ssl.TLSVersion.TLSv1_2;ctx.load_cert_chain(cp,kp);server.socket=ctx.wrap_socket(server.socket,server_side=True)
             thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start();url='https://localhost:'+str(server.server_port)+'/json'
             try:
                 reject('TLS verification default',lambda:run(**{'@url':url}))
