@@ -685,5 +685,31 @@
     "upstream_license": "Apache License 2.0（同梱のYAMLライブラリにはMIT・Apacheの表示あり）",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-json-paths",
+    "name": "きういJSONパス",
+    "summary": "JSONの各項目をパスと値の一覧にし、一覧をJSONへ戻せる無料ツールです。",
+    "features": [
+      "JSONテキスト、ファイル1つ、HTTP/HTTPSのURLから項目を一覧化できます。",
+      "編集したパス一覧をJSONへ戻せます。「結果を入力へ」で往復できます。",
+      "JSONL入力、パスと値のJSONストリーム形式、並べ替えの省略に対応します。",
+      "文字列・数値などのトークンを抽出できます。引用符付きのキーや配列の添字も含む場合があります。",
+      "ANSI色付きの原文と色なしテキストを保存できます。元ファイルは書き換えません。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiJsonPaths.exeを起動します。",
+      "入力欄へJSONを貼り付けるか、ファイル1つまたはURLを指定します。入力は1種類だけ指定してください。",
+      "「JSONをパス一覧へ」を選んで実行します。必要に応じてJSONLや出力形式を指定します。",
+      "結果を保存します。復元する場合は「結果を入力へ」を押し、「パス一覧をJSONへ戻す」で実行します。"
+    ],
+    "limitations": "入力テキスト・URL応答・抽出用ファイルは2 MiB、通常の入力ファイルは20 MiB、出力は16 MiB、処理は300秒までです。JSONL・復元は1行1 MiB、抽出は1行64 KiB未満です。値の抽出はキーや添字も拾うことがあるため、純粋な値だけの抽出ではありません。通常画面は空行除去と事前検証を行います。詳細機能はCLIを直接呼び出すため、元ツールの抽出時のファイル無視・空行・長い行の不具合が適用されます。抽出とURL取得は通常画面を推奨します。URL指定時だけネットワークへ接続し、接続・読み取り待ちは20秒までです。TLS検証は既定で有効です。色付き原文にはANSI制御文字が入り、画面と色なし保存では除去します。パス一覧をスクリプトとして実行しません。公式gronバイナリのビルド情報には変更済みソースの表示があり、再現ビルドを保証しません。全オプションの組合せを検証したものではありません。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-json-paths-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-json-paths-v0.1.0/KiwiJsonPaths-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-json-paths",
+    "upstream_url": "https://github.com/tomnomnom/gron",
+    "upstream_license": "MIT（依存物通知も同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
