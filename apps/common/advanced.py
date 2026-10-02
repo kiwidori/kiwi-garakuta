@@ -21,6 +21,7 @@ BUNDLED_TOOLS = {
     'gron.exe': 'gron.exe',
     'actionlint.exe': 'actionlint.exe',
     'gojq.exe': 'gojq.exe',
+    'fx.exe': 'fx.exe',
     'yamlfmt.exe': 'yamlfmt.exe',
     'ascii-image-converter.exe': 'ascii-image-converter.exe',
     'hexyl.exe': 'hexyl.exe', 'numbat.exe': 'numbat.exe',

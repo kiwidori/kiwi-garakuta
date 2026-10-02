@@ -117,6 +117,12 @@ def build_command(exe, args, mandatory_args=(), blocked_flags=()):
             if any(ch.casefold() in short for ch in arg[1:]):
                 raise ValueError('この短いオプションは使用できません。長い名前で指定してください。')
     tool=Path(exe).name.casefold()
+    if tool=='fx.exe':
+        forbidden=('--themes','--export-themes','--game-of-life')
+        if any(a in forbidden or a.startswith('--comp') for a in args):
+            raise ValueError('端末専用の操作は使用できません。')
+        if not mandatory_args and all(a in ('--yaml','--toml','--raw','-r','--slurp','-s','-rs','-sr','--strict','--no-inline') for a in args):
+            args=['.',*args]
     if tool=='pastel.exe' and 'pick' in args:
         raise ValueError('外部カラーピッカーは使用できません。')
     if tool=='fastfetch.exe' and any(a.casefold().startswith('--command-') for a in args):
@@ -160,6 +166,12 @@ def execute(exe, args, stdin_data=b'', cwd=None, cancel_event=None, timeout=300,
         out,err=folder/'stdout.bin',folder/'stderr.bin'
         config=folder/'config'; config.mkdir()
         env['XH_CONFIG_DIR']=str(config)
+        if Path(exe).name.casefold()=='fx.exe':
+            for key in list(env):
+                if key.startswith('FX_') or key in ('COMP_LINE','COMP_WORDS','COMP_CWORD'):env.pop(key,None)
+            env.update(USERPROFILE=str(folder),HOME=str(folder),XDG_CONFIG_HOME=str(config),XDG_CONFIG_DIRS='kiwi-empty-config')
+            cwd=str(folder)
+
         if glow:
             (config/'glow.yml').write_text('pager: false\ntui: false\nstyle: light\nwidth: 100\n',encoding='utf8')
             env['GLOW_CONFIG_HOME']=str(config)

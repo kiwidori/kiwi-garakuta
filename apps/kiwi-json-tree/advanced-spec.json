@@ -1,0 +1,100 @@
+{
+  "slug": "kiwi-json-tree",
+  "tool": "fx.exe",
+  "upstream_url": "https://github.com/antonmedv/fx",
+  "options": [
+    {
+      "flag": "--raw",
+      "aliases": [
+        "--raw"
+      ],
+      "takes_value": false,
+      "description": "生テキストを行ごとの文字列として読む",
+      "blocked": false
+    },
+    {
+      "flag": "--slurp",
+      "aliases": [
+        "--slurp"
+      ],
+      "takes_value": false,
+      "description": "すべての入力を配列へまとめる",
+      "blocked": false
+    },
+    {
+      "flag": "--yaml",
+      "aliases": [
+        "--yaml"
+      ],
+      "takes_value": false,
+      "description": "YAML入力",
+      "blocked": false
+    },
+    {
+      "flag": "--toml",
+      "aliases": [
+        "--toml"
+      ],
+      "takes_value": false,
+      "description": "TOML入力",
+      "blocked": false
+    },
+    {
+      "flag": "--strict",
+      "aliases": [
+        "--strict"
+      ],
+      "takes_value": false,
+      "description": "厳密なJSON解析",
+      "blocked": false
+    },
+    {
+      "flag": "--no-inline",
+      "aliases": [
+        "--no-inline"
+      ],
+      "takes_value": false,
+      "description": "省略せず複数行表示",
+      "blocked": false
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "--help"
+      ],
+      "takes_value": false,
+      "description": "ヘルプ",
+      "blocked": false
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "--version"
+      ],
+      "takes_value": false,
+      "description": "版",
+      "blocked": false
+    }
+  ],
+  "mandatory_args": [],
+  "blocked_flags": [
+    "--themes",
+    "--export-themes",
+    "--game-of-life",
+    "--comp-"
+  ],
+  "examples": [
+    {
+      "name": "整形",
+      "args": [
+        "."
+      ]
+    },
+    {
+      "name": "版",
+      "args": [
+        "--version"
+      ]
+    }
+  ]
+}

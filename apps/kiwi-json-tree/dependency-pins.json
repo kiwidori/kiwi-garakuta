@@ -1,0 +1,182 @@
+[
+  {
+    "module": "github.com/antonmedv/clipboard",
+    "version": "v1.0.1",
+    "h1": "h1:z9rRBhSKt4lDb6uNcMykUmNbspk/6v07JeiTaOfYYOY=",
+    "archive_sha256": "19d14a58cba1f7d6a7e12d735876ca03202fbbb585cbaa1f0a44fb27181f9529"
+  },
+  {
+    "module": "github.com/atotto/clipboard",
+    "version": "v0.1.4",
+    "h1": "h1:EH0zSVneZPSuFR11BlR9YppQTVDbh5+16AmcJi4g1z4=",
+    "archive_sha256": "d67b2c36c662751309fd2ec351df3651584bea840bd27be9a90702c3a238b43f"
+  },
+  {
+    "module": "github.com/aymanbagabas/go-osc52/v2",
+    "version": "v2.0.1",
+    "h1": "h1:HwpRHbFMcZLEVr42D4p7XBqjyuxQH5SMiErDT4WkJ2k=",
+    "archive_sha256": "939ebf2a5481f2172e1a5e0c318d05aef5b6d950a960556216c3da7879a927f8"
+  },
+  {
+    "module": "github.com/charmbracelet/bubbles",
+    "version": "v0.21.0",
+    "h1": "h1:9TdC97SdRVg/1aaXNVWfFH3nnLAwOXr8Fn6u6mfQdFs=",
+    "archive_sha256": "fdfdda9c2605a6898027c9bcd2ffc38abc7cec4beb4087d509694d813c4b1dc9"
+  },
+  {
+    "module": "github.com/charmbracelet/bubbletea",
+    "version": "v1.3.6",
+    "h1": "h1:VkHIxPJQeDt0aFJIsVxw8BQdh/F/L2KKZGsK6et5taU=",
+    "archive_sha256": "574aa8df849223ab919dcde4e626662a3952402b14c78fd5a4756a3ccb8d3cf1"
+  },
+  {
+    "module": "github.com/charmbracelet/colorprofile",
+    "version": "v0.3.1",
+    "h1": "h1:k8dTHMd7fgw4bnFd7jXTLZrSU/CQrKnL3m+AxCzDz40=",
+    "archive_sha256": "48e9ef1dd3bb0a8cd1345d65a8c1c5a5dfb8b36c8473b031f0ab3d4f40b80b73"
+  },
+  {
+    "module": "github.com/charmbracelet/lipgloss",
+    "version": "v1.1.0",
+    "h1": "h1:vYXsiLHVkK7fp74RkV7b2kq9+zDLoEU4MZoFqR/noCY=",
+    "archive_sha256": "22512fd8c211302255bb6f57d8018eed9b8d8f6dd51310512901240bde9b061a"
+  },
+  {
+    "module": "github.com/charmbracelet/x/ansi",
+    "version": "v0.10.1",
+    "h1": "h1:rL3Koar5XvX0pHGfovN03f5cxLbCF2YvLeyz7D2jVDQ=",
+    "archive_sha256": "572284eda2d84e15af3c8d8cfa8fcdc2992dba9513c1d598d573b87b4f0f84f9"
+  },
+  {
+    "module": "github.com/charmbracelet/x/cellbuf",
+    "version": "v0.0.13",
+    "h1": "h1:/KBBKHuVRbq1lYx5BzEHBAFBP8VcQzJejZ/IA3iR28k=",
+    "archive_sha256": "386dc015a2e4d30a67dcc2365e85de662a8e94def65bca832ba5ba26be65a852"
+  },
+  {
+    "module": "github.com/charmbracelet/x/term",
+    "version": "v0.2.1",
+    "h1": "h1:AQeHeLZ1OqSXhrAWpYUtZyX1T3zVxfpZuEQMIQaGIAQ=",
+    "archive_sha256": "943ea615acab846478d15fc9b21eb5e47df786577915f84565b6d4b31d4014a0"
+  },
+  {
+    "module": "github.com/dlclark/regexp2",
+    "version": "v1.11.5",
+    "h1": "h1:Q/sSnsKerHeCkc/jSTNq1oCm7KiVgUMZRDUoRu0JQZQ=",
+    "archive_sha256": "cb2418e33b59eaaf5f57874db895cb620833e7a5e6eaf5a2c2deef7d47b70610"
+  },
+  {
+    "module": "github.com/dop251/goja",
+    "version": "v0.0.0-20250630131328-58d95d85e994",
+    "h1": "h1:aQYWswi+hRL2zJqGacdCZx32XjKYV8ApXFGntw79XAM=",
+    "archive_sha256": "3713a07f0272d5441d0bd808f4b114418daf7871a9cbd94a0a257d81d56c4250"
+  },
+  {
+    "module": "github.com/erikgeiser/coninput",
+    "version": "v0.0.0-20211004153227-1c3628e74d0f",
+    "h1": "h1:Y/CXytFA4m6baUTXGLOoWe4PQhGxaX0KpnayAqC48p4=",
+    "archive_sha256": "bd7f9a62374dc4d111863491729763a0eafcdc440d4a6ebead61d3af4a2c3f2f"
+  },
+  {
+    "module": "github.com/go-sourcemap/sourcemap",
+    "version": "v2.1.4+incompatible",
+    "h1": "h1:a+iTbH5auLKxaNwQFg0B+TCYl6lbukKPc7b5x0n1s6Q=",
+    "archive_sha256": "600a00841ed0876868cccaf84ed625d9c6d492b36953848d45f00a565ffeb573"
+  },
+  {
+    "module": "github.com/goccy/go-yaml",
+    "version": "v1.18.0",
+    "h1": "h1:8W7wMFS12Pcas7KU+VVkaiCng+kG8QiFeFwzFb+rwuw=",
+    "archive_sha256": "51bf59a85a7e3e2b8e83e5f376a3229b01b673a39601c99e3a2c05931cc3e339"
+  },
+  {
+    "module": "github.com/google/pprof",
+    "version": "v0.0.0-20250630185457-6e76a2b096b5",
+    "h1": "h1:xhMrHhTJ6zxu3gA4enFM9MLn9AY7613teCdFnlUVbSQ=",
+    "archive_sha256": "f15b981ed076ad45fc8df9d1b16e864849109606b1f1ee47a0cdfeb3a587472f"
+  },
+  {
+    "module": "github.com/lucasb-eyer/go-colorful",
+    "version": "v1.2.0",
+    "h1": "h1:1nnpGOrhyZZuNyfu1QjKiUICQ74+3FNCN69Aj6K7nkY=",
+    "archive_sha256": "78d5d0e0737f0f54bbed77b6dfa847d8c871bed2668a9dc44328c7c3411ada10"
+  },
+  {
+    "module": "github.com/mattn/go-isatty",
+    "version": "v0.0.20",
+    "h1": "h1:xfD0iDuEKnDkl03q4limB+vH+GxLEtL/jb4xVJSWWEY=",
+    "archive_sha256": "f2d5f89ca451577e17464b9bb596dc0d0ecececb5eaa63622c41b57cd0b7b8cc"
+  },
+  {
+    "module": "github.com/mattn/go-localereader",
+    "version": "v0.0.1",
+    "h1": "h1:ygSAOl7ZXTx4RdPYinUpg6W99U8jWvWi9Ye2JC/oIi4=",
+    "archive_sha256": "aa67306797b071ce93188fe2834f63ffd7963faf623d49229d891ef52e595b35"
+  },
+  {
+    "module": "github.com/mattn/go-runewidth",
+    "version": "v0.0.16",
+    "h1": "h1:E5ScNMtiwvlvB5paMFdw9p4kSQzbXFikJ5SQO6TULQc=",
+    "archive_sha256": "179d2d900c76ee3560fbeda60d0237a3be6acb734d0cb7423b55e5ccb0cedbca"
+  },
+  {
+    "module": "github.com/muesli/ansi",
+    "version": "v0.0.0-20230316100256-276c6243b2f6",
+    "h1": "h1:ZK8zHtRHOkbHy6Mmr5D264iyp3TiX5OmNcI5cIARiQI=",
+    "archive_sha256": "59c0d420908d51df3c701510337fbe42bfb4d48fcc5f490b5eb2f36fc25f91b9"
+  },
+  {
+    "module": "github.com/muesli/cancelreader",
+    "version": "v0.2.2",
+    "h1": "h1:3I4Kt4BQjOR54NavqnDogx/MIoWBFa0StPA8ELUXHmA=",
+    "archive_sha256": "f0654e7f8f8a49b02ff10a75ccaa0eb08a65aaacbc45f5ba93305276e2ac7f61"
+  },
+  {
+    "module": "github.com/muesli/termenv",
+    "version": "v0.16.0",
+    "h1": "h1:S5AlUN9dENB57rsbnkPyfdGuWIlkmzJjbFf0Tf5FWUc=",
+    "archive_sha256": "ba02d3ebd9c1d87e2c2133b1f2bb61a7001b3765196e8016029ce9fe54c5c0fc"
+  },
+  {
+    "module": "github.com/nfnt/resize",
+    "version": "v0.0.0-20180221191011-83c6a9932646",
+    "h1": "h1:zYyBkD/k9seD2A7fsi6Oo2LfFZAehjjQMERAvZLEDnQ=",
+    "archive_sha256": "b8e97cb14e5e5ef29d762d2dff890f6279a125990ddf9cb7ae5c4d2a015b109c"
+  },
+  {
+    "module": "github.com/pelletier/go-toml/v2",
+    "version": "v2.2.3",
+    "h1": "h1:YmeHyLY8mFWbdkNWwpr+qIL2bEqT0o95WSdkNHvL12M=",
+    "archive_sha256": "a51f4dc7b62bd7c26b387d912dfae87ca1449082f26574c9f614ae640318b092"
+  },
+  {
+    "module": "github.com/rivo/uniseg",
+    "version": "v0.4.7",
+    "h1": "h1:WUdvkW8uEhrYfLC4ZzdpI2ztxP1I582+49Oc5Mq64VQ=",
+    "archive_sha256": "b995e4aa0cc1e5779cc61138ac925cb8c1e963e40c80e4b93ee8553812ebb792"
+  },
+  {
+    "module": "github.com/xo/terminfo",
+    "version": "v0.0.0-20220910002029-abceb7e1c41e",
+    "h1": "h1:JVG44RsyaB9T2KIHavMF/ppJZNG9ZpyihvCd0w101no=",
+    "archive_sha256": "b8f4270191e08e135e932dfe168769046a4268ec7f3892593b1d773b2c5fa4cf"
+  },
+  {
+    "module": "golang.org/x/sync",
+    "version": "v0.16.0",
+    "h1": "h1:ycBJEhp9p4vXvUZNszeOq0kGTPghopOL8q0fq3vstxw=",
+    "archive_sha256": "ca43984183eb14f7f50d33da350312fed1c42e106dceac2437bfd5084b497dcd"
+  },
+  {
+    "module": "golang.org/x/sys",
+    "version": "v0.35.0",
+    "h1": "h1:vz1N37gP5bs89s7He8XuIYXpyY0+QlsKmzipCbUtyxI=",
+    "archive_sha256": "dc3c20611168aaa8fda0d71999be1a5222a0ba57bc767c978a590e41ff2ede35"
+  },
+  {
+    "module": "golang.org/x/text",
+    "version": "v0.27.0",
+    "h1": "h1:4fGWRpyh641NLlecmyl4LOe6yDdfaYNrGb2zdfo4JV4=",
+    "archive_sha256": "1230ce66d74ed4510f1578f25b4e53beee00926dc24c86fab7242637f8415ea8"
+  }
+]

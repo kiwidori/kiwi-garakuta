@@ -1,0 +1,15 @@
+{
+  "slug": "kiwi-json-tree",
+  "repo": "antonmedv/fx",
+  "tag": "39.2.0",
+  "asset": "fx_windows_amd64.exe",
+  "exe": "fx.exe",
+  "app_exe": "KiwiJsonTree",
+  "version": "0.1.0",
+  "license": "MIT",
+  "license_url": "https://raw.githubusercontent.com/antonmedv/fx/39.2.0/LICENSE",
+  "url": "https://github.com/antonmedv/fx/releases/download/39.2.0/fx_windows_amd64.exe",
+  "sha": "00fbddd7bd67f747a51aecc0a5bafcc695a21dfae7b912684510722c8e2d6d22",
+  "binary_sha": "00fbddd7bd67f747a51aecc0a5bafcc695a21dfae7b912684510722c8e2d6d22",
+  "license_sha": "f2c369e1796dc84c37cf34a966033e8850e535567fde32ef74b672726ed61d23"
+}
