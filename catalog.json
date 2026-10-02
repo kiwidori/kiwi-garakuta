@@ -710,7 +710,9 @@
     "upstream_url": "https://github.com/tomnomnom/gron",
     "upstream_license": "MIT（依存物通知も同梱）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-json-workbench",
+    "replacement_name": "きういJSON作業場"
   },
   {
     "slug": "kiwi-actions-check",
@@ -762,7 +764,9 @@
     "upstream_url": "https://github.com/itchyny/gojq",
     "upstream_license": "MIT（依存物通知も同梱）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-json-workbench",
+    "replacement_name": "きういJSON作業場"
   },
   {
     "slug": "kiwi-json-tree",
@@ -787,6 +791,51 @@
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-json-tree",
     "upstream_url": "https://github.com/antonmedv/fx",
     "upstream_license": "MIT（依存物通知も同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-json-workbench",
+    "replacement_name": "きういJSON作業場"
+  },
+  {
+    "slug": "kiwi-json-workbench",
+    "name": "きういJSON作業場",
+    "summary": "JSONのツリー閲覧・式による変換・パス一覧を、同じ入力と結果で使える無料ツールです。",
+    "features": [
+      "JSONツリー・JSON式・JSONパスの3本を統合しました。用途を切り替えても入力と結果を共有し、通常画面の設定を起動中に保持します。",
+      "JavaScriptの式、jq形式の式、パス一覧・JSONへの復元を使い分け、「結果を入力へ」で次の処理へ渡せます。",
+      "JSONの結果をツリーで開き、展開・検索・パス移動・参照先への移動・履歴、選択値やキーのコピーと保存ができます。",
+      "JSON・YAML・TOML・生テキストなどの入力形式、変数、モジュール、複数ファイル、URL取得は対応する用途から使えます。",
+      "原文のバイト列や色を除いた結果を保存できます。元ファイルを自動で変更しません。各用途の追加オプションとヘルプは「詳細機能」で確認できます。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiJsonWorkbench.exeを起動します。",
+      "用途を選び、データを貼り付けるかファイルを追加します。入力形式・式などを設定して実行します。",
+      "次の処理へ渡す場合は「結果を入力へ」を押し、用途を切り替えます。ファイル指定と現在のURL指定は解除されます。",
+      "JSONの結果は「結果をツリーで開く」で閲覧できます。必要な結果を保存してください。"
+    ],
+    "limitations": "式や入力形式は選んだ用途の仕様に従います。gojqとjqは完全互換ではありません。ツリーの文字検索は正規表現ではなく、JSONの重複キーは最後の値を表示します。非JSONの結果はテキストで確認してください。fxの読み込みでは大きな整数・小数の表記を保ちますが、JavaScriptの浮動小数点演算やgronの数値処理には元ツールの制約があります。入力欄・結果の入力への移送はUTF-8で2 MiBまで、NULを含む出力は移送できません。fxは1ファイル2 MiB・式32段、gojqは1ファイル20 MiB・合計64 MiB・200件・名前付き変数と位置引数各100件、gronは1ファイル20 MiBまでです。出力16 MiB、1回300秒、ツリー最大2万項目・深さ80まで。ツリーの選択値は既存ファイルへ上書きしません。通常画面ではリンクやジャンクションを入力に使えません。gojqでは式から環境変数・変数ファイル・モジュールを読め、gronでは明示したURLへ接続します。端末専用のテーマ・補完・ゲーム、外部エディター、.fxrc.jsの自動読み込みは使いません。詳細画面の設定は用途を切り替えると初期状態になります。全式・全オプションの組合せを検証したものではありません。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-json-workbench-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-json-workbench-v0.1.0/KiwiJsonWorkbench-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-json-workbench",
+    "upstream_url": "https://github.com/antonmedv/fx",
+    "upstream_license": "MIT（3ツールのライセンス・依存物通知も同梱）",
+    "upstreams": [
+      {
+        "name": "fx 39.2.0",
+        "url": "https://github.com/antonmedv/fx",
+        "license": "MIT"
+      },
+      {
+        "name": "gojq v0.12.19",
+        "url": "https://github.com/itchyny/gojq",
+        "license": "MIT"
+      },
+      {
+        "name": "gron v0.7.1",
+        "url": "https://github.com/tomnomnom/gron",
+        "license": "MIT"
+      }
+    ],
     "amazon_links": [],
     "windows_test_passed": true
   }
