@@ -711,5 +711,31 @@
     "upstream_license": "MIT（依存物通知も同梱）",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-actions-check",
+    "name": "きういActions点検",
+    "summary": "GitHub ActionsのYAMLを点検し、構文・式・ジョブ設定の指摘を確認できる無料ツールです。",
+    "features": [
+      "入力テキスト、複数のYAMLファイル、リポジトリのワークフローを点検できます。",
+      "構文、イベント、式、ジョブ間の依存関係、ランナー、ローカルアクション・再利用ワークフローを確認します。",
+      "JSON出力とGoテンプレートによる書式、メッセージの正規表現による絞り込みに対応します。",
+      "独自ランナー、設定変数、パスごとの無視条件を設定でき、設定YAMLの読み込み・保存・ひな形生成ができます。",
+      "任意のShellCheck・pyflakes実行ファイルを指定できます。未指定では外部チェッカーを呼び出しません。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiActionsCheck.exeを起動します。",
+      "YAMLを貼り付けるか、対象のファイル・フォルダーを追加します。テキストとファイルは同時に指定できません。",
+      "「ワークフローを点検」を選んで実行します。終了コード1は指摘ありです。設定や書式は必要に応じて変更してください。",
+      "結果を確認して「結果を保存」を押します。JSONレポートや設定のひな形も保存できます。"
+    ],
+    "limitations": "ワークフローやスクリプトは実行せず、元ファイルを書き換えません。関連するローカルアクション・再利用ワークフローのファイルは読みます。設定の自動検索は行わず、画面で指定した設定を使います。複数リポジトリは別々に点検し、JSONでは一覧をまとめます。ShellCheckとpyflakesは同梱していません。詳細機能では外部チェッカーと直接の設定生成を無効にし、通常画面で指定・生成します。入力テキスト2 MiB、設定128 KiB、1ファイル20 MiB・合計64 MiB・200件、探索2000フォルダー、1回300秒、出力16 MiB、引数256個・64 KiBまでです。リンクとジャンクションは入力に使えません。Windowsの出力取り込みでは色を指定しても色なしになる場合があります。点検はGitHub上での実行成功を保証しません。全オプションの組合せを検証したものではありません。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-actions-check-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-actions-check-v0.1.0/KiwiActionsCheck-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-actions-check",
+    "upstream_url": "https://github.com/rhysd/actionlint",
+    "upstream_license": "MIT（依存物通知も同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]

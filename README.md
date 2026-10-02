@@ -35,6 +35,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | [きういコード資料](https://kiwi-garakuta.pages.dev/tools/kiwi-prompt/) | コード・Git情報をLLM向け資料にまとめ、トークン分布を確認する | [code2prompt](https://github.com/mufeedvh/code2prompt) |
 | [きういYAML整形](https://kiwi-garakuta.pages.dev/tools/kiwi-yamlfmt/) | YAMLの整形・差分・整形チェックと一括ZIP保存 | [yamlfmt](https://github.com/google/yamlfmt) |
 | [きういJSONパス](https://kiwi-garakuta.pages.dev/tools/kiwi-json-paths/) | JSONのパス一覧化・復元・トークン抽出 | [gron](https://github.com/tomnomnom/gron) |
+| [きういActions点検](https://kiwi-garakuta.pages.dev/tools/kiwi-actions-check/) | GitHub Actionsの点検・JSONレポート・設定YAML | [actionlint](https://github.com/rhysd/actionlint) |
 
 各ソフトの詳細ページに、使い方、実際の画面、制限事項、ZIPのダウンロード先を掲載しています。ZIPには元ツールのライセンス文書を同梱しています。
 

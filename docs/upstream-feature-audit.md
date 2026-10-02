@@ -31,6 +31,7 @@
 | [きういコード資料](https://kiwi-garakuta.pages.dev/tools/kiwi-prompt/) | コード・Git情報をLLM向け資料にまとめ、トークン分布を確認する |
 | [きういYAML整形](https://kiwi-garakuta.pages.dev/tools/kiwi-yamlfmt/) | YAMLの整形・差分・整形チェックと一括ZIP保存 |
 | [きういJSONパス](https://kiwi-garakuta.pages.dev/tools/kiwi-json-paths/) | JSONのパス一覧化・復元・トークン抽出 |
+| [きういActions点検](https://kiwi-garakuta.pages.dev/tools/kiwi-actions-check/) | GitHub Actionsの点検・JSONレポート・設定YAML |
 
 ## 詳細機能の使い方
 
