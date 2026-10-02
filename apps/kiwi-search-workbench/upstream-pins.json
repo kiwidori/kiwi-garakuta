@@ -1,0 +1,51 @@
+{
+  "fd": {
+    "repo": "sharkdp/fd",
+    "tag": "v10.5.0",
+    "tag_commit": "4f81778774463bf414a184cbe6d5219ad2229646",
+    "asset": "fd-v10.5.0-x86_64-pc-windows-msvc.zip",
+    "exe": "fd.exe",
+    "url": "https://github.com/sharkdp/fd/releases/download/v10.5.0/fd-v10.5.0-x86_64-pc-windows-msvc.zip",
+    "sha": "a227701b8551c35a9931d9f6da75503cf86d88e182d71fb849a70864c5d57cd7",
+    "binary_sha": "d67d27a8e375ed7e9bca2b506a9dd5082bc24547aeba908b863f6f8b8ab0c3b9",
+    "archive_member": "fd-v10.5.0-x86_64-pc-windows-msvc/fd.exe",
+    "source_url": "https://github.com/sharkdp/fd/archive/refs/tags/v10.5.0.zip",
+    "source_sha": "3934a8be53c863d042dca5825de92942cf73792d3981fe15bf7a7c46de1e0456",
+    "cargo_lock_sha": "8c22b09b075dd5b1a2016ec657ca9d47dec0215f04a6fa201dbd43dadf5247ea",
+    "license": "MIT OR Apache-2.0",
+    "license_members": [
+      "fd-v10.5.0-x86_64-pc-windows-msvc/LICENSE-APACHE",
+      "fd-v10.5.0-x86_64-pc-windows-msvc/LICENSE-MIT"
+    ]
+  },
+  "rg": {
+    "repo": "BurntSushi/ripgrep",
+    "tag": "15.2.0",
+    "tag_commit": "e89fff89ac9af12e8d4ce9d5fd07beb408ca730f",
+    "asset": "ripgrep-15.2.0-x86_64-pc-windows-msvc.zip",
+    "exe": "rg.exe",
+    "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-pc-windows-msvc.zip",
+    "sha": "71b2fef860abe467217a538ff31de02f5258807c0129f771846f87bd029aafc5",
+    "binary_sha": "14231169855ec5205cf5a1b6f1db358ff4aed4247c86b69ce8aae647c77f6680",
+    "archive_member": "ripgrep-15.2.0-x86_64-pc-windows-msvc/rg.exe",
+    "source_url": "https://github.com/BurntSushi/ripgrep/archive/refs/tags/15.2.0.zip",
+    "source_sha": "e661f5faddd5f269b16606a03f34af4a61280aa7a67c572c38370f1a5833eda6",
+    "cargo_lock_sha": "7a7d39cda8a03930e578f1dbb724e055771901842eca239e03b01e19da946a64",
+    "license": "MIT OR Unlicense",
+    "license_members": [
+      "ripgrep-15.2.0-x86_64-pc-windows-msvc/COPYING",
+      "ripgrep-15.2.0-x86_64-pc-windows-msvc/LICENSE-MIT",
+      "ripgrep-15.2.0-x86_64-pc-windows-msvc/UNLICENSE"
+    ],
+    "native_components": [
+      {
+        "name": "PCRE2",
+        "version": "10.45",
+        "runtime_version_verified": true,
+        "license_url": "https://raw.githubusercontent.com/PCRE2Project/pcre2/2dce7761b1831fd3f82a9c2bd5476259d945da4d/LICENCE.md",
+        "license_sha256": "9cf7ac6976099a1d856826d3ef1b093bd6b84489dc6100628ac79e740cf9885a",
+        "license": "BSD-3-Clause (and additional component notices in LICENCE.md)"
+      }
+    ]
+  }
+}

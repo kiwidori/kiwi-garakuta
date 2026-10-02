@@ -1,0 +1,1121 @@
+{
+  "slug": "kiwi-search",
+  "tool": "rg.exe",
+  "upstream_url": "https://github.com/BurntSushi/ripgrep",
+  "options": [
+    {
+      "flag": "--regexp",
+      "aliases": [
+        "-e",
+        "--regexp"
+      ],
+      "takes_value": true,
+      "value_hint": "PATTERN",
+      "description": "A pattern to search for.",
+      "blocked": false
+    },
+    {
+      "flag": "--file",
+      "aliases": [
+        "-f",
+        "--file"
+      ],
+      "takes_value": true,
+      "value_hint": "PATTERNFILE",
+      "description": "Search for patterns from the given file.",
+      "blocked": false
+    },
+    {
+      "flag": "--pre",
+      "aliases": [
+        "--pre"
+      ],
+      "takes_value": true,
+      "value_hint": "COMMAND",
+      "description": "Search output of COMMAND for each PATH.",
+      "blocked": true
+    },
+    {
+      "flag": "--pre-glob",
+      "aliases": [
+        "--pre-glob"
+      ],
+      "takes_value": true,
+      "value_hint": "GLOB",
+      "description": "Include or exclude files from a preprocessor.",
+      "blocked": false
+    },
+    {
+      "flag": "--search-zip",
+      "aliases": [
+        "-z",
+        "--search-zip"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Search in compressed files.",
+      "blocked": false
+    },
+    {
+      "flag": "--case-sensitive",
+      "aliases": [
+        "-s",
+        "--case-sensitive"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Search case sensitively (default).",
+      "blocked": false
+    },
+    {
+      "flag": "--crlf",
+      "aliases": [
+        "--crlf"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use CRLF line terminators (nice for Windows).",
+      "blocked": false
+    },
+    {
+      "flag": "--dfa-size-limit",
+      "aliases": [
+        "--dfa-size-limit"
+      ],
+      "takes_value": true,
+      "value_hint": "NUM",
+      "description": "The upper size limit of the regex DFA.",
+      "blocked": false
+    },
+    {
+      "flag": "--encoding",
+      "aliases": [
+        "-E",
+        "--encoding"
+      ],
+      "takes_value": true,
+      "value_hint": "ENCODING",
+      "description": "Specify the text encoding of files to search.",
+      "blocked": false
+    },
+    {
+      "flag": "--engine",
+      "aliases": [
+        "--engine"
+      ],
+      "takes_value": true,
+      "value_hint": "ENGINE",
+      "description": "Specify which regex engine to use.",
+      "blocked": false
+    },
+    {
+      "flag": "--fixed-strings",
+      "aliases": [
+        "-F",
+        "--fixed-strings"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Treat all patterns as literals.",
+      "blocked": false
+    },
+    {
+      "flag": "--ignore-case",
+      "aliases": [
+        "-i",
+        "--ignore-case"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Case insensitive search.",
+      "blocked": false
+    },
+    {
+      "flag": "--invert-match",
+      "aliases": [
+        "-v",
+        "--invert-match"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Invert matching.",
+      "blocked": false
+    },
+    {
+      "flag": "--line-regexp",
+      "aliases": [
+        "-x",
+        "--line-regexp"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show matches surrounded by line boundaries.",
+      "blocked": false
+    },
+    {
+      "flag": "--max-count",
+      "aliases": [
+        "-m",
+        "--max-count"
+      ],
+      "takes_value": true,
+      "value_hint": "NUM",
+      "description": "Limit the number of matching lines.",
+      "blocked": false
+    },
+    {
+      "flag": "--mmap",
+      "aliases": [
+        "--mmap"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Search with memory maps when possible.",
+      "blocked": false
+    },
+    {
+      "flag": "--multiline",
+      "aliases": [
+        "-U",
+        "--multiline"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Enable searching across multiple lines.",
+      "blocked": false
+    },
+    {
+      "flag": "--multiline-dotall",
+      "aliases": [
+        "--multiline-dotall"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Make '.' match line terminators.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-unicode",
+      "aliases": [
+        "--no-unicode"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Disable Unicode mode.",
+      "blocked": false
+    },
+    {
+      "flag": "--null-data",
+      "aliases": [
+        "--null-data"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use NUL as a line terminator.",
+      "blocked": false
+    },
+    {
+      "flag": "--pcre2",
+      "aliases": [
+        "-P",
+        "--pcre2"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Enable PCRE2 matching.",
+      "blocked": false
+    },
+    {
+      "flag": "--regex-size-limit",
+      "aliases": [
+        "--regex-size-limit"
+      ],
+      "takes_value": true,
+      "value_hint": "NUM",
+      "description": "The size limit of the compiled regex.",
+      "blocked": false
+    },
+    {
+      "flag": "--smart-case",
+      "aliases": [
+        "-S",
+        "--smart-case"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Smart case search.",
+      "blocked": false
+    },
+    {
+      "flag": "--stop-on-nonmatch",
+      "aliases": [
+        "--stop-on-nonmatch"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Stop searching after a non-match.",
+      "blocked": false
+    },
+    {
+      "flag": "--text",
+      "aliases": [
+        "-a",
+        "--text"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Search binary files as if they were text.",
+      "blocked": false
+    },
+    {
+      "flag": "--threads",
+      "aliases": [
+        "-j",
+        "--threads"
+      ],
+      "takes_value": true,
+      "value_hint": "NUM",
+      "description": "Set the approximate number of threads to use.",
+      "blocked": false
+    },
+    {
+      "flag": "--word-regexp",
+      "aliases": [
+        "-w",
+        "--word-regexp"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show matches surrounded by word boundaries.",
+      "blocked": false
+    },
+    {
+      "flag": "--auto-hybrid-regex",
+      "aliases": [
+        "--auto-hybrid-regex"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "(DEPRECATED) Use PCRE2 if appropriate.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-pcre2-unicode",
+      "aliases": [
+        "--no-pcre2-unicode"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "(DEPRECATED) Disable Unicode mode for PCRE2.",
+      "blocked": false
+    },
+    {
+      "flag": "--binary",
+      "aliases": [
+        "--binary"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Search binary files.",
+      "blocked": false
+    },
+    {
+      "flag": "--follow",
+      "aliases": [
+        "-L",
+        "--follow"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Follow symbolic links.",
+      "blocked": false
+    },
+    {
+      "flag": "--glob",
+      "aliases": [
+        "-g",
+        "--glob"
+      ],
+      "takes_value": true,
+      "value_hint": "GLOB",
+      "description": "Include or exclude file paths.",
+      "blocked": false
+    },
+    {
+      "flag": "--glob-case-insensitive",
+      "aliases": [
+        "--glob-case-insensitive"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Process all glob patterns case insensitively.",
+      "blocked": false
+    },
+    {
+      "flag": "--hidden",
+      "aliases": [
+        "-.",
+        "--hidden"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Search hidden files and directories.",
+      "blocked": false
+    },
+    {
+      "flag": "--iglob",
+      "aliases": [
+        "--iglob"
+      ],
+      "takes_value": true,
+      "value_hint": "GLOB",
+      "description": "Include/exclude paths case insensitively.",
+      "blocked": false
+    },
+    {
+      "flag": "--ignore-file",
+      "aliases": [
+        "--ignore-file"
+      ],
+      "takes_value": true,
+      "value_hint": "PATH",
+      "description": "Specify additional ignore files.",
+      "blocked": false
+    },
+    {
+      "flag": "--ignore-file-case-insensitive",
+      "aliases": [
+        "--ignore-file-case-insensitive"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Process ignore files case insensitively.",
+      "blocked": false
+    },
+    {
+      "flag": "--max-depth",
+      "aliases": [
+        "-d",
+        "--max-depth"
+      ],
+      "takes_value": true,
+      "value_hint": "NUM",
+      "description": "Descend at most NUM directories.",
+      "blocked": false
+    },
+    {
+      "flag": "--max-filesize",
+      "aliases": [
+        "--max-filesize"
+      ],
+      "takes_value": true,
+      "value_hint": "NUM",
+      "description": "Ignore files larger than NUM in size.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-ignore",
+      "aliases": [
+        "--no-ignore"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't use ignore files.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-ignore-dot",
+      "aliases": [
+        "--no-ignore-dot"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't use .ignore or .rgignore files.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-ignore-exclude",
+      "aliases": [
+        "--no-ignore-exclude"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't use local exclusion files.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-ignore-files",
+      "aliases": [
+        "--no-ignore-files"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't use --ignore-file arguments.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-ignore-global",
+      "aliases": [
+        "--no-ignore-global"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't use global ignore files.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-ignore-parent",
+      "aliases": [
+        "--no-ignore-parent"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't use ignore files in parent directories.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-ignore-vcs",
+      "aliases": [
+        "--no-ignore-vcs"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't use ignore files from source control.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-require-git",
+      "aliases": [
+        "--no-require-git"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use .gitignore outside of git repositories.",
+      "blocked": false
+    },
+    {
+      "flag": "--one-file-system",
+      "aliases": [
+        "--one-file-system"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Skip directories on other file systems.",
+      "blocked": false
+    },
+    {
+      "flag": "--type",
+      "aliases": [
+        "-t",
+        "--type"
+      ],
+      "takes_value": true,
+      "value_hint": "TYPE",
+      "description": "Only search files matching TYPE.",
+      "blocked": false
+    },
+    {
+      "flag": "--type-not",
+      "aliases": [
+        "-T",
+        "--type-not"
+      ],
+      "takes_value": true,
+      "value_hint": "TYPE",
+      "description": "Do not search files matching TYPE.",
+      "blocked": false
+    },
+    {
+      "flag": "--type-add",
+      "aliases": [
+        "--type-add"
+      ],
+      "takes_value": true,
+      "value_hint": "TYPESPEC",
+      "description": "Add a new glob for a file type.",
+      "blocked": false
+    },
+    {
+      "flag": "--type-clear",
+      "aliases": [
+        "--type-clear"
+      ],
+      "takes_value": true,
+      "value_hint": "TYPE",
+      "description": "Clear globs for a file type.",
+      "blocked": false
+    },
+    {
+      "flag": "--unrestricted",
+      "aliases": [
+        "-u",
+        "--unrestricted"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Reduce the level of \"smart\" filtering.",
+      "blocked": false
+    },
+    {
+      "flag": "--after-context",
+      "aliases": [
+        "-A",
+        "--after-context"
+      ],
+      "takes_value": true,
+      "value_hint": "NUM",
+      "description": "Show NUM lines after each match.",
+      "blocked": false
+    },
+    {
+      "flag": "--before-context",
+      "aliases": [
+        "-B",
+        "--before-context"
+      ],
+      "takes_value": true,
+      "value_hint": "NUM",
+      "description": "Show NUM lines before each match.",
+      "blocked": false
+    },
+    {
+      "flag": "--block-buffered",
+      "aliases": [
+        "--block-buffered"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Force block buffering.",
+      "blocked": false
+    },
+    {
+      "flag": "--byte-offset",
+      "aliases": [
+        "-b",
+        "--byte-offset"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print the byte offset for each matching line.",
+      "blocked": false
+    },
+    {
+      "flag": "--color",
+      "aliases": [
+        "--color"
+      ],
+      "takes_value": true,
+      "value_hint": "WHEN",
+      "description": "When to use color.",
+      "blocked": false
+    },
+    {
+      "flag": "--colors",
+      "aliases": [
+        "--colors"
+      ],
+      "takes_value": true,
+      "value_hint": "COLOR_SPEC",
+      "description": "Configure color settings and styles.",
+      "blocked": false
+    },
+    {
+      "flag": "--column",
+      "aliases": [
+        "--column"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show column numbers.",
+      "blocked": false
+    },
+    {
+      "flag": "--context",
+      "aliases": [
+        "-C",
+        "--context"
+      ],
+      "takes_value": true,
+      "value_hint": "NUM",
+      "description": "Show NUM lines before and after each match.",
+      "blocked": false
+    },
+    {
+      "flag": "--context-separator",
+      "aliases": [
+        "--context-separator"
+      ],
+      "takes_value": true,
+      "value_hint": "SEP",
+      "description": "Set the separator for contextual chunks.",
+      "blocked": false
+    },
+    {
+      "flag": "--field-context-separator",
+      "aliases": [
+        "--field-context-separator"
+      ],
+      "takes_value": true,
+      "value_hint": "SEP",
+      "description": "Set the field context separator.",
+      "blocked": false
+    },
+    {
+      "flag": "--field-match-separator",
+      "aliases": [
+        "--field-match-separator"
+      ],
+      "takes_value": true,
+      "value_hint": "SEP",
+      "description": "Set the field match separator.",
+      "blocked": false
+    },
+    {
+      "flag": "--heading",
+      "aliases": [
+        "--heading"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print matches grouped by each file.",
+      "blocked": false
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show help output.",
+      "blocked": false
+    },
+    {
+      "flag": "--hostname-bin",
+      "aliases": [
+        "--hostname-bin"
+      ],
+      "takes_value": true,
+      "value_hint": "COMMAND",
+      "description": "Run a program to get this system's hostname.",
+      "blocked": true
+    },
+    {
+      "flag": "--hyperlink-format",
+      "aliases": [
+        "--hyperlink-format"
+      ],
+      "takes_value": true,
+      "value_hint": "FORMAT",
+      "description": "Set the format of hyperlinks.",
+      "blocked": false
+    },
+    {
+      "flag": "--include-zero",
+      "aliases": [
+        "--include-zero"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Include zero matches in summary output.",
+      "blocked": false
+    },
+    {
+      "flag": "--line-buffered",
+      "aliases": [
+        "--line-buffered"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Force line buffering.",
+      "blocked": false
+    },
+    {
+      "flag": "--line-number",
+      "aliases": [
+        "-n",
+        "--line-number"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show line numbers.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-line-number",
+      "aliases": [
+        "-N",
+        "--no-line-number"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Suppress line numbers.",
+      "blocked": false
+    },
+    {
+      "flag": "--max-columns",
+      "aliases": [
+        "-M",
+        "--max-columns"
+      ],
+      "takes_value": true,
+      "value_hint": "NUM",
+      "description": "Omit lines longer than this limit.",
+      "blocked": false
+    },
+    {
+      "flag": "--max-columns-preview",
+      "aliases": [
+        "--max-columns-preview"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show preview for lines exceeding the limit.",
+      "blocked": false
+    },
+    {
+      "flag": "--null",
+      "aliases": [
+        "-0",
+        "--null"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print a NUL byte after file paths.",
+      "blocked": false
+    },
+    {
+      "flag": "--only-matching",
+      "aliases": [
+        "-o",
+        "--only-matching"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print only matched parts of a line.",
+      "blocked": false
+    },
+    {
+      "flag": "--path-separator",
+      "aliases": [
+        "--path-separator"
+      ],
+      "takes_value": true,
+      "value_hint": "SEP",
+      "description": "Set the path separator for printing paths.",
+      "blocked": false
+    },
+    {
+      "flag": "--passthru",
+      "aliases": [
+        "--passthru"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print both matching and non-matching lines.",
+      "blocked": false
+    },
+    {
+      "flag": "--pretty",
+      "aliases": [
+        "-p",
+        "--pretty"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Alias for colors, headings and line numbers.",
+      "blocked": false
+    },
+    {
+      "flag": "--quiet",
+      "aliases": [
+        "-q",
+        "--quiet"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not print anything to stdout.",
+      "blocked": false
+    },
+    {
+      "flag": "--replace",
+      "aliases": [
+        "-r",
+        "--replace"
+      ],
+      "takes_value": true,
+      "value_hint": "TEXT",
+      "description": "Replace matches with the given text.",
+      "blocked": false
+    },
+    {
+      "flag": "--sort",
+      "aliases": [
+        "--sort"
+      ],
+      "takes_value": true,
+      "value_hint": "SORTBY",
+      "description": "Sort results in ascending order.",
+      "blocked": false
+    },
+    {
+      "flag": "--sortr",
+      "aliases": [
+        "--sortr"
+      ],
+      "takes_value": true,
+      "value_hint": "SORTBY",
+      "description": "Sort results in descending order.",
+      "blocked": false
+    },
+    {
+      "flag": "--trim",
+      "aliases": [
+        "--trim"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Trim prefix whitespace from matches.",
+      "blocked": false
+    },
+    {
+      "flag": "--vimgrep",
+      "aliases": [
+        "--vimgrep"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print results in a vim compatible format.",
+      "blocked": false
+    },
+    {
+      "flag": "--with-filename",
+      "aliases": [
+        "-H",
+        "--with-filename"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print the file path with each matching line.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-filename",
+      "aliases": [
+        "-I",
+        "--no-filename"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Never print the path with each matching line.",
+      "blocked": false
+    },
+    {
+      "flag": "--sort-files",
+      "aliases": [
+        "--sort-files"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "(DEPRECATED) Sort results by file path.",
+      "blocked": false
+    },
+    {
+      "flag": "--count",
+      "aliases": [
+        "-c",
+        "--count"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show count of matching lines for each file.",
+      "blocked": false
+    },
+    {
+      "flag": "--count-matches",
+      "aliases": [
+        "--count-matches"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show count of every match for each file.",
+      "blocked": false
+    },
+    {
+      "flag": "--files-with-matches",
+      "aliases": [
+        "-l",
+        "--files-with-matches"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print the paths with at least one match.",
+      "blocked": false
+    },
+    {
+      "flag": "--files-without-match",
+      "aliases": [
+        "--files-without-match"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print the paths that contain zero matches.",
+      "blocked": false
+    },
+    {
+      "flag": "--json",
+      "aliases": [
+        "--json"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show search results in a JSON Lines format.",
+      "blocked": false
+    },
+    {
+      "flag": "--debug",
+      "aliases": [
+        "--debug"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show debug messages.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-ignore-messages",
+      "aliases": [
+        "--no-ignore-messages"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Suppress gitignore parse error messages.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-messages",
+      "aliases": [
+        "--no-messages"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Suppress some error messages.",
+      "blocked": false
+    },
+    {
+      "flag": "--stats",
+      "aliases": [
+        "--stats"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print statistics about the search.",
+      "blocked": false
+    },
+    {
+      "flag": "--trace",
+      "aliases": [
+        "--trace"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show trace messages.",
+      "blocked": false
+    },
+    {
+      "flag": "--files",
+      "aliases": [
+        "--files"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print each file that would be searched.",
+      "blocked": false
+    },
+    {
+      "flag": "--generate",
+      "aliases": [
+        "--generate"
+      ],
+      "takes_value": true,
+      "value_hint": "KIND",
+      "description": "Generate man pages and completion scripts.",
+      "blocked": false
+    },
+    {
+      "flag": "--no-config",
+      "aliases": [
+        "--no-config"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Never read configuration files.",
+      "blocked": false
+    },
+    {
+      "flag": "--pcre2-version",
+      "aliases": [
+        "--pcre2-version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print the version of PCRE2 that ripgrep uses.",
+      "blocked": false
+    },
+    {
+      "flag": "--type-list",
+      "aliases": [
+        "--type-list"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Show all supported file types.",
+      "blocked": false
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-V",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print ripgrep's version.",
+      "blocked": false
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [
+    "--pre",
+    "--hostname-bin"
+  ],
+  "mandatory_args": [
+    "--no-config"
+  ],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "正規表現・大小文字を無視（標準入力）",
+      "args": [
+        "--ignore-case",
+        "[a-z]+"
+      ],
+      "stdin": "Hello 123\nWORLD\n"
+    },
+    {
+      "name": "ファイル種類の一覧",
+      "args": [
+        "--type-list"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "310c0f90338e83ed92a12d861159437e32446ab6124f578c0801f4bc2a60e593"
+}
