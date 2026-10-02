@@ -633,5 +633,31 @@
     "upstream_license": "MIT OR Apache-2.0（依存物通知も同梱）",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-prompt",
+    "name": "きういコード資料",
+    "summary": "フォルダー内のコードを、LLMへ渡しやすいMarkdown・JSON・XML資料にまとめる無料ツールです。",
+    "features": [
+      "フォルダーを1つ選び、include/excludeのglobやignore・隠しファイル・リンク設定で対象を絞れます。",
+      "Markdown・JSON・XML、行番号、ツリー表示、コードブロック、ファイル順を指定できます。",
+      "トークン数とファイル別分布、4種類のエンコード、分布の表示行数・最低比率を選べます。",
+      "作業ツリーと2参照のGit差分・履歴を資料に含められます。カスタムテンプレートとJSON変数も使えます。",
+      "資料の保存・コピー、診断情報の別保存、デモ、ヘルプ・版表示・詳細機能に対応します。"
+    ],
+    "steps": [
+      "ZIPを展開しKiwiPrompt.exeを起動します。",
+      "対象フォルダーを1つ追加します。「デモ」で小さなサンプルを試せます。",
+      "対象パターンと出力・トークン設定を選び、必要ならGit参照やテンプレート変数を入力して実行します。",
+      "結果を確認して保存またはコピーします。診断・トークン情報は別のボタンで保存できます。"
+    ],
+    "limitations": "生成にはAI・クラウドAPI・ネット接続は不要で、AIへ送信しません。対象コードと元の設定は変更しません。JSONはpromptとメタデータの上流形式で、promptはXML形式です。トークン数は選択したOpenAI系encodingによる目安で、Qwenの正確なトークン数ではありません。差分の本文は上流が+/-/文脈記号を省くため、適用できるパッチではありません。既定テンプレートのブランチ情報はGUIで補完し、カスタムテンプレートでは利用者の記述を優先します。未知の単純変数は入力不足エラーになります。対象/ユーザーの.c2pconfigを継承するため、一部チェックのfalseは設定のtrueを解除しません。設定・テンプレート各2 MiB、1回300秒、出力合計16 MiB、引数256個/64 KiB、Windowsコマンド行30,000文字未満。画面は先頭128 KiB・256スタイルまで。端末TUIとLinux内部デーモンは対象外です。全Handlebarsヘルパー、XMLの全入力妥当性、全オプションの組合せは保証しません。実行ファイルは未署名です。",
+    "screenshot": "/assets/screenshots/kiwi-prompt-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-prompt-v0.1.0/KiwiPrompt-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-prompt",
+    "upstream_url": "https://github.com/mufeedvh/code2prompt",
+    "upstream_license": "MIT（依存物通知も同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
