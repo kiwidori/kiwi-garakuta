@@ -6,3 +6,12 @@ data/
 .tools/
 apps/*/release/
 apps/*/*.zip
+
+# Local production settings and instructions
+AGENTS.md
+/factory.json
+/factory/assess.py
+/factory/discover.py
+/factory/local_draft.py
+/factory/prepare_candidates.sh
+/factory/show_candidates.py
