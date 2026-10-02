@@ -23,7 +23,9 @@
     "upstream_license": "MIT または Unlicense",
     "amazon_links": [],
     "windows_test_passed": true,
-    "advanced_screenshot": "/assets/screenshots/kiwi-search-advanced-public.png"
+    "advanced_screenshot": "/assets/screenshots/kiwi-search-advanced-public.png",
+    "replaced_by": "kiwi-search-workbench",
+    "replacement_name": "きうい検索作業場"
   },
   {
     "slug": "kiwi-find",
@@ -50,7 +52,9 @@
     "upstream_license": "MIT または Apache License 2.0",
     "amazon_links": [],
     "windows_test_passed": true,
-    "advanced_screenshot": "/assets/screenshots/kiwi-find-advanced-public.png"
+    "advanced_screenshot": "/assets/screenshots/kiwi-find-advanced-public.png",
+    "replaced_by": "kiwi-search-workbench",
+    "replacement_name": "きうい検索作業場"
   },
   {
     "slug": "kiwi-disk",
@@ -834,6 +838,43 @@
         "name": "gron v0.7.1",
         "url": "https://github.com/tomnomnom/gron",
         "license": "MIT"
+      }
+    ],
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-search-workbench",
+    "name": "きうい検索作業場",
+    "summary": "ファイル名で絞った対象から内容を検索できる、共通フォルダーと除外設定を備えた無料ツールです。",
+    "features": [
+      "ファイル名検索と内容検索を1つにまとめ、対象フォルダー・拡張子・除外glob・隠しファイル・ignore・深さを共有します。",
+      "名前検索の結果から選択したファイルや表示中のファイルを、内容検索へそのまま渡せます。",
+      "名前は文字どおり・正規表現・glob、内容は文字どおり・正規表現・PCRE2から選べます。大小文字、単語全体、行全体、複数行、前後の行、文字コードも指定できます。",
+      "結果からファイルを開き、ファイル一覧をJSON、一致行と前後の行をCSVで保存できます。CLI原文の保存と各ツールの詳細オプションにも対応します。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiSearchWorkbench.exeを起動し、共通の対象フォルダーを選びます。",
+      "「ファイル名」で名前・拡張子・除外などを設定し、検索します。",
+      "「内容」に探す文字列を入力してから、名前検索の結果を選び「選んだファイルの内容を検索」を押します。表示中の全ファイルも対象にできます。",
+      "「フォルダー全体に戻す」で通常の内容検索へ戻せます。必要な結果を保存してください。"
+    ],
+    "limitations": "表示と通常の保存は最大1,000行、ファイルの移送は200件までです。選択ファイルは名前検索で絞った対象を使うため、内容検索でignore・globを再適用しません。共通設定を変更すると選択ファイルの対象を解除します。両ツールのignore・globの解釈には違いがあります。通常検索ではリンクをたどらず、指定フォルダーや選択ファイルの経路にリンクやジャンクションがある場合は拒否します。1回300秒、取得出力16 MiB、検索式はUTF-8で4,096バイト、引数256個・64 KiBまで。外部コマンドの実行・前処理・ホスト名取得コマンドは制限しています。ripgrepの設定ファイルは読み込みません。詳細画面の表示形式は指定したオプションに従います。検索で元ファイルを書き換えません。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-search-workbench-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-search-workbench-v0.1.0/KiwiSearchWorkbench-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-search-workbench",
+    "upstream_url": "https://github.com/sharkdp/fd",
+    "upstream_license": "fd: MIT / Apache-2.0、ripgrep: MIT / Unlicense（依存物通知も同梱）",
+    "upstreams": [
+      {
+        "name": "fd 10.5.0",
+        "url": "https://github.com/sharkdp/fd",
+        "license": "MIT / Apache-2.0"
+      },
+      {
+        "name": "ripgrep 15.2.0",
+        "url": "https://github.com/BurntSushi/ripgrep",
+        "license": "MIT / Unlicense"
       }
     ],
     "amazon_links": [],

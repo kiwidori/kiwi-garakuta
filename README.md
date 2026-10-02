@@ -8,8 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
-| [きうい検索](https://kiwi-garakuta.pages.dev/tools/kiwi-search/) | フォルダー内の文章を検索し、該当する行を表示 | [ripgrep](https://github.com/BurntSushi/ripgrep) |
-| [きういファイル探し](https://kiwi-garakuta.pages.dev/tools/kiwi-find/) | 名前や拡張子からファイルを探す | [fd](https://github.com/sharkdp/fd) |
+| [きうい検索作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-search-workbench/) | 名前で絞ったファイルから内容を検索する | [fd](https://github.com/sharkdp/fd)・[ripgrep](https://github.com/BurntSushi/ripgrep) |
 | [きうい容量ビュー](https://kiwi-garakuta.pages.dev/tools/kiwi-disk/) | 容量の大きいファイルやフォルダーを確認する | [dust](https://github.com/bootandy/dust) |
 | [きういJSON](https://kiwi-garakuta.pages.dev/tools/kiwi-json/) | JSONから必要なデータを取り出し、結果を保存する | [jq](https://github.com/jqlang/jq) |
 | [きういJSON作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-json-workbench/) | JSONのツリー閲覧・式変換・パス一覧と復元を同じ入力で行う | [fx](https://github.com/antonmedv/fx)・[gojq](https://github.com/itchyny/gojq)・[gron](https://github.com/tomnomnom/gron) |
@@ -43,7 +42,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 1. 上の一覧からソフトの詳細ページを開き、ZIPをダウンロードします。
 2. ZIPを任意のフォルダーへ展開します。
-3. 中の `KiwiSearch.exe`、`KiwiFind.exe`、`KiwiDisk.exe` など、選んだソフトの実行ファイルを起動します。ファイル名と機能は各ソフトの詳細ページとZIP内のREADMEに記載しています。
+3. 中の `KiwiSearchWorkbench.exe`、`KiwiDisk.exe` など、選んだソフトの実行ファイルを起動します。ファイル名と機能は各ソフトの詳細ページとZIP内のREADMEに記載しています。
 
 各ソフトはWindows 11 x64で動作確認しています。現時点の実行ファイルにはコード署名がありません。配布元とZIPの内容を確認してから使用してください。
 
