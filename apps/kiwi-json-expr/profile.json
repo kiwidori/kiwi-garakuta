@@ -1,0 +1,174 @@
+{
+  "slug": "kiwi-json-expr",
+  "title": "きういJSON式",
+  "tool": "gojq.exe",
+  "fields": [
+    {
+      "flag": "@filter",
+      "label": "式",
+      "type": "text",
+      "default": ".",
+      "group": "基本設定"
+    },
+    {
+      "flag": "@input",
+      "label": "入力形式",
+      "type": "choice",
+      "default": "json",
+      "group": "基本設定",
+      "choices": [
+        "json",
+        "yaml",
+        "raw",
+        "stream"
+      ]
+    },
+    {
+      "flag": "@output",
+      "label": "出力形式",
+      "type": "choice",
+      "default": "json",
+      "group": "基本設定",
+      "choices": [
+        "json",
+        "yaml",
+        "raw",
+        "raw0",
+        "join"
+      ]
+    },
+    {
+      "flag": "--slurp",
+      "label": "入力を配列にまとめる",
+      "type": "bool",
+      "default": false,
+      "group": "基本設定"
+    },
+    {
+      "flag": "--null-input",
+      "label": "nullから式を実行",
+      "type": "bool",
+      "default": false,
+      "group": "基本設定"
+    },
+    {
+      "flag": "--exit-status",
+      "label": "false/null/出力なしを終了状態へ反映",
+      "type": "bool",
+      "default": false,
+      "group": "基本設定"
+    },
+    {
+      "flag": "--compact-output",
+      "label": "JSONを1行で出力",
+      "type": "bool",
+      "default": false,
+      "group": "表示"
+    },
+    {
+      "flag": "--tab",
+      "label": "タブで字下げ",
+      "type": "bool",
+      "default": false,
+      "group": "表示"
+    },
+    {
+      "flag": "--indent",
+      "label": "字下げの幅",
+      "type": "text",
+      "default": "2",
+      "group": "表示"
+    },
+    {
+      "flag": "@color",
+      "label": "出力の色",
+      "type": "choice",
+      "default": "mono",
+      "group": "表示",
+      "choices": [
+        "mono",
+        "color"
+      ]
+    },
+    {
+      "flag": "--from-file",
+      "label": "式ファイルのパス",
+      "type": "text",
+      "default": "",
+      "group": "式とモジュール"
+    },
+    {
+      "flag": "-L",
+      "label": "モジュールの検索フォルダー（1行1個）",
+      "type": "text",
+      "default": "",
+      "group": "式とモジュール",
+      "repeat": true
+    },
+    {
+      "flag": "@strings",
+      "label": "文字列変数：名前→文字列のJSONオブジェクト",
+      "type": "text",
+      "default": "{}",
+      "group": "変数",
+      "repeat": true
+    },
+    {
+      "flag": "@json",
+      "label": "JSON変数：名前→値のJSONオブジェクト",
+      "type": "text",
+      "default": "{}",
+      "group": "変数",
+      "repeat": true
+    },
+    {
+      "flag": "@slurpfiles",
+      "label": "JSONファイル変数：名前→パス",
+      "type": "text",
+      "default": "{}",
+      "group": "変数",
+      "repeat": true
+    },
+    {
+      "flag": "@rawfiles",
+      "label": "テキストファイル変数：名前→パス",
+      "type": "text",
+      "default": "{}",
+      "group": "変数",
+      "repeat": true
+    },
+    {
+      "flag": "@positional",
+      "label": "位置引数のJSON配列",
+      "type": "text",
+      "default": "[]",
+      "group": "位置引数",
+      "repeat": true
+    },
+    {
+      "flag": "@args",
+      "label": "位置引数の種類",
+      "type": "choice",
+      "default": "strings",
+      "group": "位置引数",
+      "choices": [
+        "strings",
+        "json"
+      ]
+    }
+  ],
+  "modes": [
+    {
+      "id": "query",
+      "label": "式を実行"
+    },
+    {
+      "id": "version",
+      "label": "バージョン"
+    },
+    {
+      "id": "help",
+      "label": "CLIヘルプ"
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "slug": "kiwi-json-expr",
+  "tool": "gojq.exe",
+  "upstream_url": "https://github.com/itchyny/gojq",
+  "options": [
+    {
+      "flag": "--raw-output",
+      "aliases": [
+        "--raw-output"
+      ],
+      "takes_value": false,
+      "description": "output raw strings",
+      "blocked": false
+    },
+    {
+      "flag": "--raw-output0",
+      "aliases": [
+        "--raw-output0"
+      ],
+      "takes_value": false,
+      "description": "implies -r with NUL character delimiter",
+      "blocked": false
+    },
+    {
+      "flag": "--join-output",
+      "aliases": [
+        "--join-output"
+      ],
+      "takes_value": false,
+      "description": "implies -r with no newline delimiter",
+      "blocked": false
+    },
+    {
+      "flag": "--compact-output",
+      "aliases": [
+        "--compact-output"
+      ],
+      "takes_value": false,
+      "description": "output without pretty-printing",
+      "blocked": false
+    },
+    {
+      "flag": "--indent",
+      "aliases": [
+        "--indent"
+      ],
+      "takes_value": true,
+      "description": "number       number of spaces for indentation",
+      "blocked": false
+    },
+    {
+      "flag": "--tab",
+      "aliases": [
+        "--tab"
+      ],
+      "takes_value": false,
+      "description": "use tabs for indentation",
+      "blocked": false
+    },
+    {
+      "flag": "--yaml-output",
+      "aliases": [
+        "--yaml-output"
+      ],
+      "takes_value": false,
+      "description": "output in YAML format",
+      "blocked": false
+    },
+    {
+      "flag": "--color-output",
+      "aliases": [
+        "--color-output"
+      ],
+      "takes_value": false,
+      "description": "output with colors even if piped",
+      "blocked": false
+    },
+    {
+      "flag": "--monochrome-output",
+      "aliases": [
+        "--monochrome-output"
+      ],
+      "takes_value": false,
+      "description": "output without colors",
+      "blocked": false
+    },
+    {
+      "flag": "--null-input",
+      "aliases": [
+        "--null-input"
+      ],
+      "takes_value": false,
+      "description": "use null as input value",
+      "blocked": false
+    },
+    {
+      "flag": "--raw-input",
+      "aliases": [
+        "--raw-input"
+      ],
+      "takes_value": false,
+      "description": "read input as raw strings",
+      "blocked": false
+    },
+    {
+      "flag": "--stream",
+      "aliases": [
+        "--stream"
+      ],
+      "takes_value": false,
+      "description": "parse input in stream fashion",
+      "blocked": false
+    },
+    {
+      "flag": "--yaml-input",
+      "aliases": [
+        "--yaml-input"
+      ],
+      "takes_value": false,
+      "description": "read input as YAML format",
+      "blocked": false
+    },
+    {
+      "flag": "--slurp",
+      "aliases": [
+        "--slurp"
+      ],
+      "takes_value": false,
+      "description": "read all inputs into an array",
+      "blocked": false
+    },
+    {
+      "flag": "--from-file",
+      "aliases": [
+        "--from-file"
+      ],
+      "takes_value": true,
+      "description": "load query from file",
+      "blocked": false
+    },
+    {
+      "flag": "--library-path",
+      "aliases": [
+        "--library-path"
+      ],
+      "takes_value": true,
+      "description": "dir    directory to search modules from",
+      "blocked": false
+    },
+    {
+      "flag": "--arg",
+      "aliases": [
+        "--arg"
+      ],
+      "takes_value": true,
+      "description": "name value      set a string value to a variable",
+      "blocked": false
+    },
+    {
+      "flag": "--argjson",
+      "aliases": [
+        "--argjson"
+      ],
+      "takes_value": true,
+      "description": "name value  set a JSON value to a variable",
+      "blocked": false
+    },
+    {
+      "flag": "--slurpfile",
+      "aliases": [
+        "--slurpfile"
+      ],
+      "takes_value": true,
+      "description": "name file set the JSON contents of a file to a variable",
+      "blocked": false
+    },
+    {
+      "flag": "--rawfile",
+      "aliases": [
+        "--rawfile"
+      ],
+      "takes_value": true,
+      "description": "name file   set the contents of a file to a variable",
+      "blocked": false
+    },
+    {
+      "flag": "--args",
+      "aliases": [
+        "--args"
+      ],
+      "takes_value": false,
+      "description": "consume remaining arguments as positional string values",
+      "blocked": false
+    },
+    {
+      "flag": "--jsonargs",
+      "aliases": [
+        "--jsonargs"
+      ],
+      "takes_value": false,
+      "description": "consume remaining arguments as positional JSON values",
+      "blocked": false
+    },
+    {
+      "flag": "--exit-status",
+      "aliases": [
+        "--exit-status"
+      ],
+      "takes_value": false,
+      "description": "exit 1 when the last value is false or null",
+      "blocked": false
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "--version"
+      ],
+      "takes_value": false,
+      "description": "display version information",
+      "blocked": false
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "--help"
+      ],
+      "takes_value": false,
+      "description": "display this help information",
+      "blocked": false
+    }
+  ],
+  "mandatory_args": [],
+  "blocked_flags": [],
+  "examples": [
+    {
+      "name": "バージョン",
+      "args": [
+        "--version"
+      ]
+    }
+  ]
+}

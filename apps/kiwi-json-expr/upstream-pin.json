@@ -1,0 +1,16 @@
+{
+  "slug": "kiwi-json-expr",
+  "repo": "itchyny/gojq",
+  "tag": "v0.12.19",
+  "asset": "gojq_v0.12.19_windows_amd64.zip",
+  "exe": "gojq.exe",
+  "app_exe": "KiwiJsonExpr",
+  "version": "0.1.0",
+  "license": "MIT",
+  "license_url": "https://raw.githubusercontent.com/itchyny/gojq/v0.12.19/LICENSE",
+  "url": "https://github.com/itchyny/gojq/releases/download/v0.12.19/gojq_v0.12.19_windows_amd64.zip",
+  "sha": "e7e874d54158c415aa22a8b5bafd8fe7b457b14d51c7033f7414155a907f52a0",
+  "archive_member": "gojq_v0.12.19_windows_amd64/gojq.exe",
+  "binary_sha": "d4a9fb37e0d8b89af5be78a544516f7acdf077283f12496df9cfb034317cf02d",
+  "license_sha": "9f2644f13f17c2d93faa7e715cf3fb150ab37fc9365fbad401cfb50f76ab4233"
+}
