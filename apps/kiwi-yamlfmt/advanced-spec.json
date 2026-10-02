@@ -1,0 +1,257 @@
+{
+  "slug": "kiwi-yamlfmt",
+  "tool": "yamlfmt.exe",
+  "upstream_url": "https://github.com/google/yamlfmt",
+  "mandatory_args": [
+    "-dry",
+    "-no_global_conf"
+  ],
+  "blocked_flags": [
+    "-dry",
+    "--dry"
+  ],
+  "options": [
+    {
+      "flag": "-help",
+      "aliases": [
+        "-help",
+        "--help"
+      ],
+      "takes_value": false,
+      "description": "help",
+      "blocked": false
+    },
+    {
+      "flag": "-version",
+      "aliases": [
+        "-version",
+        "--version"
+      ],
+      "takes_value": false,
+      "description": "version",
+      "blocked": false
+    },
+    {
+      "flag": "-print_conf",
+      "aliases": [
+        "-print_conf",
+        "--print_conf"
+      ],
+      "takes_value": false,
+      "description": "print_conf",
+      "blocked": false
+    },
+    {
+      "flag": "-dry",
+      "aliases": [
+        "-dry",
+        "--dry"
+      ],
+      "takes_value": false,
+      "description": "dry",
+      "blocked": true
+    },
+    {
+      "flag": "-lint",
+      "aliases": [
+        "-lint",
+        "--lint"
+      ],
+      "takes_value": false,
+      "description": "lint",
+      "blocked": false
+    },
+    {
+      "flag": "-in",
+      "aliases": [
+        "-in",
+        "--in"
+      ],
+      "takes_value": false,
+      "description": "in",
+      "blocked": false
+    },
+    {
+      "flag": "-conf",
+      "aliases": [
+        "-conf",
+        "--conf"
+      ],
+      "takes_value": true,
+      "description": "conf",
+      "blocked": false
+    },
+    {
+      "flag": "-global_conf",
+      "aliases": [
+        "-global_conf",
+        "--global_conf"
+      ],
+      "takes_value": false,
+      "description": "global_conf",
+      "blocked": false
+    },
+    {
+      "flag": "-no_global_conf",
+      "aliases": [
+        "-no_global_conf",
+        "--no_global_conf"
+      ],
+      "takes_value": false,
+      "description": "no_global_conf",
+      "blocked": false
+    },
+    {
+      "flag": "-dstar",
+      "aliases": [
+        "-dstar",
+        "--dstar"
+      ],
+      "takes_value": false,
+      "description": "dstar",
+      "blocked": false
+    },
+    {
+      "flag": "-match_type",
+      "aliases": [
+        "-match_type",
+        "--match_type"
+      ],
+      "takes_value": true,
+      "description": "match_type",
+      "blocked": false
+    },
+    {
+      "flag": "-exclude",
+      "aliases": [
+        "-exclude",
+        "--exclude"
+      ],
+      "takes_value": true,
+      "description": "exclude",
+      "blocked": false
+    },
+    {
+      "flag": "-extensions",
+      "aliases": [
+        "-extensions",
+        "--extensions"
+      ],
+      "takes_value": true,
+      "description": "extensions",
+      "blocked": false
+    },
+    {
+      "flag": "-gitignore_excludes",
+      "aliases": [
+        "-gitignore_excludes",
+        "--gitignore_excludes"
+      ],
+      "takes_value": false,
+      "description": "gitignore_excludes",
+      "blocked": false
+    },
+    {
+      "flag": "-gitignore_path",
+      "aliases": [
+        "-gitignore_path",
+        "--gitignore_path"
+      ],
+      "takes_value": true,
+      "description": "gitignore_path",
+      "blocked": false
+    },
+    {
+      "flag": "-formatter",
+      "aliases": [
+        "-formatter",
+        "--formatter"
+      ],
+      "takes_value": true,
+      "description": "formatter",
+      "blocked": false
+    },
+    {
+      "flag": "-kyaml",
+      "aliases": [
+        "-kyaml",
+        "--kyaml"
+      ],
+      "takes_value": false,
+      "description": "kyaml",
+      "blocked": false
+    },
+    {
+      "flag": "-continue_on_error",
+      "aliases": [
+        "-continue_on_error",
+        "--continue_on_error"
+      ],
+      "takes_value": false,
+      "description": "continue_on_error",
+      "blocked": false
+    },
+    {
+      "flag": "-quiet",
+      "aliases": [
+        "-quiet",
+        "--quiet"
+      ],
+      "takes_value": false,
+      "description": "quiet",
+      "blocked": false
+    },
+    {
+      "flag": "-verbose",
+      "aliases": [
+        "-verbose",
+        "--verbose"
+      ],
+      "takes_value": false,
+      "description": "verbose",
+      "blocked": false
+    },
+    {
+      "flag": "-output_format",
+      "aliases": [
+        "-output_format",
+        "--output_format"
+      ],
+      "takes_value": true,
+      "description": "output_format",
+      "blocked": false
+    },
+    {
+      "flag": "-debug",
+      "aliases": [
+        "-debug",
+        "--debug"
+      ],
+      "takes_value": true,
+      "description": "debug",
+      "blocked": false
+    }
+  ],
+  "examples": [
+    {
+      "name": "標準入力を整形",
+      "args": [
+        "-in"
+      ],
+      "stdin": "app:\n  name: kiwi\n"
+    },
+    {
+      "name": "ヘルプ",
+      "args": [
+        "-help"
+      ]
+    },
+    {
+      "name": "バージョン",
+      "args": [
+        "-version"
+      ]
+    }
+  ],
+  "subcommands": []
+}

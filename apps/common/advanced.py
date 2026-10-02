@@ -18,6 +18,7 @@ from typing import List, Dict, Any, Optional, Tuple
 from runtime import build_command, execute, resource_path, _strip_ansi
 
 BUNDLED_TOOLS = {
+    'yamlfmt.exe': 'yamlfmt.exe',
     'ascii-image-converter.exe': 'ascii-image-converter.exe',
     'hexyl.exe': 'hexyl.exe', 'numbat.exe': 'numbat.exe',
     'bat.exe': 'bat.exe', 'pastel.exe': 'pastel.exe', 'scc.exe': 'scc.exe',

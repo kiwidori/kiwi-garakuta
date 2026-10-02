@@ -1,0 +1,58 @@
+yamlfmt is a simple command line tool for formatting yaml files.
+
+	Arguments:
+
+	Glob paths to yaml files
+			Send any number of paths to yaml files specified in doublestar glob format (see: https://github.com/bmatcuk/doublestar).
+			Any flags must be specified before the paths.
+
+	- or /dev/stdin
+			Passing in a single - or /dev/stdin will read the yaml from stdin and output the formatted result to stdout
+
+	Flags:
+  -conf string
+    	Read yamlfmt config from this path
+  -continue_on_error
+    	Continue to format files that didn't fail instead of exiting with code 1.
+  -debug value
+    	Debug codes to activate for debug logging
+  -dry
+    	Perform a dry run; show the output of a formatting
+    	operation without performing it.
+  -dstar
+    	Use doublestar globs for include and exclude
+  -exclude value
+    	Paths to exclude in the chosen format (standard or doublestar)
+  -extensions value
+    	File extensions to use for standard path collection
+  -formatter value
+    	Config value overrides to pass to the formatter
+  -gitignore_excludes
+    	Use a gitignore file for excludes
+  -gitignore_path string
+    	Path to gitignore file to use (default ".gitignore")
+  -global_conf
+    	Use global yamlfmt config from LOCALAPPDATA
+  -in
+    	Format yaml read from stdin and output to stdout
+  -kyaml
+    	Flag to switch to kyaml formatting. If used, all formatter configuration from detected from configuration file is overridden.
+  -lint
+    	Check if there are any differences between
+    	source yaml and formatted yaml.
+  -match_type string
+    	The file discovery method to use. Valid values: standard, doublestar, gitignore
+  -no_global_conf
+    	Disabled usage of global yamlfmt config from LOCALAPPDATA
+  -output_format string
+    	The engine output format (default "default")
+  -print_conf
+    	Print config
+  -q	Print minimal output to stdout
+  -quiet
+    	Print minimal output to stdout
+  -v	Print additional output to stdout.
+  -verbose
+    	Print additional output to stdout.
+  -version
+    	Print yamlfmt version

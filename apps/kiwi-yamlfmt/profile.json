@@ -1,0 +1,351 @@
+{
+  "slug": "kiwi-yamlfmt",
+  "title": "きういYAML整形",
+  "tool": "yamlfmt.exe",
+  "fields": [
+    {
+      "flag": "@patterns",
+      "label": "対象パターン（空欄は選択した対象、1行1件）",
+      "type": "text",
+      "default": "",
+      "group": "対象と出力",
+      "repeat": true
+    },
+    {
+      "flag": "-match_type",
+      "label": "検索方法",
+      "type": "choice",
+      "default": "",
+      "group": "対象と出力",
+      "choices": [
+        "standard",
+        "doublestar",
+        "gitignore"
+      ]
+    },
+    {
+      "flag": "-exclude",
+      "label": "除外パス・パターン（1行1件）",
+      "type": "text",
+      "default": "",
+      "group": "対象と出力",
+      "repeat": true
+    },
+    {
+      "flag": "-extensions",
+      "label": "追加拡張子（1行1件）",
+      "type": "text",
+      "default": "",
+      "group": "対象と出力",
+      "repeat": true
+    },
+    {
+      "flag": "-gitignore_excludes",
+      "label": ".gitignoreの除外を適用",
+      "type": "bool",
+      "default": false,
+      "group": "対象と出力"
+    },
+    {
+      "flag": "-gitignore_path",
+      "label": "除外用ファイル（対象フォルダーからの相対パス）",
+      "type": "text",
+      "default": "",
+      "group": "対象と出力"
+    },
+    {
+      "flag": "-continue_on_error",
+      "label": "不正なファイルがあっても残りを処理",
+      "type": "bool",
+      "default": false,
+      "group": "対象と出力"
+    },
+    {
+      "flag": "-quiet",
+      "label": "差分があるファイル名だけ表示",
+      "type": "bool",
+      "default": false,
+      "group": "対象と出力"
+    },
+    {
+      "flag": "-verbose",
+      "label": "整形の詳細出力",
+      "type": "bool",
+      "default": false,
+      "group": "対象と出力"
+    },
+    {
+      "flag": "-output_format",
+      "label": "差分レポート形式",
+      "type": "choice",
+      "default": "",
+      "group": "対象と出力",
+      "choices": [
+        "default",
+        "line",
+        "gitlab"
+      ]
+    },
+    {
+      "flag": "-debug",
+      "label": "診断情報",
+      "type": "choice",
+      "default": "",
+      "group": "対象と出力",
+      "choices": [
+        "paths",
+        "config",
+        "diffs",
+        "all"
+      ]
+    },
+    {
+      "flag": "@line_ending",
+      "label": "改行コード",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "lf",
+        "crlf"
+      ]
+    },
+    {
+      "flag": "@formatter",
+      "label": "フォーマッター",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "basic",
+        "kyaml"
+      ]
+    },
+    {
+      "flag": "@f.indent",
+      "label": "インデント幅",
+      "type": "text",
+      "default": "",
+      "group": "整形設定"
+    },
+    {
+      "flag": "@f.array_indent",
+      "label": "配列のインデント幅",
+      "type": "text",
+      "default": "",
+      "group": "整形設定"
+    },
+    {
+      "flag": "@f.max_line_length",
+      "label": "最大行幅（0で制限なし）",
+      "type": "text",
+      "default": "",
+      "group": "整形設定"
+    },
+    {
+      "flag": "@f.pad_line_comments",
+      "label": "行末コメントの前の空白数",
+      "type": "text",
+      "default": "",
+      "group": "整形設定"
+    },
+    {
+      "flag": "@f.include_document_start",
+      "label": "文書の先頭に---を付ける",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "flag": "@f.retain_line_breaks",
+      "label": "空行を保持",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "flag": "@f.retain_line_breaks_single",
+      "label": "連続する空行を1行だけ保持",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "flag": "@f.disallow_anchors",
+      "label": "アンカー・エイリアスを拒否",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "flag": "@f.scan_folded_as_literal",
+      "label": "折り畳み文字列の改行を保持",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "flag": "@f.indentless_arrays",
+      "label": "配列項目の追加インデントを省く",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "flag": "@f.drop_merge_tag",
+      "label": "!!mergeタグを省く",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "flag": "@f.trim_trailing_whitespace",
+      "label": "行末の空白を除去",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "flag": "@f.eof_newline",
+      "label": "末尾に改行を付ける",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "flag": "@f.strip_directives",
+      "label": "YAML指示行を退避・復元（上流では注意が必要）",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "flag": "@f.indent_root_array",
+      "label": "文書直下の配列をインデント",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "flag": "@f.disable_alias_key_correction",
+      "label": "エイリアスをキーに使う補正を無効化",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "flag": "@f.force_array_style",
+      "label": "配列の表記",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "flow",
+        "block"
+      ]
+    },
+    {
+      "flag": "@f.force_quote_style",
+      "label": "引用符の表記",
+      "type": "choice",
+      "default": "",
+      "group": "整形設定",
+      "choices": [
+        "single",
+        "double"
+      ]
+    }
+  ],
+  "modes": [
+    {
+      "label": "整形（ファイルはZIP）",
+      "id": "format",
+      "stdin": true,
+      "files": true,
+      "success_codes": [
+        0
+      ]
+    },
+    {
+      "label": "差分を表示",
+      "id": "dry",
+      "stdin": true,
+      "files": true,
+      "success_codes": [
+        0
+      ]
+    },
+    {
+      "label": "整形チェック",
+      "id": "lint",
+      "stdin": true,
+      "files": true,
+      "success_codes": [
+        0
+      ]
+    },
+    {
+      "label": "有効な設定を表示",
+      "id": "config",
+      "args": []
+    },
+    {
+      "label": "バージョン",
+      "id": "version",
+      "args": []
+    },
+    {
+      "label": "CLIヘルプ",
+      "id": "help",
+      "args": []
+    }
+  ]
+}
