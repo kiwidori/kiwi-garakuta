@@ -28,15 +28,10 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | [きういシェル整形](https://kiwi-garakuta.pages.dev/tools/kiwi-shell/) | シェルの整形・差分・AST変換と一括整形を行う | [shfmt](https://github.com/mvdan/sh) |
 | [きういWeb圧縮](https://kiwi-garakuta.pages.dev/tools/kiwi-minify/) | Webファイルの圧縮・連結・フォルダー処理を行う | [minify](https://github.com/tdewolff/minify) |
 | [きういデータ変換](https://kiwi-garakuta.pages.dev/tools/kiwi-data/) | 8形式のデータ変換、式による抽出・並べ替え・集計を行う | [dasel](https://github.com/TomWright/dasel) |
-
 | [きういMarkdown](https://kiwi-garakuta.pages.dev/tools/kiwi-markdown/) | Markdown・URL・READMEを装飾付きで表示し、テキストを保存する | [Glow](https://github.com/charmbracelet/glow) |
-
 | [きうい置換](https://kiwi-garakuta.pages.dev/tools/kiwi-replace/) | 文字列・正規表現でテキストと複数ファイルを置換して保存する | [sd](https://github.com/chmln/sd) |
-
 | [きういバイト表示](https://kiwi-garakuta.pages.dev/tools/kiwi-bytes/) | バイナリを16進数・文字表で表示し、テキストやC配列に保存する | [hexyl](https://github.com/sharkdp/hexyl) |
-
 | [きうい単位計算](https://kiwi-garakuta.pages.dev/tools/kiwi-calc/) | 単位変換と単位付きの科学計算、プログラム・スクリプト実行 | [Numbat](https://github.com/sharkdp/numbat) |
-
 | [きういコード資料](https://kiwi-garakuta.pages.dev/tools/kiwi-prompt/) | コード・Git情報をLLM向け資料にまとめ、トークン分布を確認する | [code2prompt](https://github.com/mufeedvh/code2prompt) |
 
 各ソフトの詳細ページに、使い方、実際の画面、制限事項、ZIPのダウンロード先を掲載しています。ZIPには元ツールのライセンス文書を同梱しています。
