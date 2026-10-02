@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 OXIPNG_VERSION = "10.2.1"
 OXIPNG_SHA256 = "7e940f83ee46874b73f53031f96a15834cb70b220af27391fb06fe7b4dd798e1"
 OXIPNG_URL = (f"https://github.com/oxipng/oxipng/releases/download/v{OXIPNG_VERSION}/"

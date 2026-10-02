@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 DUF_VERSION = "0.9.1"
 DUF_SHA256 = "503934be81f847d9ddb1b739834217480633435ad16515dd199e372c0b2e1afc"
 DUF_URL = (f"https://github.com/muesli/duf/releases/download/v{DUF_VERSION}/"

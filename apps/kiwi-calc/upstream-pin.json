@@ -13,5 +13,5 @@
   "license_url": "https://raw.githubusercontent.com/sharkdp/numbat/v1.24.0/LICENSE-MIT",
   "license_sha": "f04d095cceb682af8b8132fe77f9fd9cf3b09266983713d8e034490eca837d46",
   "app_exe": "KiwiCalc",
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

@@ -1,4 +1,4 @@
-きういWeb圧縮 0.1.0
+きういWeb圧縮 0.1.1
 
 Windows 11 x64 / ZIPを展開して KiwiMinify.exe を起動してください。
 元ソフト: https://github.com/tdewolff/minify (v2.24.17, MIT)

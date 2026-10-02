@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 DUST_VERSION = "1.2.6"
 DUST_SHA256 = "d26ad8dab783653ab6a6c0ddf4671fae150be005834f2e3a36a3ac87fb60b7c1"
 DUST_URL = (f"https://github.com/bootandy/dust/releases/download/v{DUST_VERSION}/"

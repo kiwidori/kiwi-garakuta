@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 DIFFT_VERSION = "0.71.0"
 DIFFT_SHA256 = "9a979f9d96d739625a0fe69317f3197cc7bcef663a6d7195197d6c9bf96ed6f5"
 DIFFT_URL = (f"https://github.com/Wilfred/difftastic/releases/download/{DIFFT_VERSION}/"

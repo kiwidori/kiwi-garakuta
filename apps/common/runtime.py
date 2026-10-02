@@ -6,7 +6,6 @@ captured as bytes; GUI text decoding never changes the data available to save.
 from __future__ import annotations
 
 import os
-import re
 import subprocess
 import sys
 import tempfile
@@ -14,14 +13,66 @@ import threading
 import time
 from pathlib import Path
 
-OSC_RE = re.compile(r'\x1b\][^\x07\x1b]*(?:\x07|\x1b\\)')
-ANSI_RE = re.compile(r'\x1b\[[0-?]*[ -/]*[@-~]|\x1b[@-_]')
-
-
 def _strip_ansi(text: str) -> str:
-    text = ANSI_RE.sub('', OSC_RE.sub('', text))
-    return ''.join(c for c in text if c in '\n\t' or 32 <= ord(c) < 127 or ord(c) >= 160)
+    out = []
+    i = 0
+    n = len(text)
+    while i < n:
+        c = text[i]
+        o = ord(c)
+        if (32 <= o < 127 or o >= 160) and c != '\x1b':
+            out.append(c); i += 1; continue
+        if c in '\n\t':
+            out.append(c); i += 1; continue
 
+        if o == 27:
+            if i + 1 < n and text[i+1] == '[':
+                j = i + 2
+                while j < n and 48 <= ord(text[j]) <= 63: j += 1
+                while j < n and 32 <= ord(text[j]) <= 47: j += 1
+                if j < n and 64 <= ord(text[j]) <= 126:
+                    i = j + 1
+                else:
+                    i += 2 # Incomplete CSI fallback consumes ESC[
+            elif i + 1 < n and text[i+1] == ']':
+                j = i + 2
+                while j < n:
+                    cj = ord(text[j])
+                    if cj == 7:
+                        i = j + 1; break
+                    elif cj == 27:
+                        if j + 1 < n and text[j+1] == '\\':
+                            i = j + 2; break
+                        else:
+                            i += 2 # Fallback consume ESC]; payload remains
+                        break
+                    else:
+                        j += 1
+                else:
+                    i += 2 # Incomplete OSC fallback consumes ESC]
+            else:
+                if i + 1 < n and 64 <= ord(text[i+1]) <= 95:
+                    i += 2
+                else:
+                    i += 1
+        elif o < 32 or (127 <= o < 160):
+            i += 1
+        else:
+            out.append(c); i += 1
+    return ''.join(out)
+
+
+def _feed_stdin(proc: subprocess.Popen, data: bytes):
+    try:
+        if proc.stdin is None: return
+        if data: proc.stdin.write(data)
+    except (BrokenPipeError, OSError):
+        pass
+    finally:
+        try:
+            if proc.stdin is not None: proc.stdin.close()
+        except (BrokenPipeError, OSError):
+            pass
 
 def resource_path(relative: str, source_dir: Path | None = None) -> str:
     base = Path(sys._MEIPASS) if getattr(sys, 'frozen', False) else source_dir or Path(__file__).parent
@@ -106,16 +157,19 @@ def execute(exe, args, stdin_data=b'', cwd=None, cancel_event=None, timeout=300,
             env.pop(key,None)
     with tempfile.TemporaryDirectory(prefix='kiwi-advanced-') as directory:
         folder=Path(directory)
-        source,out,err=folder/'stdin.bin',folder/'stdout.bin',folder/'stderr.bin'
-        source.write_bytes(stdin_data or b'')
+        out,err=folder/'stdout.bin',folder/'stderr.bin'
         config=folder/'config'; config.mkdir()
         env['XH_CONFIG_DIR']=str(config)
         if glow:
             (config/'glow.yml').write_text('pager: false\ntui: false\nstyle: light\nwidth: 100\n',encoding='utf8')
             env['GLOW_CONFIG_HOME']=str(config)
-        with (open(os.devnull,'rb') if stdin_data is None else source.open('rb')) as input_handle,out.open('wb') as output_handle,err.open('wb') as error_handle:
-            proc=subprocess.Popen(cmd,stdin=input_handle,stdout=output_handle,stderr=error_handle,
+        with out.open('wb') as output_handle,err.open('wb') as error_handle:
+            proc=subprocess.Popen(cmd,stdin=subprocess.DEVNULL if stdin_data is None else subprocess.PIPE,stdout=output_handle,stderr=error_handle,
                 cwd=cwd,env=env,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+            writer = None
+            if stdin_data is not None:
+                writer = threading.Thread(target=_feed_stdin, args=(proc, stdin_data), name='kiwi-stdin', daemon=True)
+                writer.start()
             try:
                 deadline=time.monotonic()+timeout
                 while proc.poll() is None:
@@ -127,6 +181,8 @@ def execute(exe, args, stdin_data=b'', cwd=None, cancel_event=None, timeout=300,
             finally:
                 if proc.poll() is None: proc.kill()
                 proc.wait()
+                if writer is not None:
+                    writer.join(timeout=2)
         if cancel_event and cancel_event.is_set(): raise InterruptedError('処理を停止しました。')
         if out.stat().st_size+err.stat().st_size>max_output:
             raise ValueError('出力の上限を超えました。結果は保存しません。')

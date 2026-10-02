@@ -1,4 +1,4 @@
-きういコード集計 0.1.0
+きういコード集計 0.1.1
 
 Windows 11 x64 / ZIPを展開して KiwiCount.exe を起動してください。
 元ソフト: https://github.com/boyter/scc (v4.1.0, MIT)

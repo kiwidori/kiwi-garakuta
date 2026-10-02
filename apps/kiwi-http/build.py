@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 XH_VERSION = "0.26.2"
 XH_SHA256 = "7907c1ef225382fb5955c8274aa23e31b70622c4d39dbc76cf945dc8ce15a78d"
 XH_URL = (f"https://github.com/ducaale/xh/releases/download/v{XH_VERSION}/"

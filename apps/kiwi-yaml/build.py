@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 YQ_VERSION = "4.54.1"
 YQ_SHA256 = "b645f47ebb3a0d2fbab52998550bbd0a1706f23b5ca5f5b48e638c580bb70928"
 YQ_URL = (f"https://github.com/mikefarah/yq/releases/download/v{YQ_VERSION}/"

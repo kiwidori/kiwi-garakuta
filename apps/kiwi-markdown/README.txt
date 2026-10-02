@@ -1,4 +1,4 @@
-きういMarkdown 0.1.0 / Windows 11 x64
+きういMarkdown 0.1.1 / Windows 11 x64
 
 ZIPを展開してKiwiMarkdown.exeを起動してください。インストールは不要です。
 Glow v3.0.0を使う非公式GUIです。元ツールの開発者による製品ではありません。

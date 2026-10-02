@@ -1,4 +1,4 @@
-きういシェル整形 0.1.0
+きういシェル整形 0.1.1
 
 Windows 11 x64 / ZIPを展開して KiwiShell.exe を起動してください。
 元ソフト: https://github.com/mvdan/sh (v3.14.1, BSD-3-Clause)

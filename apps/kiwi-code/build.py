@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 BAT_VERSION = "0.26.1"
 BAT_SHA256 = "0f729b4b6f5f28d395c641eacc2e9ff68d0096b85aa0eec344aa62425144b69b"
 BAT_URL = (f"https://github.com/sharkdp/bat/releases/download/v{BAT_VERSION}/"

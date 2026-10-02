@@ -26,7 +26,7 @@ jobs:
           @'
           from pathlib import Path
           from zipfile import ZipFile
-          package = Path('apps/kiwi-system/KiwiSystem-0.2.0-win11-x64.zip')
+          package = Path('apps/kiwi-system/KiwiSystem-0.2.1-win11-x64.zip')
           with ZipFile(package) as archive:
               needed = {'KiwiSystem.exe', 'README.txt', 'LICENSE', 'fastfetch-LICENSE'}
               assert needed <= set(archive.namelist())
@@ -37,4 +37,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: pwsh
         run: |
-          gh release create "${{ github.ref_name }}" "apps/kiwi-system/KiwiSystem-0.2.0-win11-x64.zip" --title "きういPC情報 0.2.0" --notes "Windows 11 x64向けの無料ZIP版。fastfetchを使ってPCの概要を表示します。上流ライセンス文書を同梱しています。"
+          gh release create "${{ github.ref_name }}" "apps/kiwi-system/KiwiSystem-0.2.1-win11-x64.zip" --title "きういPC情報 0.2.1" --notes "Windows 11 x64向けの無料ZIP版。fastfetchを使ってPCの概要を表示します。上流ライセンス文書を同梱しています。"

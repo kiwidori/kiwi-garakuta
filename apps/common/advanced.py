@@ -17,6 +17,19 @@ from typing import List, Dict, Any, Optional, Tuple
 
 from runtime import build_command, execute, resource_path, _strip_ansi
 
+BUNDLED_TOOLS = {
+    'ascii-image-converter.exe': 'ascii-image-converter.exe',
+    'hexyl.exe': 'hexyl.exe', 'numbat.exe': 'numbat.exe',
+    'bat.exe': 'bat.exe', 'pastel.exe': 'pastel.exe', 'scc.exe': 'scc.exe',
+    'dasel.exe': 'dasel.exe', 'difft.exe': 'difft.exe', 'dust.exe': 'dust.exe',
+    'fd.exe': 'fd.exe', 'b3sum.exe': 'b3sum.exe', 'xh.exe': 'xh.exe',
+    'jq.exe': 'jq.exe', 'glow.exe': 'glow.exe', 'minify.exe': 'minify.exe',
+    'oxipng.exe': 'oxipng.exe', 'code2prompt.exe': 'code2prompt.exe',
+    'grex.exe': 'grex.exe', 'sd.exe': 'sd.exe', 'rg.exe': 'rg.exe',
+    'gitleaks.exe': 'gitleaks.exe', 'shfmt.exe': 'shfmt.exe',
+    'duf.exe': 'duf.exe', 'fastfetch.exe': 'fastfetch.exe', 'yq.exe': 'yq.exe',
+}
+
 class AdvancedController:
     def __init__(self, app: tk.Tk, tool_name: str, help_file_name: str, spec: Dict[str, Any], source_dir: Optional[Path] = None):
         self.app = app
@@ -43,7 +56,10 @@ class AdvancedController:
 
     def _resolve_exe(self) -> str:
         """Resolve bundled executable path."""
-        exe_name = self.tool_name
+        try:
+            exe_name = BUNDLED_TOOLS[self.tool_name]
+        except (KeyError, TypeError):
+            raise ValueError('未対応の同梱ツールです。') from None
         if getattr(sys, 'frozen', False):
             base = sys._MEIPASS
         else:
@@ -53,9 +69,6 @@ class AdvancedController:
                 base = os.path.dirname(os.path.abspath(__file__))
 
         exe_path = os.path.join(base, exe_name)
-        if not os.path.exists(exe_path):
-            # Try with .exe extension
-            exe_path = os.path.join(base, exe_name + '.exe')
         return exe_path
 
     def _add_menu_item(self):

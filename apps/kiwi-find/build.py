@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 FD_VERSION = "10.5.0"
 FD_SHA256 = "a227701b8551c35a9931d9f6da75503cf86d88e182d71fb849a70864c5d57cd7"
 FD_URL = (f"https://github.com/sharkdp/fd/releases/download/v{FD_VERSION}/"

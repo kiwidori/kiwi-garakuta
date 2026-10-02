@@ -1,4 +1,4 @@
-きういコード資料 0.1.0 / Windows 11 x64 / インストール不要
+きういコード資料 0.1.1 / Windows 11 x64 / インストール不要
 
 code2prompt v4.2.0の非公式GUIです。KiwiPrompt.exeを起動し、フォルダーを1つ選んで実行します。
 ソースコード、ディレクトリ構造、必要なGit情報をMarkdown・JSON・XMLの資料にまとめます。

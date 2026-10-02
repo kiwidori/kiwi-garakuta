@@ -15,7 +15,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 ASCII_VERSION = "1.13.1"
 ASCII_SHA256 = "f1695fe93fafaf44b23ccc8470a4cdd4f60dba4ec8d04be5c17bffc7c8324e9b"
 ASCII_URL = (f"https://github.com/TheZoraiz/ascii-image-converter/releases/download/v{ASCII_VERSION}/"

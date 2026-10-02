@@ -13,5 +13,5 @@
   "license_url": "https://raw.githubusercontent.com/charmbracelet/glow/v3.0.0/LICENSE",
   "license_sha": "4e48affb643d6a920b82562a7bcb390ce19e04ee63fbeef22f3234bd0c410ef1",
   "app_exe": "KiwiMarkdown",
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

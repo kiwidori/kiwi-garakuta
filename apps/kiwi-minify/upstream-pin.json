@@ -11,6 +11,6 @@
   "license_url": "https://raw.githubusercontent.com/tdewolff/minify/v2.24.17/LICENSE",
   "license_sha": "2af9fd60950a663c718cc1c9f298b4b1ca976ed54a54d1c4ab1f6c0efc4524eb",
   "app_exe": "KiwiMinify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "binary_sha": "0d113e0fe535606cef46e9f007cbb6a237293e9d3133491d0ccb4d71a86c0cc3"
 }

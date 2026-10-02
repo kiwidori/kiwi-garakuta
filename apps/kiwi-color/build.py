@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 PASTEL_VERSION = "0.12.0"
 PASTEL_SHA256 = "51e914b0308b089f032c481e786d67a9f11d8857f4ffe99405f3452e77582393"
 PASTEL_URL = (f"https://github.com/sharkdp/pastel/releases/download/v{PASTEL_VERSION}/"

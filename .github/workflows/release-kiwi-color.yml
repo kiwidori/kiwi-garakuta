@@ -26,7 +26,7 @@ jobs:
           @'
           from pathlib import Path
           from zipfile import ZipFile
-          package = Path('apps/kiwi-color/KiwiColor-0.2.0-win11-x64.zip')
+          package = Path('apps/kiwi-color/KiwiColor-0.2.1-win11-x64.zip')
           with ZipFile(package) as archive:
               needed = {'KiwiColor.exe', 'README.txt', 'LICENSE', 'pastel-LICENSE-APACHE', 'pastel-LICENSE-MIT', 'pastel-README.md'}
               assert needed <= set(archive.namelist())
@@ -37,4 +37,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: pwsh
         run: |
-          gh release create "${{ github.ref_name }}" "apps/kiwi-color/KiwiColor-0.2.0-win11-x64.zip" --title "きうい色変換 0.2.0" --notes "Windows 11 x64向けの無料ZIP版。pastelでHEX・RGB・HSLの色表記を変換できます。上流ライセンス文書を同梱しています。"
+          gh release create "${{ github.ref_name }}" "apps/kiwi-color/KiwiColor-0.2.1-win11-x64.zip" --title "きうい色変換 0.2.1" --notes "Windows 11 x64向けの無料ZIP版。pastelでHEX・RGB・HSLの色表記を変換できます。上流ライセンス文書を同梱しています。"

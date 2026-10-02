@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 GREX_VERSION = "1.4.6"
 GREX_SHA256 = "7691dbb8e46339a15d8362b79b2456f508266cf00a55fe685ed69a6259577485"
 GREX_URL = (f"https://github.com/pemistahl/grex/releases/download/v{GREX_VERSION}/"

@@ -11,6 +11,6 @@
   "license_url": "https://raw.githubusercontent.com/mvdan/sh/v3.14.1/LICENSE",
   "license_sha": "ce63850f77649f00d1394045e2794ffb09a5596beabac51c9548edd958845d7c",
   "app_exe": "KiwiShell",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "binary_sha": "13629ce28442ca80b6b5a819f7574ab39e1c28c6e26734ca816c9714e04851df"
 }

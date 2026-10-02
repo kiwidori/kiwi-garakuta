@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 FASTFETCH_VERSION = "2.69.0"
 FASTFETCH_SHA256 = "aba011c1c45d1a6bdcf52098dd0b9afe990fe444180bc491e87f36670f1452ef"
 FASTFETCH_URL = (f"https://github.com/fastfetch-cli/fastfetch/releases/download/{FASTFETCH_VERSION}/"
