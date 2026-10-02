@@ -56,6 +56,9 @@ def require_tool(item: dict) -> None:
         raise ValueError(f"Features and steps must be lists: {item['slug']}")
     if not item.get("windows_test_passed"):
         raise ValueError(f"Windows test not passed: {item['slug']}")
+    for upstream in item.get("upstreams", []):
+        if not upstream.get("name") or not upstream.get("license") or not upstream.get("url", "").startswith("https://github.com/"):
+            raise ValueError(f"Invalid upstream project: {item['slug']}")
     for link in item.get("amazon_links", []):
         parsed = urlparse(link.get("url", ""))
         if not link.get("label") or parsed.scheme != "https" or parsed.hostname not in ("www.amazon.co.jp", "amazon.co.jp", "amzn.to"):
@@ -65,6 +68,14 @@ def require_tool(item: dict) -> None:
 def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_qr: str) -> str:
     features = "".join(f"<li>{esc(value)}</li>" for value in item["features"])
     steps = "".join(f"<li>{esc(value)}</li>" for value in item["steps"])
+    replacement = ""
+    if item.get("replaced_by"):
+        replacement = (f'<section class="support"><p>これらの機能をまとめた '
+                       f'<a href="/tools/{esc(item["replaced_by"])}/">{esc(item.get("replacement_name", "統合版"))}</a> も利用できます。</p></section>')
+    origins = (f'<p><a href="{esc(item["upstream_url"])}" rel="noopener noreferrer">上流プロジェクト ↗</a> '
+               f'（ライセンス: {esc(item["upstream_license"])}）</p>')
+    if item.get("upstreams"):
+        origins = '<ul>' + ''.join(f'<li><a href="{esc(u["url"])}" rel="noopener noreferrer">{esc(u["name"])} ↗</a>（{esc(u["license"])}）</li>' for u in item["upstreams"]) + '</ul>'
     advanced = ""
     if item.get("advanced_screenshot"):
         advanced = (f'<section><h2>詳細機能</h2><p>メニュー「詳細機能」→「開く」で、元ツールの追加オプションを選択できます。'
@@ -78,14 +89,14 @@ def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_
 <p class="lead">{esc(item['summary'])}</p>
 <div class="actions"><a class="button" href="{esc(item['download_url'])}" rel="noopener noreferrer">ZIPをダウンロード ↗</a>
 <a class="textlink" href="{esc(item['source_url'])}" rel="noopener noreferrer">ソースコード ↗</a></div></section>
+{replacement}
 <figure class="shot"><img src="{esc(item['screenshot'])}" alt="{esc(item['name'])}の実際の画面" loading="lazy">
 <figcaption>実際の動作画面</figcaption></figure>
 <section><h2>できること</h2><ul>{features}</ul></section>
 <section><h2>使い方</h2><ol>{steps}</ol></section>
 {advanced}
 <section><h2>制限と注意点</h2><p>{esc(item['limitations'])}</p></section>
-<section class="origin"><h2>元になったソフト</h2><p><a href="{esc(item['upstream_url'])}" rel="noopener noreferrer">上流プロジェクト ↗</a>
-（ライセンス: {esc(item['upstream_license'])}）</p><p>本ソフトは上流プロジェクトの公式製品ではありません。</p></section>
+<section class="origin"><h2>元になったソフト</h2>{origins}<p>本ソフトは上流プロジェクトの公式製品ではありません。</p></section>
 """
     if paypal_url:
         body += (f'<section class="support"><h2>開発を支援する</h2><p>ソフトは無料です。役に立った場合は開発を応援できます。</p>'
@@ -124,6 +135,10 @@ def main() -> None:
         if item["slug"] in seen:
             raise ValueError(f"Duplicate slug: {item['slug']}")
         seen.add(item["slug"])
+    for item in catalog:
+        target = item.get("replaced_by")
+        if target and (target not in seen or target == item["slug"]):
+            raise ValueError(f"Invalid replacement: {item['slug']}")
     if DIST.resolve().parent != ROOT.resolve() or DIST.is_symlink():
         raise ValueError("Output directory must be a normal directory inside the project")
     if DIST.exists():
@@ -132,7 +147,7 @@ def main() -> None:
     cards = "".join(
         f'<a class="card" href="/tools/{esc(item["slug"])}/"><span class="tag">Windows 11</span>'
         f'<h2>{esc(item["name"])}</h2><p>{esc(item["summary"])}</p><span class="cardmore">詳しく見る →</span></a>'
-        for item in catalog
+        for item in catalog if not item.get("replaced_by")
     )
     if not cards:
         cards = '<p class="empty">公開準備中です。動作確認を終えたソフトから掲載します。</p>'

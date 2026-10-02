@@ -1,0 +1,49 @@
+{
+  "fx": {
+    "slug": "kiwi-json-tree",
+    "repo": "antonmedv/fx",
+    "tag": "39.2.0",
+    "asset": "fx_windows_amd64.exe",
+    "exe": "fx.exe",
+    "app_exe": "KiwiJsonTree",
+    "version": "0.1.0",
+    "license": "MIT",
+    "license_url": "https://raw.githubusercontent.com/antonmedv/fx/39.2.0/LICENSE",
+    "url": "https://github.com/antonmedv/fx/releases/download/39.2.0/fx_windows_amd64.exe",
+    "sha": "00fbddd7bd67f747a51aecc0a5bafcc695a21dfae7b912684510722c8e2d6d22",
+    "binary_sha": "00fbddd7bd67f747a51aecc0a5bafcc695a21dfae7b912684510722c8e2d6d22",
+    "license_sha": "f2c369e1796dc84c37cf34a966033e8850e535567fde32ef74b672726ed61d23"
+  },
+  "gojq": {
+    "slug": "kiwi-json-expr",
+    "repo": "itchyny/gojq",
+    "tag": "v0.12.19",
+    "asset": "gojq_v0.12.19_windows_amd64.zip",
+    "exe": "gojq.exe",
+    "app_exe": "KiwiJsonExpr",
+    "version": "0.1.0",
+    "license": "MIT",
+    "license_url": "https://raw.githubusercontent.com/itchyny/gojq/v0.12.19/LICENSE",
+    "url": "https://github.com/itchyny/gojq/releases/download/v0.12.19/gojq_v0.12.19_windows_amd64.zip",
+    "sha": "e7e874d54158c415aa22a8b5bafd8fe7b457b14d51c7033f7414155a907f52a0",
+    "archive_member": "gojq_v0.12.19_windows_amd64/gojq.exe",
+    "binary_sha": "d4a9fb37e0d8b89af5be78a544516f7acdf077283f12496df9cfb034317cf02d",
+    "license_sha": "9f2644f13f17c2d93faa7e715cf3fb150ab37fc9365fbad401cfb50f76ab4233"
+  },
+  "gron": {
+    "slug": "kiwi-json-paths",
+    "name": "\u304d\u3046\u3044JSON\u30d1\u30b9",
+    "repo": "tomnomnom/gron",
+    "tag": "v0.7.1",
+    "exe": "gron.exe",
+    "asset": "gron-windows-amd64-0.7.1.zip",
+    "license": "MIT",
+    "license_url": "https://raw.githubusercontent.com/tomnomnom/gron/v0.7.1/LICENSE",
+    "app_exe": "KiwiJsonPaths",
+    "version": "0.1.0",
+    "url": "https://github.com/tomnomnom/gron/releases/download/v0.7.1/gron-windows-amd64-0.7.1.zip",
+    "sha": "5ed427a4a504d8e03a1770b71d4ad16a3764179e085b5ae84e51a57b299f300d",
+    "binary_sha": "0a71ee15455ff202bfce1cf4f1b3b917db55ba0224e72339ea554d255b57412e",
+    "license_sha": "357b96007f734eb3ff921cb0bc533c763271e7d3f04c5fec7b9eab51f71be663"
+  }
+}

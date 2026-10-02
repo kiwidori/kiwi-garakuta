@@ -43,6 +43,7 @@ def main() -> None:
     from concurrent.futures import ThreadPoolExecutor
     catalog = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
     tasks = [(item["slug"], field, item[field]) for item in catalog for field in ("download_url", "source_url", "upstream_url")]
+    tasks.extend((item["slug"], "upstreams", u["url"]) for item in catalog for u in item.get("upstreams", []))
     with ThreadPoolExecutor(max_workers=4) as executor:
         results = list(executor.map(available, (url for _, _, url in tasks)))
     for (slug, field, url), ok in zip(tasks, results):

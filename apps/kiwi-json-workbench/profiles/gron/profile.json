@@ -1,0 +1,75 @@
+{
+  "slug": "kiwi-json-paths",
+  "title": "きういJSONパス",
+  "tool": "gron.exe",
+  "fields": [
+    {
+      "flag": "@url",
+      "label": "取得するURL（ファイル・入力テキストとは排他）",
+      "type": "text",
+      "default": "",
+      "group": "入力と表示"
+    },
+    {
+      "flag": "--stream",
+      "label": "1行ごとに別のJSONとして一覧化（JSONL）",
+      "type": "bool",
+      "default": false,
+      "group": "入力と表示"
+    },
+    {
+      "flag": "--json",
+      "label": "パスと値のJSONストリーム形式（復元時は入力形式）",
+      "type": "bool",
+      "default": false,
+      "group": "入力と表示"
+    },
+    {
+      "flag": "--no-sort",
+      "label": "一覧を並べ替えない",
+      "type": "bool",
+      "default": false,
+      "group": "入力と表示"
+    },
+    {
+      "flag": "@color",
+      "label": "出力の色",
+      "type": "choice",
+      "default": "monochrome",
+      "choices": [
+        "monochrome",
+        "colorize"
+      ],
+      "group": "入力と表示"
+    },
+    {
+      "flag": "--insecure",
+      "label": "URL取得時のTLS証明書検証を省略",
+      "type": "bool",
+      "default": false,
+      "group": "入力と表示"
+    }
+  ],
+  "modes": [
+    {
+      "label": "JSONをパス一覧へ",
+      "id": "flatten"
+    },
+    {
+      "label": "パス一覧をJSONへ戻す",
+      "id": "restore"
+    },
+    {
+      "label": "文字列・数値などを抽出",
+      "id": "values"
+    },
+    {
+      "label": "バージョン",
+      "id": "version"
+    },
+    {
+      "label": "CLIヘルプ",
+      "id": "help"
+    }
+  ]
+}

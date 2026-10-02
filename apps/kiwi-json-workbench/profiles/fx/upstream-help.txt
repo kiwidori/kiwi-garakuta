@@ -1,0 +1,27 @@
+
+  fx 39.2.0
+    Terminal JSON viewer
+
+  Usage
+    fx data.json
+    fx data.json .field
+    curl ... | fx
+
+  Flags
+    -h, --help            print help
+    -v, --version         print version
+    --themes              print themes
+    --comp <shell>        print completion script
+    -r, --raw             treat input as a raw string
+    -s, --slurp           read all inputs into an array
+    --yaml                parse input as YAML
+    --toml                parse input as TOML
+    --strict              strict mode
+    --no-inline           disable inlining in output
+    --game-of-life        play the game of life
+
+  More info
+    https://fx.wtf
+
+  Author
+    Anton Medvedev <anton@medv.io>

@@ -1,0 +1,132 @@
+{
+  "slug": "kiwi-json-paths",
+  "tool": "gron.exe",
+  "upstream_url": "https://github.com/tomnomnom/gron",
+  "mandatory_args": [],
+  "blocked_flags": [],
+  "options": [
+    {
+      "flag": "--ungron",
+      "aliases": [
+        "--ungron",
+        "-u"
+      ],
+      "takes_value": false,
+      "description": "パス一覧からJSONを復元",
+      "blocked": false
+    },
+    {
+      "flag": "--values",
+      "aliases": [
+        "--values",
+        "-v",
+        "--value"
+      ],
+      "takes_value": false,
+      "description": "文字列・数値などのトークンを抽出（標準入力のみ）",
+      "blocked": false
+    },
+    {
+      "flag": "--colorize",
+      "aliases": [
+        "--colorize",
+        "-c"
+      ],
+      "takes_value": false,
+      "description": "ANSIカラー",
+      "blocked": false
+    },
+    {
+      "flag": "--monochrome",
+      "aliases": [
+        "--monochrome",
+        "-m"
+      ],
+      "takes_value": false,
+      "description": "色なし",
+      "blocked": false
+    },
+    {
+      "flag": "--stream",
+      "aliases": [
+        "--stream",
+        "-s"
+      ],
+      "takes_value": false,
+      "description": "1行1JSONとして読む",
+      "blocked": false
+    },
+    {
+      "flag": "--insecure",
+      "aliases": [
+        "--insecure",
+        "-k"
+      ],
+      "takes_value": false,
+      "description": "TLS証明書検証を省く",
+      "blocked": false
+    },
+    {
+      "flag": "--json",
+      "aliases": [
+        "--json",
+        "-j"
+      ],
+      "takes_value": false,
+      "description": "パスと値のJSONストリーム形式",
+      "blocked": false
+    },
+    {
+      "flag": "--no-sort",
+      "aliases": [
+        "--no-sort"
+      ],
+      "takes_value": false,
+      "description": "ソートしない",
+      "blocked": false
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "--version"
+      ],
+      "takes_value": false,
+      "description": "バージョン",
+      "blocked": false
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "--help",
+        "-h"
+      ],
+      "takes_value": false,
+      "description": "ヘルプ",
+      "blocked": false
+    }
+  ],
+  "subcommands": [],
+  "examples": [
+    {
+      "name": "JSONを一覧へ",
+      "args": [
+        "--monochrome"
+      ],
+      "stdin": "{\"name\":\"kiwi\",\"count\":3}"
+    },
+    {
+      "name": "JSONへ復元",
+      "args": [
+        "--ungron",
+        "--monochrome"
+      ],
+      "stdin": "json.name = \"kiwi\";\njson.count = 3;\n"
+    },
+    {
+      "name": "バージョン",
+      "args": [
+        "--version"
+      ]
+    }
+  ]
+}

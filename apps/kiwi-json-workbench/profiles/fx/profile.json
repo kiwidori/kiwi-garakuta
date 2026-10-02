@@ -1,0 +1,67 @@
+{
+  "slug": "kiwi-json-tree",
+  "title": "きういJSONツリー",
+  "tool": "fx.exe",
+  "fields": [
+    {
+      "flag": "@input",
+      "label": "入力形式",
+      "type": "choice",
+      "default": "json",
+      "choices": [
+        "json",
+        "yaml",
+        "toml",
+        "raw"
+      ],
+      "group": "入力"
+    },
+    {
+      "flag": "--slurp",
+      "label": "全入力を配列へまとめる（式を実行する場合）",
+      "type": "bool",
+      "default": false,
+      "group": "入力"
+    },
+    {
+      "flag": "--strict",
+      "label": "厳密なJSON解析",
+      "type": "bool",
+      "default": false,
+      "group": "入力"
+    },
+    {
+      "flag": "--no-inline",
+      "label": "配列・オブジェクトを複数行で表示",
+      "type": "bool",
+      "default": false,
+      "group": "入力"
+    },
+    {
+      "flag": "@stages",
+      "label": "JavaScriptの式（1行1段。空欄は整形）",
+      "type": "text",
+      "default": ".",
+      "repeat": true,
+      "group": "式"
+    }
+  ],
+  "modes": [
+    {
+      "id": "tree",
+      "label": "ツリー用JSONを読み込む"
+    },
+    {
+      "id": "query",
+      "label": "式を実行"
+    },
+    {
+      "id": "version",
+      "label": "バージョン"
+    },
+    {
+      "id": "help",
+      "label": "CLIヘルプ"
+    }
+  ]
+}

@@ -121,8 +121,11 @@ class App:
         ttk.Label(ctrl, textvariable=self.status_var).pack(side='right')
 
         self.root.protocol("WM_DELETE_WINDOW", self._on_close)
-        self.advanced = advanced.attach(self.root, self.source_dir)
+        self.advanced = self._attach_advanced()
         self._poll_id=self.root.after(100, self._poll_queue)
+
+    def _attach_advanced(self):
+        return advanced.attach(self.root, self.source_dir)
 
     def _add_file(self):
         f=filedialog.askopenfilename()
