@@ -37,6 +37,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | [きういJSONパス](https://kiwi-garakuta.pages.dev/tools/kiwi-json-paths/) | JSONのパス一覧化・復元・トークン抽出 | [gron](https://github.com/tomnomnom/gron) |
 | [きういActions点検](https://kiwi-garakuta.pages.dev/tools/kiwi-actions-check/) | GitHub Actionsの点検・JSONレポート・設定YAML | [actionlint](https://github.com/rhysd/actionlint) |
 | [きういJSON式](https://kiwi-garakuta.pages.dev/tools/kiwi-json-expr/) | JSON・YAMLの式処理・変数・大きな整数計算 | [gojq](https://github.com/itchyny/gojq) |
+| [きういJSONツリー](https://kiwi-garakuta.pages.dev/tools/kiwi-json-tree/) | JSON・YAML・TOMLのツリー閲覧とJavaScript式の処理 | [fx](https://github.com/antonmedv/fx) |
 
 各ソフトの詳細ページに、使い方、実際の画面、制限事項、ZIPのダウンロード先を掲載しています。ZIPには元ツールのライセンス文書を同梱しています。
 

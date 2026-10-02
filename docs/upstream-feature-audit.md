@@ -33,6 +33,7 @@
 | [きういJSONパス](https://kiwi-garakuta.pages.dev/tools/kiwi-json-paths/) | JSONのパス一覧化・復元・トークン抽出 |
 | [きういActions点検](https://kiwi-garakuta.pages.dev/tools/kiwi-actions-check/) | GitHub Actionsの点検・JSONレポート・設定YAML |
 | [きういJSON式](https://kiwi-garakuta.pages.dev/tools/kiwi-json-expr/) | JSON・YAMLの式処理・変数・大きな整数計算 |
+| [きういJSONツリー](https://kiwi-garakuta.pages.dev/tools/kiwi-json-tree/) | JSON・YAML・TOMLのツリー閲覧とJavaScript式の処理 |
 
 ## 詳細機能の使い方
 

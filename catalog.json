@@ -763,5 +763,31 @@
     "upstream_license": "MIT（依存物通知も同梱）",
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-json-tree",
+    "name": "きういJSONツリー",
+    "summary": "JSON・YAML・TOMLの中身をツリーで読み、JavaScriptの式で取り出し・変換できる無料ツールです。",
+    "features": [
+      "項目を展開しながら閲覧でき、文字検索、項目番号やパスによる移動、参照先への移動、履歴に対応します。",
+      "選んだ値・キー・パスをコピーし、選択値をJSONファイルへ保存できます。",
+      "表示中の項目を削除し、元の状態へ戻せます。入力ファイルを自動で書き換えません。",
+      "JSON・YAML・TOML・生テキストを読み込みます。複数のJSON文書や、大きな整数・小数の表記を扱えます。",
+      "JavaScriptの式を1行1段で入力し、絞り込み・並べ替え・集計・変換ができます。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiJsonTree.exeを起動します。",
+      "データを入力欄へ貼り付けるか、1つのファイルを追加し、入力形式を選びます。テキストとファイルは同時に指定できません。",
+      "「ツリー用JSONを読み込む」を実行し、「結果をツリーで開く」を押します。",
+      "項目を選んで値やパスをコピー・保存します。式を使うときは「式を実行」を選びます。"
+    ],
+    "limitations": "ツリー内検索は文字検索です。JSONの重複キーは最後の値を表示します。式の出力が文字列などの非JSONの場合は、テキストで確認してください。読み込み時は大きな整数・小数の表記を保ちますが、JavaScriptの浮動小数点演算では精度が変わることがあります。Node.js・ブラウザーAPI、端末用テーマ・補完・ゲーム、外部エディター、既存.fxrc.jsの自動読み込みは使いません。入力はUTF-8で2 MiB、1ファイルまたはテキスト。出力16 MiB、1回300秒、式32段、ツリー最大2万項目・深さ80までです。選択値の保存は既存ファイルへ上書きしません。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-json-tree-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-json-tree-v0.1.0/KiwiJsonTree-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-json-tree",
+    "upstream_url": "https://github.com/antonmedv/fx",
+    "upstream_license": "MIT（依存物通知も同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
