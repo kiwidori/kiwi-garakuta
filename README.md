@@ -8,6 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きういYouTube字幕](https://kiwi-garakuta.pages.dev/tools/kiwi-youtube-captions/) | 字幕の閲覧・検索・翻訳とTXT/SRTなどへの保存 | [youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) |
 | [きうい検索作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-search-workbench/) | 名前で絞ったファイルから内容を検索する | [fd](https://github.com/sharkdp/fd)・[ripgrep](https://github.com/BurntSushi/ripgrep) |
 | [きうい容量ビュー](https://kiwi-garakuta.pages.dev/tools/kiwi-disk/) | 容量の大きいファイルやフォルダーを確認する | [dust](https://github.com/bootandy/dust) |
 | [きういJSON](https://kiwi-garakuta.pages.dev/tools/kiwi-json/) | JSONから必要なデータを取り出し、結果を保存する | [jq](https://github.com/jqlang/jq) |

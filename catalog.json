@@ -879,5 +879,31 @@
     ],
     "amazon_links": [],
     "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-youtube-captions",
+    "name": "きういYouTube字幕",
+    "summary": "YouTubeの字幕を読み、文字や時刻で探してTXT・SRTなどへ保存できる無料ツールです。",
+    "features": [
+      "公開されている手動・自動字幕と利用できる言語を一覧で選べます。対応する字幕ではYouTubeの翻訳先も指定できます。",
+      "文字検索と開始・終了秒で字幕を絞り込み、選択した時刻をYouTubeで開けます。表示中の行や選んだ行のコピーにも対応します。",
+      "全行または検索に一致した全行をTXT・SRT・VTT・JSON・CSVで保存できます。TXTへの時刻付けも選べます。",
+      "最大20動画を一括保存でき、優先する言語、手動・自動の条件、翻訳先を設定できます。既存ファイルは上書きしません。",
+      "APIキーやPythonのインストールは不要です。HTTP/HTTPSプロキシを任意で指定でき、認証情報を設定ファイルや保存結果へ残しません。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiYoutubeCaptions.exeを起動します。",
+      "YouTubeのURLまたは動画IDを入力して「字幕一覧を取得」を押し、元の字幕を選びます。翻訳に対応する字幕は翻訳先も選べます。",
+      "「字幕を取得」で表示します。必要なら文字や時刻で絞り込みます。選択した行の時刻をYouTubeで開くこともできます。",
+      "保存形式と対象を選んで「保存」を押します。「一括保存」では複数動画の字幕を保存できます。"
+    ],
+    "limitations": "字幕が非公開、削除済み、年齢確認・ログインが必要な動画には対応しません。YouTubeの接続制限や仕様変更により、公開字幕でも取得や翻訳ができない場合があります。翻訳はYouTubeが提供するものを使います。動画・音声のダウンロードや、字幕のない動画の文字起こしは行いません。一覧表示は最大1,000行ですが、保存は全行または検索に一致した全行です。1動画20,000行・5 MiB、HTTP応答8 MiB、取得90秒まで。停止時は通信の終了まで最大約15秒待つ場合があります。CSVでは数式として解釈される先頭文字にアポストロフィを付けます。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-youtube-captions-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-youtube-captions-v0.1.0/KiwiYoutubeCaptions-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-youtube-captions",
+    "upstream_url": "https://github.com/jdepoix/youtube-transcript-api",
+    "upstream_license": "MIT（依存物と実行環境のライセンス文書も同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
   }
 ]
