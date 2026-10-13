@@ -41,7 +41,7 @@ def build():
         texts=[]
         for name,path in [('Python',Path(sys.base_prefix)/'LICENSE.txt'),('Tcl8.6.15',tcl),('Tk',Path(sys.base_prefix)/'tcl/tk8.6/license.terms')]:texts.append('=== '+name+' ===\n'+path.read_text(encoding='utf8'))
         (release/'Runtime-LICENSES.txt').write_text('\n\n'.join(texts),encoding='utf8')
-    output=ROOT/'KiwiYamlWorkbench-0.1.0-win11-x64.zip'
+    output=ROOT/'KiwiYamlWorkbench-0.1.1-win11-x64.zip'
     with zipfile.ZipFile(output,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
         for p in sorted(release.iterdir()):archive.write(p,p.name)
     print('Built',output.name,output.stat().st_size,'SHA256',hashlib.sha256(output.read_bytes()).hexdigest())

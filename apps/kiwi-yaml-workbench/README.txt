@@ -1,4 +1,4 @@
-きういYAML作業場 0.1.0 — Windows 11 x64
+きういYAML作業場 0.1.1 — Windows 11 x64
 
 ZIPを展開してKiwiYamlWorkbench.exeを起動します。
 用途から「変換・編集」「整形・差分」「Actions検査」を選びます。

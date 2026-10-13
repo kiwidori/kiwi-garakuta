@@ -63,8 +63,12 @@ class App(BaseApp):
             try:self.read_config(path)
             except Exception as e:messagebox.showerror('設定',str(e))
     def load_global(self):
-        folder=Path(os.environ.get('LOCALAPPDATA',''))/'yamlfmt'
         try:
+            import ctypes
+            buffer=ctypes.create_unicode_buffer(32768)
+            if ctypes.windll.shell32.SHGetFolderPathW(None,0x001c,None,0,buffer)!=0 or not buffer.value:
+                raise ValueError('Windowsのローカル設定フォルダーを取得できませんでした。設定を読み込むボタンから指定できます。')
+            folder=Path(buffer.value)/'yamlfmt'
             p=next((folder/n for n in ('.yamlfmt','yamlfmt.yml','yamlfmt.yaml','.yamlfmt.yaml','.yamlfmt.yml') if (folder/n).is_file()),None)
             if p is None:raise ValueError('グローバル設定が見つかりません。設定を読み込むボタンから指定できます。')
             self.read_config(p)
