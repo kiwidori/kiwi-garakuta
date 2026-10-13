@@ -1,0 +1,307 @@
+{
+  "slug": "kiwi-regex",
+  "tool": "grex.exe",
+  "upstream_url": "https://github.com/pemistahl/grex",
+  "options": [
+    {
+      "flag": "--capture-groups",
+      "aliases": [
+        "-g",
+        "--capture-groups"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Replaces non-capturing groups with capturing ones",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--colorize",
+      "aliases": [
+        "-c",
+        "--colorize"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Provides syntax highlighting for the resulting regular expression",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--digits",
+      "aliases": [
+        "-d",
+        "--digits"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Converts any Unicode decimal digit to \\d.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--escape",
+      "aliases": [
+        "-e",
+        "--escape"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Replaces all non-ASCII characters with unicode escape sequences",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--file",
+      "aliases": [
+        "-f",
+        "--file"
+      ],
+      "takes_value": true,
+      "value_hint": "<FILE>",
+      "description": "Reads test cases on separate lines from a file.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Prints help information",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-case",
+      "aliases": [
+        "-i",
+        "--ignore-case"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Performs case-insensitive matching, letters match both upper and lower case",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--min-repetitions",
+      "aliases": [
+        "--min-repetitions"
+      ],
+      "takes_value": true,
+      "value_hint": "<QUANTITY>",
+      "description": "Specifies the minimum quantity of substring repetitions to be converted if --repetitions is set",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--min-substring-length",
+      "aliases": [
+        "--min-substring-length"
+      ],
+      "takes_value": true,
+      "value_hint": "<LENGTH>",
+      "description": "Specifies the minimum length a repeated substring must have in order to be converted if",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-anchors",
+      "aliases": [
+        "--no-anchors"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Removes the caret and dollar sign anchors from the resulting regular expression.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-end-anchor",
+      "aliases": [
+        "--no-end-anchor"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Removes the dollar sign anchor `$` from the resulting regular expression.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-start-anchor",
+      "aliases": [
+        "--no-start-anchor"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Removes the caret anchor `^` from the resulting regular expression.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--non-digits",
+      "aliases": [
+        "-D",
+        "--non-digits"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Converts any character which is not a Unicode decimal digit to \\D.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--non-spaces",
+      "aliases": [
+        "-S",
+        "--non-spaces"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Converts any character which is not a Unicode whitespace character to \\S",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--non-words",
+      "aliases": [
+        "-W",
+        "--non-words"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Converts any character which is not a Unicode word character to \\W.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--repetitions",
+      "aliases": [
+        "-r",
+        "--repetitions"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Detects repeated non-overlapping substrings and converts them to {min,max} quantifier notation",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--spaces",
+      "aliases": [
+        "-s",
+        "--spaces"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Converts any Unicode whitespace character to \\s.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--verbose",
+      "aliases": [
+        "-x",
+        "--verbose"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Produces a nicer-looking regular expression in verbose mode",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-v",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Prints version information",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--with-surrogates",
+      "aliases": [
+        "--with-surrogates"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Converts astral code points to surrogate pairs if --escape is set",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--words",
+      "aliases": [
+        "-w",
+        "--words"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Converts any Unicode word character to \\w.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [],
+  "mandatory_args": [],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "単語・空白を一般化",
+      "args": [
+        "--words",
+        "--spaces",
+        "-"
+      ],
+      "stdin": "hello world\nkiwi world\n"
+    },
+    {
+      "name": "アンカーなし・繰り返し",
+      "args": [
+        "--no-anchors",
+        "--repetitions",
+        "--min-repetitions",
+        "2",
+        "-"
+      ],
+      "stdin": "ababab\nabababab\n"
+    }
+  ],
+  "help_sha256": "3e35358549e012676b06d498723acc0397e65257d05aa34eb5cb8d0040c72fa1"
+}

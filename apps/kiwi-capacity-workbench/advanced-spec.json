@@ -1,0 +1,564 @@
+{
+  "slug": "kiwi-disk",
+  "tool": "dust.exe",
+  "upstream_url": "https://github.com/bootandy/dust",
+  "options": [
+    {
+      "flag": "--apparent-size",
+      "aliases": [
+        "-s",
+        "--apparent-size"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use file length instead of blocks",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--atime",
+      "aliases": [
+        "-A",
+        "--atime"
+      ],
+      "takes_value": true,
+      "value_hint": "<ATIME>",
+      "description": "just like -mtime, but based on file access time",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--bars-on-right",
+      "aliases": [
+        "-B",
+        "--bars-on-right"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "percent bars moved to right side of screen",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--collapse",
+      "aliases": [
+        "--collapse"
+      ],
+      "takes_value": true,
+      "value_hint": "<COLLAPSE>",
+      "description": "Keep these directories collapsed",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--config",
+      "aliases": [
+        "--config"
+      ],
+      "takes_value": true,
+      "value_hint": "<FILE>",
+      "description": "Specify a config file to use",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ctime",
+      "aliases": [
+        "-y",
+        "--ctime"
+      ],
+      "takes_value": true,
+      "value_hint": "<CTIME>",
+      "description": "just like -mtime, but based on file change time",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--depth",
+      "aliases": [
+        "-d",
+        "--depth"
+      ],
+      "takes_value": true,
+      "value_hint": "<DEPTH>",
+      "description": "Depth to show",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--dereference-links",
+      "aliases": [
+        "-L",
+        "--dereference-links"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "dereference sym links - Treat sym links as directories and go into them",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--dim",
+      "aliases": [
+        "--dim"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Dim the percent bars (grey) to reduce brightness on dark terminals",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--file-types",
+      "aliases": [
+        "-t",
+        "--file-types"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "show only these file types",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--filecount",
+      "aliases": [
+        "-f",
+        "--filecount"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Directory 'size' is number of child files instead of disk size",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--files-from",
+      "aliases": [
+        "--files-from"
+      ],
+      "takes_value": true,
+      "value_hint": "<FILES_FROM>",
+      "description": "Read newline-terminated paths from FILE (use `-` for stdin)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--files0-from",
+      "aliases": [
+        "--files0-from"
+      ],
+      "takes_value": true,
+      "value_hint": "<FILES0_FROM>",
+      "description": "Read NUL-terminated paths from FILE (use `-` for stdin)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--filetime",
+      "aliases": [
+        "-m",
+        "--filetime"
+      ],
+      "takes_value": true,
+      "value_hint": "<FILETIME>",
+      "description": "Directory 'size' is max filetime of child files instead of disk size. while a/c/m for last accessed/changed/modified time",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--filter",
+      "aliases": [
+        "-e",
+        "--filter"
+      ],
+      "takes_value": true,
+      "value_hint": "<REGEX>",
+      "description": "Only include filepaths matching this regex. For png files type: -e \"\\.png$\"",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--force-colors",
+      "aliases": [
+        "-C",
+        "--force-colors"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Force colors print",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--full-paths",
+      "aliases": [
+        "-p",
+        "--full-paths"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Subdirectories will not have their path shortened",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print help (see a summary with '-h')",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-all-in-file",
+      "aliases": [
+        "-I",
+        "--ignore-all-in-file"
+      ],
+      "takes_value": true,
+      "value_hint": "<FILE>",
+      "description": "Exclude any file or directory with a regex matching that listed in this file, the file entries will be added to the ignore regexs provided by --invert_filter",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-directory",
+      "aliases": [
+        "-X",
+        "--ignore-directory"
+      ],
+      "takes_value": true,
+      "value_hint": "<PATH>",
+      "description": "Exclude any file or directory with this path",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ignore-hidden",
+      "aliases": [
+        "-i",
+        "--ignore-hidden"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not display hidden files",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--invert-filter",
+      "aliases": [
+        "-v",
+        "--invert-filter"
+      ],
+      "takes_value": true,
+      "value_hint": "<REGEX>",
+      "description": "Exclude filepaths matching this regex. To ignore png files type: -v \"\\.png$\"",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--limit-filesystem",
+      "aliases": [
+        "-x",
+        "--limit-filesystem"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Only count the files and directories on the same filesystem as the supplied directory",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--min-size",
+      "aliases": [
+        "-z",
+        "--min-size"
+      ],
+      "takes_value": true,
+      "value_hint": "<MIN_SIZE>",
+      "description": "Minimum size file to include in output",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--mtime",
+      "aliases": [
+        "-M",
+        "--mtime"
+      ],
+      "takes_value": true,
+      "value_hint": "<MTIME>",
+      "description": "+/-n matches files modified more/less than n days ago , and n matches files modified exactly n days ago, days are rounded down.That is +n => (−∞, curr−(n+1)), n => [curr−(n+1), curr−n), and -n => (𝑐𝑢𝑟𝑟−𝑛, +∞)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-colors",
+      "aliases": [
+        "-c",
+        "--no-colors"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "No colors will be printed (Useful for commands like: watch)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-percent-bars",
+      "aliases": [
+        "-b",
+        "--no-percent-bars"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "No percent bars or percentages will be displayed",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-progress",
+      "aliases": [
+        "-P",
+        "--no-progress"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Disable the progress indication",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--number-of-lines",
+      "aliases": [
+        "-n",
+        "--number-of-lines"
+      ],
+      "takes_value": true,
+      "value_hint": "<NUMBER>",
+      "description": "Display the 'n' largest entries. (Default is terminal_height)",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--only-dir",
+      "aliases": [
+        "-D",
+        "--only-dir"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Only directories will be displayed",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--only-file",
+      "aliases": [
+        "-F",
+        "--only-file"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Only files will be displayed. (Finds your largest files)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--output-format",
+      "aliases": [
+        "-o",
+        "--output-format"
+      ],
+      "takes_value": true,
+      "value_hint": "<FORMAT>",
+      "description": "Changes output display size. si will print sizes in powers of 1000. b k m g t kb mb gb tb will print the whole tree in that size",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--output-json",
+      "aliases": [
+        "-j",
+        "--output-json"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Output the directory tree as json to the current directory",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--print-errors",
+      "aliases": [
+        "--print-errors"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print path with errors",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--reverse",
+      "aliases": [
+        "-r",
+        "--reverse"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print tree upside down (biggest highest)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--screen-reader",
+      "aliases": [
+        "-R",
+        "--screen-reader"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "For screen readers. Removes bars. Adds new column: depth level (May want to use -p too for full path)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--skip-total",
+      "aliases": [
+        "--skip-total"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "No total row will be displayed",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--stack-size",
+      "aliases": [
+        "-S",
+        "--stack-size"
+      ],
+      "takes_value": true,
+      "value_hint": "<STACK_SIZE>",
+      "description": "Deprecated. The walker no longer recurses so a custom stack size is unnecessary. Accepted for compatibility but the value is ignored",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--terminal-width",
+      "aliases": [
+        "-w",
+        "--terminal-width"
+      ],
+      "takes_value": true,
+      "value_hint": "<WIDTH>",
+      "description": "Specify width of output overriding the auto detection of terminal width",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--threads",
+      "aliases": [
+        "-T",
+        "--threads"
+      ],
+      "takes_value": true,
+      "value_hint": "<THREADS>",
+      "description": "Number of threads to use",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-V",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print version",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [],
+  "mandatory_args": [],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "ファイル数で表示",
+      "args": [
+        "--filecount",
+        "--depth",
+        "2",
+        "C:/Users/Public/Documents"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "JSONで容量を取得",
+      "args": [
+        "-j",
+        "C:/Users/Public/Documents"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "ee261a912ec0a4fe903237daa1d402343c6df71014854cb11843f1bb6a580d34"
+}

@@ -1,0 +1,28 @@
+{
+  "grex": {
+    "url": "https://github.com/pemistahl/grex/releases/download/v1.4.6/grex-v1.4.6-x86_64-pc-windows-msvc.zip",
+    "sha": "7691dbb8e46339a15d8362b79b2456f508266cf00a55fe685ed69a6259577485",
+    "archive_member": "grex.exe",
+    "binary_sha": "dc5f833cc45b443eb642a29900550176b07fa54fb80be5f90b696ddcd99df893",
+    "exe": "grex.exe",
+    "license_members": [],
+    "repo": "pemistahl/grex",
+    "tag": "v1.4.6",
+    "license_url": "https://raw.githubusercontent.com/pemistahl/grex/v1.4.6/LICENSE",
+    "license_sha": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "license_file": "grex-LICENSE"
+  },
+  "sd": {
+    "url": "https://github.com/chmln/sd/releases/download/v1.1.0/sd-v1.1.0-x86_64-pc-windows-msvc.zip",
+    "sha": "59837c2e7c911099aca1cc46b663bcdc5a949fd3e9fbbaf34fc73e5d5d71007c",
+    "archive_member": "sd-v1.1.0-x86_64-pc-windows-msvc/sd.exe",
+    "binary_sha": "68a3be6e02d688ff8ecaf80ef6473cf2516442f01070a4d1a5eb69daa3db5234",
+    "exe": "sd.exe",
+    "license_members": [],
+    "repo": "chmln/sd",
+    "tag": "v1.1.0",
+    "license_url": "https://raw.githubusercontent.com/chmln/sd/v1.1.0/LICENSE",
+    "license_sha": "531a4a325368974524d09db46e9f48c37c6c7f10357176cb2a727540c80f313e",
+    "license_file": "sd-LICENSE"
+  }
+}
