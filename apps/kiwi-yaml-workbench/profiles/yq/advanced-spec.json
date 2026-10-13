@@ -1,0 +1,652 @@
+{
+  "slug": "kiwi-yaml",
+  "tool": "yq.exe",
+  "upstream_url": "https://github.com/mikefarah/yq",
+  "options": [
+    {
+      "flag": "--colors",
+      "aliases": [
+        "-C",
+        "--colors"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "force print with colors",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--csv-auto-parse",
+      "aliases": [
+        "--csv-auto-parse"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "parse CSV YAML/JSON values (default true)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--csv-separator",
+      "aliases": [
+        "--csv-separator"
+      ],
+      "takes_value": false,
+      "value_hint": "char",
+      "description": "CSV Separator character (default ,)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--debug-node-info",
+      "aliases": [
+        "--debug-node-info"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "debug node info",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--exit-status",
+      "aliases": [
+        "-e",
+        "--exit-status"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "set exit status if there are no matches or null or false is returned",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--expression",
+      "aliases": [
+        "--expression"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "forcibly set the expression argument. Useful when yq argument detection thinks your expression is a file.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--from-file",
+      "aliases": [
+        "--from-file"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "Load expression from specified file.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--front-matter",
+      "aliases": [
+        "-f",
+        "--front-matter"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "(extract|process) first input as yaml front-matter. Extract will pull out the yaml content, process will run the expression against the yaml content, leaving the remaining data intact",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--header-preprocess",
+      "aliases": [
+        "--header-preprocess"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Slurp any header comments and separators before processing expression. (default true)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "help for eval-all",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--indent",
+      "aliases": [
+        "-I",
+        "--indent"
+      ],
+      "takes_value": true,
+      "value_hint": "int",
+      "description": "sets indent level for output (default 2)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ini-preserve-quotes",
+      "aliases": [
+        "--ini-preserve-quotes"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "preserve surrounding quotes on INI values during round-trip",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--inplace",
+      "aliases": [
+        "-i",
+        "--inplace"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "update the file in place of first file given.",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--input-format",
+      "aliases": [
+        "-p",
+        "--input-format"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "[auto|a|yaml|y|kyaml|ky|json|j|props|p|csv|c|tsv|t|xml|x|base64|base64url|uri|toml|hcl|h|lua|l|ini|i] parse format for input. (default \"auto\")",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--lua-globals",
+      "aliases": [
+        "--lua-globals"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "output keys as top-level global variables",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--lua-prefix",
+      "aliases": [
+        "--lua-prefix"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "prefix (default \"return \")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--lua-suffix",
+      "aliases": [
+        "--lua-suffix"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "suffix (default \";\\n\")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--lua-unquoted",
+      "aliases": [
+        "--lua-unquoted"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "output unquoted string keys (e.g. {foo=\"bar\"})",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--no-colors",
+      "aliases": [
+        "-M",
+        "--no-colors"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "force print with no colors",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--no-doc",
+      "aliases": [
+        "-N",
+        "--no-doc"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't print document separators (---)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--nul-output",
+      "aliases": [
+        "-0",
+        "--nul-output"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use NUL char to separate values. If unwrap scalar is also set, fail if unwrapped scalar contains NUL char.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--null-input",
+      "aliases": [
+        "-n",
+        "--null-input"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Don't read input, simply evaluate the expression given. Useful for creating docs from scratch.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--output-format",
+      "aliases": [
+        "-o",
+        "--output-format"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "[auto|a|yaml|y|kyaml|ky|json|j|props|p|csv|c|tsv|t|xml|x|base64|base64url|uri|toml|hcl|h|shell|s|lua|l|ini|i] output format type. (default \"auto\")",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--prettyPrint",
+      "aliases": [
+        "-P",
+        "--prettyPrint"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "pretty print, shorthand for '... style = \"\"'",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--properties-array-brackets",
+      "aliases": [
+        "--properties-array-brackets"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "use [x] in array paths (e.g. for SpringBoot)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--properties-separator",
+      "aliases": [
+        "--properties-separator"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "separator to use between keys and values (default \" = \")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--security-disable-env-ops",
+      "aliases": [
+        "--security-disable-env-ops"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Disable env related operations.",
+      "blocked": true,
+      "baseline_cli_use": true,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--security-disable-file-ops",
+      "aliases": [
+        "--security-disable-file-ops"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Disable file related operations (e.g. load)",
+      "blocked": true,
+      "baseline_cli_use": true,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--security-enable-system-operator",
+      "aliases": [
+        "--security-enable-system-operator"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Enable system operator to allow execution of external commands.",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "制限対象"
+    },
+    {
+      "flag": "--shell-key-separator",
+      "aliases": [
+        "--shell-key-separator"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "separator for shell variable key paths (default \"_\")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--split-exp",
+      "aliases": [
+        "-s",
+        "--split-exp"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "print each result (or doc) into a file named (exp). [exp] argument must return a string. You can use $index in the expression as the result counter. The necessary directories will be created.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--split-exp-file",
+      "aliases": [
+        "--split-exp-file"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "Use a file to specify the split-exp expression.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--string-interpolation",
+      "aliases": [
+        "--string-interpolation"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Toggles strings interpolation of \\(exp) (default true)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--tsv-auto-parse",
+      "aliases": [
+        "--tsv-auto-parse"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "parse TSV YAML/JSON values (default true)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--unwrapScalar",
+      "aliases": [
+        "-r",
+        "--unwrapScalar"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "unwrap scalar, print the value with no quotes, colours or comments. Defaults to true for yaml (default true)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--verbose",
+      "aliases": [
+        "-v",
+        "--verbose"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "verbose mode",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-V",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print version information and quit",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--xml-attribute-prefix",
+      "aliases": [
+        "--xml-attribute-prefix"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "prefix for xml attributes (default \"+@\")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--xml-content-name",
+      "aliases": [
+        "--xml-content-name"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "name for xml content (if no attribute name is present). (default \"+content\")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--xml-directive-name",
+      "aliases": [
+        "--xml-directive-name"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "name for xml directives (e.g. <!DOCTYPE thing cat>) (default \"+directive\")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--xml-keep-namespace",
+      "aliases": [
+        "--xml-keep-namespace"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "enables keeping namespace after parsing attributes (default true)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--xml-proc-inst-prefix",
+      "aliases": [
+        "--xml-proc-inst-prefix"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "prefix for xml processing instructions (e.g. <?xml version=\"1\"?>) (default \"+p_\")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--xml-raw-token",
+      "aliases": [
+        "--xml-raw-token"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "enables using RawToken method instead Token. Commonly disables namespace translations. See https://pkg.go.dev/encoding/xml#Decoder.RawToken for details. (default true)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--xml-skip-directives",
+      "aliases": [
+        "--xml-skip-directives"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "skip over directives (e.g. <!DOCTYPE thing cat>)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--xml-skip-proc-inst",
+      "aliases": [
+        "--xml-skip-proc-inst"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "skip over process instructions (e.g. <?xml version=\"1\"?>)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--xml-strict-mode",
+      "aliases": [
+        "--xml-strict-mode"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "enables strict parsing of XML. See https://pkg.go.dev/encoding/xml for more details.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--yaml-compact-seq-indent",
+      "aliases": [
+        "-c",
+        "--yaml-compact-seq-indent"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use compact sequence indentation where '- ' is considered part of the indentation.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--yaml-fix-merge-anchor-to-spec",
+      "aliases": [
+        "--yaml-fix-merge-anchor-to-spec"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Fix merge anchor to match YAML spec. Will default to true in late 2025",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [
+    "eval",
+    "eval-all",
+    "help"
+  ],
+  "blocked_flags": [
+    "--security-disable-env-ops",
+    "--security-disable-file-ops",
+    "--security-enable-system-operator",
+    "--inplace",
+    "-i"
+  ],
+  "mandatory_args": [
+    "--security-disable-env-ops",
+    "--security-disable-file-ops"
+  ],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "式で値を更新・JSONへ変換",
+      "args": [
+        "eval",
+        "--output-format",
+        "json",
+        ".message = \"updated\"",
+        "-"
+      ],
+      "stdin": "message: kiwi\n"
+    },
+    {
+      "name": "JSON入力をYAMLへ",
+      "args": [
+        "eval",
+        "--input-format",
+        "json",
+        "--output-format",
+        "yaml",
+        "--prettyPrint",
+        ".",
+        "-"
+      ],
+      "stdin": "{\"name\":\"kiwi\",\"count\":2}\n"
+    }
+  ],
+  "help_sha256": "db48d09646b0e7227638de6cb67ba1039f695d4755e2d2c1fc0e1fdb35c5b0a9"
+}

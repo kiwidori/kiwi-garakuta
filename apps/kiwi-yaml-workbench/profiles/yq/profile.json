@@ -1,0 +1,70 @@
+{
+  "slug": "kiwi-yaml-workbench",
+  "title": "きういYAML作業場",
+  "tool": "yq.exe",
+  "fields": [
+    {
+      "flag": "@expression",
+      "label": "式（値の抽出・更新、初期値は .）",
+      "type": "text",
+      "default": ".",
+      "group": "変換・編集"
+    },
+    {
+      "flag": "@input",
+      "label": "入力形式",
+      "type": "choice",
+      "choices": [
+        "yaml",
+        "json"
+      ],
+      "default": "yaml",
+      "group": "変換・編集"
+    },
+    {
+      "flag": "@output",
+      "label": "式の出力形式",
+      "type": "choice",
+      "choices": [
+        "yaml",
+        "json"
+      ],
+      "default": "yaml",
+      "group": "変換・編集"
+    }
+  ],
+  "modes": [
+    {
+      "id": "yaml",
+      "label": "YAML整形",
+      "stdin": true,
+      "files": true
+    },
+    {
+      "id": "json",
+      "label": "JSON変換",
+      "stdin": true,
+      "files": true
+    },
+    {
+      "id": "query",
+      "label": "式で変換・編集",
+      "stdin": true,
+      "files": true
+    },
+    {
+      "id": "all",
+      "label": "複数文書を式で処理",
+      "stdin": true,
+      "files": true
+    },
+    {
+      "id": "help",
+      "label": "CLIヘルプ"
+    },
+    {
+      "id": "version",
+      "label": "バージョン"
+    }
+  ]
+}

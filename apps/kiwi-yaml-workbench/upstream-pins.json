@@ -1,0 +1,51 @@
+{
+  "yq": {
+    "repo": "mikefarah/yq",
+    "tag": "v4.54.1",
+    "exe": "yq.exe",
+    "kind": "exe",
+    "url": "https://github.com/mikefarah/yq/releases/download/v4.54.1/yq_windows_amd64.exe",
+    "sha": "b645f47ebb3a0d2fbab52998550bbd0a1706f23b5ca5f5b48e638c580bb70928",
+    "binary_sha": "b645f47ebb3a0d2fbab52998550bbd0a1706f23b5ca5f5b48e638c580bb70928",
+    "license_url": "https://raw.githubusercontent.com/mikefarah/yq/v4.54.1/LICENSE",
+    "license_sha": "697db34dabb21562fe84487a2ccd031fbd45382b89c2cbdec8ef31682c486040",
+    "license_file": "yq-LICENSE"
+  },
+  "yamlfmt": {
+    "slug": "kiwi-yamlfmt",
+    "name": "\u304d\u3046\u3044YAML\u6574\u5f62",
+    "repo": "google/yamlfmt",
+    "tag": "v0.21.0",
+    "exe": "yamlfmt.exe",
+    "asset": "yamlfmt_0.21.0_Windows_x86_64.tar.gz",
+    "sha": "07f80ce5d741eb4b0a9380ac78a19c7cb5bd44e2a9a47a5a04839e3ba54dd463",
+    "binary_sha": "24e901b6b37084da07f5ca09458d1b9d40e40cd950985dcb42aeeb72f9e9e549",
+    "license": "Apache-2.0",
+    "url": "https://github.com/google/yamlfmt/releases/download/v0.21.0/yamlfmt_0.21.0_Windows_x86_64.tar.gz",
+    "license_url": "https://raw.githubusercontent.com/google/yamlfmt/v0.21.0/LICENSE",
+    "license_sha": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+    "app_exe": "KiwiYamlfmt",
+    "version": "0.1.0",
+    "kind": "tar",
+    "archive_member": "yamlfmt.exe",
+    "license_file": "yamlfmt-LICENSE"
+  },
+  "actionlint": {
+    "slug": "kiwi-actions-check",
+    "repo": "rhysd/actionlint",
+    "tag": "v1.7.12",
+    "asset": "actionlint_1.7.12_windows_amd64.zip",
+    "exe": "actionlint.exe",
+    "app_exe": "KiwiActionsCheck",
+    "version": "0.1.0",
+    "license": "MIT",
+    "license_url": "https://raw.githubusercontent.com/rhysd/actionlint/v1.7.12/LICENSE.txt",
+    "url": "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_windows_amd64.zip",
+    "sha": "6e7241b51e6817ea6a047693d8e6fed13b31819c9a0dd6c5a726e1592d22f6e9",
+    "binary_sha": "54ca21be3de4c7cfa26914aa8b61bd76bf573ef3caac5f80d110558cdf241718",
+    "license_sha": "03a26b06d224380a02bf100e05fff3b2dfc71b14d4e2fa685ec9963a87563c22",
+    "kind": "zip",
+    "archive_member": "actionlint.exe",
+    "license_file": "actionlint-LICENSE"
+  }
+}

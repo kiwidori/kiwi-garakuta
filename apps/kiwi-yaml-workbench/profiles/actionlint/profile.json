@@ -1,0 +1,95 @@
+{
+  "slug": "kiwi-actions-check",
+  "title": "きういActions点検",
+  "tool": "actionlint.exe",
+  "fields": [
+    {
+      "flag": "-oneline",
+      "label": "1件を1行で表示",
+      "type": "bool",
+      "default": false,
+      "group": "表示と絞り込み"
+    },
+    {
+      "flag": "@color",
+      "label": "出力の色",
+      "type": "choice",
+      "choices": [
+        "no-color",
+        "color"
+      ],
+      "default": "no-color",
+      "group": "表示と絞り込み"
+    },
+    {
+      "flag": "-ignore",
+      "label": "無視するエラーメッセージの正規表現（1行1個）",
+      "type": "text",
+      "repeat": true,
+      "default": "",
+      "group": "表示と絞り込み"
+    },
+    {
+      "flag": "-format",
+      "label": "カスタム出力用Goテンプレート",
+      "type": "text",
+      "default": "{{json .}}",
+      "group": "表示と絞り込み"
+    },
+    {
+      "flag": "-stdin-filename",
+      "label": "入力テキストの表示名",
+      "type": "text",
+      "default": "workflow.yaml",
+      "group": "表示と絞り込み"
+    },
+    {
+      "flag": "@config",
+      "label": "actionlint設定YAML（空欄は既定設定）",
+      "type": "text",
+      "repeat": true,
+      "default": "",
+      "group": "設定YAML"
+    },
+    {
+      "flag": "-shellcheck",
+      "label": "任意：ShellCheck.exeの絶対パス",
+      "type": "text",
+      "default": "",
+      "group": "外部チェッカー"
+    },
+    {
+      "flag": "-pyflakes",
+      "label": "任意：pyflakes.exeの絶対パス",
+      "type": "text",
+      "default": "",
+      "group": "外部チェッカー"
+    }
+  ],
+  "modes": [
+    {
+      "id": "lint",
+      "label": "ワークフローを点検"
+    },
+    {
+      "id": "json",
+      "label": "指摘をJSONで出力"
+    },
+    {
+      "id": "custom",
+      "label": "カスタム書式で出力"
+    },
+    {
+      "id": "init",
+      "label": "既定の設定YAMLを作成"
+    },
+    {
+      "id": "version",
+      "label": "バージョン"
+    },
+    {
+      "id": "help",
+      "label": "CLIヘルプ"
+    }
+  ]
+}

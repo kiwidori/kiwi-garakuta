@@ -3,3 +3,4 @@ apps/kiwi-*/upstream-help.txt -whitespace
 apps/kiwi-*/profiles/*/upstream-help.txt -whitespace
 # Upstream license texts retain their original formatting.
 apps/kiwi-*/THIRD-PARTY-NOTICES.txt -whitespace
+apps/kiwi-*/*-LICENSE -whitespace
