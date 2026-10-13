@@ -12,7 +12,9 @@ def build():
     tcl_license=ROOT.parent/'common/tcl-8.6.15-LICENSE.terms'
     if hashlib.sha256(tcl_license.read_bytes()).hexdigest()!='c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16':raise ValueError('Tcl license digest mismatch')
     pins=json.loads((ROOT/'upstream-pins.json').read_text(encoding='utf8'))
-    assert set(pins)=={'fx','gojq','gron'}
+    dependency_pin=json.loads((ROOT/'jq-dependency-pin.json').read_text(encoding='utf8'))
+    fetch(dependency_pin['license_url'],dependency_pin['license_sha256'])
+    assert set(pins)=={'fx','gojq','gron','jq'}
     licenses=[]
     with tempfile.TemporaryDirectory(prefix='kiwi-json-workbench-') as td:
         folder=Path(td)
@@ -30,14 +32,14 @@ def build():
         if release.exists():shutil.rmtree(release)
         release.mkdir();shutil.copy2(folder/'dist/KiwiJsonWorkbench.exe',release/'KiwiJsonWorkbench.exe')
         (release/'UPSTREAM-LICENSE.txt').write_text('\n\n'.join(licenses),encoding='utf8')
-        for name in ('README.txt','THIRD-PARTY-NOTICES.txt'):shutil.copy2(ROOT/name,release/name)
-        shutil.copy2(ROOT.parents[1]/'LICENSE',release/'LICENSE');shutil.copy2(ROOT/'upstream-pins.json',release/'UPSTREAM-PINS.json')
+        for name in ('README.txt','THIRD-PARTY-NOTICES.txt','PyInstaller-LICENSE.txt'):shutil.copy2(ROOT/name,release/name)
+        shutil.copy2(ROOT.parents[1]/'LICENSE',release/'LICENSE');shutil.copy2(ROOT/'upstream-pins.json',release/'UPSTREAM-PINS.json');shutil.copy2(ROOT/'jq-dependency-pin.json',release/'jq-dependency-pin.json')
         runtime_notices=[]
         for title,path in [('Python',Path(sys.base_prefix)/'LICENSE.txt'),('Tcl8.6.15',tcl_license),('Tk',Path(sys.base_prefix)/'tcl/tk8.6/license.terms')]:
             if not path.is_file():raise ValueError('Missing runtime license: '+title)
             runtime_notices.append('=== '+title+' ===\n'+path.read_text(encoding='utf8'))
         (release/'Runtime-LICENSES.txt').write_text('\n\n'.join(runtime_notices),encoding='utf8')
-    package=ROOT/'KiwiJsonWorkbench-0.1.0-win11-x64.zip'
+    package=ROOT/'KiwiJsonWorkbench-0.2.0-win11-x64.zip'
     with zipfile.ZipFile(package,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for path in sorted(release.iterdir()):z.write(path,path.name)
     print('Built',package.name,package.stat().st_size,'SHA256',hashlib.sha256(package.read_bytes()).hexdigest())

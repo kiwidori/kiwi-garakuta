@@ -1,0 +1,7 @@
+{
+  "component": "Oniguruma",
+  "source": "https://github.com/kkos/oniguruma/tree/4ef89209a239c1aea328cf13c05a2807e5c146d1",
+  "used_by": "Official jq1.8.2 --build-configuration reports --with-oniguruma=builtin",
+  "license_url": "https://raw.githubusercontent.com/kkos/oniguruma/4ef89209a239c1aea328cf13c05a2807e5c146d1/COPYING",
+  "license_sha256": "70ba5469ea0bab6e18a32d7009068f996503168d27be57747e08da34337ff26f"
+}

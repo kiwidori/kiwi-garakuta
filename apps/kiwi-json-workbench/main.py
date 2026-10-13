@@ -4,15 +4,16 @@ from pathlib import Path
 from tkinter import ttk,filedialog,messagebox
 sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'common'))
 import runtime,advanced
+import jq_job
 from workbench import App as BaseApp
 from structured import fx_job,query_job,gron_job,tree_view
 
-ENGINE_LABELS={'fx':'ツリー閲覧・JavaScript','gojq':'JSON式（jq形式）','gron':'パス一覧・復元'}
+ENGINE_LABELS={'fx':'ツリー閲覧・JavaScript','gojq':'JSON式（gojq）','gron':'パス一覧・復元','jq':'JSON式（jq）'}
 
 class App(BaseApp):
     def __init__(self,source_dir,native_paths=None):
         source_dir=Path(source_dir)
-        self.engine='fx';self.states={};self.profiles={}
+        self.engine='fx';self.states={};self.profiles={};self._closing=False
         for engine in ENGINE_LABELS:
             p=Path(runtime.resource_path(f'profiles/{engine}/profile.json',source_dir))
             self.profiles[engine]=json.loads(p.read_text(encoding='utf8'))
@@ -35,7 +36,7 @@ class App(BaseApp):
         row=ttk.Frame(self.root);row.pack(fill='x',padx=5,pady=3)
         for label,callback in [('デモを入力',self.demo),('結果をツリーで開く',self.open_tree),('結果を入力へ',self.result_to_input),('色なしで保存',self.save_plain)]:
             ttk.Button(row,text=label,command=callback).pack(side='left',padx=2)
-        presets={'fx':[('項目名','keys'),('値の一覧','values'),('件数','len'),('並べ替え','sort'),('重複除去','uniq')],'gojq':[('整形','.'),('件数','length'),('項目名','keys'),('各要素','.[]'),('並べ替え','sort'),('重複除去','unique')]}.get(self.engine,[])
+        presets={'fx':[('項目名','keys'),('値の一覧','values'),('件数','len'),('並べ替え','sort'),('重複除去','uniq')],'gojq':[('整形','.'),('件数','length'),('項目名','keys'),('各要素','.[]'),('並べ替え','sort'),('重複除去','unique')],'jq':[('整形','.'),('件数','length'),('項目名','keys'),('各要素','.[]'),('並べ替え','sort'),('重複除去','unique')]}.get(self.engine,[])
         row=ttk.Frame(self.root);row.pack(fill='x',padx=5,pady=2)
         for label,query in presets:ttk.Button(row,text=label,command=lambda q=query:self.apply_preset(q)).pack(side='left',padx=2)
 
@@ -44,6 +45,8 @@ class App(BaseApp):
         spec=json.loads(Path(runtime.resource_path(prefix+'advanced-spec.json',self.source_dir)).read_text(encoding='utf8'))
         controller=advanced.AdvancedController(self.root,self.profile['tool'],prefix+'upstream-help.txt',spec,self.source_dir)
         controller.exe_path=self.native_paths[self.engine]
+        original=controller._run
+        controller._run=lambda:original() if not self._busy() else self.status_var.set('実行中の処理が終わるまでお待ちください。')
         return controller
 
     def apply_preset(self,query):
@@ -58,11 +61,11 @@ class App(BaseApp):
         if '@url' in self.values:self.values['@url'].set('')
         if '@input' in self.values:self.values['@input'].set('json')
         self.mode_var.set(self.profile['modes'][0]['label'])
-        if self.engine=='gojq':self.values['@filter'].set('.')
+        if self.engine in ('gojq','jq'):self.values['@filter'].set('.')
 
     def _busy(self):
         detail=self.advanced
-        return bool((self.worker and self.worker.is_alive()) or str(self.run_btn.cget('state'))=='disabled' or detail.running or (detail.worker_thread and detail.worker_thread.is_alive()))
+        return self._closing or not self.q.empty() or bool((self.worker and self.worker.is_alive()) or str(self.run_btn.cget('state'))=='disabled' or detail.running or not detail.result_queue.empty() or (detail.worker_thread and detail.worker_thread.is_alive()))
 
     def run(self):
         if self._busy():return
@@ -76,10 +79,10 @@ class App(BaseApp):
 
     def _job(self,engine,exe,mode,values,paths,text):
         try:
-            execute={'fx':fx_job.execute_job,'gojq':query_job.execute_job,'gron':gron_job.execute_job}[engine]
+            execute={'fx':fx_job.execute_job,'gojq':query_job.execute_job,'gron':gron_job.execute_job,'jq':jq_job.execute_job}[engine]
             result=execute(exe,mode,values,paths,text,self.cancel_event)
             result.update(engine=engine,mode=mode,tree_input=engine=='fx' and mode=='tree')
-            success=result['returncode'] in ((0,1,4) if engine=='gojq' else (0,))
+            success=result['returncode'] in ((0,1,4) if engine in ('gojq','jq') else (0,))
             self.q.put(('done',result['returncode'],result['stdout'],result['stderr'],success,result))
         except InterruptedError:self.q.put(('error','処理を停止しました。'))
         except TimeoutError:self.q.put(('error','時間制限に達したため停止しました。'))
@@ -114,7 +117,7 @@ class App(BaseApp):
         self.mode_var=tk.StringVar(master=self.root,value=state.get('mode',self.profile['modes'][0]['label']))
         self.values={}
         for field in self.profile['fields']:
-            value=state.get('values',{}).get(field['flag'],field.get('default',''))
+            value=state.get('values',{}).get(field['flag'],field.get('default',False if field['type']=='bool' else ''))
             cls=tk.BooleanVar if field['type']=='bool' else tk.StringVar
             self.values[field['flag']]=cls(master=self.root,value=value)
         self.repeat_widgets={};self._build_ui()
@@ -138,6 +141,7 @@ class App(BaseApp):
         except (ValueError,RecursionError,UnicodeError) as error:messagebox.showerror('ツリーを開けません',str(error))
 
     def result_to_input(self):
+        if self._busy():return
         if not self.last_result or 'stdout' not in self.last_result:return
         try:
             text=self.last_result['stdout'].decode('utf8')
@@ -149,5 +153,9 @@ class App(BaseApp):
         self._clear_paths()
         if '@url' in self.values:self.values['@url'].set('')
         self.in_text.delete('1.0','end');self.in_text.insert('1.0',text)
+
+    def _on_close(self):
+        self._closing=True
+        super()._on_close()
 
 if __name__=='__main__':App(Path(__file__).resolve().parent).root.mainloop()

@@ -1,4 +1,4 @@
-きういJSON作業場 0.1.0 / Windows 11 x64
+きういJSON作業場 0.2.0 / Windows 11 x64
 ZIPを展開してKiwiJsonWorkbench.exeを起動してください。
 
 JSONツリー・JSON式・JSONパスの機能を、同じ入力と結果で使えるソフトです。
@@ -9,7 +9,8 @@ JSONツリー・JSON式・JSONパスの機能を、同じ入力と結果で使�
 5. 原文を保存する場合は「結果を保存」を使います。色を除いて保存する操作もあります。
 
 ツリー閲覧・JavaScript: fx 39.2.0 / https://github.com/antonmedv/fx
-JSON式（jq形式）: gojq v0.12.19 / https://github.com/itchyny/gojq
+JSON式（gojq）: gojq v0.12.19 / https://github.com/itchyny/gojq
+JSON式（jq）: jq 1.8.2 / https://github.com/jqlang/jq
 JSONパスの一覧・復元: gron v0.7.1 / https://github.com/tomnomnom/gron
 jqとgojqは完全互換ではありません。形式や式は各用途の設定に従います。
 
@@ -25,3 +26,5 @@ gojqの整数演算とfxの読み込みは大きな整数を扱えますが、�
 使い方: https://kiwi-garakuta.pages.dev/tools/kiwi-json-workbench/
 ソース: https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-json-workbench
 問い合わせ: https://x.com/kiwi_dori
+
+jqとgojqは用途から選べます。jqはJSON/raw/stream入力、gojqはYAMLにも対応します。jqの字下げ幅は0〜7です。jqでは式から環境変数・外部ファイル・モジュールを読めます。入力先への自動書き込みは行いません。
