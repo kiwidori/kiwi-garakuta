@@ -296,7 +296,9 @@
     "upstream_license": "MIT",
     "amazon_links": [],
     "windows_test_passed": true,
-    "advanced_screenshot": "/assets/screenshots/kiwi-yaml-advanced-public.png"
+    "advanced_screenshot": "/assets/screenshots/kiwi-yaml-advanced-public.png",
+    "replaced_by": "kiwi-yaml-workbench",
+    "replacement_name": "きういYAML作業場"
   },
   {
     "slug": "kiwi-hash",
@@ -696,7 +698,9 @@
     "upstream_url": "https://github.com/google/yamlfmt",
     "upstream_license": "Apache License 2.0（同梱のYAMLライブラリにはMIT・Apacheの表示あり）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-yaml-workbench",
+    "replacement_name": "きういYAML作業場"
   },
   {
     "slug": "kiwi-json-paths",
@@ -750,7 +754,9 @@
     "upstream_url": "https://github.com/rhysd/actionlint",
     "upstream_license": "MIT（依存物通知も同梱）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-yaml-workbench",
+    "replacement_name": "きういYAML作業場"
   },
   {
     "slug": "kiwi-json-expr",
@@ -982,6 +988,49 @@
       {
         "name": "sd 1.1.0",
         "url": "https://github.com/chmln/sd",
+        "license": "MIT"
+      }
+    ],
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-yaml-workbench",
+    "name": "きういYAML作業場",
+    "summary": "YAMLの変換・編集・整形とGitHub Actionsの検査を、同じ入力から続けて使える無料ツールです。",
+    "features": [
+      "YAML整形・JSON変換と、yqの式による値の抽出・更新・複数文書処理に対応します。",
+      "Basic/KYAMLで整形し、差分や整形が必要な箇所を確認できます。設定の読み込み・保存と、複数ファイルの整形結果をZIPで保存できます。",
+      "GitHub Actionsワークフローを検査し、指摘をテキスト・JSON・独自書式で保存できます。設定の生成・読み書きもできます。",
+      "共通の入力・ファイル一覧・結果欄を使い、変換や整形した本文を次の入力へ渡せます。各用途のモード・オプション・設定は起動中に保持します。",
+      "yq・yamlfmt・actionlintそれぞれの詳細オプションも使えます。ワークフローは実行しません。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiYamlWorkbench.exeを起動し、用途を選びます。",
+      "テキストを入力するかファイルを指定します。整形・検査ではフォルダーも指定できます。",
+      "変換式や整形設定などを選んで実行します。「結果を入力へ」で本文を移すとファイル指定が解除されます。",
+      "用途を切り替えて次の処理へ進み、必要な結果を保存してください。Actions検査はGitHub Actionsワークフローを対象にします。"
+    ],
+    "limitations": "Actions検査は一般的なYAML構文検査ではありません。JSON変換ではコメント・タグなどが失われる場合があり、複数文書は複数のJSON値になります。ZIP・検査レポート・設定・エラーは入力へ移せません。テキストと移送はUTF-8で2 MiBまでで、NULを含む結果は移送できません。yqは1ファイル2 MiB・200件・合計64 MiB・式16 KiB・出力4 MiB・15秒まで、yamlfmtは2,000ファイル・合計64 MiB、actionlintは200ファイル・1件20 MiB・合計64 MiBまでです。整形・検査は出力16 MiB・300秒まで。通常の指定でリンクやジャンクションは扱えません。元ファイルを自動で書き換えません。yqの環境変数・外部ファイル読み込み・system式・直接上書きを無効にしています。外部ShellCheck/Pyflakesは指定した場合だけ呼び出します。詳細画面の設定は用途の切り替えで初期状態になります。全ての式・オプションの組合せを検証したものではありません。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-yaml-workbench-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-yaml-workbench-v0.1.1/KiwiYamlWorkbench-0.1.1-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-yaml-workbench",
+    "upstream_url": "https://github.com/mikefarah/yq",
+    "upstream_license": "yq・actionlint: MIT、yamlfmt: Apache-2.0（依存物と実行環境のライセンス文書も同梱）",
+    "upstreams": [
+      {
+        "name": "yq 4.54.1",
+        "url": "https://github.com/mikefarah/yq",
+        "license": "MIT"
+      },
+      {
+        "name": "yamlfmt 0.21.0",
+        "url": "https://github.com/google/yamlfmt",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "actionlint 1.7.12",
+        "url": "https://github.com/rhysd/actionlint",
         "license": "MIT"
       }
     ],
