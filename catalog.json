@@ -81,7 +81,9 @@
     "upstream_license": "Apache License 2.0",
     "amazon_links": [],
     "windows_test_passed": true,
-    "advanced_screenshot": "/assets/screenshots/kiwi-disk-advanced-public.png"
+    "advanced_screenshot": "/assets/screenshots/kiwi-disk-advanced-public.png",
+    "replaced_by": "kiwi-capacity-workbench",
+    "replacement_name": "きうい容量作業場"
   },
   {
     "slug": "kiwi-json",
@@ -213,7 +215,9 @@
     "upstream_license": "Apache License 2.0",
     "amazon_links": [],
     "windows_test_passed": true,
-    "advanced_screenshot": "/assets/screenshots/kiwi-regex-advanced-public.png"
+    "advanced_screenshot": "/assets/screenshots/kiwi-regex-advanced-public.png",
+    "replaced_by": "kiwi-text-workbench",
+    "replacement_name": "きういテキスト作業場"
   },
   {
     "slug": "kiwi-http",
@@ -400,7 +404,9 @@
     "upstream_license": "MIT",
     "amazon_links": [],
     "windows_test_passed": true,
-    "advanced_screenshot": "/assets/screenshots/kiwi-space-advanced-public.png"
+    "advanced_screenshot": "/assets/screenshots/kiwi-space-advanced-public.png",
+    "replaced_by": "kiwi-capacity-workbench",
+    "replacement_name": "きうい容量作業場"
   },
   {
     "slug": "kiwi-diff",
@@ -584,7 +590,9 @@
     "upstream_url": "https://github.com/chmln/sd",
     "upstream_license": "MIT（依存物の通知もZIPに同梱）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-text-workbench",
+    "replacement_name": "きういテキスト作業場"
   },
   {
     "slug": "kiwi-bytes",
@@ -903,6 +911,80 @@
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-youtube-captions",
     "upstream_url": "https://github.com/jdepoix/youtube-transcript-api",
     "upstream_license": "MIT（依存物と実行環境のライセンス文書も同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-capacity-workbench",
+    "name": "きうい容量作業場",
+    "summary": "ドライブの空き容量からフォルダー内の容量内訳まで、同じ画面で調べられる無料ツールです。",
+    "features": [
+      "ドライブの総容量・使用量・空き容量を一覧表示し、並べ替え・選択行のコピー・CSV保存ができます。",
+      "選んだドライブを解析対象へ渡し、フォルダーの容量内訳をツリーと割合で表示します。",
+      "ツリーで選んだフォルダーを再解析できます。前の対象へ戻り、結果をJSONで保存することもできます。",
+      "dustとdufの詳細オプションをそれぞれ使えます。起動時やドライブ選択時に自動走査しません。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiCapacityWorkbench.exeを起動します。",
+      "「ドライブ更新」で空き容量を確認します。選んだドライブを解析対象へ渡すこともできます。",
+      "調べるフォルダーと階層を指定し、「解析」を押します。",
+      "内訳のフォルダーを選び「選択フォルダーを再解析」で詳しく確認します。必要な結果を保存してください。"
+    ],
+    "limitations": "読み取り専用です。ドライブの使用量とフォルダー集計は測定方法が異なり、アクセスできない場所などによって一致しない場合があります。通常解析は1回300秒・出力1 MB・表示200項目・階層1〜6、ドライブ取得は15秒・出力1 MiBまでです。通常の対象にはリンクやジャンクションを指定できず、ツリーからの再解析は解析済みの対象内のみです。詳細画面の出力形式は指定したオプションに従います。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-capacity-workbench-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-capacity-workbench-v0.1.0/KiwiCapacityWorkbench-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-capacity-workbench",
+    "upstream_url": "https://github.com/bootandy/dust",
+    "upstream_license": "dust: Apache-2.0、duf: MIT（依存物と実行環境のライセンス文書も同梱）",
+    "upstreams": [
+      {
+        "name": "dust 1.2.6",
+        "url": "https://github.com/bootandy/dust",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "duf 0.9.1",
+        "url": "https://github.com/muesli/duf",
+        "license": "MIT"
+      }
+    ],
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-text-workbench",
+    "name": "きういテキスト作業場",
+    "summary": "文字列の例から作った正規表現を、そのままテキストやファイルの置換に使える無料ツールです。",
+    "features": [
+      "例を1行ずつ入力して正規表現を生成します。数字の一般化・大小文字の無視・繰り返しの検出を選べます。",
+      "生成した式を検索欄へ直接渡し、テキストや複数ファイルの置換・プレビューへ進めます。",
+      "例の入力と置換対象は別々に保持します。生成した式をコピーすることもできます。",
+      "元ファイルを自動で書き換えず、結果を別ファイルやZIPで保存します。grexとsdそれぞれの詳細オプションも使えます。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiTextWorkbench.exeを起動します。",
+      "例を入力し、必要な生成設定を選んで正規表現を作ります。",
+      "「検索欄へ渡す」で式を移し、置換文字列と対象テキストまたはファイルを指定します。",
+      "プレビューで確認してから結果を保存してください。"
+    ],
+    "limitations": "生成された式が例以外の文字列にも意図どおり一致するか、プレビューで確認してください。検索欄へ渡すと固定文字列を解除し、^と$を行単位で扱う設定になります。例は100行・1行256文字・16 KiB、生成は15秒・出力64 KiBまでです。置換のテキスト入力は2 MiB、ファイルは2,000件・1件2 MiB・合計64 MiB、1回300秒、保存結果は16 MiBまでです。元ファイルは自動で変更しません。詳細画面では選んだオプションの仕様に従います。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-text-workbench-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-text-workbench-v0.1.0/KiwiTextWorkbench-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-text-workbench",
+    "upstream_url": "https://github.com/pemistahl/grex",
+    "upstream_license": "grex: Apache-2.0、sd: MIT（依存物と実行環境のライセンス文書も同梱）",
+    "upstreams": [
+      {
+        "name": "grex 1.4.6",
+        "url": "https://github.com/pemistahl/grex",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "sd 1.1.0",
+        "url": "https://github.com/chmln/sd",
+        "license": "MIT"
+      }
+    ],
     "amazon_links": [],
     "windows_test_passed": true
   }

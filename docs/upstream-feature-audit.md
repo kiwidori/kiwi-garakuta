@@ -4,6 +4,8 @@
 
 | ソフト | 主な用途 |
 | --- | --- |
+| [きうい容量作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-capacity-workbench/) | ドライブ一覧・CSV保存・フォルダー内訳・選択フォルダー再解析 |
+| [きういテキスト作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-text-workbench/) | 例からの正規表現生成・検索欄への移送・プレビューと置換 |
 | [きういYouTube字幕](https://kiwi-garakuta.pages.dev/tools/kiwi-youtube-captions/) | 公開字幕の言語選択・翻訳・文字と時刻の検索・一括保存 |
 | [きうい検索作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-search-workbench/) | 名前検索の結果を内容検索へ渡し、共通の対象と除外で検索 |
 | [きうい検索](https://kiwi-garakuta.pages.dev/tools/kiwi-search/) | フォルダー内の文章を検索し、該当する行を表示 |
