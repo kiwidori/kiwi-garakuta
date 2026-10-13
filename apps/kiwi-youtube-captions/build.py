@@ -26,7 +26,7 @@ def build():
         if release.is_symlink() or release.is_junction() or release.resolve().parent!=ROOT:raise ValueError('Unsafe release directory')
         if release.exists():shutil.rmtree(release)
         release.mkdir();shutil.copy2(folder/'dist/KiwiYoutubeCaptions.exe',release/'KiwiYoutubeCaptions.exe')
-        for name in ('README.txt','THIRD-PARTY-NOTICES.txt'):shutil.copy2(ROOT/name,release/name)
+        for name in ('README.txt','THIRD-PARTY-NOTICES.txt','PyInstaller-LICENSE.txt','OpenSSL-LICENSE.txt'):shutil.copy2(ROOT/name,release/name)
         shutil.copy2(ROOT.parents[1]/'LICENSE',release/'LICENSE')
         tcl=ROOT.parent/'common/tcl-8.6.15-LICENSE.terms'
         if hashlib.sha256(tcl.read_bytes()).hexdigest()!='c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16':raise ValueError('Tcl license digest mismatch')
