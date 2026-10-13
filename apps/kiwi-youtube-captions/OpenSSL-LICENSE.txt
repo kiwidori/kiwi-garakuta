@@ -1,5 +1,4 @@
 OpenSSL 3.0.15, supplied by the Python 3.13.2 Windows runtime.
-ENGINESDIR: "C:\Program Files\OpenSSL\lib\engines-3"
 Source: https://github.com/openssl/openssl/tree/openssl-3.0.15
 
 
