@@ -32,10 +32,10 @@ class App(tk.Tk):
         left_frame.configure(padding=10);right_frame.configure(padding=10)
         main_pane.add(right_frame, weight=2)
 
-        
+
         mode_frame = ttk.LabelFrame(left_frame, text="モード")
         mode_frame.pack(fill="x", pady=(0, 5))
-        
+
         rb_send = ttk.Radiobutton(mode_frame, text="送信 (Send)", variable=self.mode, value="send")
         rb_recv = ttk.Radiobutton(mode_frame, text="受信 (Receive)", variable=self.mode, value="receive")
         rb_send.pack(side="left", padx=5)
@@ -44,42 +44,42 @@ class App(tk.Tk):
 
         code_frame = ttk.LabelFrame(left_frame, text="共有コード（相手だけに伝えてください）")
         code_frame.pack(fill="x", pady=(0, 5))
-        
+
         entry_code = ttk.Entry(code_frame, textvariable=self.code, font=("Consolas", 12))
         entry_code.pack(side="left", fill="x", expand=True, padx=5, pady=5)
-        
+
         btn_new = ttk.Button(code_frame, text="新規生成", command=self.generate_code)
         btn_copy = ttk.Button(code_frame, text="コピー", command=self.copy_code)
         btn_new.pack(side="right", padx=2)
         btn_copy.pack(side="right", padx=2)
-        
+
         self.controls.extend([entry_code, btn_new, btn_copy])
 
         file_frame = ttk.LabelFrame(left_frame, text="送信するファイル・フォルダー")
         file_frame.pack(fill="both", expand=True, pady=(0, 5))
-        
+
         self.files = tk.Listbox(file_frame, height=7, selectmode=tk.EXTENDED)
         self.files.pack(side="left", fill="both", expand=True, padx=5, pady=5)
-        
+
         btn_add_files = ttk.Button(file_frame, text="ファイル追加", command=self.add_files)
         btn_add_folder = ttk.Button(file_frame, text="フォルダ追加", command=self.add_folder)
         btn_remove = ttk.Button(file_frame, text="一覧から除く", command=self.remove_files)
-        
+
         btn_add_files.pack(side="right", padx=2, pady=(5, 0))
         btn_add_folder.pack(side="right", padx=2, pady=(5, 0))
         btn_remove.pack(side="right", padx=2, pady=(5, 0))
-        
+
         self.controls.extend([self.files, btn_add_files, btn_add_folder, btn_remove])
 
         dest_frame = ttk.LabelFrame(left_frame, text="受信先フォルダ")
         dest_frame.pack(fill="x", pady=(0, 5))
-        
+
         entry_dest = ttk.Entry(dest_frame, textvariable=self.destination)
         entry_dest.pack(side="left", fill="x", expand=True, padx=5, pady=5)
-        
+
         btn_choose_dest = ttk.Button(dest_frame, text="選択...", command=self.choose_destination)
         btn_choose_dest.pack(side="right", padx=2)
-        
+
         self.controls.extend([entry_dest, btn_choose_dest])
 
         memo_frame = ttk.LabelFrame(left_frame, text="メモ (テキスト送信)")
@@ -90,12 +90,12 @@ class App(tk.Tk):
 
         opt_frame = ttk.Frame(left_frame)
         opt_frame.pack(fill="x", pady=(0, 5))
-        
+
         chk_lan = ttk.Checkbutton(opt_frame, text="LAN内だけ（通常はこちら）", variable=self.lan)
         chk_zip = ttk.Checkbutton(opt_frame, text="フォルダをZIP圧縮", variable=self.zip)
         chk_lan.pack(side="left")
         chk_zip.pack(side="left", padx=10)
-        
+
         self.controls.extend([chk_lan, chk_zip])
 
         relay_row = ttk.Frame(left_frame);relay_row.pack(fill="x", pady=6)
@@ -105,23 +105,23 @@ class App(tk.Tk):
 
         details_frame = ttk.Frame(left_frame)
         details_frame.pack(fill="x", pady=(0, 5))
-        
+
         btn_details = ttk.Button(details_frame, text="詳細 (JSON)", command=self.edit_details)
         btn_help = ttk.Button(details_frame, text="ヘルプ", command=self.show_help)
         btn_details.pack(side="left")
         btn_help.pack(side="left", padx=5)
-        
+
         self.controls.append(btn_details)
 
         action_frame = ttk.Frame(left_frame)
         action_frame.pack(fill="x", pady=(0, 5))
-        
+
         self.start_button = ttk.Button(action_frame, text="送信・受信を開始", command=self.start)
         self.stop_button = ttk.Button(action_frame, text="停止", command=self.stop, state="disabled")
-        
+
         self.start_button.pack(side="left", expand=True, fill="x", padx=5)
         self.stop_button.pack(side="right", expand=True, fill="x", padx=5)
-        
+
         self.controls.append(self.start_button)
 
         self.progress = ttk.Progressbar(left_frame, mode="indeterminate")
@@ -129,17 +129,17 @@ class App(tk.Tk):
 
         open_frame = ttk.Frame(left_frame)
         open_frame.pack(fill="x")
-        
+
         self.open_button = ttk.Button(open_frame, text="受信フォルダを開く", command=self.open_received, state="disabled")
         self.open_button.pack(side="left", expand=True, fill="x", padx=5)
 
-        
+
         status_label = ttk.Label(right_frame, textvariable=self.status, font=("Meiryo UI", 10), wraplength=330)
         status_label.pack(fill="x", pady=(0, 5))
-        
+
         log_label = ttk.Label(right_frame, text="ログ (最大4MiB)")
         log_label.pack(anchor="w")
-        
+
         self.log = tk.Text(right_frame, height=8, width=34, state="disabled", wrap="word")
         self.log.pack(fill="both", expand=True)
 
