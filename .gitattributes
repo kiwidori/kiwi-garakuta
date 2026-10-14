@@ -19,3 +19,7 @@ apps/kiwi-image-enlarge/*-LICENSE.txt -text -whitespace
 apps/kiwi-image-enlarge/webp-COPYING.txt -text -whitespace
 apps/kiwi-image-enlarge/webp-PATENTS.txt -text -whitespace
 apps/kiwi-image-enlarge/upstream-help.txt -text -whitespace
+apps/kiwi-pdf/*-LICENSE.txt -text -whitespace
+apps/kiwi-pdf/qpdf-NOTICE.md -text -whitespace
+apps/kiwi-pdf/upstream-help.txt -text -whitespace
+apps/kiwi-pdf/job-schema.json -text -whitespace

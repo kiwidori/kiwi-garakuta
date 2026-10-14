@@ -1,0 +1,16 @@
+qpdf 12.4.2: Apache License 2.0. qpdf-LICENSE.txt and qpdf-NOTICE.md.
+qpdf.exe and qpdf30.dll are from the official qpdf-12.4.2-msvc64.zip distribution.
+https://github.com/qpdf/qpdf/releases/tag/v12.4.2
+
+Static library copyright notices from the same release's vcpkg.zip, x64-windows-static:
+OpenSSL 3.6.4: qpdf-openssl-LICENSE.txt (Apache-2.0)
+zlib 1.3.2: zlib-LICENSE.txt (zlib)
+libjpeg-turbo 3.2.0: libjpeg-turbo-LICENSE.txt (IJG/BSD/zlib notices)
+libspng 0.7.4: libspng-LICENSE.txt (BSD-2-Clause)
+Archive, binary and copyright notice hashes: upstream-pin.json.
+Microsoft Visual C++ runtime libraries are not redistributed as part of the qpdf payload.
+
+Python / Tcl 8.6.15 / Tk: Runtime-LICENSES.txt.
+CPython OpenSSL 3.0.15 runtime: Python-OpenSSL-LICENSE.txt (Apache-2.0).
+PyInstaller 6.22.2 bootloader: GPL-2.0-or-later with distribution exception, PyInstaller-LICENSE.txt.
+GUI: MIT, LICENSE.

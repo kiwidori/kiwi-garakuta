@@ -7,6 +7,7 @@ data/
 apps/*/release/
 apps/*/*.zip
 apps/kiwi-image-enlarge/native/
+apps/kiwi-pdf/native/
 
 # Local production settings and instructions
 AGENTS.md
