@@ -33,7 +33,7 @@ def build():
         parts=[]
         for title,file in [('Python',Path(sys.base_prefix)/'LICENSE.txt'),('Tcl8.6.15',tcl),('Tk',Path(sys.base_prefix)/'tcl/tk8.6/license.terms')]:parts.append('=== '+title+' ===\n'+file.read_text(encoding='utf8'))
         (release/'Runtime-LICENSES.txt').write_text('\n\n'.join(parts),encoding='utf8')
-    out=ROOT/'KiwiTransfer-0.1.0-win11-x64.zip'
+    out=ROOT/'KiwiTransfer-0.1.1-win11-x64.zip'
     with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for file in sorted(release.iterdir()):z.write(file,file.name)
     print('Built',out.name,out.stat().st_size,hashlib.sha256(out.read_bytes()).hexdigest())

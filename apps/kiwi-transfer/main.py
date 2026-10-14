@@ -2,13 +2,14 @@
 import copy,json,os,queue,sys,threading,tkinter as tk
 from pathlib import Path
 from tkinter import ttk,filedialog,messagebox
-from core import transfer,new_code,valid_code,validate_options,normalize_network
+from core import transfer,new_code,valid_code,validate_options,normalize_network,peer_address
 from runtime import resource_path
 class App(tk.Tk):
     def __init__(self):
         super().__init__();self.title('きういファイル便');self.geometry('960x780');self.minsize(900,730)
         self.paths=[];self.controls=[];self.q=queue.Queue();self.cancel=threading.Event();self.worker=None;self.closing=False;self.received='';self.options={}
         self.relay_password=tk.StringVar()
+        self.peer_ip=tk.StringVar()
         self.mode=tk.StringVar(value='send');self.code=tk.StringVar(value=new_code());self.destination=tk.StringVar(value=str(Path.home()/'Downloads'));self.lan=tk.BooleanVar(value=True);self.zip=tk.BooleanVar();self.status=tk.StringVar(value='同じLAN内のPCへ送れます。ファイルを選び、共有コードを相手に伝えてください。')
         self._build_ui();self.protocol('WM_DELETE_WINDOW',self.close);self.after(100,self.poll)
     def _build_ui(self):
@@ -17,7 +18,7 @@ class App(tk.Tk):
         import json, os, shutil
 
         self.title("きういファイル便")
-        self.geometry("1000x800")
+        self.geometry("1000x900")
         self.minsize(920, 760)
 
         self.controls = []
@@ -102,6 +103,7 @@ class App(tk.Tk):
         ttk.Label(relay_row, text="独自リレーのパスワード（通常は空欄）").pack(anchor="w")
         entry_password = ttk.Entry(relay_row, textvariable=self.relay_password, show="•");entry_password.pack(fill="x")
         self.controls.append(entry_password)
+        self._network_controls(left_frame)
 
         details_frame = ttk.Frame(left_frame)
         details_frame.pack(fill="x", pady=(0, 5))
@@ -148,6 +150,18 @@ class App(tk.Tk):
         footer_label = ttk.Label(self, text=footer_text, wraplength=900, justify="center", foreground="gray")
         footer_label.pack(fill="x", side="bottom", pady=(5, 0))
 
+    def _network_controls(self, parent):
+        frame = ttk.LabelFrame(parent, text='LANの接続先')
+        frame.pack(fill="x", pady=5)
+        lbl = ttk.Label(frame, text='受信側：送信側のIP（自動で見つからない場合）')
+        lbl.pack(anchor="w")
+        entry = ttk.Entry(frame, textvariable=self.peer_ip)
+        entry.pack(fill="x")
+        btn = ttk.Button(frame, text='送信側：このPCのIPを確認', command=self.show_addresses)
+        btn.pack(anchor="e", pady=(2, 0))
+        self.controls.extend([entry, btn])
+        return frame
+
     def add_files(self):
         for item in filedialog.askopenfilenames(title='送るファイルを選択'):
             if item not in self.paths:self.paths.append(item)
@@ -165,6 +179,13 @@ class App(tk.Tk):
     def choose_destination(self):
         item=filedialog.askdirectory(title='受信先の親フォルダーを選択')
         if item:self.destination.set(item)
+    def show_addresses(self):
+        import socket
+        try:addresses=sorted({info[4][0] for info in socket.getaddrinfo(socket.gethostname(),None,socket.AF_INET) if not info[4][0].startswith('127.')})
+        except OSError:addresses=[]
+        message='このPCのIP:\n'+'\n'.join(addresses) if addresses else 'IPを取得できませんでした。Windowsの設定→ネットワークとインターネット→接続のプロパティでIPv4アドレスを確認してください。'
+        message+='\n\n同じLAN内で使えるIPを相手へ伝え、受信側の「送信側のIP」へ入力してください。VPNなど複数の接続がある場合は、相手から接続できるアドレスを使ってください。'
+        messagebox.showinfo('このPCのIP',message)
     def generate_code(self):self.code.set(new_code())
     def copy_code(self):
         try:code=valid_code(self.code.get())
@@ -196,6 +217,7 @@ class App(tk.Tk):
             if mode=='send' and paths and note:raise ValueError('ファイル送信とメモ送信は分けて実行してください。')
             if mode=='send' and not(paths or note):raise ValueError('ファイル・フォルダーを追加するか、メモを入力してください。')
             destination=self.destination.get();relay_password=self.relay_password.get()
+            if mode=='receive' and self.peer_ip.get().strip():opts['global']['ip']=peer_address(self.peer_ip.get(),opts.get('send',{}).get('port',9009))
             if mode=='receive' and not Path(destination).is_dir():raise ValueError('受信先フォルダーを選んでください。')
         except ValueError as e:messagebox.showerror('転送の設定',str(e));return
         self.cancel.clear();self.received='';self.open_button.configure(state='disabled')

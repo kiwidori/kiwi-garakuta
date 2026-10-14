@@ -1,5 +1,5 @@
 """Pinned croc transport, with isolated settings and dedicated receive folders."""
-import hashlib,json,re,secrets,tempfile,threading,time,zipfile
+import hashlib,ipaddress,json,re,secrets,tempfile,threading,time,zipfile
 from pathlib import Path
 from runtime import resource_path
 from native_runner import run_native
@@ -23,6 +23,17 @@ def valid_code(code):
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9-]{5,127}',code):raise ValueError('共有コードは6～128文字の半角英数字とハイフンで入力してください。URLは使えません。')
     return code
 def new_code():return secrets.token_hex(4)+'-'+secrets.token_hex(4)+'-'+secrets.token_hex(4)
+def peer_address(text,port=9009):
+    text=text.strip()
+    if not text:return ''
+    try:
+        address=ipaddress.ip_address(text)
+    except ValueError:
+        match=re.fullmatch(r'(\[[^\]]+\]|[^:]+):([0-9]+)',text)
+        if not match:raise ValueError('IPは192.168.1.10、または192.168.1.10:9009のように入力してください。')
+        address=ipaddress.ip_address(match[1].strip('[]'));port=int(match[2])
+    if not 1<=port<=65535:raise ValueError('接続先ポートは1～65535です。')
+    return ('['+str(address)+']' if address.version==6 else str(address))+':'+str(port)
 GLOBAL={'local':bool,'no-compress':bool,'internal-dns':bool,'relay':str,'relay6':str,'ip':str,'socks5':str,'connect':str,'throttleUpload':str,'multicast':str,'curve':str}
 SEND={'zip':bool,'git':bool,'no-local':bool,'no-multi':bool,'transport':str,'hash':str,'port':int,'transfers':int,'exclude':str,'exclude-file':str}
 ENUMS={'curve':('p521','p256','p384','siec','ed25519'),'transport':('auto','derp','relay'),'hash':('xxhash','imohash','md5','highway')}
