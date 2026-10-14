@@ -8,6 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きういファイル便](https://kiwi-garakuta.pages.dev/tools/kiwi-transfer/) | 同じWi-Fi・LAN内のPCへ、写真・書類・フォルダーを共有コードで送る | [croc](https://github.com/schollz/croc) |
 | [きういPDF](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf/) | PDFの結合・ページの取り出し・分割・回転・パスワードを扱う | [qpdf](https://github.com/qpdf/qpdf) |
 | [きうい画像拡大](https://kiwi-garakuta.pages.dev/tools/kiwi-image-enlarge/) | 小さな写真・イラストを拡大して仕上がりを見比べる | [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) |
 | [きういYAML作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-yaml-workbench/) | YAMLの変換・編集・整形とGitHub Actionsの検査を行う | [yq](https://github.com/mikefarah/yq)・[yamlfmt](https://github.com/google/yamlfmt)・[actionlint](https://github.com/rhysd/actionlint) |
