@@ -1,5 +1,32 @@
 [
   {
+    "slug": "kiwi-pdf",
+    "name": "きういPDF",
+    "summary": "PDFをまとめる、必要なページだけ取り出す、分割する、向きを直す。アップロード不要の無料ソフトです。",
+    "features": [
+      "複数のPDFを、一覧で決めた順番に結合できます。PDFごとにページ範囲を指定できます。",
+      "必要なページの取り出し・並べ替え・逆順への変更・回転に対応しています。",
+      "ページごと、または指定したページ数ごとに分割し、ZIPへまとめて保存します。",
+      "容量の最適化と、パスワードの設定・解除、PDFの検査ができます。新しいパスワード設定にはAES-256を使います。",
+      "元のPDFや保存先にあるファイルは上書きしません。画像の画質を落とす設定は初期状態でオフです。",
+      "詳細設定では、PDFを重ねる・添付ファイル・注釈やフォーム・文書の作成情報・構造の確認なども指定できます。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiPdf.exeを起動し、PDFを追加します。",
+      "結合する順番を「上へ」「下へ」で決めます。必要なら、選択したPDFのページ欄と入力パスワードを設定します。",
+      "操作を選び、保存先を指定して「実行する」を押します。結合は一覧すべて、ほかの操作は選択した1件が対象です。",
+      "「保存したファイルを開く」で結果を確認します。分割したPDFは保存されたZIPを展開して使います。"
+    ],
+    "limitations": "Windows 11 x64とMicrosoft Visual C++ v14再頒布可能パッケージ（x64）が必要です。GPUは不要です。1件200 MiB・合計500 MiB・50件まで、出力300 MiB、処理180秒、分割500件まで。記録やJSON・添付の取り出しは16 MiBまでです。通常のPDF出力は入力PDFのパスワード設定を引き継ぎます。解除には既知のパスワードが必要です。文章の直接編集・OCR・署名の追加には対応していません。加工すると既存の電子署名が無効になる場合があります。容量が必ず減るとは限らず、検査ですべての表示不良を検出できるわけではありません。JSONからの復元・外部ストリームの書き出し・弱い暗号化は対象外です。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-pdf-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pdf-v0.1.0/KiwiPdf-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-pdf",
+    "upstream_url": "https://github.com/qpdf/qpdf",
+    "upstream_license": "Apache License 2.0（依存物の著作権表示をZIPに同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-image-enlarge",
     "name": "きうい画像拡大",
     "summary": "小さな写真やイラストを大きくして、元画像と見比べられる無料ソフトです。画像はPC内だけで処理します。",
