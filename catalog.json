@@ -8,17 +8,18 @@
       "フォルダーの圧縮転送と、メモをテキストファイルとして送る操作に対応しています。",
       "受信ごとに専用の新しいフォルダーへ保存します。元のファイルや既存ファイルは上書きしません。",
       "共有コードはコピーでき、転送途中には停止できます。受信ファイルは自動では開きません。",
-      "転送はcrocで暗号化します。速度制限・除外・接続先・転送方式などを詳細設定で指定できます。"
+      "転送はcrocで暗号化します。速度制限・除外・接続先・転送方式などを詳細設定で指定できます。",
+      "自動で接続先が見つからない場合も、送信側のIPを確認し、受信側の画面へ入力できます。"
     ],
     "steps": [
       "ZIPを展開してKiwiTransfer.exeを、送信側と受信側の両方のPCで起動します。",
       "送信側でファイル・フォルダーを追加し、共有コードを相手だけに伝えて送信を開始します。",
-      "受信側で「受信」を選び、同じ共有コードと受信先フォルダーを指定して開始します。",
+      "受信側で「受信」を選び、同じ共有コードと受信先フォルダーを指定して開始します。見つからない場合は、送信側で「このPCのIPを確認」を押し、受信側の「送信側のIP」へそのアドレスを入力します。",
       "転送が完了したら「受信フォルダを開く」で確認します。信頼できる相手のファイルだけ開いてください。"
     ],
     "limitations": "Windows 11 x64向けです。通常は同じWi-Fi・LAN内で両方のPCを同時に起動して使います。相手も本ソフトかcroc 11.5.4互換のソフトが必要です。標準公開リレーを使うインターネット転送は、この版では対応していません。独自リレーを使う場合は両方で同じ接続先・パスワードを設定してください。LANのファイアウォールや端末間の通信を禁止するWi-Fiでは接続できない場合があります。選択100件、1時間、表示データ4 MiBまで。進捗は待機表示です。十分な受信先の空き容量が必要です。途中停止や失敗時は「受信中」フォルダーに部分ファイルが残ります。既存ファイルの上書き・途中からの再開・遠隔端末・保存型クラウド転送・コードQR表示には対応していません。フォルダーの圧縮転送は受信側で展開します。crocが更新確認でGitHubへ接続する場合がありますが、自動更新はしません。GPUは不要です。コード署名はありません。",
-    "screenshot": "/assets/screenshots/kiwi-transfer-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-transfer-v0.1.0/KiwiTransfer-0.1.0-win11-x64.zip",
+    "screenshot": "/assets/screenshots/kiwi-transfer-011-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-transfer-v0.1.1/KiwiTransfer-0.1.1-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-transfer",
     "upstream_url": "https://github.com/schollz/croc",
     "upstream_license": "MIT（Go依存物・EFF語彙のライセンス表示もZIPへ同梱）",
