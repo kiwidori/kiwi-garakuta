@@ -1,0 +1,17 @@
+Real-ESRGAN: https://github.com/xinntao/Real-ESRGAN (BSD-3-Clause)
+Official executable/model archive: v0.2.5.0 / 20220424 Windows distribution.
+Native engine: https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan (MIT)
+Includes realsr-ncnn-vulkan copyright notice (nihui).
+ncnn: https://github.com/Tencent/ncnn (BSD-3-Clause and notices in ncnn-LICENSE.txt)
+libwebp: https://github.com/webmproject/libwebp (BSD-3-Clause, PATENTS)
+stb image headers: Sean Barrett (MIT)
+Windows dirent: Toni Ronkko (MIT)
+Copyright (C) 1998-2019 Toni Ronkko; bundled win32dirent.h.
+Versions, archive/member digests and source license URLs: upstream-pin.json.
+
+Python / Tcl 8.6.15 / Tk: Runtime-LICENSES.txt
+Pillow and its bundled third-party libraries: Pillow-LICENSE.txt
+PyInstaller bootloader: GPL-2.0-or-later with distribution exception, PyInstaller-LICENSE.txt.
+OpenSSL runtime: Apache-2.0, OpenSSL-LICENSE.txt.
+The bundled native executable uses Windows WIC, system Vulkan and Microsoft OpenMP runtime.
+Vulkan driver and Microsoft vcomp140.dll/vcomp140d.dll are not redistributed.

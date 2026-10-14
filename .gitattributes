@@ -15,3 +15,7 @@ apps/kiwi-pc-workbench/*-LICENSE.txt -text -whitespace
 apps/kiwi-pc-workbench/THIRD-PARTY-NOTICES.txt -text -whitespace
 apps/kiwi-pc-workbench/upstream-help.txt -text -whitespace
 apps/kiwi-pc-workbench/profiles/*/upstream-help.txt -text -whitespace
+apps/kiwi-image-enlarge/*-LICENSE.txt -text -whitespace
+apps/kiwi-image-enlarge/webp-COPYING.txt -text -whitespace
+apps/kiwi-image-enlarge/webp-PATENTS.txt -text -whitespace
+apps/kiwi-image-enlarge/upstream-help.txt -text -whitespace
