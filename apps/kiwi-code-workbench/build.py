@@ -17,9 +17,9 @@ def build():
         folder=Path(td)
         cmd=[sys.executable,'-m','PyInstaller','--noconfirm','--clean','--onefile','--noconsole','--paths',str(ROOT.parent/'common'),'--name','KiwiCodeWorkbench','--distpath',str(folder/'dist'),'--workpath',str(folder/'build'),'--specpath',str(folder)]
         for e,p in pins.items():
-            cache=os.environ.get('KIWI_NATIVE_CACHE')
+            cache=ROOT.parents[1]/'data/code-workbench' if os.environ.get('KIWI_USE_NATIVE_CACHE')=='1' else None
             if cache:
-                binary=(Path(cache)/p['exe']).read_bytes();z=None
+                binary=(cache/p['exe']).read_bytes();z=None
             else:
                 raw=fetch(p['url'],p['sha']);z=zipfile.ZipFile(io.BytesIO(raw)) if p['kind']=='zip' else None
                 binary=z.read(p['archive_member']) if z else raw
