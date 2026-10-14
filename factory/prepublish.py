@@ -24,7 +24,7 @@ def available(url: str) -> bool:
                 parsed.path, urllib.parse.urlencode(query), parsed.fragment))
         request = urllib.request.Request(current_url, method="HEAD", headers={
             "User-Agent": "kiwi-garakuta-publish/0.1",
-            "Accept": "application/octet-stream",
+            "Accept": "application/octet-stream" if "/releases/download/" in parsed.path else "text/html",
         })
         try:
             with urllib.request.urlopen(request, timeout=20) as response:
