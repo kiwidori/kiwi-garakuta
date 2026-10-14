@@ -1,0 +1,276 @@
+{
+  "slug": "kiwi-shell",
+  "tool": "shfmt.exe",
+  "upstream_url": "https://github.com/mvdan/sh",
+  "mandatory_args": [],
+  "blocked_flags": [
+    "--write",
+    "-w"
+  ],
+  "options": [
+    {
+      "flag": "--version",
+      "aliases": [
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "show version and exit",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能から対応"
+    },
+    {
+      "flag": "--list",
+      "aliases": [
+        "-l",
+        "--list"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "error with a list of files whose formatting differs from shfmt;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能から対応"
+    },
+    {
+      "flag": "--write",
+      "aliases": [
+        "-w",
+        "--write"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "write result to file instead of stdout",
+      "blocked": true,
+      "baseline_cli_use": false,
+      "coverage": "CLI直接書込・設定・長時間サーバーは対象外（結果は保存ボタン）"
+    },
+    {
+      "flag": "--diff",
+      "aliases": [
+        "-d",
+        "--diff"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "error with a diff when the formatting differs",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能から対応"
+    },
+    {
+      "flag": "--apply-ignore",
+      "aliases": [
+        "--apply-ignore"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "always apply EditorConfig ignore rules",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--detect",
+      "aliases": [
+        "--detect"
+      ],
+      "takes_value": true,
+      "value_hint": "str",
+      "description": "str        how to detect shell files when walking: default, exec, or all",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--filename",
+      "aliases": [
+        "--filename"
+      ],
+      "takes_value": true,
+      "value_hint": "str",
+      "description": "str      provide a name for the standard input file",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--language-dialect",
+      "aliases": [
+        "-ln",
+        "--language-dialect"
+      ],
+      "takes_value": true,
+      "value_hint": "str",
+      "description": "str  bash/posix/mksh/bats/zsh, default \"auto\"",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--posix",
+      "aliases": [
+        "-p",
+        "--posix"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "shorthand for -ln=posix",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能から対応"
+    },
+    {
+      "flag": "--simplify",
+      "aliases": [
+        "-s",
+        "--simplify"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "simplify the code",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--indent",
+      "aliases": [
+        "-i",
+        "--indent"
+      ],
+      "takes_value": true,
+      "value_hint": "uint",
+      "description": "uint       0 for tabs (default), >0 for number of spaces",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--binary-next-line",
+      "aliases": [
+        "-bn",
+        "--binary-next-line"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "binary ops like && and | may start a line",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--case-indent",
+      "aliases": [
+        "-ci",
+        "--case-indent"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "switch cases will be indented",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--space-redirects",
+      "aliases": [
+        "-sr",
+        "--space-redirects"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "redirect operators will be followed by a space",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--keep-padding",
+      "aliases": [
+        "-kp",
+        "--keep-padding"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "keep column alignment paddings",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--func-next-line",
+      "aliases": [
+        "-fn",
+        "--func-next-line"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "function opening braces are placed on a separate line",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--minify",
+      "aliases": [
+        "-mn",
+        "--minify"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "minify the code to reduce its size (implies -s)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "専用GUIで対応"
+    },
+    {
+      "flag": "--find",
+      "aliases": [
+        "-f",
+        "--find"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "recursively find all shell files and print the paths;",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能から対応"
+    },
+    {
+      "flag": "--to-json",
+      "aliases": [
+        "--to-json"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "print syntax tree to stdout as a typed JSON",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能から対応"
+    },
+    {
+      "flag": "--from-json",
+      "aliases": [
+        "--from-json"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "read syntax tree from stdin as a typed JSON",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能から対応"
+    }
+  ],
+  "subcommands": [],
+  "examples": [
+    {
+      "name": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": ""
+    }
+  ]
+}

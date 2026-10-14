@@ -1,0 +1,71 @@
+{
+  "shfmt": {
+    "slug": "kiwi-shell",
+    "name": "きういシェル整形",
+    "repo": "mvdan/sh",
+    "tag": "v3.14.1",
+    "exe": "shfmt.exe",
+    "asset": "shfmt_v3.14.1_windows_amd64.exe",
+    "sha": "13629ce28442ca80b6b5a819f7574ab39e1c28c6e26734ca816c9714e04851df",
+    "license": "BSD-3-Clause",
+    "url": "https://github.com/mvdan/sh/releases/download/v3.14.1/shfmt_v3.14.1_windows_amd64.exe",
+    "license_url": "https://raw.githubusercontent.com/mvdan/sh/v3.14.1/LICENSE",
+    "license_sha": "ce63850f77649f00d1394045e2794ffb09a5596beabac51c9548edd958845d7c",
+    "app_exe": "KiwiShell",
+    "version": "0.1.1",
+    "binary_sha": "13629ce28442ca80b6b5a819f7574ab39e1c28c6e26734ca816c9714e04851df",
+    "kind": "exe",
+    "license_file": "shfmt-LICENSE"
+  },
+  "glow": {
+    "slug": "kiwi-markdown",
+    "name": "きういMarkdown",
+    "repo": "charmbracelet/glow",
+    "tag": "v3.0.0",
+    "exe": "glow.exe",
+    "asset": "glow_3.0.0_Windows_x86_64.zip",
+    "archive_member": "glow_3.0.0_Windows_x86_64/glow.exe",
+    "sha": "d8907e07436ecbb6738bc0e3bbf8aa6159e351f95082e9db3c3fc4200086f809",
+    "binary_sha": "0bebd662eb9da86b32b6abeaef10fe448a36d2a2a6aa629098ccd17b13f6cb9c",
+    "license": "MIT",
+    "url": "https://github.com/charmbracelet/glow/releases/download/v3.0.0/glow_3.0.0_Windows_x86_64.zip",
+    "license_url": "https://raw.githubusercontent.com/charmbracelet/glow/v3.0.0/LICENSE",
+    "license_sha": "4e48affb643d6a920b82562a7bcb390ce19e04ee63fbeef22f3234bd0c410ef1",
+    "app_exe": "KiwiMarkdown",
+    "version": "0.1.1",
+    "kind": "zip",
+    "license_file": "glow-LICENSE"
+  },
+  "code2prompt": {
+    "slug": "kiwi-prompt",
+    "name": "きういコード資料",
+    "repo": "mufeedvh/code2prompt",
+    "tag": "v4.2.0",
+    "exe": "code2prompt.exe",
+    "asset": "code2prompt-x86_64-pc-windows-msvc.exe",
+    "sha": "e3285c8b7319659c9e6fda4b63a1cb5d83e07b1688df83ed224fdb801d9da7d1",
+    "binary_sha": "e3285c8b7319659c9e6fda4b63a1cb5d83e07b1688df83ed224fdb801d9da7d1",
+    "license": "MIT",
+    "url": "https://github.com/mufeedvh/code2prompt/releases/download/v4.2.0/code2prompt-x86_64-pc-windows-msvc.exe",
+    "license_url": "https://raw.githubusercontent.com/mufeedvh/code2prompt/v4.2.0/LICENSE",
+    "license_sha": "9d90fff5a2c2de4272d9bc1a30c185b11e0312d9fe229ebc23a923a4c495f78d",
+    "app_exe": "KiwiPrompt",
+    "version": "0.1.1",
+    "kind": "exe",
+    "license_file": "code2prompt-LICENSE"
+  },
+  "bat": {
+    "repo": "sharkdp/bat",
+    "tag": "v0.26.1",
+    "exe": "bat.exe",
+    "kind": "zip",
+    "url": "https://github.com/sharkdp/bat/releases/download/v0.26.1/bat-v0.26.1-x86_64-pc-windows-msvc.zip",
+    "sha": "0f729b4b6f5f28d395c641eacc2e9ff68d0096b85aa0eec344aa62425144b69b",
+    "archive_member": "bat-v0.26.1-x86_64-pc-windows-msvc/bat.exe",
+    "binary_sha": "9ea9f7ab1c27aa5c9390e91543f9f47c6bd17bc53f3e30ac9db762f28f55c4fd",
+    "license_hashes": {
+      "LICENSE-MIT": "1a3221363e72d6603e500e935e67321d9e9ec1a8cc811617e10c1b05a6c9a772",
+      "LICENSE-APACHE": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    }
+  }
+}

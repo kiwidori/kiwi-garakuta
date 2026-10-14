@@ -1,0 +1,210 @@
+{
+  "slug": "kiwi-shell",
+  "title": "きういシェル整形",
+  "tool": "shfmt.exe",
+  "upstream_url": "https://github.com/mvdan/sh",
+  "fields": [
+    {
+      "group": "構文と整形",
+      "label": "シェル方言",
+      "flag": "--language-dialect",
+      "type": "choice",
+      "default": "",
+      "choices": [
+        "",
+        "auto",
+        "bash",
+        "posix",
+        "mksh",
+        "bats",
+        "zsh"
+      ]
+    },
+    {
+      "group": "構文と整形",
+      "label": "スペース数（0はタブ）",
+      "flag": "--indent",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "group": "構文と整形",
+      "label": "構文を簡略化",
+      "flag": "--simplify",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "構文と整形",
+      "label": "最小化",
+      "flag": "--minify",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "構文と整形",
+      "label": "演算子を次の行へ",
+      "flag": "--binary-next-line",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "構文と整形",
+      "label": "caseを字下げ",
+      "flag": "--case-indent",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "構文と整形",
+      "label": "リダイレクト後に空白",
+      "flag": "--space-redirects",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "構文と整形",
+      "label": "桁位置の空白を維持",
+      "flag": "--keep-padding",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "構文と整形",
+      "label": "関数の波括弧を次の行へ",
+      "flag": "--func-next-line",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "ファイル検出",
+      "label": "フォルダー内の検出方法",
+      "flag": "--detect",
+      "type": "choice",
+      "default": "",
+      "choices": [
+        "",
+        "default",
+        "exec",
+        "all"
+      ]
+    },
+    {
+      "group": "ファイル検出",
+      "label": "EditorConfigのignoreを適用",
+      "flag": "--apply-ignore",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "group": "ファイル検出",
+      "label": "標準入力の仮想ファイル名",
+      "flag": "--filename",
+      "type": "text",
+      "default": ""
+    }
+  ],
+  "modes": [
+    {
+      "label": "整形",
+      "args": [],
+      "stdin": true,
+      "files": true,
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": true
+    },
+    {
+      "label": "フォルダー整形ZIP",
+      "args": [],
+      "stdin": false,
+      "files": true,
+      "job": "shell_zip",
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": true
+    },
+    {
+      "label": "差分",
+      "args": [
+        "--diff"
+      ],
+      "stdin": true,
+      "files": true,
+      "success_codes": [
+        0,
+        1
+      ],
+      "allow_dirs": true
+    },
+    {
+      "label": "変更が必要なファイル一覧",
+      "args": [
+        "--list"
+      ],
+      "stdin": true,
+      "files": true,
+      "success_codes": [
+        0,
+        1
+      ],
+      "allow_dirs": true
+    },
+    {
+      "label": "スクリプト検出",
+      "args": [
+        "--find"
+      ],
+      "stdin": false,
+      "files": true,
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": true
+    },
+    {
+      "label": "AST JSONへ",
+      "args": [
+        "--to-json"
+      ],
+      "stdin": true,
+      "files": true,
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": true
+    },
+    {
+      "label": "AST JSONから整形",
+      "args": [
+        "--from-json"
+      ],
+      "stdin": true,
+      "files": false,
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": true
+    },
+    {
+      "label": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": false,
+      "files": false,
+      "success_codes": [
+        0
+      ],
+      "allow_dirs": true
+    }
+  ],
+  "mandatory_args": [],
+  "blocked_flags": [
+    "--write",
+    "-w"
+  ],
+  "delimiter": true
+}

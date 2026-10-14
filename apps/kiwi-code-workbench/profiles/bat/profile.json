@@ -1,0 +1,88 @@
+{
+  "slug": "kiwi-code",
+  "title": "きういコード・文書作業場",
+  "tool": "bat.exe",
+  "fields": [
+    {
+      "flag": "@first",
+      "label": "開始行",
+      "type": "text",
+      "default": "1",
+      "group": "コード表示"
+    },
+    {
+      "flag": "--theme",
+      "label": "テーマ",
+      "type": "choice",
+      "default": "TwoDark",
+      "group": "コード表示",
+      "choices": [
+        "TwoDark",
+        "GitHub",
+        "Dracula"
+      ]
+    },
+    {
+      "flag": "--language",
+      "label": "言語（空欄で自動判定）",
+      "type": "text",
+      "default": "",
+      "group": "コード表示"
+    },
+    {
+      "flag": "--tabs",
+      "label": "タブ幅",
+      "type": "text",
+      "default": "4",
+      "group": "コード表示"
+    },
+    {
+      "flag": "--show-all",
+      "label": "制御文字を可視化",
+      "type": "bool",
+      "default": false,
+      "group": "コード表示"
+    }
+  ],
+  "modes": [
+    {
+      "label": "コードを表示",
+      "args": [],
+      "stdin": true,
+      "files": true,
+      "allow_dirs": false
+    },
+    {
+      "label": "対応言語一覧",
+      "args": [
+        "--list-languages"
+      ],
+      "stdin": false,
+      "files": false
+    },
+    {
+      "label": "テーマ一覧",
+      "args": [
+        "--list-themes"
+      ],
+      "stdin": false,
+      "files": false
+    },
+    {
+      "label": "バージョン",
+      "args": [
+        "--version"
+      ],
+      "stdin": false,
+      "files": false
+    }
+  ],
+  "delimiter": true,
+  "mandatory_args": [
+    "--paging=never"
+  ],
+  "blocked_flags": [
+    "--pager",
+    "--config-file"
+  ]
+}
