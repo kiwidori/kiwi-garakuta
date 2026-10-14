@@ -137,7 +137,9 @@
     "upstream_license": "MIT または Apache License 2.0",
     "amazon_links": [],
     "windows_test_passed": true,
-    "advanced_screenshot": "/assets/screenshots/kiwi-code-advanced-public.png"
+    "advanced_screenshot": "/assets/screenshots/kiwi-code-advanced-public.png",
+    "replaced_by": "kiwi-code-workbench",
+    "replacement_name": "きういコード・文書作業場"
   },
   {
     "slug": "kiwi-system",
@@ -489,7 +491,9 @@
     "upstream_url": "https://github.com/mvdan/sh",
     "upstream_license": "BSD-3-Clause",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-code-workbench",
+    "replacement_name": "きういコード・文書作業場"
   },
   {
     "slug": "kiwi-minify",
@@ -568,7 +572,9 @@
     "upstream_url": "https://github.com/charmbracelet/glow",
     "upstream_license": "MIT（依存物の通知もZIPに同梱）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-code-workbench",
+    "replacement_name": "きういコード・文書作業場"
   },
   {
     "slug": "kiwi-replace",
@@ -674,7 +680,9 @@
     "upstream_url": "https://github.com/mufeedvh/code2prompt",
     "upstream_license": "MIT（依存物通知も同梱）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-code-workbench",
+    "replacement_name": "きういコード・文書作業場"
   },
   {
     "slug": "kiwi-yamlfmt",
@@ -1040,6 +1048,54 @@
       {
         "name": "actionlint 1.7.12",
         "url": "https://github.com/rhysd/actionlint",
+        "license": "MIT"
+      }
+    ],
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-code-workbench",
+    "name": "きういコード・文書作業場",
+    "summary": "コード閲覧・シェル整形・資料生成・Markdown閲覧をまとめ、処理結果を次の表示へ渡せる無料ツールです。",
+    "features": [
+      "コードやテキストを色付き・行番号付きで閲覧し、500行ずつ移動できます。言語指定、3テーマ、制御文字の可視化、装飾付き・プレーン保存に対応します。",
+      "シェルの整形・簡略化・最小化・差分・AST JSONとの双方向変換、EditorConfig設定とフォルダー整形ZIPに対応します。整形された単一本文をコード閲覧へ渡せます。",
+      "フォルダーからMarkdown・JSON・XMLのコード資料を生成します。対象の絞り込み・Git差分や履歴・トークン分布・独自テンプレート・変数を指定でき、生成したMarkdownを文書表示へ渡せます。",
+      "Markdownの貼付け・ファイル・URL・リポジトリREADMEを装飾付きで閲覧できます。テーマ・独自JSONスタイル・折返し幅とプレーン保存を選べます。",
+      "テキストと対象一覧を共有し、用途別の設定は起動中に保持します。ファイルの親フォルダーを資料の対象にする操作と、4ツールそれぞれの詳細オプションも使えます。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiCodeWorkbench.exeを起動し、用途を選びます。",
+      "テキストを入力するか対象を追加します。コード・Markdownのファイル閲覧は1ファイル、資料生成は1フォルダーを指定してください。",
+      "シェルの整形後は「整形結果をコード閲覧へ」、Markdown資料の生成後は「生成資料をMarkdown閲覧へ」で結果を渡せます。入力の置換を確認してから「実行」で表示します。",
+      "「ファイルのフォルダーを資料対象へ」で親フォルダーを資料の対象にできます。必要な結果を保存してください。"
+    ],
+    "limitations": "切替・移送では自動実行しません。共有テキストは資料生成では使いません。元ファイルの自動変更やシェル・HTML/JavaScriptの実行、AIへの送信は行いません。URL閲覧では指定先へ通信します。移送は成功した単一シェル本文・Markdown形式の生成資料のみで、差分・AST JSON・一覧・ZIP・診断・装飾済み表示は対象外です。テキスト入力と移送はUTF-8で2 MiB、NULやANSI制御を含む結果は移送できません。コード閲覧はファイル10 MiB・出力2 MiB・15秒・1回500行、Markdownファイルは2 MiB。その他は1回300秒・出力16 MiB、シェル一括処理は2,000件・合計64 MiB・保存ZIP16 MiBまでです。通常の対象指定ではリンクやジャンクションを扱いません。資料は.c2pconfigを継承し、一部のfalse設定は設定ファイルのtrueを解除しません。トークン数はencodingによる目安で、差分資料は適用できるパッチではありません。端末用TUI・ページャー等は対象外、詳細画面は用途切替で初期化されます。全オプションの組合せは保証しません。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-code-workbench-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-code-workbench-v0.1.0/KiwiCodeWorkbench-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-code-workbench",
+    "upstream_url": "https://github.com/sharkdp/bat",
+    "upstream_license": "bat: MIT / Apache-2.0、shfmt: BSD-3-Clause、Glow・code2prompt: MIT（依存物通知も同梱）",
+    "upstreams": [
+      {
+        "name": "bat 0.26.1",
+        "url": "https://github.com/sharkdp/bat",
+        "license": "MIT / Apache-2.0"
+      },
+      {
+        "name": "shfmt 3.14.1",
+        "url": "https://github.com/mvdan/sh",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "code2prompt 4.2.0",
+        "url": "https://github.com/mufeedvh/code2prompt",
+        "license": "MIT"
+      },
+      {
+        "name": "Glow 3.0.0",
+        "url": "https://github.com/charmbracelet/glow",
         "license": "MIT"
       }
     ],

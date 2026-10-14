@@ -4,6 +4,7 @@
 
 | ソフト | 主な用途 |
 | --- | --- |
+| [きういコード・文書作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-code-workbench/) | コード閲覧・シェル整形・資料生成・Markdown表示、処理結果の移送 |
 | [きういYAML作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-yaml-workbench/) | 共通入力でYAML変換・式編集・整形・GitHub Actions検査、用途ごとの設定保持 |
 | [きうい容量作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-capacity-workbench/) | ドライブ一覧・CSV保存・フォルダー内訳・選択フォルダー再解析 |
 | [きういテキスト作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-text-workbench/) | 例からの正規表現生成・検索欄への移送・プレビューと置換 |
