@@ -9,6 +9,9 @@ libjpeg-turbo 3.2.0: libjpeg-turbo-LICENSE.txt (IJG/BSD/zlib notices)
 libspng 0.7.4: libspng-LICENSE.txt (BSD-2-Clause)
 Archive, binary and copyright notice hashes: upstream-pin.json.
 Microsoft Visual C++ runtime libraries are not redistributed as part of the qpdf payload.
+KiwiPdfHost.exe: MIT, PdfHost.cs. Uses Windows 11's built-in .NET Framework 4.x.
+The host passes job settings from standard input to qpdf's in-memory C API.
+Its binary and source SHA-256 are in host-pin.json.
 
 Python / Tcl 8.6.15 / Tk: Runtime-LICENSES.txt.
 CPython OpenSSL 3.0.15 runtime: Python-OpenSSL-LICENSE.txt (Apache-2.0).

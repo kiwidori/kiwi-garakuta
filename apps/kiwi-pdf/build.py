@@ -5,6 +5,14 @@ ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT.parent/'common'))
 from portable_build import fetch
 
+def compile_host(destination):
+    import ctypes
+    buffer=ctypes.create_unicode_buffer(32768)
+    if not ctypes.windll.kernel32.GetWindowsDirectoryW(buffer,len(buffer)):raise ValueError('Windows directory is unavailable')
+    compiler=Path(buffer.value)/'Microsoft.NET/Framework64/v4.0.30319/csc.exe'
+    if not compiler.is_file():raise ValueError('Windows .NET Framework C# compiler is unavailable')
+    subprocess.run([str(compiler),'/nologo','/platform:x64','/target:exe','/optimize+','/out:'+str(destination),str(ROOT/'PdfHost.cs')],check=True)
+
 def build():
     if os.name!='nt':raise SystemExit('Build on Windows x64.')
     import tkinter
@@ -23,11 +31,15 @@ def build():
                 body=archive.read(pins['prefix']+name)
                 if hashlib.sha256(body).hexdigest()!=digest:raise ValueError('Native digest mismatch')
                 dest=native/name;dest.parent.mkdir(exist_ok=True);dest.write_bytes(body)
+        host=native/'KiwiPdfHost.exe';compile_host(host)
+        host_pin=folder/'host-pin.json';host_pin.write_text(json.dumps({'sha256':hashlib.sha256(host.read_bytes()).hexdigest(),'source_sha256':hashlib.sha256((ROOT/'PdfHost.cs').read_bytes()).hexdigest()}),encoding='utf8')
         payload=folder/'native-payload.zip'
         with zipfile.ZipFile(payload,'w',zipfile.ZIP_STORED) as z:
             for name in pins['members']:z.write(native/name,name)
+            z.write(host,host.name)
         cmd=[sys.executable,'-m','PyInstaller','--noconfirm','--clean','--onefile','--noconsole','--paths',str(ROOT.parent/'common'),'--name','KiwiPdf','--distpath',str(folder/'dist'),'--workpath',str(folder/'build'),'--specpath',str(folder),'--add-data',str(payload)+os.pathsep+'.','--add-data',str(ROOT/'upstream-pin.json')+os.pathsep+'.','--add-data',str(ROOT/'upstream-help.txt')+os.pathsep+'.','--add-data',str(ROOT/'job-schema.json')+os.pathsep+'.']
         for mod in ('numpy','matplotlib','IPython','olefile'):cmd+=['--exclude-module',mod]
+        cmd+=['--add-data',str(host_pin)+os.pathsep+'.']
         subprocess.run([*cmd,str(ROOT/'main.py')],check=True)
         release=ROOT/'release'
         if release.is_symlink() or release.is_junction() or release.resolve().parent!=ROOT:raise ValueError('Unsafe release directory')
@@ -35,6 +47,7 @@ def build():
         release.mkdir();shutil.copy2(folder/'dist/KiwiPdf.exe',release)
         names=['README.txt','THIRD-PARTY-NOTICES.txt','PyInstaller-LICENSE.txt','Python-OpenSSL-LICENSE.txt','upstream-pin.json',*pins['licenses']]
         for name in names:shutil.copy2(ROOT/name,release/name)
+        shutil.copy2(host_pin,release/'host-pin.json');shutil.copy2(ROOT/'PdfHost.cs',release/'PdfHost.cs')
         shutil.copy2(ROOT.parents[1]/'LICENSE',release/'LICENSE')
         tcl=ROOT.parent/'common/tcl-8.6.15-LICENSE.terms'
         if hashlib.sha256(tcl.read_bytes()).hexdigest()!='c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16':raise ValueError('Tcl license digest mismatch')

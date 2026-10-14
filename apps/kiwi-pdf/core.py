@@ -11,11 +11,13 @@ def native_folder():
     if not getattr(sys,'frozen',False):return Path(__file__).parent/'native'
     if _NATIVE_MANAGER is not None:return Path(_NATIVE_MANAGER.name)
     pin=json.loads(Path(resource_path('upstream-pin.json')).read_text(encoding='utf8'))
+    host=json.loads(Path(resource_path('host-pin.json')).read_text(encoding='utf8'))
+    members={**pin['members'],'KiwiPdfHost.exe':host['sha256']}
     manager=tempfile.TemporaryDirectory(prefix='kiwi-pdf-native-')
     try:
         with zipfile.ZipFile(resource_path('native-payload.zip')) as z:
-            if set(z.namelist())!={'qpdf.exe','qpdf30.dll'} or set(pin['members'])!=set(z.namelist()):raise ValueError('同梱エンジンの内容が一致しません。')
-            for name,digest in pin['members'].items():
+            if set(z.namelist())!={'qpdf.exe','qpdf30.dll','KiwiPdfHost.exe'} or set(members)!=set(z.namelist()):raise ValueError('同梱エンジンの内容が一致しません。')
+            for name,digest in members.items():
                 body=z.read(name)
                 if hashlib.sha256(body).hexdigest()!=digest:raise ValueError('同梱エンジンが一致しません。')
                 (Path(manager.name)/name).write_bytes(body)
@@ -80,7 +82,7 @@ def _invoke(job,work,cancel,deadline):
     if cancel.is_set():raise InterruptedError('処理を停止しました。')
     remaining=deadline-time.monotonic()
     if remaining<=0:raise TimeoutError('処理が180秒を超えました。')
-    config=work/'job.json';config.write_text(json.dumps(job,ensure_ascii=False),encoding='utf8')
+    payload=json.dumps(job,ensure_ascii=False).encode('utf8')
     stopped=threading.Event();linked=threading.Event();limit=threading.Event()
     def guard():
         while not stopped.wait(.05):
@@ -90,7 +92,7 @@ def _invoke(job,work,cancel,deadline):
             except OSError:pass
     watcher=threading.Thread(target=guard,daemon=True);watcher.start()
     try:
-        folder=native_folder();result=execute(str(folder/'qpdf.exe'),['--job-json-file='+str(config)],stdin_data=None,cwd=str(folder),cancel_event=linked,timeout=remaining,max_output=16*1024**2)
+        folder=native_folder();result=execute(str(folder/'KiwiPdfHost.exe'),[],stdin_data=payload,cwd=str(folder),cancel_event=linked,timeout=remaining,max_output=16*1024**2)
         if limit.is_set():raise ValueError('出力が300 MiBを超えました。')
         if cancel.is_set():raise InterruptedError('処理を停止しました。')
         return result

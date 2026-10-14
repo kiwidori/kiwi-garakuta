@@ -23,3 +23,4 @@ apps/kiwi-pdf/*-LICENSE.txt -text -whitespace
 apps/kiwi-pdf/qpdf-NOTICE.md -text -whitespace
 apps/kiwi-pdf/upstream-help.txt -text -whitespace
 apps/kiwi-pdf/job-schema.json -text -whitespace
+apps/kiwi-pdf/PdfHost.cs -text whitespace=cr-at-eol
