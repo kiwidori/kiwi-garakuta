@@ -82,8 +82,8 @@
     "amazon_links": [],
     "windows_test_passed": true,
     "advanced_screenshot": "/assets/screenshots/kiwi-disk-advanced-public.png",
-    "replaced_by": "kiwi-capacity-workbench",
-    "replacement_name": "きうい容量作業場"
+    "replaced_by": "kiwi-pc-workbench",
+    "replacement_name": "きういPC作業場"
   },
   {
     "slug": "kiwi-json",
@@ -165,7 +165,9 @@
     "upstream_license": "MIT",
     "amazon_links": [],
     "windows_test_passed": true,
-    "advanced_screenshot": "/assets/screenshots/kiwi-system-advanced-public.png"
+    "advanced_screenshot": "/assets/screenshots/kiwi-system-advanced-public.png",
+    "replaced_by": "kiwi-pc-workbench",
+    "replacement_name": "きういPC作業場"
   },
   {
     "slug": "kiwi-secrets",
@@ -411,8 +413,8 @@
     "amazon_links": [],
     "windows_test_passed": true,
     "advanced_screenshot": "/assets/screenshots/kiwi-space-advanced-public.png",
-    "replaced_by": "kiwi-capacity-workbench",
-    "replacement_name": "きうい容量作業場"
+    "replaced_by": "kiwi-pc-workbench",
+    "replacement_name": "きういPC作業場"
   },
   {
     "slug": "kiwi-diff",
@@ -972,7 +974,9 @@
       }
     ],
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-pc-workbench",
+    "replacement_name": "きういPC作業場"
   },
   {
     "slug": "kiwi-text-workbench",
@@ -1097,6 +1101,49 @@
         "name": "Glow 3.0.0",
         "url": "https://github.com/charmbracelet/glow",
         "license": "MIT"
+      }
+    ],
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
+    "slug": "kiwi-pc-workbench",
+    "name": "きういPC作業場",
+    "summary": "PCの構成とドライブの空き容量、フォルダーの容量内訳をひとつの画面で確認できる無料ツールです。",
+    "features": [
+      "OS・CPU・GPU・メモリ・画面情報と、ドライブの容量をまとめて更新できます。容量は共通のドライブ一覧に表示し、PC概要とまとめてコピーできます。",
+      "ドライブの総容量・使用量・空き容量・使用率を確認し、並べ替え、選択行のコピー、CSV保存ができます。",
+      "選んだドライブを解析対象へ渡し、フォルダー内の容量をツリーと割合で確認できます。対象へ渡した時点では解析しません。",
+      "選択したフォルダーの再解析、前の対象へ戻る操作、エクスプローラーで開く操作、解析結果のJSON保存に対応します。",
+      "PC情報とドライブ情報は両方の取得が成功したときだけ更新し、失敗時は前の結果を残します。fastfetch・duf・dustの詳細オプションも使えます。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiPcWorkbench.exeを起動し、「PC・ドライブ更新」を押します。",
+      "必要なら「概要をコピー」でPC情報とドライブ容量をコピーします。「ドライブ更新」は容量一覧だけを更新します。",
+      "ドライブを選んで「選択ドライブを対象に」を押すか、調べるフォルダーを指定します。階層を選び「解析」で内訳を確認します。",
+      "選択フォルダーを再解析したり、前の対象へ戻ったりできます。必要な一覧や解析結果を保存してください。"
+    ],
+    "limitations": "読み取り専用です。起動時の自動取得・自動走査、ファイル削除やPC設定変更は行いません。通常のPC概要にはユーザー名・端末名・シリアル番号を表示しません。掲載画像はデモ情報です。詳細機能の結果や解析対象のパスを共有するときは内容を確認してください。検出できない機器やアクセスできないファイルは結果に含まれない場合があります。ドライブ使用量とフォルダー集計は測定方法が異なり、一致しないことがあります。情報取得は各15秒・出力約1 MiB、通常解析は300秒・出力1 MB・表示200項目・階層1〜6までです。通常の対象にリンクやジャンクションは指定できず、再解析は解析済みの対象内に限定します。詳細機能では元ツールの仕様に従い、一部の操作で通信する場合があります。外部設定・コマンド実行・Lua/JavaScript設定などは制限しています。全オプションの組合せは保証しません。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-pc-workbench-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pc-workbench-v0.1.0/KiwiPcWorkbench-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-pc-workbench",
+    "upstream_url": "https://github.com/fastfetch-cli/fastfetch",
+    "upstream_license": "fastfetch・duf: MIT、dust: Apache-2.0（依存物通知も同梱）",
+    "upstreams": [
+      {
+        "name": "fastfetch 2.69.0",
+        "url": "https://github.com/fastfetch-cli/fastfetch",
+        "license": "MIT"
+      },
+      {
+        "name": "duf 0.9.1",
+        "url": "https://github.com/muesli/duf",
+        "license": "MIT"
+      },
+      {
+        "name": "dust 1.2.6",
+        "url": "https://github.com/bootandy/dust",
+        "license": "Apache-2.0"
       }
     ],
     "amazon_links": [],

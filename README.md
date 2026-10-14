@@ -9,13 +9,12 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
 | [きういYAML作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-yaml-workbench/) | YAMLの変換・編集・整形とGitHub Actionsの検査を行う | [yq](https://github.com/mikefarah/yq)・[yamlfmt](https://github.com/google/yamlfmt)・[actionlint](https://github.com/rhysd/actionlint) |
-| [きうい容量作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-capacity-workbench/) | ドライブの空き容量からフォルダーの内訳・再解析へ進む | [dust](https://github.com/bootandy/dust)・[duf](https://github.com/muesli/duf) |
+| [きういPC作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-pc-workbench/) | PC概要・ドライブ容量・フォルダー内訳をまとめて確認する | [fastfetch](https://github.com/fastfetch-cli/fastfetch) / [duf](https://github.com/muesli/duf) / [dust](https://github.com/bootandy/dust) |
 | [きういテキスト作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-text-workbench/) | 例から作った正規表現でテキストやファイルを置換する | [grex](https://github.com/pemistahl/grex)・[sd](https://github.com/chmln/sd) |
 | [きういYouTube字幕](https://kiwi-garakuta.pages.dev/tools/kiwi-youtube-captions/) | 字幕の閲覧・検索・翻訳とTXT/SRTなどへの保存 | [youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) |
 | [きうい検索作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-search-workbench/) | 名前で絞ったファイルから内容を検索する | [fd](https://github.com/sharkdp/fd)・[ripgrep](https://github.com/BurntSushi/ripgrep) |
 | [きういJSON作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-json-workbench/) | JSONのツリー閲覧・式変換・パス一覧と復元を同じ入力で行う | [fx](https://github.com/antonmedv/fx)・[gojq](https://github.com/itchyny/gojq)・[jq](https://github.com/jqlang/jq)・[gron](https://github.com/tomnomnom/gron) |
 | [きういコード・文書作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-code-workbench/) | コード閲覧・シェル整形・資料生成・Markdown表示を続けて使う | [bat](https://github.com/sharkdp/bat) / [shfmt](https://github.com/mvdan/sh) / [code2prompt](https://github.com/mufeedvh/code2prompt) / [Glow](https://github.com/charmbracelet/glow) |
-| [きういPC情報](https://kiwi-garakuta.pages.dev/tools/kiwi-system/) | OS・CPU・GPU・メモリなどPCの概要を確認する | [fastfetch](https://github.com/fastfetch-cli/fastfetch) |
 | [きうい秘密チェック](https://kiwi-garakuta.pages.dev/tools/kiwi-secrets/) | 公開前のフォルダーからAPIキーなどの機密情報候補を探す | [Gitleaks](https://github.com/gitleaks/gitleaks) |
 | [きういHTTPビュー](https://kiwi-garakuta.pages.dev/tools/kiwi-http/) | HTTPの応答ヘッダー・本文を確認する | [xh](https://github.com/ducaale/xh) |
 | [きういPNG圧縮](https://kiwi-garakuta.pages.dev/tools/kiwi-png/) | PNGを圧縮して別ファイルへ保存する | [oxipng](https://github.com/oxipng/oxipng) |
