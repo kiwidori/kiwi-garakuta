@@ -1,0 +1,47 @@
+{
+  "dust": {
+    "repo": "bootandy/dust",
+    "tag": "v1.2.6",
+    "url": "https://github.com/bootandy/dust/releases/download/v1.2.6/dust-v1.2.6-x86_64-pc-windows-gnu.zip",
+    "sha": "d26ad8dab783653ab6a6c0ddf4671fae150be005834f2e3a36a3ac87fb60b7c1",
+    "exe": "dust.exe",
+    "archive_member": "dust-v1.2.6-x86_64-pc-windows-gnu/dust.exe",
+    "binary_sha": "5fc309fcd3010251bfb89cb6d6eabc05f70027751c45c35729361990a3c242c1",
+    "license_members": [
+      "dust-v1.2.6-x86_64-pc-windows-gnu/LICENSE"
+    ],
+    "kind": "zip",
+    "license_file": "dust-LICENSE",
+    "local_license_sha": "47b4651e56795e4821ac7a98f31dd0b09c4a9cbc08ce3358b5e35e002958a14d"
+  },
+  "duf": {
+    "repo": "muesli/duf",
+    "tag": "v0.9.1",
+    "url": "https://github.com/muesli/duf/releases/download/v0.9.1/duf_0.9.1_windows_x86_64.zip",
+    "sha": "503934be81f847d9ddb1b739834217480633435ad16515dd199e372c0b2e1afc",
+    "exe": "duf.exe",
+    "archive_member": "duf.exe",
+    "binary_sha": "d30824f5487f7bdaea54df214aa5eb26ec3b85f41c02f706598773e79ce03611",
+    "license_members": [],
+    "license_url": "https://raw.githubusercontent.com/muesli/duf/v0.9.1/LICENSE",
+    "license_sha": "81090e71a92a18ce7f95bd3433a9523c568329be4fd47d8f0b94d490ca628d86",
+    "license_file": "duf-LICENSE",
+    "kind": "zip"
+  },
+  "fastfetch": {
+    "repo": "fastfetch-cli/fastfetch",
+    "tag": "2.69.0",
+    "source_commit": "0c3b852bf7bad2837a814c7a31bf332092048a2b",
+    "kind": "zip",
+    "url": "https://github.com/fastfetch-cli/fastfetch/releases/download/2.69.0/fastfetch-windows-amd64.zip",
+    "sha": "aba011c1c45d1a6bdcf52098dd0b9afe990fe444180bc491e87f36670f1452ef",
+    "exe": "fastfetch.exe",
+    "archive_member": "fastfetch.exe",
+    "binary_sha": "9f1949d88c28113ffc3b4d5b07ab6d514db8547fe88b4eda55ee69a5481edb89",
+    "license_file": "fastfetch-LICENSE",
+    "license_members": [
+      "LICENSE"
+    ],
+    "local_license_sha": "9365cbc78a7d252e634ad24112a0ba7319d63fc03fc68b256b4bd7d6778b42bc"
+  }
+}

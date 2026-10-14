@@ -10,3 +10,8 @@ apps/kiwi-code-workbench/bat-LICENSE-* -text -whitespace
 apps/kiwi-code-workbench/*-LICENSE.txt -text
 apps/kiwi-code-workbench/THIRD-PARTY-NOTICES.txt -text
 apps/kiwi-code-workbench/profiles/*/upstream-help.txt -text
+apps/kiwi-pc-workbench/*-LICENSE -text -whitespace
+apps/kiwi-pc-workbench/*-LICENSE.txt -text -whitespace
+apps/kiwi-pc-workbench/THIRD-PARTY-NOTICES.txt -text -whitespace
+apps/kiwi-pc-workbench/upstream-help.txt -text -whitespace
+apps/kiwi-pc-workbench/profiles/*/upstream-help.txt -text -whitespace

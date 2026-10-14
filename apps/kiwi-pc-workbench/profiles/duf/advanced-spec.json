@@ -1,0 +1,254 @@
+{
+  "slug": "kiwi-space",
+  "tool": "duf.exe",
+  "upstream_url": "https://github.com/muesli/duf",
+  "options": [
+    {
+      "flag": "-all",
+      "aliases": [
+        "-all"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "include pseudo, duplicate, inaccessible file systems",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-avail-threshold",
+      "aliases": [
+        "-avail-threshold"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "specifies the coloring threshold (yellow, red) of the avail column, must be integer with optional SI prefixes (default \"10G,1G\")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-hide",
+      "aliases": [
+        "-hide"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "hide specific devices, separated with commas: local, network, fuse, special, loops, binds",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-hide-fs",
+      "aliases": [
+        "-hide-fs"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "hide specific filesystems, separated with commas",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-hide-mp",
+      "aliases": [
+        "-hide-mp"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "hide specific mount points, separated with commas (supports wildcards)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-inodes",
+      "aliases": [
+        "-inodes"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "list inode information instead of block usage",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-json",
+      "aliases": [
+        "-json"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "output all devices in JSON format",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-only",
+      "aliases": [
+        "-only"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "show only specific devices, separated with commas: local, network, fuse, special, loops, binds",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-only-fs",
+      "aliases": [
+        "-only-fs"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "only specific filesystems, separated with commas",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-only-mp",
+      "aliases": [
+        "-only-mp"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "only specific mount points, separated with commas (supports wildcards)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-output",
+      "aliases": [
+        "-output"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "output fields: mountpoint, size, used, avail, usage, inodes, inodes_used, inodes_avail, inodes_usage, type, filesystem",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-sort",
+      "aliases": [
+        "-sort"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "sort output by: mountpoint, size, used, avail, usage, inodes, inodes_used, inodes_avail, inodes_usage, type, filesystem (default \"mountpoint\")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-style",
+      "aliases": [
+        "-style"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "style: unicode, ascii (default \"unicode\")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-theme",
+      "aliases": [
+        "-theme"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "color themes: dark, light, ansi (default \"dark\")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-usage-threshold",
+      "aliases": [
+        "-usage-threshold"
+      ],
+      "takes_value": true,
+      "value_hint": "string",
+      "description": "specifies the coloring threshold (yellow, red) of the usage bars as a floating point number from 0 to 1 (default \"0.5,0.9\")",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-version",
+      "aliases": [
+        "-version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "display version",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-warnings",
+      "aliases": [
+        "-warnings"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "output all warnings to STDERR",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-width",
+      "aliases": [
+        "-width"
+      ],
+      "takes_value": true,
+      "value_hint": "uint",
+      "description": "max output width",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [],
+  "mandatory_args": [],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "ネットワークも含めてJSON表示",
+      "args": [
+        "-json",
+        "-all"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "サイズ順の一覧",
+      "args": [
+        "-sort",
+        "size",
+        "-style",
+        "ascii"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "dc0734c30e35adf1eedabb59ed5f4b52ba3bf2d5589282f38828a20f5bd543b8"
+}
