@@ -24,3 +24,8 @@ apps/kiwi-pdf/qpdf-NOTICE.md -text -whitespace
 apps/kiwi-pdf/upstream-help.txt -text -whitespace
 apps/kiwi-pdf/job-schema.json -text -whitespace
 apps/kiwi-pdf/PdfHost.cs -text whitespace=cr-at-eol
+apps/kiwi-transfer/*-LICENSE*.txt -text -whitespace
+apps/kiwi-transfer/croc-DEPENDENCY-LICENSES.txt -text -whitespace
+apps/kiwi-transfer/croc-UPSTREAM-NOTICES.txt -text -whitespace
+apps/kiwi-transfer/croc-BUILD-INFO.txt -text -whitespace
+apps/kiwi-transfer/upstream-help.txt -text -whitespace

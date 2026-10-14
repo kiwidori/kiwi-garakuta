@@ -1,0 +1,17 @@
+{
+  "url": "https://github.com/schollz/croc/releases/download/v11.5.4/croc_v11.5.4_Windows-64bit.zip",
+  "sha256": "a75e1bac08948e21a8f02a39ca387b5b516dc91c00b6358e3c14b9726f1992b7",
+  "native_sha256": "72fe266170e1d730d9c5734241f952369554a3c4588576405d3326b59e8a0101",
+  "version": "11.5.4",
+  "licenses": {
+    "croc-BUILD-INFO.txt": "8b748d2a910a21617d0a17dd5f0c6b4fb0557485aca2f6b43132fb4a339a3d88",
+    "croc-DEPENDENCY-LICENSES.txt": "eed8cf2b2370c1faf158845ecfd2d6c55d731f79da586fe8faf62104b2ae4c55",
+    "croc-LICENSE.txt": "8dc6526e85f2d9b696c10659617aefd3a2cfe97b44562e79cca7d0f19ee16e0a",
+    "croc-UPSTREAM-NOTICES.txt": "068c56c7c0c9bbcd33b403c68bd2304eac995fb992cf09f803cfef5fd81dcedf",
+    "croc-WORDLIST-LICENSE.txt": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "Go-LICENSE.txt": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "Python-OpenSSL-LICENSE.txt": "feb9bd5f71806c596971d4dfa64c5a93904f9d82b4d3ebd9244a12058f22578e",
+    "croc-CLI-LICENSE.txt": "da277af11b85227490377fbcac6afccc68be560c4fff36ac05ca62de55345fd7"
+  }
+}

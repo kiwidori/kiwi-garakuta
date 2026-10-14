@@ -1,0 +1,17 @@
+きういファイル便
+
+GUI source: MIT, repository LICENSE.
+croc 11.5.4: Copyright Zachary Scholl, MIT; croc-LICENSE.txt.
+Official Windows binary and release: https://github.com/schollz/croc/releases/tag/v11.5.4
+Go 1.27.1 runtime: BSD 3-Clause, Go-LICENSE.txt.
+The exact Go module versions in the official Windows binary are recorded in croc-BUILD-INFO.txt.
+Their license, copyright, NOTICE and PATENTS texts are collected in croc-DEPENDENCY-LICENSES.txt.
+Additional upstream notices for vendored Tailcat are provided in croc-UPSTREAM-NOTICES.txt. Vendored internal CLI license: croc-CLI-LICENSE.txt.
+croc codephrase wordlists: EFF wordlists, Creative Commons Attribution 4.0 International.
+https://www.eff.org/dice
+https://github.com/schollz/croc/tree/v11.5.4/src/codephrase/wordlists
+The unchanged upstream license is in croc-WORDLIST-LICENSE.txt. The upstream snapshot removes the original four-dice labels, retaining words and order. Wordlist data is embedded only in the unchanged official binary.
+
+Python 3.13.2, Tcl 8.6.15, Tk: Runtime-LICENSES.txt.
+Python OpenSSL runtime: Python-OpenSSL-LICENSE.txt.
+PyInstaller 6.22.2: PyInstaller-LICENSE.txt (GPL with the distribution exception).

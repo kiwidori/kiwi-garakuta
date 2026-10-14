@@ -1,0 +1,106 @@
+NAME:
+   croc - securely transfer files or share a terminal
+
+USAGE:
+   croc [GLOBAL OPTIONS] [COMMAND] [COMMAND OPTIONS] [filename(s) or folder]
+
+   USAGE EXAMPLES:
+   Send a file:
+      croc send file.txt
+
+      -git to respect your .gitignore
+   Send multiple files:
+      croc send file1.txt file2.txt file3.txt
+    or
+      croc send *.jpg
+
+   Send everything in a folder:
+      croc send example-folder-name
+
+   Send a file with a custom code:
+      croc send --code secret-code file.txt
+
+   Receive a file using code:
+      croc secret-code
+
+   Store files for later download:
+      croc store --downloads 3 --expiration 3d file.txt
+
+   Share a terminal:
+      croc ssh
+
+   Join a shared terminal:
+      CROC_SECRET=six-word-invitation croc ssh
+
+VERSION:
+   11.5.4
+
+COMMANDS:
+   send             send file(s), or folder (see options with croc send -h)
+   store            upload encrypted files for later download
+   ssh              share or join a secure, collaborative terminal
+   update, upgrade  check for and safely install a newer croc release
+   relay            start your own relay (optional)
+   help, h          Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --internal-dns          use a built-in DNS stub resolver rather than the host operating system (default: false)
+   --classic               toggle between the classic mode (insecure due to local attack vector) and new mode (secure) (default: false)
+   --remember              save these settings to reuse next time (default: false)
+   --debug                 toggle debug mode (default: false)
+   --yes                   automatically agree to all prompts (default: false)
+   --stdout                redirect file to stdout (default: false)
+   --no-compress           disable compression (default: false)
+   --ask                   make sure sender and recipient are prompted (default: false)
+   --local                 force to use only local connections (default: false)
+   --ignore-stdin          ignore piped stdin (default: false)
+   --overwrite             do not prompt to overwrite or resume (default: false)
+   --rename                receive files that already exist under a new name instead of prompting (default: false)
+   --testing               flag for testing purposes (default: false)
+   --quiet                 disable all output (default: false)
+   --disable-clipboard     disable copy to clipboard (default: false)
+   --extended-clipboard    copy full command with secret as env variable to clipboard (default: false)
+   --revoke value          revoke a stored transfer using its local sender receipt
+   --multicast value       multicast address to use for local discovery (default: "239.255.255.250")
+   --curve value           choose an encryption curve (p521, p256, p384, siec, ed25519) (default: "p256")
+   --ip value              set sender ip if known e.g. 10.0.0.1:9009, [::1]:9009
+   --relay value           address of the relay (default: "croc.schollz.com:9009") [%CROC_RELAY%]
+   --relay6 value          ipv6 address of the relay (default: "croc6.schollz.com:9009") [%CROC_RELAY6%]
+   --out value             specify an output folder to receive the file (default: ".")
+   --pass value            password for the relay (default: "pass123") [%CROC_PASS%]
+   --socks5 value          SOCKS5 proxy address (relay DNS is resolved by the proxy) [%SOCKS5_PROXY%]
+   --connect value         add a http proxy [%HTTP_PROXY%]
+   --throttleUpload value  throttle the upload speed e.g. 500k
+   --help, -h              show help (default: false)
+   --version, -v           print the version (default: false)
+
+NAME:
+   croc send - send file(s), or folder (see options with croc send -h)
+
+USAGE:
+   croc send [command options] [filename(s) or folder]
+
+DESCRIPTION:
+   send file(s), or folder
+
+OPTIONS:
+   --zip                     zip folder before sending (default: false)
+   --code value, -c value    codephrase used to connect to relay (at least 6 characters)
+   --transport value         sender file data transport (auto, derp, relay) (default: "auto")
+   --hash value              hash algorithm (xxhash, imohash, md5, highway) (default: "xxhash")
+   --text value, -t value    send some text
+   --no-local                disable local relay when sending (default: false)
+   --no-multi                disable multiplexing (default: false)
+   --git                     enable .gitignore respect / don't send ignored files (default: false)
+   --port value              base port for the relay (default: 9009)
+   --transfers value         number of ports to use for transfers (default: 4)
+   --qrcode, --qr            show the web receive URL as a qrcode (default: false)
+   --exclude value           exclude files if they contain any of the comma separated strings
+   --exclude-file value      exclude files matching any of the comma separated relative paths exactly
+   --socks5 value            SOCKS5 proxy address (relay DNS is resolved by the proxy) [%SOCKS5_PROXY%]
+   --connect value           add a http proxy [%HTTP_PROXY%]
+   --store                   upload encrypted files for a finite lifetime or a limited number of verified downloads (default: false)
+   --store-downloads value   number of verified downloads allowed in stored mode (default: 1)
+   --store-expiration value  stored lifetime after upload (for example 90m, 12h, 3d, or 2w) (default: "1d")
+   --store-url value         stored-transfer service origin (default: "https://getcroc.com") [%CROC_STORE_URL%]
+   --help, -h                show help (default: false)
