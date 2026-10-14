@@ -8,6 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きうい画像拡大](https://kiwi-garakuta.pages.dev/tools/kiwi-image-enlarge/) | 小さな写真・イラストを拡大して仕上がりを見比べる | [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) |
 | [きういYAML作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-yaml-workbench/) | YAMLの変換・編集・整形とGitHub Actionsの検査を行う | [yq](https://github.com/mikefarah/yq)・[yamlfmt](https://github.com/google/yamlfmt)・[actionlint](https://github.com/rhysd/actionlint) |
 | [きういPC作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-pc-workbench/) | PC概要・ドライブ容量・フォルダー内訳をまとめて確認する | [fastfetch](https://github.com/fastfetch-cli/fastfetch) / [duf](https://github.com/muesli/duf) / [dust](https://github.com/bootandy/dust) |
 | [きういテキスト作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-text-workbench/) | 例から作った正規表現でテキストやファイルを置換する | [grex](https://github.com/pemistahl/grex)・[sd](https://github.com/chmln/sd) |
@@ -40,7 +41,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 ### 追加オプションを使う
 
-各ソフトのメニューから「詳細機能」を開くと、元ツールの追加オプションを指定できます。対応する機能や通常画面との違い、制限は [各ソフトの機能と制限](docs/upstream-feature-audit.md) を参照してください。
+「詳細機能」に対応するソフトでは、メニューから元ツールの追加オプションを指定できます。画像拡大の設定はメイン画面にあります。対応する機能や通常画面との違い、制限は [各ソフトの機能と制限](docs/upstream-feature-audit.md) を参照してください。
 
 ## ソースコードとライセンス
 

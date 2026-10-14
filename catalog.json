@@ -1,5 +1,32 @@
 [
   {
+    "slug": "kiwi-image-enlarge",
+    "name": "きうい画像拡大",
+    "summary": "小さな写真やイラストを大きくして、元画像と見比べられる無料ソフトです。画像はPC内だけで処理します。",
+    "features": [
+      "写真・イラストを4倍に、軽量イラストを2・3・4倍に拡大できます。",
+      "PNG・JPEG・WebPを最大50枚まとめて処理できます。フォルダーからの追加にも対応しています。",
+      "一覧で画像を選び、元画像と拡大した画像を並べて確認できます。",
+      "元画像を残して別ファイルに保存します。既存の画像は上書きしません。",
+      "スマホ写真の向きを整えてから拡大し、撮影情報を除いて保存します。PNG・WebPの透過にも対応しています。",
+      "途中停止と、GPU・タイル・スレッド・TTAの設定に対応しています。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiImageEnlarge.exeを起動します。",
+      "「画像を追加」または「フォルダーから追加」で拡大したい画像を選びます。",
+      "保存フォルダーと画像の種類・倍率・保存形式を選びます。写真とイラストは4倍、軽量イラストは2・3・4倍です。",
+      "「拡大する」を押し、一覧の完了した画像を選んで仕上がりを見比べます。"
+    ],
+    "limitations": "Windows 11 x64、Vulkan対応GPU・GPUドライバー、Microsoft Visual C++ v14再頒布可能パッケージ（x64）が必要です。GPUのないPCや非対応GPUでは使えません。1枚400万画素まで、出力最大6400万画素、処理は1枚180秒で停止します。フォルダー追加は直下だけです。アニメーション・16bit/HDR画像・動画は対象外です。JPEGの透過部分は白背景になります。EXIFなどの撮影情報は保存しません。拡大は推測した細部を補うため、文字や顔が元の姿と異なる場合があります。既存ファイルはスキップし、停止時も処理済み画像は残します。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-image-enlarge-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-image-enlarge-v0.1.0/KiwiImageEnlarge-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-image-enlarge",
+    "upstream_url": "https://github.com/xinntao/Real-ESRGAN",
+    "upstream_license": "Real-ESRGANモデル: BSD-3-Clause / ncnn-vulkan実行エンジン: MIT / ncnn・WebP: BSD-3-Clause",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-search",
     "name": "きうい検索",
     "summary": "フォルダー内の文章を、画面から素早く検索できる無料ツールです。",
