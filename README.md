@@ -8,6 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きうい重複チェック](https://kiwi-garakuta.pages.dev/tools/kiwi-tidy/) | 同じファイルや似た写真をグループごとに比較し、レポートへ保存する | [Czkawka](https://github.com/qarmin/czkawka) |
 | [きうい文字起こし](https://kiwi-garakuta.pages.dev/tools/kiwi-transcribe/) | 録音をPC内で文章・字幕に変換し、英語への翻訳やTXTの修正も行う | [whisper.cpp](https://github.com/ggml-org/whisper.cpp) |
 | [きういファイル便](https://kiwi-garakuta.pages.dev/tools/kiwi-transfer/) | 同じWi-Fi・LAN内のPCへ、写真・書類・フォルダーを共有コードで送る | [croc](https://github.com/schollz/croc) |
 | [きういPDF](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf/) | PDFの結合・ページの取り出し・分割・回転・パスワードを扱う | [qpdf](https://github.com/qpdf/qpdf) |
