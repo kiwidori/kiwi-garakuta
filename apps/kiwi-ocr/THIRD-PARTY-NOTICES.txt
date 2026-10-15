@@ -1,0 +1,29 @@
+KiwiOCR 0.1.0
+GUI: MIT, repository LICENSE.
+RapidOCR 3.10.0: Apache-2.0. https://github.com/RapidAI/RapidOCR
+Bundled PP-OCRv6 small detection and recognition models and the mobile
+0/180 classifier: Apache-2.0, original PaddleOCR/Baidu rightsholders.
+RapidOCR distributes converted ONNX weights; conversion does not replace
+original ownership. Exact model attribution and licenses are preserved in
+DEPENDENCY-LICENSES.txt; model checksums are in upstream-pin.json.
+https://rapidai.github.io/RapidOCRDocs/main/model_licenses/
+
+All pinned Python wheels and their bundled components: DEPENDENCY-LICENSES.txt.
+ONNX Runtime: MIT and third-party notices. OpenCV: Apache-2.0 and bundled notices.
+The optional OpenCV FFmpeg video plugin is NOT included in this application.
+Shapely 2.2.0: BSD-3-Clause. Its GEOS 3.14.1 shared libraries: LGPL-2.1.
+The GEOS DLLs remain separate in _internal/shapely.libs and may be replaced
+with compatible modified builds. No check prevents replacing GEOS libraries.
+Certifi: MPL-2.0; its unmodified source wheel is supplied with dependency sources.
+Corresponding GEOS source and replacement instructions are provided at:
+https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-ocr-v0.1.0/KiwiOCR-0.1.0-dependency-sources.zip
+See DEPENDENCY-SOURCES.txt for source verification and rebuild instructions.
+
+Pillow 12.3.0 and codecs: Pillow-LICENSE.txt.
+Python 3.13.2, Tcl 8.6.15 and Tk: Runtime-LICENSES.txt.
+Python OpenSSL runtime: Python-OpenSSL-LICENSE.txt.
+PyInstaller 6.22.2: PyInstaller-LICENSE.txt (GPL with distribution exception).
+Microsoft Visual C++ v14 Redistributable x64 is an external prerequisite.
+MSVCP140 DLL and its installer are not redistributed. The program makes a
+hash-checked local alias of the installed system runtime for the original
+GEOS and NumPy import names; the Windows system file is never changed.

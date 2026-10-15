@@ -44,3 +44,6 @@ apps/kiwi-backup/upstream-help.txt -text -whitespace
 apps/kiwi-qr/*LICENSE*.txt -text -whitespace
 apps/kiwi-qr/*NOTICES.txt -text -whitespace
 apps/kiwi-qr/upstream-help.txt -text -whitespace
+apps/kiwi-ocr/*LICENSE*.txt -text -whitespace
+apps/kiwi-ocr/*NOTICES.txt -text -whitespace
+apps/kiwi-ocr/DEPENDENCY-SOURCES.txt -text -whitespace
