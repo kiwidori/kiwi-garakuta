@@ -36,3 +36,8 @@ apps/kiwi-tidy/*-LICENSE*.txt -text -whitespace
 apps/kiwi-tidy/*-COPYRIGHT.txt -text -whitespace
 apps/kiwi-tidy/upstream-help.txt -text -whitespace
 apps/kiwi-tidy/THIRD-PARTY-NOTICES.txt -text -whitespace
+apps/kiwi-backup/*-LICENSE*.txt -text -whitespace
+apps/kiwi-backup/Go-PATENTS.txt -text -whitespace
+apps/kiwi-backup/restic-BUILD-INFO.txt -text -whitespace
+apps/kiwi-backup/THIRD-PARTY-NOTICES.txt -text -whitespace
+apps/kiwi-backup/upstream-help.txt -text -whitespace

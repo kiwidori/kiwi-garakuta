@@ -1,0 +1,22 @@
+{
+  "version": "0.19.1",
+  "url": "https://github.com/restic/restic/releases/download/v0.19.1/restic_0.19.1_windows_amd64.zip",
+  "sha256": "da948ad707ed690426473aaba2046cd61f8f90f6f0e7dab6be0d5796531de67d",
+  "native_sha256": "b0dd1fd21eea5d8fe1325f55f7118213c21f36de8a261e04c0624a5ab9fd7830",
+  "member": "restic_0.19.1_windows_amd64.exe",
+  "licenses": {
+    "restic-LICENSE.txt": "6f08a01a9fab5b24e139a09f15cc24a73087c7bc09e3bacf099fdf2d767bf897",
+    "restic-BUILD-INFO.txt": "7876fb4497b273eff0419d7c0d82f8e0cc72170f89a1d2354df104269997da3c",
+    "restic-DEPENDENCY-LICENSES.txt": "021737e1f6579bb19e68f2b2bc9484af23421f69330711db7d93ad309301dcd5",
+    "Go-LICENSE.txt": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+    "Go-PATENTS.txt": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "Python-OpenSSL-LICENSE.txt": "feb9bd5f71806c596971d4dfa64c5a93904f9d82b4d3ebd9244a12058f22578e",
+    "THIRD-PARTY-NOTICES.txt": "4749bc386eab8b99985ffb7df829812fc6bcb7fc6c6f8c0bef44a2f7f236efb2",
+    "upstream-help.txt": "712378643b1e26c35d9d019d202fd00c9e87d610dbe0104c269b61ba15884369"
+  },
+  "upstream": "https://github.com/restic/restic",
+  "source_archive": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-backup-v0.1.0/golang-lru-v2.0.7-source.zip",
+  "source_sha256": "2eb92ff13970bccd460efae14255bfc03bb51474da0137e477a60f95561acc30",
+  "source_size": 29453
+}
