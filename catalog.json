@@ -1,5 +1,32 @@
 [
   {
+    "slug": "kiwi-ocr",
+    "name": "きうい画像OCR",
+    "summary": "写真やスクリーンショットの文字を、コピーできる文章に。日本語モデルを同梱し、PC内だけで読み取る無料ソフトです。",
+    "features": [
+      "日本語・英語などの印刷された文字を読み取り、画像の対応箇所を表示します。",
+      "ドラッグした範囲だけを読み取れます。90度ずつの回転、文字行の上下補正にも対応します。",
+      "読み取った文章を修正し、コピーまたはTXTへ保存できます。",
+      "画像を20件まで追加し、1件ずつ・まとめて読み取れます。停止しても処理済みの結果は残ります。",
+      "行・単語・文字の位置を確認し、認識時の結果をCSV・JSON・Markdown、位置付き画像をPNGへ保存できます。",
+      "文字の位置だけの検出、1行の認識、上下の判定と、検出の細かい調整ができます。"
+    ],
+    "steps": [
+      "ZIPをすべて展開し、KiwiOCR.exeを起動します。Microsoft Visual C++ v14再頒布可能パッケージ（x64）が必要です。",
+      "「画像を追加」で画像を選びます。必要なら回転したり、画像上をドラッグして読む範囲を選びます。",
+      "「選んだ画像を読む」（F5）を押します。「すべて読む」で追加した画像を続けて処理できます。",
+      "文章を確認・修正し、コピーやTXT保存を使います。行を選ぶと画像上の対応箇所を強調します。"
+    ],
+    "limitations": "Windows 11 x64向け。Microsoft Visual C++ v14再頒布可能パッケージ（x64）が必要です。モデル同梱のためZIPは約108 MiBです。ZIP内の_internalフォルダーも必要です。日本語対応モデルを同梱し、追加ダウンロードや画像の外部送信は行いません。認識に誤りがあるため結果は確認してください。手書き・縦書き・複雑な段組みや不鮮明な画像は苦手です。表のセル構造の復元は行いません。PNG/JPEG/WebP/BMP/GIF/TIFFの最初のフレーム、各25 MiB・2,000万画素、20件までです。長辺2,000px以内へ縮小して処理します。小さな文字は事前の切り出しをおすすめします。範囲指定後の座標は回転・縮小した処理画像を基準にします。上下判定は文字行の0度・180度で、ページの90度回転の自動判定ではありません。単語・文字の位置取得は通常の「文字を読む」で使えます。コピーとTXT、JSONのedited_textには修正文を保存します。CSV・Markdown・位置情報は認識時の結果です。既存ファイルは上書きしません。1画像2分・一括10分、結果32 MiB・1万行、位置付きPNG16 MiBまでです。PDF、カメラ、スクリーンキャプチャー、Web画像取得、GPU、モデルの変更には未対応です。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-ocr-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-ocr-v0.1.0/KiwiOCR-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-ocr",
+    "upstream_url": "https://github.com/RapidAI/RapidOCR",
+    "upstream_license": "Apache-2.0（同梱モデルもApache-2.0、依存ライブラリにLGPL-2.1ほか）",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-qr",
     "name": "きういQR",
     "summary": "URLやメモをQRに。色や形を選んで作り、画像のQR・バーコードも読み取れる無料ソフトです。",

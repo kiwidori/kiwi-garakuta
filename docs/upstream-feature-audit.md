@@ -4,6 +4,7 @@
 
 | ソフト | 主な用途 |
 | --- | --- |
+| [きうい画像OCR](https://kiwi-garakuta.pages.dev/tools/kiwi-ocr/) | 日本語対応の画像文字認識、範囲指定・回転・文字位置の表示、文章の修正・コピー、TXT/CSV/JSON/Markdown・位置付きPNG保存 |
 | [きういQR](https://kiwi-garakuta.pages.dev/tools/kiwi-qr/) | QRの作成・装飾・一括保存、画像のQR・バーコードの読み取り、結果のコピーとTXT/JSON保存 |
 | [きういバックアップ](https://kiwi-garakuta.pages.dev/tools/kiwi-backup/) | 暗号化保存・履歴の閲覧と比較・新しいフォルダーへの復元・保存データの点検と整理 |
 | [きういPC作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-pc-workbench/) | PC概要・ドライブ容量・フォルダー内訳、概要コピーとCSV/JSON保存 |
