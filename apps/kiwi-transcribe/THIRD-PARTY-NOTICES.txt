@@ -1,0 +1,26 @@
+きうい文字起こし
+
+GUI source: MIT; repository LICENSE.
+whisper.cpp / ggml: The ggml authors, MIT; whisper-LICENSE.txt.
+Official Windows CPU build b5454 / version 1.9.5:
+https://github.com/ggml-org/whisper.cpp/releases/tag/b5454
+Source revision d1be6fde11ac6e0407606b4e42fe72d34add8037.
+The original CPU runtime DLLs are redistributed without modification.
+
+Whisper small model: Copyright (c) 2022 OpenAI, MIT; WhisperModel-LICENSE.txt.
+Converted quantized model small-q5_1.bin:
+https://huggingface.co/ggerganov/whisper.cpp/tree/5359861c739e955e79d9a303bcbc70fb988958b1
+Silero VAD v6.2.0: Copyright 2020-present Silero Team, MIT; SileroModel-LICENSE.txt.
+Converted model:
+https://huggingface.co/ggml-org/whisper-vad/tree/9ffd54a1e1ee413ddf265af9913beaf518d1639b
+Model files are unchanged. Sizes and SHA-256 digests are in upstream-pin.json.
+
+miniaudio 0.11.24: David Reid, MIT No Attribution / public domain; miniaudio-LICENSE.txt.
+stb_vorbis: Sean Barrett, MIT / public domain; stb_vorbis-LICENSE.txt.
+llamafile CPU sgemm: Mozilla Foundation, MIT; llamafile-LICENSE.txt.
+These components are embedded in the official native binaries. Their license texts are taken from the same source revision.
+
+Python 3.13.2 / Tcl 8.6.15 / Tk: Runtime-LICENSES.txt.
+Python OpenSSL runtime: Python-OpenSSL-LICENSE.txt.
+PyInstaller 6.22.2: PyInstaller-LICENSE.txt, GPL with the distribution exception.
+The Microsoft Visual C++ system runtime is required separately.
