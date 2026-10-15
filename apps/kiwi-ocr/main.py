@@ -16,7 +16,7 @@ class App:
   s=ttk.Style();s.theme_use('clam');s.configure('.',font=('Yu Gothic UI',10));s.configure('Title.TLabel',font=('Yu Gothic UI',21,'bold'))
   out=ttk.Frame(root,padding=14);out.pack(fill='both',expand=True);ttk.Label(out,text='きうい画像OCR',style='Title.TLabel').pack(anchor='w');ttk.Label(out,text='写真・スクリーンショットの文字を、コピーできる文章に。日本語対応モデルでPC内だけで処理します。').pack(anchor='w',pady=(0,8))
   f=ttk.Frame(out);f.pack(fill='x')
-  for label,cmd in [('画像を追加',self.add),('フォルダーから追加',self.add_folder),('一覧をクリア',self.clear),('選んだ画像を読む（F5）',lambda:self.read(False)),('すべて読む',lambda:self.read(True)),('詳細設定',self.advanced)]:self.button(f,label,cmd).pack(side='left',padx=(0,5))
+  for label,cmd in [('画像を追加（F4）',self.add),('フォルダーから追加',self.add_folder),('一覧をクリア',self.clear),('選んだ画像を読む（F5）',lambda:self.read(False)),('すべて読む',lambda:self.read(True)),('詳細設定',self.advanced)]:self.button(f,label,cmd).pack(side='left',padx=(0,5))
   f=ttk.Frame(out);f.pack(fill='x',pady=7);ttk.Label(f,text='操作').pack(side='left');ttk.Combobox(f,textvariable=self.mode,values=list(MODES),state='readonly',width=19).pack(side='left',padx=5);ttk.Label(f,text='文字の採用下限').pack(side='left');ttk.Entry(f,textvariable=self.score,width=5).pack(side='left',padx=5)
   for text,var in [('上下の向きを補正',self.cls),('単語の位置',self.word),('文字ごとの位置',self.char)]:ttk.Checkbutton(f,text=text,variable=var).pack(side='left',padx=6)
   content=ttk.Frame(out,height=440);content.grid_propagate(False);content.pack(fill='both',expand=True);content.columnconfigure(1,weight=3);content.columnconfigure(2,weight=2);content.rowconfigure(0,weight=1)
@@ -32,7 +32,7 @@ class App:
   for label,ext in [('CSV保存','csv'),('JSON保存','json'),('Markdown保存','md')]:self.button(f,label,lambda k=ext:self.export(k)).pack(side='left',padx=(0,4))
   ttk.Label(right,text='単語・文字の位置は「文字を読む」で取得できます。位置と目安は認識時の結果です。文章の修正はTXT・コピーへ反映されます。',wraplength=430).pack(anchor='w')
   self.logbox=tk.Text(out,height=3,wrap='word',state='disabled');self.logbox.pack(fill='x',pady=7);f=ttk.Frame(out);f.pack(fill='x');ttk.Label(f,textvariable=self.status,wraplength=1000).pack(side='left',fill='x',expand=True);self.button(f,'保存先を開く',self.open_folder).pack(side='right',padx=5);self.stop=ttk.Button(f,text='停止',command=self.cancel.set,state='disabled');self.stop.pack(side='right');self.progress=ttk.Progressbar(out,mode='indeterminate');self.progress.pack(fill='x',pady=(5,0))
-  root.bind('<F5>',lambda e:self.guard(lambda:self.read(False)));root.protocol('WM_DELETE_WINDOW',self.close);root.after(70,self.poll)
+  root.bind('<F4>',lambda e:self.guard(self.add));root.bind('<F5>',lambda e:self.guard(lambda:self.read(False)));root.protocol('WM_DELETE_WINDOW',self.close);root.after(70,self.poll)
  def button(self,p,text,fn):return ttk.Button(p,text=text,command=lambda:self.guard(fn))
  def guard(self,fn):
   if self.busy:return
@@ -51,7 +51,7 @@ class App:
   self.paths=paths;self.files.delete(0,'end')
   for p in paths:self.files.insert('end',Path(p).name)
   if paths:self.files.selection_set(0);self.selected()
- def add(self):self.add_paths(filedialog.askopenfilenames(parent=self.root,filetypes=[('画像','*.png *.jpg *.jpeg *.webp *.bmp *.gif *.tif *.tiff')]))
+ def add(self):self.add_paths(filedialog.askopenfilenames(parent=self.root,title='画像を追加',filetypes=[('画像','*.png *.jpg *.jpeg *.webp *.bmp *.gif *.tif *.tiff')]))
  def add_folder(self):
   path=filedialog.askdirectory(parent=self.root)
   if path:self.add_paths(sorted(p for p in Path(path).iterdir() if p.is_file() and p.suffix.lower() in ('.png','.jpg','.jpeg','.webp','.bmp','.gif','.tif','.tiff')))
@@ -193,5 +193,4 @@ class App:
 if __name__=='__main__':
  multiprocessing.freeze_support()
  app=App(tk.Tk())
- if len(sys.argv)>1:app.root.after(150,lambda:app.guard(lambda:app.add_paths(sys.argv[1:])))
  app.root.mainloop()
