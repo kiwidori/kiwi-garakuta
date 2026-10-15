@@ -1,5 +1,32 @@
 [
   {
+    "slug": "kiwi-transcribe",
+    "name": "きうい文字起こし",
+    "summary": "録音した音声を、文章や字幕へ。日本語対応モデルを同梱し、音声をPC内だけで処理する無料ソフトです。",
+    "features": [
+      "WAV・MP3・FLAC・OGG（Vorbis）を追加して、日本語などの音声を文字にできます。複数ファイルの一括処理に対応しています。",
+      "英語への翻訳と、言語だけを調べる操作も選べます。",
+      "TXT・SRT・VTT・LRC・CSV・JSONへ保存できます。初期状態ではTXT・SRT・VTTを保存します。",
+      "画面で文章を確認し、修正した文章を別名のTXTへ保存できます。元の音声や既存ファイルは上書きしません。",
+      "開始位置・長さ・固有名詞などの指定、無音を除くVAD、ステレオ録音の左右の区別、認識設定の調整もできます。",
+      "日本語対応のsmall-q5_1モデルを同梱しています。CPUだけで動作し、GPU・APIキー・処理時のモデルダウンロードは不要です。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiTranscribe.exeを起動し、音声を追加します。",
+      "保存先の親フォルダー、操作と言語、保存形式を選びます。日本語の文字起こしはそのまま開始できます。",
+      "「開始」を押します。結果は保存先に作る新しい「文字起こし-...」フォルダーへまとまります。",
+      "文章を確認します。修正した場合は「修正版保存」で別名のTXTへ保存できます。字幕などは認識時の内容のままです。"
+    ],
+    "limitations": "Windows 11 x64とMicrosoft Visual C++ v14再頒布可能パッケージ（x64）が必要です。モデル込みのZIPは約200 MBです。作業用に1 GB以上の空き容量を推奨します。音声1件200 MiB・最長1時間、20件・合計1 GiBまで。事前確認は90秒、認識処理は1件30分、保存ファイルは各16 MiBまでです。認識結果には誤りや、音声にない文章が含まれる場合があります。開始・長さと字幕時刻は目安で、指定範囲の前後が含まれる場合があります。音声自体を切り取る機能ではありません。VADとCPU分割（processors）では開始位置・長さを0にしてください。ステレオの左右区別は人ごとの話者識別ではありません。M4A・MP4・動画・マイク録音、GPU/OpenVINO、Unix用カラオケスクリプトは未対応です。文章の修正は保存済み字幕へ反映されません。互換GGMLモデルを手元から選べますが、GGUFは使えません。tinydiarizeは専用TDRZモデルが別途必要です。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-transcribe-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-transcribe-v0.1.0/KiwiTranscribe-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-transcribe",
+    "upstream_url": "https://github.com/ggml-org/whisper.cpp",
+    "upstream_license": "MIT（Whisper・Sileroモデル、音声デコーダーなどのライセンス表示も同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-transfer",
     "name": "きういファイル便",
     "summary": "同じWi-Fi・LAN内のPCへ、写真や書類を共有コードで送る無料ソフトです。",
