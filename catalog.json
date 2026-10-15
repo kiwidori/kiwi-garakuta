@@ -1,5 +1,44 @@
 [
   {
+    "slug": "kiwi-qr",
+    "name": "きういQR",
+    "summary": "URLやメモをQRに。色や形を選んで作り、画像のQR・バーコードも読み取れる無料ソフトです。",
+    "features": [
+      "URL・文章のほか、Wi-Fi・連絡先・メール用のQRを作れます。",
+      "6種類の形、色、グラデーション、中央の画像を選べます。作成したQRは内容を読み戻して確認します。",
+      "PNGへ保存できます。白黒・四角形のQRやバーコードはSVGにも対応しています。",
+      "Code128・JAN/EAN・DataMatrix・Aztec・PDF417などのバーコードも作成できます。",
+      "画像内のQR・バーコードをまとめて読み取り、内容をコピー、TXT/JSONへ保存、QR作成欄へ移せます。URLは自動では開きません。",
+      "1行に1件のURL・文章から、100件までのQRを新しいフォルダーへまとめて作れます。既存ファイルは上書きしません。"
+    ],
+    "steps": [
+      "ZIPを展開し、KiwiQR.exeを起動します。Microsoft Visual C++ v14再頒布可能パッケージ（x64）が必要です。",
+      "URLや文章を入力し、必要なら色・形などを選びます。Wi-Fi・連絡先・メールは専用の入力画面も使えます。",
+      "「作成して確認」を押してプレビューを確認し、PNGまたは対応するSVGを保存します。",
+      "画像を読み取るときは「画像から読み取る」で画像を追加し、「読み取る」を押します。結果を選んでコピーや保存ができます。"
+    ],
+    "limitations": "Windows 11 x64向け。Microsoft Visual C++ v14再頒布可能パッケージ（x64）が必要です。処理はPC内で行います。カメラ・Web画像の取得・クリップボードの自動読み取りは未対応です。Wi-Fi用QRには入力したパスワードが含まれます。QRはUTF-8で3,000バイト以内ですが、誤り訂正や版によって入る量は少なくなります。出力は一辺2,048pxまでです。中央の画像はPNG/JPEG・2 MiB・100万画素以内、誤り訂正Hで幅の15％です。装飾付きQRはPNGのみ、SVGは白黒・四角形・中央画像なしで保存できます。画像を線の色として使う装飾、装飾付きSVG、QRのバイナリ入力は未対応です。読み取り画像は各25 MiB・2,000万画素、1回32件、PNG/JPEG/GIF/BMP/WebP/TIFFの最初のフレームを処理します。1画像100コード、処理30秒、一括QR100件・合計5分、PNG4 MiB・処理結果16 MiBまでです。失敗・停止時は作成済みファイルを「作成中-...」へ残します。バーコードは400万画素・一辺8,192pxまでで、形式ごとの文字・桁数の制限があります。自動確認は実機での読み取りを保証しません。印刷・共有前に使うスマートフォンでも確認してください。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-qr-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-qr-v0.1.0/KiwiQR-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-qr",
+    "upstream_url": "https://github.com/lincolnloop/python-qrcode",
+    "upstream_license": "BSD-3-Clause・MIT（読み取りはZXing-C++、Apache-2.0ほか）",
+    "upstreams": [
+      {
+        "name": "python-qrcode 8.2",
+        "url": "https://github.com/lincolnloop/python-qrcode",
+        "license": "BSD-3-Clause・MIT"
+      },
+      {
+        "name": "ZXing-C++ 3.1.1",
+        "url": "https://github.com/zxing-cpp/zxing-cpp",
+        "license": "Apache-2.0・BSD-3-Clauseほか"
+      }
+    ],
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-backup",
     "name": "きういバックアップ",
     "summary": "写真や書類を、変更前の履歴ごとに保存する無料ソフトです。パスワードで暗号化して、外付けドライブなどへバックアップできます。",

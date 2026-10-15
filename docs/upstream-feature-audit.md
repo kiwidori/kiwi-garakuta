@@ -4,6 +4,7 @@
 
 | ソフト | 主な用途 |
 | --- | --- |
+| [きういQR](https://kiwi-garakuta.pages.dev/tools/kiwi-qr/) | QRの作成・装飾・一括保存、画像のQR・バーコードの読み取り、結果のコピーとTXT/JSON保存 |
 | [きういバックアップ](https://kiwi-garakuta.pages.dev/tools/kiwi-backup/) | 暗号化保存・履歴の閲覧と比較・新しいフォルダーへの復元・保存データの点検と整理 |
 | [きういPC作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-pc-workbench/) | PC概要・ドライブ容量・フォルダー内訳、概要コピーとCSV/JSON保存 |
 | [きういコード・文書作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-code-workbench/) | コード閲覧・シェル整形・資料生成・Markdown表示、処理結果の移送 |
