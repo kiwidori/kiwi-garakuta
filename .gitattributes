@@ -41,3 +41,6 @@ apps/kiwi-backup/Go-PATENTS.txt -text -whitespace
 apps/kiwi-backup/restic-BUILD-INFO.txt -text -whitespace
 apps/kiwi-backup/THIRD-PARTY-NOTICES.txt -text -whitespace
 apps/kiwi-backup/upstream-help.txt -text -whitespace
+apps/kiwi-qr/*LICENSE*.txt -text -whitespace
+apps/kiwi-qr/*NOTICES.txt -text -whitespace
+apps/kiwi-qr/upstream-help.txt -text -whitespace

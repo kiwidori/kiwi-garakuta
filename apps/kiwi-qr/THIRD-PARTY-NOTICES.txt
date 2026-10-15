@@ -1,0 +1,27 @@
+きういQR 0.1.0
+
+GUI source: MIT, repository LICENSE.
+python-qrcode 8.2 (official PyPI wheel): BSD-3-Clause, qrcode-LICENSE.txt.
+Original QR encoder by Kazuhiko Arase: MIT, qrcode-ORIGINAL-LICENSE.txt.
+https://github.com/lincolnloop/python-qrcode
+
+ZXing-C++ 3.1.1 official PyPI Windows abi3 wheel: Apache-2.0, ZXing-LICENSE.txt.
+https://github.com/zxing-cpp/zxing-cpp
+The binary includes the bundled libzint backend (BSD-3-Clause), Arimo font subset
+(Apache-2.0) and OCR-B font subset (unrestricted use and distribution).
+Their original copyright and license comments are preserved in Zint-NOTICES.txt.
+The upstream barcode SVG writer includes support for these font subsets.
+nanobind v2.11.0: BSD-3-Clause, nanobind-LICENSE.txt.
+robin-map revision 4ec1bf19c6a96125ea22062f38c2cf5b958e448e: MIT, robin-map-LICENSE.txt.
+Sources: https://github.com/wjakob/nanobind/tree/v2.11.0
+https://github.com/Tessil/robin-map/tree/4ec1bf19c6a96125ea22062f38c2cf5b958e448e
+The official wheel and native extension are bundled unchanged; SHA256 is in upstream-pin.json.
+
+Pillow 12.3.0 and bundled image-codec/font dependencies: Pillow-LICENSE.txt.
+Python 3.13.2, Tcl 8.6.15, Tk: Runtime-LICENSES.txt.
+Python OpenSSL runtime: Python-OpenSSL-LICENSE.txt.
+PyInstaller 6.22.2: PyInstaller-LICENSE.txt (GPL with distribution exception).
+Microsoft Visual C++ v14 Redistributable x64 is an external prerequisite.
+No separate Microsoft C++ runtime installer or MSVCP140.dll is included.
+
+QR Code is a registered trademark of DENSO WAVE INCORPORATED.

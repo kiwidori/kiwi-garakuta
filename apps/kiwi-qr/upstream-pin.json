@@ -1,0 +1,32 @@
+{
+  "packages": [
+    {
+      "name": "qrcode",
+      "version": "8.2",
+      "filename": "qrcode-8.2-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/dd/b8/d2d6d731733f51684bbf76bf34dab3b70a9148e8f2cef2bb544fccec681a/qrcode-8.2-py3-none-any.whl",
+      "sha256": "16e64e0716c14960108e85d853062c9e8bba5ca8252c0b4d0231b9df4060ff4f"
+    },
+    {
+      "name": "zxing-cpp",
+      "version": "3.1.1",
+      "filename": "zxing_cpp-3.1.1-cp312-abi3-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/7d/14/055c5a68a50bdde8378ced94e63f9ce340311e51c87b947f9b95fe69f51a/zxing_cpp-3.1.1-cp312-abi3-win_amd64.whl",
+      "sha256": "29f98a91148171460b47a942d137ecc90c4b8097636f23cca65263a56bb025d3"
+    }
+  ],
+  "licenses": {
+    "nanobind-LICENSE.txt": "f305091a4e57805870b217a28ea4b1f16610eece8457d2370f822a9696b75836",
+    "Pillow-LICENSE.txt": "4f7866a74802c6326f81faff59a56546b6aec2b10b91973e0e9308de95e79857",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "Python-OpenSSL-LICENSE.txt": "feb9bd5f71806c596971d4dfa64c5a93904f9d82b4d3ebd9244a12058f22578e",
+    "qrcode-LICENSE.txt": "40dfb903c94ee3f789500131311186548ecba5cefd3557623d7700e2522ab994",
+    "qrcode-ORIGINAL-LICENSE.txt": "3a850fa5f08101db6f40676c2786e10bd2cd5fff7b12ffdf1e0c434d4e49d90c",
+    "robin-map-LICENSE.txt": "11f2c685ba565a31aef1219f63a7a8845602c97bff70016b9e3278dfe51a2ec5",
+    "ZXing-LICENSE.txt": "2e54cd84a645bea25943c75dd8ae67cb291e66a47a11578333c9b4b3b6b86c85",
+    "Zint-NOTICES.txt": "a7c28144ed49c9133226051176ca97a28705a6031115d87a347e8e345d40ffec",
+    "THIRD-PARTY-NOTICES.txt": "15a8bbb63836c46867ebca2f8a9f4bce4c8ab700682ca70fec7298a5807405be",
+    "upstream-help.txt": "20c08c66c1bfb7361a0a9072ab5cf9c56d283e9e48a20635eeb51220a899e450"
+  },
+  "pyd_sha256": "61538e8df1aefa2b04ce9307b9b4d27d3c7c68b7f2eb3ac55b46f94435c0ce30"
+}
