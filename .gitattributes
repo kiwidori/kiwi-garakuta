@@ -31,3 +31,7 @@ apps/kiwi-transfer/croc-BUILD-INFO.txt -text -whitespace
 apps/kiwi-transfer/upstream-help.txt -text -whitespace
 apps/kiwi-transcribe/*-LICENSE*.txt -text -whitespace
 apps/kiwi-transcribe/upstream-help.txt -text -whitespace
+
+apps/kiwi-tidy/*-LICENSE*.txt -text -whitespace
+apps/kiwi-tidy/*-COPYRIGHT.txt -text -whitespace
+apps/kiwi-tidy/upstream-help.txt -text -whitespace

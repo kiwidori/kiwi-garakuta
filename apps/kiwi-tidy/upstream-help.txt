@@ -1,0 +1,993 @@
+Czkawka 12.0.2
+Finds duplicate files
+
+Usage: czkawka.exe dup [OPTIONS] --directories <DIRECTORIES>
+
+Options:
+  -T, --thread-number <THREAD_NUMBER>
+          Limits the number of threads used for scanning. Value 0 (default) will use all available CPU threads. Lower values can reduce CPU usage.
+          
+          [default: 0]
+
+  -d, --directories <DIRECTORIES>
+          List of directory(ies) to search (absolute paths). These directories will be scanned but not set as reference folders.
+
+  -e, --excluded-directories <EXCLUDED_DIRECTORIES>
+          List of directory(ies) to exclude from search (absolute paths). Files in these directories will be completely ignored.
+
+  -E, --excluded-items <EXCLUDED_ITEMS>
+          List of excluded items using wildcards (e.g., */temp*, *.tmp). May be slower than -e, so use -e for directories when possible. Helpful macros are available: DEFAULT (the same default excluded items the GUI uses) and $TRASH (the OS trash / recycle bin, matching the GUI defaults - */Trash/*,*/.Trash-*/* on Linux/macOS, *:\$RECYCLE.BIN\* on Windows).
+
+  -x, --allowed-extensions <ALLOWED_EXTENSIONS>
+          List of file extensions to check. Helpful macros are available: IMAGE (jpg,kra,gif,png,bmp,tiff,hdr,svg), TEXT (txt,doc,docx,odt,rtf), VIDEO (mp4,flv,mkv,webm,vob,ogv,gifv,avi,mov,wmv,mpg,m4v,m4p,mpeg,3gp,m2ts), MUSIC (mp3,flac,ogg,opus,tta,wma,webm)
+
+  -P, --excluded-extensions <EXCLUDED_EXTENSIONS>
+          List of file extensions to exclude from search.
+
+  -f, --file-to-save <file-name>
+          Saves the search results into a human-readable formatted text file.
+
+  -C, --compact-file-to-save <json-file-name>
+          Saves the search results into a compact (minified) JSON file without extra whitespace.
+
+  -p, --pretty-file-to-save <pretty-json-file-name>
+          Saves the search results into a pretty-printed (indented) JSON file for better readability.
+
+  -R, --not-recursive
+          Disables recursive directory traversal. Only files in the top-level directories will be scanned.
+
+  -N, --do-not-print-results
+          Suppresses printing of search results to the console. Useful when only saving results to files.
+
+  -M, --do-not-print-messages
+          Suppresses all informational messages, warnings, and errors from being printed to console.
+
+  -W, --ignore-error-code-on-found
+          Suppresses error exit code when duplicate/similar files are found. Useful for scripts that should continue regardless of findings.
+
+  -H, --disable-cache
+          Disables the cache system. This will make scanning slower but ensures fresh results without cached data.
+
+  -r, --reference-directories <REFERENCE_DIRECTORIES>
+          List of reference directory(ies) (absolute paths). Files here appear as the reference entry in results - only non-reference files that match a reference file are reported. Files found exclusively in reference directories are not listed.
+
+  -Z, --minimal-prehash-cache-file-size <MINIMAL_PREHASH_CACHE_FILE_SIZE>
+          Minimum size of prehash cached files in bytes
+          
+          [default: 257144]
+
+  -u, --use-prehash-cache
+          Use prehash cache to speed up the scanning process by avoiding rehashing files that have already been hashed
+
+  -m, --minimal-file-size <MINIMAL_FILE_SIZE>
+          Minimum size of checked files in bytes, assigning bigger value may speed up searching
+          
+          [default: 8192]
+
+  -i, --maximal-file-size <MAXIMAL_FILE_SIZE>
+          Maximum size of checked files in bytes, assigning lower value may speed up searching
+          
+          [default: 18446744073709551615]
+
+  -c, --minimal-cached-file-size <MINIMAL_CACHED_FILE_SIZE>
+          Minimum file size (in bytes) to be included in the hash cache. A higher value produces a smaller cache file, making cache loading faster, but more files will be excluded from the cache and must be re-hashed on each scan. A lower value stores more files in the cache, making the scan faster at the cost of a larger cache file and slower cache loading.
+          
+          [default: 257144]
+
+  -s, --search-method <SEARCH_METHOD>
+          Methods to search files.
+          NAME - Fast but rarely usable,
+          SIZE - Fast but not accurate, checking by the file's size,
+          SIZE_NAME - Checking by both the file's size and name,
+          HASH - The slowest method, checking by the hash of the entire file
+          
+          [default: HASH]
+
+  -D, --delete-method <DELETE_METHOD>
+          Method for selecting which files to delete from duplicate groups:
+          AEN - All files Except Newest (keeps only newest)
+          AEO - All files Except Oldest (keeps only oldest)
+          ON - Only the Newest deleted (keeps all but newest)
+          OO - Only the Oldest deleted (keeps all but oldest)
+          AEB - All files Except Biggest (keeps only biggest)
+          AES - All files Except Smallest (keeps only smallest)
+          OB - Only the Biggest deleted (keeps all but biggest)
+          OS - Only the Smallest deleted (keeps all but smallest)
+          HARD - create hard links to save space
+          NONE - do not delete files (default)
+          
+          [default: NONE]
+
+  -Q, --dry-run
+          Performs a dry run showing what operations would be performed without actually executing them.
+
+  -y, --move-to-trash
+          Instead of permanently deleting files, move them to the system trash/recycle bin where they can be recovered.
+
+  -t, --hash-type <HASH_TYPE>
+          Hash algorithm used to calculate file hashes. BLAKE3 is recommended for most cases (fast and secure), CRC32 is faster but less reliable, XXH3 is very fast but not cryptographically secure.
+          
+          [default: BLAKE3]
+
+  -l, --case-sensitive-name-comparison
+          Enables case-sensitive file name comparison. By default, comparisons are case-insensitive (e.g., 'File.txt' equals 'file.txt').
+
+  -L, --allow-hard-links
+          Treats hard links as separate files rather than ignoring them. By default, hard links are detected and only counted once.
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+EXAMPLE:
+    czkawka dup -d /home/rafal -e /home/rafal/Obrazy  -m 25 -x 7z rar IMAGE -s hash -f results.txt -D aeo
+
+
+Finds similar images
+
+Usage: czkawka.exe image [OPTIONS] --directories <DIRECTORIES>
+
+Options:
+  -T, --thread-number <THREAD_NUMBER>
+          Limits the number of threads used for scanning. Value 0 (default) will use all available CPU threads. Lower values can reduce CPU usage.
+          
+          [default: 0]
+
+  -d, --directories <DIRECTORIES>
+          List of directory(ies) to search (absolute paths). These directories will be scanned but not set as reference folders.
+
+  -e, --excluded-directories <EXCLUDED_DIRECTORIES>
+          List of directory(ies) to exclude from search (absolute paths). Files in these directories will be completely ignored.
+
+  -E, --excluded-items <EXCLUDED_ITEMS>
+          List of excluded items using wildcards (e.g., */temp*, *.tmp). May be slower than -e, so use -e for directories when possible. Helpful macros are available: DEFAULT (the same default excluded items the GUI uses) and $TRASH (the OS trash / recycle bin, matching the GUI defaults - */Trash/*,*/.Trash-*/* on Linux/macOS, *:\$RECYCLE.BIN\* on Windows).
+
+  -x, --allowed-extensions <ALLOWED_EXTENSIONS>
+          List of file extensions to check. Helpful macros are available: IMAGE (jpg,kra,gif,png,bmp,tiff,hdr,svg), TEXT (txt,doc,docx,odt,rtf), VIDEO (mp4,flv,mkv,webm,vob,ogv,gifv,avi,mov,wmv,mpg,m4v,m4p,mpeg,3gp,m2ts), MUSIC (mp3,flac,ogg,opus,tta,wma,webm)
+
+  -P, --excluded-extensions <EXCLUDED_EXTENSIONS>
+          List of file extensions to exclude from search.
+
+  -f, --file-to-save <file-name>
+          Saves the search results into a human-readable formatted text file.
+
+  -C, --compact-file-to-save <json-file-name>
+          Saves the search results into a compact (minified) JSON file without extra whitespace.
+
+  -p, --pretty-file-to-save <pretty-json-file-name>
+          Saves the search results into a pretty-printed (indented) JSON file for better readability.
+
+  -R, --not-recursive
+          Disables recursive directory traversal. Only files in the top-level directories will be scanned.
+
+  -N, --do-not-print-results
+          Suppresses printing of search results to the console. Useful when only saving results to files.
+
+  -M, --do-not-print-messages
+          Suppresses all informational messages, warnings, and errors from being printed to console.
+
+  -W, --ignore-error-code-on-found
+          Suppresses error exit code when duplicate/similar files are found. Useful for scripts that should continue regardless of findings.
+
+  -H, --disable-cache
+          Disables the cache system. This will make scanning slower but ensures fresh results without cached data.
+
+  -r, --reference-directories <REFERENCE_DIRECTORIES>
+          List of reference directory(ies) (absolute paths). Files here appear as the reference entry in results - only non-reference files that match a reference file are reported. Files found exclusively in reference directories are not listed.
+
+  -m, --minimal-file-size <MINIMAL_FILE_SIZE>
+          Minimum size of checked files in bytes, assigning bigger value may speed up searching
+          
+          [default: 16384]
+
+  -i, --maximal-file-size <MAXIMAL_FILE_SIZE>
+          Maximum size of checked files in bytes, assigning lower value may speed up searching
+          
+          [default: 18446744073709551615]
+
+  -s, --max-difference <MAX_DIFFERENCE>
+          Maximum difference between images to be considered as similar (0-40). Lower values mean more strict matching. For hash_size 8, values up to 10 are recommended, for hash_size 16 up to 20 are recommended.
+          
+          [default: 5]
+
+  -D, --delete-method <DELETE_METHOD>
+          Method for selecting which files to delete from duplicate groups:
+          AEN - All files Except Newest (keeps only newest)
+          AEO - All files Except Oldest (keeps only oldest)
+          ON - Only the Newest deleted (keeps all but newest)
+          OO - Only the Oldest deleted (keeps all but oldest)
+          AEB - All files Except Biggest (keeps only biggest)
+          AES - All files Except Smallest (keeps only smallest)
+          OB - Only the Biggest deleted (keeps all but biggest)
+          OS - Only the Smallest deleted (keeps all but smallest)
+          HARD - create hard links to save space
+          NONE - do not delete files (default)
+          
+          [default: NONE]
+
+  -Q, --dry-run
+          Performs a dry run showing what operations would be performed without actually executing them.
+
+  -y, --move-to-trash
+          Instead of permanently deleting files, move them to the system trash/recycle bin where they can be recovered.
+
+  -L, --allow-hard-links
+          Treats hard links as separate files rather than ignoring them. By default, hard links are detected and only counted once.
+
+  -J, --ignore-same-size
+          Within each similar-file group, removes entries that share a file size with another entry in the same group. Groups that shrink to a single entry are discarded.
+
+  -Z, --ignore-same-resolution
+          Within each similar-file group, removes entries that share a resolution (WxH) with another entry in the same group. Groups that shrink to a single entry are discarded.
+
+  -g, --hash-alg <HASH_ALG>
+          Perceptual hash algorithm used to compare images. Gradient (default) works well for most cases, Mean is faster but less accurate, Blockhash is good for finding very similar images, VertGradient/DoubleGradient provide different matching characteristics, Median is robust against color changes.
+          
+          [default: Gradient]
+
+  -z, --image-filter <IMAGE_FILTER>
+          Filter algorithm used when resizing images for comparison. Lanczos3 provides highest quality but is slower, Nearest is fastest but lowest quality, Triangle/Gaussian/CatmullRom offer different quality-speed tradeoffs.
+          
+          [default: Nearest]
+
+  -c, --hash-size <HASH_SIZE>
+          Size of the perceptual hash. Larger values provide more detailed comparison but require higher max_difference values. 8 is fastest and least detailed, 64 is slowest but most detailed. Recommended: 8 or 16 for typical use.
+          
+          [default: 16]
+
+      --geometric-invariance <GEOMETRIC_INVARIANCE>
+          Geometric invariance mode for similar image matching. off compares images as-is, mirror-flip also compares mirrored/flipped variants, mirror-flip-rotate90 also compares 90-degree rotations.
+          
+          [default: off]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+EXAMPLE:
+    czkawka image -d /home/rafal/ -E */.git */tmp* *Pulpit -f results.txt
+
+
+Finds empty folders
+
+Usage: czkawka.exe empty-folders [OPTIONS] --directories <DIRECTORIES>
+
+Options:
+  -T, --thread-number <THREAD_NUMBER>
+          Limits the number of threads used for scanning. Value 0 (default) will use all available CPU threads. Lower values can reduce CPU usage.
+          
+          [default: 0]
+
+  -d, --directories <DIRECTORIES>
+          List of directory(ies) to search (absolute paths). These directories will be scanned but not set as reference folders.
+
+  -e, --excluded-directories <EXCLUDED_DIRECTORIES>
+          List of directory(ies) to exclude from search (absolute paths). Files in these directories will be completely ignored.
+
+  -E, --excluded-items <EXCLUDED_ITEMS>
+          List of excluded items using wildcards (e.g., */temp*, *.tmp). May be slower than -e, so use -e for directories when possible. Helpful macros are available: DEFAULT (the same default excluded items the GUI uses) and $TRASH (the OS trash / recycle bin, matching the GUI defaults - */Trash/*,*/.Trash-*/* on Linux/macOS, *:\$RECYCLE.BIN\* on Windows).
+
+  -x, --allowed-extensions <ALLOWED_EXTENSIONS>
+          List of file extensions to check. Helpful macros are available: IMAGE (jpg,kra,gif,png,bmp,tiff,hdr,svg), TEXT (txt,doc,docx,odt,rtf), VIDEO (mp4,flv,mkv,webm,vob,ogv,gifv,avi,mov,wmv,mpg,m4v,m4p,mpeg,3gp,m2ts), MUSIC (mp3,flac,ogg,opus,tta,wma,webm)
+
+  -P, --excluded-extensions <EXCLUDED_EXTENSIONS>
+          List of file extensions to exclude from search.
+
+  -f, --file-to-save <file-name>
+          Saves the search results into a human-readable formatted text file.
+
+  -C, --compact-file-to-save <json-file-name>
+          Saves the search results into a compact (minified) JSON file without extra whitespace.
+
+  -p, --pretty-file-to-save <pretty-json-file-name>
+          Saves the search results into a pretty-printed (indented) JSON file for better readability.
+
+  -R, --not-recursive
+          Disables recursive directory traversal. Only files in the top-level directories will be scanned.
+
+  -N, --do-not-print-results
+          Suppresses printing of search results to the console. Useful when only saving results to files.
+
+  -M, --do-not-print-messages
+          Suppresses all informational messages, warnings, and errors from being printed to console.
+
+  -W, --ignore-error-code-on-found
+          Suppresses error exit code when duplicate/similar files are found. Useful for scripts that should continue regardless of findings.
+
+  -H, --disable-cache
+          Disables the cache system. This will make scanning slower but ensures fresh results without cached data.
+
+  -D, --delete-files
+          Automatically delete all found items matching the criteria.
+
+  -Q, --dry-run
+          Performs a dry run showing what operations would be performed without actually executing them.
+
+  -y, --move-to-trash
+          Instead of permanently deleting files, move them to the system trash/recycle bin where they can be recovered.
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+EXAMPLE:
+    czkawka empty-folders -d /home/rafal/rr /home/gateway -f results.txt
+
+
+Finds empty files
+
+Usage: czkawka.exe empty-files [OPTIONS] --directories <DIRECTORIES>
+
+Options:
+  -T, --thread-number <THREAD_NUMBER>
+          Limits the number of threads used for scanning. Value 0 (default) will use all available CPU threads. Lower values can reduce CPU usage.
+          
+          [default: 0]
+
+  -d, --directories <DIRECTORIES>
+          List of directory(ies) to search (absolute paths). These directories will be scanned but not set as reference folders.
+
+  -e, --excluded-directories <EXCLUDED_DIRECTORIES>
+          List of directory(ies) to exclude from search (absolute paths). Files in these directories will be completely ignored.
+
+  -E, --excluded-items <EXCLUDED_ITEMS>
+          List of excluded items using wildcards (e.g., */temp*, *.tmp). May be slower than -e, so use -e for directories when possible. Helpful macros are available: DEFAULT (the same default excluded items the GUI uses) and $TRASH (the OS trash / recycle bin, matching the GUI defaults - */Trash/*,*/.Trash-*/* on Linux/macOS, *:\$RECYCLE.BIN\* on Windows).
+
+  -x, --allowed-extensions <ALLOWED_EXTENSIONS>
+          List of file extensions to check. Helpful macros are available: IMAGE (jpg,kra,gif,png,bmp,tiff,hdr,svg), TEXT (txt,doc,docx,odt,rtf), VIDEO (mp4,flv,mkv,webm,vob,ogv,gifv,avi,mov,wmv,mpg,m4v,m4p,mpeg,3gp,m2ts), MUSIC (mp3,flac,ogg,opus,tta,wma,webm)
+
+  -P, --excluded-extensions <EXCLUDED_EXTENSIONS>
+          List of file extensions to exclude from search.
+
+  -f, --file-to-save <file-name>
+          Saves the search results into a human-readable formatted text file.
+
+  -C, --compact-file-to-save <json-file-name>
+          Saves the search results into a compact (minified) JSON file without extra whitespace.
+
+  -p, --pretty-file-to-save <pretty-json-file-name>
+          Saves the search results into a pretty-printed (indented) JSON file for better readability.
+
+  -R, --not-recursive
+          Disables recursive directory traversal. Only files in the top-level directories will be scanned.
+
+  -N, --do-not-print-results
+          Suppresses printing of search results to the console. Useful when only saving results to files.
+
+  -M, --do-not-print-messages
+          Suppresses all informational messages, warnings, and errors from being printed to console.
+
+  -W, --ignore-error-code-on-found
+          Suppresses error exit code when duplicate/similar files are found. Useful for scripts that should continue regardless of findings.
+
+  -H, --disable-cache
+          Disables the cache system. This will make scanning slower but ensures fresh results without cached data.
+
+  -D, --delete-files
+          Automatically delete all found items matching the criteria.
+
+  -Q, --dry-run
+          Performs a dry run showing what operations would be performed without actually executing them.
+
+  -y, --move-to-trash
+          Instead of permanently deleting files, move them to the system trash/recycle bin where they can be recovered.
+
+      --zero-byte-content
+          Also find non-empty files whose entire content consists of null bytes (0x00). These files take disk space but carry no meaningful data.
+
+      --non-printable-content
+          Also find non-empty files whose entire content consists of non-printable characters (any byte outside the visible ASCII range 0x21-0x7E: all control characters, space (0x20), DEL (0x7F), and non-ASCII bytes 0x80-0xFF). Implies --zero-byte-content.
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+EXAMPLE:
+    czkawka empty-files -d /home/rafal /home/szczekacz -e /home/rafal/Pulpit -R -f results.txt
+
+
+Finds big files
+
+Usage: czkawka.exe big [OPTIONS] --directories <DIRECTORIES>
+
+Options:
+  -T, --thread-number <THREAD_NUMBER>
+          Limits the number of threads used for scanning. Value 0 (default) will use all available CPU threads. Lower values can reduce CPU usage.
+          
+          [default: 0]
+
+  -d, --directories <DIRECTORIES>
+          List of directory(ies) to search (absolute paths). These directories will be scanned but not set as reference folders.
+
+  -e, --excluded-directories <EXCLUDED_DIRECTORIES>
+          List of directory(ies) to exclude from search (absolute paths). Files in these directories will be completely ignored.
+
+  -E, --excluded-items <EXCLUDED_ITEMS>
+          List of excluded items using wildcards (e.g., */temp*, *.tmp). May be slower than -e, so use -e for directories when possible. Helpful macros are available: DEFAULT (the same default excluded items the GUI uses) and $TRASH (the OS trash / recycle bin, matching the GUI defaults - */Trash/*,*/.Trash-*/* on Linux/macOS, *:\$RECYCLE.BIN\* on Windows).
+
+  -x, --allowed-extensions <ALLOWED_EXTENSIONS>
+          List of file extensions to check. Helpful macros are available: IMAGE (jpg,kra,gif,png,bmp,tiff,hdr,svg), TEXT (txt,doc,docx,odt,rtf), VIDEO (mp4,flv,mkv,webm,vob,ogv,gifv,avi,mov,wmv,mpg,m4v,m4p,mpeg,3gp,m2ts), MUSIC (mp3,flac,ogg,opus,tta,wma,webm)
+
+  -P, --excluded-extensions <EXCLUDED_EXTENSIONS>
+          List of file extensions to exclude from search.
+
+  -f, --file-to-save <file-name>
+          Saves the search results into a human-readable formatted text file.
+
+  -C, --compact-file-to-save <json-file-name>
+          Saves the search results into a compact (minified) JSON file without extra whitespace.
+
+  -p, --pretty-file-to-save <pretty-json-file-name>
+          Saves the search results into a pretty-printed (indented) JSON file for better readability.
+
+  -R, --not-recursive
+          Disables recursive directory traversal. Only files in the top-level directories will be scanned.
+
+  -N, --do-not-print-results
+          Suppresses printing of search results to the console. Useful when only saving results to files.
+
+  -M, --do-not-print-messages
+          Suppresses all informational messages, warnings, and errors from being printed to console.
+
+  -W, --ignore-error-code-on-found
+          Suppresses error exit code when duplicate/similar files are found. Useful for scripts that should continue regardless of findings.
+
+  -H, --disable-cache
+          Disables the cache system. This will make scanning slower but ensures fresh results without cached data.
+
+  -n, --number-of-files <NUMBER_OF_FILES>
+          Number of biggest (or smallest with -J flag) files to display in results
+          
+          [default: 50]
+
+  -D, --delete-files
+          Automatically delete all found items matching the criteria.
+
+  -Q, --dry-run
+          Performs a dry run showing what operations would be performed without actually executing them.
+
+  -y, --move-to-trash
+          Instead of permanently deleting files, move them to the system trash/recycle bin where they can be recovered.
+
+  -J, --smallest-mode
+          Switch mode to find smallest files instead of biggest ones
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+EXAMPLE:
+    czkawka big -d /home/rafal/ /home/piszczal -e /home/rafal/Roman -n 25 -J -x VIDEO -f results.txt
+
+
+Finds temporary files
+
+Usage: czkawka.exe temp [OPTIONS] --directories <DIRECTORIES>
+
+Options:
+  -T, --thread-number <THREAD_NUMBER>
+          Limits the number of threads used for scanning. Value 0 (default) will use all available CPU threads. Lower values can reduce CPU usage.
+          
+          [default: 0]
+
+  -d, --directories <DIRECTORIES>
+          List of directory(ies) to search (absolute paths). These directories will be scanned but not set as reference folders.
+
+  -e, --excluded-directories <EXCLUDED_DIRECTORIES>
+          List of directory(ies) to exclude from search (absolute paths). Files in these directories will be completely ignored.
+
+  -E, --excluded-items <EXCLUDED_ITEMS>
+          List of excluded items using wildcards (e.g., */temp*, *.tmp). May be slower than -e, so use -e for directories when possible. Helpful macros are available: DEFAULT (the same default excluded items the GUI uses) and $TRASH (the OS trash / recycle bin, matching the GUI defaults - */Trash/*,*/.Trash-*/* on Linux/macOS, *:\$RECYCLE.BIN\* on Windows).
+
+  -x, --allowed-extensions <ALLOWED_EXTENSIONS>
+          List of file extensions to check. Helpful macros are available: IMAGE (jpg,kra,gif,png,bmp,tiff,hdr,svg), TEXT (txt,doc,docx,odt,rtf), VIDEO (mp4,flv,mkv,webm,vob,ogv,gifv,avi,mov,wmv,mpg,m4v,m4p,mpeg,3gp,m2ts), MUSIC (mp3,flac,ogg,opus,tta,wma,webm)
+
+  -P, --excluded-extensions <EXCLUDED_EXTENSIONS>
+          List of file extensions to exclude from search.
+
+  -f, --file-to-save <file-name>
+          Saves the search results into a human-readable formatted text file.
+
+  -C, --compact-file-to-save <json-file-name>
+          Saves the search results into a compact (minified) JSON file without extra whitespace.
+
+  -p, --pretty-file-to-save <pretty-json-file-name>
+          Saves the search results into a pretty-printed (indented) JSON file for better readability.
+
+  -R, --not-recursive
+          Disables recursive directory traversal. Only files in the top-level directories will be scanned.
+
+  -N, --do-not-print-results
+          Suppresses printing of search results to the console. Useful when only saving results to files.
+
+  -M, --do-not-print-messages
+          Suppresses all informational messages, warnings, and errors from being printed to console.
+
+  -W, --ignore-error-code-on-found
+          Suppresses error exit code when duplicate/similar files are found. Useful for scripts that should continue regardless of findings.
+
+  -H, --disable-cache
+          Disables the cache system. This will make scanning slower but ensures fresh results without cached data.
+
+  -D, --delete-files
+          Automatically delete all found items matching the criteria.
+
+  -Q, --dry-run
+          Performs a dry run showing what operations would be performed without actually executing them.
+
+  -y, --move-to-trash
+          Instead of permanently deleting files, move them to the system trash/recycle bin where they can be recovered.
+
+  -L, --extensions <EXTENSIONS>
+          Extensions/suffixes to treat as temporary files (e.g. .log .swp). If not specified, the built-in default list is used. If specified, the provided list replaces the defaults entirely. Matched using ends_with on the lowercased filename.
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+EXAMPLE:
+    czkawka temp -d /home/rafal/ -E */.git */tmp* *Pulpit -f results.txt -D
+
+
+Finds same music by tags
+
+Usage: czkawka.exe music [OPTIONS] --directories <DIRECTORIES>
+
+Options:
+  -T, --thread-number <THREAD_NUMBER>
+          Limits the number of threads used for scanning. Value 0 (default) will use all available CPU threads. Lower values can reduce CPU usage.
+          
+          [default: 0]
+
+  -d, --directories <DIRECTORIES>
+          List of directory(ies) to search (absolute paths). These directories will be scanned but not set as reference folders.
+
+  -e, --excluded-directories <EXCLUDED_DIRECTORIES>
+          List of directory(ies) to exclude from search (absolute paths). Files in these directories will be completely ignored.
+
+  -E, --excluded-items <EXCLUDED_ITEMS>
+          List of excluded items using wildcards (e.g., */temp*, *.tmp). May be slower than -e, so use -e for directories when possible. Helpful macros are available: DEFAULT (the same default excluded items the GUI uses) and $TRASH (the OS trash / recycle bin, matching the GUI defaults - */Trash/*,*/.Trash-*/* on Linux/macOS, *:\$RECYCLE.BIN\* on Windows).
+
+  -x, --allowed-extensions <ALLOWED_EXTENSIONS>
+          List of file extensions to check. Helpful macros are available: IMAGE (jpg,kra,gif,png,bmp,tiff,hdr,svg), TEXT (txt,doc,docx,odt,rtf), VIDEO (mp4,flv,mkv,webm,vob,ogv,gifv,avi,mov,wmv,mpg,m4v,m4p,mpeg,3gp,m2ts), MUSIC (mp3,flac,ogg,opus,tta,wma,webm)
+
+  -P, --excluded-extensions <EXCLUDED_EXTENSIONS>
+          List of file extensions to exclude from search.
+
+  -f, --file-to-save <file-name>
+          Saves the search results into a human-readable formatted text file.
+
+  -C, --compact-file-to-save <json-file-name>
+          Saves the search results into a compact (minified) JSON file without extra whitespace.
+
+  -p, --pretty-file-to-save <pretty-json-file-name>
+          Saves the search results into a pretty-printed (indented) JSON file for better readability.
+
+  -R, --not-recursive
+          Disables recursive directory traversal. Only files in the top-level directories will be scanned.
+
+  -N, --do-not-print-results
+          Suppresses printing of search results to the console. Useful when only saving results to files.
+
+  -M, --do-not-print-messages
+          Suppresses all informational messages, warnings, and errors from being printed to console.
+
+  -W, --ignore-error-code-on-found
+          Suppresses error exit code when duplicate/similar files are found. Useful for scripts that should continue regardless of findings.
+
+  -H, --disable-cache
+          Disables the cache system. This will make scanning slower but ensures fresh results without cached data.
+
+  -r, --reference-directories <REFERENCE_DIRECTORIES>
+          List of reference directory(ies) (absolute paths). Files here appear as the reference entry in results - only non-reference files that match a reference file are reported. Files found exclusively in reference directories are not listed.
+
+  -D, --delete-method <DELETE_METHOD>
+          Method for selecting which files to delete from duplicate groups:
+          AEN - All files Except Newest (keeps only newest)
+          AEO - All files Except Oldest (keeps only oldest)
+          ON - Only the Newest deleted (keeps all but newest)
+          OO - Only the Oldest deleted (keeps all but oldest)
+          AEB - All files Except Biggest (keeps only biggest)
+          AES - All files Except Smallest (keeps only smallest)
+          OB - Only the Biggest deleted (keeps all but biggest)
+          OS - Only the Smallest deleted (keeps all but smallest)
+          HARD - create hard links to save space
+          NONE - do not delete files (default)
+          
+          [default: NONE]
+
+  -Q, --dry-run
+          Performs a dry run showing what operations would be performed without actually executing them.
+
+  -y, --move-to-trash
+          Instead of permanently deleting files, move them to the system trash/recycle bin where they can be recovered.
+
+  -a, --approximate-comparison
+          Use approximate comparison when comparing music tags (allows small differences in tag values)
+
+  -c, --compare-fingerprints-only-with-similar-titles
+          When using audio content comparison, only compare files that have similar titles to reduce false positives and speed up the process
+
+  -z, --music-similarity <MUSIC_SIMILARITY>
+          Sets which rows must be equal to set these files as duplicates (may be mixed, but must be divided by commas).
+          
+          [default: track_title,track_artist]
+
+  -s, --search-method <SEARCH_METHOD>
+          Methods to search files.
+          CONTENT - finds similar audio files by content, TAGS - finds similar music by tags.
+          
+          [default: TAGS]
+
+  -m, --minimal-file-size <MINIMAL_FILE_SIZE>
+          Minimum size of checked files in bytes, assigning bigger value may speed up searching
+          
+          [default: 8192]
+
+  -i, --maximal-file-size <MAXIMAL_FILE_SIZE>
+          Maximum size of checked files in bytes, assigning lower value may speed up searching
+          
+          [default: 18446744073709551615]
+
+  -l, --minimum-segment-duration <MINIMUM_SEGMENT_DURATION>
+          Minimum duration of audio segment to compare in seconds. Smaller values will find shorter similar segments but may increase false positives. Values should be between 0.0 and 3600.0
+          
+          [default: 10.0]
+
+  -Y, --maximum-difference <MAXIMUM_DIFFERENCE>
+          Maximum allowed difference between audio segments (greater than 0.0, up to 10.0 inclusive). Value close to 0.0 will find only nearly identical segments, while 10.0 will find segments that are barely similar. Lower values mean stricter matching.
+          
+          [default: 2.0]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+EXAMPLE:
+    czkawka music -d /home/rafal -f results.txt
+
+
+Finds invalid symlinks
+
+Usage: czkawka.exe symlinks [OPTIONS] --directories <DIRECTORIES>
+
+Options:
+  -T, --thread-number <THREAD_NUMBER>
+          Limits the number of threads used for scanning. Value 0 (default) will use all available CPU threads. Lower values can reduce CPU usage.
+          
+          [default: 0]
+
+  -d, --directories <DIRECTORIES>
+          List of directory(ies) to search (absolute paths). These directories will be scanned but not set as reference folders.
+
+  -e, --excluded-directories <EXCLUDED_DIRECTORIES>
+          List of directory(ies) to exclude from search (absolute paths). Files in these directories will be completely ignored.
+
+  -E, --excluded-items <EXCLUDED_ITEMS>
+          List of excluded items using wildcards (e.g., */temp*, *.tmp). May be slower than -e, so use -e for directories when possible. Helpful macros are available: DEFAULT (the same default excluded items the GUI uses) and $TRASH (the OS trash / recycle bin, matching the GUI defaults - */Trash/*,*/.Trash-*/* on Linux/macOS, *:\$RECYCLE.BIN\* on Windows).
+
+  -x, --allowed-extensions <ALLOWED_EXTENSIONS>
+          List of file extensions to check. Helpful macros are available: IMAGE (jpg,kra,gif,png,bmp,tiff,hdr,svg), TEXT (txt,doc,docx,odt,rtf), VIDEO (mp4,flv,mkv,webm,vob,ogv,gifv,avi,mov,wmv,mpg,m4v,m4p,mpeg,3gp,m2ts), MUSIC (mp3,flac,ogg,opus,tta,wma,webm)
+
+  -P, --excluded-extensions <EXCLUDED_EXTENSIONS>
+          List of file extensions to exclude from search.
+
+  -f, --file-to-save <file-name>
+          Saves the search results into a human-readable formatted text file.
+
+  -C, --compact-file-to-save <json-file-name>
+          Saves the search results into a compact (minified) JSON file without extra whitespace.
+
+  -p, --pretty-file-to-save <pretty-json-file-name>
+          Saves the search results into a pretty-printed (indented) JSON file for better readability.
+
+  -R, --not-recursive
+          Disables recursive directory traversal. Only files in the top-level directories will be scanned.
+
+  -N, --do-not-print-results
+          Suppresses printing of search results to the console. Useful when only saving results to files.
+
+  -M, --do-not-print-messages
+          Suppresses all informational messages, warnings, and errors from being printed to console.
+
+  -W, --ignore-error-code-on-found
+          Suppresses error exit code when duplicate/similar files are found. Useful for scripts that should continue regardless of findings.
+
+  -H, --disable-cache
+          Disables the cache system. This will make scanning slower but ensures fresh results without cached data.
+
+  -D, --delete-files
+          Automatically delete all found items matching the criteria.
+
+  -Q, --dry-run
+          Performs a dry run showing what operations would be performed without actually executing them.
+
+  -y, --move-to-trash
+          Instead of permanently deleting files, move them to the system trash/recycle bin where they can be recovered.
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+EXAMPLE:
+    czkawka symlinks -d /home/kicikici/ /home/szczek -e /home/kicikici/jestempsem -x jpg -f results.txt
+
+
+Finds broken files
+
+Usage: czkawka.exe broken [OPTIONS] --directories <DIRECTORIES>
+
+Options:
+  -T, --thread-number <THREAD_NUMBER>
+          Limits the number of threads used for scanning. Value 0 (default) will use all available CPU threads. Lower values can reduce CPU usage.
+          
+          [default: 0]
+
+  -d, --directories <DIRECTORIES>
+          List of directory(ies) to search (absolute paths). These directories will be scanned but not set as reference folders.
+
+  -e, --excluded-directories <EXCLUDED_DIRECTORIES>
+          List of directory(ies) to exclude from search (absolute paths). Files in these directories will be completely ignored.
+
+  -E, --excluded-items <EXCLUDED_ITEMS>
+          List of excluded items using wildcards (e.g., */temp*, *.tmp). May be slower than -e, so use -e for directories when possible. Helpful macros are available: DEFAULT (the same default excluded items the GUI uses) and $TRASH (the OS trash / recycle bin, matching the GUI defaults - */Trash/*,*/.Trash-*/* on Linux/macOS, *:\$RECYCLE.BIN\* on Windows).
+
+  -x, --allowed-extensions <ALLOWED_EXTENSIONS>
+          List of file extensions to check. Helpful macros are available: IMAGE (jpg,kra,gif,png,bmp,tiff,hdr,svg), TEXT (txt,doc,docx,odt,rtf), VIDEO (mp4,flv,mkv,webm,vob,ogv,gifv,avi,mov,wmv,mpg,m4v,m4p,mpeg,3gp,m2ts), MUSIC (mp3,flac,ogg,opus,tta,wma,webm)
+
+  -P, --excluded-extensions <EXCLUDED_EXTENSIONS>
+          List of file extensions to exclude from search.
+
+  -f, --file-to-save <file-name>
+          Saves the search results into a human-readable formatted text file.
+
+  -C, --compact-file-to-save <json-file-name>
+          Saves the search results into a compact (minified) JSON file without extra whitespace.
+
+  -p, --pretty-file-to-save <pretty-json-file-name>
+          Saves the search results into a pretty-printed (indented) JSON file for better readability.
+
+  -R, --not-recursive
+          Disables recursive directory traversal. Only files in the top-level directories will be scanned.
+
+  -N, --do-not-print-results
+          Suppresses printing of search results to the console. Useful when only saving results to files.
+
+  -M, --do-not-print-messages
+          Suppresses all informational messages, warnings, and errors from being printed to console.
+
+  -W, --ignore-error-code-on-found
+          Suppresses error exit code when duplicate/similar files are found. Useful for scripts that should continue regardless of findings.
+
+  -H, --disable-cache
+          Disables the cache system. This will make scanning slower but ensures fresh results without cached data.
+
+  -D, --delete-files
+          Automatically delete all found items matching the criteria.
+
+  -Q, --dry-run
+          Performs a dry run showing what operations would be performed without actually executing them.
+
+  -y, --move-to-trash
+          Instead of permanently deleting files, move them to the system trash/recycle bin where they can be recovered.
+
+  -c, --checked-types <CHECKED_TYPES>
+          Methods to search files - by default all types except video are checked (VIDEO_FFPROBE and VIDEO_FFMPEG require ffmpeg to be installed).
+          PDF - finds broken PDF files,
+          AUDIO - finds broken audio files,
+          IMAGE - finds broken image files,
+          ARCHIVE - finds broken archive files (zip, 7z, gz, tar, zst, bz2, xz),
+          FONT - finds broken font files (ttf, otf, ttc),
+          MARKUP - finds broken JSON/XML/TOML/YAML/SVG files,
+          VIDEO_FFPROBE - quick video check using ffprobe (header validation),
+          VIDEO_FFMPEG - deep video check using ffmpeg (full decode)
+          
+          [default: PDF AUDIO IMAGE ARCHIVE FONT MARKUP]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+EXAMPLE:
+    czkawka broken -d /home/kicikici/ /home/szczek -e /home/kicikici/jestempsem -x jpg -f results.txt
+
+
+Finds files with invalid extensions
+
+Usage: czkawka.exe ext [OPTIONS] --directories <DIRECTORIES>
+
+Options:
+  -T, --thread-number <THREAD_NUMBER>
+          Limits the number of threads used for scanning. Value 0 (default) will use all available CPU threads. Lower values can reduce CPU usage.
+          
+          [default: 0]
+
+  -d, --directories <DIRECTORIES>
+          List of directory(ies) to search (absolute paths). These directories will be scanned but not set as reference folders.
+
+  -e, --excluded-directories <EXCLUDED_DIRECTORIES>
+          List of directory(ies) to exclude from search (absolute paths). Files in these directories will be completely ignored.
+
+  -E, --excluded-items <EXCLUDED_ITEMS>
+          List of excluded items using wildcards (e.g., */temp*, *.tmp). May be slower than -e, so use -e for directories when possible. Helpful macros are available: DEFAULT (the same default excluded items the GUI uses) and $TRASH (the OS trash / recycle bin, matching the GUI defaults - */Trash/*,*/.Trash-*/* on Linux/macOS, *:\$RECYCLE.BIN\* on Windows).
+
+  -x, --allowed-extensions <ALLOWED_EXTENSIONS>
+          List of file extensions to check. Helpful macros are available: IMAGE (jpg,kra,gif,png,bmp,tiff,hdr,svg), TEXT (txt,doc,docx,odt,rtf), VIDEO (mp4,flv,mkv,webm,vob,ogv,gifv,avi,mov,wmv,mpg,m4v,m4p,mpeg,3gp,m2ts), MUSIC (mp3,flac,ogg,opus,tta,wma,webm)
+
+  -P, --excluded-extensions <EXCLUDED_EXTENSIONS>
+          List of file extensions to exclude from search.
+
+  -f, --file-to-save <file-name>
+          Saves the search results into a human-readable formatted text file.
+
+  -C, --compact-file-to-save <json-file-name>
+          Saves the search results into a compact (minified) JSON file without extra whitespace.
+
+  -p, --pretty-file-to-save <pretty-json-file-name>
+          Saves the search results into a pretty-printed (indented) JSON file for better readability.
+
+  -R, --not-recursive
+          Disables recursive directory traversal. Only files in the top-level directories will be scanned.
+
+  -N, --do-not-print-results
+          Suppresses printing of search results to the console. Useful when only saving results to files.
+
+  -M, --do-not-print-messages
+          Suppresses all informational messages, warnings, and errors from being printed to console.
+
+  -W, --ignore-error-code-on-found
+          Suppresses error exit code when duplicate/similar files are found. Useful for scripts that should continue regardless of findings.
+
+  -H, --disable-cache
+          Disables the cache system. This will make scanning slower but ensures fresh results without cached data.
+
+  -F, --fix-extensions
+          Automatically rename files to use proper extensions based on their detected file type
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+EXAMPLE:
+    czkawka ext -d /home/czokolada/ -f results.txt
+
+
+Finds files with bad names
+
+Usage: czkawka.exe bad-names [OPTIONS] --directories <DIRECTORIES>
+
+Options:
+  -T, --thread-number <THREAD_NUMBER>
+          Limits the number of threads used for scanning. Value 0 (default) will use all available CPU threads. Lower values can reduce CPU usage.
+          
+          [default: 0]
+
+  -d, --directories <DIRECTORIES>
+          List of directory(ies) to search (absolute paths). These directories will be scanned but not set as reference folders.
+
+  -e, --excluded-directories <EXCLUDED_DIRECTORIES>
+          List of directory(ies) to exclude from search (absolute paths). Files in these directories will be completely ignored.
+
+  -E, --excluded-items <EXCLUDED_ITEMS>
+          List of excluded items using wildcards (e.g., */temp*, *.tmp). May be slower than -e, so use -e for directories when possible. Helpful macros are available: DEFAULT (the same default excluded items the GUI uses) and $TRASH (the OS trash / recycle bin, matching the GUI defaults - */Trash/*,*/.Trash-*/* on Linux/macOS, *:\$RECYCLE.BIN\* on Windows).
+
+  -x, --allowed-extensions <ALLOWED_EXTENSIONS>
+          List of file extensions to check. Helpful macros are available: IMAGE (jpg,kra,gif,png,bmp,tiff,hdr,svg), TEXT (txt,doc,docx,odt,rtf), VIDEO (mp4,flv,mkv,webm,vob,ogv,gifv,avi,mov,wmv,mpg,m4v,m4p,mpeg,3gp,m2ts), MUSIC (mp3,flac,ogg,opus,tta,wma,webm)
+
+  -P, --excluded-extensions <EXCLUDED_EXTENSIONS>
+          List of file extensions to exclude from search.
+
+  -f, --file-to-save <file-name>
+          Saves the search results into a human-readable formatted text file.
+
+  -C, --compact-file-to-save <json-file-name>
+          Saves the search results into a compact (minified) JSON file without extra whitespace.
+
+  -p, --pretty-file-to-save <pretty-json-file-name>
+          Saves the search results into a pretty-printed (indented) JSON file for better readability.
+
+  -R, --not-recursive
+          Disables recursive directory traversal. Only files in the top-level directories will be scanned.
+
+  -N, --do-not-print-results
+          Suppresses printing of search results to the console. Useful when only saving results to files.
+
+  -M, --do-not-print-messages
+          Suppresses all informational messages, warnings, and errors from being printed to console.
+
+  -W, --ignore-error-code-on-found
+          Suppresses error exit code when duplicate/similar files are found. Useful for scripts that should continue regardless of findings.
+
+  -H, --disable-cache
+          Disables the cache system. This will make scanning slower but ensures fresh results without cached data.
+
+  -D, --delete-files
+          Automatically delete all found items matching the criteria.
+
+  -Q, --dry-run
+          Performs a dry run showing what operations would be performed without actually executing them.
+
+  -y, --move-to-trash
+          Instead of permanently deleting files, move them to the system trash/recycle bin where they can be recovered.
+
+  -u, --uppercase-extension
+          Detects files with uppercase extensions (e.g., .JPG instead of .jpg)
+
+  -j, --emoji-used
+          Detects files with emoji characters in their names
+
+  -w, --space-at-start-or-end
+          Detects files with spaces at the beginning or end of their names
+
+  -n, --non-ascii-graphical
+          Detects files with non-ASCII graphical characters in their names
+
+  -r, --restricted-charset <RESTRICTED_CHARSET>
+          List of allowed special characters. Any other characters will be flagged as problematic. Example: '_- .' for underscore, dash, space, and dot
+
+  -a, --remove-duplicated-non-alphanumeric
+          Detects files with duplicated non-alphanumeric characters (e.g., 'file__name' or 'file..txt')
+
+  -F, --fix-names
+          Automatically rename files to fix detected naming issues
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+EXAMPLE:
+    czkawka bad-names -d /home/rafal -f results.txt
+
+
+Finds and removes EXIF tags from images
+
+Usage: czkawka.exe exif-remover [OPTIONS] --directories <DIRECTORIES>
+
+Options:
+  -T, --thread-number <THREAD_NUMBER>
+          Limits the number of threads used for scanning. Value 0 (default) will use all available CPU threads. Lower values can reduce CPU usage.
+          
+          [default: 0]
+
+  -d, --directories <DIRECTORIES>
+          List of directory(ies) to search (absolute paths). These directories will be scanned but not set as reference folders.
+
+  -e, --excluded-directories <EXCLUDED_DIRECTORIES>
+          List of directory(ies) to exclude from search (absolute paths). Files in these directories will be completely ignored.
+
+  -E, --excluded-items <EXCLUDED_ITEMS>
+          List of excluded items using wildcards (e.g., */temp*, *.tmp). May be slower than -e, so use -e for directories when possible. Helpful macros are available: DEFAULT (the same default excluded items the GUI uses) and $TRASH (the OS trash / recycle bin, matching the GUI defaults - */Trash/*,*/.Trash-*/* on Linux/macOS, *:\$RECYCLE.BIN\* on Windows).
+
+  -x, --allowed-extensions <ALLOWED_EXTENSIONS>
+          List of file extensions to check. Helpful macros are available: IMAGE (jpg,kra,gif,png,bmp,tiff,hdr,svg), TEXT (txt,doc,docx,odt,rtf), VIDEO (mp4,flv,mkv,webm,vob,ogv,gifv,avi,mov,wmv,mpg,m4v,m4p,mpeg,3gp,m2ts), MUSIC (mp3,flac,ogg,opus,tta,wma,webm)
+
+  -P, --excluded-extensions <EXCLUDED_EXTENSIONS>
+          List of file extensions to exclude from search.
+
+  -f, --file-to-save <file-name>
+          Saves the search results into a human-readable formatted text file.
+
+  -C, --compact-file-to-save <json-file-name>
+          Saves the search results into a compact (minified) JSON file without extra whitespace.
+
+  -p, --pretty-file-to-save <pretty-json-file-name>
+          Saves the search results into a pretty-printed (indented) JSON file for better readability.
+
+  -R, --not-recursive
+          Disables recursive directory traversal. Only files in the top-level directories will be scanned.
+
+  -N, --do-not-print-results
+          Suppresses printing of search results to the console. Useful when only saving results to files.
+
+  -M, --do-not-print-messages
+          Suppresses all informational messages, warnings, and errors from being printed to console.
+
+  -W, --ignore-error-code-on-found
+          Suppresses error exit code when duplicate/similar files are found. Useful for scripts that should continue regardless of findings.
+
+  -H, --disable-cache
+          Disables the cache system. This will make scanning slower but ensures fresh results without cached data.
+
+  -i, --ignored-tags <IGNORED_TAGS>
+          Comma-separated list of EXIF tag names to ignore (not remove). Example: 'Orientation,DateTime,Software'
+
+  -F, --fix-exif
+          Actually remove EXIF tags from files
+
+  -o, --override-file
+          Override original files instead of creating a copy with 'czkawka_cleaned_exif' inserted before the extension (e.g. 'photo.jpg' becomes 'photo.czkawka_cleaned_exif.jpg')
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+EXAMPLE:
+    czkawka exif-remover -d /home/rafal -f results.txt

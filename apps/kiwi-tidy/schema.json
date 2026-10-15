@@ -1,0 +1,123 @@
+{
+  "dup": {
+    "thread-number": "int",
+    "excluded-items": "str",
+    "allowed-extensions": "str",
+    "excluded-extensions": "str",
+    "not-recursive": "bool",
+    "minimal-file-size": "int",
+    "maximal-file-size": "int",
+    "search-method": "str",
+    "hash-type": "str",
+    "case-sensitive-name-comparison": "bool",
+    "allow-hard-links": "bool"
+  },
+  "image": {
+    "thread-number": "int",
+    "excluded-items": "str",
+    "allowed-extensions": "str",
+    "excluded-extensions": "str",
+    "not-recursive": "bool",
+    "minimal-file-size": "int",
+    "maximal-file-size": "int",
+    "max-difference": "int",
+    "allow-hard-links": "bool",
+    "ignore-same-size": "bool",
+    "ignore-same-resolution": "bool",
+    "hash-alg": "str",
+    "image-filter": "str",
+    "hash-size": "int",
+    "geometric-invariance": "str"
+  },
+  "empty-folders": {
+    "thread-number": "int",
+    "excluded-items": "str",
+    "allowed-extensions": "str",
+    "excluded-extensions": "str",
+    "not-recursive": "bool"
+  },
+  "empty-files": {
+    "thread-number": "int",
+    "excluded-items": "str",
+    "allowed-extensions": "str",
+    "excluded-extensions": "str",
+    "not-recursive": "bool",
+    "zero-byte-content": "bool",
+    "non-printable-content": "bool"
+  },
+  "big": {
+    "thread-number": "int",
+    "excluded-items": "str",
+    "allowed-extensions": "str",
+    "excluded-extensions": "str",
+    "not-recursive": "bool",
+    "number-of-files": "int",
+    "smallest-mode": "bool"
+  },
+  "temp": {
+    "thread-number": "int",
+    "excluded-items": "str",
+    "allowed-extensions": "str",
+    "excluded-extensions": "str",
+    "not-recursive": "bool",
+    "extensions": "str"
+  },
+  "music": {
+    "thread-number": "int",
+    "excluded-items": "str",
+    "allowed-extensions": "str",
+    "excluded-extensions": "str",
+    "not-recursive": "bool",
+    "approximate-comparison": "bool",
+    "compare-fingerprints-only-with-similar-titles": "bool",
+    "music-similarity": "str",
+    "search-method": "str",
+    "minimal-file-size": "int",
+    "maximal-file-size": "int",
+    "minimum-segment-duration": "float",
+    "maximum-difference": "float"
+  },
+  "symlinks": {
+    "thread-number": "int",
+    "excluded-items": "str",
+    "allowed-extensions": "str",
+    "excluded-extensions": "str",
+    "not-recursive": "bool"
+  },
+  "broken": {
+    "thread-number": "int",
+    "excluded-items": "str",
+    "allowed-extensions": "str",
+    "excluded-extensions": "str",
+    "not-recursive": "bool",
+    "checked-types": "str"
+  },
+  "ext": {
+    "thread-number": "int",
+    "excluded-items": "str",
+    "allowed-extensions": "str",
+    "excluded-extensions": "str",
+    "not-recursive": "bool"
+  },
+  "bad-names": {
+    "thread-number": "int",
+    "excluded-items": "str",
+    "allowed-extensions": "str",
+    "excluded-extensions": "str",
+    "not-recursive": "bool",
+    "uppercase-extension": "bool",
+    "emoji-used": "bool",
+    "space-at-start-or-end": "bool",
+    "non-ascii-graphical": "bool",
+    "restricted-charset": "str",
+    "remove-duplicated-non-alphanumeric": "bool"
+  },
+  "exif-remover": {
+    "thread-number": "int",
+    "excluded-items": "str",
+    "allowed-extensions": "str",
+    "excluded-extensions": "str",
+    "not-recursive": "bool",
+    "ignored-tags": "str"
+  }
+}

@@ -1,0 +1,17 @@
+Czkawka CLI/core 12.0.2 (unmodified official Windows GNU x64 binary):
+https://github.com/qarmin/czkawka/releases/tag/12.0.2
+MIT, Copyright (c) 2020-2026 Rafal Mikrut. Original notice: Czkawka-LICENSE.txt.
+Dependency license notices: Czkawka-DEPENDENCY-LICENSES.txt.
+The rawler library is LGPL-2.1 and the symphonia libraries are MPL-2.0.
+Corresponding source (including complete workspace, all locked vendored crates and rebuilding instructions):
+https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-tidy-v0.1.0/Czkawka-12.0.2-corresponding-source.tar.gz
+The binary/library source may be modified and rebuilt/relinked as permitted by its licenses.
+No additional restriction on reverse engineering for debugging such modifications is imposed.
+
+Rust 1.94.1 standard runtime: MIT OR Apache-2.0, Rust-LICENSE-MIT.txt,
+Rust-LICENSE-APACHE.txt, Rust-COPYRIGHT.txt.
+Python/Tcl 8.6.15/Tk: Runtime-LICENSES.txt.
+Pillow 12.3.0 and bundled image libraries: Pillow-LICENSE.txt.
+PyInstaller 6.22.2 bootloader: GPL-2.0-or-later with distribution exception, PyInstaller-LICENSE.txt.
+OpenSSL runtime: Python-OpenSSL-LICENSE.txt.
+GUI source is available under the root MIT LICENSE. Third-party components retain their own licenses.
