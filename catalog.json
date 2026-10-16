@@ -1,5 +1,33 @@
 [
   {
+    "slug": "kiwi-gif",
+    "name": "きういGIF工房",
+    "summary": "写真やイラストを並べて、動くGIFに。順番・速さ・余白を調整し、作成結果を画面内で確認できます。",
+    "features": [
+      "JPEG・PNG・WebP・BMP・GIF・TIFFの画像を2～100枚並べ、アニメーションGIFを作れます。",
+      "画像の順番、名前順の並び替え、スマホ写真の向き補正、余白・中央切り抜きに対応します。",
+      "再生の速さ、サイズ、品質、繰り返し、往復再生、透明・白・黒の背景を調整できます。",
+      "既存GIFのサイズ・再生速度を変更し、新しい名前で保存できます。",
+      "作成したGIFを画面内で再生・停止できます。結果のコピー・TXT保存、保存先フォルダーの表示もできます。",
+      "動き・圧縮の品質、固定色、半透明の背景色、詳細入力のY4M変換も指定できます。"
+    ],
+    "steps": [
+      "ZIPをすべて展開し、KiwiGIF.exeを起動します。nativeフォルダーも必要です。Microsoft Visual C++ v14再頒布可能パッケージ（x64）を用意してください。",
+      "「画像を並べる」で「ファイルを追加」（F4）を押します。「上へ」「下へ」「名前順」で順番を決めます。",
+      "FPSやサイズを調整し、「保存名を選んでGIFを作る」（F5）から新しい.gifファイルへ保存します。",
+      "作成結果のプレビューを再生して確認します。既存GIFを変換する場合は入力方法を変更し、GIFを1件だけ追加します。"
+    ],
+    "limitations": "Windows 11 x64向け。Microsoft Visual C++ v14再頒布可能パッケージ（x64）が必要です。ZIPは約18.1 MiB。gifskiを利用した非公式GUIです。元ファイルは変更せず、既存ファイルは上書きしません。画像は最初のフレームを使い、最初の画像を基準に最大1280×1280pxへそろえます。各25 MiB・1200万画素、入力合計256 MiB・1億2000万画素までです。既存GIF・Y4Mは300フレームまで。出力も300フレーム・合計1億2000万画素・1600×1600px以内・10分・256 MiBまでです。処理5分、一時ファイル512 MiBまで。往復再生や大きい画像の多数使用では出力上限を超える場合があります。幅と高さを両方指定すると縦横比が変わる場合があります。50 FPSを超えるとブラウザーなどで指定どおり再生されない場合があります。GIF形式の色数・透過・時間の精度には制限があり、再圧縮で画質やコマ数・時間が変わる場合があります。既存GIFはFPSではなく速度倍率で調整します。プレビューは目安で、確認用に繰り返し再生します。Y4Mは2048×2048px以内、8bitの420・420jpeg・420mpeg2・420paldv・422・444に対応します。白黒・10bit以上のY4M、MP4・MOV・AVIは読み込みません。FFmpegは同梱していません。リンク・ジャンクションは扱いません。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-gif-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-gif-v0.1.0/KiwiGIF-0.1.0-win11-x64.zip",
+    "dependency_source_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-gif-v0.1.0/KiwiGIF-0.1.0-dependency-sources.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-gif",
+    "upstream_url": "https://github.com/ImageOptim/gifski",
+    "upstream_license": "AGPL-3.0-or-later（imagequantはGPL-3.0-or-later。対応ソースを併載）",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-archive",
     "name": "きうい圧縮箱",
     "summary": "写真や書類をまとめて圧縮。届いたZIP・7zなどの中身を確認し、新しいフォルダーへ展開できます。",

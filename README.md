@@ -8,6 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きういGIF工房](https://kiwi-garakuta.pages.dev/tools/kiwi-gif/) | 写真・イラストを並べて動くGIFを作り、順番・速さ・余白を調整する | [gifski](https://github.com/ImageOptim/gifski) |
 | [きうい圧縮箱](https://kiwi-garakuta.pages.dev/tools/kiwi-archive/) | 写真・書類の圧縮、ZIP・7zなどの中身の確認と新しいフォルダーへの展開 | [ouch](https://github.com/ouch-org/ouch) |
 | [きういファイル金庫](https://kiwi-garakuta.pages.dev/tools/kiwi-vault/) | 写真や書類をパスワード・公開鍵で暗号化し、元ファイルを残して復号する | [age](https://github.com/FiloSottile/age) |
 | [きうい画像OCR](https://kiwi-garakuta.pages.dev/tools/kiwi-ocr/) | 写真・スクリーンショットの文字を読み取り、修正してコピー・保存する | [RapidOCR](https://github.com/RapidAI/RapidOCR) |
