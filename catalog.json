@@ -1,5 +1,33 @@
 [
   {
+    "slug": "kiwi-archive",
+    "name": "きうい圧縮箱",
+    "summary": "写真や書類をまとめて圧縮。届いたZIP・7zなどの中身を確認し、新しいフォルダーへ展開できます。",
+    "features": [
+      "ファイルやフォルダーをZIP・7z・tar.gzなどにまとめ、元ファイルを残して保存できます。",
+      "ZIP・7z・tar・RARの中身を、展開する前に一覧・ツリー表示で確認できます。",
+      "書庫を新しいフォルダーへ展開します。パスワード付き書庫の読み取りにも対応します。",
+      "圧縮率・速度、スレッド数、隠しファイルや.gitignoreによる除外を調整できます。",
+      "gzip・xz・zstd・bzip2・bzip3・LZ4・Snappy・Brotli・LZMA・lzipと、tar.gzなどの組み合わせも使えます。",
+      "表示された一覧や処理結果をコピー・TXT保存できます。処理はPC内で行います。"
+    ],
+    "steps": [
+      "ZIPをすべて展開し、KiwiArchive.exeを起動します。nativeフォルダーも必要です。Microsoft Visual C++ v14再頒布可能パッケージ（x64）を用意してください。",
+      "圧縮する場合はファイル・フォルダーを追加し、形式を選んで「保存名を選んで圧縮する」を押します。",
+      "展開する場合は「中身を確認・展開する」で書庫を選びます。「中身を見る」で先に一覧を確認できます。",
+      "展開先の親フォルダーを選び、「新しいフォルダーへ展開」を押します。パスワードが必要な書庫では先に入力します。"
+    ],
+    "limitations": "Windows 11 x64向け。Microsoft Visual C++ v14再頒布可能パッケージ（x64）が必要です。ZIPは約13.4 MiB。ouchを利用した非公式GUIです。元ファイルや既存ファイルは削除・上書きしません。展開は1書庫ずつです。1回32対象・合計2 GiB・10,000項目・1処理5分、一覧・ログは各4 MiBまでです。展開中の上限監視には短い間隔があり、一時的にサイズを超えることがあります。単独のgzipなどは1ファイル向けで、複数ファイル・フォルダーはZIP・7z・tar系を選びます。一覧表示はZIP・7z・tar・RARなどの書庫形式向けです。形式を指定した場合は、保存名の拡張子も合わせてください。RARは読み取り専用です。パスワード付き書庫の作成、元ファイルの自動削除、既存フォルダーへの直接展開には対応しません。リンク・ジャンクションを含む対象・展開結果、ZIP・tar内のリンクや重複名は扱いません。Windowsで扱えない名前・保存先を外れるパスも拒否します。圧縮レベルの有効範囲は形式によって異なります。元ツールが対応しない圧縮方式・暗号化方式では処理できません。コード署名はありません。対応ソースと再ビルド・交換手順をGitHub Releasesに併載しています。",
+    "screenshot": "/assets/screenshots/kiwi-archive-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-archive-v0.1.0/KiwiArchive-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-archive",
+    "upstream_url": "https://github.com/ouch-org/ouch",
+    "upstream_license": "MIT（依存物にLGPL-3.0・UnRARの利用条件ほか。対応ソースを併載）",
+    "amazon_links": [],
+    "windows_test_passed": true,
+    "dependency_source_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-archive-v0.1.0/KiwiArchive-0.1.0-dependency-sources.zip"
+  },
+  {
     "slug": "kiwi-vault",
     "name": "きういファイル金庫",
     "summary": "写真や書類をパスワードで暗号化して渡せます。元ファイルを残し、PC内だけで処理する無料ソフトです。",

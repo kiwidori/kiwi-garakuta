@@ -44,6 +44,12 @@ def require_tool(item: dict) -> None:
         raise ValueError(f"Source must be a GitHub URL: {item['slug']}")
     if not item["upstream_url"].startswith("https://github.com/"):
         raise ValueError(f"Upstream must be a GitHub URL: {item['slug']}")
+    if item.get("dependency_source_url"):
+        parsed = urlparse(item["dependency_source_url"])
+        if (parsed.scheme != "https" or parsed.netloc != "github.com" or
+                not parsed.path.startswith("/kiwidori/kiwi-garakuta/releases/download/") or
+                not parsed.path.endswith(".zip") or parsed.query or parsed.fragment):
+            raise ValueError(f"Invalid dependency source download: {item['slug']}")
     if not item["screenshot"].startswith("/assets/screenshots/"):
         raise ValueError(f"Screenshot must be local: {item['slug']}")
     if not (ROOT / "site" / item["screenshot"].lstrip("/")).is_file():
@@ -68,6 +74,8 @@ def require_tool(item: dict) -> None:
 def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_qr: str) -> str:
     features = "".join(f"<li>{esc(value)}</li>" for value in item["features"])
     steps = "".join(f"<li>{esc(value)}</li>" for value in item["steps"])
+    source_download = (f'<a class="textlink" href="{esc(item["dependency_source_url"])}" rel="noopener noreferrer">元ツールの対応ソース ↗</a>'
+                       if item.get("dependency_source_url") else "")
     replacement = ""
     if item.get("replaced_by"):
         replacement = (f'<section class="support"><p>これらの機能をまとめた '
@@ -88,7 +96,7 @@ def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_
 <section class="hero"><div class="eyebrow">Windows 11 · 無料 · ZIP版</div><h1>{esc(item['name'])}</h1>
 <p class="lead">{esc(item['summary'])}</p>
 <div class="actions"><a class="button" href="{esc(item['download_url'])}" rel="noopener noreferrer">ZIPをダウンロード ↗</a>
-<a class="textlink" href="{esc(item['source_url'])}" rel="noopener noreferrer">ソースコード ↗</a></div></section>
+<a class="textlink" href="{esc(item['source_url'])}" rel="noopener noreferrer">ソースコード ↗</a>{source_download}</div></section>
 {replacement}
 <figure class="shot"><img src="{esc(item['screenshot'])}" alt="{esc(item['name'])}の実際の画面" loading="lazy">
 <figcaption>実際の動作画面</figcaption></figure>
