@@ -55,3 +55,6 @@ apps/kiwi-vault/*NOTICES.txt -text -whitespace
 apps/kiwi-archive/*LICENSE*.txt -text -whitespace
 apps/kiwi-archive/*NOTICES.txt -text -whitespace
 apps/kiwi-archive/SOURCE-REBUILD.txt -text -whitespace
+apps/kiwi-gif/*LICENSE*.txt -text -whitespace
+apps/kiwi-gif/*NOTICES.txt -text -whitespace
+apps/kiwi-gif/SOURCE-REBUILD.txt -text -whitespace

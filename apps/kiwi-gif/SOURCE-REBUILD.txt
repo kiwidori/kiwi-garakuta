@@ -1,0 +1,23 @@
+gifski1.34.0 complete corresponding source
+
+Original executable: win/gifski.exe in the official gifski1.34.0 archive.
+https://github.com/ImageOptim/gifski/releases/tag/1.34.0
+AGPL-3.0-or-later; dependency imagequant is GPL-3.0-or-later. Original notices
+are included in the application and source files. Complete upstream tag source,
+Cargo.lock, build configuration/workflows and all101 registry source crates plus
+the locked optional ffmpeg-sys-next git fork are included (including optional,
+test and other-platform crates). The optional FFmpeg feature is NOT enabled in
+the distributed executable; no external FFmpeg libraries are distributed.
+
+Rebuild: Windows, Python3.13+, Rust stable (minimum1.74 per upstream), MSVC C++
+build tools and Windows SDK as system development tools (not included).
+Run python prepare.py, enter the printed source directory, run:
+ cargo build --release --locked --offline --bin gifski --target x86_64-pc-windows-msvc
+Default features match the original release. No optional video/FFmpeg feature.
+Compiler and system tools are separate prerequisites. No byte-identical build
+claim is made for the original upstream compiler environment.
+You can replace native/gifski.exe with the resulting executable; the GUI does
+not impose the original hash at runtime. Restart after replacement.
+GUI source and packaging: https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-gif
+GUI is a separate MIT-licensed program communicating via the documented CLI.
+Pillow's source and notices: https://github.com/python-pillow/Pillow/tree/12.3.0

@@ -19,3 +19,4 @@ AGENTS.md
 /factory/show_candidates.py
 apps/kiwi-vault/native/
 apps/kiwi-archive/native/
+apps/kiwi-gif/native/

@@ -1,0 +1,31 @@
+{
+  "upstream": "https://github.com/ImageOptim/gifski",
+  "version": "1.34.0",
+  "url": "https://github.com/ImageOptim/gifski/releases/download/1.34.0/gifski-1.34.0.tar.xz",
+  "sha256": "b9b6591aa163123d737353d9c8581efdf3234d28eeaa45329b31da905cd5a996",
+  "member": "win/gifski.exe",
+  "native_sha256": "9da8553cbe71c0facf544634b4e377262ea30d34becdc0ca077306342e776295",
+  "pillow_version": "12.3.0",
+  "pillow_binaries": {
+    "_avif.cp313-win_amd64.pyd": "2e3e5cce3aea38c603680ca3da5d161fad123ce23a803bb692a56aff608989be",
+    "_imaging.cp313-win_amd64.pyd": "88756e8e0e3f6180e518da25d379597c861e2d20d716ef001894789b515c1777",
+    "_imagingcms.cp313-win_amd64.pyd": "7ecb50b954d13d72b7a0ff565872332443cdbc83a36e58a56b2b949a56f32549",
+    "_imagingft.cp313-win_amd64.pyd": "e94673a471a0b6fd5e92e8b6cdbdfe16e2e91bcf5689e9e4c9b391ab43788d85",
+    "_imagingmath.cp313-win_amd64.pyd": "9d5bbea6a877a48ed7995a0640ecb0a5567d9fad544a4a1fbf9f22d507029b57",
+    "_imagingmorph.cp313-win_amd64.pyd": "9aa1903b1c4ecd1269a2f7575a62f764492b5510b43fe477970ecc606595cfc5",
+    "_imagingtk.cp313-win_amd64.pyd": "8ccd6128481d5a3a15993c2f8a69585694ff972652a6b06dcaee276fc65633a7",
+    "_webp.cp313-win_amd64.pyd": "9918faf8d90faa86e03e48479c6a62383be71da759254afded18591a406a92fe"
+  },
+  "source_bundle_sha256": "4c5fc8cf2451d14921fc4fa8844bc2790e9f435db4ded2d5d3f1a3a3ad21b7d6",
+  "licenses": {
+    "GIFSKI-DEPENDENCY-LICENSES.txt": "acfb80669523357d8f5cff0ba933e528cd7a7fb39dde8fe633393c0985b9a41e",
+    "gifski-LICENSE.txt": "4e2b565ed4c9537443eb92a10d745a6f8aeb75fa086fd7b955bb52e2cde48a4d",
+    "OPTIONAL-FFMPEG-LICENSES.txt": "3c2fdd12c0eb6b1f52581c2be10c380e6d64c0fbd3ceb368251bb361a4444a93",
+    "Pillow-LICENSE.txt": "4f7866a74802c6326f81faff59a56546b6aec2b10b91973e0e9308de95e79857",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "Python-OpenSSL-LICENSE.txt": "feb9bd5f71806c596971d4dfa64c5a93904f9d82b4d3ebd9244a12058f22578e",
+    "Rust-RUNTIME-LICENSES.txt": "2ae413b627d8705853935b9faab2472ebf00f1e94d1cb45f7fd9e26f92e9b83e",
+    "SOURCE-REBUILD.txt": "0d2e1937abf80d87e74da98373c03f28f7b1d07e2c150425d9412a7a2f1ba6cd",
+    "THIRD-PARTY-NOTICES.txt": "2380a197d7069c52214c019c452ee863f040d766d93241513fecde6b1351133b"
+  }
+}
