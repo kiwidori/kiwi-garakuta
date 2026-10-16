@@ -47,3 +47,8 @@ apps/kiwi-qr/upstream-help.txt -text -whitespace
 apps/kiwi-ocr/*LICENSE*.txt -text -whitespace
 apps/kiwi-ocr/*NOTICES.txt -text -whitespace
 apps/kiwi-ocr/DEPENDENCY-SOURCES.txt -text -whitespace
+apps/kiwi-vault/*.go text eol=lf
+apps/kiwi-vault/go.mod text eol=lf
+apps/kiwi-vault/go.sum text eol=lf
+apps/kiwi-vault/*LICENSE*.txt -text -whitespace
+apps/kiwi-vault/*NOTICES.txt -text -whitespace

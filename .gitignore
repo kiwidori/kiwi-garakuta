@@ -17,3 +17,4 @@ AGENTS.md
 /factory/local_draft.py
 /factory/prepare_candidates.sh
 /factory/show_candidates.py
+apps/kiwi-vault/native/

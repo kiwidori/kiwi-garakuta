@@ -1,0 +1,21 @@
+KiwiVault 0.1.0
+GUI and bridge source: MIT, repository LICENSE.
+This is an unofficial interface for age, not an official age release.
+
+age v1.3.2 (Go library and age-inspect command source): BSD-3-Clause.
+https://github.com/FiloSottile/age
+https://pkg.go.dev/filippo.io/age@v1.3.2
+The bridge uses the official library for all cryptographic operations.
+age-inspect is rebuilt from the unmodified official v1.3.2 command source.
+Both executables are built with Go 1.27.2 and golang.org/x/crypto v0.56.0.
+Compiled module versions and checksums: upstream-pin.json.
+The official Windows archive is used only as an interoperability reference,
+not copied into the application. External plugins are not included or invoked.
+
+age and all compiled Go module copyright/license/patent notices:
+AGE-DEPENDENCY-LICENSES.txt.
+Go 1.27.2 runtime and vendored notices: Go-RUNTIME-LICENSES.txt.
+Some runtime vendor notices cover components not used by this build.
+Python 3.13.2, Tcl 8.6.15 and Tk: Runtime-LICENSES.txt.
+Python OpenSSL runtime: Python-OpenSSL-LICENSE.txt.
+PyInstaller 6.22.2: PyInstaller-LICENSE.txt (GPL with distribution exception).
