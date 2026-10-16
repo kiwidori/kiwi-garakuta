@@ -1,0 +1,18 @@
+{
+  "upstream": "https://github.com/ouch-org/ouch",
+  "version": "0.8.3",
+  "url": "https://github.com/ouch-org/ouch/releases/download/0.8.3/ouch-x86_64-pc-windows-msvc.zip",
+  "sha256": "6383a95987894412d5c9c4172e3d1d87c86aa322acb2b7ffcad42f492abc5dfe",
+  "member": "ouch-x86_64-pc-windows-msvc/ouch.exe",
+  "native_sha256": "23893103c2fb470bad85cea4c82c75adde2b74c5f58a7dad36ffe42c64e61ae3",
+  "source_bundle_sha256": "ec879b7f9e0dec98c1ba3b0680dbd18f11c6312a1a1841bf448b1bb8498bb239",
+  "licenses": {
+    "OUCH-DEPENDENCY-LICENSES.txt": "d4842d49632f7989480ce3b357ecb6bc13a89db333cf0a34ad2e66696431408f",
+    "ouch-LICENSE.txt": "8e62fa7f3d455f98e0a84eaabd85ecd308fbb8459afc8f7e8c39f23ac4e2b631",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "Python-OpenSSL-LICENSE.txt": "feb9bd5f71806c596971d4dfa64c5a93904f9d82b4d3ebd9244a12058f22578e",
+    "Rust-RUNTIME-LICENSES.txt": "ad223c5d3bb2f55decf4f98bc712c91d84839ee969b9e43e475227fd7ef12214",
+    "SOURCE-REBUILD.txt": "b5f270b533d0aebbd6d888dbc9ba22d590f1dfd123c575f5f391e5a26da4e85e",
+    "THIRD-PARTY-NOTICES.txt": "904a43e3b56486e16f86a9ccc383bc75739e835e038eff03d7ec03176e77009d"
+  }
+}

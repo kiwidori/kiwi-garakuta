@@ -52,3 +52,6 @@ apps/kiwi-vault/go.mod text eol=lf
 apps/kiwi-vault/go.sum text eol=lf
 apps/kiwi-vault/*LICENSE*.txt -text -whitespace
 apps/kiwi-vault/*NOTICES.txt -text -whitespace
+apps/kiwi-archive/*LICENSE*.txt -text -whitespace
+apps/kiwi-archive/*NOTICES.txt -text -whitespace
+apps/kiwi-archive/SOURCE-REBUILD.txt -text -whitespace

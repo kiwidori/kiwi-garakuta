@@ -1,0 +1,22 @@
+KiwiArchive 0.1.0
+GUI: MIT, repository LICENSE. This is an unofficial interface for ouch.
+
+ouch0.8.3: MIT. Unmodified official x86_64-pc-windows-msvc release.
+https://github.com/ouch-org/ouch/releases/tag/0.8.3
+ouch-LICENSE.txt retains the upstream license and copyright notices.
+OUCH-DEPENDENCY-LICENSES.txt contains original locked dependency notices,
+including optional/build/test/other-target crates not all used in this executable.
+Dependencies include LGPL-3.0-only bzip3 and its bundled C library, MIT/Apache/BSD
+components, and UnRAR code with a restriction against creating a RAR-compatible
+compressor. RAR creation is not supported. Rust runtime: Rust-RUNTIME-LICENSES.txt.
+
+Complete corresponding ouch source, build workflows and all locked dependency
+sources, including bzip3 C and UnRAR C++ source, are available at no charge:
+https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-archive-v0.1.0/KiwiArchive-0.1.0-dependency-sources.zip
+See SOURCE-REBUILD.txt for build and replacement instructions. The native/ouch.exe
+file can be replaced with a modified build; the GUI imposes no runtime digest lock.
+
+Python3.13.2/Tcl8.6.15/Tk: Runtime-LICENSES.txt.
+Python OpenSSL: Python-OpenSSL-LICENSE.txt.
+PyInstaller6.22.2: PyInstaller-LICENSE.txt (GPL with distribution exception).
+Microsoft Visual C++ v14 x64 runtime is a separate system prerequisite.

@@ -1,0 +1,23 @@
+ouch 0.8.3 complete corresponding source and locked dependencies
+
+The application includes the unmodified official Windows x86_64 MSVC executable:
+https://github.com/ouch-org/ouch/releases/tag/0.8.3
+Upstream source, build workflows and complete Cargo.lock dependency sources are included.
+This bundle deliberately includes optional, build, test and other-target crates too.
+Dependency license texts are in each original source crate and in the application notices.
+It includes the LGPL-3.0 bzip3 bindings and bundled C source. UnRAR source retains its
+restriction against using the code to develop a RAR-compatible compressor.
+
+Rebuild on Windows with Python3.13+, Rust stable (minimum1.93 per upstream Cargo.toml),
+Visual Studio C++ build tools and Windows SDK (system development tools, not included).
+Run python prepare.py, enter the printed source directory, then:
+  cargo build --release --locked --offline --target x86_64-pc-windows-msvc
+The default features match the official Windows release. The original release workflow
+is included in the upstream .github/workflows directory. Build tools are separate.
+No byte-identical reproduction of upstream compiler/toolchain environment is promised.
+
+You may replace the application's native/ouch.exe with the resulting executable.
+The GUI does not require the original executable hash at runtime. Restart the GUI after
+replacement. Keep a copy of the original if you need to restore it. Modified binaries
+may behave differently. GUI source and packaging script are available in apps/kiwi-archive
+at https://github.com/kiwidori/kiwi-garakuta under the repository MIT license.

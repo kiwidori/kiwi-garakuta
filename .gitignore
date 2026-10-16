@@ -18,3 +18,4 @@ AGENTS.md
 /factory/prepare_candidates.sh
 /factory/show_candidates.py
 apps/kiwi-vault/native/
+apps/kiwi-archive/native/
