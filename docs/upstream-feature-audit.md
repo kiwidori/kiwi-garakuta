@@ -4,6 +4,7 @@
 
 | ソフト | 主な用途 |
 | --- | --- |
+| [きういファイル金庫](https://kiwi-garakuta.pages.dev/tools/kiwi-vault/) | パスワード・公開鍵での暗号化と復号、複数宛先、鍵の作成・保護、暗号化形式の確認。フォルダーは先にZIP化。ファイル名と元ファイルは残ります。 |
 | [きうい画像OCR](https://kiwi-garakuta.pages.dev/tools/kiwi-ocr/) | 日本語対応の画像文字認識、範囲指定・回転・文字位置の表示、文章の修正・コピー、TXT/CSV/JSON/Markdown・位置付きPNG保存 |
 | [きういQR](https://kiwi-garakuta.pages.dev/tools/kiwi-qr/) | QRの作成・装飾・一括保存、画像のQR・バーコードの読み取り、結果のコピーとTXT/JSON保存 |
 | [きういバックアップ](https://kiwi-garakuta.pages.dev/tools/kiwi-backup/) | 暗号化保存・履歴の閲覧と比較・新しいフォルダーへの復元・保存データの点検と整理 |

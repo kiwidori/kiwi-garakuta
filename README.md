@@ -8,6 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きういファイル金庫](https://kiwi-garakuta.pages.dev/tools/kiwi-vault/) | 写真や書類をパスワード・公開鍵で暗号化し、元ファイルを残して復号する | [age](https://github.com/FiloSottile/age) |
 | [きうい画像OCR](https://kiwi-garakuta.pages.dev/tools/kiwi-ocr/) | 写真・スクリーンショットの文字を読み取り、修正してコピー・保存する | [RapidOCR](https://github.com/RapidAI/RapidOCR) |
 | [きういQR](https://kiwi-garakuta.pages.dev/tools/kiwi-qr/) | URL・Wi-FiなどのQRを作り、画像のQR・バーコードを読み取る | [python-qrcode](https://github.com/lincolnloop/python-qrcode) / [ZXing-C++](https://github.com/zxing-cpp/zxing-cpp) |
 | [きういバックアップ](https://kiwi-garakuta.pages.dev/tools/kiwi-backup/) | 写真や書類を暗号化して履歴ごとに保存し、別の場所へ復元する | [restic](https://github.com/restic/restic) |
