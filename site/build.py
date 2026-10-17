@@ -19,7 +19,13 @@ def esc(value: object) -> str:
     return html.escape(str(value), quote=True)
 
 
-def page(title: str, description: str, body: str, site_name: str, contact: str) -> str:
+def social_links(contact: str, youtube: str) -> str:
+    return (f'<nav class="social-links" aria-label="SNSリンク">'
+            f'<a href="{esc(contact)}" rel="noopener noreferrer">X（Twitter） ↗</a>'
+            f'<a href="{esc(youtube)}" rel="noopener noreferrer">YouTube ↗</a></nav>')
+
+
+def page(title: str, description: str, body: str, site_name: str, contact: str, youtube: str) -> str:
     return f"""<!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="{esc(description)}"><title>{esc(title)} | {esc(site_name)}</title>
@@ -27,6 +33,7 @@ def page(title: str, description: str, body: str, site_name: str, contact: str) 
 <header><div class="wrap top"><a class="brand" href="/">{esc(site_name)}</a><a class="contact" href="{esc(contact)}" rel="noopener noreferrer">問い合わせ ↗</a></div></header>
 <main class="wrap">{body}</main>
 <footer><div class="wrap"><p>Windows向けの小さな道具を無料公開しています。各ソフトのライセンスと出典は個別ページに記載しています。</p>
+{social_links(contact, youtube)}
 <p><a href="{esc(contact)}" rel="noopener noreferrer">XのDMで問い合わせる ↗</a></p></div></footer>
 </body></html>"""
 
@@ -71,7 +78,7 @@ def require_tool(item: dict) -> None:
             raise ValueError(f"Invalid Amazon link: {item['slug']}")
 
 
-def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_qr: str) -> str:
+def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_qr: str, youtube: str) -> str:
     features = "".join(f"<li>{esc(value)}</li>" for value in item["features"])
     steps = "".join(f"<li>{esc(value)}</li>" for value in item["steps"])
     source_download = (f'<a class="textlink" href="{esc(item["dependency_source_url"])}" rel="noopener noreferrer">元ツールの対応ソース ↗</a>'
@@ -121,11 +128,14 @@ def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_
                         for link in amazon_links)
         body += (f'<section class="support"><h2>関連商品</h2><p>広告：ツールの利用に関連する商品を紹介しています。</p><ul>{links}</ul>'
                  f'<p class="muted">Amazon のアソシエイトとして、{esc(site_name)}は適格販売により収入を得ています。</p></section>')
-    return page(item["name"], item["summary"], body, site_name, contact)
+    return page(item["name"], item["summary"], body, site_name, contact, youtube)
 
 
 def main() -> None:
     settings = json.loads((ROOT / "site-settings.json").read_text(encoding="utf-8"))
+    youtube = settings["youtube_url"]
+    if urlparse(youtube).scheme != "https" or urlparse(youtube).netloc not in ("www.youtube.com", "youtube.com"):
+        raise ValueError("YouTube URL must use an approved host")
     support = json.loads((ROOT / "support.json").read_text(encoding="utf-8"))
     paypal_url = support.get("paypal_url", "")
     paypal_qr = support.get("paypal_qr", "")
@@ -162,13 +172,15 @@ def main() -> None:
     homepage = f"""<section class="homehero"><div class="eyebrow">無料のWindowsツール</div>
 <h1>ちょっと便利な、<br>きういのガラクタ。</h1>
 <p class="lead">CUIツールを使いやすくした小さなソフトを公開しています。ダウンロードは無料です。</p></section>
+<section class="profile" aria-labelledby="profile-title"><div class="profile-heading"><span class="eyebrow">このサイトの人</span><h2 id="profile-title">{esc(settings['profile_name'])}です。</h2></div>
+<div class="profile-content"><p>{esc(settings['profile_text'])}</p>{social_links(settings['contact_url'], youtube)}</div></section>
 <section class="listing"><h2>公開中のソフト</h2><div class="grid">{cards}</div></section>"""
     (DIST / "index.html").write_text(page(settings["site_name"], "無料のWindows向けツールを公開しています。", homepage,
-                                           settings["site_name"], settings["contact_url"]), encoding="utf-8")
+                                           settings["site_name"], settings["contact_url"], youtube), encoding="utf-8")
     for item in catalog:
         directory = DIST / "tools" / item["slug"]
         directory.mkdir(parents=True, exist_ok=True)
-        (directory / "index.html").write_text(tool_page(item, settings["site_name"], settings["contact_url"], paypal_url, paypal_qr), encoding="utf-8")
+        (directory / "index.html").write_text(tool_page(item, settings["site_name"], settings["contact_url"], paypal_url, paypal_qr, youtube), encoding="utf-8")
     print(f"Built {len(catalog)} tool pages in {DIST}")
 
 
