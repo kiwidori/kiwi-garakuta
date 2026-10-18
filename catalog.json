@@ -1,5 +1,32 @@
 [
   {
+    "slug": "kiwi-photo-info",
+    "name": "きうい写真情報",
+    "summary": "写真に残った位置情報や撮影者名を確認し、共有前に整理。元写真を残して、情報を削除・編集したコピーを作れます。",
+    "features": [
+      "撮影日時・カメラ・位置情報などを一覧表示し、タグや値で絞り込めます。",
+      "JPEG・PNG・WebPの位置情報やメタデータを削除したコピーを作れます。向き・色の情報を残す設定もあります。",
+      "撮影者・著作権・タイトル・説明・撮影日時を編集し、EXIF・IPTC・XMPの追加タグも指定できます。",
+      "撮影時刻を整数時間で補正し、別の写真やXMPから情報をコピーできます。",
+      "情報をJSON・CSVへ保存し、XMPファイルへ書き出せます。選択した値のコピーにも対応します。",
+      "保存後は作成したファイルの情報を表示します。初回準備後は写真をPC内だけで処理します。"
+    ],
+    "steps": [
+      "ZIPをすべて展開し、KiwiPhotoInfo.exeを起動します。保存先は通常の書き込み可能なフォルダーにしてください。",
+      "初回のみ「ExifToolを準備」で公式のWindows版（約11 MB）を取得します。以後はオフラインで使えます。",
+      "写真を選んで「情報を読む」を押します。「GPS」などで絞り込み、共有前に含まれている情報を確認します。",
+      "「コピーを作って整理する」で操作と設定を選び、保存先を指定します。新しいフォルダーへ保存された結果を確認してください。"
+    ],
+    "limitations": "Windows 11 x64向け。初回のツール取得にはインターネット接続が必要です。ExifToolの非公式GUIで、全CLIオプションとの互換はありません。保存処理はJPEG・PNG・WebPに対応し、その他はExifToolが読み取れる情報の確認のみです。形式・タグによって書き込めない項目があります。最大100ファイル、各256 MiB、合計1 GiB、一括処理5分、読み取り結果16 MiB、画面一覧12,000行まで。元ファイルは削除・上書きしません。場所を示す独自タグや文章が残る場合があります。写真に写った住所・人物・文字は消えず、完全な匿名化は保証しません。向き・ICCプロファイルを残す設定ではその情報が残り、削除すると表示方向や色が変わる場合があります。JSON・CSVにはフルパスや位置情報が含まれるため、共有前に内容を確認してください。RAW・HEIC・動画・PDFへの書き込み、任意のCLI引数、ユーザー設定スクリプト、ファイル名変更、GPS軌跡の埋め込みには対応しません。",
+    "screenshot": "/assets/screenshots/kiwi-photo-info-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-photo-info-v0.1.0/KiwiPhotoInfo-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/619337677faec49bbdde1a1b3ff94e5de0b81a2d/apps/kiwi-photo-info",
+    "upstream_url": "https://github.com/exiftool/exiftool",
+    "upstream_license": "Perl Artistic License または GPL（ExifToolは初回に公式配布元から取得）",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-gif",
     "name": "きういGIF工房",
     "summary": "写真やイラストを並べて、動くGIFに。順番・速さ・余白を調整し、作成結果を画面内で確認できます。",
