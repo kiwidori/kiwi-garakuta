@@ -1,0 +1,14 @@
+{
+  "version": "13.59",
+  "upstream": "https://github.com/exiftool/exiftool",
+  "official_url": "https://sourceforge.net/projects/exiftool/files/exiftool-13.59_64.zip/download",
+  "download_url": "https://downloads.sourceforge.net/project/exiftool/exiftool-13.59_64.zip",
+  "sha256": "44b512b25af500724ba579d0a53c8fc5851628b692dd5e5d94ae4a15c2cba9ec",
+  "source_url": "https://sourceforge.net/projects/exiftool/files/Image-ExifTool-13.59.tar.gz/download",
+  "source_sha256": "668ea3acececb7235fbd0f4900e72d5f12c9b07e5c778fd36cb1e9b5828fd65a",
+  "stars_at_selection": 5170,
+  "packaging": "Downloaded directly from upstream on first use; no upstream executable redistributed in our ZIP.",
+  "pyinstaller": "6.22.2",
+  "python": "3.13.2",
+  "notice_sha256": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245"
+}
