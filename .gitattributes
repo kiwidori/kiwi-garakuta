@@ -2,6 +2,7 @@
 apps/kiwi-*/upstream-help.txt -whitespace
 apps/kiwi-*/profiles/*/upstream-help.txt -whitespace
 # Upstream license texts retain their original formatting.
+apps/kiwi-photo-info/*-LICENSE.txt -text -whitespace
 apps/kiwi-*/THIRD-PARTY-NOTICES.txt -whitespace
 apps/kiwi-*/*-LICENSE -whitespace
 # Keep the integrated workspace's pinned license and help bytes unchanged.
