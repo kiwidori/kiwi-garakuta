@@ -1,5 +1,32 @@
 [
   {
+    "slug": "kiwi-vector",
+    "name": "きういベクター工房",
+    "summary": "ロゴやイラストを、拡大に強いSVGへ。色や輪郭を調整し、元画像を残して変換できる無料ソフトです。",
+    "features": [
+      "PNG・JPEG・WebP・BMP・TIFF・GIFの画像からSVGを作れます。",
+      "白黒・イラスト・写真のおすすめ設定を用意し、カラー／白黒や輪郭の形を画面から調整できます。",
+      "小さな点の除去、色の精度、色のまとめ具合、角や曲線の判定、座標の小数桁数を指定できます。",
+      "白い背景での処理と、カラーで完全に透明な部分を背景として使う処理を選べます。",
+      "1枚ずつの保存に加え、新しいフォルダーへの一括保存に対応します。元画像・既存SVGは上書きしません。",
+      "元画像を画面内で確認し、作成したSVGをブラウザで開いて見比べられます。SVGテキストのコピーもできます。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiVector.exeを起動します。nativeフォルダーも必要です。Microsoft Visual C++ v14再頒布可能パッケージ（x64）を用意してください。",
+      "「画像を選ぶ」でロゴ・線画・イラストなどを選びます。選択した画像を画面内で確認できます。",
+      "おすすめ設定から「白黒」「イラスト」「写真」を選び、「設定を適用」を押します。必要に応じて色や輪郭を調整します。",
+      "「選んだ1枚をSVG保存」または「すべて一括保存」で保存します。作成結果は「SVGをブラウザで見る」で拡大して確認できます。"
+    ],
+    "limitations": "Windows 11 x64向け。Microsoft Visual C++ v14再頒布可能パッケージ（x64）が必要です。VTracer 0.6.4を利用した非公式GUIです。入力は1～20枚、各128 MiB・800万画素・各辺8,000px、合計512 MiBまで。一括処理5分、SVGは1枚32 MiB・合計128 MiB・輪郭100,000個、コピーは1 MiBまでです。出力サイズは短い間隔で監視するため、一時的に上限を超える場合があります。GIF・TIFFは先頭の1枚だけを使い、EXIFの向きを補正します。半透明は白に合成し、完全に透明な部分を背景として使う設定はカラーのみです。色や輪郭は近似され、元画像と異なる場合があります。写真の画質復元、編集可能な文字への変換、任意のSVGの読み込み・編集、アニメーション、1.0系の新機能には対応しません。写真や細かい模様ではSVGが大きくなることがあります。処理はPC内で行い、元画像・既存SVGを上書きしません。",
+    "screenshot": "/assets/screenshots/kiwi-vector-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-vector-v0.1.0/KiwiVector-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/b111710e5a2e6b04f9a8fda4f4ee6ae4a519daad/apps/kiwi-vector",
+    "upstream_url": "https://github.com/visioncortex/vtracer",
+    "upstream_license": "MIT（関連ライブラリのライセンス文書を同梱）",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-photo-info",
     "name": "きうい写真情報",
     "summary": "写真に残った位置情報や撮影者名を確認し、共有前に整理。元写真を残して、情報を削除・編集したコピーを作れます。",
