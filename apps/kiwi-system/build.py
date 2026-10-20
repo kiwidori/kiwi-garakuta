@@ -14,6 +14,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT.parent / "common"))
+from runtime_licenses import write_runtime_licenses
 VERSION = "0.2.1"
 FASTFETCH_VERSION = "2.69.0"
 FASTFETCH_SHA256 = "aba011c1c45d1a6bdcf52098dd0b9afe990fe444180bc491e87f36670f1452ef"
@@ -54,6 +56,8 @@ def main() -> None:
         shutil.copy2(temp_path / "LICENSE", release / "fastfetch-LICENSE")
         shutil.copy2(ROOT / "README.txt", release / "README.txt")
         shutil.copy2(ROOT.parents[1] / "LICENSE", release / "LICENSE")
+
+    write_runtime_licenses(release / "Runtime-LICENSES.txt")
 
     output = ROOT / f"KiwiSystem-{VERSION}-win11-x64.zip"
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:

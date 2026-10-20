@@ -14,6 +14,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT.parent / "common"))
+from runtime_licenses import write_runtime_licenses
 VERSION = "0.2.1"
 B3SUM_VERSION = "1.8.7"
 B3SUM_SHA256 = "fce0c2406a1e92b49fedd02a48a67dc5ba71c3a85eb80a2f950ed985f90e76e2"
@@ -65,6 +67,8 @@ def main() -> None:
             shutil.copy2(temp_path / name, release / f"b3sum-{name}")
         shutil.copy2(ROOT / "README.txt", release / "README.txt")
         shutil.copy2(ROOT.parents[1] / "LICENSE", release / "LICENSE")
+
+    write_runtime_licenses(release / "Runtime-LICENSES.txt")
 
     output = ROOT / f"KiwiHash-{VERSION}-win11-x64.zip"
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:

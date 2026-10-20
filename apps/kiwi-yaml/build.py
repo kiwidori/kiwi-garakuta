@@ -14,6 +14,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT.parent / "common"))
+from runtime_licenses import write_runtime_licenses
 VERSION = "0.2.1"
 YQ_VERSION = "4.54.1"
 YQ_SHA256 = "b645f47ebb3a0d2fbab52998550bbd0a1706f23b5ca5f5b48e638c580bb70928"
@@ -58,6 +60,8 @@ def main() -> None:
         shutil.copy2(temp_path / "LICENSE", release / "yq-LICENSE")
         shutil.copy2(ROOT / "README.txt", release / "README.txt")
         shutil.copy2(ROOT.parents[1] / "LICENSE", release / "LICENSE")
+
+    write_runtime_licenses(release / "Runtime-LICENSES.txt")
 
     output = ROOT / f"KiwiYAML-{VERSION}-win11-x64.zip"
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:

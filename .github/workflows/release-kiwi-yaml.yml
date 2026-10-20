@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: '3.13.2'
       - name: Install build dependency
         run: python -m pip install pyinstaller==6.22.2
       - name: Build portable ZIP from verified upstream binary
@@ -28,7 +28,7 @@ jobs:
           from zipfile import ZipFile
           package = Path('apps/kiwi-yaml/KiwiYAML-0.2.1-win11-x64.zip')
           with ZipFile(package) as archive:
-              needed = {'KiwiYAML.exe', 'README.txt', 'LICENSE', 'yq-LICENSE'}
+              needed = {'Runtime-LICENSES.txt', 'KiwiYAML.exe', 'README.txt', 'LICENSE', 'yq-LICENSE'}
               assert needed <= set(archive.namelist())
           print('ZIP contents OK')
           '@ | python -

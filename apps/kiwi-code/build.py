@@ -14,6 +14,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT.parent / "common"))
+from runtime_licenses import write_runtime_licenses
 VERSION = "0.2.1"
 BAT_VERSION = "0.26.1"
 BAT_SHA256 = "0f729b4b6f5f28d395c641eacc2e9ff68d0096b85aa0eec344aa62425144b69b"
@@ -57,6 +59,8 @@ def main() -> None:
         shutil.copy2(temp_path / "README.md", release / "bat-README.md")
         shutil.copy2(ROOT / "README.txt", release / "README.txt")
         shutil.copy2(ROOT.parents[1] / "LICENSE", release / "LICENSE")
+
+    write_runtime_licenses(release / "Runtime-LICENSES.txt")
 
     output = ROOT / f"KiwiCode-{VERSION}-win11-x64.zip"
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:

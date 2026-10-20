@@ -14,6 +14,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT.parent / "common"))
+from runtime_licenses import write_runtime_licenses
 VERSION = "0.2.1"
 OXIPNG_VERSION = "10.2.1"
 OXIPNG_SHA256 = "7e940f83ee46874b73f53031f96a15834cb70b220af27391fb06fe7b4dd798e1"
@@ -55,6 +57,8 @@ def main() -> None:
         shutil.copy2(temp_path / "README.md", release / "oxipng-README.md")
         shutil.copy2(ROOT / "README.txt", release / "README.txt")
         shutil.copy2(ROOT.parents[1] / "LICENSE", release / "LICENSE")
+
+    write_runtime_licenses(release / "Runtime-LICENSES.txt")
 
     output = ROOT / f"KiwiPNG-{VERSION}-win11-x64.zip"
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:

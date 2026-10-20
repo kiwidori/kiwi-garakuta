@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: '3.13.2'
       - name: Install build dependency
         run: python -m pip install pyinstaller==6.22.2
       - name: Build portable ZIP from verified upstream archive
@@ -28,7 +28,7 @@ jobs:
           from zipfile import ZipFile
           package = Path('apps/kiwi-system/KiwiSystem-0.2.1-win11-x64.zip')
           with ZipFile(package) as archive:
-              needed = {'KiwiSystem.exe', 'README.txt', 'LICENSE', 'fastfetch-LICENSE'}
+              needed = {'Runtime-LICENSES.txt', 'KiwiSystem.exe', 'README.txt', 'LICENSE', 'fastfetch-LICENSE'}
               assert needed <= set(archive.namelist())
           print('ZIP contents OK')
           '@ | python -
