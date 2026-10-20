@@ -1,0 +1,30 @@
+{
+  "upstream": "https://github.com/visioncortex/vtracer",
+  "version": "0.6.4",
+  "stars_at_selection": 7337,
+  "url": "https://github.com/visioncortex/vtracer/releases/download/0.6.4/vtracer-x86_64-pc-windows-msvc.zip",
+  "sha256": "6b5bc17a6b017129ee40461df254f65d16f3b494c001a8541d41861066b716bf",
+  "member": "vtracer.exe",
+  "native_sha256": "4ad8d35e566cd15caf582063b8349bd082b8fa2bd461e99d116fc63ad8fdeca0",
+  "rust_commit": "25ef9e3d85d934b27d9dada2f9dd52b1dc63bb04",
+  "pillow_version": "12.3.0",
+  "pillow_binaries": {
+    "_avif.cp313-win_amd64.pyd": "2e3e5cce3aea38c603680ca3da5d161fad123ce23a803bb692a56aff608989be",
+    "_imaging.cp313-win_amd64.pyd": "88756e8e0e3f6180e518da25d379597c861e2d20d716ef001894789b515c1777",
+    "_imagingcms.cp313-win_amd64.pyd": "7ecb50b954d13d72b7a0ff565872332443cdbc83a36e58a56b2b949a56f32549",
+    "_imagingft.cp313-win_amd64.pyd": "e94673a471a0b6fd5e92e8b6cdbdfe16e2e91bcf5689e9e4c9b391ab43788d85",
+    "_imagingmath.cp313-win_amd64.pyd": "9d5bbea6a877a48ed7995a0640ecb0a5567d9fad544a4a1fbf9f22d507029b57",
+    "_imagingmorph.cp313-win_amd64.pyd": "9aa1903b1c4ecd1269a2f7575a62f764492b5510b43fe477970ecc606595cfc5",
+    "_imagingtk.cp313-win_amd64.pyd": "8ccd6128481d5a3a15993c2f8a69585694ff972652a6b06dcaee276fc65633a7",
+    "_webp.cp313-win_amd64.pyd": "9918faf8d90faa86e03e48479c6a62383be71da759254afded18591a406a92fe"
+  },
+  "licenses": {
+    "DEPENDENCY-LICENSES.txt": "2df590e57e7be210ad90e0b3b7d33ca84325f59b8b5ee5ae24ac4bbde464bfa7",
+    "Pillow-LICENSE.txt": "4f7866a74802c6326f81faff59a56546b6aec2b10b91973e0e9308de95e79857",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "Rust-COPYRIGHT.txt": "bd0581fef622b3d8b25836cf70feb7e1a7a6171ea9e440b46dfda74c46a0ed0d",
+    "Rust-LICENSE-APACHE.txt": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+    "Rust-LICENSE-MIT.txt": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+    "vtracer-LICENSE.txt": "0a951222fe1bce97214a470d5074b246157ed9bd6d3062b9dad358c13e09acd0"
+  }
+}
