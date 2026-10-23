@@ -1,5 +1,32 @@
 [
   {
+    "slug": "kiwi-image",
+    "name": "きうい画像工房",
+    "summary": "写真をまとめて、ちょうどよいサイズと形式へ。HEICの読み込み、回転・切り抜き・色調整にも対応します。",
+    "features": [
+      "JPEG・PNG・WebP・AVIF・HEIC/HEIF・BMP・TIFF・GIFを読み込み、8種類の形式に保存できます。",
+      "最大20枚をまとめて変換。元画像と既存ファイルを残し、別名で保存します。",
+      "縦横比を保つリサイズ、中央切り抜き、縦横指定、倍率、撮影方向の自動補正、回転・反転に対応します。",
+      "座標での切り抜き、明るさ・コントラスト・鮮やかさ・ガンマ、シャープ・ぼかし、モノクロ・セピアを調整できます。",
+      "変換後の圧縮画質を含むプレビューを表示し、元画像と見比べられます。保存結果の容量も一覧に表示します。",
+      "メタデータ削除、JPEGのプログレッシブ表示、WebPの可逆圧縮、透明部分の白・黒への合成を選べます。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiImage.exeを起動します。",
+      "初回は「画像エンジンを準備」を押し、公式GitHubから約12MBのImageMagickを取得します。以後の画像処理はPC内で行います。",
+      "「画像を選ぶ」で写真を追加し、保存形式やサイズ、切り抜き・色の設定を選びます。",
+      "「プレビュー」で仕上がりを確認し、「すべて別名で保存」で保存先フォルダーを指定します。"
+    ],
+    "limitations": "Windows 11 x64向け。ImageMagick 7.1.2-34を利用した非公式GUIです。ZIPは約17.6 MiB。初回のみ約12MBの画像エンジンの取得が必要です。Windows標準tar.exeを使います。エンジンの実行にMicrosoft Visual C++ v14 x64ランタイムが必要な場合があります。入力は1～20枚、各50 MiB・合計200 MiB・各辺8,000px・2,500万画素まで。出力は各128 MiB・合計512 MiBまでです。1枚の処理は約60秒、一括は約10分が上限の目安です。停止・失敗前に保存された画像は残ります。出力はJPEG・PNG・WebP・AVIF・BMP・TIFF・GIF・ICOです。HEICへの保存はできません。GIF・TIFFなどは先頭の1枚を使い、アニメーションや複数ページは維持しません。PNGは8bit RGBA出力、ICOは最大256pxです。JPEGは透明部分を白または黒へ合成します。非可逆形式では画質が変わり、画質値の効き方も形式によって異なります。メタデータ削除では色プロファイルも除去され、色味が変わる場合があります。16bit/HDR・RAW現像、PDF・SVG、動画、文字入れ、合成・レイヤー編集、全CLIオプションには対応しません。リンク・ジャンクションは扱いません。コード署名はありません。",
+    "screenshot": "/assets/screenshots/kiwi-image-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-image-v0.1.0/KiwiImage-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-image",
+    "upstream_url": "https://github.com/ImageMagick/ImageMagick",
+    "upstream_license": "ImageMagick License（エンジン本体は初回に公式版を取得）",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-vector",
     "name": "きういベクター工房",
     "summary": "ロゴやイラストを、拡大に強いSVGへ。色や輪郭を調整し、元画像を残して変換できる無料ソフトです。",
