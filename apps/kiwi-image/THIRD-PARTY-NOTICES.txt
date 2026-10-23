@@ -1,0 +1,14 @@
+Kiwi Image GUI: MIT License (see LICENSE).
+Pillow 12.3.0: see Pillow-LICENSE.txt.
+PyInstaller 6.22.2 bootloader: see PyInstaller-LICENSE.txt (including the distribution exception).
+Python 3.13.2, Tcl/Tk 8.6.15: see Runtime-LICENSES.txt.
+
+ImageMagick is copyright ImageMagick Studio LLC. This is an independent, unofficial GUI.
+This ZIP does not contain ImageMagick executables or its third-party delegate libraries.
+The first-use button downloads the original portable archive directly from the official release:
+https://github.com/ImageMagick/ImageMagick/releases/tag/7.1.2-34
+The archive is downloaded only after a user action and validated against upstream-pin.json.
+Original LICENSE.txt and NOTICE.txt remain in its local engine directory.
+The included copies of those notices are for reference. The engine is used as a separate program.
+Native binaries can be replaced by the user; runtime loading does not enforce a binary hash.
+https://imagemagick.org/license/

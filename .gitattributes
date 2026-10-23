@@ -62,3 +62,7 @@ apps/kiwi-archive/SOURCE-REBUILD.txt -text -whitespace
 apps/kiwi-gif/*LICENSE*.txt -text -whitespace
 apps/kiwi-gif/*NOTICES.txt -text -whitespace
 apps/kiwi-gif/SOURCE-REBUILD.txt -text -whitespace
+
+apps/kiwi-image/*LICENSE*.txt -text -whitespace
+apps/kiwi-image/*NOTICES.txt -text -whitespace
+apps/kiwi-image/*NOTICE.txt -text -whitespace
