@@ -1,9 +1,19 @@
 """Bounded local image processing with an explicitly selected raster decoder."""
 from pathlib import Path
-import hashlib,json,os,re,shutil,stat,subprocess,sys,tempfile,threading,time,urllib.request
+import ctypes,hashlib,json,os,re,shutil,stat,subprocess,sys,tempfile,threading,time,urllib.request
 from options import validate, arguments
 ROOT=Path(sys.executable).parent if getattr(sys,"frozen",False) else Path(__file__).resolve().parent
-CACHE=Path(os.environ.get("LOCALAPPDATA",str(Path.home()))) / "KiwiImage" / "ImageMagick-7.1.2-34"
+def windows_folder(system=False):
+ if os.name != "nt":raise OSError("Windows 11 x64で実行してください。")
+ buffer=ctypes.create_unicode_buffer(32768)
+ if system:
+  length=ctypes.windll.kernel32.GetSystemDirectoryW(buffer,len(buffer))
+  if not 0<length<len(buffer):raise OSError("Windowsのシステムフォルダーを取得できません。")
+ elif ctypes.windll.shell32.SHGetFolderPathW(None,0x001c,None,0,buffer)!=0:
+  raise OSError("ユーザーの保存先を取得できません。")
+ return Path(buffer.value)
+
+CACHE=windows_folder() / "KiwiImage" / "ImageMagick-7.1.2-34"
 FORMATS={".jpg":"JPEG",".jpeg":"JPEG",".png":"PNG",".webp":"WEBP",".bmp":"BMP",".tif":"TIFF",".tiff":"TIFF",".gif":"GIF",".heic":"HEIC",".heif":"HEIC",".avif":"AVIF"}
 EXT={"JPEG":"jpg","PNG":"png","WEBP":"webp","BMP":"bmp","TIFF":"tif","GIF":"gif","ICO":"ico","AVIF":"avif"}
 MAX_FILE=50*1024**2
@@ -62,7 +72,7 @@ def install(cancel,progress=lambda x:None):
     if total>pin["size"]:raise ValueError("公式ファイルのサイズが一致しません。")
     dst.write(chunk);h.update(chunk);progress(f"画像エンジンを取得中 {total//1024:,} KiB")
   if total!=pin["size"] or h.hexdigest()!=pin["sha256"]:raise ValueError("公式ファイルの検証に失敗しました。")
-  tar=Path(os.environ.get("SystemRoot","C:/Windows"))/"System32/tar.exe"
+  tar=windows_folder(system=True)/"tar.exe"
   listing=subprocess.run([str(tar),"-tf",str(archive)],capture_output=True,timeout=30,creationflags=subprocess.CREATE_NO_WINDOW,check=True).stdout.decode("utf8").splitlines()
   if sorted(listing)!=sorted(pin["members"]):raise ValueError("書庫の内容が一致しません。")
   out=tmp/"files";out.mkdir()

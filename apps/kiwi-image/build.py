@@ -1,4 +1,4 @@
-"""Package the GUI with the original upstream executable and notices."""
+"""Package the GUI and notices; the image engine is acquired separately."""
 import hashlib,importlib.metadata,io,json,os,shutil,subprocess,sys,tempfile,urllib.request,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
