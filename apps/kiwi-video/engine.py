@@ -141,7 +141,7 @@ def convert(value,raw,directory,cancel,preview=False):
   work=Path(td);source=stage(value,work,cancel);info=probe(source,work,cancel);v=plan(info,raw)
   if preview:
    if not info["video"]:raise ValueError("音声のみのファイルはプレビューできません。")
-   output=work/"preview.png";vf=filters(v)+["scale=560:315:force_original_aspect_ratio=decrease"]
+   output=work/"preview.png";vf=filters(v)+["scale=500:280:force_original_aspect_ratio=decrease"]
    args=["-map",f"0:{v['video_index']}","-vf",','.join(vf),"-frames:v","1","-an","-c:v","png"]
   else:
    output=work/("output."+output_extension(v));args=output_arguments(v,bool(info["audios"]))

@@ -1,8 +1,7 @@
 """A local video conversion workbench for everyday use."""
-import io,os,queue,threading,tkinter as tk
+import base64,os,queue,threading,tkinter as tk
 from pathlib import Path
 from tkinter import ttk,filedialog,messagebox
-from PIL import Image,ImageTk
 import engine
 from options import DEFAULTS,validate
 CHOICES={"mode":{"動画を変換・軽量化":"video","音声だけを保存":"audio","静止画を保存":"frame"},"codec":{"MP4 / H.264（おすすめ）":"h264","MP4 / H.265":"hevc","WebM / VP9":"vp9"},"resolution":{"元のサイズ（偶数へ調整）":0,"フルHDの枠内":1920,"HDの枠内（おすすめ）":1280,"480pの枠内":854,"360pの枠内":640},"audio_format":{"MP3":"mp3","M4A / AAC":"m4a","WAV（無圧縮）":"wav","FLAC（可逆圧縮）":"flac","Opus":"opus"},"frame_format":{"PNG":"png","JPEG":"jpg"}}
@@ -151,8 +150,7 @@ class App(tk.Tk):
      data,info=value;video=info["video"];tracks=" / ".join(f"{i}: {s.get('codec_name','?')} {s.get('tags',{}).get('language','')}" for i,s in enumerate(info["audios"]))
      self.info.set(f"長さ：{info['duration']:.2f}秒\n"+(f"映像：{video['display_width']}×{video['display_height']} / {video['fps']:.2f}fps / {video.get('codec_name','')}\n" if video else "映像なし\n")+"音声："+(tracks[:250] if tracks else "なし"))
      if data:
-      with Image.open(io.BytesIO(data)) as im:
-       im.thumbnail((500,280));self.photo=ImageTk.PhotoImage(im.copy())
+      self.photo=tk.PhotoImage(data=base64.b64encode(data).decode("ascii"),format="png")
       self.preview_label.configure(image=self.photo,text="")
      else:self.photo=None;self.preview_label.configure(image="",text="音声の情報を確認できます。")
      self.status.set("情報を読み取りました。プレビューは開始位置の映像です。")

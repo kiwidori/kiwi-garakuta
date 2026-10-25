@@ -1,5 +1,4 @@
 Kiwi Video GUI: MIT License (LICENSE).
-Pillow 12.3.0: Pillow-LICENSE.txt.
 PyInstaller 6.22.2 bootloader: PyInstaller-LICENSE.txt, including the distribution exception.
 Python 3.13.2, Tcl/Tk 8.6.15: Runtime-LICENSES.txt.
 

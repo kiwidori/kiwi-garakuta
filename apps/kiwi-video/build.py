@@ -6,15 +6,11 @@ def build():
  if os.name!='nt' or sys.version_info[:3]!=(3,13,2):raise SystemExit('Build with Python3.13.2 on Windows x64.')
  if importlib.metadata.version('PyInstaller')!='6.22.2':raise ValueError('PyInstaller version mismatch')
  pin=json.loads((ROOT/'upstream-pin.json').read_text(encoding='utf8'))
- import PIL
- if PIL.__version__!=pin['pillow_version']:raise ValueError('Pillow version mismatch')
- for name,digest in pin['pillow_binaries'].items():
-  if hashlib.sha256((Path(PIL.__file__).parent/name).read_bytes()).hexdigest()!=digest:raise ValueError('Pillow binary digest mismatch')
  for name,digest in pin['licenses'].items():
   if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:raise ValueError('Notice digest mismatch: '+name)
  with tempfile.TemporaryDirectory(prefix='kiwi-video-build-') as td:
   folder=Path(td)
-  spec=f'''a=Analysis([{str(ROOT/'main.py')!r}],pathex=[{str(ROOT)!r}],binaries=[],datas=[],hiddenimports=[],hookspath=[],hooksconfig={{}},runtime_hooks=[],excludes=['numpy','matplotlib','IPython','cryptography','setuptools','pkg_resources','pytest','requests','yaml'],noarchive=False)
+  spec=f'''a=Analysis([{str(ROOT/'main.py')!r}],pathex=[{str(ROOT)!r}],binaries=[],datas=[],hiddenimports=[],hookspath=[],hooksconfig={{}},runtime_hooks=[],excludes=['PIL','numpy','matplotlib','IPython','cryptography','setuptools','pkg_resources','pytest','requests','yaml'],noarchive=False)
 pyz=PYZ(a.pure)
 exe=EXE(pyz,a.scripts,a.binaries,a.datas,[],name='KiwiVideo',debug=False,bootloader_ignore_signals=False,strip=False,upx=False,console=False,disable_windowed_traceback=False)
 '''
