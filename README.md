@@ -8,6 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きうい動画工房](https://kiwi-garakuta.pages.dev/tools/kiwi-video/) | 動画をリサイズ・形式変換し、区間の切り出し・音声や静止画の保存を行う | [FFmpeg](https://github.com/FFmpeg/FFmpeg) |
 | [きうい画像工房](https://kiwi-garakuta.pages.dev/tools/kiwi-image/) | 写真をまとめてリサイズ・形式変換し、回転・切り抜き・色を調整する | [ImageMagick](https://github.com/ImageMagick/ImageMagick) |
 | [きういベクター工房](https://kiwi-garakuta.pages.dev/tools/kiwi-vector/) | ロゴ・イラストをSVGに変換し、色・輪郭を調整して保存する | [VTracer](https://github.com/visioncortex/vtracer) |
 | [きうい写真情報](https://kiwi-garakuta.pages.dev/tools/kiwi-photo-info/) | 写真の位置情報・撮影情報を確認し、削除・編集したコピーを作る | [ExifTool](https://github.com/exiftool/exiftool) |
