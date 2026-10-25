@@ -4,12 +4,12 @@ Python 3.13.2, Tcl/Tk 8.6.15: Runtime-LICENSES.txt.
 
 FFmpeg is copyright the FFmpeg developers. This is an independent unofficial GUI.
 No FFmpeg executables, libraries, build archive, or third-party codecs are distributed in this GUI ZIP.
-The first-use button downloads an original archive directly from BtbN/FFmpeg-Builds, which is linked
+The first-use button downloads an original archive directly from gyan.dev / GyanD/codexffmpeg, which is linked
 by the FFmpeg download page: https://ffmpeg.org/download.html
 The exact download URL, size, checksums, and member checksums are recorded in upstream-pin.json.
 The downloaded archive's files, LICENSE.txt, and documentation remain in the local engine directory.
 FFmpeg-REFERENCE-LICENSE.txt is a reference copy of its GPLv3 license, not the license of this GUI.
 The engine is invoked as a separate process. Users can replace its local executables and libraries;
 runtime loading does not lock replacement binaries to the pinned hashes.
-https://github.com/BtbN/FFmpeg-Builds
+https://github.com/GyanD/codexffmpeg
 https://github.com/FFmpeg/FFmpeg

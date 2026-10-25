@@ -18,7 +18,7 @@ class App(tk.Tk):
   bar=ttk.Frame(p);bar.pack(fill="x")
   self.button(bar,"動画・音声を選ぶ（F4）",self.pick).pack(side="left")
   self.button(bar,"選択をクリア",self.clear).pack(side="left",padx=8)
-  self.button(bar,"動画エンジンを準備（初回約87MB）",self.prepare).pack(side="right")
+  self.button(bar,"動画エンジンを準備（初回約100MB）",self.prepare).pack(side="right")
   self.engine_status=ttk.Label(p,text="エンジン："+("準備済み" if engine.installed() else "初回の準備が必要です"));self.engine_status.pack(anchor="e")
   self.files=tk.Listbox(p,height=3,exportselection=False);self.files.pack(fill="x",pady=(3,8));self.controls.append(self.files)
   row=ttk.Frame(p);row.pack(fill="both",expand=True)
@@ -111,7 +111,7 @@ class App(tk.Tk):
  def prepare(self):
   if self.busy:return
   if engine.installed():self.status.set("動画エンジンは準備済みです。");return
-  if not messagebox.askokcancel("動画エンジンの準備","FFmpeg公式サイトが案内するBtbNのGitHubから約87MBを取得します。初回のみ通信し、動画・音声は送信しません。展開後は約225MBを使います。続けますか？",parent=self):return
+  if not messagebox.askokcancel("動画エンジンの準備","FFmpeg公式サイトが案内するgyan.devのGitHubから約100MBを取得します。初回のみ通信し、動画・音声は送信しません。展開後は約273MBを使います。続けますか？",parent=self):return
   self.job("installed",lambda:engine.install(self.cancel,lambda s:self.events.put(("notice",s))))
  def preview(self):
   if self.busy:return

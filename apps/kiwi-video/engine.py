@@ -13,7 +13,7 @@ def windows_folder(system=False):
   raise OSError("ユーザーの保存先を取得できません。")
  return Path(buffer.value)
 
-CACHE=windows_folder()/"KiwiVideo"/"FFmpeg-9.0.2-20261025"
+CACHE=windows_folder()/"KiwiVideo"/"FFmpeg-9.0.2-Gyan"
 EXTENSIONS={".mp4",".m4v",".mov",".mkv",".webm",".avi",".mpg",".mpeg",".ts",".mp3",".m4a",".wav",".flac",".ogg",".opus"}
 INPUT=["-protocol_whitelist","file","-format_whitelist","mov,matroska,webm,avi,mpegts,mpeg,mp3,wav,flac,ogg,aac","-threads","2"]
 class Cancelled(Exception):pass

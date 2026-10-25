@@ -7,8 +7,8 @@ FFmpegを利用する非公式GUIです。動画エンジンは本ZIPに含ま�
 使い方
 1. ZIPをすべて展開してKiwiVideo.exeを起動します。
 2. 初回のみ「動画エンジンを準備」を押します。
-   FFmpeg公式サイトが案内するBtbNのGitHubから約87MBのWindows版を取得します。
-   展開後は約225MBをユーザーのLocalAppData/KiwiVideoに保存します。
+   FFmpeg公式サイトが案内するgyan.devのGitHubから約100MBのWindows版を取得します。
+   展開後は約273MBをユーザーのLocalAppData/KiwiVideoに保存します。
 3. 「動画・音声を選ぶ」で最大5件を選び、「やりたいこと」を指定します。
 4. 保存形式・サイズ・区間・回転・切り抜き・音声を設定します。
    「情報・プレビュー」で選択した1件の情報と、開始位置の映像を確認できます。
