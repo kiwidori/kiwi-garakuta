@@ -8,6 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きうい重複チェック](https://kiwi-garakuta.pages.dev/tools/kiwi-duplicates/) | 内容が同じ写真や書類を見つけ、重複・単独ファイルをCSVに保存する | [fclones](https://github.com/pkolaczk/fclones) |
 | [きういファイル保存](https://kiwi-garakuta.pages.dev/tools/kiwi-download/) | URLから資料・画像・ZIPなどをまとめて保存し、SHA-256を照合する | [curl](https://github.com/curl/curl) |
 | [きういフォルダーコピー](https://kiwi-garakuta.pages.dev/tools/kiwi-copy/) | フォルダーを比較し、不足分だけ内容照合して追加する | [rclone](https://github.com/rclone/rclone) |
 | [きうい文書作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-document-workbench/) | Webページを画像ごと保存し、手元の文書と同じ画面でWord・EPUBなどへ変換する | [Pandoc](https://github.com/jgm/pandoc) / [Monolith](https://github.com/Y2Z/monolith) |

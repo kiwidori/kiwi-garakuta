@@ -1,5 +1,31 @@
 [
   {
+    "slug": "kiwi-duplicates",
+    "name": "きうい重複チェック",
+    "summary": "名前が違っても、内容が同じ写真や書類を見つけます。対象を絞って確認し、CSVに保存できます。",
+    "features": [
+      "1つまたは2つのフォルダーから、内容が完全に一致するファイルをグループ表示します。",
+      "「1つだけのファイル」で、指定した対象と条件の中で一致するものがないファイルも調べられます。",
+      "サブフォルダーの深さ、最小・最大サイズ、重複の最低件数を指定できます。空ファイルも調べられます。",
+      "検索結果をSHA-256で再確認します。重複分のファイルサイズの目安を表示し、全件をCSVへ保存できます。",
+      "読み取り専用です。元の写真・書類の削除や移動、リンクへの置き換えは行いません。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiDuplicates.exeを起動します。初回のみ「エンジンを準備」でfclones公式Windows版（約2 MiB）を取得します。",
+      "対象フォルダーを選びます。2か所をまとめて比べたい場合は追加の対象も選びます。",
+      "検索方法・サイズ・サブフォルダーなどの条件を指定し、「ファイルを調べる」を押します。",
+      "グループごとの相対パスを確認します。「結果をCSV保存」で全件の対象番号・相対パス・サイズ・SHA-256を保存できます。"
+    ],
+    "limitations": "Windows 11 x64用。fclones v0.35.0を利用する非公式GUIです。エンジンは同梱せず、初回に公式Windows版を取得して固定SHA-256を照合します。ファイルをアップロードせずPC内で調べます。名前や見た目ではなくファイル全体の内容を比べるため、似た写真・一部だけ違う書類は一致しません。「1つだけ」は指定した対象とサイズなどの条件内での結果です。対象はファイルとフォルダー合計10,000件、検索するファイルは各512 MiB・合計8 GiB・10分まで。画面は先頭500件、CSVは全件です。サイズ条件外・240文字を超えるパス・リンク・ジャンクション・クラウド専用ファイルは除外し、除外件数を表示します。ハードリンクの別名は重複サイズに含めません。ネットワークパスや、同じ場所・親子関係にある2つの対象は指定できません。表示サイズは目安で、実際に空くディスク容量とは異なる場合があります。検索結果は検索時点の状態です。削除・移動・自動整理は行いません。",
+    "screenshot": "/assets/screenshots/kiwi-duplicates.jpg",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-duplicates-v0.1.0/KiwiDuplicates-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-duplicates",
+    "upstream_url": "https://github.com/pkolaczk/fclones",
+    "upstream_license": "MIT",
+    "windows_test_passed": true,
+    "amazon_links": []
+  },
+  {
     "slug": "kiwi-download",
     "name": "きういファイル保存",
     "summary": "資料・画像・ZIPなどのURLをまとめて保存。SHA-256の照合や、通信速度の指定もできます。",
