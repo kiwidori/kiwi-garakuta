@@ -1,5 +1,135 @@
 [
   {
+    "slug": "kiwi-documents",
+    "name": "きうい文書変換",
+    "summary": "Word・電子書籍・Web文書を、使いたい形式へ変換する無料ソフトです。",
+    "features": [
+      "DOCX・ODT・EPUB・Markdown・HTML・テキストを読み込み、本文を画面で確認できます。",
+      "Word（DOCX）・OpenDocument（ODT）・EPUB・HTML・Markdown・TXT・RTFとして別名保存できます。",
+      "タイトル、目次、見出し番号を指定できます。Wordの変更履歴は反映・変更前・変更箇所付きから選べます。",
+      "元ファイル・既存の同名ファイルを上書きしません。変換処理はPC内で行います。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiDocuments.exeを起動します。",
+      "初回のみ「エンジンを準備」を押し、公式配布元からpandoc 3.13（約41.0 MiB）を取得します。",
+      "文書を選び、「本文を確認」で取り出せる内容を確認します。",
+      "保存形式を選び、必要ならタイトル・目次・変更履歴を指定します。",
+      "「別形式で保存」から保存先フォルダーを選びます。"
+    ],
+    "limitations": "Windows 11 x64用。pandoc 3.13を使う非公式GUIです。GUIのZIPは約11.3 MiB。上流の本体は含めず、初回に公式の固定版を取得してSHA-256を照合します。入力は32 MiB、DOCX・ODT・EPUBの展開後は128 MiB・5,000ファイルまで。処理3分、出力64 MiBまで。古いDOC、PDF、パスワード付き文書、マクロ、外部画像、フィルター・テンプレートの追加は非対応です。元のレイアウト・フォント・数式・図版を完全には再現できません。目次や番号の見え方は出力形式によって異なります。",
+    "screenshot": "/assets/screenshots/kiwi-documents.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-documents-v0.1.0/KiwiDocuments-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-documents",
+    "upstream_url": "https://github.com/jgm/pandoc",
+    "upstream_license": "GPL-2.0-or-later",
+    "windows_test_passed": true,
+    "amazon_links": []
+  },
+  {
+    "slug": "kiwi-table",
+    "name": "きういCSV整理",
+    "summary": "CSVの一覧表から必要な列や行を選び、並べ替えて保存できる無料ソフトです。",
+    "features": [
+      "UTF-8・Shift_JISのCSVとTSVを読み込み、先頭100行で結果を確認できます。",
+      "列の選択、文字の包含・一致、数値の以上・以下での絞り込みができます。",
+      "文字・数値の昇順／降順で並べ替え、同じ内容の行や全列が空白の行を取り除けます。",
+      "結果をUTF-8のCSV・TSV・JSONに別名保存します。CSV・TSVにはBOMを付けます。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiTable.exeを起動します。",
+      "初回のみ「エンジンを準備」を押し、公式配布元からduckdb v2.0.0（約18.8 MiB）を取得します。",
+      "表のファイル、文字コード、入力の区切りを選びます。",
+      "「列を確認・選択」で必要な列を選び、絞り込み列・値・並べ替え列を指定します。",
+      "「先頭100行を確認」で結果を確認し、「整理して保存」で保存先を選びます。"
+    ],
+    "limitations": "Windows 11 x64用。duckdb v2.0.0を使う非公式GUIです。GUIのZIPは約11.3 MiB。上流の本体は含めず、初回に公式の固定版を取得してSHA-256を照合します。入力16 MiB・10万行・100列、UTF-8正規化後32 MiB、出力64 MiB・処理3分まで。先頭行は空欄・重複のない見出しが必要です。Excelブック・セル編集・複数表の結合・集計・任意SQLは非対応です。列は文字列として読み、数値指定した操作だけ数値として扱います。空のセルは空欄として出力します。数式は実行しませんが、保存したCSVを表計算ソフトで開く際はそのソフトの安全設定に従ってください。",
+    "screenshot": "/assets/screenshots/kiwi-table.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-table-v0.1.0/KiwiTable-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-table",
+    "upstream_url": "https://github.com/duckdb/duckdb",
+    "upstream_license": "MIT",
+    "windows_test_passed": true,
+    "amazon_links": []
+  },
+  {
+    "slug": "kiwi-pdf-images",
+    "name": "きういPDF画像化",
+    "summary": "PDFの必要なページをPNG画像やテキストに取り出す無料ソフトです。",
+    "features": [
+      "「1-3,5」のようにページを指定し、最初の指定ページを画面で確認できます。",
+      "ページごとのPNG画像を1つのZIPにまとめて保存できます。",
+      "解像度・回転・カラー／グレーを選べます。長辺3,000pxを上限に、縦横比を保ちます。",
+      "PDF内の文字をTXTに取り出せます。元PDFや同名の保存済みファイルは上書きしません。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiPDFImages.exeを起動します。",
+      "初回のみ「エンジンを準備」を押し、公式配布元からmupdf 1.28.5（約89.9 MiB）を取得します。",
+      "PDFを選び、取り出すページを「1-3,5」のように指定します。",
+      "「最初の指定ページを確認」で内容を見て、形式・解像度・色・回転を選びます。",
+      "「書き出して保存」で保存先フォルダーを選びます。PNGはZIPで保存されます。"
+    ],
+    "limitations": "Windows 11 x64用。mupdf 1.28.5を使う非公式GUIです。GUIのZIPは約11.3 MiB。上流の本体は含めず、初回に公式の固定版を取得してSHA-256を照合します。入力32 MiB・指定100ページ、解像度36～300dpi、長辺3,000px、処理5分まで。PNG合計128 MiBまで、処理中の作業ファイル合計にも128 MiBの上限があります。パスワード付きPDF・OCR・SVG・PDFの編集は非対応です。スキャン画像だけのPDFからは文字を取り出せません。文字の順序や改行はPDFの構造により変わります。PDFの結合・分割は既存の「きういPDF」をご利用ください。",
+    "screenshot": "/assets/screenshots/kiwi-pdf-images.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pdf-images-v0.1.0/KiwiPDFImages-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-pdf-images",
+    "upstream_url": "https://github.com/ArtifexSoftware/mupdf",
+    "upstream_license": "AGPL-3.0-or-later",
+    "windows_test_passed": true,
+    "amazon_links": []
+  },
+  {
+    "slug": "kiwi-video-save",
+    "name": "きうい動画保存",
+    "summary": "保存が許可された公開動画・音声を、URLから1件ずつ保存する無料ソフトです。",
+    "features": [
+      "URLからタイトル、保存形式、配信元が提供する長さ・解像度・容量を確認できます。",
+      "結合のいらない単一動画、または配信元の音声形式を選んで保存できます。",
+      "動画は1080p・720p・480pまでの希望を指定できます。高さが不明なら元ファイルを使い、その旨を表示します。",
+      "認証情報やブラウザのCookieは使いません。既存の同名ファイルを上書きしません。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiVideoSave.exeを起動します。",
+      "初回のみ「エンジンを準備」を押し、公式配布元からyt-dlp 2026.10.26（約22.5 MiB）を取得します。",
+      "権利者と配信サービスが保存を認めている動画・音声のURLを入力します。",
+      "種類と希望する高さを選び、「タイトル・保存形式を確認」で確認します。",
+      "「1件を保存」で保存先フォルダーを選びます。"
+    ],
+    "limitations": "Windows 11 x64用。yt-dlp 2026.10.26を使う非公式GUIです。GUIのZIPは約11.3 MiB。上流の本体は含めず、初回に公式の固定版を取得してSHA-256を照合します。直接保存できる単一HTTP(S)ファイル、256 MiB・2時間、処理15分まで。YouTubeを含む配信サイトは仕様や制限により保存できない場合があります。分割配信、映像と音声の結合、ライブ、プレイリスト、ログイン・Cookie・DRM、字幕、MP3への変換は非対応です。「音声」は配信元に音声だけの形式がない場合、音声付き元動画になります。サイト独自のヘッダー等が必要なURLは保存できないことがあります。形式変換は「きうい動画工房」をご利用ください。",
+    "screenshot": "/assets/screenshots/kiwi-video-save.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-video-save-v0.1.0/KiwiVideoSave-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-video-save",
+    "upstream_url": "https://github.com/yt-dlp/yt-dlp",
+    "upstream_license": "Unlicense (Windows executable: GPL-3.0-or-later)",
+    "windows_test_passed": true,
+    "amazon_links": []
+  },
+  {
+    "slug": "kiwi-rename",
+    "name": "きうい名前整理",
+    "summary": "写真や書類のファイル名を、変更予定を確かめてからまとめて整理する無料ソフトです。",
+    "features": [
+      "文字の置換、正規表現による置換、名前付きの自然順連番に対応します。",
+      "拡張子を残し、大文字・小文字を区別するか選べます。変更前・変更後を一覧で確認できます。",
+      "確認した変更だけを実行し、同名ファイルがある場合や元の内容が変わった場合は停止します。",
+      "直前の変更記録を保持し、終了後や一部だけ変更された場合も、内容が変わっていなければ元に戻せます。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiRename.exeを起動します。",
+      "初回のみ「エンジンを準備」を押し、公式配布元からf2 v2.2.2（約5.4 MiB）を取得します。",
+      "対象フォルダーを選び、変更方法と検索文字・置換文字を指定します。連番は置換欄に名前を入力します。",
+      "「変更予定を見る」で一覧を確認し、「確認した変更を実行」を押します。",
+      "元に戻す場合は「直前の変更を元に戻す」を押します。次の変更を実行すると前の記録は置き換わります。"
+    ],
+    "limitations": "Windows 11 x64用。f2 v2.2.2を使う非公式GUIです。GUIのZIPは約11.3 MiB。上流の本体は含めず、初回に公式の固定版を取得してSHA-256を照合します。1フォルダー500件・各256 MiB・合計2 GiB、処理5分まで。サブフォルダー・隠しファイル・フォルダー名・拡張子は変更しません。移動・上書き・大文字と小文字だけの変更・EXIF変数は非対応です。置換文字の波括弧は使えません。正規表現はRE2構文、置換のグループは$1などで指定します。停止や障害時は一部だけ変更される場合があります。変更後に編集・移動されたファイルは自動では戻せません。大切なファイルは先にバックアップしてください。",
+    "screenshot": "/assets/screenshots/kiwi-rename.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-rename-v0.1.0/KiwiRename-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-rename",
+    "upstream_url": "https://github.com/ayoisaiah/f2",
+    "upstream_license": "MIT",
+    "windows_test_passed": true,
+    "amazon_links": []
+  },
+  {
     "slug": "kiwi-video",
     "name": "きうい動画工房",
     "summary": "動画を小さく、必要な区間だけ、音声だけに。元ファイルを残して変換できる無料ソフトです。",

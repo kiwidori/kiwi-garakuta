@@ -8,6 +8,11 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きうい文書変換](https://kiwi-garakuta.pages.dev/tools/kiwi-documents/) | Word・電子書籍・Web文書を別の形式に変換する | [Pandoc](https://github.com/jgm/pandoc) |
+| [きういCSV整理](https://kiwi-garakuta.pages.dev/tools/kiwi-table/) | CSVの列選択・絞り込み・並べ替え・重複除去を行う | [DuckDB](https://github.com/duckdb/duckdb) |
+| [きういPDF画像化](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf-images/) | PDFの指定ページをPNG画像・テキストとして保存する | [MuPDF](https://github.com/ArtifexSoftware/mupdf) |
+| [きうい動画保存](https://kiwi-garakuta.pages.dev/tools/kiwi-video-save/) | 保存が許可された公開動画・音声をURLから1件ずつ保存する | [yt-dlp](https://github.com/yt-dlp/yt-dlp) |
+| [きうい名前整理](https://kiwi-garakuta.pages.dev/tools/kiwi-rename/) | ファイル名の置換・連番を確認して実行し、元に戻す | [F2](https://github.com/ayoisaiah/f2) |
 | [きうい動画工房](https://kiwi-garakuta.pages.dev/tools/kiwi-video/) | 動画をリサイズ・形式変換し、区間の切り出し・音声や静止画の保存を行う | [FFmpeg](https://github.com/FFmpeg/FFmpeg) |
 | [きうい画像工房](https://kiwi-garakuta.pages.dev/tools/kiwi-image/) | 写真をまとめてリサイズ・形式変換し、回転・切り抜き・色を調整する | [ImageMagick](https://github.com/ImageMagick/ImageMagick) |
 | [きういベクター工房](https://kiwi-garakuta.pages.dev/tools/kiwi-vector/) | ロゴ・イラストをSVGに変換し、色・輪郭を調整して保存する | [VTracer](https://github.com/visioncortex/vtracer) |
