@@ -8,6 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きういフォルダーコピー](https://kiwi-garakuta.pages.dev/tools/kiwi-copy/) | フォルダーを比較し、不足分だけ内容照合して追加する | [rclone](https://github.com/rclone/rclone) |
 | [きうい文書作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-document-workbench/) | Webページを画像ごと保存し、手元の文書と同じ画面でWord・EPUBなどへ変換する | [Pandoc](https://github.com/jgm/pandoc) / [Monolith](https://github.com/Y2Z/monolith) |
 | [きういCSV整理](https://kiwi-garakuta.pages.dev/tools/kiwi-table/) | CSVの列選択・絞り込み・並べ替え・重複除去を行う | [DuckDB](https://github.com/duckdb/duckdb) |
 | [きういPDF作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf-workbench/) | PDFを編集し、選択PDF・作成PDFを画像表示・PNG・テキスト保存へ渡す | [qpdf](https://github.com/qpdf/qpdf) / [MuPDF](https://github.com/ArtifexSoftware/mupdf) |
