@@ -8,7 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
-| [きうい文書変換](https://kiwi-garakuta.pages.dev/tools/kiwi-documents/) | Word・電子書籍・Web文書を別の形式に変換する | [Pandoc](https://github.com/jgm/pandoc) |
+| [きうい文書作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-document-workbench/) | Webページを画像ごと保存し、手元の文書と同じ画面でWord・EPUBなどへ変換する | [Pandoc](https://github.com/jgm/pandoc) / [Monolith](https://github.com/Y2Z/monolith) |
 | [きういCSV整理](https://kiwi-garakuta.pages.dev/tools/kiwi-table/) | CSVの列選択・絞り込み・並べ替え・重複除去を行う | [DuckDB](https://github.com/duckdb/duckdb) |
 | [きういPDF画像化](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf-images/) | PDFの指定ページをPNG画像・テキストとして保存する | [MuPDF](https://github.com/ArtifexSoftware/mupdf) |
 | [きうい動画保存](https://kiwi-garakuta.pages.dev/tools/kiwi-video-save/) | 保存が許可された公開動画・音声をURLから1件ずつ保存する | [yt-dlp](https://github.com/yt-dlp/yt-dlp) |

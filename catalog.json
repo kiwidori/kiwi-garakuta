@@ -1,5 +1,43 @@
 [
   {
+    "slug": "kiwi-document-workbench",
+    "name": "きうい文書作業場",
+    "summary": "Webページを画像ごと保存し、そのままWord・電子書籍へ。手元の文書も変換できる無料ソフトです。",
+    "features": [
+      "公開Webページを画像・CSS・フォントと一緒に1つのHTMLへ保存できます。含める素材、同じホストだけ／外部素材も含める、取得元URL・日時の記録を選べます。",
+      "取得した本文を確認し、同じ取得内容を再ダウンロードせずHTML保存と文書変換に使えます。「Webを再取得」で更新できます。",
+      "DOCX・ODT・EPUB・Markdown・HTML・テキストを読み込み、DOCX・ODT・EPUB・HTML・Markdown・TXT・RTFへ別名保存できます。",
+      "タイトル・目次・見出し番号・Wordの変更履歴の反映方法を選べます。元ファイルや既存の同名ファイルは上書きしません。",
+      "WebページのJavaScriptを実行・保存せず、保存HTMLの外部素材の自動読み込みやフォーム送信も制限します。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiDocumentWorkbench.exeを起動します。初回だけ文書エンジン（約41 MiB）とWebエンジン（約5.3 MiB）を公式配布元から準備します。",
+      "「Webページ」を選んでURLを入力するか、「手元の文書」を選んでファイルを指定します。",
+      "Webの素材設定を選び、「本文を確認・取得」で内容を確認します。画像が欠ける場合は素材の取得範囲を確認してください。",
+      "Webの見た目を残す場合は「WebをHTML保存」、Word・EPUBなどにする場合は形式を選んで「別形式で保存」を押します。"
+    ],
+    "limitations": "Windows 11 x64用。Pandoc 3.13とMonolith CLI 2.11.6を使う非公式GUIです。GUI ZIPは約11.4 MiB、本体は含めず初回に公式の固定版を取得しSHA-256を照合します。Webは静的な公開HTTP(S)ページのみで、ブラウザのCookieやログイン状態は利用しません。JavaScriptで後から表示される内容、ログイン・認証・動画・音声・iframe・MHTMLは非対応です。URLに機密情報を含めないでください。画像・CSSの取得に失敗する場合や、元の見た目を再現できない場合があります。保存HTMLは外部素材の自動読み込みを制限しますが、リンクをクリックすればWebへ移動します。変換した文書にはリンクや埋込画像が残る場合があります。Web保存・入力文書は32 MiBまで、処理は各3分、ネットワーク要求は各15秒まで。処理中の作業ファイル合計128 MiB・プロセスメモリー512 MiBにも上限があります。DOCX・ODT・EPUBの展開後は128 MiB・5,000ファイルまで、変換出力64 MiBまで。古いDOC・PDF・暗号化文書・マクロ・外部フィルターやテンプレートは非対応です。手元HTMLの外部画像を取り込む機能はありません。Wordなどへの変換は元のレイアウト・フォント・図版・数式を完全には再現できません。目次・番号・変更履歴の見え方は出力形式によって異なります。利用や保存が許可されたページでご使用ください。",
+    "screenshot": "/assets/screenshots/kiwi-document-workbench.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-document-workbench-v0.1.0/KiwiDocumentWorkbench-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-document-workbench",
+    "upstream_url": "https://github.com/jgm/pandoc",
+    "upstream_license": "Pandoc: GPL-2.0-or-later / Monolith: CC0-1.0",
+    "upstreams": [
+      {
+        "name": "Pandoc",
+        "url": "https://github.com/jgm/pandoc",
+        "license": "GPL-2.0-or-later"
+      },
+      {
+        "name": "Monolith",
+        "url": "https://github.com/Y2Z/monolith",
+        "license": "CC0-1.0"
+      }
+    ],
+    "windows_test_passed": true,
+    "amazon_links": []
+  },
+  {
     "slug": "kiwi-documents",
     "name": "きうい文書変換",
     "summary": "Word・電子書籍・Web文書を、使いたい形式へ変換する無料ソフトです。",
@@ -23,7 +61,9 @@
     "upstream_url": "https://github.com/jgm/pandoc",
     "upstream_license": "GPL-2.0-or-later",
     "windows_test_passed": true,
-    "amazon_links": []
+    "amazon_links": [],
+    "replaced_by": "kiwi-document-workbench",
+    "replacement_name": "きうい文書作業場"
   },
   {
     "slug": "kiwi-table",
