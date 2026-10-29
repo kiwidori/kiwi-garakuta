@@ -1,0 +1,8 @@
+curl 8.23.0_6 - curl license (see curl-LICENSE.txt)
+Copyright (c) 1996 - 2026 Daniel Stenberg and contributors
+Source: https://github.com/curl/curl/tree/curl-8_23_0
+Official Windows build: https://curl.se/windows/
+
+This ZIP does not include curl or its libraries. The Prepare button downloads the unchanged official Windows x64 package, verifies its published SHA-256 and all archive members, and preserves its documentation and dependency notices locally. The application invokes only bin/curl.exe.
+
+The GUI includes Python 3.13.2, Tcl/Tk 8.6.15, and the PyInstaller 6.22.2 bootloader. See Runtime-LICENSES.txt and PyInstaller-LICENSE.txt.
