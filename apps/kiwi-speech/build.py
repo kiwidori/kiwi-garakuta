@@ -24,7 +24,6 @@ exe=EXE(pyz,a.scripts,a.binaries,a.datas,[],name='KiwiSpeech',debug=False,bootlo
   release.mkdir();shutil.copy2(folder/'dist/KiwiSpeech.exe',release)
   for p in ROOT.glob('*.txt'):shutil.copy2(p,release/p.name)
   for name in ['notice-pins.json','build-sources.json']:shutil.copy2(ROOT/name,release/name)
-  shutil.copy2(ROOT/'sherpa-onnx-c-api.h',release/'sherpa-onnx-c-api.h')
   for name in ['engine','voice']:shutil.copytree(ROOT/name,release/name)
   shutil.copy2(ROOT.parents[1]/'LICENSE',release/'LICENSE')
   import tkinter
