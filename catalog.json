@@ -1,5 +1,43 @@
 [
   {
+    "slug": "kiwi-pdf-workbench",
+    "name": "きういPDF作業場",
+    "summary": "PDFを結合・分割・回転し、編集したページを画像やテキストへ。そのまま続けて使える無料ソフトです。",
+    "features": [
+      "PDFの結合・ページの取り出しと並べ替え・分割ZIP・回転・容量最適化を行えます。入力ごとにページ範囲やパスワードを設定できます。",
+      "パスワードの設定・既知パスワードの解除・PDFの検査に対応します。元PDFと既存の同名ファイルは上書きしません。",
+      "「選択PDFを表示・画像化」と「作成PDFを表示・画像化」で、一覧のPDFや編集結果を選び直さずに渡せます。",
+      "指定ページをPNG画像のZIPやテキストに保存し、最初の指定ページを表示できます。画像の解像度・色・回転を選べます。",
+      "詳細設定のJob JSONから、重ね合わせ・添付ファイル・注釈・文書情報・ページラベル・JSON出力なども指定できます。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiPDFWorkbench.exeを起動します。Microsoft Visual C++ v14（x64）が必要です。",
+      "PDFを追加して順番を決め、必要なら各PDFのページ範囲・パスワードを指定します。操作と保存先を選んで実行します。",
+      "内容の表示や画像保存には「選択PDFを表示・画像化」または「作成PDFを表示・画像化」を押します。初回のみ画像エンジンの準備から公式MuPDF（約90 MiB）を取得します。",
+      "ページ・形式・解像度などを指定し、表示または書き出しを行います。暗号化PDFは先に解除したコピーを作ってください。"
+    ],
+    "limitations": "Windows 11 x64用。qpdf 12.4.2とMuPDF 1.28.5を利用する非公式GUIです。ZIPは約14 MiB。qpdfと依存物は同梱し、MuPDFは含めず初回に公式固定版を取得して全ファイルのSHA-256を照合します。処理のためにPDFをアップロードすることはありません。PDF編集は50件・各200 MiB・合計500 MiB、出力300 MiB、処理180秒、分割500件まで。Microsoft Visual C++ v14（x64）が必要です。最適化で必ず小さくなるとは限りません。文章の直接編集・OCRは非対応で、加工すると電子署名が無効になる場合があります。表示・画像化は入力32 MiB・指定100ページ、解像度36～300dpi・長辺3,000px、処理5分まで。作業ファイル合計128 MiB・ログを含む単一ファイル64 MiB・プロセスメモリー512 MiBにも上限があります。画像化側はパスワード入力に対応しません。PDF編集で解除したコピーを作成してください。逆順・odd/evenなど編集側だけの範囲指定や、分割ZIPは画像化へ直接渡せません。スキャンだけのPDFからは文字を取り出せず、テキストの順序や改行はPDFの構造によって変わります。旧「きういPDF」「きういPDF画像化」の配布物・ページは引き続き利用できます。",
+    "screenshot": "/assets/screenshots/kiwi-pdf-workbench.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pdf-workbench-v0.1.0/KiwiPDFWorkbench-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-pdf-workbench",
+    "upstream_url": "https://github.com/qpdf/qpdf",
+    "upstream_license": "qpdf: Apache-2.0 / MuPDF: AGPL-3.0-or-later",
+    "upstreams": [
+      {
+        "name": "qpdf",
+        "url": "https://github.com/qpdf/qpdf",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "MuPDF",
+        "url": "https://github.com/ArtifexSoftware/mupdf",
+        "license": "AGPL-3.0-or-later"
+      }
+    ],
+    "windows_test_passed": true,
+    "amazon_links": []
+  },
+  {
     "slug": "kiwi-document-workbench",
     "name": "きうい文書作業場",
     "summary": "Webページを画像ごと保存し、そのままWord・電子書籍へ。手元の文書も変換できる無料ソフトです。",
@@ -115,7 +153,9 @@
     "upstream_url": "https://github.com/ArtifexSoftware/mupdf",
     "upstream_license": "AGPL-3.0-or-later",
     "windows_test_passed": true,
-    "amazon_links": []
+    "amazon_links": [],
+    "replaced_by": "kiwi-pdf-workbench",
+    "replacement_name": "きういPDF作業場"
   },
   {
     "slug": "kiwi-video-save",
@@ -558,7 +598,9 @@
     "upstream_url": "https://github.com/qpdf/qpdf",
     "upstream_license": "Apache License 2.0（依存物の著作権表示をZIPに同梱）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-pdf-workbench",
+    "replacement_name": "きういPDF作業場"
   },
   {
     "slug": "kiwi-image-enlarge",

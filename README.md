@@ -10,7 +10,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | --- | --- | --- |
 | [きうい文書作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-document-workbench/) | Webページを画像ごと保存し、手元の文書と同じ画面でWord・EPUBなどへ変換する | [Pandoc](https://github.com/jgm/pandoc) / [Monolith](https://github.com/Y2Z/monolith) |
 | [きういCSV整理](https://kiwi-garakuta.pages.dev/tools/kiwi-table/) | CSVの列選択・絞り込み・並べ替え・重複除去を行う | [DuckDB](https://github.com/duckdb/duckdb) |
-| [きういPDF画像化](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf-images/) | PDFの指定ページをPNG画像・テキストとして保存する | [MuPDF](https://github.com/ArtifexSoftware/mupdf) |
+| [きういPDF作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf-workbench/) | PDFを編集し、選択PDF・作成PDFを画像表示・PNG・テキスト保存へ渡す | [qpdf](https://github.com/qpdf/qpdf) / [MuPDF](https://github.com/ArtifexSoftware/mupdf) |
 | [きうい動画保存](https://kiwi-garakuta.pages.dev/tools/kiwi-video-save/) | 保存が許可された公開動画・音声をURLから1件ずつ保存する | [yt-dlp](https://github.com/yt-dlp/yt-dlp) |
 | [きうい名前整理](https://kiwi-garakuta.pages.dev/tools/kiwi-rename/) | ファイル名の置換・連番を確認して実行し、元に戻す | [F2](https://github.com/ayoisaiah/f2) |
 | [きうい動画工房](https://kiwi-garakuta.pages.dev/tools/kiwi-video/) | 動画をリサイズ・形式変換し、区間の切り出し・音声や静止画の保存を行う | [FFmpeg](https://github.com/FFmpeg/FFmpeg) |
@@ -26,7 +26,6 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | [きうい重複チェック](https://kiwi-garakuta.pages.dev/tools/kiwi-tidy/) | 同じファイルや似た写真をグループごとに比較し、レポートへ保存する | [Czkawka](https://github.com/qarmin/czkawka) |
 | [きうい文字起こし](https://kiwi-garakuta.pages.dev/tools/kiwi-transcribe/) | 録音をPC内で文章・字幕に変換し、英語への翻訳やTXTの修正も行う | [whisper.cpp](https://github.com/ggml-org/whisper.cpp) |
 | [きういファイル便](https://kiwi-garakuta.pages.dev/tools/kiwi-transfer/) | 同じWi-Fi・LAN内のPCへ、写真・書類・フォルダーを共有コードで送る | [croc](https://github.com/schollz/croc) |
-| [きういPDF](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf/) | PDFの結合・ページの取り出し・分割・回転・パスワードを扱う | [qpdf](https://github.com/qpdf/qpdf) |
 | [きうい画像拡大](https://kiwi-garakuta.pages.dev/tools/kiwi-image-enlarge/) | 小さな写真・イラストを拡大して仕上がりを見比べる | [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) |
 | [きういYAML作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-yaml-workbench/) | YAMLの変換・編集・整形とGitHub Actionsの検査を行う | [yq](https://github.com/mikefarah/yq)・[yamlfmt](https://github.com/google/yamlfmt)・[actionlint](https://github.com/rhysd/actionlint) |
 | [きういPC作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-pc-workbench/) | PC概要・ドライブ容量・フォルダー内訳をまとめて確認する | [fastfetch](https://github.com/fastfetch-cli/fastfetch) / [duf](https://github.com/muesli/duf) / [dust](https://github.com/bootandy/dust) |
