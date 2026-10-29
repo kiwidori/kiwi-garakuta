@@ -1,0 +1,40 @@
+{
+  "version": "12.4.2",
+  "url": "https://github.com/qpdf/qpdf/releases/download/v12.4.2/qpdf-12.4.2-msvc64.zip",
+  "sha256": "db87077e683630c1217e0e8f9a20a9749d952ab676e881c3689187763a5de25d",
+  "prefix": "qpdf-12.4.2-msvc64/bin/",
+  "members": {
+    "qpdf.exe": "1bdaf878f37eaffea1ea3c30591214c77636a0f2fc7432427516b6e22e36c0ff",
+    "qpdf30.dll": "8812952678de93e0750308a113aa650e9161af466f9770679ea9673adeb61041"
+  },
+  "licenses": {
+    "qpdf-LICENSE.txt": {
+      "url": "https://raw.githubusercontent.com/qpdf/qpdf/v12.4.2/LICENSE.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "qpdf-NOTICE.md": {
+      "url": "https://raw.githubusercontent.com/qpdf/qpdf/v12.4.2/NOTICE.md",
+      "sha256": "b207f65a9e5491195ded63b2941199b19a4d30148871f2742c88eae7bfc513a6"
+    },
+    "zlib-LICENSE.txt": {
+      "archive_member": "vcpkg/installed/x64-windows-static/share/zlib/copyright",
+      "sha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2"
+    },
+    "libjpeg-turbo-LICENSE.txt": {
+      "archive_member": "vcpkg/installed/x64-windows-static/share/libjpeg-turbo/copyright",
+      "sha256": "ba6bceebcba0fdd35488477c2cca8c4632ce82c74dbfbc87d886ce6fc4433579"
+    },
+    "libspng-LICENSE.txt": {
+      "archive_member": "vcpkg/installed/x64-windows-static/share/libspng/copyright",
+      "sha256": "c23ec2c56ebd6ff8af3ac70e72e85ac11e9183d602d461e1712ca46dd647868f"
+    },
+    "qpdf-openssl-LICENSE.txt": {
+      "archive_member": "vcpkg/installed/x64-windows-static/share/openssl/copyright",
+      "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a"
+    }
+  },
+  "dependency_archive": {
+    "url": "https://github.com/qpdf/qpdf/releases/download/v12.4.2/vcpkg.zip",
+    "sha256": "82005252fee032135d07c85ad7626a38f26fb253c1e098d1d185f315bea15ebb"
+  }
+}
