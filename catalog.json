@@ -1,5 +1,46 @@
 [
   {
+    "slug": "kiwi-media-workbench",
+    "name": "きうい動画・GIF工房",
+    "summary": "動画を変換し、お気に入りの短い区間をGIFに。画像の並べ替えや速さの調整まで続けて行えます。",
+    "features": [
+      "選択動画の開始・終了・回転・切り抜きを引き継ぎ、GIF編集へ画像列として直接渡せます。保存した動画の先頭区間も取り込めます。",
+      "取り込んだコマを並べ替え、FPS・品質・繰り返し・往復再生・余白を調整してGIFに保存できます。",
+      "MP4（H.264・H.265）・WebM（VP9）への変換、サイズ・画質・FPS、切り出し・向き補正・反転・切り抜きを利用できます。",
+      "MP3・M4A・WAV・FLAC・Opus、音声トラック・消音・音量・ラウドネス調整、PNG・JPEGの静止画保存にも対応します。",
+      "写真やイラストを2～100枚並べる操作や、既存GIFのサイズ・速度変更、Y4Mの変換も使えます。",
+      "GIFの再生、固定色・半透明背景・動きや圧縮の品質調整、結果のコピー・TXT保存に対応します。元ファイルや同名の出力は上書きしません。"
+    ],
+    "steps": [
+      "ZIPをすべて展開し、KiwiMediaWorkbench.exeを起動します。GIF用にMicrosoft Visual C++ v14ランタイム（x64）が必要です。",
+      "動画を使う場合は、初回に「動画エンジンを準備」を押して約100MBを取得します。従来の動画工房で準備済みなら共用できます。",
+      "動画を選び、「区間・映像」で開始・終了・回転などを指定し、「選択動画の区間をGIFへ」を押します。取り込みは10秒・100コマまでです。",
+      "GIF画面で順序・FPS・品質などを調整し、「保存名を選んでGIFを作る」で保存します。写真だけで作る場合は「画像・GIF・Y4Mを編集」を使います。",
+      "動画変換は「別名で保存」から行います。保存結果の一覧で1件を選び、その先頭区間をGIFに取り込むこともできます。"
+    ],
+    "limitations": "Windows 11 x64向け、署名なしのZIP版（約18.3 MiB）です。FFmpeg 9.0.2とgifski 1.34.0を使う非公式GUI。gifskiは同梱し、Microsoft Visual C++ v14 x64ランタイムが必要です。動画エンジンは初回に公式サイトが案内するgyan.devの固定版約100MBを取得し、展開後約273MBを使います。その後は素材を送信しません。動画入力は最大5件、各2 GiB・2時間・4096px・900万画素・120fps。動画変換はSDR/8bit向けで、HDR/10bit映像は非対応、音声だけの保存は可能です。動画出力1 GiB・処理30分、静止プレビュー60秒。作業用に入力サイズに加えて1 GiBの空きが必要です。動画からGIFへの取り込みは10秒・100枚・1280×720px・合計256 MiB・120秒、0.1～30 FPS。終了0は開始から最大10秒です。保存結果の取り込みは先頭から最大10秒、追加の回転・切り抜きなし。音声だけや静止画の保存結果は対象外です。取り込んだ画像列は一時ファイルなので、閉じる前にGIFとして保存してください。手動画像は2～100枚・各25 MiB/1200万画素、合計256 MiB/1億2000万画素。最初のフレームとEXIFの向きを使い、先頭画像を基準に最大1280×1280pxへそろえます。GIF/Y4Mは300コマ、Y4Mは2048×2048以内の8bit 420/422/444。GIF出力は300コマ・1億2000万画素・1600×1600px・10分・256 MiB、作成5分・一時512 MiBまで。画像/Y4MのFPSは0.1～100ですが、50超の速度は再生側に依存します。GIFは色・透過・時間の精度に制限があり、再圧縮で画質・コマ数が変わる場合があります。動画も再圧縮し、必ず小さくなる保証はありません。音声は48kHz・ステレオ、字幕・チャプター等は引き継ぎません。無劣化切り出し・結合・字幕焼き込み・録画・配信・GPU処理・全CLIオプションは非対応。リンク・ジャンクションは扱わず、同時処理は1件です。",
+    "screenshot": "/assets/screenshots/kiwi-media-workbench-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-media-workbench-v0.1.0/KiwiMediaWorkbench-0.1.0-win11-x64.zip",
+    "dependency_source_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-gif-v0.1.0/KiwiGIF-0.1.0-dependency-sources.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-media-workbench",
+    "upstream_url": "https://github.com/FFmpeg/FFmpeg",
+    "upstream_license": "gifski: AGPL-3.0-or-later（imagequant: GPL-3.0-or-later、対応ソースあり）、FFmpeg: GPL-3.0（初回別取得）",
+    "upstreams": [
+      {
+        "name": "FFmpeg 9.0.2",
+        "url": "https://github.com/FFmpeg/FFmpeg",
+        "license": "GPL-3.0（gyan.dev版は別取得）"
+      },
+      {
+        "name": "gifski 1.34.0",
+        "url": "https://github.com/ImageOptim/gifski",
+        "license": "AGPL-3.0-or-later（imagequant: GPL-3.0-or-later）"
+      }
+    ],
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-speech",
     "name": "きうい読み上げ",
     "summary": "文章を合成音声に変換し、WAVで保存できます。本文は外部へ送らず、PC内で処理します。",
@@ -353,7 +394,9 @@
     "upstream_url": "https://github.com/FFmpeg/FFmpeg",
     "upstream_license": "GPL-3.0（動画エンジンは初回に別途取得）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-media-workbench",
+    "replacement_name": "きうい動画・GIF工房"
   },
   {
     "slug": "kiwi-image",
@@ -462,7 +505,9 @@
     "upstream_url": "https://github.com/ImageOptim/gifski",
     "upstream_license": "AGPL-3.0-or-later（imagequantはGPL-3.0-or-later。対応ソースを併載）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-media-workbench",
+    "replacement_name": "きうい動画・GIF工房"
   },
   {
     "slug": "kiwi-archive",
