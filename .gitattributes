@@ -88,3 +88,6 @@ apps/kiwi-download/*.txt -text -whitespace
 apps/kiwi-duplicates/*.txt -text -whitespace
 
 apps/kiwi-pc-workbench/duplicate-engine/*.txt -text -whitespace
+
+apps/kiwi-speech/*.txt -text -whitespace
+apps/kiwi-speech/*.h -text -whitespace
