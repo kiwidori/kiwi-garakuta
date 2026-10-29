@@ -1,0 +1,15 @@
+{
+  "version": "2.11.6",
+  "repository": "https://github.com/Y2Z/monolith",
+  "stars_at_selection": 15564,
+  "url": "https://github.com/Y2Z/monolith/releases/download/v2.11.6/monolith-cli.exe",
+  "size": 5486592,
+  "sha256": "af9a6e1c6e245f94397b1544c89041f837b79b45bad93454c1f7a658cac68383",
+  "kind": "exe",
+  "executable": "monolith-cli.exe",
+  "members": {
+    "monolith-cli.exe": "af9a6e1c6e245f94397b1544c89041f837b79b45bad93454c1f7a658cac68383"
+  },
+  "cache": "KiwiMonolith/2.11.6",
+  "licenses": {}
+}

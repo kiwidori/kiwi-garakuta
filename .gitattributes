@@ -74,3 +74,5 @@ apps/kiwi-table/*.txt -text -whitespace
 apps/kiwi-pdf-images/*.txt -text -whitespace
 apps/kiwi-video-save/*.txt -text -whitespace
 apps/kiwi-rename/*.txt -text -whitespace
+apps/kiwi-document-workbench/*.txt -text -whitespace
+apps/kiwi-document-workbench/web-engine/upstream-pin.json -text whitespace=cr-at-eol

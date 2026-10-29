@@ -1,0 +1,24 @@
+{
+  "version": "3.13",
+  "repository": "https://github.com/jgm/pandoc",
+  "stars_at_selection": 46748,
+  "url": "https://github.com/jgm/pandoc/releases/download/3.13/pandoc-3.13-windows-x86_64.zip",
+  "size": 42983200,
+  "sha256": "23e1f2e978a3df80db8bf65c9c59534f41a23140480cfb4f783a882ab7dc6a4e",
+  "kind": "zip",
+  "executable": "pandoc-3.13/pandoc.exe",
+  "members": {
+    "pandoc-3.13/COPYING.rtf": "b2e44b72220d84e7ec7d5c7ed2b76e42b2c239ae1f179a2a2a9a34d1e40f315e",
+    "pandoc-3.13/COPYRIGHT.txt": "43575d901fd50cc06f49042b82f114667a82c17d63b429e99635ae9430c977c4",
+    "pandoc-3.13/MANUAL.html": "8c5a88d1d75d7035d681d6b68c34f443f73821e12eb540671d085f157b4c5ccb",
+    "pandoc-3.13/pandoc.exe": "7ab6244548ba15494fab956230050516fe8f57c36ec2dfb50133719ad3b5a791"
+  },
+  "cache": "KiwiDocuments/3.13",
+  "licenses": {
+    "Upstream-LICENSE.txt": "43575d901fd50cc06f49042b82f114667a82c17d63b429e99635ae9430c977c4",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "Monolith-LICENSE.txt": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+    "Third-Party-Notices.txt": "19d4db798853137b97b2c7d2ef7836ac563fd4d30c02e642f7d380877880bd8c",
+    "web-engine/upstream-pin.json": "718cb6fb4448f8bad31d7b617398ed9119402a15a9d5350389b852e3c4464dee"
+  }
+}

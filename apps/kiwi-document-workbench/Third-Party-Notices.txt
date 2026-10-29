@@ -1,0 +1,11 @@
+Pandoc 3.13: https://github.com/jgm/pandoc/tree/3.13
+GNU GPL version 2 or later. See Upstream-LICENSE.txt.
+
+Monolith 2.11.6: https://github.com/Y2Z/monolith/tree/v2.11.6
+CC0-1.0. See Monolith-LICENSE.txt.
+
+The GUI ZIP does not contain either upstream executable.
+Unmodified official releases are downloaded only when the user chooses setup.
+All extracted files and notices from the official Pandoc archive are retained.
+Monolith CLI licensing and corresponding dependency sources are available at its tagged source tree (Cargo.lock).
+The GUI is MIT-licensed; upstream licenses are independent.
