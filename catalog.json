@@ -1,5 +1,45 @@
 [
   {
+    "slug": "kiwi-speech",
+    "name": "きうい読み上げ",
+    "summary": "文章を合成音声に変換し、WAVで保存できます。本文は外部へ送らず、PC内で処理します。",
+    "features": [
+      "本文を入力するかUTF-8のTXTを開いて、読み上げ音声を作成できます。日本語・英語など31言語から指定できます。",
+      "10種類の声と速さを選べます。品質の計算回数、CPUスレッド数、文章の区切りと区切り間の無音も調整できます。",
+      "乱数を毎回変更するか固定するか選べます。同じPCと設定で作り直すために使えます。",
+      "44.1 kHz・16bit・モノラルのWAVを別名で保存し、最後に保存した音声を試聴できます。既存ファイルは上書きしません。",
+      "初回にエンジンと音声モデルを準備した後は、オフラインで変換できます。音声モデルにはOpenRAIL-M利用条件が適用されます。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiSpeech.exeを起動します。音声モデルの利用条件を読み、同意する場合はチェックします。",
+      "初回のみ準備ボタンで公式配布からエンジンと音声モデルを取得します。合計約150 MiB、展開後約209 MiBです。",
+      "本文を300文字以内で入力するか、UTF-8のTXTを開きます。文章に合う言語と声、速さなどを選びます。",
+      "「WAVにして別名で保存」で保存先を指定します。「最後の音声を試聴」で確認できます。公開時には合成音声であることを示してください。"
+    ],
+    "limitations": "Windows 11 x64用。sherpa-onnx 2.0.1とSupertonic 3 int8を利用する非公式GUIです。エンジンとモデルは同梱せず、初回に公式配布から取得して固定SHA-256を照合します。準備には1 GiB以上の空き領域が必要です。作成ごとに準備済みファイルを再検証します。本文300文字・音声90秒・処理90秒・出力9 MiBまで。CPUのみを使います。読み間違い・不自然な発音・無音が生じる場合があります。数字・固有名詞などは結果を確認してください。言語の自動判定や翻訳、声の複製、参照音声、MP3、一括処理、GPU、他の音声モデル、全CLIオプションには対応しません。品質の計算回数を増やしても必ず自然になるわけではありません。ネットワークパス・リンク・ジャンクションは扱いません。停止時は途中の音声を保存せず、保存済みのファイルは残します。音声モデルにはソフト本体のMITとは異なるOpenRAIL-M利用条件（第5条・付属書Aを含む）が適用されます。公開する音声が合成音声であることも示してください。WAVにはその旨のコメントを記録します。未署名のソフトです。",
+    "screenshot": "/assets/screenshots/kiwi-speech.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-speech-v0.1.0/KiwiSpeech-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-speech",
+    "upstream_url": "https://github.com/k2-fsa/sherpa-onnx",
+    "upstream_license": "sherpa-onnx: Apache-2.0、音声モデル: OpenRAIL-M",
+    "upstreams": [
+      {
+        "name": "sherpa-onnx 2.0.1",
+        "url": "https://github.com/k2-fsa/sherpa-onnx",
+        "license": "Apache-2.0"
+      }
+    ],
+    "windows_test_passed": true,
+    "amazon_links": [],
+    "model_sources": [
+      {
+        "name": "Supertonic 3音声モデル",
+        "url": "https://huggingface.co/Supertone/supertonic-3",
+        "license": "OpenRAIL-M"
+      }
+    ]
+  },
+  {
     "slug": "kiwi-duplicates",
     "name": "きうい重複チェック",
     "summary": "名前が違っても、内容が同じ写真や書類を見つけます。対象を絞って確認し、CSVに保存できます。",

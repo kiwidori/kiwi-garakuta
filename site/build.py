@@ -72,6 +72,11 @@ def require_tool(item: dict) -> None:
     for upstream in item.get("upstreams", []):
         if not upstream.get("name") or not upstream.get("license") or not upstream.get("url", "").startswith("https://github.com/"):
             raise ValueError(f"Invalid upstream project: {item['slug']}")
+    for model in item.get("model_sources", []):
+        parsed = urlparse(model.get("url", ""))
+        if (not model.get("name") or not model.get("license") or parsed.scheme != "https" or
+                parsed.netloc not in ("huggingface.co", "github.com") or not parsed.path.strip("/")):
+            raise ValueError(f"Invalid model source: {item['slug']}")
     for link in item.get("amazon_links", []):
         parsed = urlparse(link.get("url", ""))
         if not link.get("label") or parsed.scheme != "https" or parsed.hostname not in ("www.amazon.co.jp", "amazon.co.jp", "amzn.to"):
@@ -91,6 +96,9 @@ def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_
                f'（ライセンス: {esc(item["upstream_license"])}）</p>')
     if item.get("upstreams"):
         origins = '<ul>' + ''.join(f'<li><a href="{esc(u["url"])}" rel="noopener noreferrer">{esc(u["name"])} ↗</a>（{esc(u["license"])}）</li>' for u in item["upstreams"]) + '</ul>'
+    for model in item.get("model_sources", []):
+        origins += (f'<p>モデル配布元: <a href="{esc(model["url"])}" rel="noopener noreferrer">'
+                    f'{esc(model["name"])} ↗</a>（{esc(model["license"])}）</p>')
     advanced = ""
     if item.get("advanced_screenshot"):
         advanced = (f'<section><h2>詳細機能</h2><p>メニュー「詳細機能」→「開く」で、元ツールの追加オプションを選択できます。'
