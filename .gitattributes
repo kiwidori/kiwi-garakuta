@@ -80,3 +80,5 @@ apps/kiwi-pdf-workbench/*.txt -text -whitespace
 apps/kiwi-pdf-workbench/*.md -text -whitespace
 apps/kiwi-pdf-workbench/PdfHost.cs -text whitespace=cr-at-eol
 apps/kiwi-pdf-workbench/image-engine/upstream-pin.json -text whitespace=cr-at-eol
+
+apps/kiwi-copy/*.txt -text -whitespace

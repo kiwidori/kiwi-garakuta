@@ -1,0 +1,23 @@
+{
+  "version": "v1.75.2",
+  "repository": "https://github.com/rclone/rclone",
+  "stars_at_selection": 60615,
+  "url": "https://github.com/rclone/rclone/releases/download/v1.75.2/rclone-v1.75.2-windows-amd64.zip",
+  "size": 31634900,
+  "sha256": "8a9db2bad1dc79a65b3348fd857069598e2aab7cf4d118b77b1df23055aff818",
+  "kind": "zip",
+  "executable": "rclone-v1.75.2-windows-amd64/rclone.exe",
+  "cache": "KiwiGarakuta/kiwi-copy/rclone-1.75.2",
+  "members": {
+    "rclone-v1.75.2-windows-amd64/git-log.txt": "7df24b64ace29ece1ac3311adc3284b56b9b2c187813d5a21356de4d8c568bb7",
+    "rclone-v1.75.2-windows-amd64/rclone.1": "4a8e751772f3e674a138cac41744f2002c2129869bc536d1c730627435fddf7b",
+    "rclone-v1.75.2-windows-amd64/rclone.exe": "41eab3e118d264920b62c3327966c5ece0dc4dd715ee617d9e30450d8ead95a4",
+    "rclone-v1.75.2-windows-amd64/README.html": "6e28b099b5c9e2f64cf3792a6f0be9ea2bfc4ed11b9f8c4a2f773abba0de5f8a",
+    "rclone-v1.75.2-windows-amd64/README.txt": "78499a1515c8693cfc731c8128cb208d52f847442cb0e66583804269b598c01a"
+  },
+  "licenses": {
+    "rclone-LICENSE.txt": "8cd2e9e750b90a04b7d82dbbca3930c696ae0309d7c10464f90a44f45754cd04",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "THIRD-PARTY-NOTICES.txt": "b34935f2496ea176ec69e1bcb53075502f7cd480e38edc2b80adb67c8841cf7f"
+  }
+}

@@ -1,0 +1,7 @@
+rclone v1.75.2 - MIT
+Copyright (C) 2012 by Nick Craig-Wood
+https://github.com/rclone/rclone/tree/v1.75.2
+
+rclone is not included in this ZIP. The Prepare button downloads the unchanged official Windows x64 archive, verifies its SHA-256 and each member, and stores it locally. Its original manuals include its dependency/license information. See rclone-LICENSE.txt.
+
+The executable includes Python 3.13.2, Tcl/Tk 8.6.15, and the PyInstaller 6.22.2 bootloader. See Runtime-LICENSES.txt and PyInstaller-LICENSE.txt. No cloud backend is configured by this application.
