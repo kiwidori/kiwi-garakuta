@@ -1,5 +1,31 @@
 [
   {
+    "slug": "kiwi-download",
+    "name": "きういファイル保存",
+    "summary": "資料・画像・ZIPなどのURLをまとめて保存。SHA-256の照合や、通信速度の指定もできます。",
+    "features": [
+      "ファイルの直接リンクを1行に1つ、20件までまとめて入力し、順番に保存できます。",
+      "同名のファイルは末尾に番号を付けます。取得できないURLがあっても、次のURLへ進みます。",
+      "1件ずつ取得するときは保存名や、配布元が示すSHA-256を指定できます。不一致のファイルは保存しません。",
+      "取得速度を指定でき、途中で停止できます。完了分は残し、途中の1件は破棄します。",
+      "結果には保存名・サイズ・形式・SHA-256を表示し、まとめてコピーできます。"
+    ],
+    "steps": [
+      "ZIPを展開してKiwiDownload.exeを起動します。初回のみ「エンジンを準備」でcurl公式Windows版（約8 MiB）を取得します。",
+      "ファイルそのもののURLを1行に1つ入力し、保存先フォルダーを選びます。",
+      "必要なら保存名・SHA-256（URLが1件のときのみ）と通信速度を指定します。",
+      "「ファイルを保存」を押し、結果を確認します。保存したファイルを自動で実行・展開することはありません。"
+    ],
+    "limitations": "Windows 11 x64用。curl 8.23.0_6の非公式GUIです。curlは同梱せず、初回に公式配布を取得して公開SHA-256と全367ファイルを照合します。URLは取得先へ送信されます。公開された資料・画像・ZIPなどの直接リンク向けで、通常のWebページのURLではHTMLが保存される場合があります。動画サイトの解析やページ内の画像を含む一括保存には対応しません。各1 GiB・30分、1回20件まで。保存先は110文字以内のローカル絶対パス、保存名は120文字以内。1 GiB＋64 MiB以上の空き容量が必要です。HTTPSが標準で、必要な場合のみHTTPも許可できます。証明書の検証を無効にはできません。途中再開・ログイン・Cookie・プロキシ・FTP・BitTorrent・ファイルのアップロードは非対応です。停止時は完了済みのファイルを保持します。配布元のSHA-256を指定しない場合は、計算結果を表示するだけで、内容が正規品かどうかは判定しません。",
+    "screenshot": "/assets/screenshots/kiwi-download.jpg",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-download-v0.1.0/KiwiDownload-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-download",
+    "upstream_url": "https://github.com/curl/curl",
+    "upstream_license": "curl license",
+    "windows_test_passed": true,
+    "amazon_links": []
+  },
+  {
     "slug": "kiwi-copy",
     "name": "きういフォルダーコピー",
     "summary": "フォルダー同士を見比べて、足りないファイルだけコピー。USBへの写真や書類の追加に使えます。",
