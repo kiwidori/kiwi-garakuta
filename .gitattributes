@@ -86,3 +86,5 @@ apps/kiwi-copy/*.txt -text -whitespace
 apps/kiwi-download/*.txt -text -whitespace
 
 apps/kiwi-duplicates/*.txt -text -whitespace
+
+apps/kiwi-pc-workbench/duplicate-engine/*.txt -text -whitespace

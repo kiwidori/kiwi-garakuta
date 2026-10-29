@@ -1,5 +1,5 @@
 """Build a portable Windows application from pinned official assets."""
-import hashlib,io,json,os,shutil,subprocess,sys,tempfile,zipfile
+import hashlib,importlib.metadata,io,json,os,shutil,subprocess,sys,tempfile,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT.parent/'common'))
@@ -7,6 +7,13 @@ from portable_build import fetch
 
 def build():
     if os.name!='nt':raise SystemExit('Build on Windows 11 x64.')
+    if sys.version_info[:3]!=(3,13,2):raise ValueError('Python version mismatch')
+    if importlib.metadata.version('PyInstaller')!='6.22.2':raise ValueError('PyInstaller version mismatch')
+    for name,digest in json.loads((ROOT/'build-sources.json').read_text(encoding='utf8')).items():
+        if hashlib.sha256((ROOT.parent/'common'/name).read_bytes().replace(b'\r\n',b'\n')).hexdigest()!=digest:raise ValueError('Shared source mismatch: '+name)
+    duplicate_pin=json.loads((ROOT/'duplicate-engine/upstream-pin.json').read_text(encoding='utf8'))
+    for name,digest in duplicate_pin['licenses'].items():
+        if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:raise ValueError('Duplicate notice mismatch: '+name)
     import tkinter
     if tkinter.Tcl().call('info','patchlevel')!='8.6.15':raise ValueError('Tcl version mismatch')
     tcl=ROOT.parent/'common/tcl-8.6.15-LICENSE.terms'
@@ -15,7 +22,7 @@ def build():
     if set(pins)!={'dust','duf','fastfetch'}:raise ValueError('Native manifest mismatch')
     with tempfile.TemporaryDirectory(prefix='kiwi-pc-workbench-build-') as td:
         folder=Path(td)
-        cmd=[sys.executable,'-m','PyInstaller','--noconfirm','--clean','--onefile','--noconsole','--paths',str(ROOT.parent/'common'),'--name','KiwiPcWorkbench','--distpath',str(folder/'dist'),'--workpath',str(folder/'build'),'--specpath',str(folder)]
+        cmd=[sys.executable,'-m','PyInstaller','--noconfirm','--clean','--onefile','--noconsole','--exclude-module','PIL','--exclude-module','certifi','--exclude-module','cryptography','--paths',str(ROOT.parent/'common'),'--name','KiwiPcWorkbench','--distpath',str(folder/'dist'),'--workpath',str(folder/'build'),'--specpath',str(folder)]
         for e,p in pins.items():
             cache=ROOT.parents[1]/'data/pc-workbench' if os.environ.get('KIWI_USE_NATIVE_CACHE')=='1' else None
             if cache:
@@ -41,12 +48,15 @@ def build():
         if release.exists():shutil.rmtree(release)
         release.mkdir();shutil.copy2(folder/'dist/KiwiPcWorkbench.exe',release)
         for n in ('README.txt','THIRD-PARTY-NOTICES.txt','PyInstaller-LICENSE.txt','OpenSSL-LICENSE.txt','upstream-pins.json','dust-LICENSE','duf-LICENSE','fastfetch-LICENSE'):shutil.copy2(ROOT/n,release/n)
+        for name in ('fclones-LICENSE.txt','build-sources.json'):shutil.copy2(ROOT/name,release/name)
+        shutil.copytree(ROOT/'duplicate-engine',release/'duplicate-engine')
         shutil.copy2(ROOT.parents[1]/'LICENSE',release/'LICENSE')
         texts=[]
         for n,p in [('Python',Path(sys.base_prefix)/'LICENSE.txt'),('Tcl8.6.15',tcl),('Tk',Path(sys.base_prefix)/'tcl/tk8.6/license.terms')]:texts.append('=== '+n+' ===\n'+p.read_text(encoding='utf8'))
         (release/'Runtime-LICENSES.txt').write_text('\n\n'.join(texts),encoding='utf8')
-    output=ROOT/'KiwiPcWorkbench-0.1.0-win11-x64.zip'
+    output=ROOT/'KiwiPcWorkbench-0.2.0-win11-x64.zip'
     with zipfile.ZipFile(output,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
-        for p in sorted(release.iterdir()):z.write(p,p.name)
+        for p in sorted(release.rglob('*')):
+            if p.is_file():z.write(p,p.relative_to(release).as_posix())
     print('Built',output.name,output.stat().st_size,'SHA256',hashlib.sha256(output.read_bytes()).hexdigest())
 if __name__=='__main__':build()
