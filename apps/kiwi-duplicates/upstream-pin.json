@@ -1,0 +1,19 @@
+{
+  "version": "v0.35.0",
+  "repository": "https://github.com/pkolaczk/fclones",
+  "stars_at_selection": 2982,
+  "url": "https://github.com/pkolaczk/fclones/releases/download/v0.35.0/fclones-0.35.0-windows-x86_64.zip",
+  "size": 1974285,
+  "sha256": "cbbc14167d93d3c550af5e38b617437b9c89b8eb3a5aaf8903a9ea6e5b551424",
+  "kind": "zip",
+  "executable": "fclones.exe",
+  "cache": "KiwiGarakuta/kiwi-duplicates/fclones-0.35.0",
+  "members": {
+    "fclones.exe": "973bc90b0a62993e17007839b683cc4afdd687254f5cf183f241c2f25b544fea"
+  },
+  "licenses": {
+    "fclones-LICENSE.txt": "fa876876689ee8c7ad01e3d332f53502bece80de772d4239dced8f3398014000",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "THIRD-PARTY-NOTICES.txt": "61b2b8abfe8beead0cfab4d166a22e9a3eea8e459746266e908c52593395d453"
+  }
+}

@@ -84,3 +84,5 @@ apps/kiwi-pdf-workbench/image-engine/upstream-pin.json -text whitespace=cr-at-eo
 apps/kiwi-copy/*.txt -text -whitespace
 
 apps/kiwi-download/*.txt -text -whitespace
+
+apps/kiwi-duplicates/*.txt -text -whitespace
