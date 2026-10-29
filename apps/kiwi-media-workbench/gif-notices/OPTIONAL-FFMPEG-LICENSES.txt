@@ -1,0 +1,19 @@
+Optional ffmpeg-sys-next6.1.0 source fork
+Not enabled in the bundled executable. No FFmpeg programs/libraries are included.
+Commit: fd5784d645df2ebe022a204ac36582074da1edf7
+https://github.com/kornelski/rust-ffmpeg-sys-1
+Original Cargo.toml declares WTFPL, authors meh. <meh@schizofreni.co>
+and Zhiming Wang <i@zhimingwang.org>. The fork contains no standalone license file.
+The standard WTFPL text below is retained from the locked ffmpeg-next dependency.
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                    Version 2, December 2004
+
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.
