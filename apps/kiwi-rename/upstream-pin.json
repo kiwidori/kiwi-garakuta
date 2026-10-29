@@ -1,0 +1,25 @@
+{
+  "version": "v2.2.2",
+  "repository": "https://github.com/ayoisaiah/f2",
+  "stars_at_selection": 2455,
+  "url": "https://github.com/ayoisaiah/f2/releases/download/v2.2.2/f2_2.2.2_windows_amd64.zip",
+  "size": 5711184,
+  "sha256": "64eba7ddbadeca9cd5657b344058311f3c42d342c5e88f93a68d8f07fb8d0a53",
+  "kind": "zip",
+  "executable": "f2.exe",
+  "members": {
+    "CHANGELOG.md": "54c47bf7624e442e138bd332dfbcc6d2f9dc374d90a0e2bd9726ca492a82f69f",
+    "LICENCE": "b2660588a63530a0f9fc106025afde49cd2703361cfe827522d9ac022983dc2a",
+    "README.md": "459968b6f5f9b7d4001a6b35a82b57a8102db4fb62753dca6fff1b18007d4ad0",
+    "scripts/completions/f2.bash": "b141df8e53f5cf48c08052624191adf3b27402bcb4f50023bcf89ff4938433f1",
+    "scripts/completions/f2.fish": "554df98dd888f6109dc22bd11bf5ec91525896b80e90d9cea70bd092f432b41f",
+    "scripts/completions/f2.zsh": "cd71a519d9fbdbe965af0f2e154fd0daa3b8bf986acc0dfd05b321e1dbc6c9c3",
+    "f2.exe": "f60178bde177f59136e91bf1a3900f1bd56c32879ffa7face604708f777d975f"
+  },
+  "cache": "KiwiRename/v2.2.2",
+  "licenses": {
+    "Upstream-LICENSE.txt": "b2660588a63530a0f9fc106025afde49cd2703361cfe827522d9ac022983dc2a",
+    "Third-Party-Notices.txt": "2ea5c46d34ca3d32fd16f1cbbdadab7143a1becab53c46440467a2f06be69bc0",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245"
+  }
+}

@@ -1,0 +1,13 @@
+yt-dlp 2026.10.26
+Project: https://github.com/yt-dlp/yt-dlp
+Source: https://github.com/yt-dlp/yt-dlp/tree/2026.10.26
+License: Unlicense (Windows executable: GPL-3.0-or-later)
+Official original download: https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp.exe
+
+This GUI invokes a separately downloaded, unmodified command-line program.
+The GUI ZIP does not contain the upstream executable or libraries.
+The original distribution is downloaded only after the user selects setup.
+Upstream license and source are independent of the MIT-licensed GUI.
+All files and notices extracted from the original archive are kept in the engine folder.
+The standalone Windows executable includes third-party components and is GPLv3+.
+See https://github.com/yt-dlp/yt-dlp#licensing for components and corresponding source links.

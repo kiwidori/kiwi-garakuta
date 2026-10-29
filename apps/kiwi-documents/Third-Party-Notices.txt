@@ -1,0 +1,11 @@
+pandoc 3.13
+Project: https://github.com/jgm/pandoc
+Source: https://github.com/jgm/pandoc/tree/3.13
+License: GPL-2.0-or-later
+Official original download: https://github.com/jgm/pandoc/releases/download/3.13/pandoc-3.13-windows-x86_64.zip
+
+This GUI invokes a separately downloaded, unmodified command-line program.
+The GUI ZIP does not contain the upstream executable or libraries.
+The original distribution is downloaded only after the user selects setup.
+Upstream license and source are independent of the MIT-licensed GUI.
+All files and notices extracted from the original archive are kept in the engine folder.

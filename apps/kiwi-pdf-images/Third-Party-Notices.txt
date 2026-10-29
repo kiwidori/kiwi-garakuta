@@ -1,0 +1,11 @@
+mupdf 1.28.5
+Project: https://github.com/ArtifexSoftware/mupdf
+Source: https://github.com/ArtifexSoftware/mupdf/tree/1.28.5
+License: AGPL-3.0-or-later
+Official original download: https://casper.mupdf.com/downloads/archive/mupdf-1.28.5-windows.zip
+
+This GUI invokes a separately downloaded, unmodified command-line program.
+The GUI ZIP does not contain the upstream executable or libraries.
+The original distribution is downloaded only after the user selects setup.
+Upstream license and source are independent of the MIT-licensed GUI.
+All files and notices extracted from the original archive are kept in the engine folder.

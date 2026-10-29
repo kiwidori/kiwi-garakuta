@@ -1,0 +1,24 @@
+{
+  "version": "1.28.5",
+  "repository": "https://github.com/ArtifexSoftware/mupdf",
+  "stars_at_selection": 3035,
+  "url": "https://casper.mupdf.com/downloads/archive/mupdf-1.28.5-windows.zip",
+  "size": 94292330,
+  "sha256": "13476a53e84f5527983158acb6442c7853b3cdc022f3b24880780dcfba1fcc99",
+  "kind": "zip",
+  "executable": "mupdf-1.28.5-windows/mutool.exe",
+  "members": {
+    "mupdf-1.28.5-windows/CHANGES.txt": "a558b973a4763c7fd91d9c663cf7b071f28242d720a3322b7b0604976ce9c40c",
+    "mupdf-1.28.5-windows/COPYING.txt": "282751b8c98ee9e445346eb57a992c9ecbe25ed8dd554df046777313e19b10f9",
+    "mupdf-1.28.5-windows/mupdf-gl.exe": "4fde9a048d7382b2e18390e04dba932388d254b51bca96ecb4a4399bd9f05d16",
+    "mupdf-1.28.5-windows/mupdf.exe": "931a3289fa8aa9eecab7dce68eaf083f9527021a38e65eaec6dd9367574ce51d",
+    "mupdf-1.28.5-windows/mutool.exe": "1ff045eeab80a108a39760578001a547a31e8b663905f064088c4b2f82cbcf7f",
+    "mupdf-1.28.5-windows/README.txt": "917f427ed4e857f868ec8213d7c2715a86ce2faf77e859226932730450040825"
+  },
+  "cache": "KiwiPDFImages/1.28.5",
+  "licenses": {
+    "Upstream-LICENSE.txt": "282751b8c98ee9e445346eb57a992c9ecbe25ed8dd554df046777313e19b10f9",
+    "Third-Party-Notices.txt": "7c3ebb480259ccbe799b50962eb6ca6ea270edaf14ac41199b1b7be2183ed40e",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245"
+  }
+}

@@ -69,3 +69,8 @@ apps/kiwi-image/*NOTICE.txt -text -whitespace
 
 apps/kiwi-video/*LICENSE*.txt -text -whitespace
 apps/kiwi-video/*NOTICES.txt -text -whitespace
+apps/kiwi-documents/*.txt -text -whitespace
+apps/kiwi-table/*.txt -text -whitespace
+apps/kiwi-pdf-images/*.txt -text -whitespace
+apps/kiwi-video-save/*.txt -text -whitespace
+apps/kiwi-rename/*.txt -text -whitespace

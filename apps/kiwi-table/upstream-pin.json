@@ -1,0 +1,19 @@
+{
+  "version": "v2.0.0",
+  "repository": "https://github.com/duckdb/duckdb",
+  "stars_at_selection": 42685,
+  "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.0/duckdb-cli-windows-amd64.tar.gz",
+  "size": 19663611,
+  "sha256": "91663c2f36c2a334b0e5e639006d8c29c29e013af0c477d80bb931df68870312",
+  "kind": "tar",
+  "executable": "duckdb.exe",
+  "members": {
+    "duckdb.exe": "eceaa6b943fc868b26daf6e0fe96cc9d6d2ecf89f043df6c1bb5b2946e995d6e"
+  },
+  "cache": "KiwiTable/v2.0.0",
+  "licenses": {
+    "Upstream-LICENSE.txt": "075c33400ffcb0c586dd106a029d3e733e9da3693f8fcb9cebfc651c8a2f14e3",
+    "Third-Party-Notices.txt": "bf301d79e943b26503591f06ad256fd6b48b6613522d55a42551ac6e7da43a28",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245"
+  }
+}

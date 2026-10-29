@@ -1,0 +1,11 @@
+f2 v2.2.2
+Project: https://github.com/ayoisaiah/f2
+Source: https://github.com/ayoisaiah/f2/tree/v2.2.2
+License: MIT
+Official original download: https://github.com/ayoisaiah/f2/releases/download/v2.2.2/f2_2.2.2_windows_amd64.zip
+
+This GUI invokes a separately downloaded, unmodified command-line program.
+The GUI ZIP does not contain the upstream executable or libraries.
+The original distribution is downloaded only after the user selects setup.
+Upstream license and source are independent of the MIT-licensed GUI.
+All files and notices extracted from the original archive are kept in the engine folder.
