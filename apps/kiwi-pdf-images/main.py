@@ -39,6 +39,11 @@ def render(v, folder, cancel, preview=False):
     with tempfile.TemporaryDirectory(prefix='kiwi-pdf-images-') as td:
         work = Path(td)
         source = stage(v['input'], work, cancel, {'.pdf'}, limit=32 * 1024**2)
+        raw_count = engine.call(['show', str(source), 'trailer/Root/Pages/Count'], work, cancel, timeout=30).strip()
+        if not raw_count.isdigit() or not 1 <= int(raw_count) <= 100000:
+            raise ValueError('PDFのページ数を確認できません。')
+        if max(pages) > int(raw_count):
+            raise ValueError(f'このPDFは{int(raw_count)}ページです。ページ指定を確認してください。')
         # No JavaScript interpreter or external viewers are invoked by mutool draw.
         fmt = 'txt' if not preview and v['format'] == 'テキスト' else 'png'
         pattern = work / ('page-%04d.png' if fmt == 'png' else 'text.txt')
