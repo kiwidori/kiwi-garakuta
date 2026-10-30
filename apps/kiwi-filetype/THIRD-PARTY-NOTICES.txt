@@ -1,0 +1,19 @@
+Kiwi File Type GUI: MIT License (see LICENSE).
+Python 3.13.2 and Tcl/Tk 8.6.15: see Runtime-LICENSES.txt.
+OpenSSL 3.0.15: see OpenSSL-LICENSE.txt.
+PyInstaller 6.22.2: see PyInstaller-LICENSE.txt, including the bootloader distribution exception.
+
+Magika is copyright Google LLC and other Magika contributors.
+This is an unofficial interface. The GUI ZIP does not contain Magika, its embedded
+model, ONNX Runtime or its Rust dependencies. A first-use button downloads the
+unmodified official Windows CLI archive, after user action and digest validation.
+Magika CLI/library/model source is under Apache-2.0; see Magika-LICENSE.txt.
+https://github.com/google/magika/tree/cli/v1.1.0
+https://github.com/google/magika/releases/tag/cli/v1.1.0
+The official binary uses ONNX Runtime through ort. The included ONNX Runtime
+(MIT) and ort (Apache-2.0) license copies are references for these separately
+acquired components, not a claim that their binaries are included in this ZIP.
+https://github.com/microsoft/onnxruntime
+https://github.com/pykeio/ort/tree/v2.0.0-rc.12
+Microsoft Visual C++ x64 runtime and DirectML are system prerequisites, not
+redistributed here. Windows 11 x64 is required.

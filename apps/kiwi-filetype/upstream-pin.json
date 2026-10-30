@@ -1,0 +1,18 @@
+{
+  "cache": "KiwiFileType/magika-cli-1.1.0",
+  "executable": "magika.exe",
+  "kind": "zip",
+  "url": "https://github.com/google/magika/releases/download/cli/v1.1.0/magika-cli-x86_64-pc-windows-msvc.zip",
+  "size": 10076032,
+  "sha256": "d4de347c53e2d25f9663780c93fdf26d156284c64d6a5ec4bcdb829f9994f6f3",
+  "members": {
+    "magika.exe": "3631dab2f57ec42b6646ce141397671132707cd7e7633f4511fe47171efe69eb"
+  },
+  "licenses": {
+    "Magika-LICENSE.txt": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+    "ONNXRuntime-LICENSE.txt": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+    "OpenSSL-LICENSE.txt": "feb9bd5f71806c596971d4dfa64c5a93904f9d82b4d3ebd9244a12058f22578e",
+    "ort-LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245"
+  }
+}

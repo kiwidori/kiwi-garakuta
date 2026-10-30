@@ -1,0 +1,59 @@
+Determines file content types using AI
+
+Usage: magika.exe [OPTIONS] [PATH]...
+
+Arguments:
+  [PATH]...
+          List of paths to the files to analyze.
+          
+          Use a dash (-) to read from standard input (can only be used once).
+
+Options:
+  -r, --recursive
+          Identifies files within directories instead of identifying the directory itself
+
+      --no-dereference
+          Identifies symbolic links as is instead of identifying their content by following them
+
+      --colors
+          Prints with colors regardless of terminal support
+
+      --no-colors
+          Prints without colors regardless of terminal support
+
+  -s, --output-score
+          Prints the prediction score in addition to the content type
+
+  -i, --mime-type
+          Prints the MIME type instead of the content type description
+
+  -l, --label
+          Prints a simple label instead of the content type description
+
+      --json
+          Prints in JSON format
+
+      --jsonl
+          Prints in JSONL format
+
+      --format <CUSTOM>
+          Prints using a custom format (use --help for details).
+          
+          The following placeholders are supported:
+          
+            %p  The file path
+            %l  The unique label identifying the content type
+            %d  The description of the content type
+            %g  The group of the content type
+            %m  The MIME type of the content type
+            %e  Possible file extensions for the content type
+            %s  The score of the content type for the file
+            %S  The score of the content type for the file in percent
+            %b  The model output if overruled (empty otherwise)
+            %%  A literal %
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+  -V, --version
+          Print version
