@@ -24,7 +24,9 @@
     "upstream_url": "https://github.com/pdfcpu/pdfcpu",
     "upstream_license": "Apache-2.0（pdfcpuは公式版を初回別取得。原文・Pillow等の通知を同梱）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-pdf-workbench",
+    "replacement_name": "きういPDF作業場"
   },
   {
     "slug": "kiwi-reading-workbench",
@@ -326,26 +328,31 @@
   {
     "slug": "kiwi-pdf-workbench",
     "name": "きういPDF作業場",
-    "summary": "PDFを結合・分割・回転し、編集したページを画像やテキストへ。そのまま続けて使える無料ソフトです。",
+    "summary": "PDFを結合・分割・回転し、文字やロゴを重ねて、そのまま表示・画像保存へ。編集の続きを一つにまとめました。",
     "features": [
       "PDFの結合・ページの取り出しと並べ替え・分割ZIP・回転・容量最適化を行えます。入力ごとにページ範囲やパスワードを設定できます。",
       "パスワードの設定・既知パスワードの解除・PDFの検査に対応します。元PDFと既存の同名ファイルは上書きしません。",
       "「選択PDFを表示・画像化」と「作成PDFを表示・画像化」で、一覧のPDFや編集結果を選び直さずに渡せます。",
       "指定ページをPNG画像のZIPやテキストに保存し、最初の指定ページを表示できます。画像の解像度・色・回転を選べます。",
-      "詳細設定のJob JSONから、重ね合わせ・添付ファイル・注釈・文書情報・ページラベル・JSON出力なども指定できます。"
+      "詳細設定のJob JSONから、重ね合わせ・添付ファイル・注釈・文書情報・ページラベル・JSON出力なども指定できます。",
+      "一覧のPDFや作成したPDFをスタンプ画面へ直接渡し、日本語の文字・ロゴ・ページ番号・別PDFを重ねられます。",
+      "保存したスタンプPDFは、そのまま表示・画像化、または編集一覧へ追加して次の加工に使えます。",
+      "スタンプは前面・背面、位置・大きさ・回転・濃さ、対象ページを指定できます。詳細JSONでは標準14フォント・絶対倍率・斜め配置・枠なども指定できます。"
     ],
     "steps": [
       "ZIPをすべて展開してKiwiPDFWorkbench.exeを起動します。Microsoft Visual C++ v14（x64）が必要です。",
       "PDFを追加して順番を決め、必要なら各PDFのページ範囲・パスワードを指定します。操作と保存先を選んで実行します。",
       "内容の表示や画像保存には「選択PDFを表示・画像化」または「作成PDFを表示・画像化」を押します。初回のみ画像エンジンの準備から公式MuPDF（約90 MiB）を取得します。",
-      "ページ・形式・解像度などを指定し、表示または書き出しを行います。暗号化PDFは先に解除したコピーを作ってください。"
+      "ページ・形式・解像度などを指定し、表示または書き出しを行います。暗号化PDFは先に解除したコピーを作ってください。",
+      "文字やロゴを入れる場合は「選択PDFに文字・ロゴを重ねる」または「作成PDFに文字・ロゴを重ねる」を押します。初回のみ公式pdfcpu（約7 MB）を準備します。",
+      "重ねる内容・対象ページ・位置などを選び、別名保存します。「保存PDFを表示・画像化」で見た目を確認し、「保存PDFを編集一覧へ追加」で次の編集へ渡せます。"
     ],
-    "limitations": "Windows 11 x64用。qpdf 12.4.2とMuPDF 1.28.5を利用する非公式GUIです。ZIPは約14 MiB。qpdfと依存物は同梱し、MuPDFは含めず初回に公式固定版を取得して全ファイルのSHA-256を照合します。処理のためにPDFをアップロードすることはありません。PDF編集は50件・各200 MiB・合計500 MiB、出力300 MiB、処理180秒、分割500件まで。Microsoft Visual C++ v14（x64）が必要です。最適化で必ず小さくなるとは限りません。文章の直接編集・OCRは非対応で、加工すると電子署名が無効になる場合があります。表示・画像化は入力32 MiB・指定100ページ、解像度36～300dpi・長辺3,000px、処理5分まで。作業ファイル合計128 MiB・ログを含む単一ファイル64 MiB・プロセスメモリー512 MiBにも上限があります。画像化側はパスワード入力に対応しません。PDF編集で解除したコピーを作成してください。逆順・odd/evenなど編集側だけの範囲指定や、分割ZIPは画像化へ直接渡せません。スキャンだけのPDFからは文字を取り出せず、テキストの順序や改行はPDFの構造によって変わります。旧「きういPDF」「きういPDF画像化」の配布物・ページは引き続き利用できます。",
-    "screenshot": "/assets/screenshots/kiwi-pdf-workbench.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pdf-workbench-v0.1.0/KiwiPDFWorkbench-0.1.0-win11-x64.zip",
+    "limitations": "Windows 11 x64用。qpdf 12.4.2・MuPDF 1.28.5・pdfcpu 0.16.4を利用する非公式GUIです。ZIPは約21.3 MiB。qpdfと依存物は同梱し、MuPDFは含めず初回に公式固定版を取得して全ファイルのSHA-256を照合します。処理のためにPDFをアップロードすることはありません。PDF編集は50件・各200 MiB・合計500 MiB、出力300 MiB、処理180秒、分割500件まで。Microsoft Visual C++ v14（x64）が必要です。最適化で必ず小さくなるとは限りません。文章の直接編集・OCRは非対応で、加工すると電子署名が無効になる場合があります。表示・画像化は入力32 MiB・指定100ページ、解像度36～300dpi・長辺3,000px、処理5分まで。作業ファイル合計128 MiB・ログを含む単一ファイル64 MiB・プロセスメモリー512 MiBにも上限があります。画像化側はパスワード入力に対応しません。PDF編集で解除したコピーを作成してください。逆順・odd/evenなど編集側だけの範囲指定や、分割ZIPは画像化へ直接渡せません。スキャンだけのPDFからは文字を取り出せず、テキストの順序や改行はPDFの構造によって変わります。旧「きういPDF」「きういPDF画像化」の配布物・ページは引き続き利用できます。 スタンプエンジンpdfcpuは初回に公式固定版約7 MBを取得します。スタンプは元PDF32 MiB、重ねるPDF・画像16 MiB、PDF各1000ページ、画像2000万画素、出力64 MiBまで。スタンプの出力が32 MiBを超える場合は表示・画像化へ渡せません。暗号化・電子署名付きPDFへのスタンプは対象外です。日本語はWindowsの游ゴシックで画像化され、200文字・4行まで、文字の選択や検索はできません。一部の絵文字等は正しく描けません。欧文は半角英数字・記号500文字まで、画像は単一フレームPNG/JPEG/WebP/TIFFです。スタンプの範囲は昇順の1-3,5形式、odd/even、または全部です。別PDFを順に重ねるときは最後のページを繰り返し、開始ページも指定できます。更新・削除はpdfcpuが認識する印が対象で、一般の文字や注釈を消す機能ではありません。透かしはコピー・編集の禁止や墨消しにはなりません。背面の透かしはページ全面の画像に隠れます。スタンプ処理180秒・検証30秒、各画面で同時に処理はできません。pdfcpuの全機能やユーザーフォント追加には対応していません。旧PDF作業場0.1.0と単独PDFスタンプのZIP・ページも利用できます。",
+    "screenshot": "/assets/screenshots/kiwi-pdf-workbench-020-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pdf-workbench-v0.2.0/KiwiPDFWorkbench-0.2.0-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-pdf-workbench",
     "upstream_url": "https://github.com/qpdf/qpdf",
-    "upstream_license": "qpdf: Apache-2.0 / MuPDF: AGPL-3.0-or-later",
+    "upstream_license": "qpdf: Apache-2.0 / MuPDF: AGPL-3.0-or-later / pdfcpu: Apache-2.0",
     "upstreams": [
       {
         "name": "qpdf",
@@ -356,10 +363,25 @@
         "name": "MuPDF",
         "url": "https://github.com/ArtifexSoftware/mupdf",
         "license": "AGPL-3.0-or-later"
+      },
+      {
+        "name": "pdfcpu",
+        "url": "https://github.com/pdfcpu/pdfcpu",
+        "license": "Apache-2.0"
       }
     ],
     "windows_test_passed": true,
-    "amazon_links": []
+    "amazon_links": [],
+    "workflow_screenshots": [
+      {
+        "src": "/assets/screenshots/kiwi-pdf-workbench-stamp-public.png",
+        "caption": "選択したPDFや編集結果に、そのまま文字・ロゴを重ねて別名保存できます。"
+      },
+      {
+        "src": "/assets/screenshots/kiwi-pdf-workbench-marked-preview-public.png",
+        "caption": "保存したスタンプPDFを選び直さずに渡し、表示して確認できます。"
+      }
+    ]
   },
   {
     "slug": "kiwi-document-workbench",

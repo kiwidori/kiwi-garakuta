@@ -8,7 +8,6 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
-| [きういPDFスタンプ](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf-stamp/) | PDFに文字・ロゴ・ページ番号を重ね、別名で保存する | [pdfcpu](https://github.com/pdfcpu/pdfcpu) |
 | [きうい読み取り・読み上げ](https://kiwi-garakuta.pages.dev/tools/kiwi-reading-workbench/) | 画像の文字を確認・修正し、そのまま読み上げ音声に保存する | [RapidOCR](https://github.com/RapidAI/RapidOCR) / [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) |
 | [きういファイルしらべ](https://kiwi-garakuta.pages.dev/tools/kiwi-filetype/) | 拡張子がないファイルなどの種類を調べ、候補拡張子・MIMEを一覧保存する | [Magika](https://github.com/google/magika) |
 | [きうい画像・PNG工房](https://kiwi-garakuta.pages.dev/tools/kiwi-image-workbench/) | 写真を変換・リサイズし、PNG圧縮と次の編集へ続けて進む | [ImageMagick](https://github.com/ImageMagick/ImageMagick) / [oxipng](https://github.com/oxipng/oxipng) |
@@ -18,7 +17,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | [きういフォルダーコピー](https://kiwi-garakuta.pages.dev/tools/kiwi-copy/) | フォルダーを比較し、不足分だけ内容照合して追加する | [rclone](https://github.com/rclone/rclone) |
 | [きうい文書作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-document-workbench/) | Webページを画像ごと保存し、手元の文書と同じ画面でWord・EPUBなどへ変換する | [Pandoc](https://github.com/jgm/pandoc) / [Monolith](https://github.com/Y2Z/monolith) |
 | [きういCSV整理](https://kiwi-garakuta.pages.dev/tools/kiwi-table/) | CSVの列選択・絞り込み・並べ替え・重複除去を行う | [DuckDB](https://github.com/duckdb/duckdb) |
-| [きういPDF作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf-workbench/) | PDFを編集し、選択PDF・作成PDFを画像表示・PNG・テキスト保存へ渡す | [qpdf](https://github.com/qpdf/qpdf) / [MuPDF](https://github.com/ArtifexSoftware/mupdf) |
+| [きういPDF作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf-workbench/) | PDFを編集し、文字・ロゴを重ねて表示・画像保存へ渡す | [qpdf](https://github.com/qpdf/qpdf) / [MuPDF](https://github.com/ArtifexSoftware/mupdf) / [pdfcpu](https://github.com/pdfcpu/pdfcpu) |
 | [きうい動画保存](https://kiwi-garakuta.pages.dev/tools/kiwi-video-save/) | 保存が許可された公開動画・音声をURLから1件ずつ保存する | [yt-dlp](https://github.com/yt-dlp/yt-dlp) |
 | [きうい名前整理](https://kiwi-garakuta.pages.dev/tools/kiwi-rename/) | ファイル名の置換・連番を確認して実行し、元に戻す | [F2](https://github.com/ayoisaiah/f2) |
 | [きういベクター工房](https://kiwi-garakuta.pages.dev/tools/kiwi-vector/) | ロゴ・イラストをSVGに変換し、色・輪郭を調整して保存する | [VTracer](https://github.com/visioncortex/vtracer) |
