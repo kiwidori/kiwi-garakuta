@@ -1,6 +1,6 @@
 """Validate browser uploads before passing normalized names to native qrcp."""
 from email import policy
-from email.parser import BytesParser
+from email.parser import BytesParser, Parser
 import hashlib
 from pathlib import Path
 import re
@@ -54,9 +54,12 @@ def parse_upload(content_type, data):
                 raise ValueError('ファイルの区切りが違います。')
             piece = piece[2:]
         raw_header, separator, payload = piece.partition(b'\r\n\r\n')
-        if not separator or len(raw_header) > 8192:
+        if not separator or len(raw_header) > 8192 or b'\\' in raw_header:
             raise ValueError('ファイルのヘッダーを読み取れません。')
-        part = BytesParser(policy=policy.default).parsebytes(raw_header + b'\r\n\r\n', headersonly=True)
+        # Browsers send UTF-8 filenames directly in quoted HTTP multipart headers.
+        # Decode strictly before the MIME header parser so these valid filenames
+        # are not treated as undecodable 8-bit email tokens.
+        part = Parser(policy=policy.default).parsestr(raw_header.decode('utf8') + '\r\n\r\n', headersonly=True)
         if (part.get_content_maintype() == 'multipart' or part.defects
                 or part.get_content_disposition() != 'form-data'):
             raise ValueError('対応していない送信内容です。')

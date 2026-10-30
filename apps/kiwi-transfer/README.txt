@@ -1,4 +1,4 @@
-きういファイル便 0.2.0 / Windows 11 x64
+きういファイル便 0.2.1 / Windows 11 x64
 
 写真・書類・フォルダーを、同じWi-Fi・LAN内のPCやスマホと受け渡します。
 ZIPを展開し、KiwiTransfer.exeを起動してください。
