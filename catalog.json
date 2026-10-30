@@ -1,5 +1,45 @@
 [
   {
+    "slug": "kiwi-image-workbench",
+    "name": "きうい画像・PNG工房",
+    "summary": "写真の変換・リサイズからPNGの圧縮まで。保存した画像をそのまま圧縮し、次の編集にも使えます。",
+    "features": [
+      "JPEG・PNG・WebP・AVIF・BMP・TIFF・GIF・ICOへ変換し、サイズ・切り抜き・回転・色をまとめて調整できます。",
+      "元画像と仕上がりをプレビューし、20枚まで別名で保存できます。元画像や同名の保存先は上書きしません。",
+      "入力PNGや、一覧で選んだ保存結果PNGを圧縮画面へ直接渡せます。圧縮後も元画像と変換結果は残ります。",
+      "PNGの圧縮レベル0～4を選べます。小さくならない場合は元と同じバイト列を別名で保存します。",
+      "圧縮結果を次の画像編集へ戻せます。前回の加工設定を初期化し、回転や切り抜きの二重適用を防ぎます。",
+      "PNGの詳細機能では追加オプション・ファイル・標準入力を指定し、同梱ヘルプや実行結果を確認できます。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiImageWorkbench.exeを起動します。Microsoft Visual C++ v14再頒布可能パッケージ（x64）が必要な場合があります。",
+      "画像の変換には、初回のみ「画像エンジンを準備」を押して公式版約12 MBを取得します。以前の画像工房で準備済みなら共用できます。PNG圧縮は準備不要です。",
+      "画像を選び、保存形式・サイズ・仕上がりを指定します。「プレビュー」で確認し、「すべて別名で保存」を押します。",
+      "保存結果のPNGを一覧で1件選び、「選択した保存結果PNGを圧縮へ」を押します。入力PNGを直接渡すこともできます。",
+      "新しい保存先と圧縮レベルを選び、「別名で圧縮」を押します。「圧縮結果を画像の編集対象へ」で次の編集に進めます。"
+    ],
+    "limitations": "Windows 11 x64向け、署名なしZIP版（約18.1 MiB）です。ImageMagick 7.1.2-34とoxipng 10.2.1の非公式GUI。画像エンジンは初回に公式配布から別取得し、PNG圧縮エンジンは同梱しています。画像入力は20枚・各50 MiB・合計200 MiB、各辺8000px・2500万画素まで。画像出力は各128 MiB・合計512 MiB、1枚約60秒・一括約10分までです。JPEG/PNG/WebP/AVIF/HEIC/HEIF/BMP/TIFF/GIFを読み込み、先頭の1枚とEXIFの向きを使います。画像工房のPNG出力は8bit RGBAです。16bit/HDR/RAW現像、アニメーション維持、文字入れ、レイヤー合成、全ImageMagickオプションには対応しません。JPEGの透明部分は白か黒に合成し、ICOは最大256pxです。通常のPNG圧縮は静止PNG・20 MiB・1600万画素・120秒まで。APNGは通常圧縮の対象外です。最適化で無効になる付加情報が変更・削除される場合があります。PNGの詳細機能は引数を組み立てる画面で、各オプションの専用編集画面ではありません。標準入力2 MiB・出力16 MiB・300秒・引数256個までで、指定によって入力へ直接書き込みます。--alphaは透明部分のRGBを変更するため、画素の完全一致が必要な場合は使わないでください。JPEGなどを圧縮画面へ渡す場合は先にPNGで保存します。圧縮結果を戻すと入力一覧は1枚に置き換わり、加工設定をリセットします。同時処理は1件です。通常画面ではリンク・ジャンクションを扱いません。初回準備後、画像処理のためのアップロードは行いません。",
+    "screenshot": "/assets/screenshots/kiwi-image-workbench-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-image-workbench-v0.1.0/KiwiImageWorkbench-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-image-workbench",
+    "upstream_url": "https://github.com/ImageMagick/ImageMagick",
+    "upstream_license": "ImageMagick License（初回別取得）、oxipng: MIT（同梱）、原文・依存物通知同梱",
+    "upstreams": [
+      {
+        "name": "ImageMagick 7.1.2-34",
+        "url": "https://github.com/ImageMagick/ImageMagick",
+        "license": "ImageMagick License（初回別取得）"
+      },
+      {
+        "name": "oxipng 10.2.1",
+        "url": "https://github.com/oxipng/oxipng",
+        "license": "MIT"
+      }
+    ],
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-labels",
     "name": "きういラベル印刷",
     "summary": "名札や収納ラベルの文字をA4に並べ、PDFや画像に保存できます。文字の大きさ・余白・枚数を調整して印刷の準備ができます。",
@@ -451,7 +491,9 @@
     "upstream_url": "https://github.com/ImageMagick/ImageMagick",
     "upstream_license": "ImageMagick License（エンジン本体は初回に公式版を取得）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-image-workbench",
+    "replacement_name": "きうい画像・PNG工房"
   },
   {
     "slug": "kiwi-vector",
@@ -1098,7 +1140,9 @@
     "upstream_license": "MIT",
     "amazon_links": [],
     "windows_test_passed": true,
-    "advanced_screenshot": "/assets/screenshots/kiwi-png-advanced-public.png"
+    "advanced_screenshot": "/assets/screenshots/kiwi-png-advanced-public.png",
+    "replaced_by": "kiwi-image-workbench",
+    "replacement_name": "きうい画像・PNG工房"
   },
   {
     "slug": "kiwi-yaml",

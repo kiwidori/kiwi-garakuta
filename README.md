@@ -8,6 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きうい画像・PNG工房](https://kiwi-garakuta.pages.dev/tools/kiwi-image-workbench/) | 写真を変換・リサイズし、PNG圧縮と次の編集へ続けて進む | [ImageMagick](https://github.com/ImageMagick/ImageMagick) / [oxipng](https://github.com/oxipng/oxipng) |
 | [きういラベル印刷](https://kiwi-garakuta.pages.dev/tools/kiwi-labels/) | 名札・収納ラベルをA4に並べ、文字・余白・枚数を選んでPDFや画像に保存する | [Typst](https://github.com/typst/typst) |
 | [きうい動画・GIF工房](https://kiwi-garakuta.pages.dev/tools/kiwi-media-workbench/) | 動画を変換し、短い区間をGIF編集へ渡して順序・速さ・品質を調整する | [FFmpeg](https://github.com/FFmpeg/FFmpeg) / [gifski](https://github.com/ImageOptim/gifski) |
 | [きうい読み上げ](https://kiwi-garakuta.pages.dev/tools/kiwi-speech/) | 文章を合成音声に変換し、声・速さを選んでWAVに保存する | [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) |
@@ -18,7 +19,6 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | [きういPDF作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf-workbench/) | PDFを編集し、選択PDF・作成PDFを画像表示・PNG・テキスト保存へ渡す | [qpdf](https://github.com/qpdf/qpdf) / [MuPDF](https://github.com/ArtifexSoftware/mupdf) |
 | [きうい動画保存](https://kiwi-garakuta.pages.dev/tools/kiwi-video-save/) | 保存が許可された公開動画・音声をURLから1件ずつ保存する | [yt-dlp](https://github.com/yt-dlp/yt-dlp) |
 | [きうい名前整理](https://kiwi-garakuta.pages.dev/tools/kiwi-rename/) | ファイル名の置換・連番を確認して実行し、元に戻す | [F2](https://github.com/ayoisaiah/f2) |
-| [きうい画像工房](https://kiwi-garakuta.pages.dev/tools/kiwi-image/) | 写真をまとめてリサイズ・形式変換し、回転・切り抜き・色を調整する | [ImageMagick](https://github.com/ImageMagick/ImageMagick) |
 | [きういベクター工房](https://kiwi-garakuta.pages.dev/tools/kiwi-vector/) | ロゴ・イラストをSVGに変換し、色・輪郭を調整して保存する | [VTracer](https://github.com/visioncortex/vtracer) |
 | [きうい写真情報](https://kiwi-garakuta.pages.dev/tools/kiwi-photo-info/) | 写真の位置情報・撮影情報を確認し、削除・編集したコピーを作る | [ExifTool](https://github.com/exiftool/exiftool) |
 | [きうい圧縮箱](https://kiwi-garakuta.pages.dev/tools/kiwi-archive/) | 写真・書類の圧縮、ZIP・7zなどの中身の確認と新しいフォルダーへの展開 | [ouch](https://github.com/ouch-org/ouch) |
@@ -39,7 +39,6 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | [きういコード・文書作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-code-workbench/) | コード閲覧・シェル整形・資料生成・Markdown表示を続けて使う | [bat](https://github.com/sharkdp/bat) / [shfmt](https://github.com/mvdan/sh) / [code2prompt](https://github.com/mufeedvh/code2prompt) / [Glow](https://github.com/charmbracelet/glow) |
 | [きうい秘密チェック](https://kiwi-garakuta.pages.dev/tools/kiwi-secrets/) | 公開前のフォルダーからAPIキーなどの機密情報候補を探す | [Gitleaks](https://github.com/gitleaks/gitleaks) |
 | [きういHTTPビュー](https://kiwi-garakuta.pages.dev/tools/kiwi-http/) | HTTPの応答ヘッダー・本文を確認する | [xh](https://github.com/ducaale/xh) |
-| [きういPNG圧縮](https://kiwi-garakuta.pages.dev/tools/kiwi-png/) | PNGを圧縮して別ファイルへ保存する | [oxipng](https://github.com/oxipng/oxipng) |
 | [きういハッシュ](https://kiwi-garakuta.pages.dev/tools/kiwi-hash/) | BLAKE3ハッシュを計算・照合する | [b3sum / BLAKE3](https://github.com/BLAKE3-team/BLAKE3) |
 | [きうい色変換](https://kiwi-garakuta.pages.dev/tools/kiwi-color/) | HEX・RGB・HSLを変換して色見本を確認する | [pastel](https://github.com/sharkdp/pastel) |
 | [きうい文字絵](https://kiwi-garakuta.pages.dev/tools/kiwi-ascii/) | 静止画像をASCII・点字文字の文字絵に変換する | [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter) |
