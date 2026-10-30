@@ -1,0 +1,22 @@
+Kiwi Speech
+The interface is provided under the repository MIT license.
+The speech engine and model are not bundled. They are downloaded from their official distributions on request.
+
+sherpa-onnx 2.0.1: Apache-2.0
+https://github.com/k2-fsa/sherpa-onnx/tree/v2.0.1
+The C API ABI definitions follow the pinned header. See sherpa-onnx-LICENSE.txt.
+The selected official Windows build includes ONNX Runtime 1.28.2.
+See onnxruntime-LICENSE.txt and onnxruntime-ThirdPartyNotices.txt for Microsoft and third-party notices.
+
+Supertonic 3 model: BigScience Open RAIL-M
+https://huggingface.co/Supertone/supertonic-3
+See MODEL-LICENSE.txt, including paragraph 5 and Attachment A, which govern model use and generated output.
+These model-use conditions form part of the terms for using the speech model through this application.
+Users publishing generated speech must clearly disclose that it is synthetic speech as required by the model license.
+The MIT file in the model download describes its accompanying sample code; it does not replace the model's OpenRAIL-M conditions.
+
+Supertonic sample code: MIT, Copyright (c) 2025 Supertone Inc.
+https://github.com/supertone-inc/supertonic
+Python / Tcl / Tk: see Runtime-LICENSES.txt.
+PyInstaller 6.22.2: GPL-2.0-or-later with the bootloader exception; see PyInstaller-LICENSE.txt.
+OpenSSL: see OpenSSL-LICENSE.txt.

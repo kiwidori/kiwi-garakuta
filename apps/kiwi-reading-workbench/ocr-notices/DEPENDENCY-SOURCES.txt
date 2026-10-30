@@ -1,0 +1,30 @@
+KiwiOCR 0.1.0 dependency source and replacement information
+
+GEOS 3.14.1: https://download.osgeo.org/geos/geos-3.14.1.tar.bz2
+SHA256 3c20919cda9a505db07b5216baa980bacdaa0702da715b43f176fb07eff7e716
+The complete original source archive and original Certifi wheel are included
+in KiwiOCR-0.1.0-dependency-sources.zip on the same GitHub release.
+GEOS is LGPL-2.1; its full license accompanies the binaries in
+DEPENDENCY-LICENSES.txt and source COPYING. No GEOS source modifications
+were made by this application. Original wheels are pinned by URL/SHA256.
+
+Rebuilding and replacing GEOS on Windows x64:
+Install CMake and a C++14-capable Visual Studio C++ x64 toolchain.
+Extract the complete GEOS archive, open an x64 developer command prompt:
+  cmake -S geos-3.14.1 -B build -DBUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF
+  cmake --build build --config Release
+Close KiwiOCR. Back up _internal/shapely.libs. Copy rebuilt geos_c.dll under
+its existing geos_c-*.dll filename in that directory and copy its matching
+geos.dll alongside it. Keep dependent runtime DLLs resolvable. The C API
+and architecture must remain compatible with Shapely 2.2.0's extension.
+The renamed geos_c DLL still imports the new geos.dll by its normal name;
+the old hashed implementation DLL may remain unused. GEOS library hashes
+are not checked at runtime, and no signature prevents modification.
+Alternatively replace the GEOS DLLs in a compatible Shapely wheel and rebuild
+this MIT application using build.py (adjust the locally pinned wheel hash).
+Reverse engineering for debugging modifications of LGPL components is allowed.
+
+Certifi source is the unmodified wheel in the dependency source ZIP; unzip it
+to obtain the Python files, certificates and MPL-2.0 license. This application
+makes no modifications to those files. The full application source is at:
+https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-ocr
