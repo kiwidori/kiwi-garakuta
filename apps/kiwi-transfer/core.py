@@ -1,7 +1,7 @@
 """Pinned croc transport, with isolated settings and dedicated receive folders."""
 import hashlib,ipaddress,json,re,secrets,tempfile,threading,time,zipfile
 from pathlib import Path
-from runtime import resource_path
+from resource_paths import resource_path
 from native_runner import run_native
 ROOT=Path(__file__).resolve().parent
 _NATIVE=None

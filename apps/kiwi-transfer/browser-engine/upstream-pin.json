@@ -1,0 +1,26 @@
+{
+  "tag": "v0.11.7",
+  "url": "https://github.com/claudiodangelis/qrcp/releases/download/v0.11.7/qrcp_0.11.7_windows_amd64.zip",
+  "sha256": "e4c2635477db48a7f1856b26897764b57ddbfae1b457a4bb49bbdc04fa090369",
+  "native_sha256": "ca6f8baef6f36b97ab4758e43e950e9e00422d322bd67fd32629c4daa5377f26",
+  "packages": [
+    {
+      "name": "qrcode",
+      "version": "8.2",
+      "filename": "qrcode-8.2-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/dd/b8/d2d6d731733f51684bbf76bf34dab3b70a9148e8f2cef2bb544fccec681a/qrcode-8.2-py3-none-any.whl",
+      "sha256": "16e64e0716c14960108e85d853062c9e8bba5ca8252c0b4d0231b9df4060ff4f"
+    }
+  ],
+  "licenses": {
+    "Bootstrap-LICENSE.txt": "8a68c27ad022244b78dc5c9adb4cc5a4c92a994e3e11d356b291f227b2b04eaf",
+    "Go-LICENSE.txt": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+    "normalize-LICENSE.txt": "8781bc9996713938f6baea8a10c8426f9ae06778e562fafe5353669ae6c05f07",
+    "qrcode-LICENSE.txt": "40dfb903c94ee3f789500131311186548ecba5cefd3557623d7700e2522ab994",
+    "qrcode-ORIGINAL-LICENSE.txt": "3a850fa5f08101db6f40676c2786e10bd2cd5fff7b12ffdf1e0c434d4e49d90c",
+    "qrcp-BUILD-INFO.txt": "9cdcb763a234c9a93cb5aa6c7e451120306b239a394ece53105d9810500cb5f6",
+    "qrcp-DEPENDENCY-LICENSES.txt": "8196e2c7225f3f343383a50cbce26d041f0a27b0e5b32bc52adb1bb627e798c9",
+    "qrcp-LICENSE.txt": "1f9b365e4286ea0195920badfc9c34c3236730c44ce7b4f67fa24719f9fc7293",
+    "upstream-help.txt": "9dc4f5cdc167f90e8d01fc63b52d3504f8098a285bf08093b778a2561bc557be"
+  }
+}

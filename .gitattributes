@@ -109,3 +109,10 @@ apps/kiwi-pdf-stamp/*.txt -text -whitespace
 apps/kiwi-pdf-workbench/stamp-engine/*.txt -text -whitespace
 apps/kiwi-pdf-workbench/stamp-engine/upstream-pin.json -text -whitespace
 apps/kiwi-pdf-workbench/common-sources.json -text -whitespace
+
+apps/kiwi-transfer/*.py text eol=lf
+apps/kiwi-transfer/source-manifest.json -text -whitespace
+apps/kiwi-transfer/browser-engine/*.txt -text -whitespace
+apps/kiwi-transfer/browser-engine/*.json -text -whitespace
+apps/kiwi-transfer/README.txt -text -whitespace
+apps/kiwi-transfer/THIRD-PARTY-NOTICES.txt -text -whitespace

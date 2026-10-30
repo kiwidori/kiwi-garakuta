@@ -3,15 +3,16 @@ import copy,json,os,queue,sys,threading,tkinter as tk
 from pathlib import Path
 from tkinter import ttk,filedialog,messagebox
 from core import transfer,new_code,valid_code,validate_options,normalize_network,peer_address
-from runtime import resource_path
+from resource_paths import resource_path
 class App(tk.Tk):
     def __init__(self):
         super().__init__();self.title('きういファイル便');self.geometry('960x780');self.minsize(900,730)
         self.paths=[];self.controls=[];self.q=queue.Queue();self.cancel=threading.Event();self.worker=None;self.closing=False;self.received='';self.options={}
         self.relay_password=tk.StringVar()
         self.peer_ip=tk.StringVar()
+        self.browser=None
         self.mode=tk.StringVar(value='send');self.code=tk.StringVar(value=new_code());self.destination=tk.StringVar(value=str(Path.home()/'Downloads'));self.lan=tk.BooleanVar(value=True);self.zip=tk.BooleanVar();self.status=tk.StringVar(value='同じLAN内のPCへ送れます。ファイルを選び、共有コードを相手に伝えてください。')
-        self._build_ui();self.protocol('WM_DELETE_WINDOW',self.close);self.after(100,self.poll)
+        self._build_ui();self.protocol('WM_DELETE_WINDOW',self.close);self.poll_id=self.after(100,self.poll)
     def _build_ui(self):
         import tkinter as tk
         from tkinter import ttk, filedialog, messagebox
@@ -115,6 +116,9 @@ class App(tk.Tk):
 
         self.controls.append(btn_details)
 
+        browser_button=ttk.Button(left_frame,text='スマホのブラウザーと受け渡す…',command=self.open_browser)
+        browser_button.pack(fill='x',pady=(0,5));self.controls.append(browser_button)
+
         action_frame = ttk.Frame(left_frame)
         action_frame.pack(fill="x", pady=(0, 5))
 
@@ -146,7 +150,7 @@ class App(tk.Tk):
         self.log.pack(fill="both", expand=True)
 
         footer_text = ("送信側と受信側を同時に起動してください。共有コードは相手だけに伝えてください。\n"
-                       "転送は暗号化されます。受信したファイルは自動では開きません。標準公開リレーはこの版では使えません。")
+                       "PC同士の転送は暗号化されます。ブラウザー共有のHTTPは暗号化されません。受信ファイルは自動では開きません。")
         footer_label = ttk.Label(self, text=footer_text, wraplength=900, justify="center", foreground="gray")
         footer_label.pack(fill="x", side="bottom", pady=(5, 0))
 
@@ -210,6 +214,7 @@ class App(tk.Tk):
         text+=Path(resource_path('upstream-help.txt',Path(__file__).resolve().parent)).read_text(encoding='utf8')
         box.insert('1.0',text);box.configure(state='disabled')
     def start(self):
+        if self.browser and self.browser.winfo_exists():return
         if self.worker and self.worker.is_alive():return
         try:
             code=valid_code(self.code.get());mode=self.mode.get();opts=copy.deepcopy(self.options);opts.setdefault('global',{})['local']=self.lan.get();opts.setdefault('send',{})['zip']=self.zip.get();opts=normalize_network(validate_options(opts))
@@ -239,11 +244,24 @@ class App(tk.Tk):
             self.worker=None
             if self.closing:self.destroy();return
         except queue.Empty:pass
-        self.after(100,self.poll)
+        self.poll_id=self.after(100,self.poll)
     def stop(self):self.cancel.set();self.status.set('停止しています…')
     def open_received(self):
         if self.received and Path(self.received).is_dir():os.startfile(self.received)
     def close(self):
+        if self.browser and self.browser.winfo_exists():
+            self.closing=True;self.browser.close();return
         if self.worker and self.worker.is_alive():self.closing=True;self.stop()
         else:self.destroy()
+    def open_browser(self):
+        if self.worker and self.worker.is_alive():return
+        if self.browser and self.browser.winfo_exists():self.browser.lift();return
+        from browser_panel import BrowserDialog
+        self.browser=BrowserDialog(self)
+    def destroy(self):
+        if getattr(self,'poll_id',None):
+            try:self.after_cancel(self.poll_id)
+            except tk.TclError:pass
+            self.poll_id=None
+        super().destroy()
 if __name__=='__main__':App().mainloop()
