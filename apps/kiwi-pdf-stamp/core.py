@@ -1,5 +1,5 @@
 """Add visible PDF marks in an isolated, offline native process."""
-import json,math,os,re,sys,tempfile
+import ctypes,json,math,re,sys,tempfile
 from pathlib import Path
 from consumer_runtime import Engine,stage,save_file,check
 ROOT=Path(sys.executable).parent if getattr(sys,'frozen',False) else Path(__file__).resolve().parent
@@ -69,7 +69,12 @@ def description(v):
 def raster_text(text,work):
  from PIL import Image,ImageDraw,ImageFont
  if not text.strip() or len(text)>200 or len(text.splitlines())>4 or any(ord(c)<32 and c!='\n' for c in text):raise ValueError('日本語の文字は200文字・4行までです。')
- fontpath=Path(os.environ.get('WINDIR','C:/Windows'))/'Fonts/YuGothM.ttc'
+ buffer=ctypes.create_unicode_buffer(32768)
+ windows=ctypes.WinDLL('kernel32',use_last_error=True).GetWindowsDirectoryW
+ windows.argtypes=[ctypes.c_wchar_p,ctypes.c_uint];windows.restype=ctypes.c_uint
+ length=windows(buffer,len(buffer))
+ if not 0<length<len(buffer):raise OSError('Windowsのフォルダーを取得できません。')
+ fontpath=Path(buffer.value)/'Fonts/YuGothM.ttc'
  if not fontpath.is_file():raise ValueError('Windowsの游ゴシックがありません。日本語入りPNG画像を代わりに指定してください。')
  font=ImageFont.truetype(str(fontpath),80)
  box=ImageDraw.Draw(Image.new('RGBA',(1,1))).multiline_textbbox((0,0),text,font=font,spacing=16)
