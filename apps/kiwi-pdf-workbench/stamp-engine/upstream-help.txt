@@ -1,0 +1,408 @@
+version: 0.16.4
+ commit: 0f5ac76d
+   date: 2026-10-27 20:21:02 UTC
+     go: go1.27.3
+
+
+pdfcpu provides command-line tools for working with PDF files.
+It is built on a Go API for direct PDF control.
+
+Usage:
+  pdfcpu [command]
+
+Available Commands:
+  annotations   List, remove page annotations
+  attachments   List, add, remove, extract embedded file attachments
+  booklet       Arrange pages onto larger sheets of paper to make a booklet or zine
+  bookmarks     List, import, export, remove bookmarks
+  boxes         List, add, remove page boundaries for selected pages
+  certificates  List, inspect, import, reset certificates
+  changeopw     Change owner password
+  changeupw     Change user password
+  collect       Create custom sequence of selected pages
+  completion    Generate shell completion script
+  config        Initialize, list, inspect, validate, reset configuration
+  create        Create PDF content including forms via JSON
+  crop          Set cropbox for selected pages
+  cut           Custom cut pages horizontally or vertically
+  decrypt       Remove password protection
+  encrypt       Set password protection
+  extract       Extract images, fonts, content, pages or metadata
+  fonts         Install, list supported fonts, create cheat sheets
+  form          List, remove fields, lock, unlock, reset, export, fill form via JSON or CSV
+  grid          Rearrange pages or images for enhanced browsing experience
+  help          Help about any command
+  images        List, extract, update images
+  import        Import/convert images to PDF
+  info          Print file info
+  keywords      List, add, remove keywords
+  merge         Concatenate PDFs
+  ndown         Cut selected page into n pages symmetrically
+  nup           Rearrange pages or images for reduced number of pages
+  optimize      Optimize a PDF by getting rid of redundant page resources
+  pagelayout    List, set, reset page layout for opened document
+  pagemode      List, set, reset page mode for opened document
+  pages         Insert, remove selected pages
+  paper         Print list of supported paper sizes
+  permissions   List, set user access permissions
+  portfolio     List, add, remove, extract portfolio entries
+  poster        Create poster using paper size
+  properties    List, add, remove document properties
+  resize        Scale selected pages
+  rotate        Rotate selected pages
+  selectedpages Print definition of the -pages flag
+  signatures    Remove signatures, validate integrity
+  split         Split up inFile by span or bookmark
+  stamp         Add, remove, update text, image or PDF stamps for selected pages
+  trim          Create trimmed version of selected pages
+  validate      Validate PDF against PDF 32000-1:2008 (PDF 1.7) + basic PDF 2.0 validation
+  version       Print version
+  viewerpref    List, set, reset viewer preferences
+  watermark     Add, remove, update watermarks
+  zoom          Zoom in/out of selected pages
+
+Flags:
+  -c, --conf string     set or disable config dir: $path | disable
+      --force           allow overwriting files and other destructive operations
+  -h, --help            help for pdfcpu
+  -o, --offline         disable http traffic
+  -q, --quiet           disable output
+  -v, --verbose count   Increase verbosity. Use -v or -vv.
+
+Use "pdfcpu [command] --help" for more information about a command.
+
+
+Process stamping for selected pages.
+
+      pages ... Please refer to "pdfcpu selectedpages"
+        upw ... user password
+        opw ... owner password
+       mode ... text, image, PDF
+     string ... display string for text based watermarks
+       file ... image or PDF file
+description ... fontname, points, position, offset, scalefactor, aligntext, rotation,
+                diagonal, opacity, rendermode, strokecolor, fillcolor, bgcolor, margins, border
+     inFile ... input PDF file, use - to read from stdin
+    outFile ... output PDF file, use - to write to stdout
+
+Pipeline examples:
+   aws s3 cp s3://acme-branding/proposal.pdf - \
+      | pdfcpu stamp add "CONFIDENTIAL" "pos:tr, scale:.35 abs, op:.6" - - \
+      | aws s3 cp - s3://acme-branding/proposal-stamped.pdf
+
+   aws s3 cp s3://acme-branding/proposal-stamped.pdf - \
+      | pdfcpu stamp update "APPROVED" "pos:tr, scale:.35 abs, op:.6" - - \
+      | aws s3 cp - s3://acme-branding/proposal-approved.pdf
+
+   aws s3 cp s3://acme-branding/proposal-approved.pdf - \
+      | pdfcpu stamp remove - - \
+      | aws s3 cp - s3://acme-branding/proposal-clean.pdf
+
+There are 3 different kinds of stamps:
+   1) text based:
+      --mode text string
+         eg. pdfcpu stamp add "Hello gopher!" "" in.pdf out.pdf --mode text
+         Use the following format strings:
+               %p{off} ... current page number, page number offset off defaults to 0
+               %P      ... total pages
+         eg. pdfcpu stamp add --mode text -- 'Page %p of %P' 'scale:1.0 abs, pos:bc, rot:0' in.pdf out.pdf
+                                             'Page %p3 of %P' will base page number on offset=3
+   2) image based
+      --mode image imageFileName
+         supported extensions: .jpg, .jpeg, .png, .tif, .tiff, .webp
+         eg. pdfcpu stamp add 'logo.png' '' in.pdf out.pdf --mode image
+
+   3) PDF based
+      --mode pdf PDFFileName:page#
+         Stamp selected pages of infile with one specific page of a stamp PDF file.
+         Eg: pdfcpu stamp add 'stamp.pdf:3' '' in.pdf out.pdf --mode pdf ... stamp each page of in.pdf with page 3 of stamp.pdf
+      
+      --mode pdf PDFFileName
+         Multistamp your file, meaning apply all pages of a stamp PDF file one by one to ascending pages of inFile.
+         Eg: pdfcpu stamp add 'stamp.pdf' '' in.pdf out.pdf --mode pdf ... multistamp all pages of in.pdf with ascending pages of stamp.pdf
+      
+      --mode pdf PDFFileName:startPage#Src:startPage#Dest
+         Customize your multistamp by starting with startPage#Src of a stamp PDF file.
+         Apply repeatedly pages of the stamp file to inFile starting at startPage#Dest.
+         Eg: pdfcpu stamp add 'stamp.pdf:2:3' '' in.pdf out.pdf --mode pdf ... multistamp starting with page 2 of stamp.pdf onto page 3 of in.pdf
+   
+
+<description> is a comma separated configuration string containing these optional entries:
+
+      (defaults: "font:Helvetica, points:24, rtl:off, pos:c, off:0,0 scale:0.5 rel, rot:0, d:1, op:1, margins:0 and for all colors: 0.5 0.5 0.5")
+
+   fontname:         Please refer to "pdfcpu fonts list"
+
+   scriptname:       to avoid embedding of big font files
+
+                     ISO-15924 code    CID System Info
+                     Hans              UniGB-UTF16-H  / GB1
+                     Hant              UniCNS-UTF16-H / CNS1
+                     Hira, Kana, Jpan  UniJIS-UTF16-H / Japan1
+                     Hang, Kore        UniKS-UTF16-H  / KR
+
+   points:           fontsize in points, in combination with absolute scaling only.
+
+   rtl:              render right to left (on/off, true/false, t/f)
+
+   position:         one of the anchors:
+
+                           tl|top-left     tc|top-center      tr|top-right
+                            l|left          c|center           r|right
+                           bl|bottom-left  bc|bottom-center   br|bottom-right
+
+   offset:           (dx dy) in given display unit eg. '15 20'
+
+   scalefactor:      0.0 < i <= 1.0 {r|rel} | 0.0 < i {a|abs}
+
+   aligntext:        l|left, c|center, r|right, j|justified (for text watermarks only)
+
+   fillcolor:        color value to be used when rendering text, see also rendermode
+                     for backwards compatibility "color" is also accepted.
+
+   strokecolor:      color value to be used when rendering text, see also rendermode
+
+   backgroundcolor:  color value for visualization of the bounding box background for text.
+                     "bgcolor" is also accepted.
+
+   rotation:         -180.0 <= x <= 180.0
+
+   diagonal:         render along diagonal
+                     1..lower left to upper right
+                     2..upper left to lower right (if present overrules r!)
+                     Only one of rotation and diagonal is allowed!
+
+   opacity:          where 0.0 <= x <= 1.0
+
+   mode, rendermode: 0 ... fill (applies fill color)
+                     1 ... stroke (applies stroke color)
+                     2 ... fill & stroke (applies both fill and stroke colors)
+
+   margins:          Set bounding box margins for text (requires background color) i >= 0
+                     i       ... set all four margins
+                     i j     ... set top/bottom margins to i
+                                 set left/right margins to j
+                     i j k   ... set top margin to i
+                                 set left/right margins to j
+                                 set bottom margins to k
+                     i j k l ... set top, right, bottom, left margins
+
+   border:           Set bounding box border for text (requires background color)
+                     i {color} {round}
+                     i     ... border width > 0
+                     color ... border color
+                     round ... set round bounding box corners
+
+   url:              Add link annotation for stamps only (omit https://)
+
+A color value: 3 color intensities, where 0.0 < i < 1.0, eg 1.0,
+               or the hex RGB value: #RRGGBB, eg #FF0000 = red
+
+All configuration string parameters support completion.
+
+e.g. "pos:bl, off: 20 5"   "rot:45"                    "op:0.5, scale:0.5 abs, rot:0"
+     "d:2"                 "scale:.75 abs, points:48"  "rot:-90, scale:0.75 rel"
+     "fo:Courier, scale:0.75, str: 0.5 0.0 0.0, rot:20"
+
+Usage:
+  pdfcpu stamp [command]
+
+Available Commands:
+  add         Add stamps
+  remove      Remove stamps
+  update      Update stamps
+
+Flags:
+  -h, --help           help for stamp
+  -p, --pages string   pages to process
+
+Global Flags:
+  -c, --conf string     set or disable config dir: $path | disable
+      --force           allow overwriting files and other destructive operations
+  -o, --offline         disable http traffic
+  -q, --quiet           disable output
+  -v, --verbose count   Increase verbosity. Use -v or -vv.
+
+Use "pdfcpu stamp [command] --help" for more information about a command.
+
+
+Process watermarking for selected pages.
+
+      pages ... Please refer to "pdfcpu selectedpages"
+       mode ... text, image, PDF
+     string ... display string for text based watermarks
+       file ... image or PDF file
+description ... fontname, points, position, offset, scalefactor, aligntext, rotation,
+                diagonal, opacity, rendermode, strokecolor, fillcolor, bgcolor, margins, border
+     inFile ... input PDF file, use - to read from stdin
+    outFile ... output PDF file, use - to write to stdout
+
+Pipeline examples:
+   aws s3 cp s3://acme-dataroom/draft.pdf - \
+      | pdfcpu watermark add "DRAFT" "diag:1, scale:.8 rel, op:.25" - - \
+      | aws s3 cp - s3://acme-dataroom/draft-watermarked.pdf
+
+   aws s3 cp s3://acme-dataroom/draft-watermarked.pdf - \
+      | pdfcpu watermark update "REVIEW" "diag:1, scale:.8 rel, op:.25" - - \
+      | aws s3 cp - s3://acme-dataroom/draft-review.pdf
+
+   aws s3 cp s3://acme-dataroom/draft-review.pdf - \
+      | pdfcpu watermark remove - - \
+      | aws s3 cp - s3://acme-dataroom/draft-clean.pdf
+
+There are 3 different kinds of watermarks:
+
+   1) text based:
+      --mode text string
+         eg. pdfcpu watermark add 'Hello gopher!' '' in.pdf out.pdf --mode text
+         Use the following format strings:
+               %p{off} ... current page number, page number offset off defaults to 0
+               %P      ... total pages
+         eg. pdfcpu watermark add -mode text -- 'Page %p of %P' 'scale:1.0 abs, pos:bc, rot:0' in.pdf out.pdf
+                                                'Page %p3 of %P' will base page number on offset=3
+
+   2) image based
+      --mode image imageFileName
+         supported extensions: .jpg, .jpeg, .png, .tif, .tiff, .webp
+         eg. pdfcpu watermark add 'logo.png' '' in.pdf out.pdf --mode image
+
+   3) PDF based
+      --mode pdf PDFFileName:page#
+         Watermark selected pages of infile with one specific page of a watermark PDF file.
+         Eg: pdfcpu watermark add 'watermark.pdf:3' '' in.pdf out.pdf --mode pdf  ... watermark each page of in.pdf with page 3 of watermark.pdf
+
+      --mode pdf PDFFileName
+         Multiwatermark your file, meaning apply all pages of a watermark PDF file one by one to ascending pages of inFile.
+         Eg: pdfcpu watermark add 'watermark.pdf' '' in.pdf out.pdf --mode pdf  ... multiwatermark all pages of in.pdf with ascending pages of watermark.pdf
+
+      --mode pdf PDFFileName:startPage#Src:startPage#Dest
+         Customize your multiwatermark by starting with startPage#Src of a watermark PDF file.
+         Apply repeatedly pages of the watermark file to inFile starting at startPage#Dest.
+         Eg: pdfcpu watermark add 'watermark.pdf:2:3' '' in.pdf out.pdf --mode pdf ... multiwatermark starting with page 2 of watermark.pdf onto page 3 of in.pdf
+
+   A watermark is the first content that gets rendered for a page.
+   The visibility of the watermark depends on the transparency of all layers rendered on top.
+
+
+<description> is a comma separated configuration string containing these optional entries:
+
+      (defaults: "font:Helvetica, points:24, rtl:off, pos:c, off:0,0 scale:0.5 rel, rot:0, d:1, op:1, margins:0 and for all colors: 0.5 0.5 0.5")
+
+   fontname:         Please refer to "pdfcpu fonts list"
+
+   scriptname:       to avoid embedding of big font files
+
+                     ISO-15924 code    CID System Info
+                     Hans              UniGB-UTF16-H  / GB1
+                     Hant              UniCNS-UTF16-H / CNS1
+                     Hira, Kana, Jpan  UniJIS-UTF16-H / Japan1
+                     Hang, Kore        UniKS-UTF16-H  / KR
+
+   points:           fontsize in points, in combination with absolute scaling only.
+
+   rtl:              render right to left (on/off, true/false, t/f)
+
+   position:         one of the anchors:
+
+                           tl|top-left     tc|top-center      tr|top-right
+                            l|left          c|center           r|right
+                           bl|bottom-left  bc|bottom-center   br|bottom-right
+
+   offset:           (dx dy) in given display unit eg. '15 20'
+
+   scalefactor:      0.0 < i <= 1.0 {r|rel} | 0.0 < i {a|abs}
+
+   aligntext:        l|left, c|center, r|right, j|justified (for text watermarks only)
+
+   fillcolor:        color value to be used when rendering text, see also rendermode
+                     for backwards compatibility "color" is also accepted.
+
+   strokecolor:      color value to be used when rendering text, see also rendermode
+
+   backgroundcolor:  color value for visualization of the bounding box background for text.
+                     "bgcolor" is also accepted.
+
+   rotation:         -180.0 <= x <= 180.0
+
+   diagonal:         render along diagonal
+                     1..lower left to upper right
+                     2..upper left to lower right (if present overrules r!)
+                     Only one of rotation and diagonal is allowed!
+
+   opacity:          where 0.0 <= x <= 1.0
+
+   mode, rendermode: 0 ... fill (applies fill color)
+                     1 ... stroke (applies stroke color)
+                     2 ... fill & stroke (applies both fill and stroke colors)
+
+   margins:          Set bounding box margins for text (requires background color) i >= 0
+                     i       ... set all four margins
+                     i j     ... set top/bottom margins to i
+                                 set left/right margins to j
+                     i j k   ... set top margin to i
+                                 set left/right margins to j
+                                 set bottom margins to k
+                     i j k l ... set top, right, bottom, left margins
+
+   border:           Set bounding box border for text (requires background color)
+                     i {color} {round}
+                     i     ... border width > 0
+                     color ... border color
+                     round ... set round bounding box corners
+
+   url:              Add link annotation for stamps only (omit https://)
+
+A color value: 3 color intensities, where 0.0 < i < 1.0, eg 1.0,
+               or the hex RGB value: #RRGGBB, eg #FF0000 = red
+
+All configuration string parameters support completion.
+
+e.g. "pos:bl, off: 20 5"   "rot:45"                    "op:0.5, scale:0.5 abs, rot:0"
+     "d:2"                 "scale:.75 abs, points:48"  "rot:-90, scale:0.75 rel"
+     "fo:Courier, scale:0.75, str: 0.5 0.0 0.0, rot:20"
+
+Usage:
+  pdfcpu watermark [command]
+
+Available Commands:
+  add         Add, remove, update text, image or PDF watermarks for selected pages
+  remove      Remove watermarks
+  update      Update watermarks
+
+Flags:
+  -h, --help           help for watermark
+  -p, --pages string   pages to process
+
+Global Flags:
+  -c, --conf string     set or disable config dir: $path | disable
+      --force           allow overwriting files and other destructive operations
+  -o, --offline         disable http traffic
+  -q, --quiet           disable output
+  -v, --verbose count   Increase verbosity. Use -v or -vv.
+
+Use "pdfcpu watermark [command] --help" for more information about a command.
+
+
+Print a list of supported fonts (includes the 14 PDF core fonts).
+Install given True Type fonts(.ttf) or True Type collections(.ttc) for usage in stamps/watermarks.
+Create single page PDF cheat sheets in current dir.
+
+Usage:
+  pdfcpu fonts [command]
+
+Available Commands:
+  cheatsheet  Create font cheat sheets
+  install     Install fonts
+  list        List supported fonts
+
+Flags:
+  -h, --help   help for fonts
+
+Global Flags:
+  -c, --conf string     set or disable config dir: $path | disable
+      --force           allow overwriting files and other destructive operations
+  -o, --offline         disable http traffic
+  -q, --quiet           disable output
+  -v, --verbose count   Increase verbosity. Use -v or -vv.
+
+Use "pdfcpu fonts [command] --help" for more information about a command.

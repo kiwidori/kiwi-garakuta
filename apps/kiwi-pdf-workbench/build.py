@@ -60,6 +60,16 @@ def build():
     for name, digest in manifest['files'].items():
         if hashlib.sha256((ROOT/name).read_bytes()).hexdigest() != digest:
             raise ValueError('Build manifest mismatch: '+name)
+    stamp_pin = json.loads((ROOT/'stamp-engine/upstream-pin.json').read_text(encoding='utf8'))
+    import PIL
+    if PIL.__version__ != stamp_pin['pillow_version']:
+        raise ValueError('Pillow version mismatch')
+    for name, digest in stamp_pin['pillow_binaries'].items():
+        if hashlib.sha256((Path(PIL.__file__).parent/name).read_bytes()).hexdigest() != digest:
+            raise ValueError('Pillow binary mismatch')
+    for name, digest in json.loads((ROOT/'common-sources.json').read_text(encoding='utf8')).items():
+        if hashlib.sha256((ROOT.parent/'common'/name).read_bytes().replace(b'\r\n',b'\n')).hexdigest() != digest:
+            raise ValueError('Shared source mismatch')
     with tempfile.TemporaryDirectory(prefix='kiwi-pdf-workbench-build-') as td:
         folder = Path(td)
         native = folder/'native'
@@ -74,7 +84,7 @@ def build():
                 z.write(native/name, name)
         datas = [(str(payload),'.'),(str(hostpin),'.')]
         datas += [(str(ROOT/name),'.') for name in ['upstream-pin.json','job-schema.json','upstream-help.txt']]
-        spec = f'''a=Analysis([{str(ROOT/'main.py')!r}],pathex=[{str(ROOT)!r},{str(ROOT.parent/'common')!r}],binaries=[],datas={datas!r},hiddenimports=[],hookspath=[],hooksconfig={{}},runtime_hooks=[],excludes=['PIL','numpy','matplotlib','IPython','cryptography','setuptools','pkg_resources','pytest','requests','yaml'],noarchive=False)
+        spec = f'''a=Analysis([{str(ROOT/'main.py')!r}],pathex=[{str(ROOT)!r},{str(ROOT.parent/'common')!r}],binaries=[],datas={datas!r},hiddenimports=[],hookspath=[],hooksconfig={{}},runtime_hooks=[],excludes=['numpy','matplotlib','IPython','cryptography','setuptools','pkg_resources','pytest','requests','yaml'],noarchive=False)
 pyz=PYZ(a.pure)
 exe=EXE(pyz,a.scripts,a.binaries,a.datas,[],name='KiwiPDFWorkbench',debug=False,bootloader_ignore_signals=False,strip=False,upx=False,console=False,disable_windowed_traceback=False)
 '''
@@ -91,6 +101,8 @@ exe=EXE(pyz,a.scripts,a.binaries,a.datas,[],name='KiwiPDFWorkbench',debug=False,
         shutil.copy2(folder/'dist/KiwiPDFWorkbench.exe',release)
         names = {'README.txt','THIRD-PARTY-NOTICES.txt','PyInstaller-LICENSE.txt','Python-OpenSSL-LICENSE.txt',
                  'MuPDF-LICENSE.txt','upstream-pin.json','image-engine/upstream-pin.json','build-manifest.json','PdfHost.cs',*pin['licenses']}
+        names.update('stamp-engine/'+p.name for p in (ROOT/'stamp-engine').iterdir() if p.is_file())
+        names.add('common-sources.json')
         for name in names:
             dest = release/name
             dest.parent.mkdir(parents=True,exist_ok=True)
@@ -107,7 +119,7 @@ exe=EXE(pyz,a.scripts,a.binaries,a.datas,[],name='KiwiPDFWorkbench',debug=False,
         for name,path in [('Python',Path(sys.base_prefix)/'LICENSE.txt'),('Tcl8.6.15',tcl),('Tk',Path(sys.base_prefix)/'tcl/tk8.6/license.terms')]:
             texts.append('=== '+name+' ===\n'+path.read_text(encoding='utf8'))
         (release/'Runtime-LICENSES.txt').write_text('\n\n'.join(texts),encoding='utf8')
-    out = ROOT/'KiwiPDFWorkbench-0.1.0-win11-x64.zip'
+    out = ROOT/'KiwiPDFWorkbench-0.2.0-win11-x64.zip'
     with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
         for path in sorted(release.rglob('*')):
             if path.is_file():

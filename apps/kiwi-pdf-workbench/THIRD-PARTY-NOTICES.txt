@@ -24,3 +24,8 @@ https://github.com/ArtifexSoftware/mupdf/tree/1.28.5
 The original MuPDF executable is not included in this GUI ZIP.
 It is downloaded from the official unmodified distribution on first use.
 See MuPDF-LICENSE.txt for the reference license.
+
+
+PDF marking: pdfcpu 0.16.4 (Apache-2.0), acquired separately from the official archive.
+Pillow 12.3.0 and image codecs are included. See stamp-engine/THIRD-PARTY-NOTICES.txt and accompanying original licenses.
+Windows Yu Gothic is used locally and is not included.

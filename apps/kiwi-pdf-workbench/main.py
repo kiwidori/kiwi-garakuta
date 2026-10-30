@@ -13,6 +13,7 @@ if not getattr(sys, 'frozen', False):
 from consumer_runtime import safe_path
 import editor
 import pdf_images
+from stamp_panel import StampDialog
 
 
 class ImageDialog(tk.Toplevel):
@@ -132,6 +133,9 @@ class ImageDialog(tk.Toplevel):
 
 class App(editor.App):
     def __init__(self):
+        self.stamp_worker = None
+        self.stamp_dialog = None
+        self.stamp_events = queue.Queue()
         self.image_worker = None
         self.image_dialog = None
         self.image_events = queue.Queue()
@@ -147,14 +151,69 @@ class App(editor.App):
             button.pack(side='left', padx=(0, 10))
             self.controls.append(button)
         ttk.Label(bar, text='編集したPDFを、そのままPNGやテキストへ。').pack(side='left')
+        row = ttk.Frame(self, padding=(14, 4))
+        row.pack(side='bottom', fill='x', before=first)
+        for text, command in [('選択PDFに文字・ロゴを重ねる', self.stamp_selected), ('作成PDFに文字・ロゴを重ねる', self.stamp_created)]:
+            button = ttk.Button(row, text=text, command=command)
+            button.pack(side='left', padx=(0, 10))
+            self.controls.append(button)
 
     def busy(self):
-        return super().busy() or self.image_worker is not None
+        return super().busy() or self.image_worker is not None or self.stamp_worker is not None
 
     def set_busy(self, value):
         super().set_busy(value)
         if self.image_dialog and self.image_dialog.winfo_exists():
             self.image_dialog.set_busy(value)
+        if self.stamp_dialog and self.stamp_dialog.winfo_exists():
+            self.stamp_dialog.set_busy(value)
+
+    def show_stamp_path(self, path, pages='', password=''):
+        if self.busy():
+            return
+        try:
+            source = safe_path(path)
+            if not source.is_file() or source.suffix.lower() != '.pdf' or not 0 < source.stat().st_size <= 32*1024**2:
+                raise ValueError('文字・ロゴを重ねるPDFは32 MiB以下で指定してください。分割ZIPやレポートは渡せません。')
+            if password:
+                raise ValueError('暗号化PDFは先に解除したコピーを作成し、そのPDFを渡してください。')
+        except (ValueError, OSError) as error:
+            self.status_var.set(str(error))
+            return
+        if self.stamp_dialog and self.stamp_dialog.winfo_exists():
+            self.stamp_dialog.destroy()
+        self.stamp_dialog = StampDialog(self, source, pages)
+        return self.stamp_dialog
+
+    def stamp_selected(self):
+        if self.busy():
+            return
+        try:
+            row = self.selected_rows('extract')[0]
+            return self.show_stamp_path(row['path'], row.get('pages') or '', row.get('password', ''))
+        except ValueError as error:
+            self.status_var.set(str(error))
+
+    def stamp_created(self):
+        if self.last_output:
+            return self.show_stamp_path(self.last_output)
+        self.status_var.set('先にPDFを作成してください。')
+
+    def start_stamp(self, job, done):
+        if self.busy() or not self.stamp_dialog:
+            return
+        gc.collect()
+        self.cancel.clear()
+        self.set_busy(True)
+        self.stamp_dialog.status.set('処理しています…')
+        self.status_var.set('PDFのスタンプを処理しています…')
+        def worker():
+            try:
+                self.stamp_events.put(('done', (done, job())))
+            except Exception as error:
+                self.stamp_events.put(('error', str(error)))
+        self.stamp_worker = threading.Thread(target=worker, daemon=False)
+        self.stamp_worker.start()
 
     def show_image_path(self, path, pages='1', password=''):
         if self.busy():
@@ -212,6 +271,34 @@ class App(editor.App):
     def poll(self):
         while True:
             try:
+                kind, value = self.stamp_events.get_nowait()
+            except queue.Empty:
+                break
+            if kind == 'progress':
+                if self.stamp_dialog:
+                    self.stamp_dialog.status.set(value)
+                continue
+            if self.stamp_worker:
+                self.stamp_worker.join(timeout=1)
+            self.stamp_worker = None
+            self.set_busy(False)
+            dialog = self.stamp_dialog
+            if dialog and dialog.winfo_exists():
+                if dialog.closing or self.closing:
+                    dialog.destroy()
+                    self.stamp_dialog = None
+                elif kind == 'error':
+                    dialog.status.set(value[:500])
+                    self.status_var.set(value[:500])
+                else:
+                    done, result = value
+                    try:
+                        done(result)
+                        self.status_var.set('スタンプ処理が完了しました。')
+                    except Exception as error:
+                        dialog.status.set(str(error))
+        while True:
+            try:
                 kind, value = self.image_events.get_nowait()
             except queue.Empty:
                 break
@@ -240,6 +327,16 @@ class App(editor.App):
                     except Exception as error:
                         dialog.status.set(str(error))
         super().poll()
+
+    def destroy(self):
+        if any(worker and worker.is_alive() for worker in [getattr(self, name, None) for name in ['worker', 'image_worker', 'stamp_worker']]):
+            self.closing = True
+            self.cancel.set()
+            self.after(20, self.destroy)
+            return
+        for timer in self.tk.call('after', 'info'):
+            self.after_cancel(timer)
+        super().destroy()
 
 
 if __name__ == '__main__':

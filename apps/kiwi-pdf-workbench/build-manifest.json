@@ -4,6 +4,15 @@
     "image-engine/upstream-pin.json": "4fb8de71b5f94150d44eb018a40bfa6324a8823564766c8a705ad151324ad6cf",
     "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
     "Python-OpenSSL-LICENSE.txt": "feb9bd5f71806c596971d4dfa64c5a93904f9d82b4d3ebd9244a12058f22578e",
-    "PdfHost.cs": "d0185f496f9b98cabf513f702322c66446c671dc827f3ba6d41665fc590899c9"
+    "PdfHost.cs": "d0185f496f9b98cabf513f702322c66446c671dc827f3ba6d41665fc590899c9",
+    "stamp-engine/OpenSSL-LICENSE.txt": "feb9bd5f71806c596971d4dfa64c5a93904f9d82b4d3ebd9244a12058f22578e",
+    "stamp-engine/pdfcpu-LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "stamp-engine/Pillow-LICENSE.txt": "4f7866a74802c6326f81faff59a56546b6aec2b10b91973e0e9308de95e79857",
+    "stamp-engine/PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "stamp-engine/README.txt": "5ae635f7787ca294d03fcc5c88684cb8ac96e6947ab195e608cc7a4f5b52f648",
+    "stamp-engine/THIRD-PARTY-NOTICES.txt": "6f975dd83c12bcdfc9dacfec31b59e61cb01236c211c45400ffc45d2ab3d92c0",
+    "stamp-engine/upstream-help.txt": "2727eafa2422140a51d626942b1b6a4a799f82ee82f135ade34fa6431accd951",
+    "stamp-engine/upstream-pin.json": "16fce2c7ef41b94c20d1718b87f893a51ae0eedc4bc93b95389757cd744f54f6",
+    "common-sources.json": "93ef06693c5cc00c7c4efa71e9db0bda5c1891ce4694934029d81dbe97437eab"
   }
 }

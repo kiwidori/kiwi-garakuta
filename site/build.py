@@ -61,6 +61,12 @@ def require_tool(item: dict) -> None:
         raise ValueError(f"Screenshot must be local: {item['slug']}")
     if not (ROOT / "site" / item["screenshot"].lstrip("/")).is_file():
         raise ValueError(f"Screenshot not found: {item['screenshot']}")
+    for shot in item.get("workflow_screenshots", []):
+        if (not isinstance(shot, dict) or not isinstance(shot.get("src"), str) or
+                not shot["src"].startswith("/assets/screenshots/") or ".." in shot["src"] or
+                not isinstance(shot.get("caption"), str) or not shot["caption"].strip() or
+                not (ROOT / "site" / shot["src"].lstrip("/")).is_file()):
+            raise ValueError(f"Workflow screenshot not found: {item['slug']}")
     advanced_shot = item.get("advanced_screenshot")
     if advanced_shot and (not advanced_shot.startswith("/assets/screenshots/") or
                           not (ROOT / "site" / advanced_shot.lstrip("/")).is_file()):
@@ -107,6 +113,8 @@ def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_
                     '<a href="https://github.com/kiwidori/kiwi-garakuta/blob/main/docs/upstream-feature-audit.md" rel="noopener noreferrer">対応する機能と制限の一覧 ↗</a></p>'
                     f'<figure class="shot"><img src="{esc(item["advanced_screenshot"])}" alt="{esc(item["name"])}の詳細機能画面" loading="lazy">'
                     '<figcaption>詳細機能で追加オプションを実行した画面</figcaption></figure></section>')
+    workflow = "".join(f'<figure class="shot"><img src="{esc(shot["src"])}" alt="{esc(shot["caption"])}" loading="lazy"><figcaption>{esc(shot["caption"])}</figcaption></figure>\n'
+                       for shot in item.get("workflow_screenshots", []))
     body = f"""<nav class="crumb"><a href="/">一覧</a> / {esc(item['name'])}</nav>
 <section class="hero"><div class="eyebrow">Windows 11 · 無料 · ZIP版</div><h1>{esc(item['name'])}</h1>
 <p class="lead">{esc(item['summary'])}</p>
@@ -115,7 +123,7 @@ def tool_page(item: dict, site_name: str, contact: str, paypal_url: str, paypal_
 {replacement}
 <figure class="shot"><img src="{esc(item['screenshot'])}" alt="{esc(item['name'])}の実際の画面" loading="lazy">
 <figcaption>実際の動作画面</figcaption></figure>
-<section><h2>できること</h2><ul>{features}</ul></section>
+{workflow}<section><h2>できること</h2><ul>{features}</ul></section>
 <section><h2>使い方</h2><ol>{steps}</ol></section>
 {advanced}
 <section><h2>制限と注意点</h2><p>{esc(item['limitations'])}</p></section>

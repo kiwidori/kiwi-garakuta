@@ -1,0 +1,10 @@
+pdfcpu 0.16.4 / Apache-2.0
+https://github.com/pdfcpu/pdfcpu
+Engine is not bundled: the first-use button downloads the official, unmodified Windows archive.
+Upstream archive includes its LICENSE.txt. See upstream-pin.json for URL, sizes and SHA-256.
+Go module SBOM: https://github.com/pdfcpu/pdfcpu/releases/download/v0.16.4/pdfcpu_0.16.4_Windows_x86_64.zip.sbom.json
+
+Pillow 12.3.0 and compiled image libraries: see Pillow-LICENSE.txt and OpenSSL-LICENSE.txt.
+PyInstaller 6.22.2 / GPL with bootloader exception: see PyInstaller-LICENSE.txt.
+Python / Tcl / Tk: see Runtime-LICENSES.txt generated in the distribution.
+Windows Yu Gothic font is used locally for rendering and is not distributed with this program.
