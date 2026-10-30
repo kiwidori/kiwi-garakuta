@@ -28,7 +28,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | [きういバックアップ](https://kiwi-garakuta.pages.dev/tools/kiwi-backup/) | 写真や書類を暗号化して履歴ごとに保存し、別の場所へ復元する | [restic](https://github.com/restic/restic) |
 | [きうい重複チェック](https://kiwi-garakuta.pages.dev/tools/kiwi-tidy/) | 同じファイルや似た写真をグループごとに比較し、レポートへ保存する | [Czkawka](https://github.com/qarmin/czkawka) |
 | [きうい文字起こし](https://kiwi-garakuta.pages.dev/tools/kiwi-transcribe/) | 録音をPC内で文章・字幕に変換し、英語への翻訳やTXTの修正も行う | [whisper.cpp](https://github.com/ggml-org/whisper.cpp) |
-| [きういファイル便](https://kiwi-garakuta.pages.dev/tools/kiwi-transfer/) | 同じWi-Fi・LAN内のPCへ、写真・書類・フォルダーを共有コードで送る | [croc](https://github.com/schollz/croc) |
+| [きういファイル便](https://kiwi-garakuta.pages.dev/tools/kiwi-transfer/) | PC同士の共有コード転送と、スマホのブラウザーへのQR共有 | [croc](https://github.com/schollz/croc) / [qrcp](https://github.com/claudiodangelis/qrcp) |
 | [きうい画像拡大](https://kiwi-garakuta.pages.dev/tools/kiwi-image-enlarge/) | 小さな写真・イラストを拡大して仕上がりを見比べる | [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) |
 | [きういYAML作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-yaml-workbench/) | YAMLの変換・編集・整形とGitHub Actionsの検査を行う | [yq](https://github.com/mikefarah/yq)・[yamlfmt](https://github.com/google/yamlfmt)・[actionlint](https://github.com/rhysd/actionlint) |
 | [きういPC作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-pc-workbench/) | PC構成・空き容量・フォルダー内訳を確認し、共通の対象から重複ファイルを探す | [fastfetch](https://github.com/fastfetch-cli/fastfetch) / [duf](https://github.com/muesli/duf) / [dust](https://github.com/bootandy/dust) / [fclones](https://github.com/pkolaczk/fclones) |
