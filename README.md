@@ -8,6 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きういPDFスタンプ](https://kiwi-garakuta.pages.dev/tools/kiwi-pdf-stamp/) | PDFに文字・ロゴ・ページ番号を重ね、別名で保存する | [pdfcpu](https://github.com/pdfcpu/pdfcpu) |
 | [きうい読み取り・読み上げ](https://kiwi-garakuta.pages.dev/tools/kiwi-reading-workbench/) | 画像の文字を確認・修正し、そのまま読み上げ音声に保存する | [RapidOCR](https://github.com/RapidAI/RapidOCR) / [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) |
 | [きういファイルしらべ](https://kiwi-garakuta.pages.dev/tools/kiwi-filetype/) | 拡張子がないファイルなどの種類を調べ、候補拡張子・MIMEを一覧保存する | [Magika](https://github.com/google/magika) |
 | [きうい画像・PNG工房](https://kiwi-garakuta.pages.dev/tools/kiwi-image-workbench/) | 写真を変換・リサイズし、PNG圧縮と次の編集へ続けて進む | [ImageMagick](https://github.com/ImageMagick/ImageMagick) / [oxipng](https://github.com/oxipng/oxipng) |
