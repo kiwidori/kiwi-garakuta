@@ -107,3 +107,5 @@ apps/kiwi-reading-workbench/ocr-notices/*.txt -text -whitespace
 apps/kiwi-pdf-stamp/*.txt -text -whitespace
 
 apps/kiwi-pdf-workbench/stamp-engine/*.txt -text -whitespace
+apps/kiwi-pdf-workbench/stamp-engine/upstream-pin.json -text -whitespace
+apps/kiwi-pdf-workbench/common-sources.json -text -whitespace
