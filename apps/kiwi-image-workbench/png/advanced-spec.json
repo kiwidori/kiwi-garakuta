@@ -1,0 +1,504 @@
+{
+  "slug": "kiwi-png",
+  "tool": "oxipng.exe",
+  "upstream_url": "https://github.com/oxipng/oxipng",
+  "options": [
+    {
+      "flag": "--alpha",
+      "aliases": [
+        "-a",
+        "--alpha"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Perform additional optimization on images with an alpha channel, by altering the color values of fully transparent pixels. This is generally recommended for better compression, but take care as while this is “visually lossless”, it is technically a lossy transformation and may be unsuitable for some applications.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--brute-level",
+      "aliases": [
+        "--brute-level"
+      ],
+      "takes_value": true,
+      "value_hint": "<level>",
+      "description": "Set the libdeflate compression level to use with the Brute filter strategy. Sane values are 1-5. Higher values are not necessarily better.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--brute-lines",
+      "aliases": [
+        "--brute-lines"
+      ],
+      "takes_value": true,
+      "value_hint": "<lines>",
+      "description": "Set the number of lines to compress at once with the Brute filter strategy. Sane values are 2-16. Higher values are not necessarily better.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--dir",
+      "aliases": [
+        "--dir"
+      ],
+      "takes_value": true,
+      "value_hint": "<directory>",
+      "description": "Write output file(s) to <directory>. If the directory does not exist, it will be created. Note that this will not preserve the directory structure of the input files when used with '--recursive'.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--dry-run",
+      "aliases": [
+        "-d",
+        "--dry-run"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not write any files, only show compression results",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--fast",
+      "aliases": [
+        "--fast"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Perform a fast compression evaluation of each enabled filter, followed by a single main compression trial of the best result. Note that this is enabled by default and will only be disabled at level 5 or above.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--filters",
+      "aliases": [
+        "-f",
+        "--filters"
+      ],
+      "takes_value": true,
+      "value_hint": "<list>",
+      "description": "Perform compression trials with each of the given filter types. You can specify a comma-separated list, or a range of values. E.g. '-f 0-3' is the same as '-f 0,1,2,3'.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--fix",
+      "aliases": [
+        "--fix"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not perform checksum validation of PNG chunks. This may allow some files with errors to be processed successfully. The output will always have correct checksums.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--force",
+      "aliases": [
+        "--force"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Write the output even if it is larger than the input",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--help",
+      "aliases": [
+        "-h",
+        "--help"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print help (see a summary with '-h')",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--interlace",
+      "aliases": [
+        "-i",
+        "--interlace"
+      ],
+      "takes_value": true,
+      "value_hint": "<mode>",
+      "description": "Set the PNG interlacing mode, where <mode> is one of:",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--json",
+      "aliases": [
+        "-j",
+        "--json"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print results as JSON",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--keep",
+      "aliases": [
+        "--keep"
+      ],
+      "takes_value": true,
+      "value_hint": "<list>",
+      "description": "Strip all metadata chunks except those in the comma-separated list. The special value 'display' includes chunks that affect the image appearance, equivalent to '--strip safe'.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--max-raw-size",
+      "aliases": [
+        "--max-raw-size"
+      ],
+      "takes_value": true,
+      "value_hint": "<bytes>",
+      "description": "Maximum size to allow for the input image. If the raw, decompressed image data (or the file size) of the image exceeds this size, it will be skipped. This is useful for limiting memory usage or avoiding long processing times on large images. The value may be specified with a unit suffix such as k, KB, m, MB, etc.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--nb",
+      "aliases": [
+        "--nb"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not change bit depth",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--nc",
+      "aliases": [
+        "--nc"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not change color type",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ng",
+      "aliases": [
+        "--ng"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not change to or from grayscale",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--np",
+      "aliases": [
+        "--np"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not convert to indexed and do not modify an existing color palette.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--nx",
+      "aliases": [
+        "--nx"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not perform any transformations and do not deinterlace by default.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--nz",
+      "aliases": [
+        "--nz"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Do not recompress IDAT unless required due to transformations. Recompression of other compressed chunks (such as iCCP) will also be disabled. Note that the combination of '--nx' and '--nz' will fully disable all optimization.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--opt",
+      "aliases": [
+        "-o",
+        "--opt"
+      ],
+      "takes_value": true,
+      "value_hint": "<level>",
+      "description": "Set the optimization level preset. The default level 2 is quite fast and provides good compression. Lower levels are faster, higher levels provide better compression, though with increasingly diminishing returns.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--out",
+      "aliases": [
+        "--out"
+      ],
+      "takes_value": true,
+      "value_hint": "<file>",
+      "description": "Write output file to <file>",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--preserve",
+      "aliases": [
+        "-p",
+        "--preserve"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Preserve file permissions and timestamps if possible",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--quiet",
+      "aliases": [
+        "-q",
+        "--quiet"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Suppress all output messages",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--recursive",
+      "aliases": [
+        "-r",
+        "--recursive"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "When directories are given as input, traverse the directory trees and optimize all PNG files found (files with “.png” or “.apng” extension).",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--scale16",
+      "aliases": [
+        "--scale16"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Forcibly reduce images with 16 bits per channel to 8 bits per channel. This is a lossy operation but can provide significant savings when you have no need for higher depth. Reduction is performed by scaling the values such that, e.g. 0x00FF is reduced to 0x01 rather than 0x00.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--sequential",
+      "aliases": [
+        "--sequential"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Process multiple files sequentially rather than in parallel. Use this if you need determinism in the processing order. Note this is not necessary if using '--threads 1'.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--stdout",
+      "aliases": [
+        "--stdout"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Write output to stdout",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--strip",
+      "aliases": [
+        "--strip"
+      ],
+      "takes_value": true,
+      "value_hint": "<mode>",
+      "description": "Strip metadata chunks, where <mode> is one of:",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--threads",
+      "aliases": [
+        "-t",
+        "--threads"
+      ],
+      "takes_value": true,
+      "value_hint": "<num>",
+      "description": "Set the maximum number of threads to use. Oxipng uses multithreading to evaluate multiple optimizations on the same file in parallel as well as process multiple files in parallel. You can set this to a lower value if you need to limit memory or CPU usage.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--timeout",
+      "aliases": [
+        "--timeout"
+      ],
+      "takes_value": true,
+      "value_hint": "<secs>",
+      "description": "Maximum amount of time, in seconds, to spend on optimizations. Oxipng will check the timeout before each transformation or compression trial, and will stop trying to optimize the file if the timeout is exceeded. Note that this does not cut short any operations that are already in progress, so it is currently of limited effectiveness for large files with high compression levels.",
+      "blocked": false,
+      "baseline_cli_use": true,
+      "coverage": "通常画面内でも使用（固定値を含む）"
+    },
+    {
+      "flag": "--verbose",
+      "aliases": [
+        "-v",
+        "--verbose"
+      ],
+      "takes_value": false,
+      "value_hint": "...",
+      "description": "Show per-file info (use multiple times for more detail)",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--version",
+      "aliases": [
+        "-V",
+        "--version"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Print version",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--zc",
+      "aliases": [
+        "--zc"
+      ],
+      "takes_value": true,
+      "value_hint": "<level>",
+      "description": "Deflate compression level (0-12) for main compression trials. The levels here are defined by the libdeflate compression library.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--zi",
+      "aliases": [
+        "--zi"
+      ],
+      "takes_value": true,
+      "value_hint": "<iterations>",
+      "description": "Set the number of iterations to use for Zopfli compression. Using fewer iterations may speed up compression for large files. This option requires '--zopfli' to be set.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--ziwi",
+      "aliases": [
+        "--ziwi"
+      ],
+      "takes_value": true,
+      "value_hint": "<iterations>",
+      "description": "Stop Zopfli compression after this number of iterations without improvement. Use this in conjunction with a high value for '--zi' to achieve better compression in reasonable time.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "--zopfli",
+      "aliases": [
+        "-z",
+        "--zopfli"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Use the much slower but stronger Zopfli compressor for main compression trials. Recommended use is with '-o max' and '--fast'.",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    },
+    {
+      "flag": "-s",
+      "aliases": [
+        "-s"
+      ],
+      "takes_value": false,
+      "value_hint": "",
+      "description": "Strip safely-removable chunks, same as '--strip safe'",
+      "blocked": false,
+      "baseline_cli_use": false,
+      "coverage": "詳細機能の引数として追加可能"
+    }
+  ],
+  "subcommands": [],
+  "blocked_flags": [],
+  "mandatory_args": [],
+  "sensitive_flags": [
+    "--auth",
+    "-a",
+    "--proxy",
+    "--cert-key",
+    "--keyed"
+  ],
+  "examples": [
+    {
+      "name": "全オプションのヘルプ",
+      "args": [
+        "--help"
+      ],
+      "stdin": ""
+    },
+    {
+      "name": "最適化レベルのヘルプ",
+      "args": [
+        "--help"
+      ],
+      "stdin": ""
+    }
+  ],
+  "help_sha256": "5722fb23b6abdb595a3487cc2a71e63ce3296b468df00bcce3c11aeaaa921b99"
+}

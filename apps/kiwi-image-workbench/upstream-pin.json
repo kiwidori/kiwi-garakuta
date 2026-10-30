@@ -1,0 +1,51 @@
+{
+  "version": "7.1.2-34",
+  "repository": "https://github.com/ImageMagick/ImageMagick",
+  "stars_at_selection": 17715,
+  "url": "https://github.com/ImageMagick/ImageMagick/releases/download/7.1.2-34/ImageMagick-7.1.2-34-portable-Q8-x64.7z",
+  "size": 11996242,
+  "sha256": "957b3cee70cb16d624f49445fe534d8ea629e35b757a03486c5816f9738a18fb",
+  "members": {
+    "ChangeLog.md": "a516c754211753dab050498d2fc104e6a37775191cce32b9eed459d89b0b9e1a",
+    "colors.xml": "37b986dc355641021434859f77b5e1f30b21670c847706ee9b77418e0874dfa6",
+    "compare.exe": "31c9ef2347f1fc6fe024e4595fcb7473641ffba1a672ef469f98150a2b87a28c",
+    "composite.exe": "c5ae3871c57fa0b109e9f57518d468b5a5f57f12477a2abb875ab862066f575c",
+    "configure.xml": "b41ad10e83de57d2d7165a7864ad53039ac2f2fb2bb9f90b4779ae98a82a6b70",
+    "conjure.exe": "8d4808827ae68b7c6ff9dd3076f91a33053d29aa6ac305bdbc8908277dd393f5",
+    "delegates.xml": "d6447b0e9c748690b63717d7942987f854b021761613fcb212f6148c8a63d665",
+    "english.xml": "d32c7b50db08bd3be6a5d898f34eac1e34460fb91bec3b18f7364defe8774cb2",
+    "identify.exe": "5217265bea278c3bb2066bc50c3f0c343cae9aa7d69939a87350eaecb5d33560",
+    "LICENSE.txt": "5ffcbc771d4cc2827ca8c4505f6b5b61e0bc1d933e0f41a47eea16ed06db4f90",
+    "locale.xml": "9a22865c9ba728a88aeea2bd64d238e39886ec1a87d791353e9266a3198ab296",
+    "log.xml": "c246daab249adda19a7754fe8769e6ef08a7d0b5c8ce4742a036593a6e47ea17",
+    "magick.exe": "36522796508905f34abef4ca8cd840429a57224d01a61f96c5c321558273c4ea",
+    "mime.xml": "e7ca58e71b1e30cf2d18453e3fce2e266e3c85a090253f6d5a1d2ed2011b1c81",
+    "mogrify.exe": "502e5ac838f4249b9d20d01dbac4ce5c9ae34f394dbbbeb890404b30d11268fa",
+    "montage.exe": "ce1a63c2c5d05c5525a17ee0ba0e4bcfaaad4103ce78fa369695ec6ad6282078",
+    "NOTICE.txt": "e3b886c90cd022d1767f89d61522be57bb77b7e9c44d5bf92f57fa231ac7b6bf",
+    "policy.xml": "0a0abfe60f9ba85c50660a998f9e9894c1f809bafaa91414f9cf0f1bc8d13138",
+    "sRGB.icc": "83174717332326ddc198d9df188a4daec27b8979ba152cebbfc470c793d0bb11",
+    "stream.exe": "b3bbcc932d0319446b77356e7a995b800b795fbd8e19bbd721e77a970aa61d72",
+    "thresholds.xml": "068487187c65f8ba9963ee0d73b31261cde9cd255bf879edcb093241e1c6a36b",
+    "type-ghostscript.xml": "8cdd0a89929342e438d90b4b95b4417fc90737858cefc9161f454e0f7e1435b4",
+    "type.xml": "ba4160241fb0fff29563b40430b24f5d993cd5f1e423f85ee99c17749901c8ad"
+  },
+  "pillow_version": "12.3.0",
+  "pillow_binaries": {
+    "_avif.cp313-win_amd64.pyd": "2e3e5cce3aea38c603680ca3da5d161fad123ce23a803bb692a56aff608989be",
+    "_imaging.cp313-win_amd64.pyd": "88756e8e0e3f6180e518da25d379597c861e2d20d716ef001894789b515c1777",
+    "_imagingcms.cp313-win_amd64.pyd": "7ecb50b954d13d72b7a0ff565872332443cdbc83a36e58a56b2b949a56f32549",
+    "_imagingft.cp313-win_amd64.pyd": "e94673a471a0b6fd5e92e8b6cdbdfe16e2e91bcf5689e9e4c9b391ab43788d85",
+    "_imagingmath.cp313-win_amd64.pyd": "9d5bbea6a877a48ed7995a0640ecb0a5567d9fad544a4a1fbf9f22d507029b57",
+    "_imagingmorph.cp313-win_amd64.pyd": "9aa1903b1c4ecd1269a2f7575a62f764492b5510b43fe477970ecc606595cfc5",
+    "_imagingtk.cp313-win_amd64.pyd": "8ccd6128481d5a3a15993c2f8a69585694ff972652a6b06dcaee276fc65633a7",
+    "_webp.cp313-win_amd64.pyd": "9918faf8d90faa86e03e48479c6a62383be71da759254afded18591a406a92fe"
+  },
+  "licenses": {
+    "ImageMagick-LICENSE.txt": "5ffcbc771d4cc2827ca8c4505f6b5b61e0bc1d933e0f41a47eea16ed06db4f90",
+    "ImageMagick-NOTICE.txt": "e3b886c90cd022d1767f89d61522be57bb77b7e9c44d5bf92f57fa231ac7b6bf",
+    "Pillow-LICENSE.txt": "4f7866a74802c6326f81faff59a56546b6aec2b10b91973e0e9308de95e79857",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "THIRD-PARTY-NOTICES.txt": "37b8c0f7a47ac9ce4e7e238736549bfc956dcb16a95f68c8500cf302b18e3ba3"
+  }
+}

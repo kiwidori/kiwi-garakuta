@@ -95,3 +95,6 @@ apps/kiwi-speech/*.h -text -whitespace
 apps/kiwi-media-workbench/*-notices/*.txt -text -whitespace
 
 apps/kiwi-labels/*.txt -text -whitespace
+
+apps/kiwi-image-workbench/*.txt -text -whitespace
+apps/kiwi-image-workbench/png/*.txt -text -whitespace
