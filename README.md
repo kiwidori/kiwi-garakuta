@@ -8,11 +8,11 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きうい読み取り・読み上げ](https://kiwi-garakuta.pages.dev/tools/kiwi-reading-workbench/) | 画像の文字を確認・修正し、そのまま読み上げ音声に保存する | [RapidOCR](https://github.com/RapidAI/RapidOCR) / [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) |
 | [きういファイルしらべ](https://kiwi-garakuta.pages.dev/tools/kiwi-filetype/) | 拡張子がないファイルなどの種類を調べ、候補拡張子・MIMEを一覧保存する | [Magika](https://github.com/google/magika) |
 | [きうい画像・PNG工房](https://kiwi-garakuta.pages.dev/tools/kiwi-image-workbench/) | 写真を変換・リサイズし、PNG圧縮と次の編集へ続けて進む | [ImageMagick](https://github.com/ImageMagick/ImageMagick) / [oxipng](https://github.com/oxipng/oxipng) |
 | [きういラベル印刷](https://kiwi-garakuta.pages.dev/tools/kiwi-labels/) | 名札・収納ラベルをA4に並べ、文字・余白・枚数を選んでPDFや画像に保存する | [Typst](https://github.com/typst/typst) |
 | [きうい動画・GIF工房](https://kiwi-garakuta.pages.dev/tools/kiwi-media-workbench/) | 動画を変換し、短い区間をGIF編集へ渡して順序・速さ・品質を調整する | [FFmpeg](https://github.com/FFmpeg/FFmpeg) / [gifski](https://github.com/ImageOptim/gifski) |
-| [きうい読み上げ](https://kiwi-garakuta.pages.dev/tools/kiwi-speech/) | 文章を合成音声に変換し、声・速さを選んでWAVに保存する | [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) |
 | [きういファイル保存](https://kiwi-garakuta.pages.dev/tools/kiwi-download/) | URLから資料・画像・ZIPなどをまとめて保存し、SHA-256を照合する | [curl](https://github.com/curl/curl) |
 | [きういフォルダーコピー](https://kiwi-garakuta.pages.dev/tools/kiwi-copy/) | フォルダーを比較し、不足分だけ内容照合して追加する | [rclone](https://github.com/rclone/rclone) |
 | [きうい文書作業場](https://kiwi-garakuta.pages.dev/tools/kiwi-document-workbench/) | Webページを画像ごと保存し、手元の文書と同じ画面でWord・EPUBなどへ変換する | [Pandoc](https://github.com/jgm/pandoc) / [Monolith](https://github.com/Y2Z/monolith) |
@@ -24,7 +24,6 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 | [きうい写真情報](https://kiwi-garakuta.pages.dev/tools/kiwi-photo-info/) | 写真の位置情報・撮影情報を確認し、削除・編集したコピーを作る | [ExifTool](https://github.com/exiftool/exiftool) |
 | [きうい圧縮箱](https://kiwi-garakuta.pages.dev/tools/kiwi-archive/) | 写真・書類の圧縮、ZIP・7zなどの中身の確認と新しいフォルダーへの展開 | [ouch](https://github.com/ouch-org/ouch) |
 | [きういファイル金庫](https://kiwi-garakuta.pages.dev/tools/kiwi-vault/) | 写真や書類をパスワード・公開鍵で暗号化し、元ファイルを残して復号する | [age](https://github.com/FiloSottile/age) |
-| [きうい画像OCR](https://kiwi-garakuta.pages.dev/tools/kiwi-ocr/) | 写真・スクリーンショットの文字を読み取り、修正してコピー・保存する | [RapidOCR](https://github.com/RapidAI/RapidOCR) |
 | [きういQR](https://kiwi-garakuta.pages.dev/tools/kiwi-qr/) | URL・Wi-FiなどのQRを作り、画像のQR・バーコードを読み取る | [python-qrcode](https://github.com/lincolnloop/python-qrcode) / [ZXing-C++](https://github.com/zxing-cpp/zxing-cpp) |
 | [きういバックアップ](https://kiwi-garakuta.pages.dev/tools/kiwi-backup/) | 写真や書類を暗号化して履歴ごとに保存し、別の場所へ復元する | [restic](https://github.com/restic/restic) |
 | [きうい重複チェック](https://kiwi-garakuta.pages.dev/tools/kiwi-tidy/) | 同じファイルや似た写真をグループごとに比較し、レポートへ保存する | [Czkawka](https://github.com/qarmin/czkawka) |

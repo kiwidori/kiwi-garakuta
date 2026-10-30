@@ -1,5 +1,45 @@
 [
   {
+    "slug": "kiwi-reading-workbench",
+    "name": "きうい読み取り・読み上げ",
+    "summary": "画像から文字を読み取り、確認・修正した文章を音声に。OCRの結果をそのまま読み上げ欄へ渡せます。",
+    "features": [
+      "写真やスクリーンショットの文字を読み取り、修正した全文または選択部分を読み上げ欄へ直接渡せます。",
+      "300文字を超える全文は切り捨てず、読む部分を選べます。取り込み後も本文を修正できます。",
+      "OCRの範囲選択・回転・行や文字の位置表示、複数画像、TXT・CSV・JSON・Markdown・位置付きPNGの保存を利用できます。",
+      "日本語を含む31言語、10種類の声、速度・品質・区切り・無音・乱数を指定してWAV保存できます。本文を直接入力しても使えます。",
+      "音声の試聴は自分で押したときだけ。OCRのみの利用で音声モデルを取得することはありません。保存済みの画像やWAVは残します。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiReadingWorkbench.exeを起動します。Microsoft Visual C++ v14 x64ランタイムが必要です。",
+      "「画像から文章を読む」を押して画像を追加し、文字を読み取ります。",
+      "文章欄で確認・修正し、「修正した全文を読み上げへ」または「選択した文章を読み上げへ」を押します。",
+      "音声モデルの利用条件を読んで同意し、初回のみ読み上げエンジンとモデル約150 MiBを取得します。OCRは準備不要です。",
+      "読み上げ画面で本文・言語・声・速度などを確認し、「WAVにして別名で保存」を押します。"
+    ],
+    "limitations": "Windows 11 x64、署名なしZIP版（約108.2 MiB）です。OCRの日本語対応モデルと31言語の音声モデルは別のモデルです。文章の翻訳や読み間違いの自動修正は行いません。移送は300文字までで、超過時は選択範囲を指定します。既存の読み上げ本文がある場合は置き換えを確認し、前回の試聴対象を解除します。全文の自動分割・連続音声保存はありません。同時処理は1件です。OCRの制限：Windows 11 x64向け。Microsoft Visual C++ v14再頒布可能パッケージ（x64）が必要です。モデル同梱のためZIPは約108 MiBです。ZIP内の_internalフォルダーも必要です。日本語対応モデルを同梱し、追加ダウンロードや画像の外部送信は行いません。認識に誤りがあるため結果は確認してください。手書き・縦書き・複雑な段組みや不鮮明な画像は苦手です。表のセル構造の復元は行いません。PNG/JPEG/WebP/BMP/GIF/TIFFの最初のフレーム、各25 MiB・2,000万画素、20件までです。長辺2,000px以内へ縮小して処理します。小さな文字は事前の切り出しをおすすめします。範囲指定後の座標は回転・縮小した処理画像を基準にします。上下判定は文字行の0度・180度で、ページの90度回転の自動判定ではありません。単語・文字の位置取得は通常の「文字を読む」で使えます。コピーとTXT、JSONのedited_textには修正文を保存します。CSV・Markdown・位置情報は認識時の結果です。既存ファイルは上書きしません。1画像2分・一括10分、結果32 MiB・1万行、位置付きPNG16 MiBまでです。PDF、カメラ、スクリーンキャプチャー、Web画像取得、GPU、モデルの変更には未対応です。コード署名はありません。 読み上げの制限：Windows 11 x64用。sherpa-onnx 2.0.1とSupertonic 3 int8を利用する非公式GUIです。エンジンとモデルは同梱せず、初回に公式配布から取得して固定SHA-256を照合します。準備には1 GiB以上の空き領域が必要です。作成ごとに準備済みファイルを再検証します。本文300文字・音声90秒・処理90秒・出力9 MiBまで。CPUのみを使います。読み間違い・不自然な発音・無音が生じる場合があります。数字・固有名詞などは結果を確認してください。言語の自動判定や翻訳、声の複製、参照音声、MP3、一括処理、GPU、他の音声モデル、全CLIオプションには対応しません。品質の計算回数を増やしても必ず自然になるわけではありません。ネットワークパス・リンク・ジャンクションは扱いません。停止時は途中の音声を保存せず、保存済みのファイルは残します。音声モデルにはソフト本体のMITとは異なるOpenRAIL-M利用条件（第5条・付属書Aを含む）が適用されます。公開する音声が合成音声であることも示してください。WAVにはその旨のコメントを記録します。未署名のソフトです。",
+    "screenshot": "/assets/screenshots/kiwi-reading-workbench-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-reading-workbench-v0.1.0/KiwiReadingWorkbench-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-reading-workbench",
+    "upstream_url": "https://github.com/RapidAI/RapidOCR",
+    "upstream_license": "Apache-2.0（同梱モデルもApache-2.0、依存ライブラリにLGPL-2.1ほか） / sherpa-onnx: Apache-2.0、音声モデル: OpenRAIL-M",
+    "upstreams": [
+      {
+        "name": "RapidOCR",
+        "url": "https://github.com/RapidAI/RapidOCR",
+        "license": "Apache-2.0（同梱モデルもApache-2.0、依存ライブラリにLGPL-2.1ほか）"
+      },
+      {
+        "name": "sherpa-onnx / Supertonic 3",
+        "url": "https://github.com/k2-fsa/sherpa-onnx",
+        "license": "sherpa-onnx: Apache-2.0、音声モデル: OpenRAIL-M"
+      }
+    ],
+    "dependency_source_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-ocr-v0.1.0/KiwiOCR-0.1.0-dependency-sources.zip",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-filetype",
     "name": "きういファイルしらべ",
     "summary": "拡張子がない・間違っていそうなファイルの種類を、内容から調べます。候補の拡張子やMIMEを一覧で確認し、結果を保存できます。",
@@ -173,7 +213,9 @@
         "url": "https://huggingface.co/Supertone/supertonic-3",
         "license": "OpenRAIL-M"
       }
-    ]
+    ],
+    "replaced_by": "kiwi-reading-workbench",
+    "replacement_name": "きうい読み取り・読み上げ"
   },
   {
     "slug": "kiwi-duplicates",
@@ -686,7 +728,9 @@
     "upstream_url": "https://github.com/RapidAI/RapidOCR",
     "upstream_license": "Apache-2.0（同梱モデルもApache-2.0、依存ライブラリにLGPL-2.1ほか）",
     "amazon_links": [],
-    "windows_test_passed": true
+    "windows_test_passed": true,
+    "replaced_by": "kiwi-reading-workbench",
+    "replacement_name": "きうい読み取り・読み上げ"
   },
   {
     "slug": "kiwi-qr",
