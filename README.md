@@ -8,6 +8,7 @@ Windows 11 x64向けの小さな無料ソフトを公開しています。人気
 
 | ソフト | できること | 元になったツール |
 | --- | --- | --- |
+| [きういファイルしらべ](https://kiwi-garakuta.pages.dev/tools/kiwi-filetype/) | 拡張子がないファイルなどの種類を調べ、候補拡張子・MIMEを一覧保存する | [Magika](https://github.com/google/magika) |
 | [きうい画像・PNG工房](https://kiwi-garakuta.pages.dev/tools/kiwi-image-workbench/) | 写真を変換・リサイズし、PNG圧縮と次の編集へ続けて進む | [ImageMagick](https://github.com/ImageMagick/ImageMagick) / [oxipng](https://github.com/oxipng/oxipng) |
 | [きういラベル印刷](https://kiwi-garakuta.pages.dev/tools/kiwi-labels/) | 名札・収納ラベルをA4に並べ、文字・余白・枚数を選んでPDFや画像に保存する | [Typst](https://github.com/typst/typst) |
 | [きうい動画・GIF工房](https://kiwi-garakuta.pages.dev/tools/kiwi-media-workbench/) | 動画を変換し、短い区間をGIF編集へ渡して順序・速さ・品質を調整する | [FFmpeg](https://github.com/FFmpeg/FFmpeg) / [gifski](https://github.com/ImageOptim/gifski) |
