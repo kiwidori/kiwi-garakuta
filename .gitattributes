@@ -103,3 +103,5 @@ apps/kiwi-filetype/*.txt -text -whitespace
 
 apps/kiwi-reading-workbench/*.txt -text -whitespace
 apps/kiwi-reading-workbench/ocr-notices/*.txt -text -whitespace
+
+apps/kiwi-pdf-stamp/*.txt -text -whitespace

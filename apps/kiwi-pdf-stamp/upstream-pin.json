@@ -1,0 +1,30 @@
+{
+  "cache": "KiwiPDFStamp/pdfcpu-0.16.4",
+  "executable": "pdfcpu_0.16.4_Windows_x86_64/pdfcpu.exe",
+  "kind": "zip",
+  "url": "https://github.com/pdfcpu/pdfcpu/releases/download/v0.16.4/pdfcpu_0.16.4_Windows_x86_64.zip",
+  "size": 7086950,
+  "sha256": "faf6c51d6f54d96a8c1ad5beee02143460b8ae97bd9630cbab1a253adaa43558",
+  "members": {
+    "pdfcpu_0.16.4_Windows_x86_64/LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "pdfcpu_0.16.4_Windows_x86_64/README.md": "d2db07ab4e0760abb5d15735984a729e26760f28727e9d664d26653f85e840fb",
+    "pdfcpu_0.16.4_Windows_x86_64/pdfcpu.exe": "403350be7ddac66fa3d44ac62e936e06cfcbf77bef85fb5a9570eae3ed6486f4"
+  },
+  "licenses": {
+    "pdfcpu-LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "Pillow-LICENSE.txt": "4f7866a74802c6326f81faff59a56546b6aec2b10b91973e0e9308de95e79857",
+    "OpenSSL-LICENSE.txt": "feb9bd5f71806c596971d4dfa64c5a93904f9d82b4d3ebd9244a12058f22578e"
+  },
+  "pillow_version": "12.3.0",
+  "pillow_binaries": {
+    "_avif.cp313-win_amd64.pyd": "2e3e5cce3aea38c603680ca3da5d161fad123ce23a803bb692a56aff608989be",
+    "_imaging.cp313-win_amd64.pyd": "88756e8e0e3f6180e518da25d379597c861e2d20d716ef001894789b515c1777",
+    "_imagingcms.cp313-win_amd64.pyd": "7ecb50b954d13d72b7a0ff565872332443cdbc83a36e58a56b2b949a56f32549",
+    "_imagingft.cp313-win_amd64.pyd": "e94673a471a0b6fd5e92e8b6cdbdfe16e2e91bcf5689e9e4c9b391ab43788d85",
+    "_imagingmath.cp313-win_amd64.pyd": "9d5bbea6a877a48ed7995a0640ecb0a5567d9fad544a4a1fbf9f22d507029b57",
+    "_imagingmorph.cp313-win_amd64.pyd": "9aa1903b1c4ecd1269a2f7575a62f764492b5510b43fe477970ecc606595cfc5",
+    "_imagingtk.cp313-win_amd64.pyd": "8ccd6128481d5a3a15993c2f8a69585694ff972652a6b06dcaee276fc65633a7",
+    "_webp.cp313-win_amd64.pyd": "9918faf8d90faa86e03e48479c6a62383be71da759254afded18591a406a92fe"
+  }
+}
