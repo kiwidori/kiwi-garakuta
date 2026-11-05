@@ -1,0 +1,912 @@
+{
+  "categories": [
+    {
+      "id": "image",
+      "label": "画像・写真",
+      "description": "写真のサイズや形式、撮影情報を整える"
+    },
+    {
+      "id": "media",
+      "label": "動画・音声",
+      "description": "動画の編集、GIF作り、録音の文字起こし"
+    },
+    {
+      "id": "document",
+      "label": "文書・読み取り",
+      "description": "PDFの編集、文書変換、画像の文字を読む"
+    },
+    {
+      "id": "files",
+      "label": "ファイル整理・共有",
+      "description": "探す、名前を整える、保存する、相手へ渡す"
+    },
+    {
+      "id": "pc",
+      "label": "PCの確認",
+      "description": "PCの構成や空き容量、重複ファイルを調べる"
+    },
+    {
+      "id": "text",
+      "label": "テキスト・データ",
+      "description": "文章や表、JSON・YAMLの中身を整える"
+    },
+    {
+      "id": "development",
+      "label": "開発・検証",
+      "description": "コードの閲覧や比較、Web・ファイルの検査"
+    }
+  ],
+  "tools": {
+    "kiwi-reading-workbench": {
+      "category": "document",
+      "tags": [
+        "画像の文字を読む",
+        "文章を読み上げる",
+        "WAV保存"
+      ],
+      "keywords": [
+        "OCR",
+        "文字認識",
+        "読み取り",
+        "読上げ",
+        "読み上げ",
+        "音声合成",
+        "スクリーンショット",
+        "TTS",
+        "RapidOCR",
+        "sherpa-onnx"
+      ],
+      "alias_names": [
+        "きうい読み上げ",
+        "きうい画像OCR"
+      ]
+    },
+    "kiwi-filetype": {
+      "category": "files",
+      "tags": [
+        "ファイルの種類",
+        "拡張子の確認",
+        "一覧保存"
+      ],
+      "keywords": [
+        "拡張子不明",
+        "ファイル判定",
+        "ファイル形式",
+        "MIME",
+        "何のファイル",
+        "Magika"
+      ],
+      "alias_names": []
+    },
+    "kiwi-image-workbench": {
+      "category": "image",
+      "tags": [
+        "画像を変換",
+        "サイズ変更",
+        "PNG圧縮"
+      ],
+      "keywords": [
+        "写真",
+        "リサイズ",
+        "縮小",
+        "軽量化",
+        "切り抜き",
+        "トリミング",
+        "回転",
+        "HEIC",
+        "JPEG",
+        "JPG",
+        "PNG",
+        "WebP",
+        "AVIF",
+        "ImageMagick",
+        "oxipng"
+      ],
+      "alias_names": [
+        "きうい画像工房",
+        "きういPNG圧縮"
+      ]
+    },
+    "kiwi-labels": {
+      "category": "document",
+      "tags": [
+        "名札",
+        "収納ラベル",
+        "印刷用PDF"
+      ],
+      "keywords": [
+        "名前シール",
+        "ラベル作成",
+        "名前札",
+        "A4",
+        "印刷",
+        "文字配置",
+        "PDF",
+        "Typst"
+      ],
+      "alias_names": []
+    },
+    "kiwi-media-workbench": {
+      "category": "media",
+      "tags": [
+        "動画を変換",
+        "動画を切り出す",
+        "GIF作り"
+      ],
+      "keywords": [
+        "MP4",
+        "WebM",
+        "音声抽出",
+        "音量調整",
+        "動画圧縮",
+        "動画縮小",
+        "アニメーション",
+        "GIF",
+        "連番画像",
+        "FFmpeg",
+        "gifski"
+      ],
+      "alias_names": [
+        "きうい動画工房",
+        "きういGIF工房"
+      ]
+    },
+    "kiwi-download": {
+      "category": "files",
+      "tags": [
+        "URLから保存",
+        "まとめて保存",
+        "SHA-256照合"
+      ],
+      "keywords": [
+        "ダウンロード",
+        "資料",
+        "画像",
+        "ZIP",
+        "直接リンク",
+        "速度制限",
+        "curl"
+      ],
+      "alias_names": []
+    },
+    "kiwi-copy": {
+      "category": "files",
+      "tags": [
+        "不足分をコピー",
+        "フォルダー比較",
+        "USBへ追加"
+      ],
+      "keywords": [
+        "写真",
+        "書類",
+        "差分コピー",
+        "ファイルコピー",
+        "追加分",
+        "USBメモリー",
+        "rclone"
+      ],
+      "alias_names": []
+    },
+    "kiwi-pdf-workbench": {
+      "category": "document",
+      "tags": [
+        "PDFの結合・分割",
+        "文字やロゴを重ねる",
+        "PDFを画像に"
+      ],
+      "keywords": [
+        "ページ抽出",
+        "回転",
+        "順番",
+        "ページ番号",
+        "透かし",
+        "スタンプ",
+        "PNG",
+        "PDF画像化",
+        "パスワード",
+        "qpdf",
+        "MuPDF",
+        "pdfcpu"
+      ],
+      "alias_names": [
+        "きういPDFスタンプ",
+        "きういPDF画像化",
+        "きういPDF"
+      ]
+    },
+    "kiwi-document-workbench": {
+      "category": "document",
+      "tags": [
+        "Webページを保存",
+        "文書を変換",
+        "電子書籍へ"
+      ],
+      "keywords": [
+        "Word",
+        "DOCX",
+        "ODT",
+        "EPUB",
+        "HTML",
+        "Markdown",
+        "テキスト",
+        "RTF",
+        "目次",
+        "オフライン閲覧",
+        "Pandoc",
+        "Monolith"
+      ],
+      "alias_names": [
+        "きうい文書変換"
+      ]
+    },
+    "kiwi-table": {
+      "category": "text",
+      "tags": [
+        "CSVを整理",
+        "行や列を選ぶ",
+        "並べ替え"
+      ],
+      "keywords": [
+        "表",
+        "一覧表",
+        "TSV",
+        "Shift_JIS",
+        "Excel",
+        "重複行",
+        "空白行",
+        "JSON",
+        "DuckDB"
+      ],
+      "alias_names": []
+    },
+    "kiwi-video-save": {
+      "category": "media",
+      "tags": [
+        "公開動画の保存",
+        "音声の保存",
+        "形式を選ぶ"
+      ],
+      "keywords": [
+        "YouTube",
+        "動画ダウンロード",
+        "音声ダウンロード",
+        "URL",
+        "yt-dlp"
+      ],
+      "alias_names": []
+    },
+    "kiwi-rename": {
+      "category": "files",
+      "tags": [
+        "名前をまとめて変更",
+        "連番",
+        "変更前に確認"
+      ],
+      "keywords": [
+        "ファイル名",
+        "写真整理",
+        "リネーム",
+        "名前変更",
+        "元に戻す",
+        "置換",
+        "F2"
+      ],
+      "alias_names": []
+    },
+    "kiwi-vector": {
+      "category": "image",
+      "tags": [
+        "画像をSVGに",
+        "輪郭を調整",
+        "まとめて変換"
+      ],
+      "keywords": [
+        "ベクター",
+        "ベクトル",
+        "ロゴ",
+        "イラスト",
+        "トレース",
+        "拡大",
+        "vtracer"
+      ],
+      "alias_names": []
+    },
+    "kiwi-photo-info": {
+      "category": "image",
+      "tags": [
+        "撮影情報を確認",
+        "位置情報を整理",
+        "コピーに保存"
+      ],
+      "keywords": [
+        "写真",
+        "GPS",
+        "EXIF",
+        "メタデータ",
+        "撮影者",
+        "撮影日時",
+        "プライバシー",
+        "情報削除",
+        "ExifTool"
+      ],
+      "alias_names": []
+    },
+    "kiwi-archive": {
+      "category": "files",
+      "tags": [
+        "ZIPを作る",
+        "圧縮ファイルを開く",
+        "中身を確認"
+      ],
+      "keywords": [
+        "7z",
+        "RAR",
+        "tar",
+        "圧縮",
+        "解凍",
+        "展開",
+        "書庫",
+        "パスワード",
+        "ouch"
+      ],
+      "alias_names": []
+    },
+    "kiwi-vault": {
+      "category": "files",
+      "tags": [
+        "ファイルを暗号化",
+        "パスワードで保護",
+        "受け取って復号"
+      ],
+      "keywords": [
+        "秘密",
+        "安全",
+        "パスワード",
+        "鍵",
+        "age"
+      ],
+      "alias_names": []
+    },
+    "kiwi-qr": {
+      "category": "files",
+      "tags": [
+        "QRを作る",
+        "画像のQRを読む",
+        "バーコード"
+      ],
+      "keywords": [
+        "QRコード",
+        "二次元コード",
+        "Wi-Fi",
+        "連絡先",
+        "メール",
+        "URL",
+        "JAN",
+        "EAN",
+        "Code128",
+        "ZXing"
+      ],
+      "alias_names": []
+    },
+    "kiwi-backup": {
+      "category": "files",
+      "tags": [
+        "履歴を残して保存",
+        "過去の状態を取り出す",
+        "暗号化"
+      ],
+      "keywords": [
+        "バックアップ",
+        "復元",
+        "外付けドライブ",
+        "写真",
+        "書類",
+        "履歴",
+        "restic"
+      ],
+      "alias_names": []
+    },
+    "kiwi-tidy": {
+      "category": "files",
+      "tags": [
+        "重複ファイルを探す",
+        "似た写真を比べる",
+        "結果を保存"
+      ],
+      "keywords": [
+        "同じ写真",
+        "類似画像",
+        "重複写真",
+        "大きなファイル",
+        "空のフォルダー",
+        "破損",
+        "Czkawka"
+      ],
+      "alias_names": []
+    },
+    "kiwi-transcribe": {
+      "category": "media",
+      "tags": [
+        "録音を文字に",
+        "字幕を保存",
+        "日本語対応"
+      ],
+      "keywords": [
+        "文字起こし",
+        "音声認識",
+        "議事録",
+        "WAV",
+        "MP3",
+        "SRT",
+        "VTT",
+        "whisper.cpp"
+      ],
+      "alias_names": []
+    },
+    "kiwi-transfer": {
+      "category": "files",
+      "tags": [
+        "PC同士の転送",
+        "スマホとQR共有",
+        "メモを渡す"
+      ],
+      "keywords": [
+        "ファイル送信",
+        "ファイル受信",
+        "写真共有",
+        "スマホ",
+        "iPhone",
+        "Android",
+        "ブラウザー",
+        "共有コード",
+        "croc",
+        "qrcp",
+        "ファイルを送る",
+        "ファイルを受け取る",
+        "スマホへ送る",
+        "スマホから受け取る"
+      ],
+      "alias_names": []
+    },
+    "kiwi-image-enlarge": {
+      "category": "image",
+      "tags": [
+        "小さな画像を拡大",
+        "元画像と比較",
+        "まとめて保存"
+      ],
+      "keywords": [
+        "写真",
+        "イラスト",
+        "高解像度",
+        "アップスケール",
+        "2倍",
+        "4倍",
+        "Real-ESRGAN"
+      ],
+      "alias_names": []
+    },
+    "kiwi-secrets": {
+      "category": "development",
+      "tags": [
+        "機密情報の候補",
+        "公開前の点検",
+        "フォルダー検査"
+      ],
+      "keywords": [
+        "APIキー",
+        "秘密鍵",
+        "トークン",
+        "漏えい",
+        "漏洩",
+        "secret",
+        "Gitleaks"
+      ],
+      "alias_names": []
+    },
+    "kiwi-http": {
+      "category": "development",
+      "tags": [
+        "HTTPの応答",
+        "ヘッダー確認",
+        "本文を表示"
+      ],
+      "keywords": [
+        "URL",
+        "GET",
+        "HEAD",
+        "ステータス",
+        "Web",
+        "API",
+        "xh"
+      ],
+      "alias_names": []
+    },
+    "kiwi-hash": {
+      "category": "development",
+      "tags": [
+        "BLAKE3を計算",
+        "照合値と比較",
+        "結果をコピー"
+      ],
+      "keywords": [
+        "ハッシュ値",
+        "チェックサム",
+        "同一性",
+        "改変確認",
+        "b3sum"
+      ],
+      "alias_names": []
+    },
+    "kiwi-color": {
+      "category": "image",
+      "tags": [
+        "色コードを変換",
+        "色見本",
+        "色を選ぶ"
+      ],
+      "keywords": [
+        "カラー",
+        "HEX",
+        "RGB",
+        "HSL",
+        "カラーピッカー",
+        "色名",
+        "pastel"
+      ],
+      "alias_names": []
+    },
+    "kiwi-ascii": {
+      "category": "image",
+      "tags": [
+        "画像を文字絵に",
+        "点字文字",
+        "テキスト保存"
+      ],
+      "keywords": [
+        "アスキーアート",
+        "ASCIIアート",
+        "AA",
+        "braille",
+        "写真",
+        "ascii-image-converter"
+      ],
+      "alias_names": []
+    },
+    "kiwi-diff": {
+      "category": "development",
+      "tags": [
+        "2つの本文を比較",
+        "差分を色分け",
+        "結果を保存"
+      ],
+      "keywords": [
+        "変更点",
+        "違い",
+        "比較",
+        "コード比較",
+        "テキスト比較",
+        "diff",
+        "difftastic"
+      ],
+      "alias_names": []
+    },
+    "kiwi-count": {
+      "category": "development",
+      "tags": [
+        "コードの行数",
+        "言語別の集計",
+        "Git履歴"
+      ],
+      "keywords": [
+        "コード量",
+        "文字数",
+        "複雑度",
+        "HTMLレポート",
+        "統計",
+        "scc"
+      ],
+      "alias_names": []
+    },
+    "kiwi-minify": {
+      "category": "development",
+      "tags": [
+        "Webファイルを圧縮",
+        "複数を連結",
+        "まとめて処理"
+      ],
+      "keywords": [
+        "CSS",
+        "JavaScript",
+        "HTML",
+        "JSON",
+        "SVG",
+        "XML",
+        "minify",
+        "軽量化"
+      ],
+      "alias_names": []
+    },
+    "kiwi-data": {
+      "category": "text",
+      "tags": [
+        "データ形式を変換",
+        "式で抽出",
+        "並べ替え・集計"
+      ],
+      "keywords": [
+        "JSON",
+        "YAML",
+        "TOML",
+        "XML",
+        "CSV",
+        "HCL",
+        "INI",
+        "KDL",
+        "dasel"
+      ],
+      "alias_names": []
+    },
+    "kiwi-bytes": {
+      "category": "development",
+      "tags": [
+        "バイトを表示",
+        "16進数",
+        "読み取り専用"
+      ],
+      "keywords": [
+        "バイナリー",
+        "バイナリ",
+        "hex",
+        "C配列",
+        "コードページ",
+        "hexdump",
+        "hexyl"
+      ],
+      "alias_names": []
+    },
+    "kiwi-calc": {
+      "category": "text",
+      "tags": [
+        "単位を変換",
+        "温度や速度",
+        "式で計算"
+      ],
+      "keywords": [
+        "電卓",
+        "単位計算",
+        "距離",
+        "情報量",
+        "数学",
+        "統計",
+        "Numbat"
+      ],
+      "alias_names": []
+    },
+    "kiwi-json-workbench": {
+      "category": "text",
+      "tags": [
+        "JSONツリー",
+        "式で抽出・変換",
+        "パス一覧"
+      ],
+      "keywords": [
+        "JSON閲覧",
+        "JSON整形",
+        "JSON検索",
+        "YAML",
+        "TOML",
+        "jq",
+        "gojq",
+        "fx",
+        "gron"
+      ],
+      "alias_names": [
+        "きういJSON",
+        "きういJSONパス",
+        "きういJSON式",
+        "きういJSONツリー"
+      ]
+    },
+    "kiwi-search-workbench": {
+      "category": "files",
+      "tags": [
+        "名前で探す",
+        "文章の中を探す",
+        "対象を絞る"
+      ],
+      "keywords": [
+        "ファイル検索",
+        "フォルダー検索",
+        "全文検索",
+        "内容検索",
+        "文字検索",
+        "拡張子",
+        "fd",
+        "ripgrep",
+        "rg"
+      ],
+      "alias_names": [
+        "きうい検索",
+        "きういファイル探し"
+      ]
+    },
+    "kiwi-youtube-captions": {
+      "category": "media",
+      "tags": [
+        "YouTube字幕",
+        "字幕内を検索",
+        "TXT・SRT保存"
+      ],
+      "keywords": [
+        "動画",
+        "自動字幕",
+        "手動字幕",
+        "YouTube翻訳字幕",
+        "文字起こし済み",
+        "youtube-transcript-api"
+      ],
+      "alias_names": []
+    },
+    "kiwi-text-workbench": {
+      "category": "text",
+      "tags": [
+        "文章を置き換える",
+        "正規表現を作る",
+        "プレビュー"
+      ],
+      "keywords": [
+        "文字列置換",
+        "テキスト置換",
+        "複数ファイル",
+        "regex",
+        "正規表現",
+        "grex",
+        "sd"
+      ],
+      "alias_names": [
+        "きうい正規表現",
+        "きうい置換"
+      ]
+    },
+    "kiwi-yaml-workbench": {
+      "category": "text",
+      "tags": [
+        "YAMLを整える",
+        "JSONへ変換",
+        "Actionsの検査"
+      ],
+      "keywords": [
+        "設定ファイル",
+        "YML",
+        "yq",
+        "yamlfmt",
+        "actionlint",
+        "GitHub Actions"
+      ],
+      "alias_names": [
+        "きういYAML",
+        "きういYAML整形",
+        "きういActions点検"
+      ]
+    },
+    "kiwi-code-workbench": {
+      "category": "development",
+      "tags": [
+        "コードを読む",
+        "シェルを整形",
+        "Markdownを表示"
+      ],
+      "keywords": [
+        "コードビュー",
+        "構文色分け",
+        "行番号",
+        "README",
+        "資料生成",
+        "HTML",
+        "bat",
+        "shfmt",
+        "Glow",
+        "code2prompt"
+      ],
+      "alias_names": [
+        "きういコードビュー",
+        "きういシェル整形",
+        "きういMarkdown",
+        "きういコード資料"
+      ]
+    },
+    "kiwi-pc-workbench": {
+      "category": "pc",
+      "tags": [
+        "PCの構成",
+        "容量の内訳",
+        "重複チェック"
+      ],
+      "keywords": [
+        "パソコン",
+        "OS",
+        "CPU",
+        "GPU",
+        "メモリー",
+        "メモリ",
+        "ストレージ",
+        "空き容量",
+        "ディスク容量",
+        "容量不足",
+        "大きなファイル",
+        "重複ファイル",
+        "fastfetch",
+        "duf",
+        "dust",
+        "fclones"
+      ],
+      "alias_names": [
+        "きうい重複チェック",
+        "きうい容量ビュー",
+        "きういPC情報",
+        "きうい空き容量",
+        "きうい容量作業場"
+      ]
+    }
+  },
+  "featured": [
+    {
+      "slug": "kiwi-image-workbench",
+      "reason": "写真を送りやすいサイズや形式へ。PNGの圧縮も続けてできます。"
+    },
+    {
+      "slug": "kiwi-pdf-workbench",
+      "reason": "PDFの結合・分割から、ページ番号や画像保存まで。"
+    },
+    {
+      "slug": "kiwi-transfer",
+      "reason": "PC同士もスマホとも。ファイルやメモの受け渡しに。"
+    },
+    {
+      "slug": "kiwi-reading-workbench",
+      "reason": "画像の文字をコピーしたいときに。修正した文章の読み上げもできます。"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "share-photos",
+      "title": "写真を整えて、相手に渡したい",
+      "description": "サイズや撮影情報を確認し、PCやスマホへ共有できます。",
+      "slugs": [
+        "kiwi-image-workbench",
+        "kiwi-photo-info",
+        "kiwi-transfer"
+      ]
+    },
+    {
+      "id": "organize-files",
+      "title": "増えた写真や書類を整理したい",
+      "description": "重複を見比べ、名前をそろえ、大切なファイルは履歴付きで保存。",
+      "slugs": [
+        "kiwi-tidy",
+        "kiwi-rename",
+        "kiwi-backup"
+      ]
+    },
+    {
+      "id": "read-documents",
+      "title": "紙やPDFの内容を使いやすくしたい",
+      "description": "画像の文字を読み取り、PDFの必要なページを取り出し、文書を変換できます。",
+      "slugs": [
+        "kiwi-reading-workbench",
+        "kiwi-pdf-workbench",
+        "kiwi-document-workbench"
+      ]
+    },
+    {
+      "id": "use-recordings",
+      "title": "録音や動画を、あとで使いたい",
+      "description": "録音の文字起こし、動画の切り出し、短いGIF作りに。",
+      "slugs": [
+        "kiwi-transcribe",
+        "kiwi-media-workbench"
+      ]
+    }
+  ]
+}
