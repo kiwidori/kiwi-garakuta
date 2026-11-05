@@ -1,0 +1,352 @@
+{
+  "kiwi-pdf-stamp": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pdf-stamp-v0.1.0/KiwiPDFStamp-0.1.0-win11-x64.zip",
+    "bytes": 19395835,
+    "sha256": "660c13605e16aa1458f4f445965f31cfdca302694f45cf607cff21aaefa6de3c"
+  },
+  "kiwi-reading-workbench": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-reading-workbench-v0.1.0/KiwiReadingWorkbench-0.1.0-win11-x64.zip",
+    "bytes": 113426858,
+    "sha256": "9349b3c2975839bc7a7e868349d8fbd6169140d3290958ab5d34d742e1b6a572"
+  },
+  "kiwi-filetype": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-filetype-v0.1.0/KiwiFileType-0.1.0-win11-x64.zip",
+    "bytes": 11861417,
+    "sha256": "34dea06273751469ef3a3b1b4e06d07d9f9eca4f446a073e77510518093ce361"
+  },
+  "kiwi-image-workbench": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-image-workbench-v0.1.0/KiwiImageWorkbench-0.1.0-win11-x64.zip",
+    "bytes": 18963518,
+    "sha256": "a622495bca8ffa76d0854d02dba5732dc7ff09428a52bc8ac14629b166ba961c"
+  },
+  "kiwi-labels": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-labels-v0.1.0/KiwiLabels-0.1.0-win11-x64.zip",
+    "bytes": 11864202,
+    "sha256": "554dbfd5156db664759d6171e4324826017bc9ab152be6dfbc83158d50d6d15f"
+  },
+  "kiwi-media-workbench": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-media-workbench-v0.1.0/KiwiMediaWorkbench-0.1.0-win11-x64.zip",
+    "bytes": 19155626,
+    "sha256": "c2bb9f205b0abd2d4bfbc60e108a367ab52cb106a9cb50de7c47b05e96910dee"
+  },
+  "kiwi-speech": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-speech-v0.1.0/KiwiSpeech-0.1.0-win11-x64.zip",
+    "bytes": 12031336,
+    "sha256": "cf3f283da714b04e3e1d95cbda6362e4eb256b002e513e157a8744bf7a178b96"
+  },
+  "kiwi-duplicates": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-duplicates-v0.1.0/KiwiDuplicates-0.1.0-win11-x64.zip",
+    "bytes": 11843940,
+    "sha256": "b96d7fb4dc0d7de451c8408bb915a56130aa839ed3c176d58162bfcceeb76047"
+  },
+  "kiwi-download": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-download-v0.1.0/KiwiDownload-0.1.0-win11-x64.zip",
+    "bytes": 11860823,
+    "sha256": "ae52e816685208a48f6e684eac8a8dbb8b723ec5dd884b33cbea6b96b2554b72"
+  },
+  "kiwi-copy": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-copy-v0.1.0/KiwiCopy-0.1.0-win11-x64.zip",
+    "bytes": 11846492,
+    "sha256": "2b4db2d5c9691a7a8bc59912fa31ca6415f46c17bf96a6605f85c267ddc1a047"
+  },
+  "kiwi-pdf-workbench": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pdf-workbench-v0.2.0/KiwiPDFWorkbench-0.2.0-win11-x64.zip",
+    "bytes": 22247665,
+    "sha256": "1f70cb9246cea31fb94a1b11b9534c3dc847e787ba91df8f9df9d88b7285b465"
+  },
+  "kiwi-document-workbench": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-document-workbench-v0.1.0/KiwiDocumentWorkbench-0.1.0-win11-x64.zip",
+    "bytes": 11900806,
+    "sha256": "f48fab9e3ceee24661e31aace0ae52d93a420f049b0580cceed79b6aa7a58e7b"
+  },
+  "kiwi-documents": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-documents-v0.1.0/KiwiDocuments-0.1.0-win11-x64.zip",
+    "bytes": 11835811,
+    "sha256": "a3043a1855eca836546728c1bc2c16f6205df9ad8151578b60206bb5e779cb17"
+  },
+  "kiwi-table": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-table-v0.1.0/KiwiTable-0.1.0-win11-x64.zip",
+    "bytes": 11839540,
+    "sha256": "f2fe0e9404fac6d17a741ab17a0eca50f445ee08be90d7cd357e43df749f159a"
+  },
+  "kiwi-pdf-images": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pdf-images-v0.1.0/KiwiPDFImages-0.1.0-win11-x64.zip",
+    "bytes": 11846902,
+    "sha256": "67e1c02ecdc7197b652550a83d5962ffb69fe088a464dbb6abad55eebb6a9ab1"
+  },
+  "kiwi-video-save": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-video-save-v0.1.0/KiwiVideoSave-0.1.0-win11-x64.zip",
+    "bytes": 11835475,
+    "sha256": "1980dd61c2b62fc2a01de7892780027669e373fb245c19b4eaeed43b05c8ea0b"
+  },
+  "kiwi-rename": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-rename-v0.1.0/KiwiRename-0.1.0-win11-x64.zip",
+    "bytes": 11838797,
+    "sha256": "72d2a40a54ccd4828aa17a6563724ea8d7166aeb03f53ec985eea449319321e6"
+  },
+  "kiwi-video": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-video-v0.1.0/KiwiVideo-0.1.0-win11-x64.zip",
+    "bytes": 11863536,
+    "sha256": "907cc5f74bb83f0db4af46c606c6e09d912b0f3c9d6102afb9da74a421b846c1"
+  },
+  "kiwi-image": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-image-v0.1.0/KiwiImage-0.1.0-win11-x64.zip",
+    "bytes": 18421583,
+    "sha256": "366b565f5e7055be58065d06a6b4867528782cfe67c9369e19313301ac728332"
+  },
+  "kiwi-vector": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-vector-v0.1.0/KiwiVector-0.1.0-win11-x64.zip",
+    "bytes": 19135814,
+    "sha256": "bb4f8b760e8a5d8cbb9ff90f8576a7c380d8f396e85575b38535019f30b79416"
+  },
+  "kiwi-photo-info": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-photo-info-v0.1.0/KiwiPhotoInfo-0.1.0-win11-x64.zip",
+    "bytes": 11734711,
+    "sha256": "06c45ae675748a3bd270c0d8e6c222e203cc186be810241e25021f572a8994a0"
+  },
+  "kiwi-gif": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-gif-v0.1.0/KiwiGIF-0.1.0-win11-x64.zip",
+    "bytes": 18975040,
+    "sha256": "738fa65dbb7f2dacbafce218849c6ce889d9173dda1a58509b8aceaf4a9d00d6"
+  },
+  "kiwi-archive": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-archive-v0.1.0/KiwiArchive-0.1.0-win11-x64.zip",
+    "bytes": 14083295,
+    "sha256": "d8b8660051f8039d1fbe1d56e29d8eaf3017ea0cb771e0d441fb3df34fe0c5f1"
+  },
+  "kiwi-vault": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-vault-v0.1.0/KiwiVault-0.1.0-win11-x64.zip",
+    "bytes": 14691901,
+    "sha256": "a74d289475c9c999ac23182f65711704a6e907b9ef40503f9c604922d7fb611b"
+  },
+  "kiwi-ocr": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-ocr-v0.1.0/KiwiOCR-0.1.0-win11-x64.zip",
+    "bytes": 113254472,
+    "sha256": "f021acc5b8cfffd825a60be501e4428f4dcced120500921141845092ea74978b"
+  },
+  "kiwi-qr": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-qr-v0.1.0/KiwiQR-0.1.0-win11-x64.zip",
+    "bytes": 25742791,
+    "sha256": "4542eb2af12016411935f666215ac14f47c6c59fe8da2f1deb337de7bba89124"
+  },
+  "kiwi-backup": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-backup-v0.1.0/KiwiBackup-0.1.0-win11-x64.zip",
+    "bytes": 22387763,
+    "sha256": "ceb5fb3e2d0135703bc69fec987ebc5c157d992c878cc531b507a53ec4981dd5"
+  },
+  "kiwi-tidy": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-tidy-v0.1.0/KiwiTidy-0.1.0-win11-x64.zip",
+    "bytes": 35267147,
+    "sha256": "4d7056a49f400726c46764e2ab3023f54d3d2b26e7cb7589a8c8645777aace38"
+  },
+  "kiwi-transcribe": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-transcribe-v0.1.0/KiwiTranscribe-0.1.0-win11-x64.zip",
+    "bytes": 200293615,
+    "sha256": "15ff3f5fcd8e8a38ab6bc1a3a93cf5f0944ccc795f9efd5fd587fefaa5a97fe0"
+  },
+  "kiwi-transfer": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-transfer-v0.2.1/KiwiTransfer-0.2.1-win11-x64.zip",
+    "bytes": 25613947,
+    "sha256": "0a4147de8eb1ae1d7d02905a1b4519069dbf0a0f061a62bceb3a1f65f9dccb13"
+  },
+  "kiwi-pdf": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pdf-v0.1.0/KiwiPdf-0.1.0-win11-x64.zip",
+    "bytes": 14079198,
+    "sha256": "48b6d40ac46a5661676af8a4b68c665feabc4bc829aa3ade1c811eb359dbe3c7"
+  },
+  "kiwi-image-enlarge": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-image-enlarge-v0.1.0/KiwiImageEnlarge-0.1.0-win11-x64.zip",
+    "bytes": 63143080,
+    "sha256": "efb6c158021fe8b2e4c90be92dfb03042f2b459f1eb84867ff2a390d8315ab42"
+  },
+  "kiwi-search": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-search-v0.2.1/KiwiSearch-0.2.1-win11-x64-notices.zip",
+    "bytes": 12942575,
+    "sha256": "46f29f137d0b34a38e51d385f7531b3f7f78582ec60da9bb9ba49dff670dd3a3"
+  },
+  "kiwi-find": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-find-v0.2.1/KiwiFind-0.2.1-win11-x64-notices.zip",
+    "bytes": 12726247,
+    "sha256": "aab7231e5c1b7bcba3220acb7963b5485419b1e2333b7d8e99171a07e12fdaaa"
+  },
+  "kiwi-disk": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-disk-v0.2.1/KiwiDisk-0.2.1-win11-x64-notices.zip",
+    "bytes": 12344477,
+    "sha256": "073a6b878df806b47278bc3a710b39a6aa33a16b3fccde3f069fd2eaded081d9"
+  },
+  "kiwi-json": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-json-v0.2.1/KiwiJSON-0.2.1-win11-x64-notices.zip",
+    "bytes": 11624764,
+    "sha256": "b5663f0fdd864fef88849657178379f406dd233a3fa540d187071eb7492008b2"
+  },
+  "kiwi-code": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-code-v0.2.1/KiwiCode-0.2.1-win11-x64-notices.zip",
+    "bytes": 14842311,
+    "sha256": "aebafb60b24ca8cbfea760879fd398ce4aa5f2aebd82b0e4d371623f0bfcca27"
+  },
+  "kiwi-system": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-system-v0.2.1/KiwiSystem-0.2.1-win11-x64-notices.zip",
+    "bytes": 14414870,
+    "sha256": "ea9eb0842064c1f63c2a931d6752d5d614feb2c9299aa0a6eb21ed2cb16fd8a7"
+  },
+  "kiwi-secrets": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-secrets-v0.2.1/KiwiSecrets-0.2.1-win11-x64-notices.zip",
+    "bytes": 19422052,
+    "sha256": "fc643696b2882579a50e9d1af924b64d0c46755b4082bb34705bf58fd4c301f4"
+  },
+  "kiwi-regex": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-regex-v0.2.1/KiwiRegex-0.2.1-win11-x64-notices.zip",
+    "bytes": 12214352,
+    "sha256": "2b48ddec08870e5c0d1b5377cbd83780fc8f23f0f8ffd815d7f73b57b738a5ad"
+  },
+  "kiwi-http": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-http-v0.2.1/KiwiHTTP-0.2.1-win11-x64-notices.zip",
+    "bytes": 15562274,
+    "sha256": "675f9deec02387b8bebea65e39487320c9888006096fe3fcd52454a2496ad009"
+  },
+  "kiwi-png": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-png-v0.2.1/KiwiPNG-0.2.1-win11-x64-notices.zip",
+    "bytes": 11685420,
+    "sha256": "c6975f5abb61911f36204b8d7e537ed5ad881bb72a06b7141c125b549addf6c0"
+  },
+  "kiwi-yaml": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-yaml-v0.2.1/KiwiYAML-0.2.1-win11-x64-notices.zip",
+    "bytes": 16974993,
+    "sha256": "44cf4163ec57feadc386558c770d03cfd8c3a272484c8551a42ec47de5037f3a"
+  },
+  "kiwi-hash": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-hash-v0.2.1/KiwiHash-0.2.1-win11-x64-notices.zip",
+    "bytes": 11604475,
+    "sha256": "8eacb687e329c6098868c13f9883ef31321d9f44626bbfcb6561b883659813a2"
+  },
+  "kiwi-color": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-color-v0.2.1/KiwiColor-0.2.1-win11-x64-notices.zip",
+    "bytes": 11695678,
+    "sha256": "896ada395520e7c184b1315b4f5893edc912924c5cede25cb2827893ca7c2771"
+  },
+  "kiwi-ascii": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-ascii-v0.2.1/KiwiASCII-0.2.1-win11-x64.zip",
+    "bytes": 22367758,
+    "sha256": "6feb19a536a5ecb1cbef96313c9b2f6cd07b9cd27cc7db150a42d02f8d430fe9"
+  },
+  "kiwi-space": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-space-v0.2.1/KiwiSpace-0.2.1-win11-x64.zip",
+    "bytes": 12523979,
+    "sha256": "989c3c19dbf7f9c5d0eade6ff49e8a473c044c8b64303a05aaabdc274e7cfd18"
+  },
+  "kiwi-diff": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-diff-v0.2.1/KiwiDiff-0.2.1-win11-x64.zip",
+    "bytes": 20976664,
+    "sha256": "b63c443320114e18ba313cf2e4ac496ccc9ca980777f9ad66f316a45ccd85358"
+  },
+  "kiwi-count": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-count-v0.1.1/KiwiCount-0.1.1-win11-x64.zip",
+    "bytes": 18300535,
+    "sha256": "f5f928e99bd3c6aac2ef4c1e188181aceb2e444a5df62a12670dde1a10959855"
+  },
+  "kiwi-shell": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-shell-v0.1.1/KiwiShell-0.1.1-win11-x64.zip",
+    "bytes": 12848190,
+    "sha256": "07f060c60fc02098afa755282900ce0f2af41cceb12dfafed474e380349b440c"
+  },
+  "kiwi-minify": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-minify-v0.1.1/KiwiMinify-0.1.1-win11-x64.zip",
+    "bytes": 13545468,
+    "sha256": "5de2322370d8f7d97c6e720e63eba0f50ea8e4d5c5ad307037483ab8ec7f1066"
+  },
+  "kiwi-data": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-data-v0.1.1/KiwiData-0.1.1-win11-x64.zip",
+    "bytes": 15260443,
+    "sha256": "c2051b0491b3359c927e0913ba1fa627703b5ab168ee91317eeee6aaab6b8480"
+  },
+  "kiwi-markdown": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-markdown-v0.1.1/KiwiMarkdown-0.1.1-win11-x64.zip",
+    "bytes": 18059649,
+    "sha256": "aa1a69afdd71569d8183c48245b7cfa9889bac61695f4349a3a5785cb970feb4"
+  },
+  "kiwi-replace": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-replace-v0.1.1/KiwiReplace-0.1.1-win11-x64.zip",
+    "bytes": 12170165,
+    "sha256": "893b852e662846698e7bb1d777b6a8adac85bf2db03945bf6810fd17d517cee0"
+  },
+  "kiwi-bytes": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-bytes-v0.1.1/KiwiBytes-0.1.1-win11-x64.zip",
+    "bytes": 11697849,
+    "sha256": "e67f5e69019b282ff557d17836fc028b5e16e010bf0ae12533632154413c5c38"
+  },
+  "kiwi-calc": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-calc-v0.1.1/KiwiCalc-0.1.1-win11-x64.zip",
+    "bytes": 14019476,
+    "sha256": "504dd0d2589ddb0bcd022a515397627924eaf69ec5ef161099d68ca5759e156d"
+  },
+  "kiwi-prompt": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-prompt-v0.1.1/KiwiPrompt-0.1.1-win11-x64.zip",
+    "bytes": 17261297,
+    "sha256": "75c47d4e3106fbce7e189a8028a3aec1a3c1f1a83f437c9ad05a71112224cfe0"
+  },
+  "kiwi-yamlfmt": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-yamlfmt-v0.1.0/KiwiYamlfmt-0.1.0-win11-x64.zip",
+    "bytes": 13412650,
+    "sha256": "3175bd6ffeea9c0702cb23c8578bcdbf015af8129044aaafdc8cfb8ab91584d2"
+  },
+  "kiwi-json-paths": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-json-paths-v0.1.0/KiwiJsonPaths-0.1.0-win11-x64.zip",
+    "bytes": 15717958,
+    "sha256": "3a9ab71266a373abd0aefbc2de603511f083ff2db82456a24520c0414e91ed16"
+  },
+  "kiwi-actions-check": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-actions-check-v0.1.0/KiwiActionsCheck-0.1.0-win11-x64.zip",
+    "bytes": 13603845,
+    "sha256": "0772737ec2f8b2cdba62abcd736a7ae873acb4c4fdc2da0e6248e56a6590198c"
+  },
+  "kiwi-json-expr": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-json-expr-v0.1.0/KiwiJsonExpr-0.1.0-win11-x64.zip",
+    "bytes": 13027851,
+    "sha256": "8a0b34852073e07cefacbafcc51f8a5d841ae1fd4d6366e41bbc06d44a787fad"
+  },
+  "kiwi-json-tree": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-json-tree-v0.1.0/KiwiJsonTree-0.1.0-win11-x64.zip",
+    "bytes": 20228238,
+    "sha256": "fd81fbff1eb17f660547da8673850d3b9e239f50ffd3bd942d74134ebb6bad51"
+  },
+  "kiwi-json-workbench": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-json-workbench-v0.2.0/KiwiJsonWorkbench-0.2.0-win11-x64.zip",
+    "bytes": 26967451,
+    "sha256": "8557be3f73680ac9fc5f10fd8e725990b1591bf97945689b49b5264519843744"
+  },
+  "kiwi-search-workbench": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-search-workbench-v0.1.0/KiwiSearchWorkbench-0.1.0-win11-x64.zip",
+    "bytes": 14569668,
+    "sha256": "f8984f1bfe79a06f887084767606a70f968beae84d1a00c37a56f8d8f6a03eed"
+  },
+  "kiwi-youtube-captions": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-youtube-captions-v0.1.0/KiwiYoutubeCaptions-0.1.0-win11-x64.zip",
+    "bytes": 14133425,
+    "sha256": "8fc000af6c9b2224e49bfc337d39b27159cff00ddf3c7e85e87dd779bb1eda36"
+  },
+  "kiwi-capacity-workbench": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-capacity-workbench-v0.1.0/KiwiCapacityWorkbench-0.1.0-win11-x64.zip",
+    "bytes": 13745217,
+    "sha256": "58fb63cf7523b9600c7d380a5aa03bb2f7051e3a0079ae45be3e55f16fbe23b9"
+  },
+  "kiwi-text-workbench": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-text-workbench-v0.1.0/KiwiTextWorkbench-0.1.0-win11-x64.zip",
+    "bytes": 13270422,
+    "sha256": "dd4131c7ff49728e601fae6497ae339b472157f1324b03504d6821cb0adbcf47"
+  },
+  "kiwi-yaml-workbench": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-yaml-workbench-v0.1.1/KiwiYamlWorkbench-0.1.1-win11-x64.zip",
+    "bytes": 21702002,
+    "sha256": "ac4e04c3556f71fd47b7b2ee6d25a5c09a501cca7672e71afeae222128241956"
+  },
+  "kiwi-code-workbench": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-code-workbench-v0.1.0/KiwiCodeWorkbench-0.1.0-win11-x64.zip",
+    "bytes": 29488863,
+    "sha256": "2cc1bc6a9c401ae5ef9b3e13d820d18bf1db747c228e8a10183bc4ff70ad3a5f"
+  },
+  "kiwi-pc-workbench": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pc-workbench-v0.2.0/KiwiPcWorkbench-0.2.0-win11-x64.zip",
+    "bytes": 17657509,
+    "sha256": "4c280d10fc23e0a06f93ea112fdff1e00c71b43645174d2b74d76e90ce20e352"
+  }
+}

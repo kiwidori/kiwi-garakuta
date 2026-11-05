@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def asset_url(name):
     path = ROOT / 'site/assets' / name
-    return f'/assets/{name}?v={hashlib.sha256(path.read_bytes()).hexdigest()[:12]}'
+    return f'/assets/{name}?v={hashlib.sha256(path.read_text(encoding="utf8").encode("utf8")).hexdigest()[:12]}'
 
 
 def esc(value):
@@ -81,11 +81,12 @@ def notice_paragraphs(text):
 
 
 class Site:
-    def __init__(self, settings, support, catalog, discovery):
+    def __init__(self, settings, support, catalog, discovery, downloads):
         self.settings, self.support, self.catalog, self.discovery = settings, support, catalog, discovery
         self.tools = {t['slug']: t for t in catalog}
         self.active = [t for t in catalog if not t.get('replaced_by')]
         self.meta = discovery['tools']
+        self.downloads = downloads
         self.categories = {c['id']: c for c in discovery['categories']}
         featured = [f['slug'] for f in discovery['featured']]
         self.order = {slug: i for i, slug in enumerate(featured + [t['slug'] for t in self.active if t['slug'] not in featured])}
@@ -93,12 +94,16 @@ class Site:
     def socials(self):
         return f'<div class="social-links"><a href="{esc(self.settings["contact_url"])}" rel="noopener noreferrer">X（Twitter） ↗</a><a href="{esc(self.settings["youtube_url"])}" rel="noopener noreferrer">YouTube ↗</a></div>'
 
+    def size_label(self, slug):
+        return f'約{self.downloads[slug]["bytes"] / 1_000_000:.1f} MB'
+
     def page(self, title, description, body, path, *, catalog=False):
         full_title = self.settings['site_name'] if path == '/' else title + ' | ' + self.settings['site_name']
         script = f'<script src="{asset_url("catalog.js")}" defer></script>' if catalog else ''
         robots = '<meta name="robots" content="noindex">' if path == '/404.html' else ''
         tool_slug = path.removeprefix('/tools/').strip('/')
         share_image = self.tools[tool_slug]['screenshot'] if tool_slug in self.tools else '/assets/screenshots/kiwi-image-workbench-public.png'
+        share_alt = (self.tools[tool_slug]['name'] if tool_slug in self.tools else 'きうい画像・PNG工房') + 'の動作画面'
         share_width, share_height = image_size(share_image)
         return f'''<!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -106,7 +111,7 @@ class Site:
 <link rel="canonical" href="{BASE}{esc(path)}"><meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="{esc(self.settings['site_name'])}">
 <meta property="og:title" content="{esc(full_title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{BASE}{esc(path)}">
-<meta property="og:image" content="{BASE}{esc(share_image)}"><meta property="og:image:width" content="{share_width}"><meta property="og:image:height" content="{share_height}"><meta property="og:image:alt" content="{esc(title)}の動作画面"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="{BASE}{esc(share_image)}"><meta property="og:image:width" content="{share_width}"><meta property="og:image:height" content="{share_height}"><meta property="og:image:alt" content="{esc(share_alt)}"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="{asset_url('design.css')}">{robots}{script}</head>
 <body><a class="skip-link" href="#main">本文へ移動</a>
 <header class="site-header"><div class="wrap header-inner"><a class="brand" href="/" aria-label="きういのガラクタ置き場 ホーム"><img src="/assets/favicon.svg" width="36" height="36" alt=""><span>きういの<span class="brand-break">ガラクタ置き場</span></span></a>
@@ -129,7 +134,7 @@ class Site:
         tags = ''.join(f'<span>{esc(tag)}</span>' for tag in meta['tags'])
         return f'''<article class="tool-card" {data}{hidden}>
 <a href="/tools/{esc(slug)}/" class="card-link"><div class="card-screen">{image(tool['screenshot'], '', css='card-image')}<span class="screen-hint">実際の画面</span></div>
-<div class="card-body"><div class="card-category">{icon(cat['id'])}{esc(cat['label'])}</div><h3>{esc(tool['name'])}</h3><p>{esc(tool['summary'])}</p><div class="tool-tags">{tags}</div><div class="card-bottom"><span>無料 · Windows 11</span><span class="card-more">詳細・ダウンロード {icon('arrow')}</span></div></div></a></article>'''
+<div class="card-body"><div class="card-category">{icon(cat['id'])}{esc(cat['label'])}</div><h3>{esc(tool['name'])}</h3><p>{esc(tool['summary'])}</p><div class="tool-tags">{tags}</div><div class="card-bottom"><span>ZIP · {self.size_label(slug)}</span><span class="card-more">詳細・ダウンロード {icon('arrow')}</span></div></div></a></article>'''
 
     def search(self, category=None):
         return f'''<form class="search-form" id="tool-search" action="/" method="get" role="search"><label for="search-input">やりたいこと・ソフト名で探す</label>
@@ -190,7 +195,7 @@ class Site:
         prep = f'<div class="preparation"><strong>初回の準備</strong><p>{esc(preparation)}</p></div>' if preparation else ''
         intro = f'''<nav class="crumb" aria-label="パンくず"><a href="/">ホーム</a><span>/</span><a href="/categories/{cat['id']}/">{esc(cat['label'])}</a><span>/</span><span>{esc(tool['name'])}</span></nav>{replacement}
 <section class="tool-hero"><div><div class="eyebrow">{icon(cat['id'])}{esc(cat['label'])}</div><h1>{esc(tool['name'])}</h1><p class="lead">{esc(tool['summary'])}</p><div class="tool-tags">{tags}</div></div>
-<aside class="download-panel" id="download" aria-label="ダウンロード"><div class="download-meta"><strong>無料</strong><span>{version}</span></div><p>Windows 11 x64 · ZIP版</p><a class="button download-button" href="{esc(tool['download_url'])}" rel="noopener noreferrer">{icon('download')}{download_label}</a><p class="filename">{esc(filename)}</p><a href="/guide/#start">ダウンロード後の使い方 {icon('arrow')}</a><small>ZIPをすべて展開してから起動してください。</small></aside></section>{prep}
+<aside class="download-panel" id="download" aria-label="ダウンロード"><div class="download-meta"><strong>無料</strong><span>{version}</span></div><p>Windows 11 x64 · ZIP版 · {self.size_label(slug)}</p><a class="button download-button" href="{esc(tool['download_url'])}" rel="noopener noreferrer">{icon('download')}{download_label}</a><p class="filename">{esc(filename)}</p><a href="/guide/#start">ダウンロード後の使い方 {icon('arrow')}</a><small>ZIPをすべて展開してから起動してください。</small></aside></section>{prep}
 <nav class="page-nav" aria-label="このページの内容"><a href="#features">できること</a><a href="#steps">使い方</a><a href="#screens">動作画面</a><a href="#notes">注意点</a><a href="#origin">出典・ソース</a></nav>'''
         features = ''.join(f'<li>{esc(value)}</li>' for value in tool['features'])
         steps = ''.join(f'<li><span>{esc(value)}</span></li>' for value in tool['steps'])
@@ -203,12 +208,15 @@ class Site:
         origins_html = ''.join(f'<li><a href="{esc(o["url"])}" rel="noopener noreferrer">{esc(o["name"])} ↗</a><p>ライセンス：{esc(o["license"])}</p></li>' for o in origins)
         models = ''.join(f'<li><a href="{esc(m["url"])}" rel="noopener noreferrer">{esc(m["name"])} ↗</a><p>モデルのライセンス：{esc(m["license"])}</p></li>' for m in tool.get('model_sources', []))
         source_download = f'<a href="{esc(tool["dependency_source_url"])}" rel="noopener noreferrer">元ツールの対応ソース ↗</a>' if tool.get('dependency_source_url') else ''
+        download = self.downloads[slug]
+        digest = f'<dt>SHA-256</dt><dd><code>{esc(download["sha256"])}</code></dd>' if download['sha256'] else ''
+        file_details = f'<details class="file-details"><summary>配布ファイルの情報・SHA-256</summary><dl><dt>ファイル名</dt><dd>{esc(filename)}</dd><dt>サイズ</dt><dd>{download["bytes"]:,} bytes（{self.size_label(slug)}）</dd>{digest}</dl><p>GitHub Releasesの公開情報です。SHA-256はZIP全体の照合に使えます。</p></details>'
         # Keep the original notice intact; additional headings do not replace its details.
         content = f'''<div class="detail-layout"><div class="detail-main"><section class="content-section" id="features"><p class="section-kicker">できること</p><h2>このソフトでできること</h2><ul class="feature-list">{features}</ul></section>
 <section class="content-section" id="steps"><p class="section-kicker">使い始める</p><h2>使い方</h2><ol class="steps">{steps}</ol><a class="guide-link" href="/guide/">ZIPの開き方や、起動できないときの案内 {icon('arrow')}</a></section>
 <section class="content-section" id="screens"><p class="section-kicker">画面で確認</p><h2>実際の動作画面</h2>{shots}</section>{advanced}
 <section class="content-section notes" id="notes"><p class="section-kicker">ダウンロード前に</p><h2>制限と注意点</h2><div class="notice-copy">{notice_paragraphs(tool['limitations'])}</div></section>
-<section class="content-section origin" id="origin"><h2>出典・ソースコード</h2><ul>{origins_html}{models}</ul><p>本ソフトは上流プロジェクトの公式製品ではありません。</p><div class="source-links"><a href="{esc(tool['source_url'])}" rel="noopener noreferrer">このソフトのソースコード ↗</a>{source_download}</div></section></div>
+<section class="content-section origin" id="origin"><h2>出典・ソースコード</h2><ul>{origins_html}{models}</ul><p>本ソフトは上流プロジェクトの公式製品ではありません。</p><div class="source-links"><a href="{esc(tool['source_url'])}" rel="noopener noreferrer">このソフトのソースコード ↗</a>{source_download}</div>{file_details}</section></div>
 <aside class="detail-aside"><div class="side-note"><strong>使い方で迷ったら</strong><p>ZIPの展開や初回の準備については、共通の使い方ガイドへ。</p><a href="/guide/">はじめての方へ {icon('arrow')}</a><hr><p>不具合や質問は、ソフト名と表示された内容を添えてXのDMへお寄せください。</p><a href="{esc(self.settings['contact_url'])}" rel="noopener noreferrer">@kiwi_dori ↗</a></div>{self.support_block()}</aside></div>'''
         others = [t for t in self.active if t['slug'] != active_slug and self.meta[t['slug']]['category'] == cat['id']]
         others.sort(key=lambda t: (-len(set(meta['tags']) & set(self.meta[t['slug']]['tags'])), self.order[t['slug']]))

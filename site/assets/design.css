@@ -437,3 +437,5 @@ a{color:black}
 
 button:disabled{opacity:.55;cursor:not-allowed}
 input:disabled{opacity:.65;cursor:not-allowed}
+
+.file-details{border:1px solid var(--line);border-radius:10px;background:var(--white);margin-top:25px;padding:0 20px;font-size:12px}.file-details summary{cursor:pointer;font-weight:700;color:var(--green);min-height:48px;padding:13px 0}.file-details dl{margin:10px 0 20px}.file-details dt{font-weight:700;margin-top:12px;font-size:11px;color:var(--muted)}.file-details dd{margin:3px 0 0;overflow-wrap:anywhere;line-height:1.9}.file-details code{font-size:11px;user-select:all}.file-details>p{font-size:11px;color:var(--muted)}
