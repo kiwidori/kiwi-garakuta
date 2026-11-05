@@ -225,9 +225,9 @@
     "sha256": "896ada395520e7c184b1315b4f5893edc912924c5cede25cb2827893ca7c2771"
   },
   "kiwi-ascii": {
-    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-ascii-v0.2.1/KiwiASCII-0.2.1-win11-x64.zip",
-    "bytes": 22367758,
-    "sha256": "6feb19a536a5ecb1cbef96313c9b2f6cd07b9cd27cc7db150a42d02f8d430fe9"
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-ascii-v0.2.2/KiwiASCII-0.2.2-win11-x64.zip",
+    "bytes": 22374769,
+    "sha256": "79fd2c0aff0b2d93f31b2086482d51f356357aef864948e0f79650f0a8139e97"
   },
   "kiwi-space": {
     "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-space-v0.2.1/KiwiSpace-0.2.1-win11-x64.zip",
@@ -320,9 +320,9 @@
     "sha256": "f8984f1bfe79a06f887084767606a70f968beae84d1a00c37a56f8d8f6a03eed"
   },
   "kiwi-youtube-captions": {
-    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-youtube-captions-v0.1.0/KiwiYoutubeCaptions-0.1.0-win11-x64.zip",
-    "bytes": 14133425,
-    "sha256": "8fc000af6c9b2224e49bfc337d39b27159cff00ddf3c7e85e87dd779bb1eda36"
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-youtube-captions-v0.1.1/KiwiYoutubeCaptions-0.1.1-win11-x64.zip",
+    "bytes": 14134142,
+    "sha256": "da043225b02ccce89a92d47ed28d61dd06baa2a4b6e274e8e2882aa8ca520c6a"
   },
   "kiwi-capacity-workbench": {
     "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-capacity-workbench-v0.1.0/KiwiCapacityWorkbench-0.1.0-win11-x64.zip",
