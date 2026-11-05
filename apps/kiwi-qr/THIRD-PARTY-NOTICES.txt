@@ -1,4 +1,4 @@
-きういQR 0.1.0
+きういQR 0.1.1
 
 GUI source: MIT, repository LICENSE.
 python-qrcode 8.2 (official PyPI wheel): BSD-3-Clause, qrcode-LICENSE.txt.
@@ -17,7 +17,7 @@ Sources: https://github.com/wjakob/nanobind/tree/v2.11.0
 https://github.com/Tessil/robin-map/tree/4ec1bf19c6a96125ea22062f38c2cf5b958e448e
 The official wheel and native extension are bundled unchanged; SHA256 is in upstream-pin.json.
 
-Pillow 12.3.0 and bundled image-codec/font dependencies: Pillow-LICENSE.txt.
+Pillow 13.0.0 and bundled image-codec/font dependencies: Pillow-LICENSE.txt.
 Python 3.13.2, Tcl 8.6.15, Tk: Runtime-LICENSES.txt.
 Python OpenSSL runtime: Python-OpenSSL-LICENSE.txt.
 PyInstaller 6.22.2: PyInstaller-LICENSE.txt (GPL with distribution exception).

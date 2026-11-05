@@ -1,4 +1,4 @@
-きういQR 0.1.0
+きういQR 0.1.1
 URLやメモのQRを作り、画像のQR・バーコードを読み取る無料ソフトです。
 Windows 11 x64向け。ZIPを展開しKiwiQR.exeを起動してください。
 Microsoft Visual C++ v14 再頒布可能パッケージ（x64）が必要です。

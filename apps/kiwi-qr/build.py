@@ -7,9 +7,13 @@ from portable_build import fetch
 
 def build():
  if os.name!='nt':raise SystemExit('Build on Windows x64.')
- for name,version in [('Pillow','12.3.0'),('PyInstaller','6.22.2')]:
-  if importlib.metadata.version(name)!=version:raise ValueError('Runtime notice version mismatch: '+name)
  pin=json.loads((ROOT/'upstream-pin.json').read_text(encoding='utf8'))
+ for name,version in [('Pillow',pin['pillow_version']),('PyInstaller','6.22.2')]:
+  if importlib.metadata.version(name)!=version:raise ValueError('Runtime notice version mismatch: '+name)
+ import PIL
+ for name,digest in pin['pillow_binaries'].items():
+  path=Path(PIL.__file__).parent/name
+  if not path.resolve().is_relative_to(Path(PIL.__file__).parent.resolve()) or hashlib.sha256(path.read_bytes()).hexdigest()!=digest:raise ValueError('Pillow binary digest mismatch: '+name)
  for name,digest in pin['licenses'].items():
   if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:raise ValueError('Notice digest mismatch: '+name)
  with tempfile.TemporaryDirectory(prefix='kiwi-qr-build-') as td:
@@ -45,7 +49,7 @@ exe = EXE(pyz,a.scripts,a.binaries,a.datas,[],name='KiwiQR',debug=False,bootload
   parts=[]
   for name,path in [('Python',Path(sys.base_prefix)/'LICENSE.txt'),('Tcl8.6.15',tcl),('Tk',Path(sys.base_prefix)/'tcl/tk8.6/license.terms')]:parts.append('=== '+name+' ===\n'+path.read_text(encoding='utf8'))
   (release/'Runtime-LICENSES.txt').write_text('\n\n'.join(parts),encoding='utf8')
- out=ROOT/'KiwiQR-0.1.0-win11-x64.zip'
+ out=ROOT/'KiwiQR-0.1.1-win11-x64.zip'
  with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
   for path in sorted(release.iterdir()):z.write(path,path.name)
  print('Built',out.name,out.stat().st_size,hashlib.sha256(out.read_bytes()).hexdigest())

@@ -1,4 +1,4 @@
-きういベクター工房 0.1.0
+きういベクター工房 0.1.1
 
 ロゴ・線画・イラストなどをSVGへ変換する、Windows 11 x64用の無料ソフトです。
 写真の画質を復元したり、文字を編集可能なフォントへ変換したりする機能ではありません。
@@ -34,3 +34,5 @@ GUI：MIT（LICENSE）。VTracer、Rust、Pillow、Python/Tcl/Tk、PyInstaller�
 https://kiwi-garakuta.pages.dev/tools/kiwi-vector/
 https://github.com/kiwidori/kiwi-garakuta
 https://x.com/kiwi_dori
+
+画像の読み取り・検証とプレビューにはPillow 13.0.0を使用しています。
