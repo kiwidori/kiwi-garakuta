@@ -95,9 +95,9 @@
     "sha256": "366b565f5e7055be58065d06a6b4867528782cfe67c9369e19313301ac728332"
   },
   "kiwi-vector": {
-    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-vector-v0.1.0/KiwiVector-0.1.0-win11-x64.zip",
-    "bytes": 19135814,
-    "sha256": "bb4f8b760e8a5d8cbb9ff90f8576a7c380d8f396e85575b38535019f30b79416"
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-vector-v0.1.1/KiwiVector-0.1.1-win11-x64.zip",
+    "bytes": 19140819,
+    "sha256": "acf8488d302087de3c16aa5c365c384c669187632dba35f8a9ddfb8cfb00099d"
   },
   "kiwi-photo-info": {
     "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-photo-info-v0.1.0/KiwiPhotoInfo-0.1.0-win11-x64.zip",
@@ -125,9 +125,9 @@
     "sha256": "f021acc5b8cfffd825a60be501e4428f4dcced120500921141845092ea74978b"
   },
   "kiwi-qr": {
-    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-qr-v0.1.0/KiwiQR-0.1.0-win11-x64.zip",
-    "bytes": 25742791,
-    "sha256": "4542eb2af12016411935f666215ac14f47c6c59fe8da2f1deb337de7bba89124"
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-qr-v0.1.1/KiwiQR-0.1.1-win11-x64.zip",
+    "bytes": 20801855,
+    "sha256": "75135eb37ec67f151118921821fecc8fa51f76f51a7217616012b69bdcdfcd67"
   },
   "kiwi-backup": {
     "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-backup-v0.1.0/KiwiBackup-0.1.0-win11-x64.zip",
