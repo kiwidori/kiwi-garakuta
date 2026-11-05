@@ -15,7 +15,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.2.1"
+VERSION = "0.2.2"
+PILLOW_VERSION = "13.0.0"
 ASCII_VERSION = "1.13.1"
 ASCII_SHA256 = "f1695fe93fafaf44b23ccc8470a4cdd4f60dba4ec8d04be5c17bffc7c8324e9b"
 ASCII_URL = (f"https://github.com/TheZoraiz/ascii-image-converter/releases/download/v{ASCII_VERSION}/"
@@ -25,6 +26,12 @@ ASCII_URL = (f"https://github.com/TheZoraiz/ascii-image-converter/releases/downl
 def main() -> None:
     if os.name != "nt":
         raise SystemExit("Build this release on Windows.")
+    if sys.version_info[:3] != (3, 13, 2):
+        raise SystemExit("Build with Python 3.13.2.")
+    if importlib.metadata.version("Pillow") != PILLOW_VERSION:
+        raise SystemExit("Build with Pillow " + PILLOW_VERSION + ".")
+    if importlib.metadata.version("PyInstaller") != "6.22.2":
+        raise SystemExit("Build with PyInstaller 6.22.2.")
     request = urllib.request.Request(ASCII_URL, headers={"User-Agent": "kiwi-garakuta-build/0.1"})
     with urllib.request.urlopen(request, timeout=45) as response:
         data = response.read()

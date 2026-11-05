@@ -15,9 +15,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: '3.13.2'
       - name: Install build dependency
-        run: python -m pip install pyinstaller==6.22.2 pillow==12.3.0
+        run: python -m pip install pyinstaller==6.22.2 pillow==13.0.0
       - name: Build portable ZIP from verified upstream binary
         run: python apps/kiwi-ascii/build.py
       - name: Check ZIP contents
@@ -26,7 +26,7 @@ jobs:
           @'
           from pathlib import Path
           from zipfile import ZipFile
-          package = Path('apps/kiwi-ascii/KiwiASCII-0.2.1-win11-x64.zip')
+          package = Path('apps/kiwi-ascii/KiwiASCII-0.2.2-win11-x64.zip')
           with ZipFile(package) as archive:
               needed = {'KiwiASCII.exe', 'README.txt', 'LICENSE', 'ascii-image-converter-LICENSE.txt', 'ascii-image-converter-README.md', 'THIRD-PARTY-NOTICES.txt', 'Pillow-LICENSE.txt', 'Runtime-LICENSES.txt'}
               assert needed <= set(archive.namelist())
@@ -42,4 +42,4 @@ jobs:
             Write-Output 'Release already exists; keeping verified asset.'
             exit 0
           }
-          gh release create "${{ github.ref_name }}" "apps/kiwi-ascii/KiwiASCII-0.2.1-win11-x64.zip" --title "きうい文字絵 0.2.1" --notes "Windows 11 x64向けの無料ZIP版。ascii-image-converterで静止画像を文字絵に変換できます。上流ライセンス文書を同梱しています。"
+          gh release create "${{ github.ref_name }}" "apps/kiwi-ascii/KiwiASCII-0.2.2-win11-x64.zip" --title "きうい文字絵 0.2.2" --notes "Windows 11 x64向けの無料ZIP版。ascii-image-converterで静止画像を文字絵に変換できます。上流ライセンス文書を同梱しています。"

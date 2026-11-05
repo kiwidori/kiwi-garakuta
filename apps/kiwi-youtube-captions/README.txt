@@ -1,4 +1,4 @@
-きういYouTube字幕 0.1.0
+きういYouTube字幕 0.1.1
 Windows 11 x64 / インストーラー不要
 ZIPを展開し、KiwiYoutubeCaptions.exeを起動してください。
 
