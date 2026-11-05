@@ -133,8 +133,8 @@ class Site:
         hidden = ' hidden' if category and cat['id'] != category else ''
         tags = ''.join(f'<span>{esc(tag)}</span>' for tag in meta['tags'])
         return f'''<article class="tool-card" {data}{hidden}>
-<a href="/tools/{esc(slug)}/" class="card-link"><div class="card-screen">{image(tool['screenshot'], '', css='card-image')}<span class="screen-hint">実際の画面</span></div>
-<div class="card-body"><div class="card-category">{icon(cat['id'])}{esc(cat['label'])}</div><h3>{esc(tool['name'])}</h3><p>{esc(tool['summary'])}</p><div class="tool-tags">{tags}</div><div class="card-bottom"><span>ZIP · {self.size_label(slug)}</span><span class="card-more">詳細・ダウンロード {icon('arrow')}</span></div></div></a></article>'''
+<a href="/tools/{esc(slug)}/" class="card-link" aria-labelledby="card-title-{esc(slug)} card-more-{esc(slug)}"><div class="card-screen">{image(tool['screenshot'], '', css='card-image')}<span class="screen-hint">実際の画面</span></div>
+<div class="card-body"><div class="card-category">{icon(cat['id'])}{esc(cat['label'])}</div><h3 id="card-title-{esc(slug)}">{esc(tool['name'])}</h3><p>{esc(tool['summary'])}</p><div class="tool-tags">{tags}</div><div class="card-bottom"><span>ZIP · {self.size_label(slug)}</span><span class="card-more" id="card-more-{esc(slug)}">詳細・ダウンロード {icon('arrow')}</span></div></div></a></article>'''
 
     def search(self, category=None):
         return f'''<form class="search-form" id="tool-search" action="/" method="get" role="search"><label for="search-input">やりたいこと・ソフト名で探す</label>

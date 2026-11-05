@@ -439,3 +439,10 @@ button:disabled{opacity:.55;cursor:not-allowed}
 input:disabled{opacity:.65;cursor:not-allowed}
 
 .file-details{border:1px solid var(--line);border-radius:10px;background:var(--white);margin-top:25px;padding:0 20px;font-size:12px}.file-details summary{cursor:pointer;font-weight:700;color:var(--green);min-height:48px;padding:13px 0}.file-details dl{margin:10px 0 20px}.file-details dt{font-weight:700;margin-top:12px;font-size:11px;color:var(--muted)}.file-details dd{margin:3px 0 0;overflow-wrap:anywhere;line-height:1.9}.file-details code{font-size:11px;user-select:all}.file-details>p{font-size:11px;color:var(--muted)}
+
+/* Keep the browsing entry points available in long software lists. */
+html{scroll-padding-top:110px}.site-header{position:sticky;top:0;z-index:20}section[id],aside[id],main[id]{scroll-margin-top:12px}
+@media(max-width:760px){html{scroll-padding-top:98px}}
+@media(max-width:480px){html{scroll-padding-top:94px}}
+@media print{html{scroll-padding-top:0}}
+.site-footer a:focus-visible{outline-color:var(--lime)}
