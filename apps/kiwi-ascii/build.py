@@ -71,12 +71,9 @@ def main() -> None:
         if len(notices) != 1:
             raise ValueError('Pillow license document missing')
         shutil.copy2(notices[0], release / 'Pillow-LICENSE.txt')
-        runtime_notices = []
-        for title, path in [('Python', Path(sys.base_prefix)/'LICENSE.txt'), ('Tk', Path(sys.base_prefix)/'tcl'/'tk8.6'/'license.terms')]:
-            if not path.is_file():
-                raise ValueError(f'{title} runtime license document missing')
-            runtime_notices.append(f'=== {title} runtime ===\n'+path.read_text(encoding='utf-8'))
-        (release/'Runtime-LICENSES.txt').write_text('\n\n'.join(runtime_notices),encoding='utf-8')
+        sys.path.insert(0, str(ROOT.parent / "common"))
+        from runtime_licenses import write_runtime_licenses
+        write_runtime_licenses(release / "Runtime-LICENSES.txt")
         shutil.copy2(ROOT.parents[1] / "LICENSE", release / "LICENSE")
 
     output = ROOT / f"KiwiASCII-{VERSION}-win11-x64.zip"
