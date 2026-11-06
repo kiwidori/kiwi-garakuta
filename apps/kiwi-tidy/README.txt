@@ -1,4 +1,4 @@
-きうい重複チェック 0.1.0 / Windows 11 x64
+きうい重複チェック 0.1.1 / Windows 11 x64
 
 同じファイルや似た写真をグループごとに比較します。元のファイルは変更・削除しません。
 
@@ -41,3 +41,5 @@ Czkawka・依存ライブラリのソース一式：
 https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-tidy-v0.1.0/Czkawka-12.0.2-corresponding-source.tar.gz
 各ライセンスと第三者への通知は同梱のTHIRD-PARTY-NOTICES.txtをご覧ください。
 不具合・質問：https://x.com/kiwi_dori
+
+画像プレビューにはPillow 13.0.0を使用しています。画像ライブラリと依存物の通知はPillow-LICENSE.txtに同梱しています。

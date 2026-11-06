@@ -6,7 +6,8 @@ sys.path.insert(0,str(ROOT.parent/'common'))
 from portable_build import fetch
 def build():
     if os.name!='nt':raise SystemExit('Build on Windows x64.')
-    for package,version in [('Pillow','12.3.0'),('PyInstaller','6.22.2')]:
+    if sys.version_info[:3]!=(3,13,2):raise ValueError('Build with Python 3.13.2.')
+    for package,version in [('Pillow','13.0.0'),('PyInstaller','6.22.2')]:
         if importlib.metadata.version(package)!=version:raise ValueError('Runtime notice version mismatch: '+package)
     pin=json.loads((ROOT/'upstream-pin.json').read_text(encoding='utf8'))
     cache=ROOT.parents[1]/'data/tidy/czkawka.exe'
@@ -37,7 +38,7 @@ def build():
         parts=[]
         for title,file in [('Python',Path(sys.base_prefix)/'LICENSE.txt'),('Tcl8.6.15',tcl),('Tk',Path(sys.base_prefix)/'tcl/tk8.6/license.terms')]:parts.append('=== '+title+' ===\n'+file.read_text(encoding='utf8'))
         (release/'Runtime-LICENSES.txt').write_text('\n\n'.join(parts),encoding='utf8')
-    out=ROOT/'KiwiTidy-0.1.0-win11-x64.zip'
+    out=ROOT/'KiwiTidy-0.1.1-win11-x64.zip'
     with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for file in sorted(release.iterdir()):z.write(file,file.name)
     print('Built',out.name,out.stat().st_size,hashlib.sha256(out.read_bytes()).hexdigest())

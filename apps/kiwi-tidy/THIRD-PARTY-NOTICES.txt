@@ -11,7 +11,7 @@ No additional restriction on reverse engineering for debugging such modification
 Rust 1.94.1 standard runtime: MIT OR Apache-2.0, Rust-LICENSE-MIT.txt,
 Rust-LICENSE-APACHE.txt, Rust-COPYRIGHT.txt.
 Python/Tcl 8.6.15/Tk: Runtime-LICENSES.txt.
-Pillow 12.3.0 and bundled image libraries: Pillow-LICENSE.txt.
+Pillow 13.0.0 and bundled image libraries: Pillow-LICENSE.txt.
 PyInstaller 6.22.2 bootloader: GPL-2.0-or-later with distribution exception, PyInstaller-LICENSE.txt.
 OpenSSL runtime: Python-OpenSSL-LICENSE.txt.
 GUI source is available under the root MIT LICENSE. Third-party components retain their own licenses.
