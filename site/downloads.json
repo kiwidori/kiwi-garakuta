@@ -50,9 +50,9 @@
     "sha256": "2b4db2d5c9691a7a8bc59912fa31ca6415f46c17bf96a6605f85c267ddc1a047"
   },
   "kiwi-pdf-workbench": {
-    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pdf-workbench-v0.2.0/KiwiPDFWorkbench-0.2.0-win11-x64.zip",
-    "bytes": 22247665,
-    "sha256": "1f70cb9246cea31fb94a1b11b9534c3dc847e787ba91df8f9df9d88b7285b465"
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pdf-workbench-v0.2.1/KiwiPDFWorkbench-0.2.1-win11-x64.zip",
+    "bytes": 22277236,
+    "sha256": "952acc81706abace28b5e83a9ae56e7c76a85a68a5ae5d284117e1585a5eb121"
   },
   "kiwi-document-workbench": {
     "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-document-workbench-v0.1.0/KiwiDocumentWorkbench-0.1.0-win11-x64.zip",
