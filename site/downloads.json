@@ -135,9 +135,9 @@
     "sha256": "ceb5fb3e2d0135703bc69fec987ebc5c157d992c878cc531b507a53ec4981dd5"
   },
   "kiwi-tidy": {
-    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-tidy-v0.1.0/KiwiTidy-0.1.0-win11-x64.zip",
-    "bytes": 35267147,
-    "sha256": "4d7056a49f400726c46764e2ab3023f54d3d2b26e7cb7589a8c8645777aace38"
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-tidy-v0.1.1/KiwiTidy-0.1.1-win11-x64.zip",
+    "bytes": 35274331,
+    "sha256": "411fe7846f4d7dd62f75b7b7ff80acc3d2407612db51d519b4a1c1cab31dc5aa"
   },
   "kiwi-transcribe": {
     "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-transcribe-v0.1.0/KiwiTranscribe-0.1.0-win11-x64.zip",

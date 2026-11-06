@@ -866,7 +866,7 @@
     ],
     "limitations": "Windows 11 x64向け。ファイルの削除・名前変更・撮影情報削除は行いません。名前・サイズ・似た写真の結果は同一内容を保証せず、破損判定などにも誤りがありえます。アクセスできないファイルなどは検査から外れるため、検索ログも確認してください。動画の比較・最適化・破損検査、HEIF/AVIFは未対応です。検索は1回30分、結果はTXT/JSON各16 MiB、ログ4 MiB、表示50,000件までです。画像プレビューはPNG/JPEG/GIF/BMP/WebP、25 MiB・2,000万画素までです。各種類のフォルダーは32件まで。キャッシュを使わず毎回検査します。コード署名はありません。同梱CLIと依存物のソース一式は、同じGitHub Releasesから取得できます。",
     "screenshot": "/assets/screenshots/kiwi-tidy-public.png",
-    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-tidy-v0.1.0/KiwiTidy-0.1.0-win11-x64.zip",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-tidy-v0.1.1/KiwiTidy-0.1.1-win11-x64.zip",
     "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-tidy",
     "upstream_url": "https://github.com/qarmin/czkawka",
     "upstream_license": "MIT（CLI/core。依存物にLGPL-2.1・MPL-2.0などを含み、文書とソース一式を配布）",
