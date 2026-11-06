@@ -1,4 +1,4 @@
-きうい画像・PNG工房 0.1.0
+きうい画像・PNG工房 0.1.1
 Windows 11 x64 / インストーラーなしZIP
 
 写真をまとめて変換・リサイズする無料ソフトです。
@@ -58,3 +58,5 @@ PNGの詳細機能
 oxipng 10.2.1は同梱済みです。MITライセンスと元READMEを同梱しています。
 https://github.com/oxipng/oxipng
 ImageMagick・oxipngの公式製品ではありません。
+
+画像プレビューにはPillow 13.0.0を使用しています。

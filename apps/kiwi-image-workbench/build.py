@@ -45,7 +45,7 @@ exe=EXE(pyz,a.scripts,a.binaries,a.datas,[],name='KiwiImageWorkbench',debug=Fals
   shutil.copy2(ROOT.parents[1]/'LICENSE',release/'LICENSE')
   sys.path.insert(0,str(common));from runtime_licenses import write_runtime_licenses
   write_runtime_licenses(release/'Runtime-LICENSES.txt')
- out=ROOT/'KiwiImageWorkbench-0.1.0-win11-x64.zip'
+ out=ROOT/'KiwiImageWorkbench-0.1.1-win11-x64.zip'
  with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as archive:
   for path in sorted(release.rglob('*')):
    if path.is_file():archive.write(path,path.relative_to(release).as_posix())
