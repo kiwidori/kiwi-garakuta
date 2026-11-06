@@ -13,18 +13,18 @@
   "licenses": {
     "pdfcpu-LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
-    "Pillow-LICENSE.txt": "4f7866a74802c6326f81faff59a56546b6aec2b10b91973e0e9308de95e79857",
+    "Pillow-LICENSE.txt": "988ffe8ab3480b0f4e9a0ab2702bffd73d9fb6b47198043fb3ba101a62fac236",
     "OpenSSL-LICENSE.txt": "feb9bd5f71806c596971d4dfa64c5a93904f9d82b4d3ebd9244a12058f22578e"
   },
-  "pillow_version": "12.3.0",
+  "pillow_version": "13.0.0",
   "pillow_binaries": {
-    "_avif.cp313-win_amd64.pyd": "2e3e5cce3aea38c603680ca3da5d161fad123ce23a803bb692a56aff608989be",
-    "_imaging.cp313-win_amd64.pyd": "88756e8e0e3f6180e518da25d379597c861e2d20d716ef001894789b515c1777",
-    "_imagingcms.cp313-win_amd64.pyd": "7ecb50b954d13d72b7a0ff565872332443cdbc83a36e58a56b2b949a56f32549",
-    "_imagingft.cp313-win_amd64.pyd": "e94673a471a0b6fd5e92e8b6cdbdfe16e2e91bcf5689e9e4c9b391ab43788d85",
-    "_imagingmath.cp313-win_amd64.pyd": "9d5bbea6a877a48ed7995a0640ecb0a5567d9fad544a4a1fbf9f22d507029b57",
-    "_imagingmorph.cp313-win_amd64.pyd": "9aa1903b1c4ecd1269a2f7575a62f764492b5510b43fe477970ecc606595cfc5",
-    "_imagingtk.cp313-win_amd64.pyd": "8ccd6128481d5a3a15993c2f8a69585694ff972652a6b06dcaee276fc65633a7",
-    "_webp.cp313-win_amd64.pyd": "9918faf8d90faa86e03e48479c6a62383be71da759254afded18591a406a92fe"
+    "_avif.cp313-win_amd64.pyd": "6c6e5d33db5ecd8a28252103c97ac7867d376371875b6baa609947d8e778022a",
+    "_imaging.cp313-win_amd64.pyd": "832167d2ecd950dc2382a9866e346d5886262bc8790bbf24613f56ad19d52f82",
+    "_imagingcms.cp313-win_amd64.pyd": "4ab7b14029ea0a6bdb7f94b069ad3399d53fd192aaeed7460fbabba61d065b76",
+    "_imagingft.cp313-win_amd64.pyd": "91f0a8e145163803637620517bad32ad5cb551d8a4dc02c3309811af24dbcbcc",
+    "_imagingmath.cp313-win_amd64.pyd": "d1aafa904aa69eed5008d1ced3b20c049670cd521593d1f0a4ff2ef44f9371cb",
+    "_imagingmorph.cp313-win_amd64.pyd": "e50c8f830f06ced4cca8fd9f5cb10f0918a2d12c6263dd7bc1de1a3666b2102b",
+    "_imagingtk.cp313-win_amd64.pyd": "a7af2e099caae412470919646d5d1cf36566fbed697c4cd44e926029dd2c4ccf",
+    "_webp.cp313-win_amd64.pyd": "77ec2f34c0a33151c7b020dfc987163678e1e3428508117ca8cbc68dfb2af2b1"
   }
 }

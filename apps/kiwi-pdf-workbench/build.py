@@ -119,7 +119,7 @@ exe=EXE(pyz,a.scripts,a.binaries,a.datas,[],name='KiwiPDFWorkbench',debug=False,
         for name,path in [('Python',Path(sys.base_prefix)/'LICENSE.txt'),('Tcl8.6.15',tcl),('Tk',Path(sys.base_prefix)/'tcl/tk8.6/license.terms')]:
             texts.append('=== '+name+' ===\n'+path.read_text(encoding='utf8'))
         (release/'Runtime-LICENSES.txt').write_text('\n\n'.join(texts),encoding='utf8')
-    out = ROOT/'KiwiPDFWorkbench-0.2.0-win11-x64.zip'
+    out = ROOT/'KiwiPDFWorkbench-0.2.1-win11-x64.zip'
     with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
         for path in sorted(release.rglob('*')):
             if path.is_file():
