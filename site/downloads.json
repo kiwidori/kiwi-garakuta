@@ -15,9 +15,9 @@
     "sha256": "34dea06273751469ef3a3b1b4e06d07d9f9eca4f446a073e77510518093ce361"
   },
   "kiwi-image-workbench": {
-    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-image-workbench-v0.1.0/KiwiImageWorkbench-0.1.0-win11-x64.zip",
-    "bytes": 18963518,
-    "sha256": "a622495bca8ffa76d0854d02dba5732dc7ff09428a52bc8ac14629b166ba961c"
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-image-workbench-v0.1.1/KiwiImageWorkbench-0.1.1-win11-x64.zip",
+    "bytes": 18970039,
+    "sha256": "30fe4580f374e5f805710decc4f405c5d22c7ee84d2cb1f0fb8e207785cd9ef3"
   },
   "kiwi-labels": {
     "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-labels-v0.1.0/KiwiLabels-0.1.0-win11-x64.zip",
