@@ -10,6 +10,12 @@ def build():
     import tkinter
     if tkinter.Tcl().call('info','patchlevel')!='8.6.15':raise ValueError('Tcl license version mismatch')
     pins=json.loads((ROOT/'upstream-pin.json').read_text(encoding='utf8'))
+    if sys.version_info[:3] != (3,13,2):raise ValueError('Build with Python 3.13.2')
+    if importlib.metadata.version('PyInstaller') != '6.22.2':raise ValueError('PyInstaller version mismatch')
+    import PIL
+    if PIL.__version__ != pins['pillow_version']:raise ValueError('Pillow version mismatch')
+    for name,digest in pins['pillow_binaries'].items():
+        if hashlib.sha256((Path(PIL.__file__).parent/name).read_bytes()).hexdigest()!=digest:raise ValueError('Pillow binary mismatch')
     cache=ROOT.parents[1]/'data/image-enlarge/realesrgan-ncnn-vulkan-20220424-windows.zip'
     raw=cache.read_bytes() if os.environ.get('KIWI_USE_NATIVE_CACHE')=='1' else fetch(pins['url'],pins['sha256'])
     if hashlib.sha256(raw).hexdigest()!=pins['sha256']:raise ValueError('Archive digest mismatch')
@@ -45,7 +51,7 @@ def build():
         texts=[]
         for title,p in [('Python',Path(sys.base_prefix)/'LICENSE.txt'),('Tcl8.6.15',tcl),('Tk',Path(sys.base_prefix)/'tcl/tk8.6/license.terms')]:texts.append('=== '+title+' ===\n'+p.read_text(encoding='utf8'))
         (release/'Runtime-LICENSES.txt').write_text('\n\n'.join(texts),encoding='utf8')
-    out=ROOT/'KiwiImageEnlarge-0.1.0-win11-x64.zip'
+    out=ROOT/'KiwiImageEnlarge-0.1.1-win11-x64.zip'
     with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for p in sorted(release.iterdir()):z.write(p,p.name)
     print('Built',out.name,out.stat().st_size,'SHA256',hashlib.sha256(out.read_bytes()).hexdigest())

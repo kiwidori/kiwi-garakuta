@@ -12,6 +12,8 @@ VALID_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 MAX_FILES, MAX_SRC_MP, MAX_OUT_MP, TIMEOUT, MAX_OUT_BYTES = 50, 4_000_000, 64_000_000, 180, 1_048_576
 
 _NATIVE_MANAGER=None
+_GPU_HEALTH_CACHE={}
+_GPU_HEALTH_LOCK=threading.Lock()
 def _native_folder():
     global _NATIVE_MANAGER
     if not getattr(sys,'frozen',False):return Path(__file__).parent/'native'
@@ -100,6 +102,20 @@ def _publish(tmp_out, dest_dir, stem, scale, fmt):
     except OSError as e:
         return None, f"保存に失敗しました: {e}"
 
+def _encode_webp(source, destination, cancel):
+    """Encode only the validated native PNG with the current Pillow WebP codec."""
+    if cancel.is_set():raise InterruptedError("処理を停止しました。")
+    with Image.open(source) as im:
+        if im.format != 'PNG' or im.mode not in ('RGB', 'RGBA') or im.width*im.height > MAX_OUT_MP:
+            raise ValueError("WebP保存用の8bit PNGを確認できません。")
+        im.load()
+        clean = Image.frombytes(im.mode, im.size, im.tobytes())
+    if cancel.is_set():raise InterruptedError("処理を停止しました。")
+    clean.save(destination, 'WEBP', lossless=True, quality=100, method=4, exact=True)
+    if cancel.is_set():raise InterruptedError("処理を停止しました。")
+    if Path(destination).stat().st_size > 512*1024*1024:
+        raise ValueError("WebP出力が保存サイズの上限を超えました。")
+
 def run_batch(paths, destination, settings, cancel, notify):
     _validate(settings)
     if cancel.is_set():raise InterruptedError("処理を停止しました。")
@@ -166,10 +182,12 @@ def run_batch(paths, destination, settings, cancel, notify):
             if exp_w * exp_h > MAX_OUT_MP:
                 raise ValueError(f"出力が64MPを超えます ({exp_w}x{exp_h})。")
 
+            # Keep the old native WebP encoder off the normal execution path.
+            native_fmt = 'png' if fmt == 'webp' else fmt
             args = [
                 "-i", str(tmp_in),
-                "-o", str(Path(tmp_dir) / f"out.{fmt}"),
-                "-f", fmt,
+                "-o", str(Path(tmp_dir) / f"out.{native_fmt}"),
+                "-f", native_fmt,
                 "-s", str(scale),
                 "-m", str(models_dir),
                 "-n", MODELS[settings["model"]],
@@ -189,6 +207,12 @@ def run_batch(paths, destination, settings, cancel, notify):
                 raise RuntimeError(f"ネイティブ実行失敗 (Vulkan GPUまたはMicrosoft VC++ x64ランタイムを確認): {stderr_text}")
 
             tmp_out = Path(tmp_dir) / f"out.{fmt}"
+            if fmt == 'webp':
+                native_png = Path(tmp_dir) / 'out.png'
+                with Image.open(native_png) as im:
+                    if im.format != 'PNG' or im.size != (exp_w, exp_h):
+                        raise ValueError('拡大したPNGの形式・寸法が一致しません。')
+                _encode_webp(native_png, tmp_out, cancel)
             with Image.open(tmp_out) as im:
                 im.load()
                 if im.format != fmt_map[fmt]: raise ValueError("出力形式が一致しません。")
@@ -223,32 +247,84 @@ def gather_folder(folder):
     return files
 
 def _execute_gpu(exe, args, cwd, cancel):
-    import re, time
-    TIMEOUT = 180
-    MAX_OUT_BYTES = 1 << 20
-    start_time = time.monotonic()
-    result = execute(exe, args, stdin_data=None, cwd=str(cwd), cancel_event=cancel, timeout=TIMEOUT, max_output=MAX_OUT_BYTES)
-    if '-g' in args or result['returncode'] == 0:
-        return result
-    err_text = result['stderr'].decode('utf-8', errors='replace')
-    if 'vkAllocateMemory failed' not in err_text:
-        return result
-    lines = re.findall(r'\[(\d+)\s+([^\]]+)\]', err_text)
-    candidates = []
-    for idx, name in lines:
-        i = int(idx)
-        n = name.lower()
-        if 1 <= i <= 7 and not any(x in n for x in ('basic render driver', 'lavapipe', 'llvmpipe', 'software')):
-            if i not in candidates:candidates.append(i)
-    seen, tried = set(), []
-    for gpu_id in candidates[:2]:
-        if gpu_id in seen: continue
-        seen.add(gpu_id)
-        remaining = TIMEOUT - (time.monotonic() - start_time)
-        if remaining <= 0: break
-        result = execute(exe, args + ['-g', str(gpu_id)], stdin_data=None, cwd=str(cwd), cancel_event=cancel, timeout=remaining, max_output=MAX_OUT_BYTES)
-        tried.append(gpu_id)
-        if result['returncode'] == 0:
-            log = f"GPUを自動で再選択:{gpu_id}\n".encode('utf-8') + result['stderr'][:16384]
-            return {'stdout': result['stdout'], 'stderr': log, 'returncode': 0}
-    return result
+    """Verify known colors before trusting native inference on a model/GPU pair."""
+    import re,time
+    started=time.monotonic()
+    def left():
+        if cancel.is_set():raise InterruptedError('処理を停止しました。')
+        remaining=TIMEOUT-(time.monotonic()-started)
+        if remaining<=0:raise TimeoutError('GPUの確認と拡大処理が180秒を超えました。')
+        return remaining
+    def value(flag,default=None):return args[args.index(flag)+1] if flag in args else default
+    model=value('-n');model_dir=Path(value('-m'))
+    model_file=model+'-x'+value('-s') if model=='realesr-animevideov3' else model
+    digests=tuple(hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(exe),model_dir/(model_file+'.param'),model_dir/(model_file+'.bin')])
+    settings=tuple((flag,value(flag)) for flag in ['-s','-t','-j'])+(('-x','-x' in args),)
+    requested=value('-g','auto')
+    def key(gpu):return (digests,model,str(gpu),settings)
+    with _GPU_HEALTH_LOCK:cached=_GPU_HEALTH_CACHE.get(key(requested))
+    if cached:
+        selected=cached['gpu'];diagnostic='GPU自己診断: 合格済みの組を使用（プロセス内キャッシュ）\n'+cached['diagnostic']
+    else:
+        colors=[(220,230,240),(70,160,70),(180,75,75),(75,95,180)]
+        failures=[];devices={};selected=None;diagnostic=''
+        with tempfile.TemporaryDirectory(prefix='kiwi-gpu-health-') as td:
+            folder=Path(td);fixture=Image.new('RGB',(64,48));fixture.paste(colors[0],(0,0,32,24));fixture.paste(colors[1],(32,0,64,24));fixture.paste(colors[2],(0,24,32,48));fixture.paste(colors[3],(32,24,64,48));input_path=folder/'known-colors.png';fixture.save(input_path,'PNG')
+            candidates=[requested];done=[]
+            while candidates:
+                gpu=candidates.pop(0)
+                if gpu in done:continue
+                done.append(gpu);output=folder/('check-'+str(gpu)+'.png')
+                check=['-i',str(input_path),'-o',str(output),'-f','png','-s',value('-s'),'-m',str(model_dir),'-n',model,'-t',value('-t','0'),'-j',value('-j','1:1:1')]
+                if gpu!='auto':check+=['-g',str(gpu)]
+                if '-x' in args:check+=['-x']
+                result=execute(exe,check,stdin_data=None,cwd=str(cwd),cancel_event=cancel,timeout=left(),max_output=MAX_OUT_BYTES)
+                err=result['stderr'].decode('utf8',errors='replace')
+                for idx,name in re.findall(r'\[(\d+)\s+([^\]]+)\]',err):
+                    if 0<=int(idx)<=7:devices[str(int(idx))]=name.strip()
+                label=('既定GPU' if gpu=='auto' else 'GPU'+str(gpu))+(' '+devices.get(str(gpu),'') if str(gpu) in devices else '')
+                reason=None
+                if result['returncode']!=0:
+                    reason='実行エラー '+hex(result['returncode'] & 0xffffffff)
+                    if 'vkAllocateMemory failed' in err:reason+='（GPUメモリ不足）'
+                else:
+                    try:
+                        scale=int(value('-s'));centers=[(16,12),(48,12),(16,36),(48,36)]
+                        with Image.open(output) as im:
+                            if im.format!='PNG' or im.size!=(64*scale,48*scale):raise ValueError('既知画像の寸法が一致しません')
+                            im.load();rgb=im.convert('RGB')
+                            for (x,y),expected in zip(centers,colors):
+                                px=[rgb.getpixel((x*scale+dx,y*scale+dy)) for dx in range(-4,5) for dy in range(-4,5)]
+                                mean=tuple(sum(p[c] for p in px)/len(px) for c in range(3))
+                                delta=max(abs(a-b) for a,b in zip(mean,expected))
+                                luma=lambda c:.2126*c[0]+.7152*c[1]+.0722*c[2]
+                                if delta>48 or abs(luma(mean)-luma(expected))>40:raise ValueError('既知画像の色・明るさを正常に再現できません')
+                    except (OSError,ValueError) as error:reason=str(error)
+                left()
+                if requested=='auto' and gpu=='auto':
+                    # The native default does not identify which listed adapter
+                    # it actually used. Select and test an explicit index so the
+                    # chosen device (including software rendering) is reportable.
+                    failures.append('GPU自己診断: 既定GPU '+('合格。使用GPU番号を確認します。' if reason is None else '不合格: '+reason))
+                    candidates.extend(sorted(devices,key=int))
+                    continue
+                if reason is None:
+                    selected=gpu
+                    diagnostic='GPU自己診断: '+label+' 合格（'+model+'、既知色と明るさ）\n'
+                    if failures:diagnostic+='\n'.join(failures)+'\n'
+                    if any(word in devices.get(str(gpu),'').lower() for word in ['basic render driver','lavapipe','llvmpipe','software']):diagnostic+='互換描画フォールバック: ソフトウェア描画を使用します。処理に時間がかかります。\n'
+                    with _GPU_HEALTH_LOCK:
+                        record={'gpu':selected,'diagnostic':diagnostic}
+                        _GPU_HEALTH_CACHE[key(requested)]=record
+                        _GPU_HEALTH_CACHE[key(selected)]=record
+                    break
+                failures.append('GPU自己診断: '+label+' 不合格: '+reason)
+                if requested!='auto':raise RuntimeError(failures[-1]+'。指定GPUは変更しません。他のGPUまたは画像の種類を選んでください。')
+                for idx in sorted(devices,key=int):
+                    if idx not in done and idx not in candidates:candidates.append(idx)
+            if selected is None:raise RuntimeError('この画像の種類を正常に処理できるGPUが見つかりません。\n'+'\n'.join(failures))
+    left();actual=list(args)
+    if selected!='auto' and '-g' not in actual:actual+=['-g',str(selected)]
+    result=execute(exe,actual,stdin_data=None,cwd=str(cwd),cancel_event=cancel,timeout=left(),max_output=MAX_OUT_BYTES)
+    left()
+    return {'stdout':result['stdout'],'stderr':diagnostic.encode('utf8')+result['stderr'],'returncode':result['returncode']}
