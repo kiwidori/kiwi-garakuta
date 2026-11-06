@@ -1,7 +1,7 @@
-きうい画像OCR 0.1.0
+OCR機能について（きうい読み取り・読み上げ 0.1.1）
 スクリーンショットや写真の文字を読み取り、コピーできる文章にします。
 RapidOCRを利用した非公式GUIです。
-Windows 11 x64用。ZIPをすべて展開し、KiwiOCR.exeを起動してください。
+Windows 11 x64用。ZIPをすべて展開し、KiwiReadingWorkbench.exeを起動してください。
 _internalフォルダーを移動・削除しないでください。
 Microsoft Visual C++ v14 再頒布可能パッケージ（x64）が必要です。
 https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist

@@ -2,10 +2,10 @@
   "packages": [
     {
       "name": "certifi",
-      "version": "2026.7.22",
-      "filename": "certifi-2026.7.22-py3-none-any.whl",
-      "url": "https://files.pythonhosted.org/packages/0b/a7/71ac2cff56fec219ed242bb11b8efb69fcc4bec75db06fb7bfe35de520e6/certifi-2026.7.22-py3-none-any.whl",
-      "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+      "version": "2026.10.19",
+      "filename": "certifi-2026.10.19-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/c4/51/29046e48f693c54e5b7412216d447a1d8362c9653148d98c02cdf65fa733/certifi-2026.10.19-py3-none-any.whl",
+      "sha256": "42d35340cc5b9ba78e818ddbff0c5b1c2b779de448a340fd1b989f5fa8670e1b"
     },
     {
       "name": "charset-normalizer",
@@ -79,10 +79,10 @@
     },
     {
       "name": "pillow",
-      "version": "12.3.0",
-      "filename": "pillow-12.3.0-cp313-cp313-win_amd64.whl",
-      "url": "https://files.pythonhosted.org/packages/a6/9b/7a58e61d62be561da3a356fe2384d4059a6345fc130e23ef1c36a5b81d24/pillow-12.3.0-cp313-cp313-win_amd64.whl",
-      "sha256": "1cca606cd25738df4ed873d5ad46bbdb3d83b5cbca291f6b4ff13a4df6b0bbe8"
+      "version": "13.0.0",
+      "filename": "pillow-13.0.0-cp313-cp313-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/d7/ed/1b16fb66a37e1b9e41370b93b2c614c7da761a5b2a41dc333f7af4639962/pillow-13.0.0-cp313-cp313-win_amd64.whl",
+      "sha256": "9dda0788a9932776a75d8bcc020076edc308ce2508b51f6739a45e3158b3fc42"
     },
     {
       "name": "protobuf",
@@ -166,16 +166,29 @@
     }
   },
   "licenses": {
-    "DEPENDENCY-LICENSES.txt": "2d84345b09721b34f462d506195005a1c7f0d02ad3a2ba0d394ec19b41b1cbd2",
-    "DEPENDENCY-SOURCES.txt": "5dadc3e64fc716f9afc31243e75f599b81592ffa3fe9816f4601e548b3bee284",
-    "Pillow-LICENSE.txt": "4f7866a74802c6326f81faff59a56546b6aec2b10b91973e0e9308de95e79857",
+    "DEPENDENCY-LICENSES.txt": "a7a3e8677c8bf64e95af2779f8839188f50a909712f7b310f2d73b525ed40f19",
+    "DEPENDENCY-SOURCES.txt": "dcd09c63901455a3312b938cc07e98db14a16c0af3c94269b0e2a55053d6a5e9",
+    "Pillow-LICENSE.txt": "988ffe8ab3480b0f4e9a0ab2702bffd73d9fb6b47198043fb3ba101a62fac236",
     "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
     "Python-OpenSSL-LICENSE.txt": "feb9bd5f71806c596971d4dfa64c5a93904f9d82b4d3ebd9244a12058f22578e",
-    "THIRD-PARTY-NOTICES.txt": "2992a00becafaddd49bfd25135944e75a55c2358a1cdd97a119a59a49cf44af9"
+    "THIRD-PARTY-NOTICES.txt": "a562df5fc866691fb8b226b7fc6064fac40aed452a2b8d39ee20a836b8232b3f"
   },
   "geos_source": {
     "url": "https://download.osgeo.org/geos/geos-3.14.1.tar.bz2",
     "sha256": "3c20919cda9a505db07b5216baa980bacdaa0702da715b43f176fb07eff7e716",
     "size": 7013834
-  }
+  },
+  "pillow_version": "13.0.0",
+  "pillow_binaries": {
+    "_avif.cp313-win_amd64.pyd": "6c6e5d33db5ecd8a28252103c97ac7867d376371875b6baa609947d8e778022a",
+    "_imaging.cp313-win_amd64.pyd": "832167d2ecd950dc2382a9866e346d5886262bc8790bbf24613f56ad19d52f82",
+    "_imagingcms.cp313-win_amd64.pyd": "4ab7b14029ea0a6bdb7f94b069ad3399d53fd192aaeed7460fbabba61d065b76",
+    "_imagingft.cp313-win_amd64.pyd": "91f0a8e145163803637620517bad32ad5cb551d8a4dc02c3309811af24dbcbcc",
+    "_imagingmath.cp313-win_amd64.pyd": "d1aafa904aa69eed5008d1ced3b20c049670cd521593d1f0a4ff2ef44f9371cb",
+    "_imagingmorph.cp313-win_amd64.pyd": "e50c8f830f06ced4cca8fd9f5cb10f0918a2d12c6263dd7bc1de1a3666b2102b",
+    "_imagingtk.cp313-win_amd64.pyd": "a7af2e099caae412470919646d5d1cf36566fbed697c4cd44e926029dd2c4ccf",
+    "_webp.cp313-win_amd64.pyd": "77ec2f34c0a33151c7b020dfc987163678e1e3428508117ca8cbc68dfb2af2b1"
+  },
+  "certifi_version": "2026.10.19",
+  "certifi_CA_sha256": "50f79f98dac192b20dbf73f35c56f0b0c557ab267ff5199d1117cc1180b70785"
 }

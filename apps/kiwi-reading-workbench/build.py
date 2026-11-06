@@ -7,7 +7,7 @@ from portable_build import fetch
 
 def build():
  if os.name!='nt':raise SystemExit('Build on Windows x64.')
- for n,v in [('Pillow','12.3.0'),('PyInstaller','6.22.2')]:
+ for n,v in [('Pillow','13.0.0'),('PyInstaller','6.22.2')]:
   if importlib.metadata.version(n)!=v:raise ValueError('Runtime version mismatch: '+n)
  pin=json.loads((ROOT/'ocr/upstream-pin.json').read_text(encoding='utf8'))
  for n,digest in pin['licenses'].items():
@@ -28,6 +28,10 @@ def build():
      target=vendor/n
      if not target.resolve().is_relative_to(vendor.resolve()):raise ValueError('Unsafe wheel member')
      target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(z.read(n))
+  for name,digest in pin['pillow_binaries'].items():
+   path=vendor/'PIL'/name
+   if not path.resolve().is_relative_to((vendor/'PIL').resolve()) or hashlib.sha256(path.read_bytes()).hexdigest()!=digest:raise ValueError('Pillow binary digest mismatch')
+  if hashlib.sha256((vendor/'certifi/cacert.pem').read_bytes()).hexdigest()!=pin['certifi_CA_sha256']:raise ValueError('Certifi CA digest mismatch')
   datas=[(str(ROOT/'ocr/upstream-pin.json'),'ocr')]
   for n in ['config.yaml','default_models.yaml']:datas.append((str(vendor/'rapidocr'/n),'rapidocr'))
   for info in pin['models'].values():
@@ -67,7 +71,7 @@ coll=COLLECT(exe,a.binaries,a.datas,strip=False,upx=False,name='KiwiReadingWorkb
   (release/'Runtime-LICENSES.txt').write_text('\n\n'.join(parts),encoding='utf8')
  if os.environ.get('KIWI_DIRECTORY_ONLY')=='1':
   print('Built directory',release);return
- out=ROOT/'KiwiReadingWorkbench-0.1.0-win11-x64.zip'
+ out=ROOT/'KiwiReadingWorkbench-0.1.1-win11-x64.zip'
  with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
   for path in sorted(release.rglob('*')):
    if path.is_file():z.write(path,path.relative_to(release).as_posix())
