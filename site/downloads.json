@@ -5,9 +5,9 @@
     "sha256": "660c13605e16aa1458f4f445965f31cfdca302694f45cf607cff21aaefa6de3c"
   },
   "kiwi-reading-workbench": {
-    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-reading-workbench-v0.1.0/KiwiReadingWorkbench-0.1.0-win11-x64.zip",
-    "bytes": 113426858,
-    "sha256": "9349b3c2975839bc7a7e868349d8fbd6169140d3290958ab5d34d742e1b6a572"
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-reading-workbench-v0.1.1/KiwiReadingWorkbench-0.1.1-win11-x64.zip",
+    "bytes": 113459533,
+    "sha256": "5e54c69032cba7d1847557897e67bb4e842ed7ddff7551dba512d10ad0d5f0a2"
   },
   "kiwi-filetype": {
     "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-filetype-v0.1.0/KiwiFileType-0.1.0-win11-x64.zip",
