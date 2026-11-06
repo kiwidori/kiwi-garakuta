@@ -25,9 +25,9 @@
     "sha256": "554dbfd5156db664759d6171e4324826017bc9ab152be6dfbc83158d50d6d15f"
   },
   "kiwi-media-workbench": {
-    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-media-workbench-v0.1.0/KiwiMediaWorkbench-0.1.0-win11-x64.zip",
-    "bytes": 19155626,
-    "sha256": "c2bb9f205b0abd2d4bfbc60e108a367ab52cb106a9cb50de7c47b05e96910dee"
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-media-workbench-v0.1.1/KiwiMediaWorkbench-0.1.1-win11-x64.zip",
+    "bytes": 19161482,
+    "sha256": "c5f9b28e9c3755f12602bae8a07c03320b4e27a1a30a3089c8ad544f0aa6535e"
   },
   "kiwi-speech": {
     "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-speech-v0.1.0/KiwiSpeech-0.1.0-win11-x64.zip",
