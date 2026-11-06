@@ -1,4 +1,4 @@
-きうい動画・GIF工房 0.1.0
+きうい動画・GIF工房 0.1.1
 Windows 11 x64 / ZIP版
 
 動画の形式変換とGIFづくりをまとめた無料ソフトです。
@@ -69,3 +69,5 @@ FFmpegのWindows版は別途取得します。配布元のライセンスとソ�
 本GUIのソース：https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-media-workbench
 公開サイト：https://kiwi-garakuta.pages.dev/
 お問い合わせ：https://x.com/kiwi_dori
+
+GIF用の画像読み取り・検証とプレビューにはPillow 13.0.0を使用しています。

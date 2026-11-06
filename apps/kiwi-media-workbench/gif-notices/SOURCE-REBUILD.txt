@@ -18,6 +18,6 @@ Compiler and system tools are separate prerequisites. No byte-identical build
 claim is made for the original upstream compiler environment.
 You can replace native/gifski.exe with the resulting executable; the GUI does
 not impose the original hash at runtime. Restart after replacement.
-GUI source and packaging: https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-gif
+GUI source and packaging: https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-media-workbench
 GUI is a separate MIT-licensed program communicating via the documented CLI.
-Pillow's source and notices: https://github.com/python-pillow/Pillow/tree/12.3.0
+Pillow's source and notices: https://github.com/python-pillow/Pillow/tree/13.0.0

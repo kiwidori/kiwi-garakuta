@@ -1,4 +1,4 @@
-KiwiGIF 0.1.0
+KiwiMediaWorkbench 0.1.1
 GUI: MIT, repository LICENSE. Unofficial interface for gifski.
 
 gifski1.34.0: GNU AGPL-3.0-or-later; libimagequant/imagequant: GPL-3.0-or-later.
@@ -18,7 +18,7 @@ https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-gif-v0.1.0/Kiwi
 See SOURCE-REBUILD.txt. You may rebuild and replace native/gifski.exe;
 the GUI imposes no original binary hash at runtime.
 
-Pillow12.3.0 and bundled codecs: Pillow-LICENSE.txt.
+Pillow13.0.0 and bundled codecs: Pillow-LICENSE.txt.
 Python3.13.2/Tcl8.6.15/Tk: Runtime-LICENSES.txt.
 Python OpenSSL: Python-OpenSSL-LICENSE.txt.
 PyInstaller6.22.2: PyInstaller-LICENSE.txt (GPL with distribution exception).

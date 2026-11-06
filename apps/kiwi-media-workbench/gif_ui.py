@@ -43,7 +43,7 @@ class App(tk.Toplevel):
   actions=ttk.Frame(outer);actions.pack(fill='x',pady=9);ttk.Button(actions,text='保存名を選んでGIFを作る（F5）',command=self.start_export).pack(side='left');self.stop=ttk.Button(actions,text='停止',command=self.cancel.set,state='disabled');self.stop.pack(side='left',padx=8);ttk.Button(actions,text='保存先フォルダーを開く',command=self.open_output).pack(side='left')
   self.progress=ttk.Progressbar(outer,mode='indeterminate');self.progress.pack(fill='x');ttk.Label(outer,textvariable=self.status).pack(anchor='w',pady=5)
   self.log=tk.Text(outer,height=3,wrap='word',font=('Yu Gothic UI',10));self.log.pack(fill='both',expand=True)
-  foot=ttk.Frame(outer);foot.pack(fill='x',pady=(7,0));ttk.Button(foot,text='結果をコピー',command=self.copy).pack(side='left');ttk.Button(foot,text='結果をTXT保存',command=self.save_log).pack(side='left',padx=7);ttk.Label(foot,text='gifskiを利用した非公式GUI · 0.1.0').pack(side='right')
+  foot=ttk.Frame(outer);foot.pack(fill='x',pady=(7,0));ttk.Button(foot,text='結果をコピー',command=self.copy).pack(side='left');ttk.Button(foot,text='結果をTXT保存',command=self.save_log).pack(side='left',padx=7);ttk.Label(foot,text='gifskiを利用した非公式GUI · 0.1.1').pack(side='right')
   self.bind('<F4>',lambda event:self.add_files());self.bind('<F5>',lambda event:self.start_export())
   self.bind('<Alt-F4>',lambda event:(self.close(),'break')[1])
   self.protocol('WM_DELETE_WINDOW',self.close);self.after(70,self.poll)
