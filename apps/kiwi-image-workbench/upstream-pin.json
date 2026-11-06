@@ -46,7 +46,7 @@
     "ImageMagick-NOTICE.txt": "e3b886c90cd022d1767f89d61522be57bb77b7e9c44d5bf92f57fa231ac7b6bf",
     "Pillow-LICENSE.txt": "988ffe8ab3480b0f4e9a0ab2702bffd73d9fb6b47198043fb3ba101a62fac236",
     "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
-    "THIRD-PARTY-NOTICES.txt": "37b8c0f7a47ac9ce4e7e238736549bfc956dcb16a95f68c8500cf302b18e3ba3"
+    "THIRD-PARTY-NOTICES.txt": "d2003a3bbcf6227ed6589a2d2bf73c6ace7a07af09fe4477884cca2ac138c08b"
   },
   "pillow_wheel": {
     "filename": "pillow-13.0.0-cp313-cp313-win_amd64.whl",

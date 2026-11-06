@@ -1,5 +1,5 @@
 Kiwi Image GUI: MIT License (see LICENSE).
-Pillow 12.3.0: see Pillow-LICENSE.txt.
+Pillow 13.0.0: see Pillow-LICENSE.txt.
 PyInstaller 6.22.2 bootloader: see PyInstaller-LICENSE.txt (including the distribution exception).
 Python 3.13.2, Tcl/Tk 8.6.15: see Runtime-LICENSES.txt.
 
