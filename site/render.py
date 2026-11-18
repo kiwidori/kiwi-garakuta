@@ -153,7 +153,7 @@ class Site:
             picks = ''.join(f'<a class="quick-pick" href="/tools/{f["slug"]}/"><span class="pick-icon">{icon(self.meta[f["slug"]]["category"])}</span><span><strong>{esc(self.tools[f["slug"]]["name"].removeprefix("きうい"))}</strong><small>{esc(f["reason"])}</small></span>{icon("arrow")}</a>' for f in self.discovery['featured'])
             examples = ''.join(f'<a href="/?q={quote(term)}#software" data-search-example="{esc(term)}">{esc(term)}</a>' for term in ['写真', 'PDF', '文字起こし', 'ファイルを送る'])
             hero = f'''<section class="home-hero"><div class="hero-copy"><div class="eyebrow"><span class="status-dot"></span>無料のWindowsソフト · {len(self.active)}本公開中</div><h1>あの「ちょっと面倒」を、<br><em>ちょっと便利に。</em></h1><p class="lead">写真を整える。PDFをまとめる。ファイルを渡す。<br>日々の作業と遊びに役立つ、小さな道具を集めました。</p>{self.search()}<div class="search-examples"><span>たとえば</span>{examples}</div></div>
-<aside class="quick-start" aria-label="まずはここから"><div class="section-kicker">まずはここから</div>{picks}<a class="guide-link" href="/guide/">はじめて使う方へ：ZIPの開き方 {icon('arrow')}</a></aside></section>'''
+<aside class="quick-start" aria-label="まずはここから"><div class="section-kicker">まずはここから</div>{picks}<a class="quick-pick" href="/stream-trophy/"><span class="pick-icon">{icon('check')}</span><span><strong>配信トロフィー</strong><small>コメントや視聴時間で集める・参加方法はこちら</small></span>{icon('arrow')}</a><a class="guide-link" href="/guide/">はじめて使う方へ：ZIPの開き方 {icon('arrow')}</a></aside></section>'''
         counts = {c: sum(self.meta[t['slug']]['category'] == c for t in self.active) for c in self.categories}
         all_current = 'aria-current="true"' if chosen == 'all' else ''
         filters = f'<a href="/#software" data-filter="all" data-label="すべて" {all_current}>すべて <span>{len(self.active)}</span></a>'
