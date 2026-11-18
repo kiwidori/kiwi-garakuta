@@ -18,8 +18,8 @@ ROOT = Path(sys.executable).parent if getattr(sys, 'frozen', False) else Path(__
 ENGINE = Engine(ROOT)
 EXTENSIONS = {'.wav', '.mp3', '.m4a', '.flac', '.ogg', '.aac', '.mp4', '.mov', '.mkv', '.webm', '.avi'}
 PROFILES = {'MP4（動画）': ('.mp4', ['-c:v', 'libx264', '-preset', 'fast', '-pix_fmt', 'yuv420p', '-c:a', 'aac']),
-            'WAV（音声）': ('.wav', ['-vn', '-c:a', 'pcm_s16le']),
-            'MP3（音声）': ('.mp3', ['-vn', '-c:a', 'libmp3lame', '-b:a', '192k'])}
+            'WAV（音声）': ('.wav', ['-vn', '--mix-audio-streams', '-c:a', 'pcm_s16le']),
+            'MP3（音声）': ('.mp3', ['-vn', '--mix-audio-streams', '-c:a', 'libmp3lame', '-b:a', '192k'])}
 
 
 def number(value, low, high, label):
