@@ -1,0 +1,18 @@
+{
+  "upstream": "https://github.com/WyattBlue/auto-editor",
+  "version": "31.9.0",
+  "cache": "KiwiSilence/auto-editor-31.9.0",
+  "kind": "file",
+  "url": "https://github.com/WyattBlue/auto-editor/releases/download/31.9.0/auto-editor-windows-x86_64.exe",
+  "size": 45897392,
+  "sha256": "9621511892a92189abe19ac911e34b5e6caf4243259cbd4d18f29c7bef067774",
+  "executable": "auto-editor.exe",
+  "members": {
+    "auto-editor.exe": "9621511892a92189abe19ac911e34b5e6caf4243259cbd4d18f29c7bef067774"
+  },
+  "licenses": {
+    "AutoEditor-LICENSE.txt": "ca2abdf695884c77ea4b4a5b64ca7b732d9d9dbade4eebc1c2e76c53e9e3bc83",
+    "OpenSSL-LICENSE.txt": "feb9bd5f71806c596971d4dfa64c5a93904f9d82b4d3ebd9244a12058f22578e",
+    "PyInstaller-LICENSE.txt": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245"
+  }
+}
