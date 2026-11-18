@@ -116,3 +116,6 @@ apps/kiwi-transfer/browser-engine/*.txt -text -whitespace
 apps/kiwi-transfer/browser-engine/*.json -text -whitespace
 apps/kiwi-transfer/README.txt -text -whitespace
 apps/kiwi-transfer/THIRD-PARTY-NOTICES.txt -text -whitespace
+
+apps/kiwi-silence/*.txt -text -whitespace
+apps/kiwi-silence/*.py text eol=lf
