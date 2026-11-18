@@ -3,5 +3,10 @@
   "contact_url": "https://x.com/kiwi_dori",
   "youtube_url": "https://www.youtube.com/@kiwi_dori",
   "profile_name": "きうい",
-  "profile_text": "APEXやNTEを遊びつつ、楽しく遊ぶためのものづくりをしています。「これがあったら便利かも」と思った小さなソフトを、ここに置いています。気になるものがあれば、気軽に使ってみてください。"
+  "profile_text": "APEXやNTEを遊びつつ、楽しく遊ぶためのものづくりをしています。「これがあったら便利かも」と思った小さなソフトを、ここに置いています。気になるものがあれば、気軽に使ってみてください。",
+  "stream_trophy": {
+    "download_url": "/assets/downloads/stream-trophy-extension.zip",
+    "store_url": "",
+    "privacy_url": "https://stream-trophies.kiwi-tech-tech.workers.dev/privacy"
+  }
 }

@@ -76,7 +76,7 @@ def main():
     if DIST.resolve().parent != ROOT.resolve() or DIST.is_symlink() or getattr(DIST, 'is_junction', lambda: False)():
         raise ValueError('Output must be a normal directory inside this project')
     site = Site(settings, support, catalog, discovery, downloads)
-    pages = {'/': site.home(), '/guide/': site.guide(), '/404.html': site.not_found()}
+    pages = {'/': site.home(), '/guide/': site.guide(), '/stream-trophy/': site.stream_trophy(), '/404.html': site.not_found()}
     pages.update({f'/tools/{tool["slug"]}/': site.tool(tool) for tool in catalog})
     pages.update({f'/categories/{category["id"]}/': site.home(category) for category in categories})
     if DIST.exists():

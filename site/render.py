@@ -105,6 +105,9 @@ class Site:
         share_image = self.tools[tool_slug]['screenshot'] if tool_slug in self.tools else '/assets/screenshots/kiwi-image-workbench-public.png'
         share_alt = (self.tools[tool_slug]['name'] if tool_slug in self.tools else 'きうい画像・PNG工房') + 'の動作画面'
         share_width, share_height = image_size(share_image)
+        if path == '/stream-trophy/':
+            share_image, share_alt = '/assets/favicon.svg', '配信トロフィー'
+            share_width, share_height = 64, 64
         return f'''<!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="{esc(description)}"><title>{esc(full_title)}</title>
@@ -170,7 +173,8 @@ class Site:
                 links = ''.join(f'<li><a href="/tools/{slug}/">{esc(self.tools[slug]["name"])} {icon("arrow")}</a></li>' for slug in journey['slugs'])
                 entries += f'<article class="journey"><h3>{esc(journey["title"])}</h3><p>{esc(journey["description"])}</p><ol>{links}</ol></article>'
             journeys = f'<section class="workflow-section" aria-labelledby="workflow-title"><div class="section-heading"><div><p class="section-kicker">こんなときに</p><h2 id="workflow-title">やりたいことから、道具を選ぶ。</h2></div></div><div class="journey-grid">{entries}</div></section>'
-        profile = f'''<section class="profile" id="about" aria-labelledby="profile-title"><div class="profile-heading"><img src="/assets/favicon.svg" alt="" width="64" height="64"><div><span class="section-kicker">このサイトの人</span><h2 id="profile-title">{esc(self.settings['profile_name'])}です。</h2></div></div><div><p>{esc(self.settings['profile_text'])}</p>{self.socials()}</div></section>'''
+        trophy_link = '<p><a href="/stream-trophy/">配信トロフィー — 配信に参加して集める</a></p>' if not category else ''
+        profile = f'''<section class="profile" id="about" aria-labelledby="profile-title"><div class="profile-heading"><img src="/assets/favicon.svg" alt="" width="64" height="64"><div><span class="section-kicker">このサイトの人</span><h2 id="profile-title">{esc(self.settings['profile_name'])}です。</h2></div></div><div><p>{esc(self.settings['profile_text'])}</p>{self.socials()}{trophy_link}</div></section>'''
         description = f'{category["description"]}。Windows 11用の無料ソフトを用途から探せます。' if category else '写真・画像、PDF、動画、ファイル整理など、日々の作業に役立つWindows 11用の無料ソフト。用途やキーワードから探してダウンロードできます。'
         return self.page(category['label'] if category else self.settings['site_name'], description, hero + listing + journeys + profile, f'/categories/{chosen}/' if category else '/', catalog=True)
 
@@ -235,6 +239,10 @@ class Site:
         qr = self.support.get('paypal_qr')
         qr_html = f'<details><summary>QRコードを表示</summary><a href="{esc(paypal)}" rel="noopener noreferrer">{image(qr, "PayPal支援ページのQRコード", css="support-qr")}</a></details>' if qr else ''
         return f'<section class="support"><span class="section-kicker">気に入ってもらえたら</span><h2>開発を応援する</h2><p>ソフトは無料です。役に立ったときに、気軽に応援してもらえたらうれしいです。</p><a class="button button-secondary" href="{esc(paypal)}" rel="noopener noreferrer">PayPalで支援する ↗</a>{qr_html}</section>'
+
+    def stream_trophy(self):
+        from stream_trophy import content
+        return self.page('配信トロフィー', 'きういのYouTube配信で、コメントや視聴時間に応じてトロフィーが集まる仕組みの参加方法。専用のGoogleログインは不要です。', content(self.settings), '/stream-trophy/')
 
     def guide(self):
         body = f'''<nav class="crumb" aria-label="パンくず"><a href="/">ホーム</a><span>/</span><span>はじめての方へ</span></nav>
