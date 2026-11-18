@@ -1,0 +1,20 @@
+Kiwi Video Sheet GUI: MIT (LICENSE).
+This is an independent, unofficial interface; it is not a product of FFmpeg.
+
+FFmpeg is copyright the FFmpeg developers. No FFmpeg executable, library,
+codec, or build archive is distributed in this GUI ZIP. First-use setup obtains
+the unchanged original Windows build archive from GyanD/codexffmpeg, a provider
+linked from https://ffmpeg.org/download.html . The exact build URL, archive
+SHA-256 and member SHA-256 values are recorded in upstream-pin.json.
+The downloaded LICENSE.txt and documentation remain with that engine.
+FFmpeg-REFERENCE-LICENSE.txt is a reference copy of GPLv3, not the GUI license.
+The engine runs as a separate process. This interface checks pinned executable
+and library hashes before processing. Its source is available for modification.
+FFmpeg sources: https://github.com/FFmpeg/FFmpeg/tree/n9.0.2
+Build details: https://github.com/GyanD/codexffmpeg
+
+Bundled Python3.13.2 and Tcl/Tk8.6.15: Runtime-LICENSES.txt.
+Pillow13.0.0 and the dependency notices supplied with its wheel: Pillow-LICENSE.txt.
+OpenSSL terms for the Python network runtime: OpenSSL-LICENSE.txt.
+PyInstaller6.22.2 bootloader terms and distribution exception: PyInstaller-LICENSE.txt.
+Windows Meiryo is a system font used to render the sheet; no font file is shipped.

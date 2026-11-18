@@ -119,3 +119,7 @@ apps/kiwi-transfer/THIRD-PARTY-NOTICES.txt -text -whitespace
 
 apps/kiwi-silence/*.txt -text -whitespace
 apps/kiwi-silence/*.py text eol=lf
+
+apps/kiwi-video-sheet/*.txt -text -whitespace
+apps/kiwi-video-sheet/*.py text eol=lf
+apps/kiwi-video-sheet/*.json -text whitespace=cr-at-eol
