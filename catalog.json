@@ -1,5 +1,38 @@
 [
   {
+    "slug": "kiwi-video-sheet",
+    "name": "きうい動画一覧シート",
+    "summary": "長い録画を、時刻付きの一覧画像に。動画から場面を等間隔で抜き出し、中身の確認や見返す位置探しに使えます。",
+    "features": [
+      "4～36の場面を等間隔で取り出し、2～6列の一覧画像に並べます。音声のない動画も使えます。",
+      "開始・終了の秒数を指定し、必要な範囲だけを一覧にできます。",
+      "動画のファイル名と時刻を表示できます。明るい背景・暗い背景も選べます。長い動画名は表示幅に合わせて省略します。",
+      "縦長・横長の映像をつぶさずに配置します。コマの幅を160～480pxで指定し、仕上がりを確認してPNG・JPEGに保存できます。",
+      "元の動画や同名の出力を上書きしません。エンジンの準備後、動画の処理はPC内で行います。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiVideoSheet.exeを起動します。初回のみ「エンジンを準備」で、FFmpeg公式サイトが案内するGyan版（約100 MB）を取得します。",
+      "動画ファイルと、場面の枚数・列数・1コマの幅を選びます。詳細設定で開始・終了、背景、動画名・時刻の表示を調整できます。",
+      "「一覧を作る」を押し、「画像を確認」で仕上がりを見ます。入力や配置を変えたら、もう一度一覧を作ってください。",
+      "PNGかJPEGを選び、「別名で保存」で保存先を指定します。"
+    ],
+    "limitations": "Windows 11 x64用のインストーラーなしZIPです。FFmpeg 9.0.2を使う非公式GUIで、エンジンは同梱せず初回にGyanのWindows配布から取得します。入力はMP4/MOV/MKV/WebM/AVI/M4V/MPG/MPEG/TSの単一ローカル動画、512 MiB・60分以内、各辺4096px・900万画素まで。通常の最初の映像トラックを使い、音声や字幕は画像に含めません。指定範囲を等分した各区間の中央を抽出し、時刻はその指定位置を示します。実際のフレーム位置とはわずかに異なる場合があります。4～36コマ・2～6列・コマ幅160～480pxで、出力は各辺4096px・1600万画素・PNG32 MiBまでです。大きすぎる組み合わせは枚数やコマ幅を減らしてください。画面のプレビューは最大1000×650pxの縮小表示で、保存には元の一覧画像を使います。JPEGは品質90です。各コマ30秒・全体10分、エンジンは1プロセス512 MiBまで。ネットワークパス・リンク・ジャンクション・URL・ライブ配信、複数動画の一括処理、場面の自動選別、動画の再生・編集や全FFmpegオプションを操作する画面はありません。 一覧の文字表示にはWindowsのMeiryoフォントが必要です。",
+    "screenshot": "/assets/screenshots/kiwi-video-sheet-public.png",
+    "workflow_screenshots": [
+      {
+        "src": "/assets/screenshots/kiwi-video-sheet-preview.png",
+        "alt": "動画から抜き出した12場面を、時刻付きで並べた一覧のプレビュー",
+        "caption": "時刻付きの一覧画像。ここでは場面の順序を確認できる4色のデモ動画を使用しています。"
+      }
+    ],
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-video-sheet-v0.1.0/KiwiVideoSheet-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-video-sheet",
+    "upstream_url": "https://github.com/FFmpeg/FFmpeg",
+    "upstream_license": "FFmpeg/Gyan版：GPL-3.0-or-laterほか（初回に別取得）。同梱Pillow：MIT-CMU。各ライセンス・依存物通知を同梱。",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-silence",
     "name": "きうい無音カット",
     "summary": "録音や動画の無音を自動で詰めて、聞き返しや編集の時間を短くします。残る長さを確認してから別名で保存できます。",

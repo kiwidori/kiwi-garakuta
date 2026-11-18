@@ -353,5 +353,10 @@
     "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-silence-v0.1.0/KiwiSilence-0.1.0-win11-x64.zip",
     "bytes": 11850689,
     "sha256": "340b6e8756494cb4a4b130cffdc923105ad26bc564dbc34d01330362bbd06345"
+  },
+  "kiwi-video-sheet": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-video-sheet-v0.1.0/KiwiVideoSheet-0.1.0-win11-x64.zip",
+    "bytes": 19448741,
+    "sha256": "da1dfd3f7ad99eccce0b563ea7d50d49790ad993dbc6b50ce668f616d5f693ab"
   }
 }

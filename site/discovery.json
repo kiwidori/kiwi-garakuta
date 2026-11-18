@@ -867,6 +867,25 @@
         "間を詰める"
       ],
       "alias_names": []
+    },
+    "kiwi-video-sheet": {
+      "category": "media",
+      "tags": [
+        "動画を一覧に",
+        "時刻付き",
+        "PNG・JPEG"
+      ],
+      "keywords": [
+        "動画",
+        "サムネイル",
+        "コンタクトシート",
+        "録画",
+        "一覧画像",
+        "FFmpeg",
+        "場面",
+        "スクリーンショット"
+      ],
+      "alias_names": []
     }
   },
   "featured": [
