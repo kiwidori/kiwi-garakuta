@@ -848,6 +848,25 @@
         "きうい空き容量",
         "きうい容量作業場"
       ]
+    },
+    "kiwi-silence": {
+      "category": "media",
+      "tags": [
+        "無音をカット",
+        "早送り",
+        "録音・動画"
+      ],
+      "keywords": [
+        "無音",
+        "録音",
+        "会話",
+        "silence",
+        "Auto-Editor",
+        "オートエディター",
+        "動画編集",
+        "間を詰める"
+      ],
+      "alias_names": []
     }
   },
   "featured": [

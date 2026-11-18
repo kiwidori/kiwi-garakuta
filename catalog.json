@@ -1,5 +1,31 @@
 [
   {
+    "slug": "kiwi-silence",
+    "name": "きうい無音カット",
+    "summary": "録音や動画の無音を自動で詰めて、聞き返しや編集の時間を短くします。残る長さを確認してから別名で保存できます。",
+    "features": [
+      "音量をもとに無音部分を判定し、元の長さ・保存後の長さ・区間数を表示します。",
+      "声の前後に残す余白と、短い無音を残す長さを調整できます。無音を削除せず早送りにすることもできます。",
+      "通常部分の速度、判定に使う音声トラック、残す／削除する区間を元の秒数で指定できます。",
+      "MP4・WAV・MP3で別名保存できます。音量調整やモノラル・ステレオ出力も選べます。WAV・MP3では複数トラックを混ぜます。",
+      "元のファイルは変更しません。同名の出力には連番を付け、準備後の処理はPC内で行います。"
+    ],
+    "steps": [
+      "ZIPをすべて展開してKiwiSilence.exeを起動し、初回のみ「エンジンを準備」で公式Auto-Editor（約46 MB）を取得します。",
+      "録音や動画を選び、無音のしきい値と声の前後に残す余白を設定します。小さい声が消える場合はしきい値を下げてください。",
+      "「判定結果を確認」で保存後の長さを確認します。必要なら「速度・音声・指定区間」で細かく調整します。",
+      "保存形式を選び、「別名で保存」で保存先を指定します。音声のみの入力はWAVかMP3で保存します。"
+    ],
+    "limitations": "Windows 11 x64用のインストーラーなしZIPです。Auto-Editor 31.9.0を使う非公式GUIで、エンジンは初回に公式配布から取得します。入力は音声トラックのある単一のローカルファイル（WAV/MP3/M4A/FLAC/OGG/AAC/MP4/MOV/MKV/WebM/AVI）、512 MiB・60分以内。動画は長辺1920・短辺1080までです。出力はMP4（H.264/AAC）・WAV（PCM16）・MP3（192 kbps）。字幕・データトラックは保存しません。音量による判定のため、小声や環境音によって切りすぎ・残りすぎが起きます。判定結果は時間と区間数の表示で、保存前の動画再生・波形編集はありません。保存時に同じ設定で判定し直します。残す指定は元の1倍速になります。指定区間は重複なしの30行まで。処理は15分・実行グループ2 GiB、作業ファイルは各512 MiB・合計1.5 GiBまでです。長い録画は先に分割してください。ネットワークパス・リンク・ジャンクション、複数ファイルの結合、録音、URL取得、編集ソフト用タイムライン出力や追加エフェクトには対応しません。元ツールの有償機能やキー入力は扱いません。",
+    "screenshot": "/assets/screenshots/kiwi-silence-public.png",
+    "download_url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-silence-v0.1.0/KiwiSilence-0.1.0-win11-x64.zip",
+    "source_url": "https://github.com/kiwidori/kiwi-garakuta/tree/main/apps/kiwi-silence",
+    "upstream_url": "https://github.com/WyattBlue/auto-editor",
+    "upstream_license": "Unlicense（Auto-Editorのコード。公式実行ファイルは初回に別途取得し、FFmpeg等の依存物には各ライセンスが適用されます）",
+    "amazon_links": [],
+    "windows_test_passed": true
+  },
+  {
     "slug": "kiwi-pdf-stamp",
     "name": "きういPDFスタンプ",
     "summary": "PDFに「確認用」などの文字、ロゴ、ページ番号を重ねます。元のPDFを残して別名で保存できます。",

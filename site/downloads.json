@@ -348,5 +348,10 @@
     "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-pc-workbench-v0.2.0/KiwiPcWorkbench-0.2.0-win11-x64.zip",
     "bytes": 17657509,
     "sha256": "4c280d10fc23e0a06f93ea112fdff1e00c71b43645174d2b74d76e90ce20e352"
+  },
+  "kiwi-silence": {
+    "url": "https://github.com/kiwidori/kiwi-garakuta/releases/download/kiwi-silence-v0.1.0/KiwiSilence-0.1.0-win11-x64.zip",
+    "bytes": 11850689,
+    "sha256": "340b6e8756494cb4a4b130cffdc923105ad26bc564dbc34d01330362bbd06345"
   }
 }
